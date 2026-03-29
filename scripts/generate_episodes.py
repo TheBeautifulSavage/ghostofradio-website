@@ -14,7 +14,7 @@ from pathlib import Path
 from datetime import datetime
 
 # ── Config ──────────────────────────────────────────────────────────────────
-OLLAMA_MODEL = "qwen2.5:14b"
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL_OVERRIDE", "qwen2.5:14b")
 SITE_ROOT = Path("/Users/mac1/Projects/ghostofradio")
 AUDIO_OUTPUT = SITE_ROOT / "audio"
 BLOG_OUTPUT = SITE_ROOT / "blog"
@@ -616,16 +616,25 @@ def generate_show_index(show, episodes):
     (blog_dir / "index.html").write_text(html, encoding="utf-8")
     print(f"  ✓ Index page written for {show['name']}")
 
+GIT_LOCK = SITE_ROOT / ".git_lock"
+
 def git_commit(message):
-    """Commit current changes to git."""
+    """Commit current changes to git with file lock to prevent parallel conflicts."""
+    import fcntl
+    lock_file = open(str(SITE_ROOT / ".git_commit_lock"), "w")
     try:
+        fcntl.flock(lock_file, fcntl.LOCK_EX)  # exclusive lock
         subprocess.run(["git", "add", "-A"], cwd=SITE_ROOT, capture_output=True)
         result = subprocess.run(["git", "commit", "-m", message], cwd=SITE_ROOT, capture_output=True, text=True)
         if result.returncode == 0:
             print(f"  📦 Committed: {message}")
+        subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=SITE_ROOT, capture_output=True)
         subprocess.run(["git", "push", "origin", "main"], cwd=SITE_ROOT, capture_output=True)
     except Exception as e:
         print(f"  Git error: {e}")
+    finally:
+        fcntl.flock(lock_file, fcntl.LOCK_UN)
+        lock_file.close()
 
 def generate_radio_player_css():
     """Write the shared radio player CSS file."""
