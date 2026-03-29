@@ -3,22 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Shows — Ghost of Radio</title>
-  <meta name="description" content="Explore the classic old time radio shows featured on Ghost of Radio: Sam Spade, The Shadow, Sherlock Holmes, Johnny Dollar, and The Whistler.">
+  <title>All Shows — The Complete OTR Archive | Ghost of Radio</title>
+  <meta name="description" content="Stream every classic old time radio show free on Ghost of Radio. 237 shows, 10,000+ episodes — The Shadow, Suspense, Whistler, Dragnet, Jack Benny, X Minus One, and more.">
+  <meta property="og:title" content="All Shows — Ghost of Radio OTR Archive">
+  <meta property="og:description" content="The complete old time radio archive. 237 shows, 10,000+ episodes, all free to stream.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ghostofradio.com/shows.html">
+  <link rel="canonical" href="https://ghostofradio.com/shows.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#0a0a0a">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Ghost Radio">
-  <link rel="apple-touch-icon" href="images/logo.png">
+  <style>
+    .shows-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      align-items: center;
+    }
+    .filter-btn {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid #2a2010;
+      background: transparent;
+      color: var(--text-dim);
+      padding: 0.4rem 0.9rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(201,168,76,0.08);
+    }
+    .show-search {
+      margin-left: auto;
+      background: #111;
+      border: 1px solid #3a2e1e;
+      color: var(--text);
+      font-family: var(--font-heading);
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      width: 220px;
+    }
+    .show-search:focus { outline: none; border-color: var(--accent); }
+    .show-list-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .show-list-card {
+      background: #111008;
+      border: 1px solid #2a2010;
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .show-list-card:hover {
+      border-color: var(--accent);
+      background: #1a1608;
+    }
+    .show-list-card__genre {
+      font-family: var(--font-heading);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+      opacity: 0.8;
+    }
+    .show-list-card__title {
+      font-family: var(--font-heading);
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
+    }
+    .show-list-card__era {
+      font-family: var(--font-heading);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6rem;
+    }
+    .show-list-card__desc {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+    .show-list-card__badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--accent);
+      font-family: var(--font-heading);
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    .section-label {
+      font-family: var(--font-heading);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid #2a2010;
+      padding-bottom: 0.5rem;
+      margin: 2.5rem 0 1rem;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="nav__logo">
@@ -29,122 +139,348 @@
       </button>
       <ul class="nav__links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="shows.html">Shows</a></li>
+        <li class="nav__dropdown">
+          <a href="shows.html">Shows ▾</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="blog/shadow/">The Shadow</a></li>
+            <li><a href="blog/whistler/">The Whistler</a></li>
+            <li><a href="blog/sherlock/">Sherlock Holmes</a></li>
+            <li><a href="blog/cbs-mystery/">CBS Mystery Theater</a></li>
+            <li><a href="blog/sam-spade/">Sam Spade</a></li>
+            <li><a href="blog/suspense/">Suspense</a></li>
+            <li><a href="blog/jack-benny/">Jack Benny</a></li>
+            <li><a href="shows.html">All Shows →</a></li>
+          </ul>
+        </li>
         <li><a href="about.html">About</a></li>
         <li><a href="https://www.youtube.com/@GhostOfRadio" target="_blank" rel="noopener">YouTube</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Page Header -->
   <div class="page-header">
-    <h1 class="flicker">Our Shows</h1>
+    <h1 class="flicker">The Archive</h1>
     <div class="divider"></div>
-    <p>Five legendary programs from the golden age of radio, brought back from the archives for a new generation of listeners.</p>
+    <p>237 Shows &nbsp;·&nbsp; 10,000+ Episodes &nbsp;·&nbsp; All Free to Stream</p>
   </div>
 
-  <!-- Shows -->
   <section class="section">
     <div class="container">
 
-      <div class="show-detail fade-in" id="sam-spade">
-        <div class="show-detail__inner">
-          <img src="images/sam-spade.jpg" alt="Sam Spade" class="show-detail__image">
-          <div class="show-detail__text">
-          <div class="show-detail__era">1946–1951 · NBC / CBS</div>
-          <h2 class="show-detail__title">Sam Spade, Private Detective</h2>
-          <p class="show-detail__quote">"Sam Spade, the hard-boiled private eye from San Francisco…"</p>
-          <div class="show-detail__desc">
-            <p>Based on the iconic character created by Dashiell Hammett, <em>The Adventures of Sam Spade</em> followed the wisecracking San Francisco private detective through a fog-shrouded world of deception, danger, and dark comedy.</p>
-            <p>Starring Howard Duff (and later Steve Dunne) in the title role, the show ran on both NBC and CBS. Each episode was framed as a report dictated to Spade's loyal secretary Effie Perrine, blending hardboiled detective fiction with sharp humor. The series captured the spirit of Hammett's tough, cynical, but ultimately principled gumshoe — a man who trusted no one and always got his answers, one way or another.</p>
-            <p>San Francisco itself became a character in the show: foggy wharves, seedy hotels, and smoky offices set the stage for some of radio's finest noir storytelling.</p>
-          </div>
-          </div>
-        </div>
+      <!-- Filter + Search -->
+      <div class="shows-filter">
+        <button class="filter-btn active" onclick="filterShows('all', this)">All</button>
+        <button class="filter-btn" onclick="filterShows('mystery', this)">Mystery & Crime</button>
+        <button class="filter-btn" onclick="filterShows('horror', this)">Horror & Thriller</button>
+        <button class="filter-btn" onclick="filterShows('comedy', this)">Comedy</button>
+        <button class="filter-btn" onclick="filterShows('scifi', this)">Sci-Fi</button>
+        <button class="filter-btn" onclick="filterShows('western', this)">Western</button>
+        <button class="filter-btn" onclick="filterShows('adventure', this)">Adventure</button>
+        <input type="text" class="show-search" id="showSearch" placeholder="Search shows…" oninput="searchShows(this.value)">
       </div>
 
-      <div class="show-detail fade-in" id="the-shadow">
-        <div class="show-detail__inner">
-          <img src="images/the-shadow.jpg" alt="The Shadow" class="show-detail__image">
-          <div class="show-detail__text">
-          <div class="show-detail__era">1937–1954 · Mutual Broadcasting System</div>
-          <h2 class="show-detail__title">The Shadow</h2>
-          <p class="show-detail__quote">"Who knows what evil lurks in the hearts of men? The Shadow knows!"</p>
-          <div class="show-detail__desc">
-            <p>One of the most recognized characters in American popular culture, The Shadow began as a mysterious narrator for a detective anthology before evolving into a crime-fighting hero with the power to "cloud men's minds" and become invisible.</p>
-            <p>Lamont Cranston, wealthy young man-about-town, learned the hypnotic power of invisibility during travels in the Orient. As The Shadow, he and his "friend and companion, the lovely Margo Lane" battled criminals, mad scientists, and supernatural threats across the airwaves for nearly two decades.</p>
-            <p>The show's atmospheric opening — with its eerie laugh and famous catchphrase — became one of the most iconic moments in broadcasting history. Orson Welles was among the early actors to voice the character, setting a standard for dramatic radio that endures to this day.</p>
-          </div>
-          </div>
-        </div>
+      <!-- MYSTERY & CRIME -->
+      <div class="section-label" data-genre="mystery">Mystery &amp; Crime</div>
+      <div class="show-list-grid" id="showGrid">
+
+        <a href="blog/shadow/" class="show-list-card" data-genre="mystery">
+          <span class="show-list-card__badge">Live Archive</span>
+          <div class="show-list-card__genre">Mystery · Crime</div>
+          <div class="show-list-card__title">The Shadow</div>
+          <div class="show-list-card__era">1937–1954 · Mutual Broadcasting · 203 Episodes</div>
+          <p class="show-list-card__desc">Orson Welles as Lamont Cranston — who has learned to cloud men's minds so they cannot see him. The definitive radio mystery.</p>
+        </a>
+
+        <a href="blog/sherlock/" class="show-list-card" data-genre="mystery">
+          <span class="show-list-card__badge">Live Archive</span>
+          <div class="show-list-card__genre">Mystery · Detective</div>
+          <div class="show-list-card__title">The New Adventures of Sherlock Holmes</div>
+          <div class="show-list-card__era">1939–1950 · NBC/ABC · 52 Episodes</div>
+          <p class="show-list-card__desc">Basil Rathbone and Nigel Bruce as Holmes and Watson. The gold standard of literary radio adaptations.</p>
+        </a>
+
+        <a href="blog/sam-spade/" class="show-list-card" data-genre="mystery">
+          <span class="show-list-card__badge">Live Archive</span>
+          <div class="show-list-card__genre">Mystery · Noir</div>
+          <div class="show-list-card__title">The Adventures of Sam Spade</div>
+          <div class="show-list-card__era">1946–1951 · ABC/CBS · 70 Episodes</div>
+          <p class="show-list-card__desc">Howard Duff as Dashiell Hammett's hard-boiled San Francisco detective. Pure noir radio.</p>
+        </a>
+
+        <a href="blog/cbs-mystery/" class="show-list-card" data-genre="mystery">
+          <span class="show-list-card__badge">Live Archive</span>
+          <div class="show-list-card__genre">Mystery · Anthology</div>
+          <div class="show-list-card__title">CBS Radio Mystery Theater</div>
+          <div class="show-list-card__era">1974–1982 · CBS · 1,000+ Episodes</div>
+          <p class="show-list-card__desc">E.G. Marshall hosts the last great radio drama anthology. Over 1,000 tales of mystery, horror, and suspense.</p>
+        </a>
+
+        <a href="blog/whistler/" class="show-list-card" data-genre="mystery horror">
+          <span class="show-list-card__badge">Live Archive</span>
+          <div class="show-list-card__genre">Mystery · Anthology</div>
+          <div class="show-list-card__title">The Whistler</div>
+          <div class="show-list-card__era">1942–1955 · CBS · 552 Episodes</div>
+          <p class="show-list-card__desc">A mysterious narrator who knows your innermost thoughts. Dark tales of fate and irony — radio's most atmospheric anthology.</p>
+        </a>
+
+        <a href="blog/suspense/" class="show-list-card" data-genre="mystery horror">
+          <span class="show-list-card__badge">Live Archive</span>
+          <div class="show-list-card__genre">Mystery · Drama</div>
+          <div class="show-list-card__title">Suspense</div>
+          <div class="show-list-card__era">1942–1962 · CBS · 945 Episodes</div>
+          <p class="show-list-card__desc">Radio's outstanding theater of thrills. Hollywood's biggest stars — Cary Grant, Orson Welles, Agnes Moorehead — in gripping drama.</p>
+        </a>
+
+        <a href="blog/philip-marlowe/" class="show-list-card" data-genre="mystery">
+          <div class="show-list-card__genre">Mystery · Noir</div>
+          <div class="show-list-card__title">Philip Marlowe</div>
+          <div class="show-list-card__era">1947–1951 · NBC/CBS</div>
+          <p class="show-list-card__desc">Raymond Chandler's hard-boiled Los Angeles private detective in full radio glory. Mean streets, femme fatales, and sharp wit.</p>
+        </a>
+
+        <a href="blog/johnny-dollar/" class="show-list-card" data-genre="mystery">
+          <div class="show-list-card__genre">Mystery · Detective</div>
+          <div class="show-list-card__title">Yours Truly, Johnny Dollar</div>
+          <div class="show-list-card__era">1949–1962 · CBS · 721 Episodes</div>
+          <p class="show-list-card__desc">America's fabulous freelance insurance investigator — the man with the action-packed expense account. The last great radio drama.</p>
+        </a>
+
+        <a href="blog/richard-diamond/" class="show-list-card" data-genre="mystery">
+          <div class="show-list-card__genre">Mystery · Comedy</div>
+          <div class="show-list-card__title">Richard Diamond, Private Detective</div>
+          <div class="show-list-card__era">1949–1952 · NBC/CBS</div>
+          <p class="show-list-card__desc">Dick Powell as a wisecracking Manhattan private eye with a gift for singing and a taste for trouble.</p>
+        </a>
+
+        <a href="blog/mr-keen/" class="show-list-card" data-genre="mystery">
+          <div class="show-list-card__genre">Mystery · Detective</div>
+          <div class="show-list-card__title">Mr. Keen, Tracer of Lost Persons</div>
+          <div class="show-list-card__era">1937–1955 · NBC/CBS</div>
+          <p class="show-list-card__desc">The kind old tracer who finds the lost and solves the unsolvable — one of radio's longest-running mystery series.</p>
+        </a>
+
+        <a href="blog/broadway-is-my-beat/" class="show-list-card" data-genre="mystery">
+          <div class="show-list-card__genre">Mystery · Noir</div>
+          <div class="show-list-card__title">Broadway Is My Beat</div>
+          <div class="show-list-card__era">1949–1954 · CBS</div>
+          <p class="show-list-card__desc">Detective Danny Clover walks Times Square to Columbus Circle — the gaudiest, most violent, loneliest mile in the world.</p>
+        </a>
+
+        <a href="blog/dragnet/" class="show-list-card" data-genre="mystery">
+          <div class="show-list-card__genre">Crime · Documentary</div>
+          <div class="show-list-card__title">Dragnet</div>
+          <div class="show-list-card__era">1949–1957 · NBC</div>
+          <p class="show-list-card__desc">The story you are about to hear is true. Jack Webb's semi-documentary crime drama that defined a generation of police storytelling.</p>
+        </a>
+
+        <a href="blog/gang-busters/" class="show-list-card" data-genre="mystery">
+          <div class="show-list-card__genre">Crime · True Crime</div>
+          <div class="show-list-card__title">Gang Busters</div>
+          <div class="show-list-card__era">1935–1957 · NBC/CBS/Mutual</div>
+          <p class="show-list-card__desc">True crime stories dramatized with law enforcement cooperation. The original come-in-shooting radio crime show.</p>
+        </a>
+
+        <a href="blog/mysterious-traveler/" class="show-list-card" data-genre="mystery horror">
+          <div class="show-list-card__genre">Mystery · Thriller</div>
+          <div class="show-list-card__title">The Mysterious Traveler</div>
+          <div class="show-list-card__era">1943–1952 · Mutual</div>
+          <p class="show-list-card__desc">Tales of mystery and the macabre from a stranger met on a train. One of radio's most atmospheric anthology series.</p>
+        </a>
+
       </div>
 
-      <div class="show-detail fade-in" id="sherlock-holmes">
-        <div class="show-detail__inner">
-          <img src="images/sherlock.jpg" alt="Sherlock Holmes" class="show-detail__image">
-          <div class="show-detail__text">
-          <div class="show-detail__era">1930s–1940s · NBC / Mutual</div>
-          <h2 class="show-detail__title">The Adventures of Sherlock Holmes</h2>
-          <p class="show-detail__quote">"Elementary, my dear Watson."</p>
-          <div class="show-detail__desc">
-            <p>Sir Arthur Conan Doyle's immortal detective made a natural transition to radio, where the fog-bound streets of Victorian London and the intellectual duels between Holmes and his adversaries came vividly to life through sound alone.</p>
-            <p>The most celebrated radio incarnation starred Basil Rathbone as Holmes and Nigel Bruce as Dr. Watson — the same pairing that defined the characters in the Universal film series. Their chemistry was magnetic: Rathbone's precise, imperious Holmes played against Bruce's warmly bumbling Watson.</p>
-            <p>From the gas-lit sitting room at 221B Baker Street to the moors of Dartmoor and the criminal underworld of London, these radio adaptations brought Doyle's stories to millions of listeners and cemented Sherlock Holmes as a permanent fixture of popular imagination.</p>
-          </div>
-          </div>
-        </div>
+      <!-- HORROR & THRILLER -->
+      <div class="section-label" data-genre="horror">Horror &amp; Thriller</div>
+      <div class="show-list-grid">
+
+        <a href="blog/inner-sanctum/" class="show-list-card" data-genre="horror">
+          <div class="show-list-card__genre">Horror · Suspense</div>
+          <div class="show-list-card__title">Inner Sanctum Mysteries</div>
+          <div class="show-list-card__era">1941–1952 · NBC/CBS/ABC</div>
+          <p class="show-list-card__desc">The creaking door that opened onto tales of mystery and horror. Raymond Edward Johnson hosts chilling stories from the inner sanctum.</p>
+        </a>
+
+        <a href="blog/lights-out/" class="show-list-card" data-genre="horror">
+          <div class="show-list-card__genre">Horror · Anthology</div>
+          <div class="show-list-card__title">Lights Out</div>
+          <div class="show-list-card__era">1934–1947 · NBC/CBS</div>
+          <p class="show-list-card__desc">Everybody out — it's lights out time. The original horror radio anthology, airing at midnight to maximize dread.</p>
+        </a>
+
+        <a href="blog/dark-fantasy/" class="show-list-card" data-genre="horror">
+          <div class="show-list-card__genre">Horror · Fantasy</div>
+          <div class="show-list-card__title">Dark Fantasy</div>
+          <div class="show-list-card__era">1941–1942 · NBC</div>
+          <p class="show-list-card__desc">Short-lived but terrifying anthology of supernatural and horror tales from NBC's golden age.</p>
+        </a>
+
+        <a href="blog/escape/" class="show-list-card" data-genre="horror adventure">
+          <div class="show-list-card__genre">Adventure · Thriller</div>
+          <div class="show-list-card__title">Escape</div>
+          <div class="show-list-card__era">1947–1954 · CBS</div>
+          <p class="show-list-card__desc">Designed to free you from the four walls of today. Adventure, danger, and the exotic — radio's great escape anthology.</p>
+        </a>
+
       </div>
 
-      <div class="show-detail fade-in" id="johnny-dollar">
-        <div class="show-detail__inner">
-          <img src="images/johnny-dollar.jpg" alt="Johnny Dollar" class="show-detail__image">
-          <div class="show-detail__text">
-          <div class="show-detail__era">1949–1962 · CBS</div>
-          <h2 class="show-detail__title">Yours Truly, Johnny Dollar</h2>
-          <p class="show-detail__quote">"The man with the action-packed expense account!"</p>
-          <div class="show-detail__desc">
-            <p><em>Yours Truly, Johnny Dollar</em> holds a unique distinction: it was the last dramatic series to air on network radio, signing off on September 30, 1962, marking the end of an era.</p>
-            <p>Johnny Dollar was "America's fabulous freelance insurance investigator" — a unique premise that took the detective format in an inventive direction. Each episode was structured around Dollar's expense account, with the hero narrating his adventures as line items: "Item one: cab fare to the airport, $3.50…"</p>
-            <p>The show went through several actors in the lead role, with Bob Bailey's run (1955–1960) widely considered the definitive portrayal. During this period, the show experimented with serialized five-part stories that played out across a week — a format that gave the mysteries room to breathe and build suspense in ways that a single half-hour episode could not.</p>
-          </div>
-          </div>
-        </div>
+      <!-- SCI-FI -->
+      <div class="section-label" data-genre="scifi">Science Fiction</div>
+      <div class="show-list-grid">
+
+        <a href="blog/x-minus-one/" class="show-list-card" data-genre="scifi">
+          <div class="show-list-card__genre">Science Fiction</div>
+          <div class="show-list-card__title">X Minus One</div>
+          <div class="show-list-card__era">1955–1958 · NBC</div>
+          <p class="show-list-card__desc">The pinnacle of radio sci-fi. Dramatizations from Galaxy and Astounding Science Fiction — Asimov, Bradbury, Heinlein adapted for radio.</p>
+        </a>
+
+        <a href="blog/dimension-x/" class="show-list-card" data-genre="scifi">
+          <div class="show-list-card__genre">Science Fiction</div>
+          <div class="show-list-card__title">Dimension X</div>
+          <div class="show-list-card__era">1950–1951 · NBC</div>
+          <p class="show-list-card__desc">Adventures in time and space told in terms of tomorrow. The forerunner to X Minus One — bold, imaginative early radio sci-fi.</p>
+        </a>
+
+        <a href="blog/buck-rogers/" class="show-list-card" data-genre="scifi adventure">
+          <div class="show-list-card__genre">Sci-Fi · Adventure</div>
+          <div class="show-list-card__title">Buck Rogers in the 25th Century</div>
+          <div class="show-list-card__era">1932–1947 · CBS/Mutual</div>
+          <p class="show-list-card__desc">The original space hero. Buck Rogers and his allies fight for Earth's future in the earliest science fiction radio adventure.</p>
+        </a>
+
+        <a href="blog/2000-plus/" class="show-list-card" data-genre="scifi">
+          <div class="show-list-card__genre">Science Fiction</div>
+          <div class="show-list-card__title">2000 Plus</div>
+          <div class="show-list-card__era">1950–1952 · Mutual</div>
+          <p class="show-list-card__desc">Visionary science fiction stories set in the technological future — remarkably prescient for its era.</p>
+        </a>
+
       </div>
 
-      <div class="show-detail fade-in" id="the-whistler">
-        <div class="show-detail__inner">
-          <img src="images/whistler.jpg" alt="The Whistler" class="show-detail__image">
-          <div class="show-detail__text">
-          <div class="show-detail__era">1942–1955 · CBS</div>
-          <h2 class="show-detail__title">The Whistler</h2>
-          <p class="show-detail__quote">"I am the Whistler, and I know many things, for I walk by night. I know many strange tales, many secrets hidden in the hearts of men and women who have stepped into the shadows. I know the nameless terrors of which they dare not speak."</p>
-          <div class="show-detail__desc">
-            <p><em>The Whistler</em> was one of radio's great anthology series — a dark, atmospheric collection of tales built around irony, fate, and the consequences of moral failings. Each episode followed a different protagonist, usually someone plotting a crime or hiding a terrible secret.</p>
-            <p>The Whistler himself was the show's narrator: an omniscient, vaguely sinister figure who observed the action with knowing detachment. His whistled musical theme — thirteen eerie notes — became one of the most recognizable sounds in radio history.</p>
-            <p>What set The Whistler apart was its consistent focus on the twist ending. Like a precursor to <em>The Twilight Zone</em>, each episode built carefully toward a final revelation that recast everything the listener had heard. Justice was served, but rarely in the way anyone — characters or audience — expected.</p>
-          </div>
-          </div>
-        </div>
+      <!-- COMEDY -->
+      <div class="section-label" data-genre="comedy">Comedy</div>
+      <div class="show-list-grid">
+
+        <a href="blog/jack-benny/" class="show-list-card" data-genre="comedy">
+          <span class="show-list-card__badge">Live Archive</span>
+          <div class="show-list-card__genre">Comedy · Variety</div>
+          <div class="show-list-card__title">The Jack Benny Program</div>
+          <div class="show-list-card__era">1932–1955 · NBC/CBS</div>
+          <p class="show-list-card__desc">The most celebrated comedy program in radio history. Benny's masterclass in timing — the perfectly placed pause that became legend.</p>
+        </a>
+
+        <a href="blog/fibber-mcgee/" class="show-list-card" data-genre="comedy">
+          <div class="show-list-card__genre">Comedy · Domestic</div>
+          <div class="show-list-card__title">Fibber McGee and Molly</div>
+          <div class="show-list-card__era">1935–1959 · NBC</div>
+          <p class="show-list-card__desc">The loveable braggart and his patient wife — the most beloved domestic comedy of radio's golden age. That hall closet!</p>
+        </a>
+
+        <a href="blog/burns-and-allen/" class="show-list-card" data-genre="comedy">
+          <div class="show-list-card__genre">Comedy · Variety</div>
+          <div class="show-list-card__title">The Burns and Allen Show</div>
+          <div class="show-list-card__era">1932–1950 · CBS/NBC</div>
+          <p class="show-list-card__desc">George Burns and Gracie Allen — the perfectly mismatched couple whose comedy chemistry was pure 24-karat gold.</p>
+        </a>
+
+        <a href="blog/great-gildersleeve/" class="show-list-card" data-genre="comedy">
+          <div class="show-list-card__genre">Comedy · Character</div>
+          <div class="show-list-card__title">The Great Gildersleeve</div>
+          <div class="show-list-card__era">1941–1957 · NBC</div>
+          <p class="show-list-card__desc">The pompous but loveable Throckmorton P. Gildersleeve, water commissioner of Summerfield. The first sitcom spin-off in history.</p>
+        </a>
+
+        <a href="blog/fred-allen/" class="show-list-card" data-genre="comedy">
+          <div class="show-list-card__genre">Comedy · Satire</div>
+          <div class="show-list-card__title">The Fred Allen Show</div>
+          <div class="show-list-card__era">1932–1949 · NBC/CBS</div>
+          <p class="show-list-card__desc">Fred Allen's razor-sharp wit and satirical eye on American life. Perhaps the most literary comedy in radio history.</p>
+        </a>
+
+      </div>
+
+      <!-- WESTERN -->
+      <div class="section-label" data-genre="western">Westerns</div>
+      <div class="show-list-grid">
+
+        <a href="blog/gunsmoke/" class="show-list-card" data-genre="western">
+          <div class="show-list-card__genre">Western · Drama</div>
+          <div class="show-list-card__title">Gunsmoke</div>
+          <div class="show-list-card__era">1952–1961 · CBS</div>
+          <p class="show-list-card__desc">The adult western that changed the genre forever. William Conrad as Marshal Matt Dillon — moral complexity on the frontier.</p>
+        </a>
+
+        <a href="blog/lone-ranger/" class="show-list-card" data-genre="western adventure">
+          <div class="show-list-card__genre">Western · Adventure</div>
+          <div class="show-list-card__title">The Lone Ranger</div>
+          <div class="show-list-card__era">1933–1954 · Mutual/NBC</div>
+          <p class="show-list-card__desc">Hi-Yo Silver! The masked rider of the plains and faithful Tonto — radio's most iconic western hero.</p>
+        </a>
+
+        <a href="blog/death-valley-days/" class="show-list-card" data-genre="western">
+          <div class="show-list-card__genre">Western · Documentary</div>
+          <div class="show-list-card__title">Death Valley Days</div>
+          <div class="show-list-card__era">1930–1945 · NBC/CBS</div>
+          <p class="show-list-card__desc">True tales from the American West, sponsored by Twenty Mule Team Borax. History and adventure from the frontier.</p>
+        </a>
+
+        <a href="blog/have-gun-will-travel/" class="show-list-card" data-genre="western">
+          <div class="show-list-card__genre">Western · Drama</div>
+          <div class="show-list-card__title">Have Gun — Will Travel</div>
+          <div class="show-list-card__era">1958–1960 · CBS</div>
+          <p class="show-list-card__desc">Paladin, the philosophical hired gun of San Francisco — one of the most literate westerns in any medium.</p>
+        </a>
+
+      </div>
+
+      <!-- ADVENTURE -->
+      <div class="section-label" data-genre="adventure">Adventure</div>
+      <div class="show-list-grid">
+
+        <a href="blog/green-hornet/" class="show-list-card" data-genre="adventure">
+          <div class="show-list-card__genre">Adventure · Crime</div>
+          <div class="show-list-card__title">The Green Hornet</div>
+          <div class="show-list-card__era">1936–1952 · Mutual/NBC</div>
+          <p class="show-list-card__desc">Britt Reid, publisher by day, masked crime-fighter by night. One of radio's most thrilling costumed adventurers.</p>
+        </a>
+
+        <a href="blog/captain-midnight/" class="show-list-card" data-genre="adventure">
+          <div class="show-list-card__genre">Adventure · Serial</div>
+          <div class="show-list-card__title">Captain Midnight</div>
+          <div class="show-list-card__era">1938–1949 · Mutual</div>
+          <p class="show-list-card__desc">America's ace of the airways — Captain Midnight and the Secret Squadron fighting spies and saboteurs for freedom.</p>
+        </a>
+
+        <a href="blog/lux-radio-theatre/" class="show-list-card" data-genre="adventure">
+          <div class="show-list-card__genre">Drama · Anthology</div>
+          <div class="show-list-card__title">Lux Radio Theatre</div>
+          <div class="show-list-card__era">1934–1955 · NBC/CBS</div>
+          <p class="show-list-card__desc">Hollywood's biggest stars recreating their greatest films on radio. 900+ broadcasts — Cary Grant, Bette Davis, Clark Gable.</p>
+        </a>
+
+        <a href="blog/command-performance/" class="show-list-card" data-genre="adventure">
+          <div class="show-list-card__genre">Variety · Military</div>
+          <div class="show-list-card__title">Command Performance</div>
+          <div class="show-list-card__era">1942–1949 · AFRS</div>
+          <p class="show-list-card__desc">The biggest names in entertainment performing for American troops overseas. Pure American morale from the darkest years.</p>
+        </a>
+
+      </div>
+
+      <div class="text-center mt-2" style="padding: 2rem 0;">
+        <p style="font-family: var(--font-heading); color: var(--text-muted); font-size: 0.8rem; letter-spacing: 0.1em;">
+          More shows being added daily as our archive grows. &nbsp;·&nbsp; <a href="https://www.youtube.com/@GhostOfRadio" style="color: var(--accent);">Subscribe on YouTube</a>
+        </p>
       </div>
 
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-banner">
-    <div class="container fade-in">
-      <h2>Listen Now</h2>
-      <p>All five shows are available on our YouTube channel, with new episodes uploaded regularly.</p>
-      <a href="https://www.youtube.com/@GhostOfRadio" target="_blank" rel="noopener" class="btn btn--filled">▶ Visit Our YouTube Channel</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer__inner">
       <div class="footer__brand">
         <div class="footer__brand-name"><img src="images/logo.png" alt="Ghost of Radio" class="footer__logo-img"> Ghost of Radio</div>
-        <p>Where vintage broadcasts return from the dead. Bringing the golden age of radio to a new generation on YouTube.</p>
+        <p>Where vintage broadcasts return from the dead. The complete old time radio archive.</p>
         <div class="social-links">
           <a href="https://www.youtube.com/@GhostOfRadio" target="_blank" rel="noopener">▶ YouTube</a>
           <a href="https://www.facebook.com/profile.php?id=61575492482642" target="_blank" rel="noopener">ⓕ Facebook</a>
@@ -155,70 +491,48 @@
           <h4>Navigate</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="shows.html">Shows</a></li>
+            <li><a href="shows.html">All Shows</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4>Legal</h4>
+          <h4>Top Shows</h4>
           <ul>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="mailto:admin@ghostofradio.com">Contact</a></li>
+            <li><a href="blog/shadow/">The Shadow</a></li>
+            <li><a href="blog/whistler/">The Whistler</a></li>
+            <li><a href="blog/suspense/">Suspense</a></li>
+            <li><a href="blog/sherlock/">Sherlock Holmes</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>&copy; <span class="current-year">2026</span> Ghost of Radio. All rights reserved. Classic radio programs are in the public domain.</p>
+      <p>&copy; 2026 Ghost of Radio. Classic radio programs are in the public domain.</p>
     </div>
   </footer>
 
-  <!-- Install App Banner -->
-  <div id="installBanner" class="install-banner" style="display:none;">
-    <span>Install Ghost of Radio for offline listening</span>
-    <button id="installBtn" class="btn btn--filled" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Install</button>
-    <button id="installDismiss" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1.2rem;padding:0.5rem;" aria-label="Dismiss">&times;</button>
-  </div>
-
   <script src="js/main.js"></script>
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/sw.js');
+    function filterShows(genre, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.show-list-card').forEach(card => {
+        if (genre === 'all') {
+          card.style.display = '';
+        } else {
+          card.style.display = card.dataset.genre && card.dataset.genre.includes(genre) ? '' : 'none';
+        }
+      });
+      document.querySelectorAll('.section-label').forEach(l => {
+        l.style.display = genre === 'all' || l.dataset.genre === genre ? '' : 'none';
       });
     }
-    (function () {
-      var deferredPrompt = null;
-      var banner = document.getElementById('installBanner');
-      var installBtn = document.getElementById('installBtn');
-      var dismissBtn = document.getElementById('installDismiss');
-      window.addEventListener('beforeinstallprompt', function (e) {
-        e.preventDefault();
-        deferredPrompt = e;
-        setTimeout(function () {
-          if (deferredPrompt && !sessionStorage.getItem('installDismissed')) {
-            banner.style.display = 'flex';
-          }
-        }, 30000);
+    function searchShows(q) {
+      q = q.toLowerCase();
+      document.querySelectorAll('.show-list-card').forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
       });
-      if (installBtn) {
-        installBtn.addEventListener('click', function () {
-          if (deferredPrompt) {
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then(function () {
-              deferredPrompt = null;
-              banner.style.display = 'none';
-            });
-          }
-        });
-      }
-      if (dismissBtn) {
-        dismissBtn.addEventListener('click', function () {
-          banner.style.display = 'none';
-          sessionStorage.setItem('installDismissed', '1');
-        });
-      }
-    })();
+    }
   </script>
 </body>
 </html>
