@@ -1,0 +1,53 @@
+/* Ghost of Radio — Radio Player Component */
+.radio-player { background:#0d0a06; border:2px solid #3a2e1e; border-radius:12px; padding:0; margin:2.5rem 0; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.7), inset 0 1px 0 rgba(201,168,76,0.15); font-family:var(--font-heading); position:relative; }
+.radio-player::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,#c9a84c,#e8c96a,#c9a84c,transparent); }
+.radio-top { background:linear-gradient(180deg,#1a1208 0%,#0d0a06 100%); padding:1.5rem 1.5rem 1rem; border-bottom:1px solid #2a2010; display:flex; align-items:center; gap:1rem; }
+.radio-grille { width:56px; height:56px; flex-shrink:0; background:#0a0704; border:2px solid #3a2e1e; border-radius:50%; display:grid; place-items:center; position:relative; box-shadow:inset 0 2px 8px rgba(0,0,0,0.8); }
+.radio-grille::after { content:''; width:24px; height:24px; border-radius:50%; background:radial-gradient(circle,#c9a84c 0%,#7a5c20 60%,#3a2e1e 100%); box-shadow:0 0 12px rgba(201,168,76,0.4); }
+.radio-info { flex:1; min-width:0; }
+.radio-show-name { font-family:var(--font-heading); color:#c9a84c; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.2rem; opacity:0.8; }
+.radio-episode-title { font-family:var(--font-heading); color:#e8e0d0; font-size:1rem; line-height:1.2; margin-bottom:0.25rem; }
+.radio-meta { color:#6b6355; font-size:0.75rem; font-family:var(--font-heading); letter-spacing:0.1em; }
+.radio-body { padding:1.25rem 1.5rem 1.5rem; }
+.radio-waveform { height:36px; margin-bottom:1rem; display:flex; align-items:center; gap:2px; overflow:hidden; }
+.radio-waveform span { display:block; width:3px; border-radius:2px; background:#3a2e1e; flex-shrink:0; transition:background 0.2s; }
+.radio-waveform span.active { background:#c9a84c; }
+.radio-controls { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
+.radio-play-btn { width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#c9a84c,#a8893e); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 2px 12px rgba(201,168,76,0.3); transition:transform 0.1s,box-shadow 0.2s; }
+.radio-play-btn:hover { transform:scale(1.05); box-shadow:0 4px 20px rgba(201,168,76,0.5); }
+.radio-play-btn:active { transform:scale(0.97); }
+.radio-play-btn svg { width:18px; height:18px; fill:#0a0704; margin-left:2px; }
+.radio-play-btn.playing .play-icon { display:none; }
+.radio-play-btn.playing .pause-icon { display:block; }
+.radio-play-btn .pause-icon { display:none; margin-left:0; }
+.radio-progress-wrap { flex:1; }
+.radio-progress { width:100%; -webkit-appearance:none; appearance:none; height:4px; background:#2a2010; border-radius:2px; outline:none; cursor:pointer; margin-bottom:0.4rem; }
+.radio-progress::-webkit-slider-thumb { -webkit-appearance:none; width:14px; height:14px; border-radius:50%; background:#c9a84c; cursor:pointer; box-shadow:0 0 6px rgba(201,168,76,0.5); }
+.radio-time { display:flex; justify-content:space-between; font-family:var(--font-heading); font-size:0.65rem; color:#6b6355; letter-spacing:0.1em; }
+.radio-volume-wrap { display:flex; align-items:center; gap:0.5rem; flex-shrink:0; }
+.radio-volume-wrap svg { width:14px; height:14px; fill:#6b6355; }
+.radio-volume { width:70px; -webkit-appearance:none; appearance:none; height:3px; background:#2a2010; border-radius:2px; outline:none; cursor:pointer; }
+.radio-volume::-webkit-slider-thumb { -webkit-appearance:none; width:10px; height:10px; border-radius:50%; background:#c9a84c; cursor:pointer; }
+.radio-footer { background:#080604; border-top:1px solid #1a1408; padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; }
+.radio-broadcast { font-family:var(--font-heading); font-size:0.6rem; letter-spacing:0.2em; color:#3a2e1e; text-transform:uppercase; }
+.radio-broadcast.live { color:#c9a84c; animation:pulse-text 2s infinite; }
+@keyframes pulse-text { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.radio-download { font-family:var(--font-heading); font-size:0.65rem; color:#6b6355; text-decoration:none; letter-spacing:0.1em; border:1px solid #2a2010; padding:0.25rem 0.75rem; border-radius:3px; transition:color 0.2s,border-color 0.2s; }
+.radio-download:hover { color:#c9a84c; border-color:#c9a84c; }
+.episode-meta-box { background:#111008; border:1px solid #2a2010; border-left:3px solid #c9a84c; border-radius:6px; padding:1.25rem 1.5rem; margin:2rem 0; display:grid; grid-template-columns:1fr 1fr; gap:0.75rem 2rem; }
+@media (max-width:600px) { .episode-meta-box { grid-template-columns:1fr; } }
+.episode-meta-item { display:flex; flex-direction:column; gap:0.2rem; }
+.episode-meta-label { font-family:var(--font-heading); font-size:0.6rem; letter-spacing:0.2em; color:#6b6355; text-transform:uppercase; }
+.episode-meta-value { font-family:var(--font-body); color:#e8e0d0; font-size:0.95rem; }
+.era-box { background:linear-gradient(135deg,#0d0b08 0%,#100e09 100%); border:1px solid #2a2010; border-radius:8px; padding:1.75rem; margin:2.5rem 0; position:relative; overflow:hidden; }
+.era-box-label { font-family:var(--font-heading); font-size:0.6rem; letter-spacing:0.25em; color:#c9a84c; text-transform:uppercase; margin-bottom:1rem; }
+.era-box h3 { font-family:var(--font-heading); color:#e8e0d0; font-size:1.1rem; margin-bottom:0.75rem; }
+.era-box p { font-family:var(--font-body); color:#a89e8c; font-size:1rem; line-height:1.75; margin-bottom:0.75rem; }
+.era-box p:last-child { margin-bottom:0; }
+.breadcrumb { padding:1rem 0 0; font-family:var(--font-heading); font-size:0.7rem; letter-spacing:0.1em; color:#6b6355; }
+.breadcrumb a { color:#6b6355; text-decoration:none; }
+.breadcrumb a:hover { color:#c9a84c; }
+.breadcrumb span { margin:0 0.5rem; }
+.episode-nav { display:flex; justify-content:space-between; gap:1rem; margin-top:3rem; padding-top:2rem; border-top:1px solid #2a2010; }
+.episode-nav a { font-family:var(--font-heading); font-size:0.75rem; letter-spacing:0.1em; color:#6b6355; text-decoration:none; border:1px solid #2a2010; padding:0.6rem 1rem; border-radius:4px; transition:color 0.2s,border-color 0.2s; }
+.episode-nav a:hover { color:#c9a84c; border-color:#c9a84c; }
