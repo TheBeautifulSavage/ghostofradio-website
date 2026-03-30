@@ -12,9 +12,9 @@ import anthropic
 SITE_ROOT  = Path("/Users/mac1/Projects/ghostofradio")
 AUDIO_DIR  = SITE_ROOT / "audio"
 R2_BASE    = "https://pub-43a2a91d87c649239fa207174290a900.r2.dev"
-CF_TOKEN   = "cfut_F7Gk8H3OrM2QQ34UoqpRfo3F3mHuNd222p2IMdm73b91416a"
-CF_ACCOUNT = "dae784fdc17957e814046c3637ee10eb"
-ANTHROPIC_KEY = "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"
+CF_TOKEN   = os.environ["CF_TOKEN"]
+CF_ACCOUNT = os.environ["CF_ACCOUNT"]
+ANTHROPIC_KEY = os.environ["ANTHROPIC_KEY"]
 
 client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
 
