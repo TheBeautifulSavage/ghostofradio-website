@@ -45,6 +45,10 @@ SHOWS = {
     "rogues-gallery":      ["OTRR_Rogues_Gallery_Singles"],
     "fort-laramie":        ["OTRR_Fort_Laramie_Singles"],
     "have-gun":            ["have-gun-will-travel"],
+    "our-miss-brooks":    ["OTRR_Our_Miss_Brooks_Singles"],
+    "richard-diamond":     ["OTRR_Richard_Diamond_Private_Detective_Singles"],
+    "great-gildersleeve":  ["Otrr_The_Great_Gildersleeve_Singles"],
+    "mercury-theatre":     ["OrsonWelles_MercurySummer", "OTRR_Mercury_Theatre_Singles"],
 }
 
 SHOW_INFO = {
@@ -73,6 +77,10 @@ SHOW_INFO = {
     "rogues-gallery":      {"name": "Rogue's Gallery", "network": "NBC/Mutual", "years": "1945-1951", "genre": "detective comedy"},
     "fort-laramie":        {"name": "Fort Laramie", "network": "CBS", "years": "1956", "genre": "adult western drama"},
     "have-gun":            {"name": "Have Gun Will Travel", "network": "CBS", "years": "1958-1960", "genre": "western"},
+    "our-miss-brooks":    {"name": "Our Miss Brooks", "network": "CBS", "years": "1948-1957", "genre": "comedy"},
+    "richard-diamond":     {"name": "Richard Diamond Private Detective", "network": "NBC/CBS", "years": "1949-1953", "genre": "detective noir"},
+    "great-gildersleeve":  {"name": "The Great Gildersleeve", "network": "NBC", "years": "1941-1957", "genre": "comedy"},
+    "mercury-theatre":     {"name": "Mercury Theatre on the Air", "network": "CBS", "years": "1938", "genre": "drama/thriller"},
 }
 
 def slugify(text):
