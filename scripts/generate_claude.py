@@ -33,6 +33,18 @@ SHOWS = {
     "shadow":          ["the-shadow-radio-show-1937-1954-old-time-radio-all-available-episodes", "OTRR_Shadow_Singles"],
     "sherlock":        ["sherlockholmes_otr", "OTRR_SherlockHolmes_Singles"],
     "cbs-mystery":     ["cbsrmt-1975_2023"],
+    # New shows - top 50 expansion
+    "johnny-dollar":       ["OTRR_YoursTrulyJohnnyDollar_Singles_Mandel_Kramer", "OTRR_YoursTrulyJohnnyDollar_Singles_Charles_Russell", "OTRR_YoursTrulyJohnnyDollar_Singles_Bob_Bailey"],
+    "dimension-x":         ["OTRR_Dimension_X_Singles"],
+    "mysterious-traveler": ["OTRR_Mysterious_Traveler_Singles"],
+    "quiet-please":        ["Quiet_Please"],
+    "bold-venture":        ["OTRR_Bold_Venture_Singles"],
+    "broadway-beat":       ["OTRR_Broadway_Is_My_Beat_Singles"],
+    "crime-classics":      ["OTRR_Crime_Classics_Singles"],
+    "box-13":              ["OTRR_Box_13_Singles"],
+    "rogues-gallery":      ["OTRR_Rogues_Gallery_Singles"],
+    "fort-laramie":        ["OTRR_Fort_Laramie_Singles"],
+    "have-gun":            ["have-gun-will-travel"],
 }
 
 SHOW_INFO = {
@@ -49,6 +61,18 @@ SHOW_INFO = {
     "shadow":          {"name": "The Shadow", "network": "CBS/Mutual", "years": "1937-1954", "genre": "mystery/crime"},
     "sherlock":        {"name": "Sherlock Holmes", "network": "NBC/CBS", "years": "1939-1950", "genre": "detective mystery"},
     "cbs-mystery":     {"name": "CBS Radio Mystery Theater", "network": "CBS", "years": "1974-1982", "genre": "mystery/horror"},
+    # New shows
+    "johnny-dollar":       {"name": "Yours Truly Johnny Dollar", "network": "CBS", "years": "1949-1962", "genre": "insurance investigator noir"},
+    "dimension-x":         {"name": "Dimension X", "network": "NBC", "years": "1950-1951", "genre": "science fiction"},
+    "mysterious-traveler": {"name": "The Mysterious Traveler", "network": "Mutual", "years": "1943-1952", "genre": "mystery/thriller anthology"},
+    "quiet-please":        {"name": "Quiet Please", "network": "Mutual/ABC", "years": "1947-1949", "genre": "eerie anthology drama"},
+    "bold-venture":        {"name": "Bold Venture", "network": "Syndicated", "years": "1951-1952", "genre": "adventure noir"},
+    "broadway-beat":       {"name": "Broadway Is My Beat", "network": "CBS", "years": "1949-1954", "genre": "New York crime drama"},
+    "crime-classics":      {"name": "Crime Classics", "network": "CBS", "years": "1953-1954", "genre": "true crime drama"},
+    "box-13":              {"name": "Box 13", "network": "Syndicated", "years": "1948-1949", "genre": "adventure mystery"},
+    "rogues-gallery":      {"name": "Rogue's Gallery", "network": "NBC/Mutual", "years": "1945-1951", "genre": "detective comedy"},
+    "fort-laramie":        {"name": "Fort Laramie", "network": "CBS", "years": "1956", "genre": "adult western drama"},
+    "have-gun":            {"name": "Have Gun Will Travel", "network": "CBS", "years": "1958-1960", "genre": "western"},
 }
 
 def slugify(text):
