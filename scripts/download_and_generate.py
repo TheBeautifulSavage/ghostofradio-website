@@ -19,7 +19,7 @@ from datetime import datetime
 SITE_ROOT = Path("/Users/mac1/Projects/ghostofradio")
 OTR_LIB = Path("/Users/mac1/OTR_Library")
 DOWNLOAD_DIR = OTR_LIB / "Downloads"
-BLOG_OUTPUT = SITE_ROOT / "blog"
+BLOG_OUTPUT = SITE_ROOT
 AUDIO_OUTPUT = SITE_ROOT / "audio"
 LOG_DIR = SITE_ROOT / "scripts/logs"
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL_OVERRIDE", "llama3.2:3b")
@@ -441,7 +441,7 @@ def build_page(show, title, date, ep_num, mp3_web, content, prev_ep=None, next_e
     year = date.year if date else ""
     ep_label = f"Episode {ep_num} · " if ep_num else ""
     slug = slugify(title)
-    canonical = f"https://ghostofradio.com/blog/{show['slug']}/{slug}.html"
+    canonical = f"https://ghostofradio.com/{show['slug']}/{slug}.html"
     import random; random.seed(hash(title))
     bars = str([random.randint(4, 32) for _ in range(56)])
     prev_html = f'<a href="{prev_ep[0]}">&larr; {prev_ep[1][:40]}</a>' if prev_ep else "<span></span>"
@@ -468,10 +468,10 @@ def build_page(show, title, date, ep_num, mp3_web, content, prev_ep=None, next_e
 <header class="site-header"><nav class="nav">
 <a href="/index.html" class="nav__logo"><span class="nav__logo-icon"><img src="/images/logo.png" alt="Ghost of Radio" class="nav__logo-img"></span> Ghost of Radio</a>
 <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-<ul class="nav__links"><li><a href="/index.html">Home</a></li><li><a href="/shows.html">Shows</a></li><li><a href="/blog/{show['slug']}/">Browse Episodes</a></li><li><a href="https://www.youtube.com/@GhostOfRadio" target="_blank" rel="noopener">YouTube</a></li></ul>
+<ul class="nav__links"><li><a href="/index.html">Home</a></li><li><a href="/shows.html">Shows</a></li><li><a href="/{show['slug']}/">Browse Episodes</a></li><li><a href="https://www.youtube.com/@GhostOfRadio" target="_blank" rel="noopener">YouTube</a></li></ul>
 </nav></header>
 <div class="page-header">
-<div class="container"><div class="breadcrumb"><a href="/index.html">Home</a><span>›</span><a href="/shows.html">Shows</a><span>›</span><a href="/blog/{show['slug']}/">{show['name']}</a><span>›</span>{title}</div></div>
+<div class="container"><div class="breadcrumb"><a href="/index.html">Home</a><span>›</span><a href="/shows.html">Shows</a><span>›</span><a href="/{show['slug']}/">{show['name']}</a><span>›</span>{title}</div></div>
 <h1 class="flicker">{title}</h1><div class="divider"></div>
 <p>{show['name']} &nbsp;·&nbsp; {ep_label}{date_str}</p>
 </div>
@@ -517,7 +517,7 @@ def build_page(show, title, date, ep_num, mp3_web, content, prev_ep=None, next_e
 <div class="episode-nav">{prev_html}{next_html}</div>
 <div class="divider" style="margin:3rem auto;"></div>
 <p style="text-align:center;font-family:var(--font-heading);font-size:0.75rem;letter-spacing:0.15em;color:#6b6355;">
-<a href="/blog/{show['slug']}/" style="color:#c9a84c;text-decoration:none;">← Browse All {show['name']} Episodes</a></p>
+<a href="/{show['slug']}/" style="color:#c9a84c;text-decoration:none;">← Browse All {show['name']} Episodes</a></p>
 </article></div></section>
 <footer class="site-footer"><div class="container">
 <p>&copy; 2024 Ghost of Radio &mdash; Where Vintage Broadcasts Return from the Dead</p>
@@ -598,8 +598,8 @@ def process_show(show):
         except: content = {"summary": f"A classic episode of {show['name']}.", "historical": "", "why": "Essential old time radio."}
         
         # Nav
-        prev_ep = (f"/blog/{show['slug']}/{episodes[i-1]['slug']}.html", episodes[i-1]['title']) if i > 0 else None
-        next_ep = (f"/blog/{show['slug']}/{episodes[i+1]['slug']}.html", episodes[i+1]['title']) if i < len(episodes)-1 else None
+        prev_ep = (f"/{show['slug']}/{episodes[i-1]['slug']}.html", episodes[i-1]['title']) if i > 0 else None
+        next_ep = (f"/{show['slug']}/{episodes[i+1]['slug']}.html", episodes[i+1]['title']) if i < len(episodes)-1 else None
         
         html = build_page(show, ep["title"], ep["date"], None, mp3_web, content, prev_ep, next_ep)
         out.write_text(html, encoding="utf-8")
@@ -612,12 +612,12 @@ def process_show(show):
     cards = ""
     for ep in episodes:
         ds = ep["date"].strftime("%B %d, %Y") if ep["date"] else "Unknown"
-        cards += f'<a href="/blog/{show["slug"]}/{ep["slug"]}.html" class="episode-card"><div class="episode-card__date">{ds}</div><div class="episode-card__title">{ep["title"]}</div><div class="episode-card__listen">▶ Listen Free</div></a>\n'
+        cards += f'<a href="/{show["slug"]}/{ep["slug"]}.html" class="episode-card"><div class="episode-card__date">{ds}</div><div class="episode-card__title">{ep["title"]}</div><div class="episode-card__listen">▶ Listen Free</div></a>\n'
     
     idx = f"""<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>{show['name']} — All Episodes | Ghost of Radio</title>
 <meta name="description" content="Stream all {len(episodes)} episodes of {show['name']} free. {show['description'][:150]}">
-<link rel="canonical" href="https://ghostofradio.com/blog/{show['slug']}/">
+<link rel="canonical" href="https://ghostofradio.com/{show['slug']}/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
