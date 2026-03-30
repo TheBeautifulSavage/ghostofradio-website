@@ -39,7 +39,7 @@ ALL_SHOWS = [
 
     {"id": "escape", "name": "Escape", "slug": "escape",
      "network": "CBS", "years": "1947–1954",
-     "archive_ids": ["escape_otr", "EscapeOTR"],
+     "archive_ids": ["OTRR_Escape_Singles"],
      "description": "Designed to free you from the four walls of today — adventure and escape from the mundane into the exotic.",
      "intro_voice": "Tired of the everyday routine? Ever dream of a life of romantic adventure?"},
 
@@ -57,13 +57,13 @@ ALL_SHOWS = [
 
     {"id": "gunsmoke", "name": "Gunsmoke", "slug": "gunsmoke",
      "network": "CBS", "years": "1952–1961",
-     "archive_ids": ["Gunsmoke_OTR", "gunsmoke_radio"],
+     "archive_ids": ["OTRR_Gunsmoke_Singles"],
      "description": "The adult western that brought the frontier to life. William Conrad as Matt Dillon, marshal of Dodge City.",
      "intro_voice": "Around Dodge City and in the territory out west, there's just one way to handle the killers and the spoilers, and that's with a U.S. Marshal and the smell of gunsmoke."},
 
     {"id": "x-minus-one", "name": "X Minus One", "slug": "x-minus-one",
      "network": "NBC", "years": "1955–1958",
-     "archive_ids": ["XMinusOne", "x_minus_one_otr"],
+     "archive_ids": ["OTRR_X_Minus_One_Singles"],
      "description": "Dramatizations of the finest science fiction from Galaxy, Astounding, and other magazines. The pinnacle of sci-fi radio.",
      "intro_voice": "Countdown for blastoff... X minus five, four, three, two, X minus one — Fire!"},
 
@@ -118,7 +118,7 @@ ALL_SHOWS = [
 
     {"id": "philip-marlowe", "name": "The Adventures of Philip Marlowe", "slug": "philip-marlowe",
      "network": "NBC / CBS", "years": "1947–1951",
-     "archive_ids": ["PhilipMarlowe_OTR", "philip_marlowe_otr"],
+     "archive_ids": ["OTRR_Philip_Marlowe_Singles"],
      "description": "Raymond Chandler's hard-boiled Los Angeles private detective in full radio glory.",
      "intro_voice": "Philip Marlowe, private detective."},
 
