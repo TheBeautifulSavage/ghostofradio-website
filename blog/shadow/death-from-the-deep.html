@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/radio-player.css">
 </head>
 <body>
 
@@ -56,6 +57,63 @@
     <div class="container">
       <article class="about-content fade-in">
         <time datetime="1938-04-03" style="font-family: var(--font-heading); color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase;">April 03, 1938</time>
+
+        <!-- RADIO PLAYER -->
+        <div class="radio-player" id="radioPlayer">
+          <div class="radio-top">
+            <div class="radio-grille"></div>
+            <div class="radio-info">
+              <div class="radio-show-name">The Shadow</div>
+              <div class="radio-episode-title">Death From the Deep</div>
+              <div class="radio-meta">April 03, 1938</div>
+            </div>
+          </div>
+          <div class="radio-body">
+            <div class="radio-waveform" id="waveform" aria-hidden="true"></div>
+            <div class="radio-controls">
+              <button class="radio-play-btn" id="playBtn" aria-label="Play episode">
+                <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              </button>
+              <div class="radio-progress-wrap">
+                <input type="range" class="radio-progress" id="progressBar" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+                <div class="radio-time">
+                  <span id="currentTime">0:00</span>
+                  <span id="duration">--:--</span>
+                </div>
+              </div>
+              <div class="radio-volume-wrap">
+                <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+                <input type="range" class="radio-volume" id="volumeBar" min="0" max="1" step="0.05" value="0.85" aria-label="Volume">
+              </div>
+            </div>
+          </div>
+          <div class="radio-footer">
+            <span class="radio-broadcast" id="broadcastLabel">· GHOST OF RADIO ·</span>
+            <a class="radio-download" href="https://archive.org/download/the-shadow-radio-show-1937-1954-old-time-radio-all-available-episodes/1938-04-03%20-%20Death%20From%20the%20Deep.MP3" download>⬇ Download MP3</a>
+          </div>
+          <audio id="episodeAudio" preload="none">
+            <source src="https://archive.org/download/the-shadow-radio-show-1937-1954-old-time-radio-all-available-episodes/1938-04-03%20-%20Death%20From%20the%20Deep.MP3" type="audio/mpeg">
+          </audio>
+        </div>
+        <script>
+          (function(){
+            var heights=[22,9,11,26,31,24,6,5,8,21,28,15,13,8,4,23,5,5,7,8,28,28,32,5,26,31,18,14,18,27,22,15,24,11,25,31,11,16,5,16,13,27,10,25,20,14,31,24,13,5,14,11,28,7,12,20];
+            var wf=document.getElementById('waveform');
+            heights.forEach(function(h){var b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
+            var audio=document.getElementById('episodeAudio'),pb2=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),brs=wf.querySelectorAll('span');
+            function fmt(s){if(isNaN(s))return'--:--';return Math.floor(s/60)+':'+(Math.floor(s%60)<10?'0':'')+Math.floor(s%60);}
+            var af;function anim(){var p=audio.duration?audio.currentTime/audio.duration:0;brs.forEach(function(b,i){b.classList.toggle('active',i<Math.floor(p*brs.length));});af=requestAnimationFrame(anim);}
+            pb2.addEventListener('click',function(){if(audio.paused){audio.play();pb2.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();pb2.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
+            audio.addEventListener('timeupdate',function(){if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+            audio.addEventListener('loadedmetadata',function(){dur.textContent=fmt(audio.duration);});
+            audio.addEventListener('ended',function(){pb2.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
+            pb.addEventListener('input',function(){if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+            vb.addEventListener('input',function(){audio.volume=vb.value;});
+            audio.volume=0.85;
+          })();
+        </script>
+
 
         <p><em>The radio crackles to life, and through the static, a chilling voice emerges...</em></p>
 
