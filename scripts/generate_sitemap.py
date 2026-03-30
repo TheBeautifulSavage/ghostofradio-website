@@ -22,13 +22,13 @@ def generate():
         urls.append((url, today, freq, priority))
 
     # Blog index pages
-    blog_root = SITE_ROOT / "blog"
+    blog_root = SITE_ROOT
     for show_dir in sorted(blog_root.iterdir()):
         if show_dir.is_dir():
             idx = show_dir / "index.html"
             if idx.exists():
                 slug = show_dir.name
-                urls.append((f"{BASE_URL}/blog/{slug}/", today, "daily", "0.8"))
+                urls.append((f"{BASE_URL}/{slug}/", today, "daily", "0.8"))
 
     # All episode pages
     for show_dir in sorted(blog_root.iterdir()):
@@ -38,7 +38,7 @@ def generate():
                 if html.name == "index.html":
                     continue
                 mtime = datetime.fromtimestamp(html.stat().st_mtime).strftime("%Y-%m-%d")
-                urls.append((f"{BASE_URL}/blog/{slug}/{html.name}", mtime, "monthly", "0.6"))
+                urls.append((f"{BASE_URL}/{slug}/{html.name}", mtime, "monthly", "0.6"))
 
     # Build XML
     lines = ['<?xml version="1.0" encoding="UTF-8"?>']

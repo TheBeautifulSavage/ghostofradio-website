@@ -17,7 +17,7 @@ from datetime import datetime
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL_OVERRIDE", "qwen2.5:14b")
 SITE_ROOT = Path("/Users/mac1/Projects/ghostofradio")
 AUDIO_OUTPUT = SITE_ROOT / "audio"
-BLOG_OUTPUT = SITE_ROOT / "blog"
+BLOG_OUTPUT = SITE_ROOT
 COMMIT_EVERY = 10  # commit to git every N episodes
 START_FROM = 1     # skip first N episodes (for resuming)
 
@@ -32,7 +32,7 @@ SHOWS = [
         "description": "The classic crime drama starring Lamont Cranston, who has learned the power to cloud men's minds so they cannot see him.",
         "intro_voice": "Who knows what evil lurks in the hearts of men? The Shadow knows!",
         "mp3_dir": "/Users/mac1/OTR_Library/The_Shadow",
-        "blog_subdir": "shadow",
+        "show_subdir": "shadow",
     },
     {
         "id": "sherlock",
@@ -43,7 +43,7 @@ SHOWS = [
         "description": "Basil Rathbone and Nigel Bruce star as Holmes and Watson in radio's most beloved detective series.",
         "intro_voice": "Elementary, my dear Watson.",
         "mp3_dir": "/Users/mac1/OTR_Library/Sherlock_Holmes",
-        "blog_subdir": "sherlock",
+        "show_subdir": "sherlock",
     },
     {
         "id": "whistler",
@@ -54,7 +54,7 @@ SHOWS = [
         "description": "A mysterious narrator who knows your innermost thoughts — and the strange twists of fate that await ordinary people who make desperate choices.",
         "intro_voice": "I am the Whistler, and I know many things, for I walk by night.",
         "mp3_dir": "/Users/mac1/OTR_Library/Old_Time_Radio_Show/OTRR_Whistler_Singles",
-        "blog_subdir": "whistler",
+        "show_subdir": "whistler",
     },
     {
         "id": "cbs-mystery",
@@ -65,7 +65,7 @@ SHOWS = [
         "description": "E.G. Marshall hosts over 1,000 tales of mystery and suspense — the last great original radio drama anthology.",
         "intro_voice": "Come in. Welcome. I'm E.G. Marshall, your host for the CBS Radio Mystery Theater.",
         "mp3_dir": "/Users/mac1/OTR_Library/Old_Time_Radio_Show/CBS Radio Mystery cbsrmt-1975_2023",
-        "blog_subdir": "cbs-mystery",
+        "show_subdir": "cbs-mystery",
     },
     {
         "id": "sounds-of-darkness",
@@ -76,7 +76,7 @@ SHOWS = [
         "description": "Anthology series of crime, mystery, and suspense from the twilight years of American radio drama.",
         "intro_voice": "From the shadows, a tale is told...",
         "mp3_dir": "/Users/mac1/OTR_Library/Old_Time_Radio_Show/sounds-of-darkness-sa-71-03-16-098-a-friend-of-uncle-sam_202102",
-        "blog_subdir": "sounds-of-darkness",
+        "show_subdir": "sounds-of-darkness",
     },
 ]
 
@@ -227,7 +227,7 @@ def build_html(show, episode_title, air_date, episode_number, mp3_web_path, mp3_
     
     title_tag = f"{episode_title} | {show['name']} | {date_str} | Ghost of Radio"
     meta_desc = f"Listen to '{episode_title}' from {show['name']}. {date_str}. Stream free on Ghost of Radio — the ultimate old time radio archive."
-    canonical = f"https://ghostofradio.com/blog/{show['blog_subdir']}/{slug}.html"
+    canonical = f"https://ghostofradio.com/{show['show_subdir']}/{slug}.html"
 
     prev_link = f'<a href="{prev_ep[0]}">&larr; {prev_ep[1]}</a>' if prev_ep else "<span></span>"
     next_link = f'<a href="{next_ep[0]}">{next_ep[1]} &rarr;</a>' if next_ep else "<span></span>"
@@ -288,7 +288,7 @@ def build_html(show, episode_title, air_date, episode_number, mp3_web_path, mp3_
       <ul class="nav__links">
         <li><a href="/index.html">Home</a></li>
         <li><a href="/shows.html">Shows</a></li>
-        <li><a href="/blog/{show['blog_subdir']}/">Browse Episodes</a></li>
+        <li><a href="/{show['show_subdir']}/">Browse Episodes</a></li>
         <li><a href="https://www.youtube.com/@GhostOfRadio" target="_blank" rel="noopener">YouTube</a></li>
       </ul>
     </nav>
@@ -299,7 +299,7 @@ def build_html(show, episode_title, air_date, episode_number, mp3_web_path, mp3_
       <div class="breadcrumb">
         <a href="/index.html">Home</a><span>›</span>
         <a href="/shows.html">Shows</a><span>›</span>
-        <a href="/blog/{show['blog_subdir']}/">{show['name']}</a><span>›</span>
+        <a href="/{show['show_subdir']}/">{show['name']}</a><span>›</span>
         {episode_title}
       </div>
     </div>
@@ -394,7 +394,7 @@ def build_html(show, episode_title, air_date, episode_number, mp3_web_path, mp3_
         <div class="divider" style="margin: 3rem auto;"></div>
 
         <p style="text-align:center; font-family: var(--font-heading); font-size: 0.75rem; letter-spacing: 0.15em; color: #6b6355;">
-          <a href="/blog/{show['blog_subdir']}/" style="color: #c9a84c; text-decoration: none;">← Browse All {show['name']} Episodes</a>
+          <a href="/{show['show_subdir']}/" style="color: #c9a84c; text-decoration: none;">← Browse All {show['name']} Episodes</a>
         </p>
 
       </article>
@@ -456,10 +456,10 @@ def process_show(show, start_from=0):
     mp3_files = get_mp3_files(show["mp3_dir"])
     print(f"Found {len(mp3_files)} episodes")
     
-    blog_dir = BLOG_OUTPUT / show["blog_subdir"]
+    blog_dir = BLOG_OUTPUT / show["show_subdir"]
     blog_dir.mkdir(parents=True, exist_ok=True)
     
-    audio_dir = AUDIO_OUTPUT / show["blog_subdir"]
+    audio_dir = AUDIO_OUTPUT / show["show_subdir"]
     audio_dir.mkdir(parents=True, exist_ok=True)
     
     # Build episode list for navigation
@@ -491,7 +491,7 @@ def process_show(show, start_from=0):
         mp3_dest = audio_dir / f"{slug}.mp3"
         if not mp3_dest.exists():
             shutil.copy2(ep["file"], mp3_dest)
-        mp3_web_path = f"/audio/{show['blog_subdir']}/{slug}.mp3"
+        mp3_web_path = f"/audio/{show['show_subdir']}/{slug}.mp3"
         
         # Generate content with Ollama
         try:
@@ -505,10 +505,10 @@ def process_show(show, start_from=0):
         next_ep = None
         if i > 0:
             prev_slug = episodes[i-1]["slug"]
-            prev_ep = (f"/blog/{show['blog_subdir']}/{prev_slug}.html", episodes[i-1]["title"])
+            prev_ep = (f"/{show['show_subdir']}/{prev_slug}.html", episodes[i-1]["title"])
         if i < len(episodes)-1:
             next_slug = episodes[i+1]["slug"]
-            next_ep = (f"/blog/{show['blog_subdir']}/{next_slug}.html", episodes[i+1]["title"])
+            next_ep = (f"/{show['show_subdir']}/{next_slug}.html", episodes[i+1]["title"])
         
         # Build HTML
         html = build_html(show, ep["title"], ep["date"], ep.get("ep_num"), mp3_web_path, mp3_dest.name, content, prev_ep, next_ep)
@@ -527,14 +527,14 @@ def process_show(show, start_from=0):
 
 def generate_show_index(show, episodes):
     """Generate a browseable index page for all episodes of a show."""
-    blog_dir = BLOG_OUTPUT / show["blog_subdir"]
+    blog_dir = BLOG_OUTPUT / show["show_subdir"]
     
     episode_cards = ""
     for ep in episodes:
         date_str = ep["date"].strftime("%B %d, %Y") if ep["date"] else "Unknown date"
         ep_label = f"Ep. {ep['ep_num']} · " if ep.get("ep_num") else ""
         episode_cards += f"""
-        <a href="/blog/{show['blog_subdir']}/{ep['slug']}.html" class="episode-card">
+        <a href="/{show['show_subdir']}/{ep['slug']}.html" class="episode-card">
           <div class="episode-card__date">{ep_label}{date_str}</div>
           <div class="episode-card__title">{ep['title']}</div>
           <div class="episode-card__listen">▶ Listen Free</div>
@@ -547,7 +547,7 @@ def generate_show_index(show, episodes):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{show['name']} — All Episodes | Ghost of Radio</title>
   <meta name="description" content="Browse and stream all {len(episodes)} episodes of {show['name']} free on Ghost of Radio. {show['description']}">
-  <link rel="canonical" href="https://ghostofradio.com/blog/{show['blog_subdir']}/">
+  <link rel="canonical" href="https://ghostofradio.com/{show['show_subdir']}/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
