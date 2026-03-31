@@ -4,86 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Shows — Ghost of Radio | Classic Old Time Radio</title>
-  <meta name="description" content="Browse 46 classic old time radio shows with 12,807 episodes. Free to stream — detective noir, westerns, horror, comedy, sci-fi and more.">
+  <meta name="description" content="Browse 48 classic old time radio shows with 12,935 free episodes. Search by genre — detective noir, westerns, horror, comedy, sci-fi and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/images/logo.png">
   <style>
-    .genre-heading {
-      color: #c9a84c;
-      font-family: 'Special Elite', cursive;
-      font-size: 1.4rem;
-      margin: 2.5rem 0 1rem;
-      padding-bottom: .5rem;
-      border-bottom: 1px solid #333;
-      letter-spacing: .05em;
+    .shows-toolbar {
+      display:flex; flex-wrap:wrap; gap:.75rem; align-items:center;
+      margin-bottom:1.5rem; padding:1rem; background:#111; border-radius:8px;
+      border:1px solid #222;
     }
-    .show-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 1rem;
+    .search-box {
+      flex:1; min-width:200px;
+      background:#0a0a0a; border:1px solid #333; border-radius:6px;
+      padding:.6rem 1rem; color:#f0dca0; font-size:.95rem;
+      font-family:'Crimson Text',serif;
+    }
+    .search-box::placeholder { color:#555; }
+    .search-box:focus { outline:none; border-color:#c9a84c; }
+    .genre-filters { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .genre-btn {
+      background:#1a1a1a; border:1px solid #333; border-radius:20px;
+      padding:.35rem .9rem; color:#888; font-size:.8rem; cursor:pointer;
+      transition:all .2s; letter-spacing:.04em; text-transform:uppercase;
+    }
+    .genre-btn:hover, .genre-btn.active {
+      background:var(--gc, #c9a84c); border-color:var(--gc, #c9a84c);
+      color:#0a0a0a; font-weight:700;
+    }
+    .genre-btn[data-genre="all"].active { background:#c9a84c; border-color:#c9a84c; color:#0a0a0a; }
+    .shows-count { color:#888; font-size:.85rem; margin-bottom:1rem; }
+    .shows-count span { color:#c9a84c; font-weight:700; }
+    .shows-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+      gap:1.25rem;
     }
     .show-card {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 8px;
-      padding: 1.25rem;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: border-color .2s, transform .2s;
-      position: relative;
+      background:#111; border:1px solid #222; border-radius:8px;
+      text-decoration:none; color:inherit; display:block;
+      transition:border-color .2s, transform .2s; overflow:hidden;
     }
-    .show-card:hover {
-      border-color: #c9a84c;
-      transform: translateY(-2px);
+    .show-card:hover { border-color:#c9a84c; transform:translateY(-3px); }
+    .show-card.hidden { display:none; }
+    .show-card__img {
+      height:150px; background-size:cover; background-position:center;
+      position:relative;
     }
     .show-card__badge {
-      display: inline-block;
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: .2rem .6rem;
-      border-radius: 4px;
-      color: #fff;
-      margin-bottom: .6rem;
+      position:absolute; top:.6rem; left:.6rem;
+      font-size:.6rem; font-weight:700; letter-spacing:.08em;
+      text-transform:uppercase; padding:.2rem .6rem; border-radius:4px; color:#fff;
     }
+    .show-card__body { padding:.9rem; }
     .show-card__title {
-      font-family: 'Special Elite', cursive;
-      font-size: 1.1rem;
-      color: #f0dca0;
-      margin: 0 0 .3rem;
-      line-height: 1.3;
+      font-family:'Special Elite',cursive; font-size:1rem;
+      color:#f0dca0; margin:0 0 .3rem; line-height:1.3;
     }
-    .show-card__era {
-      font-size: .75rem;
-      color: #888;
-      margin-bottom: .6rem;
-    }
-    .show-card__desc {
-      font-size: .85rem;
-      color: #aaa;
-      line-height: 1.5;
-      margin-bottom: .75rem;
-    }
-    .show-card__count {
-      font-size: .75rem;
-      color: #c9a84c;
-      font-weight: 600;
-    }
-    .shows-stats {
-      text-align: center;
-      padding: 1rem;
-      color: #888;
-      font-size: .9rem;
-      margin-bottom: 1rem;
-    }
-    .shows-stats strong { color: #c9a84c; }
+    .show-card__era { font-size:.72rem; color:#777; margin-bottom:.4rem; }
+    .show-card__count { font-size:.75rem; color:#c9a84c; font-weight:600; }
+    .no-results { text-align:center; color:#666; padding:3rem; font-size:1.1rem; display:none; }
   </style>
 </head>
 <body>
@@ -92,9 +74,7 @@
       <a href="/index.html" class="nav__logo">
         <span class="nav__logo-icon"><img src="/images/logo.png" alt="Ghost of Radio" class="nav__logo-img"></span> Ghost of Radio
       </a>
-      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav__links">
         <li><a href="/index.html">Home</a></li>
         <li><a href="/shows.html" class="active">Shows</a></li>
@@ -107,392 +87,513 @@
   <div class="page-header">
     <h1 class="flicker">All Shows</h1>
     <div class="divider"></div>
-    <p>The complete Ghost of Radio library — 46 shows, 12,807 episodes, all free to stream.</p>
+    <p>48 classic radio shows · 12,935 episodes · All free to stream</p>
   </div>
 
   <section class="section">
     <div class="container">
-      <div class="shows-stats">
-        <strong>46</strong> shows &nbsp;·&nbsp; <strong>12,807</strong> episodes &nbsp;·&nbsp; All free to stream
+
+      <div class="shows-toolbar">
+        <input type="text" class="search-box" id="showSearch" placeholder="Search shows..." autocomplete="off">
+        <div class="genre-filters">
+          <button class="genre-btn active" data-genre="all">All Shows</button>
+<button class="genre-btn" data-genre="Adventure" style="--gc:#2d6a4f">Adventure</button>
+<button class="genre-btn" data-genre="Comedy" style="--gc:#e67e22">Comedy</button>
+<button class="genre-btn" data-genre="Detective" style="--gc:#c9a84c">Detective</button>
+<button class="genre-btn" data-genre="Drama" style="--gc:#5d6d7e">Drama</button>
+<button class="genre-btn" data-genre="Mystery" style="--gc:#7b2d8b">Mystery</button>
+<button class="genre-btn" data-genre="Sci-Fi" style="--gc:#1a6b8a">Sci-Fi</button>
+<button class="genre-btn" data-genre="Western" style="--gc:#8b4513">Western</button>
+
+        </div>
       </div>
 
-      <h2 class="genre-heading">Action</h2>
-      <div class="show-grid">
-        <a href="/green-hornet/" class="show-card">
-          <div class="show-card__badge" style="background:#1a5276">Action</div>
-          <h3 class="show-card__title">The Green Hornet</h3>
-          <div class="show-card__era">1936–1952 · NBC / ABC</div>
-          <p class="show-card__desc">Britt Reid and his faithful valet Kato — fighting crime as the Green Hornet, hunted by police as a criminal, but always ...</p>
-          <div class="show-card__count">199 episodes</div>
-        </a>
-      </div>
+      <div class="shows-count">Showing <span id="showCount">48</span> shows</div>
 
-      <h2 class="genre-heading">Adventure</h2>
-      <div class="show-grid">
-        <a href="/escape/" class="show-card">
-          <div class="show-card__badge" style="background:#2d6a4f">Adventure</div>
-          <h3 class="show-card__title">Escape</h3>
-          <div class="show-card__era">1947–1954 · CBS</div>
-          <p class="show-card__desc">Designed to free you from the four walls of today — adventure stories of courage and survival from the far corners of th...</p>
-          <div class="show-card__count">251 episodes</div>
+      <div class="shows-grid" id="showsGrid">
+        <a href="/johnny-dollar/" class="show-card" data-genre="Detective" data-name="yours truly, johnny dollar">
+          <div class="show-card__img" style="background-image:url('/images/johnny-dollar.jpg')">
+            <span class="show-card__badge" style="background:#c9a84c">Detective</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Yours Truly, Johnny Dollar</h3>
+            <div class="show-card__era">1949–1962 · CBS</div>
+            <div class="show-card__count">362 episodes</div>
+          </div>
         </a>
-        <a href="/challenge-yukon/" class="show-card">
-          <div class="show-card__badge" style="background:#2d6a4f">Adventure</div>
-          <h3 class="show-card__title">Challenge of the Yukon</h3>
-          <div class="show-card__era">1938–1955 · ABC / Mutual</div>
-          <p class="show-card__desc">Sergeant Preston of the Yukon and his faithful dog Yukon King patrol the frozen Northwest. On, King! On, you huskies!...</p>
-          <div class="show-card__count">505 episodes</div>
+<a href="/sam-spade/" class="show-card" data-genre="Detective" data-name="sam spade, private detective">
+          <div class="show-card__img" style="background-image:url('/images/sam-spade.jpg')">
+            <span class="show-card__badge" style="background:#c9a84c">Detective</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Sam Spade, Private Detective</h3>
+            <div class="show-card__era">1946–1951 · NBC / CBS</div>
+            <div class="show-card__count">71 episodes</div>
+          </div>
         </a>
-        <a href="/bold-venture/" class="show-card">
-          <div class="show-card__badge" style="background:#2d6a4f">Adventure</div>
-          <h3 class="show-card__title">Bold Venture</h3>
-          <div class="show-card__era">1951–1952 · Syndicated</div>
-          <p class="show-card__desc">Humphrey Bogart and Lauren Bacall reunited for radio — Slate Shannon and Sailor Duval on exotic Caribbean adventures. Gl...</p>
-          <div class="show-card__count">57 episodes</div>
+<a href="/philip-marlowe/" class="show-card" data-genre="Detective" data-name="philip marlowe">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#c9a84c">Detective</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Philip Marlowe</h3>
+            <div class="show-card__era">1947–1951 · NBC / CBS</div>
+            <div class="show-card__count">189 episodes</div>
+          </div>
         </a>
-        <a href="/box-13/" class="show-card">
-          <div class="show-card__badge" style="background:#2d6a4f">Adventure</div>
-          <h3 class="show-card__title">Box 13</h3>
-          <div class="show-card__era">1948–1949 · Syndicated</div>
-          <p class="show-card__desc">Alan Ladd as Dan Holiday, a mystery writer who advertises for adventure: 'Adventure wanted — will go anywhere, do anythi...</p>
-          <div class="show-card__count">97 episodes</div>
+<a href="/richard-diamond/" class="show-card" data-genre="Detective" data-name="richard diamond">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#c9a84c">Detective</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Richard Diamond</h3>
+            <div class="show-card__era">1949–1953 · NBC / CBS</div>
+            <div class="show-card__count">106 episodes</div>
+          </div>
         </a>
-        <a href="/the-saint/" class="show-card">
-          <div class="show-card__badge" style="background:#2d6a4f">Adventure</div>
-          <h3 class="show-card__title">The Saint</h3>
-          <div class="show-card__era">1945–1951 · NBC / CBS</div>
-          <p class="show-card__desc">Simon Templar — the Saint — a modern Robin Hood who steals from criminals and keeps the proceeds. Suave, witty, and utte...</p>
-          <div class="show-card__count">38 episodes</div>
+<a href="/broadway-beat/" class="show-card" data-genre="Detective" data-name="broadway is my beat">
+          <div class="show-card__img" style="background-image:url('/images/broadway-beat.jpg')">
+            <span class="show-card__badge" style="background:#c9a84c">Detective</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Broadway Is My Beat</h3>
+            <div class="show-card__era">1949–1954 · CBS</div>
+            <div class="show-card__count">150 episodes</div>
+          </div>
         </a>
-      </div>
+<a href="/nightbeat/" class="show-card" data-genre="Detective" data-name="nightbeat">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#c9a84c">Detective</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Nightbeat</h3>
+            <div class="show-card__era">1950–1952 · NBC</div>
+            <div class="show-card__count">60 episodes</div>
+          </div>
+        </a>
+<a href="/the-falcon/" class="show-card" data-genre="Detective" data-name="the falcon">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#c9a84c">Detective</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Falcon</h3>
+            <div class="show-card__era">1943–1954 · NBC / Mutual</div>
+            <div class="show-card__count">102 episodes</div>
+          </div>
+        </a>
+<a href="/rogues-gallery/" class="show-card" data-genre="Detective" data-name="rogue's gallery">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#c9a84c">Detective</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Rogue's Gallery</h3>
+            <div class="show-card__era">1945–1951 · NBC / Mutual</div>
+            <div class="show-card__count">24 episodes</div>
+          </div>
+        </a>
+<a href="/dragnet/" class="show-card" data-genre="Detective" data-name="dragnet">
+          <div class="show-card__img" style="background-image:url('/images/dragnet.jpg')">
+            <span class="show-card__badge" style="background:#c9a84c">Detective</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Dragnet</h3>
+            <div class="show-card__era">1949–1957 · NBC</div>
+            <div class="show-card__count">830 episodes</div>
+          </div>
+        </a>
+<a href="/shadow/" class="show-card" data-genre="Mystery" data-name="the shadow">
+          <div class="show-card__img" style="background-image:url('/images/shadow.jpg')">
+            <span class="show-card__badge" style="background:#7b2d8b">Mystery</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Shadow</h3>
+            <div class="show-card__era">1937–1954 · Mutual</div>
+            <div class="show-card__count">197 episodes</div>
+          </div>
+        </a>
+<a href="/suspense/" class="show-card" data-genre="Mystery" data-name="suspense">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#7b2d8b">Mystery</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Suspense</h3>
+            <div class="show-card__era">1942–1962 · CBS</div>
+            <div class="show-card__count">1,049 episodes</div>
+          </div>
+        </a>
+<a href="/inner-sanctum/" class="show-card" data-genre="Mystery" data-name="inner sanctum mysteries">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#7b2d8b">Mystery</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Inner Sanctum Mysteries</h3>
+            <div class="show-card__era">1941–1952 · NBC / CBS</div>
+            <div class="show-card__count">63 episodes</div>
+          </div>
+        </a>
+<a href="/lights-out/" class="show-card" data-genre="Mystery" data-name="lights out">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#7b2d8b">Mystery</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Lights Out</h3>
+            <div class="show-card__era">1934–1947 · NBC / CBS</div>
+            <div class="show-card__count">138 episodes</div>
+          </div>
+        </a>
+<a href="/quiet-please/" class="show-card" data-genre="Mystery" data-name="quiet please">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#7b2d8b">Mystery</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Quiet Please</h3>
+            <div class="show-card__era">1947–1949 · Mutual</div>
+            <div class="show-card__count">91 episodes</div>
+          </div>
+        </a>
+<a href="/mysterious-traveler/" class="show-card" data-genre="Mystery" data-name="the mysterious traveler">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#7b2d8b">Mystery</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Mysterious Traveler</h3>
+            <div class="show-card__era">1943–1953 · Mutual</div>
+            <div class="show-card__count">70 episodes</div>
+          </div>
+        </a>
+<a href="/the-clock/" class="show-card" data-genre="Mystery" data-name="the clock">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#7b2d8b">Mystery</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Clock</h3>
+            <div class="show-card__era">1946–1948 · NBC</div>
+            <div class="show-card__count">54 episodes</div>
+          </div>
+        </a>
+<a href="/cbs-mystery/" class="show-card" data-genre="Mystery" data-name="cbs radio mystery theater">
+          <div class="show-card__img" style="background-image:url('/images/cbs-mystery.jpg')">
+            <span class="show-card__badge" style="background:#7b2d8b">Mystery</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">CBS Radio Mystery Theater</h3>
+            <div class="show-card__era">1974–1982 · CBS</div>
+            <div class="show-card__count">212 episodes</div>
+          </div>
+        </a>
+<a href="/whistler/" class="show-card" data-genre="Mystery" data-name="the whistler">
+          <div class="show-card__img" style="background-image:url('/images/whistler.jpg')">
+            <span class="show-card__badge" style="background:#7b2d8b">Mystery</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Whistler</h3>
+            <div class="show-card__era">1942–1955 · CBS</div>
+            <div class="show-card__count">939 episodes</div>
+          </div>
+        </a>
+<a href="/crime-classics/" class="show-card" data-genre="Mystery" data-name="crime classics">
+          <div class="show-card__img" style="background-image:url('/images/crime-classics.jpg')">
+            <span class="show-card__badge" style="background:#7b2d8b">Mystery</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Crime Classics</h3>
+            <div class="show-card__era">1953–1954 · CBS</div>
+            <div class="show-card__count">65 episodes</div>
+          </div>
+        </a>
+<a href="/sherlock/" class="show-card" data-genre="Mystery" data-name="sherlock holmes">
+          <div class="show-card__img" style="background-image:url('/images/sherlock.jpg')">
+            <span class="show-card__badge" style="background:#7b2d8b">Mystery</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Sherlock Holmes</h3>
+            <div class="show-card__era">1930–1955 · Various</div>
+            <div class="show-card__count">52 episodes</div>
+          </div>
+        </a>
+<a href="/loneranger/" class="show-card" data-genre="Western" data-name="the lone ranger">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#8b4513">Western</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Lone Ranger</h3>
+            <div class="show-card__era">1933–1954 · ABC</div>
+            <div class="show-card__count">2,154 episodes</div>
+          </div>
+        </a>
+<a href="/gunsmoke/" class="show-card" data-genre="Western" data-name="gunsmoke">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#8b4513">Western</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Gunsmoke</h3>
+            <div class="show-card__era">1952–1961 · CBS</div>
+            <div class="show-card__count">473 episodes</div>
+          </div>
+        </a>
+<a href="/cisco-kid/" class="show-card" data-genre="Western" data-name="the cisco kid">
+          <div class="show-card__img" style="background-image:url('/images/cisco-kid.jpg')">
+            <span class="show-card__badge" style="background:#8b4513">Western</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Cisco Kid</h3>
+            <div class="show-card__era">1942–1956 · Mutual</div>
+            <div class="show-card__count">153 episodes</div>
+          </div>
+        </a>
+<a href="/challenge-yukon/" class="show-card" data-genre="Western" data-name="challenge of the yukon">
+          <div class="show-card__img" style="background-image:url('/images/challenge-yukon.jpg')">
+            <span class="show-card__badge" style="background:#8b4513">Western</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Challenge of the Yukon</h3>
+            <div class="show-card__era">1938–1955 · ABC / Mutual</div>
+            <div class="show-card__count">505 episodes</div>
+          </div>
+        </a>
+<a href="/fort-laramie/" class="show-card" data-genre="Western" data-name="fort laramie">
+          <div class="show-card__img" style="background-image:url('/images/fort-laramie.jpg')">
+            <span class="show-card__badge" style="background:#8b4513">Western</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Fort Laramie</h3>
+            <div class="show-card__era">1956 · CBS</div>
+            <div class="show-card__count">41 episodes</div>
+          </div>
+        </a>
+<a href="/have-gun/" class="show-card" data-genre="Western" data-name="have gun will travel">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#8b4513">Western</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Have Gun Will Travel</h3>
+            <div class="show-card__era">1958–1960 · CBS</div>
+            <div class="show-card__count">104 episodes</div>
+          </div>
+        </a>
+<a href="/escape/" class="show-card" data-genre="Adventure" data-name="escape">
+          <div class="show-card__img" style="background-image:url('/images/escape.jpg')">
+            <span class="show-card__badge" style="background:#2d6a4f">Adventure</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Escape</h3>
+            <div class="show-card__era">1947–1954 · CBS</div>
+            <div class="show-card__count">251 episodes</div>
+          </div>
+        </a>
+<a href="/bold-venture/" class="show-card" data-genre="Adventure" data-name="bold venture">
+          <div class="show-card__img" style="background-image:url('/images/bold-venture.jpg')">
+            <span class="show-card__badge" style="background:#2d6a4f">Adventure</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Bold Venture</h3>
+            <div class="show-card__era">1951–1952 · Syndicated</div>
+            <div class="show-card__count">57 episodes</div>
+          </div>
+        </a>
+<a href="/green-hornet/" class="show-card" data-genre="Adventure" data-name="the green hornet">
+          <div class="show-card__img" style="background-image:url('/images/green-hornet.jpg')">
+            <span class="show-card__badge" style="background:#2d6a4f">Adventure</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Green Hornet</h3>
+            <div class="show-card__era">1936–1952 · NBC / ABC</div>
+            <div class="show-card__count">199 episodes</div>
+          </div>
+        </a>
+<a href="/box-13/" class="show-card" data-genre="Adventure" data-name="box 13">
+          <div class="show-card__img" style="background-image:url('/images/box-13.jpg')">
+            <span class="show-card__badge" style="background:#2d6a4f">Adventure</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Box 13</h3>
+            <div class="show-card__era">1948–1949 · Syndicated</div>
+            <div class="show-card__count">97 episodes</div>
+          </div>
+        </a>
+<a href="/the-saint/" class="show-card" data-genre="Adventure" data-name="the saint">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#2d6a4f">Adventure</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Saint</h3>
+            <div class="show-card__era">1945–1951 · NBC / CBS</div>
+            <div class="show-card__count">38 episodes</div>
+          </div>
+        </a>
+<a href="/dimension-x/" class="show-card" data-genre="Sci-Fi" data-name="dimension x">
+          <div class="show-card__img" style="background-image:url('/images/dimension-x.jpg')">
+            <span class="show-card__badge" style="background:#1a6b8a">Sci-Fi</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Dimension X</h3>
+            <div class="show-card__era">1950–1951 · NBC</div>
+            <div class="show-card__count">50 episodes</div>
+          </div>
+        </a>
+<a href="/x-minus-one/" class="show-card" data-genre="Sci-Fi" data-name="x minus one">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#1a6b8a">Sci-Fi</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">X Minus One</h3>
+            <div class="show-card__era">1955–1958 · NBC</div>
+            <div class="show-card__count">123 episodes</div>
+          </div>
+        </a>
+<a href="/fibber-mcgee/" class="show-card" data-genre="Comedy" data-name="fibber mcgee & molly">
+          <div class="show-card__img" style="background-image:url('/images/fibber-mcgee.jpg')">
+            <span class="show-card__badge" style="background:#e67e22">Comedy</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Fibber McGee & Molly</h3>
+            <div class="show-card__era">1935–1959 · NBC</div>
+            <div class="show-card__count">703 episodes</div>
+          </div>
+        </a>
+<a href="/burns-allen/" class="show-card" data-genre="Comedy" data-name="the burns and allen show">
+          <div class="show-card__img" style="background-image:url('/images/burns-allen.jpg')">
+            <span class="show-card__badge" style="background:#e67e22">Comedy</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Burns and Allen Show</h3>
+            <div class="show-card__era">1932–1950 · CBS / NBC</div>
+            <div class="show-card__count">440 episodes</div>
+          </div>
+        </a>
+<a href="/bob-hope/" class="show-card" data-genre="Comedy" data-name="the bob hope show">
+          <div class="show-card__img" style="background-image:url('/images/bob-hope.jpg')">
+            <span class="show-card__badge" style="background:#e67e22">Comedy</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Bob Hope Show</h3>
+            <div class="show-card__era">1938–1955 · NBC</div>
+            <div class="show-card__count">203 episodes</div>
+          </div>
+        </a>
+<a href="/amos-andy/" class="show-card" data-genre="Comedy" data-name="amos 'n' andy">
+          <div class="show-card__img" style="background-image:url('/images/amos-andy.jpg')">
+            <span class="show-card__badge" style="background:#e67e22">Comedy</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Amos 'n' Andy</h3>
+            <div class="show-card__era">1928–1955 · NBC / CBS</div>
+            <div class="show-card__count">280 episodes</div>
+          </div>
+        </a>
+<a href="/our-miss-brooks/" class="show-card" data-genre="Comedy" data-name="our miss brooks">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#e67e22">Comedy</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Our Miss Brooks</h3>
+            <div class="show-card__era">1948–1957 · CBS</div>
+            <div class="show-card__count">181 episodes</div>
+          </div>
+        </a>
+<a href="/great-gildersleeve/" class="show-card" data-genre="Comedy" data-name="the great gildersleeve">
+          <div class="show-card__img" style="background-image:url('/images/great-gildersleeve.jpg')">
+            <span class="show-card__badge" style="background:#e67e22">Comedy</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Great Gildersleeve</h3>
+            <div class="show-card__era">1941–1957 · NBC</div>
+            <div class="show-card__count">542 episodes</div>
+          </div>
+        </a>
+<a href="/red-skelton/" class="show-card" data-genre="Comedy" data-name="the red skelton show">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#e67e22">Comedy</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Red Skelton Show</h3>
+            <div class="show-card__era">1941–1953 · NBC / CBS</div>
+            <div class="show-card__count">264 episodes</div>
+          </div>
+        </a>
+<a href="/ozzie-harriet/" class="show-card" data-genre="Comedy" data-name="the adventures of ozzie & harriet">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#e67e22">Comedy</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Adventures of Ozzie & Harriet</h3>
+            <div class="show-card__era">1944–1954 · CBS / NBC</div>
+            <div class="show-card__count">81 episodes</div>
+          </div>
+        </a>
+<a href="/my-favorite-husband/" class="show-card" data-genre="Comedy" data-name="my favorite husband">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#e67e22">Comedy</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">My Favorite Husband</h3>
+            <div class="show-card__era">1948–1951 · CBS</div>
+            <div class="show-card__count">110 episodes</div>
+          </div>
+        </a>
+<a href="/duffys-tavern/" class="show-card" data-genre="Comedy" data-name="duffy's tavern">
+          <div class="show-card__img" style="background-image:url('/images/duffys-tavern.jpg')">
+            <span class="show-card__badge" style="background:#e67e22">Comedy</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Duffy's Tavern</h3>
+            <div class="show-card__era">1941–1951 · CBS / NBC</div>
+            <div class="show-card__count">187 episodes</div>
+          </div>
+        </a>
+<a href="/lux-radio-theatre/" class="show-card" data-genre="Drama" data-name="lux radio theatre">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#5d6d7e">Drama</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Lux Radio Theatre</h3>
+            <div class="show-card__era">1934–1955 · CBS / NBC</div>
+            <div class="show-card__count">439 episodes</div>
+          </div>
+        </a>
+<a href="/mercury-theatre/" class="show-card" data-genre="Drama" data-name="mercury theatre on the air">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#5d6d7e">Drama</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Mercury Theatre on the Air</h3>
+            <div class="show-card__era">1938 · CBS</div>
+            <div class="show-card__count">14 episodes</div>
+          </div>
+        </a>
+<a href="/stars-over-hollywood/" class="show-card" data-genre="Drama" data-name="stars over hollywood">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#5d6d7e">Drama</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Stars Over Hollywood</h3>
+            <div class="show-card__era">1941–1953 · CBS</div>
+            <div class="show-card__count">73 episodes</div>
+          </div>
+        </a>
+<a href="/railroad-hour/" class="show-card" data-genre="Drama" data-name="the railroad hour">
+          <div class="show-card__img" style="background-image:url('/images/hero.jpg')">
+            <span class="show-card__badge" style="background:#5d6d7e">Drama</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">The Railroad Hour</h3>
+            <div class="show-card__era">1948–1954 · ABC</div>
+            <div class="show-card__count">345 episodes</div>
+          </div>
+        </a>
+<a href="/death-valley-days/" class="show-card" data-genre="Drama" data-name="death valley days">
+          <div class="show-card__img" style="background-image:url('/images/death-valley-days.jpg')">
+            <span class="show-card__badge" style="background:#5d6d7e">Drama</span>
+          </div>
+          <div class="show-card__body">
+            <h3 class="show-card__title">Death Valley Days</h3>
+            <div class="show-card__era">1930–1945 · NBC / CBS</div>
+            <div class="show-card__count">4 episodes</div>
+          </div>
+        </a>
 
-      <h2 class="genre-heading">Comedy</h2>
-      <div class="show-grid">
-        <a href="/fibber-mcgee/" class="show-card">
-          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
-          <h3 class="show-card__title">Fibber McGee & Molly</h3>
-          <div class="show-card__era">1935–1959 · NBC</div>
-          <p class="show-card__desc">Jim and Marian Jordan as America's most beloved radio couple — the exaggerating Fibber and his long-suffering Molly at 7...</p>
-          <div class="show-card__count">703 episodes</div>
-        </a>
-        <a href="/burns-allen/" class="show-card">
-          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
-          <h3 class="show-card__title">The Burns and Allen Show</h3>
-          <div class="show-card__era">1932–1950 · CBS / NBC</div>
-          <p class="show-card__desc">George Burns and Gracie Allen — the greatest comedy team in radio history. Gracie's sublime illogic and George's perfect...</p>
-          <div class="show-card__count">440 episodes</div>
-        </a>
-        <a href="/bob-hope/" class="show-card">
-          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
-          <h3 class="show-card__title">The Bob Hope Show</h3>
-          <div class="show-card__era">1938–1955 · NBC</div>
-          <p class="show-card__desc">Bob Hope, America's comedian — topical jokes, celebrity guests, and the most popular comedy program in radio history. Pe...</p>
-          <div class="show-card__count">203 episodes</div>
-        </a>
-        <a href="/amos-andy/" class="show-card">
-          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
-          <h3 class="show-card__title">Amos 'n' Andy</h3>
-          <div class="show-card__era">1928–1955 · NBC / CBS</div>
-          <p class="show-card__desc">The most popular program in radio history — Freeman Gosden and Charles Correll's beloved characters whose trials and tri...</p>
-          <div class="show-card__count">280 episodes</div>
-        </a>
-        <a href="/our-miss-brooks/" class="show-card">
-          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
-          <h3 class="show-card__title">Our Miss Brooks</h3>
-          <div class="show-card__era">1948–1957 · CBS</div>
-          <p class="show-card__desc">Eve Arden as the witty, wisecracking English teacher Connie Brooks — perpetually broke, perpetually in love with Mr. Boy...</p>
-          <div class="show-card__count">181 episodes</div>
-        </a>
-        <a href="/great-gildersleeve/" class="show-card">
-          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
-          <h3 class="show-card__title">The Great Gildersleeve</h3>
-          <div class="show-card__era">1941–1957 · NBC</div>
-          <p class="show-card__desc">Throckmorton P. Gildersleeve — pompous, lovable, and hopelessly confused by women and life. The first radio spinoff and ...</p>
-          <div class="show-card__count">542 episodes</div>
-        </a>
-        <a href="/red-skelton/" class="show-card">
-          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
-          <h3 class="show-card__title">The Red Skelton Show</h3>
-          <div class="show-card__era">1941–1953 · NBC / CBS</div>
-          <p class="show-card__desc">Red Skelton's beloved characters — Clem Kadiddlehopper, Freddie the Freeloader, the Mean Widdle Kid — brought radio come...</p>
-          <div class="show-card__count">264 episodes</div>
-        </a>
-        <a href="/ozzie-harriet/" class="show-card">
-          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
-          <h3 class="show-card__title">The Adventures of Ozzie & Harriet</h3>
-          <div class="show-card__era">1944–1954 · CBS / NBC</div>
-          <p class="show-card__desc">The Nelson family in their real-life domestic adventures — a radio institution that launched television's longest-runnin...</p>
-          <div class="show-card__count">81 episodes</div>
-        </a>
-        <a href="/my-favorite-husband/" class="show-card">
-          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
-          <h3 class="show-card__title">My Favorite Husband</h3>
-          <div class="show-card__era">1948–1951 · CBS</div>
-          <p class="show-card__desc">Lucille Ball and Richard Denning as Liz and George Cooper — the show that convinced CBS to give Lucy her own TV show. Th...</p>
-          <div class="show-card__count">110 episodes</div>
-        </a>
-        <a href="/duffys-tavern/" class="show-card">
-          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
-          <h3 class="show-card__title">Duffy's Tavern</h3>
-          <div class="show-card__era">1941–1951 · CBS / NBC</div>
-          <p class="show-card__desc">Where the elite meet to eat — Archie the manager holds down the fort for the perpetually absent Duffy. Celebrity-packed,...</p>
-          <div class="show-card__count">187 episodes</div>
-        </a>
       </div>
-
-      <h2 class="genre-heading">Crime</h2>
-      <div class="show-grid">
-        <a href="/crime-classics/" class="show-card">
-          <div class="show-card__badge" style="background:#922b21">Crime</div>
-          <h3 class="show-card__title">Crime Classics</h3>
-          <div class="show-card__era">1953–1954 · CBS</div>
-          <p class="show-card__desc">True crime stories from history — told with dark humor and impeccable research by host Thomas Hyland. Murders, swindles,...</p>
-          <div class="show-card__count">65 episodes</div>
-        </a>
-        <a href="/dragnet/" class="show-card">
-          <div class="show-card__badge" style="background:#922b21">Crime</div>
-          <h3 class="show-card__title">Dragnet</h3>
-          <div class="show-card__era">1949–1957 · NBC</div>
-          <p class="show-card__desc">Just the facts, ma'am. Jack Webb's landmark police procedural defined a genre and a generation. The most influential cri...</p>
-          <div class="show-card__count">830 episodes</div>
-        </a>
-      </div>
-
-      <h2 class="genre-heading">Detective</h2>
-      <div class="show-grid">
-        <a href="/johnny-dollar/" class="show-card">
-          <div class="show-card__badge" style="background:#c9a84c">Detective</div>
-          <h3 class="show-card__title">Yours Truly, Johnny Dollar</h3>
-          <div class="show-card__era">1949–1962 · CBS</div>
-          <p class="show-card__desc">The expense account adventures of America's fabulous freelance insurance investigator. Bob Bailey's definitive performan...</p>
-          <div class="show-card__count">362 episodes</div>
-        </a>
-        <a href="/richard-diamond/" class="show-card">
-          <div class="show-card__badge" style="background:#c9a84c">Detective</div>
-          <h3 class="show-card__title">Richard Diamond, Private Detective</h3>
-          <div class="show-card__era">1949–1953 · NBC / CBS</div>
-          <p class="show-card__desc">Dick Powell as a charming, singing private eye. Equal parts tough and funny — one of radio's most entertaining detective...</p>
-          <div class="show-card__count">106 episodes</div>
-        </a>
-        <a href="/the-falcon/" class="show-card">
-          <div class="show-card__badge" style="background:#c9a84c">Detective</div>
-          <h3 class="show-card__title">The Falcon</h3>
-          <div class="show-card__era">1943–1954 · NBC / Mutual</div>
-          <p class="show-card__desc">The suave, sophisticated Gay Lawrence — the Falcon — solves crimes with style and a sharp sense of humor. Classic gentle...</p>
-          <div class="show-card__count">102 episodes</div>
-        </a>
-        <a href="/rogues-gallery/" class="show-card">
-          <div class="show-card__badge" style="background:#c9a84c">Detective</div>
-          <h3 class="show-card__title">Rogue's Gallery</h3>
-          <div class="show-card__era">1945–1951 · NBC / Mutual</div>
-          <p class="show-card__desc">Richard Rogue, private detective, gets knocked unconscious in nearly every episode — and hallucinates conversations with...</p>
-          <div class="show-card__count">24 episodes</div>
-        </a>
-      </div>
-
-      <h2 class="genre-heading">Drama</h2>
-      <div class="show-grid">
-        <a href="/lux-radio-theatre/" class="show-card">
-          <div class="show-card__badge" style="background:#7f8c8d">Drama</div>
-          <h3 class="show-card__title">Lux Radio Theatre</h3>
-          <div class="show-card__era">1934–1955 · CBS / NBC</div>
-          <p class="show-card__desc">Hollywood's biggest stars recreating their greatest films for radio — produced by Cecil B. DeMille. An unparalleled arch...</p>
-          <div class="show-card__count">439 episodes</div>
-        </a>
-        <a href="/mercury-theatre/" class="show-card">
-          <div class="show-card__badge" style="background:#7f8c8d">Drama</div>
-          <h3 class="show-card__title">Mercury Theatre on the Air</h3>
-          <div class="show-card__era">1938 · CBS</div>
-          <p class="show-card__desc">Orson Welles and the Mercury Theatre Company — including the legendary War of the Worlds broadcast that panicked a natio...</p>
-          <div class="show-card__count">14 episodes</div>
-        </a>
-        <a href="/stars-over-hollywood/" class="show-card">
-          <div class="show-card__badge" style="background:#7f8c8d">Drama</div>
-          <h3 class="show-card__title">Stars Over Hollywood</h3>
-          <div class="show-card__era">1941–1953 · CBS</div>
-          <p class="show-card__desc">Dramatic anthology featuring Hollywood's finest talent in original radio plays. Decades of compelling drama from CBS's g...</p>
-          <div class="show-card__count">3 episodes</div>
-        </a>
-      </div>
-
-      <h2 class="genre-heading">Horror</h2>
-      <div class="show-grid">
-        <a href="/inner-sanctum/" class="show-card">
-          <div class="show-card__badge" style="background:#cc2200">Horror</div>
-          <h3 class="show-card__title">Inner Sanctum Mysteries</h3>
-          <div class="show-card__era">1941–1952 · NBC / CBS</div>
-          <p class="show-card__desc">The creaking door opens, and Raymond Edward Johnson welcomes you to another tale of mystery and horror. Macabre, atmosph...</p>
-          <div class="show-card__count">63 episodes</div>
-        </a>
-        <a href="/lights-out/" class="show-card">
-          <div class="show-card__badge" style="background:#cc2200">Horror</div>
-          <h3 class="show-card__title">Lights Out</h3>
-          <div class="show-card__era">1934–1947 · NBC / CBS</div>
-          <p class="show-card__desc">Arch Oboler's masterpiece of radio horror. Stories so disturbing that NBC received thousands of listener complaints. Tur...</p>
-          <div class="show-card__count">138 episodes</div>
-        </a>
-        <a href="/quiet-please/" class="show-card">
-          <div class="show-card__badge" style="background:#cc2200">Horror</div>
-          <h3 class="show-card__title">Quiet Please</h3>
-          <div class="show-card__era">1947–1949 · Mutual</div>
-          <p class="show-card__desc">Wyllis Cooper's cerebral, unsettling anthology — widely considered the most literate horror program in radio history. Qu...</p>
-          <div class="show-card__count">91 episodes</div>
-        </a>
-      </div>
-
-      <h2 class="genre-heading">Musical</h2>
-      <div class="show-grid">
-        <a href="/railroad-hour/" class="show-card">
-          <div class="show-card__badge" style="background:#8e44ad">Musical</div>
-          <h3 class="show-card__title">The Railroad Hour</h3>
-          <div class="show-card__era">1948–1954 · ABC</div>
-          <p class="show-card__desc">Gordon MacRae and the MGM Orchestra in condensed musical adaptations of Broadway shows and operettas. The pinnacle of ra...</p>
-          <div class="show-card__count">345 episodes</div>
-        </a>
-      </div>
-
-      <h2 class="genre-heading">Mystery</h2>
-      <div class="show-grid">
-        <a href="/shadow/" class="show-card">
-          <div class="show-card__badge" style="background:#6b5b95">Mystery</div>
-          <h3 class="show-card__title">The Shadow</h3>
-          <div class="show-card__era">1937–1954 · Mutual</div>
-          <p class="show-card__desc">Who knows what evil lurks in the hearts of men? The Shadow knows. Lamont Cranston's power to cloud men's minds made this...</p>
-          <div class="show-card__count">197 episodes</div>
-        </a>
-        <a href="/mysterious-traveler/" class="show-card">
-          <div class="show-card__badge" style="background:#6b5b95">Mystery</div>
-          <h3 class="show-card__title">The Mysterious Traveler</h3>
-          <div class="show-card__era">1943–1953 · Mutual</div>
-          <p class="show-card__desc">A mysterious stranger on a train shares tales of the strange and macabre. Every story a twist, every episode a journey i...</p>
-          <div class="show-card__count">70 episodes</div>
-        </a>
-        <a href="/cbs-mystery/" class="show-card">
-          <div class="show-card__badge" style="background:#6b5b95">Mystery</div>
-          <h3 class="show-card__title">CBS Radio Mystery Theater</h3>
-          <div class="show-card__era">1974–1982 · CBS</div>
-          <p class="show-card__desc">E.G. Marshall hosted over 1,300 episodes of this late-era anthology — proving radio drama still had power long after tel...</p>
-          <div class="show-card__count">212 episodes</div>
-        </a>
-        <a href="/sherlock/" class="show-card">
-          <div class="show-card__badge" style="background:#6b5b95">Mystery</div>
-          <h3 class="show-card__title">Sherlock Holmes</h3>
-          <div class="show-card__era">1930–1955 · Various</div>
-          <p class="show-card__desc">The world's greatest detective in dozens of radio adventures — featuring Basil Rathbone, John Stanley, and Tom Conway br...</p>
-          <div class="show-card__count">52 episodes</div>
-        </a>
-        <a href="/whistler/" class="show-card">
-          <div class="show-card__badge" style="background:#6b5b95">Mystery</div>
-          <h3 class="show-card__title">The Whistler</h3>
-          <div class="show-card__era">1942–1955 · CBS</div>
-          <p class="show-card__desc">I am the Whistler, and I know many things — for I walk by night. Ironic tales of crime and justice narrated by a mysteri...</p>
-          <div class="show-card__count">939 episodes</div>
-        </a>
-      </div>
-
-      <h2 class="genre-heading">Noir</h2>
-      <div class="show-grid">
-        <a href="/sam-spade/" class="show-card">
-          <div class="show-card__badge" style="background:#8b7355">Noir</div>
-          <h3 class="show-card__title">Sam Spade, Private Detective</h3>
-          <div class="show-card__era">1946–1951 · NBC / CBS</div>
-          <p class="show-card__desc">Howard Duff as Dashiell Hammett's hard-boiled San Francisco private eye. Each case dictated to his loyal secretary Effie...</p>
-          <div class="show-card__count">71 episodes</div>
-        </a>
-        <a href="/philip-marlowe/" class="show-card">
-          <div class="show-card__badge" style="background:#8b7355">Noir</div>
-          <h3 class="show-card__title">Philip Marlowe</h3>
-          <div class="show-card__era">1947–1951 · NBC / CBS</div>
-          <p class="show-card__desc">Raymond Chandler's iconic detective brought to life. Gerald Mohr's sardonic Marlowe navigated the corrupt underbelly of ...</p>
-          <div class="show-card__count">189 episodes</div>
-        </a>
-        <a href="/broadway-beat/" class="show-card">
-          <div class="show-card__badge" style="background:#8b7355">Noir</div>
-          <h3 class="show-card__title">Broadway Is My Beat</h3>
-          <div class="show-card__era">1949–1954 · CBS</div>
-          <p class="show-card__desc">Detective Danny Clover investigates murders along the Great White Way. Dark, moody, and brilliantly written New York noi...</p>
-          <div class="show-card__count">150 episodes</div>
-        </a>
-        <a href="/nightbeat/" class="show-card">
-          <div class="show-card__badge" style="background:#8b7355">Noir</div>
-          <h3 class="show-card__title">Nightbeat</h3>
-          <div class="show-card__era">1950–1952 · NBC</div>
-          <p class="show-card__desc">Chicago newspaper reporter Randy Stone prowls the city at night, encountering stories of human drama. One of radio's mos...</p>
-          <div class="show-card__count">60 episodes</div>
-        </a>
-      </div>
-
-      <h2 class="genre-heading">Sci-Fi</h2>
-      <div class="show-grid">
-        <a href="/dimension-x/" class="show-card">
-          <div class="show-card__badge" style="background:#1a6b8a">Sci-Fi</div>
-          <h3 class="show-card__title">Dimension X</h3>
-          <div class="show-card__era">1950–1951 · NBC</div>
-          <p class="show-card__desc">NBC's groundbreaking science fiction anthology adapting the best of Asimov, Bradbury, and Heinlein. Radio's first great ...</p>
-          <div class="show-card__count">50 episodes</div>
-        </a>
-        <a href="/x-minus-one/" class="show-card">
-          <div class="show-card__badge" style="background:#1a6b8a">Sci-Fi</div>
-          <h3 class="show-card__title">X Minus One</h3>
-          <div class="show-card__era">1955–1958 · NBC</div>
-          <p class="show-card__desc">The greatest science fiction radio series ever produced — adapting Galaxy Magazine's best stories with stunning producti...</p>
-          <div class="show-card__count">123 episodes</div>
-        </a>
-      </div>
-
-      <h2 class="genre-heading">Spy</h2>
-      <div class="show-grid">
-      </div>
-
-      <h2 class="genre-heading">Thriller</h2>
-      <div class="show-grid">
-        <a href="/suspense/" class="show-card">
-          <div class="show-card__badge" style="background:#aa3300">Thriller</div>
-          <h3 class="show-card__title">Suspense</h3>
-          <div class="show-card__era">1942–1962 · CBS</div>
-          <p class="show-card__desc">Radio's premier anthology thriller. Twenty years of stories designed to keep you in suspense — featuring Hollywood's big...</p>
-          <div class="show-card__count">1,049 episodes</div>
-        </a>
-      </div>
-
-      <h2 class="genre-heading">Western</h2>
-      <div class="show-grid">
-        <a href="/have-gun/" class="show-card">
-          <div class="show-card__badge" style="background:#8b4513">Western</div>
-          <h3 class="show-card__title">Have Gun Will Travel</h3>
-          <div class="show-card__era">1958–1960 · CBS</div>
-          <p class="show-card__desc">Paladin, a West Point-educated gunfighter for hire based in San Francisco. Intelligent, literary, and morally complex — ...</p>
-          <div class="show-card__count">104 episodes</div>
-        </a>
-        <a href="/loneranger/" class="show-card">
-          <div class="show-card__badge" style="background:#8b4513">Western</div>
-          <h3 class="show-card__title">The Lone Ranger</h3>
-          <div class="show-card__era">1933–1954 · ABC</div>
-          <p class="show-card__desc">Hi-yo, Silver! The masked rider of the plains and his faithful companion Tonto — radio's greatest western hero, fighting...</p>
-          <div class="show-card__count">2,154 episodes</div>
-        </a>
-        <a href="/gunsmoke/" class="show-card">
-          <div class="show-card__badge" style="background:#8b4513">Western</div>
-          <h3 class="show-card__title">Gunsmoke</h3>
-          <div class="show-card__era">1952–1961 · CBS</div>
-          <p class="show-card__desc">William Conrad as Marshal Matt Dillon keeping the peace in Dodge City. The adult western that defined the genre — gritty...</p>
-          <div class="show-card__count">473 episodes</div>
-        </a>
-        <a href="/cisco-kid/" class="show-card">
-          <div class="show-card__badge" style="background:#8b4513">Western</div>
-          <h3 class="show-card__title">The Cisco Kid</h3>
-          <div class="show-card__era">1942–1956 · Mutual/Syndicated</div>
-          <p class="show-card__desc">The Robin Hood of the Old West and his sidekick Pancho — O. Henry's beloved characters riding through the Southwest righ...</p>
-          <div class="show-card__count">153 episodes</div>
-        </a>
-        <a href="/fort-laramie/" class="show-card">
-          <div class="show-card__badge" style="background:#8b4513">Western</div>
-          <h3 class="show-card__title">Fort Laramie</h3>
-          <div class="show-card__era">1956 · CBS</div>
-          <p class="show-card__desc">The most serious and realistic western in radio history. Captain Lee Quince and the U.S. Cavalry face the brutal reality...</p>
-          <div class="show-card__count">41 episodes</div>
-        </a>
-      </div>
+      <div class="no-results" id="noResults">No shows found. Try a different search.</div>
 
     </div>
   </section>
@@ -500,6 +601,45 @@
   <footer class="site-footer">
     <p>© 2025 Ghost of Radio · <a href="/about.html">About</a> · <a href="/privacy-policy.html">Privacy</a></p>
   </footer>
+
   <script src="/js/main.js"></script>
+  <script>
+    const cards = document.querySelectorAll('.show-card');
+    const searchBox = document.getElementById('showSearch');
+    const genreBtns = document.querySelectorAll('.genre-btn');
+    const showCount = document.getElementById('showCount');
+    const noResults = document.getElementById('noResults');
+    let activeGenre = 'all';
+
+    function filterShows() {
+      const q = searchBox.value.toLowerCase().trim();
+      let visible = 0;
+      cards.forEach(card => {
+        const name = card.dataset.name;
+        const genre = card.dataset.genre;
+        const matchSearch = !q || name.includes(q);
+        const matchGenre = activeGenre === 'all' || genre === activeGenre;
+        if (matchSearch && matchGenre) {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      showCount.textContent = visible;
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    searchBox.addEventListener('input', filterShows);
+
+    genreBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        genreBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeGenre = btn.dataset.genre;
+        filterShows();
+      });
+    });
+  </script>
 </body>
 </html>
