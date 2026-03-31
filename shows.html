@@ -3,222 +3,503 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Shows — Ghost of Radio</title>
-  <meta name="description" content="Explore the classic old time radio shows featured on Ghost of Radio: Sam Spade, The Shadow, Sherlock Holmes, Johnny Dollar, and The Whistler.">
+  <title>All Shows — Ghost of Radio | Classic Old Time Radio</title>
+  <meta name="description" content="Browse 46 classic old time radio shows with 12,807 episodes. Free to stream — detective noir, westerns, horror, comedy, sci-fi and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Ghost Radio">
-  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/images/logo.png">
+  <style>
+    .genre-heading {
+      color: #c9a84c;
+      font-family: 'Special Elite', cursive;
+      font-size: 1.4rem;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid #333;
+      letter-spacing: .05em;
+    }
+    .show-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .show-card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: border-color .2s, transform .2s;
+      position: relative;
+    }
+    .show-card:hover {
+      border-color: #c9a84c;
+      transform: translateY(-2px);
+    }
+    .show-card__badge {
+      display: inline-block;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .2rem .6rem;
+      border-radius: 4px;
+      color: #fff;
+      margin-bottom: .6rem;
+    }
+    .show-card__title {
+      font-family: 'Special Elite', cursive;
+      font-size: 1.1rem;
+      color: #f0dca0;
+      margin: 0 0 .3rem;
+      line-height: 1.3;
+    }
+    .show-card__era {
+      font-size: .75rem;
+      color: #888;
+      margin-bottom: .6rem;
+    }
+    .show-card__desc {
+      font-size: .85rem;
+      color: #aaa;
+      line-height: 1.5;
+      margin-bottom: .75rem;
+    }
+    .show-card__count {
+      font-size: .75rem;
+      color: #c9a84c;
+      font-weight: 600;
+    }
+    .shows-stats {
+      text-align: center;
+      padding: 1rem;
+      color: #888;
+      font-size: .9rem;
+      margin-bottom: 1rem;
+    }
+    .shows-stats strong { color: #c9a84c; }
+  </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header class="site-header">
     <nav class="nav">
-      <a href="index.html" class="nav__logo">
-        <span class="nav__logo-icon"><img src="images/logo.png" alt="Ghost of Radio" class="nav__logo-img"></span> Ghost of Radio
+      <a href="/index.html" class="nav__logo">
+        <span class="nav__logo-icon"><img src="/images/logo.png" alt="Ghost of Radio" class="nav__logo-img"></span> Ghost of Radio
       </a>
       <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shows.html">Shows</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/shows.html" class="active">Shows</a></li>
+        <li><a href="/about.html">About</a></li>
         <li><a href="https://www.youtube.com/@GhostOfRadio" target="_blank" rel="noopener">YouTube</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Page Header -->
   <div class="page-header">
-    <h1 class="flicker">Our Shows</h1>
+    <h1 class="flicker">All Shows</h1>
     <div class="divider"></div>
-    <p>Five legendary programs from the golden age of radio, brought back from the archives for a new generation of listeners.</p>
+    <p>The complete Ghost of Radio library — 46 shows, 12,807 episodes, all free to stream.</p>
   </div>
 
-  <!-- Shows -->
   <section class="section">
     <div class="container">
-
-      <div class="show-detail fade-in" id="sam-spade">
-        <div class="show-detail__inner">
-          <img src="images/sam-spade.jpg" alt="Sam Spade" class="show-detail__image">
-          <div class="show-detail__text">
-          <div class="show-detail__era">1946–1951 · NBC / CBS</div>
-          <h2 class="show-detail__title">Sam Spade, Private Detective</h2>
-          <p class="show-detail__quote">"Sam Spade, the hard-boiled private eye from San Francisco…"</p>
-          <div class="show-detail__desc">
-            <p>Based on the iconic character created by Dashiell Hammett, <em>The Adventures of Sam Spade</em> followed the wisecracking San Francisco private detective through a fog-shrouded world of deception, danger, and dark comedy.</p>
-            <p>Starring Howard Duff (and later Steve Dunne) in the title role, the show ran on both NBC and CBS. Each episode was framed as a report dictated to Spade's loyal secretary Effie Perrine, blending hardboiled detective fiction with sharp humor. The series captured the spirit of Hammett's tough, cynical, but ultimately principled gumshoe — a man who trusted no one and always got his answers, one way or another.</p>
-            <p>San Francisco itself became a character in the show: foggy wharves, seedy hotels, and smoky offices set the stage for some of radio's finest noir storytelling.</p>
-          </div>
-          </div>
-        </div>
+      <div class="shows-stats">
+        <strong>46</strong> shows &nbsp;·&nbsp; <strong>12,807</strong> episodes &nbsp;·&nbsp; All free to stream
       </div>
 
-      <div class="show-detail fade-in" id="the-shadow">
-        <div class="show-detail__inner">
-          <img src="images/the-shadow.jpg" alt="The Shadow" class="show-detail__image">
-          <div class="show-detail__text">
-          <div class="show-detail__era">1937–1954 · Mutual Broadcasting System</div>
-          <h2 class="show-detail__title">The Shadow</h2>
-          <p class="show-detail__quote">"Who knows what evil lurks in the hearts of men? The Shadow knows!"</p>
-          <div class="show-detail__desc">
-            <p>One of the most recognized characters in American popular culture, The Shadow began as a mysterious narrator for a detective anthology before evolving into a crime-fighting hero with the power to "cloud men's minds" and become invisible.</p>
-            <p>Lamont Cranston, wealthy young man-about-town, learned the hypnotic power of invisibility during travels in the Orient. As The Shadow, he and his "friend and companion, the lovely Margo Lane" battled criminals, mad scientists, and supernatural threats across the airwaves for nearly two decades.</p>
-            <p>The show's atmospheric opening — with its eerie laugh and famous catchphrase — became one of the most iconic moments in broadcasting history. Orson Welles was among the early actors to voice the character, setting a standard for dramatic radio that endures to this day.</p>
-          </div>
-          </div>
-        </div>
+      <h2 class="genre-heading">Action</h2>
+      <div class="show-grid">
+        <a href="/green-hornet/" class="show-card">
+          <div class="show-card__badge" style="background:#1a5276">Action</div>
+          <h3 class="show-card__title">The Green Hornet</h3>
+          <div class="show-card__era">1936–1952 · NBC / ABC</div>
+          <p class="show-card__desc">Britt Reid and his faithful valet Kato — fighting crime as the Green Hornet, hunted by police as a criminal, but always ...</p>
+          <div class="show-card__count">199 episodes</div>
+        </a>
       </div>
 
-      <div class="show-detail fade-in" id="sherlock-holmes">
-        <div class="show-detail__inner">
-          <img src="images/sherlock.jpg" alt="Sherlock Holmes" class="show-detail__image">
-          <div class="show-detail__text">
-          <div class="show-detail__era">1930s–1940s · NBC / Mutual</div>
-          <h2 class="show-detail__title">The Adventures of Sherlock Holmes</h2>
-          <p class="show-detail__quote">"Elementary, my dear Watson."</p>
-          <div class="show-detail__desc">
-            <p>Sir Arthur Conan Doyle's immortal detective made a natural transition to radio, where the fog-bound streets of Victorian London and the intellectual duels between Holmes and his adversaries came vividly to life through sound alone.</p>
-            <p>The most celebrated radio incarnation starred Basil Rathbone as Holmes and Nigel Bruce as Dr. Watson — the same pairing that defined the characters in the Universal film series. Their chemistry was magnetic: Rathbone's precise, imperious Holmes played against Bruce's warmly bumbling Watson.</p>
-            <p>From the gas-lit sitting room at 221B Baker Street to the moors of Dartmoor and the criminal underworld of London, these radio adaptations brought Doyle's stories to millions of listeners and cemented Sherlock Holmes as a permanent fixture of popular imagination.</p>
-          </div>
-          </div>
-        </div>
+      <h2 class="genre-heading">Adventure</h2>
+      <div class="show-grid">
+        <a href="/escape/" class="show-card">
+          <div class="show-card__badge" style="background:#2d6a4f">Adventure</div>
+          <h3 class="show-card__title">Escape</h3>
+          <div class="show-card__era">1947–1954 · CBS</div>
+          <p class="show-card__desc">Designed to free you from the four walls of today — adventure stories of courage and survival from the far corners of th...</p>
+          <div class="show-card__count">251 episodes</div>
+        </a>
+        <a href="/challenge-yukon/" class="show-card">
+          <div class="show-card__badge" style="background:#2d6a4f">Adventure</div>
+          <h3 class="show-card__title">Challenge of the Yukon</h3>
+          <div class="show-card__era">1938–1955 · ABC / Mutual</div>
+          <p class="show-card__desc">Sergeant Preston of the Yukon and his faithful dog Yukon King patrol the frozen Northwest. On, King! On, you huskies!...</p>
+          <div class="show-card__count">505 episodes</div>
+        </a>
+        <a href="/bold-venture/" class="show-card">
+          <div class="show-card__badge" style="background:#2d6a4f">Adventure</div>
+          <h3 class="show-card__title">Bold Venture</h3>
+          <div class="show-card__era">1951–1952 · Syndicated</div>
+          <p class="show-card__desc">Humphrey Bogart and Lauren Bacall reunited for radio — Slate Shannon and Sailor Duval on exotic Caribbean adventures. Gl...</p>
+          <div class="show-card__count">57 episodes</div>
+        </a>
+        <a href="/box-13/" class="show-card">
+          <div class="show-card__badge" style="background:#2d6a4f">Adventure</div>
+          <h3 class="show-card__title">Box 13</h3>
+          <div class="show-card__era">1948–1949 · Syndicated</div>
+          <p class="show-card__desc">Alan Ladd as Dan Holiday, a mystery writer who advertises for adventure: 'Adventure wanted — will go anywhere, do anythi...</p>
+          <div class="show-card__count">97 episodes</div>
+        </a>
+        <a href="/the-saint/" class="show-card">
+          <div class="show-card__badge" style="background:#2d6a4f">Adventure</div>
+          <h3 class="show-card__title">The Saint</h3>
+          <div class="show-card__era">1945–1951 · NBC / CBS</div>
+          <p class="show-card__desc">Simon Templar — the Saint — a modern Robin Hood who steals from criminals and keeps the proceeds. Suave, witty, and utte...</p>
+          <div class="show-card__count">38 episodes</div>
+        </a>
       </div>
 
-      <div class="show-detail fade-in" id="johnny-dollar">
-        <div class="show-detail__inner">
-          <img src="images/johnny-dollar.jpg" alt="Johnny Dollar" class="show-detail__image">
-          <div class="show-detail__text">
-          <div class="show-detail__era">1949–1962 · CBS</div>
-          <h2 class="show-detail__title">Yours Truly, Johnny Dollar</h2>
-          <p class="show-detail__quote">"The man with the action-packed expense account!"</p>
-          <div class="show-detail__desc">
-            <p><em>Yours Truly, Johnny Dollar</em> holds a unique distinction: it was the last dramatic series to air on network radio, signing off on September 30, 1962, marking the end of an era.</p>
-            <p>Johnny Dollar was "America's fabulous freelance insurance investigator" — a unique premise that took the detective format in an inventive direction. Each episode was structured around Dollar's expense account, with the hero narrating his adventures as line items: "Item one: cab fare to the airport, $3.50…"</p>
-            <p>The show went through several actors in the lead role, with Bob Bailey's run (1955–1960) widely considered the definitive portrayal. During this period, the show experimented with serialized five-part stories that played out across a week — a format that gave the mysteries room to breathe and build suspense in ways that a single half-hour episode could not.</p>
-          </div>
-          </div>
-        </div>
+      <h2 class="genre-heading">Comedy</h2>
+      <div class="show-grid">
+        <a href="/fibber-mcgee/" class="show-card">
+          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
+          <h3 class="show-card__title">Fibber McGee & Molly</h3>
+          <div class="show-card__era">1935–1959 · NBC</div>
+          <p class="show-card__desc">Jim and Marian Jordan as America's most beloved radio couple — the exaggerating Fibber and his long-suffering Molly at 7...</p>
+          <div class="show-card__count">703 episodes</div>
+        </a>
+        <a href="/burns-allen/" class="show-card">
+          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
+          <h3 class="show-card__title">The Burns and Allen Show</h3>
+          <div class="show-card__era">1932–1950 · CBS / NBC</div>
+          <p class="show-card__desc">George Burns and Gracie Allen — the greatest comedy team in radio history. Gracie's sublime illogic and George's perfect...</p>
+          <div class="show-card__count">440 episodes</div>
+        </a>
+        <a href="/bob-hope/" class="show-card">
+          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
+          <h3 class="show-card__title">The Bob Hope Show</h3>
+          <div class="show-card__era">1938–1955 · NBC</div>
+          <p class="show-card__desc">Bob Hope, America's comedian — topical jokes, celebrity guests, and the most popular comedy program in radio history. Pe...</p>
+          <div class="show-card__count">203 episodes</div>
+        </a>
+        <a href="/amos-andy/" class="show-card">
+          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
+          <h3 class="show-card__title">Amos 'n' Andy</h3>
+          <div class="show-card__era">1928–1955 · NBC / CBS</div>
+          <p class="show-card__desc">The most popular program in radio history — Freeman Gosden and Charles Correll's beloved characters whose trials and tri...</p>
+          <div class="show-card__count">280 episodes</div>
+        </a>
+        <a href="/our-miss-brooks/" class="show-card">
+          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
+          <h3 class="show-card__title">Our Miss Brooks</h3>
+          <div class="show-card__era">1948–1957 · CBS</div>
+          <p class="show-card__desc">Eve Arden as the witty, wisecracking English teacher Connie Brooks — perpetually broke, perpetually in love with Mr. Boy...</p>
+          <div class="show-card__count">181 episodes</div>
+        </a>
+        <a href="/great-gildersleeve/" class="show-card">
+          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
+          <h3 class="show-card__title">The Great Gildersleeve</h3>
+          <div class="show-card__era">1941–1957 · NBC</div>
+          <p class="show-card__desc">Throckmorton P. Gildersleeve — pompous, lovable, and hopelessly confused by women and life. The first radio spinoff and ...</p>
+          <div class="show-card__count">542 episodes</div>
+        </a>
+        <a href="/red-skelton/" class="show-card">
+          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
+          <h3 class="show-card__title">The Red Skelton Show</h3>
+          <div class="show-card__era">1941–1953 · NBC / CBS</div>
+          <p class="show-card__desc">Red Skelton's beloved characters — Clem Kadiddlehopper, Freddie the Freeloader, the Mean Widdle Kid — brought radio come...</p>
+          <div class="show-card__count">264 episodes</div>
+        </a>
+        <a href="/ozzie-harriet/" class="show-card">
+          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
+          <h3 class="show-card__title">The Adventures of Ozzie & Harriet</h3>
+          <div class="show-card__era">1944–1954 · CBS / NBC</div>
+          <p class="show-card__desc">The Nelson family in their real-life domestic adventures — a radio institution that launched television's longest-runnin...</p>
+          <div class="show-card__count">81 episodes</div>
+        </a>
+        <a href="/my-favorite-husband/" class="show-card">
+          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
+          <h3 class="show-card__title">My Favorite Husband</h3>
+          <div class="show-card__era">1948–1951 · CBS</div>
+          <p class="show-card__desc">Lucille Ball and Richard Denning as Liz and George Cooper — the show that convinced CBS to give Lucy her own TV show. Th...</p>
+          <div class="show-card__count">110 episodes</div>
+        </a>
+        <a href="/duffys-tavern/" class="show-card">
+          <div class="show-card__badge" style="background:#e67e22">Comedy</div>
+          <h3 class="show-card__title">Duffy's Tavern</h3>
+          <div class="show-card__era">1941–1951 · CBS / NBC</div>
+          <p class="show-card__desc">Where the elite meet to eat — Archie the manager holds down the fort for the perpetually absent Duffy. Celebrity-packed,...</p>
+          <div class="show-card__count">187 episodes</div>
+        </a>
       </div>
 
-      <div class="show-detail fade-in" id="the-whistler">
-        <div class="show-detail__inner">
-          <img src="images/whistler.jpg" alt="The Whistler" class="show-detail__image">
-          <div class="show-detail__text">
-          <div class="show-detail__era">1942–1955 · CBS</div>
-          <h2 class="show-detail__title">The Whistler</h2>
-          <p class="show-detail__quote">"I am the Whistler, and I know many things, for I walk by night. I know many strange tales, many secrets hidden in the hearts of men and women who have stepped into the shadows. I know the nameless terrors of which they dare not speak."</p>
-          <div class="show-detail__desc">
-            <p><em>The Whistler</em> was one of radio's great anthology series — a dark, atmospheric collection of tales built around irony, fate, and the consequences of moral failings. Each episode followed a different protagonist, usually someone plotting a crime or hiding a terrible secret.</p>
-            <p>The Whistler himself was the show's narrator: an omniscient, vaguely sinister figure who observed the action with knowing detachment. His whistled musical theme — thirteen eerie notes — became one of the most recognizable sounds in radio history.</p>
-            <p>What set The Whistler apart was its consistent focus on the twist ending. Like a precursor to <em>The Twilight Zone</em>, each episode built carefully toward a final revelation that recast everything the listener had heard. Justice was served, but rarely in the way anyone — characters or audience — expected.</p>
-          </div>
-          </div>
-        </div>
+      <h2 class="genre-heading">Crime</h2>
+      <div class="show-grid">
+        <a href="/crime-classics/" class="show-card">
+          <div class="show-card__badge" style="background:#922b21">Crime</div>
+          <h3 class="show-card__title">Crime Classics</h3>
+          <div class="show-card__era">1953–1954 · CBS</div>
+          <p class="show-card__desc">True crime stories from history — told with dark humor and impeccable research by host Thomas Hyland. Murders, swindles,...</p>
+          <div class="show-card__count">65 episodes</div>
+        </a>
+        <a href="/dragnet/" class="show-card">
+          <div class="show-card__badge" style="background:#922b21">Crime</div>
+          <h3 class="show-card__title">Dragnet</h3>
+          <div class="show-card__era">1949–1957 · NBC</div>
+          <p class="show-card__desc">Just the facts, ma'am. Jack Webb's landmark police procedural defined a genre and a generation. The most influential cri...</p>
+          <div class="show-card__count">830 episodes</div>
+        </a>
+      </div>
+
+      <h2 class="genre-heading">Detective</h2>
+      <div class="show-grid">
+        <a href="/johnny-dollar/" class="show-card">
+          <div class="show-card__badge" style="background:#c9a84c">Detective</div>
+          <h3 class="show-card__title">Yours Truly, Johnny Dollar</h3>
+          <div class="show-card__era">1949–1962 · CBS</div>
+          <p class="show-card__desc">The expense account adventures of America's fabulous freelance insurance investigator. Bob Bailey's definitive performan...</p>
+          <div class="show-card__count">362 episodes</div>
+        </a>
+        <a href="/richard-diamond/" class="show-card">
+          <div class="show-card__badge" style="background:#c9a84c">Detective</div>
+          <h3 class="show-card__title">Richard Diamond, Private Detective</h3>
+          <div class="show-card__era">1949–1953 · NBC / CBS</div>
+          <p class="show-card__desc">Dick Powell as a charming, singing private eye. Equal parts tough and funny — one of radio's most entertaining detective...</p>
+          <div class="show-card__count">106 episodes</div>
+        </a>
+        <a href="/the-falcon/" class="show-card">
+          <div class="show-card__badge" style="background:#c9a84c">Detective</div>
+          <h3 class="show-card__title">The Falcon</h3>
+          <div class="show-card__era">1943–1954 · NBC / Mutual</div>
+          <p class="show-card__desc">The suave, sophisticated Gay Lawrence — the Falcon — solves crimes with style and a sharp sense of humor. Classic gentle...</p>
+          <div class="show-card__count">102 episodes</div>
+        </a>
+        <a href="/rogues-gallery/" class="show-card">
+          <div class="show-card__badge" style="background:#c9a84c">Detective</div>
+          <h3 class="show-card__title">Rogue's Gallery</h3>
+          <div class="show-card__era">1945–1951 · NBC / Mutual</div>
+          <p class="show-card__desc">Richard Rogue, private detective, gets knocked unconscious in nearly every episode — and hallucinates conversations with...</p>
+          <div class="show-card__count">24 episodes</div>
+        </a>
+      </div>
+
+      <h2 class="genre-heading">Drama</h2>
+      <div class="show-grid">
+        <a href="/lux-radio-theatre/" class="show-card">
+          <div class="show-card__badge" style="background:#7f8c8d">Drama</div>
+          <h3 class="show-card__title">Lux Radio Theatre</h3>
+          <div class="show-card__era">1934–1955 · CBS / NBC</div>
+          <p class="show-card__desc">Hollywood's biggest stars recreating their greatest films for radio — produced by Cecil B. DeMille. An unparalleled arch...</p>
+          <div class="show-card__count">439 episodes</div>
+        </a>
+        <a href="/mercury-theatre/" class="show-card">
+          <div class="show-card__badge" style="background:#7f8c8d">Drama</div>
+          <h3 class="show-card__title">Mercury Theatre on the Air</h3>
+          <div class="show-card__era">1938 · CBS</div>
+          <p class="show-card__desc">Orson Welles and the Mercury Theatre Company — including the legendary War of the Worlds broadcast that panicked a natio...</p>
+          <div class="show-card__count">14 episodes</div>
+        </a>
+        <a href="/stars-over-hollywood/" class="show-card">
+          <div class="show-card__badge" style="background:#7f8c8d">Drama</div>
+          <h3 class="show-card__title">Stars Over Hollywood</h3>
+          <div class="show-card__era">1941–1953 · CBS</div>
+          <p class="show-card__desc">Dramatic anthology featuring Hollywood's finest talent in original radio plays. Decades of compelling drama from CBS's g...</p>
+          <div class="show-card__count">3 episodes</div>
+        </a>
+      </div>
+
+      <h2 class="genre-heading">Horror</h2>
+      <div class="show-grid">
+        <a href="/inner-sanctum/" class="show-card">
+          <div class="show-card__badge" style="background:#cc2200">Horror</div>
+          <h3 class="show-card__title">Inner Sanctum Mysteries</h3>
+          <div class="show-card__era">1941–1952 · NBC / CBS</div>
+          <p class="show-card__desc">The creaking door opens, and Raymond Edward Johnson welcomes you to another tale of mystery and horror. Macabre, atmosph...</p>
+          <div class="show-card__count">63 episodes</div>
+        </a>
+        <a href="/lights-out/" class="show-card">
+          <div class="show-card__badge" style="background:#cc2200">Horror</div>
+          <h3 class="show-card__title">Lights Out</h3>
+          <div class="show-card__era">1934–1947 · NBC / CBS</div>
+          <p class="show-card__desc">Arch Oboler's masterpiece of radio horror. Stories so disturbing that NBC received thousands of listener complaints. Tur...</p>
+          <div class="show-card__count">138 episodes</div>
+        </a>
+        <a href="/quiet-please/" class="show-card">
+          <div class="show-card__badge" style="background:#cc2200">Horror</div>
+          <h3 class="show-card__title">Quiet Please</h3>
+          <div class="show-card__era">1947–1949 · Mutual</div>
+          <p class="show-card__desc">Wyllis Cooper's cerebral, unsettling anthology — widely considered the most literate horror program in radio history. Qu...</p>
+          <div class="show-card__count">91 episodes</div>
+        </a>
+      </div>
+
+      <h2 class="genre-heading">Musical</h2>
+      <div class="show-grid">
+        <a href="/railroad-hour/" class="show-card">
+          <div class="show-card__badge" style="background:#8e44ad">Musical</div>
+          <h3 class="show-card__title">The Railroad Hour</h3>
+          <div class="show-card__era">1948–1954 · ABC</div>
+          <p class="show-card__desc">Gordon MacRae and the MGM Orchestra in condensed musical adaptations of Broadway shows and operettas. The pinnacle of ra...</p>
+          <div class="show-card__count">345 episodes</div>
+        </a>
+      </div>
+
+      <h2 class="genre-heading">Mystery</h2>
+      <div class="show-grid">
+        <a href="/shadow/" class="show-card">
+          <div class="show-card__badge" style="background:#6b5b95">Mystery</div>
+          <h3 class="show-card__title">The Shadow</h3>
+          <div class="show-card__era">1937–1954 · Mutual</div>
+          <p class="show-card__desc">Who knows what evil lurks in the hearts of men? The Shadow knows. Lamont Cranston's power to cloud men's minds made this...</p>
+          <div class="show-card__count">197 episodes</div>
+        </a>
+        <a href="/mysterious-traveler/" class="show-card">
+          <div class="show-card__badge" style="background:#6b5b95">Mystery</div>
+          <h3 class="show-card__title">The Mysterious Traveler</h3>
+          <div class="show-card__era">1943–1953 · Mutual</div>
+          <p class="show-card__desc">A mysterious stranger on a train shares tales of the strange and macabre. Every story a twist, every episode a journey i...</p>
+          <div class="show-card__count">70 episodes</div>
+        </a>
+        <a href="/cbs-mystery/" class="show-card">
+          <div class="show-card__badge" style="background:#6b5b95">Mystery</div>
+          <h3 class="show-card__title">CBS Radio Mystery Theater</h3>
+          <div class="show-card__era">1974–1982 · CBS</div>
+          <p class="show-card__desc">E.G. Marshall hosted over 1,300 episodes of this late-era anthology — proving radio drama still had power long after tel...</p>
+          <div class="show-card__count">212 episodes</div>
+        </a>
+        <a href="/sherlock/" class="show-card">
+          <div class="show-card__badge" style="background:#6b5b95">Mystery</div>
+          <h3 class="show-card__title">Sherlock Holmes</h3>
+          <div class="show-card__era">1930–1955 · Various</div>
+          <p class="show-card__desc">The world's greatest detective in dozens of radio adventures — featuring Basil Rathbone, John Stanley, and Tom Conway br...</p>
+          <div class="show-card__count">52 episodes</div>
+        </a>
+        <a href="/whistler/" class="show-card">
+          <div class="show-card__badge" style="background:#6b5b95">Mystery</div>
+          <h3 class="show-card__title">The Whistler</h3>
+          <div class="show-card__era">1942–1955 · CBS</div>
+          <p class="show-card__desc">I am the Whistler, and I know many things — for I walk by night. Ironic tales of crime and justice narrated by a mysteri...</p>
+          <div class="show-card__count">939 episodes</div>
+        </a>
+      </div>
+
+      <h2 class="genre-heading">Noir</h2>
+      <div class="show-grid">
+        <a href="/sam-spade/" class="show-card">
+          <div class="show-card__badge" style="background:#8b7355">Noir</div>
+          <h3 class="show-card__title">Sam Spade, Private Detective</h3>
+          <div class="show-card__era">1946–1951 · NBC / CBS</div>
+          <p class="show-card__desc">Howard Duff as Dashiell Hammett's hard-boiled San Francisco private eye. Each case dictated to his loyal secretary Effie...</p>
+          <div class="show-card__count">71 episodes</div>
+        </a>
+        <a href="/philip-marlowe/" class="show-card">
+          <div class="show-card__badge" style="background:#8b7355">Noir</div>
+          <h3 class="show-card__title">Philip Marlowe</h3>
+          <div class="show-card__era">1947–1951 · NBC / CBS</div>
+          <p class="show-card__desc">Raymond Chandler's iconic detective brought to life. Gerald Mohr's sardonic Marlowe navigated the corrupt underbelly of ...</p>
+          <div class="show-card__count">189 episodes</div>
+        </a>
+        <a href="/broadway-beat/" class="show-card">
+          <div class="show-card__badge" style="background:#8b7355">Noir</div>
+          <h3 class="show-card__title">Broadway Is My Beat</h3>
+          <div class="show-card__era">1949–1954 · CBS</div>
+          <p class="show-card__desc">Detective Danny Clover investigates murders along the Great White Way. Dark, moody, and brilliantly written New York noi...</p>
+          <div class="show-card__count">150 episodes</div>
+        </a>
+        <a href="/nightbeat/" class="show-card">
+          <div class="show-card__badge" style="background:#8b7355">Noir</div>
+          <h3 class="show-card__title">Nightbeat</h3>
+          <div class="show-card__era">1950–1952 · NBC</div>
+          <p class="show-card__desc">Chicago newspaper reporter Randy Stone prowls the city at night, encountering stories of human drama. One of radio's mos...</p>
+          <div class="show-card__count">60 episodes</div>
+        </a>
+      </div>
+
+      <h2 class="genre-heading">Sci-Fi</h2>
+      <div class="show-grid">
+        <a href="/dimension-x/" class="show-card">
+          <div class="show-card__badge" style="background:#1a6b8a">Sci-Fi</div>
+          <h3 class="show-card__title">Dimension X</h3>
+          <div class="show-card__era">1950–1951 · NBC</div>
+          <p class="show-card__desc">NBC's groundbreaking science fiction anthology adapting the best of Asimov, Bradbury, and Heinlein. Radio's first great ...</p>
+          <div class="show-card__count">50 episodes</div>
+        </a>
+        <a href="/x-minus-one/" class="show-card">
+          <div class="show-card__badge" style="background:#1a6b8a">Sci-Fi</div>
+          <h3 class="show-card__title">X Minus One</h3>
+          <div class="show-card__era">1955–1958 · NBC</div>
+          <p class="show-card__desc">The greatest science fiction radio series ever produced — adapting Galaxy Magazine's best stories with stunning producti...</p>
+          <div class="show-card__count">123 episodes</div>
+        </a>
+      </div>
+
+      <h2 class="genre-heading">Spy</h2>
+      <div class="show-grid">
+      </div>
+
+      <h2 class="genre-heading">Thriller</h2>
+      <div class="show-grid">
+        <a href="/suspense/" class="show-card">
+          <div class="show-card__badge" style="background:#aa3300">Thriller</div>
+          <h3 class="show-card__title">Suspense</h3>
+          <div class="show-card__era">1942–1962 · CBS</div>
+          <p class="show-card__desc">Radio's premier anthology thriller. Twenty years of stories designed to keep you in suspense — featuring Hollywood's big...</p>
+          <div class="show-card__count">1,049 episodes</div>
+        </a>
+      </div>
+
+      <h2 class="genre-heading">Western</h2>
+      <div class="show-grid">
+        <a href="/have-gun/" class="show-card">
+          <div class="show-card__badge" style="background:#8b4513">Western</div>
+          <h3 class="show-card__title">Have Gun Will Travel</h3>
+          <div class="show-card__era">1958–1960 · CBS</div>
+          <p class="show-card__desc">Paladin, a West Point-educated gunfighter for hire based in San Francisco. Intelligent, literary, and morally complex — ...</p>
+          <div class="show-card__count">104 episodes</div>
+        </a>
+        <a href="/loneranger/" class="show-card">
+          <div class="show-card__badge" style="background:#8b4513">Western</div>
+          <h3 class="show-card__title">The Lone Ranger</h3>
+          <div class="show-card__era">1933–1954 · ABC</div>
+          <p class="show-card__desc">Hi-yo, Silver! The masked rider of the plains and his faithful companion Tonto — radio's greatest western hero, fighting...</p>
+          <div class="show-card__count">2,154 episodes</div>
+        </a>
+        <a href="/gunsmoke/" class="show-card">
+          <div class="show-card__badge" style="background:#8b4513">Western</div>
+          <h3 class="show-card__title">Gunsmoke</h3>
+          <div class="show-card__era">1952–1961 · CBS</div>
+          <p class="show-card__desc">William Conrad as Marshal Matt Dillon keeping the peace in Dodge City. The adult western that defined the genre — gritty...</p>
+          <div class="show-card__count">473 episodes</div>
+        </a>
+        <a href="/cisco-kid/" class="show-card">
+          <div class="show-card__badge" style="background:#8b4513">Western</div>
+          <h3 class="show-card__title">The Cisco Kid</h3>
+          <div class="show-card__era">1942–1956 · Mutual/Syndicated</div>
+          <p class="show-card__desc">The Robin Hood of the Old West and his sidekick Pancho — O. Henry's beloved characters riding through the Southwest righ...</p>
+          <div class="show-card__count">153 episodes</div>
+        </a>
+        <a href="/fort-laramie/" class="show-card">
+          <div class="show-card__badge" style="background:#8b4513">Western</div>
+          <h3 class="show-card__title">Fort Laramie</h3>
+          <div class="show-card__era">1956 · CBS</div>
+          <p class="show-card__desc">The most serious and realistic western in radio history. Captain Lee Quince and the U.S. Cavalry face the brutal reality...</p>
+          <div class="show-card__count">41 episodes</div>
+        </a>
       </div>
 
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-banner">
-    <div class="container fade-in">
-      <h2>Listen Now</h2>
-      <p>All five shows are available on our YouTube channel, with new episodes uploaded regularly.</p>
-      <a href="https://www.youtube.com/@GhostOfRadio" target="_blank" rel="noopener" class="btn btn--filled">▶ Visit Our YouTube Channel</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <div class="footer__brand-name"><img src="images/logo.png" alt="Ghost of Radio" class="footer__logo-img"> Ghost of Radio</div>
-        <p>Where vintage broadcasts return from the dead. Bringing the golden age of radio to a new generation on YouTube.</p>
-        <div class="social-links">
-          <a href="https://www.youtube.com/@GhostOfRadio" target="_blank" rel="noopener">▶ YouTube</a>
-          <a href="https://www.facebook.com/profile.php?id=61575492482642" target="_blank" rel="noopener">ⓕ Facebook</a>
-        </div>
-      </div>
-      <div class="footer__links">
-        <div class="footer__col">
-          <h4>Navigate</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shows.html">Shows</a></li>
-            <li><a href="about.html">About</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="mailto:admin@ghostofradio.com">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p>&copy; <span class="current-year">2026</span> Ghost of Radio. All rights reserved. Classic radio programs are in the public domain.</p>
-    </div>
+    <p>© 2025 Ghost of Radio · <a href="/about.html">About</a> · <a href="/privacy-policy.html">Privacy</a></p>
   </footer>
-
-  <!-- Install App Banner -->
-  <div id="installBanner" class="install-banner" style="display:none;">
-    <span>Install Ghost of Radio for offline listening</span>
-    <button id="installBtn" class="btn btn--filled" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Install</button>
-    <button id="installDismiss" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1.2rem;padding:0.5rem;" aria-label="Dismiss">&times;</button>
-  </div>
-
-  <script src="js/main.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/sw.js');
-      });
-    }
-    (function () {
-      var deferredPrompt = null;
-      var banner = document.getElementById('installBanner');
-      var installBtn = document.getElementById('installBtn');
-      var dismissBtn = document.getElementById('installDismiss');
-      window.addEventListener('beforeinstallprompt', function (e) {
-        e.preventDefault();
-        deferredPrompt = e;
-        setTimeout(function () {
-          if (deferredPrompt && !sessionStorage.getItem('installDismissed')) {
-            banner.style.display = 'flex';
-          }
-        }, 30000);
-      });
-      if (installBtn) {
-        installBtn.addEventListener('click', function () {
-          if (deferredPrompt) {
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then(function () {
-              deferredPrompt = null;
-              banner.style.display = 'none';
-            });
-          }
-        });
-      }
-      if (dismissBtn) {
-        dismissBtn.addEventListener('click', function () {
-          banner.style.display = 'none';
-          sessionStorage.setItem('installDismissed', '1');
-        });
-      }
-    })();
-  </script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
