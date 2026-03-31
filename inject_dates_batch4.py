@@ -250,14 +250,9 @@ def extract_date_from_html_filename(filename):
     """Extract date from HTML filename pattern like show-YY-MM-DD-title.html"""
     stem = os.path.splitext(os.path.basename(filename))[0]
 
-    # Standard pattern: show-name-YY-MM-DD-title (date after show prefix)
-    # Try matching YY-MM-DD as standalone segments (surrounded by separators or end)
-    # Be careful with numbers that are part of titles like "2ndcourtship", "1877nickel"
-
-    # Strategy: look for pattern where after the show prefix, we have YY-MM-DD
-    # Pattern: two-digit year between 28 and 59 (OTR era), then month, then day
-    m = re.search(r'-(\d{2})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])(?:-|$)', stem)
-    if m:
+    # Find all potential YY-MM-DD patterns (valid month/day, no separator required after day)
+    # This handles cases like "49-09-282ndcourtship" -> 1949-09-28
+    for m in re.finditer(r'(\d{2})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])', stem):
         yy, mm, dd = int(m.group(1)), int(m.group(2)), int(m.group(3))
         year = 1900 + yy
         if 1928 <= year <= 1959:
@@ -268,8 +263,7 @@ def extract_date_from_html_filename(filename):
                 pass
 
     # Try 4-digit year
-    m = re.search(r'-(19\d{2})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])(?:-|$)', stem)
-    if m:
+    for m in re.finditer(r'(19\d{2})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])', stem):
         try:
             dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)))
             return dt.strftime("%Y-%m-%d"), dt.strftime("%B %-d, %Y")
