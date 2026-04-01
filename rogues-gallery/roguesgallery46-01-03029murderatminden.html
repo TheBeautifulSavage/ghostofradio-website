@@ -82,11 +82,10 @@
         </div>
 
         <div class="episode__content">
-          <p># Rogue's Gallery: Murder at Minden</p>
-<p>*January 3, 1946*</p>
+          <p>January 3, 1946</p>
 <p>Step into the foggy streets of Minden tonight as detective Dick Rogue takes on a case that will test every ounce of his considerable wit—and his patience. When a society dame turns up dead in her locked penthouse, all the usual suspects gather like vultures, each with a motive sharp enough to draw blood. Our wisecracking hero must navigate a labyrinth of alibis, false leads, and the kind of double-talk that only the criminal underworld can serve up. With danger lurking around every corner and a killer determined to stay one step ahead, this episode crackles with the electric energy of a mystery that refuses to be solved by the book. You'll hear the snap of cold detective work mixed with the sharp one-liners that have made Rogue's Gallery appointment listening for millions across the country.</p>
-<p>Since its 1945 debut, *Rogue's Gallery* has carved out a unique niche in the golden age of radio by refusing to take itself too seriously. While other crime dramas play it straight, this show understands that real detective work is often as funny as it is dangerous. The program's success rides on the chemistry between its cast and writers who understand that the best mysteries are the ones peppered with genuine laughs. The show has become essential listening for those who remember radio's magic—that golden era when a voice in the dark could transport you straight into danger.</p>
-<p>Don't miss tonight's broadcast. Whether you're a devoted fan or a newcomer curious about why *Rogue's Gallery* has become required listening, "Murder at Minden" delivers everything you crave: crime, comedy, and the unmistakable crackle of live radio drama at its finest. Tune in at 9 PM and join thousands settling in for an evening with Dick Rogue—where the cases are real and the laughs are genuine.</p>
+<p>Since its 1945 debut, Rogue's Gallery has carved out a unique niche in the golden age of radio by refusing to take itself too seriously. While other crime dramas play it straight, this show understands that real detective work is often as funny as it is dangerous. The program's success rides on the chemistry between its cast and writers who understand that the best mysteries are the ones peppered with genuine laughs. The show has become essential listening for those who remember radio's magic—that golden era when a voice in the dark could transport you straight into danger.</p>
+<p>Don't miss tonight's broadcast. Whether you're a devoted fan or a newcomer curious about why Rogue's Gallery has become required listening, "Murder at Minden" delivers everything you crave: crime, comedy, and the unmistakable crackle of live radio drama at its finest. Tune in at 9 PM and join thousands settling in for an evening with Dick Rogue—where the cases are real and the laughs are genuine.</p>
         </div>
 
         
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
