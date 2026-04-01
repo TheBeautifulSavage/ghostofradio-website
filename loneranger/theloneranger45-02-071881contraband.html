@@ -82,11 +82,10 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lone Ranger: "Contraband"</p>
-<p>*Original Broadcast: July 18, 1941*</p>
+          <p>Original Broadcast: July 18, 1941</p>
 <p>As the familiar thundering hoofbeats of Silver fade into the desert night and the Lone Ranger's voice crackles through your radio speaker, you know you're about to witness justice in its most compelling form. In "Contraband," our masked avenger discovers a smuggling ring operating along the dusty border towns, where unscrupulous dealers traffic in forbidden goods that threaten the safety of honest settlers. With only Tonto's steadfast loyalty and his own quick draw to rely upon, the Ranger must navigate a web of deception and danger, infiltrating the criminals' operation before another innocent falls victim to their greed. The tension builds masterfully as he closes in on the ringleaders, all while remaining one step ahead of both the lawmen who don't understand his methods and the outlaws who'd gladly fill him with lead.</p>
 <p>The Lone Ranger represented something America desperately needed during the early 1940s—a moral certainty wrapped in adventure and excitement. With the nation grappling with real-world dangers and uncertainty, listeners found solace in the Ranger's unwavering code of honor and his commitment to justice beyond bureaucratic limitations. The show's brilliance lay in its ability to make every listener feel the pulse of the West, the danger lurking in shadows, and the satisfaction of righteousness prevailing. Britt Reid's portrayal of the Ranger became iconic precisely because he embodied American ideals at a moment when they were being tested.</p>
-<p>Don't miss this gripping tale of frontier justice. Switch on your radio dial, settle in, and let "Contraband" transport you back to an era when one man's courage could change everything. *Hi-Ho, Silver, away!*</p>
+<p>Don't miss this gripping tale of frontier justice. Switch on your radio dial, settle in, and let "Contraband" transport you back to an era when one man's courage could change everything. Hi-Ho, Silver, away!</p>
         </div>
 
         
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

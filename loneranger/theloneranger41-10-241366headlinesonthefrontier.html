@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Headlines on the Frontier</p>
-<p>*The Lone Ranger* 41: "Headlines on the Frontier"</p>
+          <p>The Lone Ranger 41: "Headlines on the Frontier"</p>
 <p>Dust devils swirl across the badlands as our masked avenger races against time to uncover a sinister conspiracy brewing in a frontier town gripped by fear. In this thrilling installment, the Lone Ranger discovers that a corrupt newspaper editor has been printing fabricated stories to incite a lynch mob against an innocent man, all in service of a wealthy cattle baron's scheme to seize disputed land. With only his wits, his faithful companion Tonto, and the legendary Silver, the Ranger must infiltrate the printing press under cover of darkness, expose the truth before sunup, and confront the forces of deception that threaten to destroy an entire community. The tension crackles through every scene—will justice prevail, or will the machinery of corruption grind another good man into dust?</p>
-<p>By the early 1940s, *The Lone Ranger* had become America's most beloved radio drama, commanding millions of listeners with its perfect marriage of moral clarity and heart-pounding adventure. What distinguished this program from its contemporaries was its unwavering commitment to truth and justice in an era when those values felt increasingly precious. The show's writers understood the power of the frontier myth at a time when America was grappling with its own sense of purpose, crafting stories that resonated with listeners' deepest hopes for heroism and redemption. The Ranger himself—masked, mysterious, yet incorruptibly righteous—embodied an ideal that transcended the simple dichotomy of good versus evil, instead celebrating the power of individual conscience and determined action.</p>
+<p>By the early 1940s, The Lone Ranger had become America's most beloved radio drama, commanding millions of listeners with its perfect marriage of moral clarity and heart-pounding adventure. What distinguished this program from its contemporaries was its unwavering commitment to truth and justice in an era when those values felt increasingly precious. The show's writers understood the power of the frontier myth at a time when America was grappling with its own sense of purpose, crafting stories that resonated with listeners' deepest hopes for heroism and redemption. The Ranger himself—masked, mysterious, yet incorruptibly righteous—embodied an ideal that transcended the simple dichotomy of good versus evil, instead celebrating the power of individual conscience and determined action.</p>
 <p>Don't miss this electrifying episode as the Lone Ranger battles the printed word itself to rescue justice from the jaws of corruption. Tune in now for "Headlines on the Frontier"—where truth still matters, and one man's courage can change everything.</p>
         </div>
 
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

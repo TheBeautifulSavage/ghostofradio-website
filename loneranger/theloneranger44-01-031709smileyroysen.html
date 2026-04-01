@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lone Ranger - "Smiley Roy's End" (March 17, 1940)</p>
-<p>Thunder cracks across the desert as the masked avenger rides into a dusty frontier town gripped by fear. Smiley Roy, a charismatic confidence man with a silver tongue and a quicker trigger finger, has been fleecing honest settlers and leaving a trail of broken dreams in his wake. When the Lone Ranger arrives to investigate, he discovers a web of deception more tangled than usual—Roy has even managed to charm the local lawmen into looking the other way. This episode crackles with the kind of moral complexity that kept millions of listeners glued to their radio sets: How do you stop a criminal who's convinced an entire community he's their friend? As the Lone Ranger closes in, loyalties fracture, secrets unravel, and the masked rider must rely not just on his quick draw, but on his ability to see through the carefully constructed lies that threaten to destroy this small corner of the West.</p>
+          <p>Thunder cracks across the desert as the masked avenger rides into a dusty frontier town gripped by fear. Smiley Roy, a charismatic confidence man with a silver tongue and a quicker trigger finger, has been fleecing honest settlers and leaving a trail of broken dreams in his wake. When the Lone Ranger arrives to investigate, he discovers a web of deception more tangled than usual—Roy has even managed to charm the local lawmen into looking the other way. This episode crackles with the kind of moral complexity that kept millions of listeners glued to their radio sets: How do you stop a criminal who's convinced an entire community he's their friend? As the Lone Ranger closes in, loyalties fracture, secrets unravel, and the masked rider must rely not just on his quick draw, but on his ability to see through the carefully constructed lies that threaten to destroy this small corner of the West.</p>
 <p>By 1940, The Lone Ranger had become America's most beloved radio program, broadcast five days a week into over thirty million homes. The show's genius lay in its perfect balance of action and morality—never gratuitous, always purposeful. The Lone Ranger himself embodied a uniquely American ideal: the outsider who protects civilization while remaining apart from it, fighting injustice with intelligence and restraint rather than mere violence. Episodes like "Smiley Roy's End" showcased why the character had captured the nation's imagination during the depths of the Depression and remained compelling through the 1940s.</p>
-<p>Don your headphones and saddle up for this masterclass in Old West storytelling. The Lone Ranger awaits—*Hi-Yo, Silver!*</p>
+<p>Don your headphones and saddle up for this masterclass in Old West storytelling. The Lone Ranger awaits—Hi-Yo, Silver!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

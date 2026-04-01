@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># He Wouldn't Stay Dead</p>
-<p>When the masked avenger rides into Silver Gulch under cover of darkness, he discovers a mystery that defies reason itself. A man everyone believed dead—buried six feet under for nigh on three months—has been spotted alive and well, running a saloon on the outskirts of town. Is it a ghost, an elaborate hoax, or something far more sinister? As The Lone Ranger and faithful Tonto piece together the puzzle, they'll encounter false identities, grave robbers, and a conspiracy that reaches into the very heart of the town's most respectable families. The tension crackles through every scene, from the eerie graveyard confrontation to the climactic shootout in the saloon, where nothing is quite what it seems.</p>
+          <p>When the masked avenger rides into Silver Gulch under cover of darkness, he discovers a mystery that defies reason itself. A man everyone believed dead—buried six feet under for nigh on three months—has been spotted alive and well, running a saloon on the outskirts of town. Is it a ghost, an elaborate hoax, or something far more sinister? As The Lone Ranger and faithful Tonto piece together the puzzle, they'll encounter false identities, grave robbers, and a conspiracy that reaches into the very heart of the town's most respectable families. The tension crackles through every scene, from the eerie graveyard confrontation to the climactic shootout in the saloon, where nothing is quite what it seems.</p>
 <p>By the 1940s, The Lone Ranger had become America's most beloved radio western, captivating millions of listeners with stories that perfectly balanced thrilling action with genuine mystery and moral clarity. This particular episode showcases the show's mastery of suspense—the writers knew that the best radio drama didn't rely on special effects, but on vivid sound design and storytelling that forced listeners to lean in closer to their receivers. The galloping hoofbeats of Silver, the crack of six-shooters, the creaking saddle leather, and those iconic masked man yells created an entire world in the listener's mind, one that was every bit as real as the evening news.</p>
-<p>Whether you're a devoted fan who's followed the masked man's adventures since 1933 or a newcomer curious about this golden age of radio, "He Wouldn't Stay Dead" is essential listening. Settle into your favorite chair, dim the lights, and prepare yourself for an evening of genuine mystery and Western justice. The Lone Ranger awaits—*Hi-Yo, Silver!*</p>
+<p>Whether you're a devoted fan who's followed the masked man's adventures since 1933 or a newcomer curious about this golden age of radio, "He Wouldn't Stay Dead" is essential listening. Settle into your favorite chair, dim the lights, and prepare yourself for an evening of genuine mystery and Western justice. The Lone Ranger awaits—Hi-Yo, Silver!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

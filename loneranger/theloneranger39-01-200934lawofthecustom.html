@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lone Ranger: "Law of the Custom"</p>
-<p>*Original Air Date: September 20, 1934*</p>
+          <p>Original Air Date: September 20, 1934</p>
 <p>The hoofbeats of Silver echo across the desert as another shadowy figure rides into a town gripped by an ancient and deadly code. In "Law of the Custom," listeners will find themselves caught between two worlds—the written law of civilization and the unforgiving customs of frontier justice. A community stands divided when a traveling Mexican vaquero is accused of a crime, and local tradition demands swift vengeance that the ranger law cannot prevent. The Lone Ranger must navigate treacherous moral terrain, where his mask and mysterious identity become assets in exposing the truth before bloodshed erupts. The tension mounts as cultural pride clashes with righteousness, and only the masked avenger's cunning can prevent a tragedy born from misunderstanding and prejudice.</p>
 <p>This 1934 broadcast captures the golden age of radio adventure at its finest—when The Lone Ranger had already captured America's imagination across ABC's nationwide network, yet still possessed an edge of genuine unpredictability. Created by George W. Trendle and developed into a phenomenon that would span two decades, the show explored themes far more sophisticated than simple good-versus-evil tales. Episodes like this one grapple with cultural conflict and the complexities of frontier justice with surprising nuance for the era, reflecting radio's unique power to challenge listeners' assumptions through intimate, dialogue-driven drama. The Lone Ranger became more than entertainment; it was a weekly meditation on what justice truly means.</p>
 <p>Step into the starlit desert night and join the masked man and his faithful companion Tonto as they face "Law of the Custom." This is classic radio adventure—where honor, duty, and compassion collide with thrilling consequences. Tune in and discover why millions kept their dials locked to this legendary show.</p>
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

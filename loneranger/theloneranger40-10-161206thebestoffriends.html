@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Best of Friends</p>
-<p>As the familiar William Tell Overture swells across your radio speaker, you're transported to the dusty trails of the American frontier, where a masked stranger rides alongside his faithful companion Tonto. In this compelling 1940s episode, "The Best of Friends," the unbreakable bond between the Lone Ranger and Tonto is tested like never before when a misunderstanding threatens to tear apart the most storied partnership in the Old West. A mysterious stranger arrives in town with accusations that could turn friend against friend, forcing our heroes to navigate treachery, doubt, and the question of whether loyalty can survive when trust is shaken to its very core. The tension crackles through every scene as the radio drama unfolds with the expert pacing and vivid sound effects that made millions of listeners lean closer to their sets each week.</p>
+          <p>As the familiar William Tell Overture swells across your radio speaker, you're transported to the dusty trails of the American frontier, where a masked stranger rides alongside his faithful companion Tonto. In this compelling 1940s episode, "The Best of Friends," the unbreakable bond between the Lone Ranger and Tonto is tested like never before when a misunderstanding threatens to tear apart the most storied partnership in the Old West. A mysterious stranger arrives in town with accusations that could turn friend against friend, forcing our heroes to navigate treachery, doubt, and the question of whether loyalty can survive when trust is shaken to its very core. The tension crackles through every scene as the radio drama unfolds with the expert pacing and vivid sound effects that made millions of listeners lean closer to their sets each week.</p>
 <p>By the 1940s, The Lone Ranger had become an American institution—a weekly escape for families huddled around their radios during uncertain times, offering tales of justice and righteousness in an increasingly complex world. This episode exemplifies why the show endured for over two decades: it wasn't content with mere action and adventure, but explored the moral dimensions of heroism and the precious nature of true friendship. The chemistry between the Lone Ranger and Tonto, portrayed with remarkable nuance for the medium, set the standard for heroic partnerships that would influence countless stories for generations to come.</p>
-<p>Don't miss this chance to experience classic radio drama at its finest. Tune in now to hear how two friends face their greatest challenge, and discover why The Lone Ranger remains the gold standard of adventure radio. *Hi-ho, Silver!*</p>
+<p>Don't miss this chance to experience classic radio drama at its finest. Tune in now to hear how two friends face their greatest challenge, and discover why The Lone Ranger remains the gold standard of adventure radio. Hi-ho, Silver!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

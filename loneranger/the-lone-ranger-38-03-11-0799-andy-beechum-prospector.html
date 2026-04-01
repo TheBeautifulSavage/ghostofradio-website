@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lone Ranger: Andy Beechum, Prospector</p>
-<p>Deep in the desert badlands, where the heat warps the horizon and a man's greed can turn deadlier than rattlesnakes, old Andy Beechum has struck something precious—or so he believes. But fortune in the Old West rarely comes without a price, and when Andy's discovery draws the attention of claim jumpers willing to kill for their share, only the masked rider himself can navigate the treacherous landscape of ambition and violence that follows. Listeners will find themselves gripped by the tension as the Lone Ranger uncovers a web of deception where nothing is quite as it seems, and Andy's desperate struggle for wealth becomes a matter of life and death. The sound of hoofbeats, the crack of gunfire across open country, and the Lone Ranger's steady resolve to protect the innocent create an unforgettable episode that captures everything that made this show an American institution.</p>
+          <p>Deep in the desert badlands, where the heat warps the horizon and a man's greed can turn deadlier than rattlesnakes, old Andy Beechum has struck something precious—or so he believes. But fortune in the Old West rarely comes without a price, and when Andy's discovery draws the attention of claim jumpers willing to kill for their share, only the masked rider himself can navigate the treacherous landscape of ambition and violence that follows. Listeners will find themselves gripped by the tension as the Lone Ranger uncovers a web of deception where nothing is quite as it seems, and Andy's desperate struggle for wealth becomes a matter of life and death. The sound of hoofbeats, the crack of gunfire across open country, and the Lone Ranger's steady resolve to protect the innocent create an unforgettable episode that captures everything that made this show an American institution.</p>
 <p>Since its debut in 1933, The Lone Ranger has galloped into living rooms across the nation, building a devoted audience through over two decades of adventure. By the 1940s, when this episode aired, the show had perfected its formula: a mysterious hero of unshakeable moral conviction, a loyal companion in Tonto, and scripts that balanced authentic frontier atmosphere with timeless tales of justice. The Lone Ranger wasn't merely entertainment—it was a weekly ritual, a voice of principled heroism during uncertain times, proving that one man's courage could stand against corruption and greed.</p>
-<p>Don your imaginary Stetson and join us for this classic adventure. *The Lone Ranger* awaits—Hi-Ho, Silver!</p>
+<p>Don your imaginary Stetson and join us for this classic adventure. The Lone Ranger awaits—Hi-Ho, Silver!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lone Ranger: "Immigrant Killings"</p>
-<p>*Originally broadcast November 24, 1944*</p>
+          <p>Originally broadcast November 24, 1944</p>
 <p>As the thundering hoofbeats of Silver fade and the William Tell Overture crescendos into the night, listeners are transported to a dusty frontier town gripped by fear and prejudice. In this gripping episode, the masked avenger discovers a series of brutal murders targeting Chinese laborers, and the townspeople are quick to blame the victims' own community rather than seek the truth. With only Tonto's steady counsel and his own unshakeable moral compass to guide him, the Lone Ranger must navigate a powder keg of hatred and xenophobia to find the real killer—and challenge the dangerous assumptions that threaten to tear the town apart. The tension builds masterfully as false accusations mount and a lynch mob forms, testing our hero's commitment to justice in ways that cut far deeper than typical gun-slinging adventure.</p>
-<p>By the 1940s, *The Lone Ranger* had become America's most beloved radio program, reaching millions of listeners each week with tales that proved surprisingly progressive for their era. Created during the Depression, the show consistently presented themes of social justice and defended the rights of marginalized communities—including Native Americans, immigrants, and the wrongfully accused. This particular episode exemplifies why the program endured for over two decades: beneath the thrilling action and western mythology lay a genuine commitment to exposing injustice and championing the underdog.</p>
+<p>By the 1940s, The Lone Ranger had become America's most beloved radio program, reaching millions of listeners each week with tales that proved surprisingly progressive for their era. Created during the Depression, the show consistently presented themes of social justice and defended the rights of marginalized communities—including Native Americans, immigrants, and the wrongfully accused. This particular episode exemplifies why the program endured for over two decades: beneath the thrilling action and western mythology lay a genuine commitment to exposing injustice and championing the underdog.</p>
 <p>Don't miss this classic episode that proves the Lone Ranger's greatest battles weren't always fought with guns, but with integrity. Tune in and discover why America's masked hero remains a timeless symbol of conscience in a lawless world.</p>
         </div>
 
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

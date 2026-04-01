@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lone Ranger: Cattle Scheme</p>
-<p>*Air Date: 1940s*</p>
+          <p>Air Date: 1940s</p>
 <p>The masked avenger rides once more into peril as a ruthless scheme threatens to destroy the honest ranchers of the territory. In "Cattle Scheme," The Lone Ranger and his faithful companion Tonto must uncover a web of deception that reaches from the dusty cattle pens to the shadowy corridors of power. As night falls across the badlands, hoofbeats thunder through the darkness while unscrupulous plotters conspire to corner the market on livestock, leaving innocent settlers ruined in their wake. Listeners will experience the crackling tension of narrow escapes, the sharp crack of justice served by silver bullets, and the steady moral clarity that defines the masked rider's mission. With danger lurking at every turn and the clock ticking against desperate families, this episode delivers all the authentic Western drama and righteous action that made The Lone Ranger an institution in American entertainment.</p>
 <p>The Lone Ranger stood apart in the golden age of radio as a show that balanced thrilling adventure with genuine heroism and moral conviction. Throughout its remarkable twenty-one-year run on ABC, the program captivated millions of listeners—from children gathered around the family receiver to adults hungry for tales of justice in untamed lands. Each episode reinforced the show's core promise: that one man of integrity, aided by a trusted friend, could stand against corruption and greed. The character became so beloved that he transcended radio, becoming a cultural icon that would endure for generations.</p>
 <p>Step into the stirrup and join The Lone Ranger as he rides to the rescue once more. Tune in for "Cattle Scheme" and discover why listeners for over two decades made this masked champion their trusted companion in the evening hour.</p>
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

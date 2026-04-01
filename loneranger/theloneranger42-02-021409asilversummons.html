@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lone Ranger: A Silver Summons</p>
-<p>*Episode Broadcast Date: February 14, 1940*</p>
+          <p>Episode Broadcast Date: February 14, 1940</p>
 <p>The masked avenger rides once more into peril as a desperate summons reaches him in the dead of night. When a mysterious letter, sealed with a silver insignia matching his own legendary mark, arrives at his secret hideaway, the Lone Ranger faces an impossible choice: the letter claims to be from someone who knows his true identity, and demands his help in a matter of life and death. As our hero rides toward an unknown rendezvous across the moonlit desert, listeners will find themselves gripped by mounting tension—is this a trap laid by one of his many enemies, or a genuine cry for justice from someone who holds his greatest secret? The familiar thunder of hoofbeats, the crackle of campfire conversations, and Tonto's steadying wisdom punctuate an episode that explores the very heart of the masked man's isolated existence.</p>
 <p>What makes The Lone Ranger an enduring classic is precisely this blend of straightforward heroism and genuine emotional complexity. By the 1940s, the program had become appointment listening for millions of Americans, its twice-weekly broadcasts cementing the character as an icon of justice and integrity. This particular episode, from the show's golden era, represents the program at its finest—when the writers understood that the Ranger's greatest power wasn't his marksmanship or his intellect, but his unwavering commitment to a code of honor that transcended even his own safety.</p>
 <p>Don't miss this thrilling chapter in the legend of the Lone Ranger. Tune in and discover why, for over two decades, audiences across America gathered around their radio sets to follow a masked stranger who asked for nothing but the chance to set things right. Hi-yo, Silver!</p>
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

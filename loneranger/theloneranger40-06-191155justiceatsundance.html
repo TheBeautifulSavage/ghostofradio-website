@@ -82,11 +82,10 @@
         </div>
 
         <div class="episode__content">
-          <p># Justice at Sundance</p>
-<p>*[Original broadcast date: June 19, 1955]*</p>
+          <p>[Original broadcast date: June 19, 1955]</p>
 <p>The desert heat shimmers across the badlands as the Lone Ranger and Tonto race toward Sundance, where a grave injustice threatens to claim an innocent man's life. In this taut episode of suspense and righteous action, our masked hero must uncover a web of deception and corruption before sunset—when the noose is set to tighten around the neck of someone who didn't pull the trigger. With only the clatter of Silver's hooves and the crack of gunshots to punctuate the tension, listeners will be gripped by the moral urgency that defined the Ranger's mission: to bring true justice to the lawless frontier, not the convenient verdict of a town too frightened to ask harder questions.</p>
-<p>For over two decades, *The Lone Ranger* captivated millions of Americans with its blend of thrilling adventure and steadfast moral clarity. Airing across ABC's network during radio's golden age, the show provided an escape into a West where good and evil remained unmistakable, where the masked avenger's code of honor never wavered. The program's sophisticated sound design—from the thundering William Tell Overture to the meticulous foley work of galloping horses and frontier saloons—transported listeners directly into the action. Episodes like "Justice at Sundance" showcase why the Ranger endured as a cultural touchstone, embodying an ideal of frontier justice that transcended the medium itself.</p>
-<p>Slip on your Stetson and settle in for a half-hour of classic radio drama that crackles with urgency and purpose. *The Lone Ranger* awaits—where justice always rides faster than vengeance, and the truth always finds the light.</p>
+<p>For over two decades, The Lone Ranger captivated millions of Americans with its blend of thrilling adventure and steadfast moral clarity. Airing across ABC's network during radio's golden age, the show provided an escape into a West where good and evil remained unmistakable, where the masked avenger's code of honor never wavered. The program's sophisticated sound design—from the thundering William Tell Overture to the meticulous foley work of galloping horses and frontier saloons—transported listeners directly into the action. Episodes like "Justice at Sundance" showcase why the Ranger endured as a cultural touchstone, embodying an ideal of frontier justice that transcended the medium itself.</p>
+<p>Slip on your Stetson and settle in for a half-hour of classic radio drama that crackles with urgency and purpose. The Lone Ranger awaits—where justice always rides faster than vengeance, and the truth always finds the light.</p>
         </div>
 
         
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

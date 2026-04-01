@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># A Basis for Trust</p>
-<p>Saddle up, pardner, for a tale of suspicion and redemption from the golden age of radio drama. In this gripping 1940s episode, the masked avenger finds himself in the dusty crossroads of a small frontier town where trust is a currency more precious than silver. When a stranger rides into town with an offer that seems too good to be true, the townspeople are divided—some see opportunity, others smell deception. The Lone Ranger must unravel the mystery before greed and mistrust tear the community apart. Expect galloping hooves, sharp gunplay, and that distinctive masked man's unwavering moral compass cutting through the fog of human uncertainty. Your heart will pound as the Lone Ranger investigates in the shadows, his faithful companion Tonto watching the darkened streets, while overhead, the haunting strains of the William Tell Overture punctuate every twist of the plot.</p>
+          <p>Saddle up, pardner, for a tale of suspicion and redemption from the golden age of radio drama. In this gripping 1940s episode, the masked avenger finds himself in the dusty crossroads of a small frontier town where trust is a currency more precious than silver. When a stranger rides into town with an offer that seems too good to be true, the townspeople are divided—some see opportunity, others smell deception. The Lone Ranger must unravel the mystery before greed and mistrust tear the community apart. Expect galloping hooves, sharp gunplay, and that distinctive masked man's unwavering moral compass cutting through the fog of human uncertainty. Your heart will pound as the Lone Ranger investigates in the shadows, his faithful companion Tonto watching the darkened streets, while overhead, the haunting strains of the William Tell Overture punctuate every twist of the plot.</p>
 <p>The Lone Ranger represented something uniquely American during the Depression and war years—a hero bound not by law, but by justice itself. Unlike the corrupt officials and self-serving politicians of the era, this masked vigilante embodied the everyman's fantasy of righteous action unencumbered by bureaucracy. By the 1940s, when this episode aired, the show had become a cultural institution, drawing millions of listeners into their living rooms each week. The program's genius lay in its moral clarity: right and wrong were never ambiguous, and the Lone Ranger's intervention always restored peace and dignity to struggling communities.</p>
-<p>Don't miss this timeless adventure in justice and human nature. Tune in and discover why America tuned in faithfully for over two decades to follow this masked champion of the West. *Hi-ho, Silver!*</p>
+<p>Don't miss this timeless adventure in justice and human nature. Tune in and discover why America tuned in faithfully for over two decades to follow this masked champion of the West. Hi-ho, Silver!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

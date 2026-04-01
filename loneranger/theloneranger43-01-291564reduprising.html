@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lone Ranger: "Red Uprising"</p>
-<p>When the Lone Ranger and Tonto ride into Silver Gulch, they find a town gripped by fear and suspicion. A charismatic stranger has arrived with promises of wealth and unity, rallying the miners and townspeople with fiery speeches about taking back what's rightfully theirs. But beneath the rhetoric lies a sinister plot to incite violence and seize control of the silver mines. As tensions boil over and old friendships shatter, our masked hero must navigate a powder keg of human emotion and greed, using his wits rather than his guns to uncover the truth. Will the Lone Ranger expose the conspiracy before innocent blood is spilled?</p>
+          <p>When the Lone Ranger and Tonto ride into Silver Gulch, they find a town gripped by fear and suspicion. A charismatic stranger has arrived with promises of wealth and unity, rallying the miners and townspeople with fiery speeches about taking back what's rightfully theirs. But beneath the rhetoric lies a sinister plot to incite violence and seize control of the silver mines. As tensions boil over and old friendships shatter, our masked hero must navigate a powder keg of human emotion and greed, using his wits rather than his guns to uncover the truth. Will the Lone Ranger expose the conspiracy before innocent blood is spilled?</p>
 <p>The Lone Ranger remained America's most beloved radio adventure throughout the 1940s, commanding audiences of millions each week with stories that spoke directly to post-Depression anxieties and wartime concerns about unity and deception. This particular episode exemplifies the show's remarkable talent for blending Western action with relevant social themes—here exploring how demagoguery and mob mentality can destroy communities. Brace Beemer's iconic performance as the Ranger and John Todd's loyal portrayal of Tonto brought Fran Striker's scripts to vivid life, while sound effects wizards created immersive desert vistas and galloping hoofbeats that transported listeners to the American frontier.</p>
 <p>Tune in now to experience why The Lone Ranger captured the imagination of an entire nation—where justice, honor, and quick thinking triumphed over villainy, one thrilling episode at a time. Hi-ho, Silver!</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

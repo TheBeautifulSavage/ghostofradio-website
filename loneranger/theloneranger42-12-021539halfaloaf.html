@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lone Ranger - "Half a Loaf" (Original Air Date: February 15, 1939)</p>
-<p>Saddle up for a tale of frontier justice and moral complexity as the Lone Ranger and Tonto venture into the dusty borderlands where survival itself becomes a test of character. When a desperate family faces starvation in the harsh Arizona territory, the masked avenger must navigate the murky space between law and compassion. A stolen loaf of bread sets off a chain of events that could see an innocent person condemned—unless our hero can uncover the truth hidden behind a web of circumstantial evidence and desperation. Listen as the clip-clop of Silver's hooves echoes across the desert while thunder rumbles in the distance, punctuated by the Lone Ranger's calculated detective work and Tonto's loyal counsel. This episode captures the show's greatest strength: the ability to explore nuanced moral dilemmas while maintaining the thrilling action and Western atmosphere that made millions of listeners tune in each week.</p>
+          <p>Saddle up for a tale of frontier justice and moral complexity as the Lone Ranger and Tonto venture into the dusty borderlands where survival itself becomes a test of character. When a desperate family faces starvation in the harsh Arizona territory, the masked avenger must navigate the murky space between law and compassion. A stolen loaf of bread sets off a chain of events that could see an innocent person condemned—unless our hero can uncover the truth hidden behind a web of circumstantial evidence and desperation. Listen as the clip-clop of Silver's hooves echoes across the desert while thunder rumbles in the distance, punctuated by the Lone Ranger's calculated detective work and Tonto's loyal counsel. This episode captures the show's greatest strength: the ability to explore nuanced moral dilemmas while maintaining the thrilling action and Western atmosphere that made millions of listeners tune in each week.</p>
 <p>By the late 1930s, The Lone Ranger had become America's most beloved radio program, with an estimated 20 million listeners tuning in regularly. Created by George W. Trendle and Fran Striker, the show transcended typical Western pulp by presenting a hero guided by reason and justice rather than mere gunplay. The masked ranger became a symbol of principled heroism during the Depression and early war years, offering audiences a vision of fairness and integrity when real-world circumstances seemed increasingly unfair. "Half a Loaf" exemplifies the writing at its finest, treating its listeners with intelligence and respect.</p>
-<p>Don your headphones and step back into 1939, when radio drama was America's greatest entertainment. The Lone Ranger awaits—*hiyo, Silver!*</p>
+<p>Don your headphones and step back into 1939, when radio drama was America's greatest entertainment. The Lone Ranger awaits—hiyo, Silver!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

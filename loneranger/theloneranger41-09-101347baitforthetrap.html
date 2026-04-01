@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Bait for the Trap</p>
-<p>Ride alongside the masked avenger into the treacherous badlands where lawlessness breeds desperation and cunning. In this gripping episode from the golden age of radio drama, the Lone Ranger and his faithful companion Tonto must outwit a gang of ruthless outlaws who've devised a sinister scheme—using an innocent rancher's daughter as bait to draw out the masked vigilante himself. As the clock ticks toward sundown, our hero must navigate a minefield of deception, where every shadow could conceal danger and trust is the rarest commodity on the frontier. The crack of gunfire, the thunder of Silver's hooves, and that iconic William Tell Overture will transport you straight to the dusty trails of the Old West, where justice rides a white horse and honor means everything.</p>
+          <p>Ride alongside the masked avenger into the treacherous badlands where lawlessness breeds desperation and cunning. In this gripping episode from the golden age of radio drama, the Lone Ranger and his faithful companion Tonto must outwit a gang of ruthless outlaws who've devised a sinister scheme—using an innocent rancher's daughter as bait to draw out the masked vigilante himself. As the clock ticks toward sundown, our hero must navigate a minefield of deception, where every shadow could conceal danger and trust is the rarest commodity on the frontier. The crack of gunfire, the thunder of Silver's hooves, and that iconic William Tell Overture will transport you straight to the dusty trails of the Old West, where justice rides a white horse and honor means everything.</p>
 <p>From 1933 through 1954, The Lone Ranger captivated millions of American listeners with tales of righteousness in lawless lands, becoming one of radio's most enduring and beloved programs. This particular 1940s episode exemplifies the show's masterful formula: tight storytelling, genuine suspense, and a hero whose moral code never wavers despite overwhelming odds. The broadcast captures a time when families gathered around the radio set for adventure that sparked imagination—no special effects required, only brilliant writing, talented voice actors, and sound design that made bullets sing and horses gallop through living rooms across the nation.</p>
-<p>Don't miss this authentic slice of American entertainment history. Settle back, dim the lights, and let the Lone Ranger's world come alive in your mind as only radio can make it. *Hi-yo, Silver, away!*</p>
+<p>Don't miss this authentic slice of American entertainment history. Settle back, dim the lights, and let the Lone Ranger's world come alive in your mind as only radio can make it. Hi-yo, Silver, away!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
