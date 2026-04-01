@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460328 186 Out Of Control (128 44) 24557 25m30s Afrs — Suspense | Ghost of Radio</title>
+  <title>Out Of Control (128 44) 24557 25m30s Afrs — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460328 186 Out Of Control (128 44) 24557 25m30s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460328 186 Out Of Control (128 44) 24557 25m30s Afrs — Suspense">
   <meta property="og:description" content="Listen to Suspense 460328 186 Out Of Control (128 44) 24557 25m30s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 28, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460328 186 Out Of Control (128 44) 24557 25m30s Afrs</h1>
+          <h1 class="episode__title">Out Of Control (128 44) 24557 25m30s Afrs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Out of Control"</p>
-<p>When the lights dim and that unforgettable theme music swells—that piercing violin shriek that made millions shudder in their living rooms—you know you're about to enter a world where sanity hangs by a thread. In "Out of Control," the tension mounts from the first moment as ordinary circumstances spiral into nightmare. A situation that begins almost mundanely quickly becomes suffocating, the walls closing in as characters discover that some forces cannot be reasoned with, cannot be bargained with, and cannot be stopped. The crackling intensity of the broadcast, preserved across more than seventy years, captures that golden age of radio when sound alone could paralyze an audience with dread. Every creaking door, every breath, every whispered line of dialogue becomes a tool of terror in the hands of master storytellers.</p>
-<p>*Suspense* stood as CBS's crown jewel of horror programming for two glorious decades, attracting top-tier talent including Orson Welles, Humphrey Bogart, and Agnes Moorehead to its microphones. During the 1940s, when this episode aired, radio remained America's dominant entertainment medium, and *Suspense* commanded millions of devoted listeners each week. The show's genius lay in its understanding that the most terrifying monsters aren't always visible—that suggestion, silence, and the listener's own imagination could conjure horrors far more effective than any visual special effect. Episodes like "Out of Control" exemplify why the program earned its reputation as broadcasting's most reliably chilling experience.</p>
+          <p>When the lights dim and that unforgettable theme music swells—that piercing violin shriek that made millions shudder in their living rooms—you know you're about to enter a world where sanity hangs by a thread. In "Out of Control," the tension mounts from the first moment as ordinary circumstances spiral into nightmare. A situation that begins almost mundanely quickly becomes suffocating, the walls closing in as characters discover that some forces cannot be reasoned with, cannot be bargained with, and cannot be stopped. The crackling intensity of the broadcast, preserved across more than seventy years, captures that golden age of radio when sound alone could paralyze an audience with dread. Every creaking door, every breath, every whispered line of dialogue becomes a tool of terror in the hands of master storytellers.</p>
+<p>Suspense stood as CBS's crown jewel of horror programming for two glorious decades, attracting top-tier talent including Orson Welles, Humphrey Bogart, and Agnes Moorehead to its microphones. During the 1940s, when this episode aired, radio remained America's dominant entertainment medium, and Suspense commanded millions of devoted listeners each week. The show's genius lay in its understanding that the most terrifying monsters aren't always visible—that suggestion, silence, and the listener's own imagination could conjure horrors far more effective than any visual special effect. Episodes like "Out of Control" exemplify why the program earned its reputation as broadcasting's most reliably chilling experience.</p>
 <p>Step back into an era when families gathered around their radios, when entertainment demanded your full attention and rewarded it with genuine psychological unease. "Out of Control" awaits—a masterclass in suspenseful storytelling from radio's greatest era.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

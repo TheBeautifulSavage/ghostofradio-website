@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 480424 293 The Search (64 44) 21099 43m38s — Suspense | Ghost of Radio</title>
+  <title>The Search (64 44) 21099 43m38s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 480424 293 The Search (64 44) 21099 43m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 480424 293 The Search (64 44) 21099 43m38s — Suspense">
   <meta property="og:description" content="Listen to Suspense 480424 293 The Search (64 44) 21099 43m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 24, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 480424 293 The Search (64 44) 21099 43m38s</h1>
+          <h1 class="episode__title">The Search (64 44) 21099 43m38s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Search</p>
-<p>Picture this: a fog-shrouded night, a woman's desperate voice cutting through the static, and the sound of footsteps—whose footsteps?—echoing closer in the darkness. In "The Search," Suspense delivers one of its most claustrophobic and psychologically unnerving tales, where the hunter becomes the hunted and nothing is quite as it seems. As our protagonist races against time to find answers, the walls seem to close in with each passing moment. The brilliant sound design—those signature Suspense creaks, crashes, and ominous orchestrations—transforms an ordinary search into a nightmare where every shadow could harbor danger. Listeners of 1944 found themselves gripping their armrests, unable to turn away as the mystery deepens and the stakes become increasingly personal and sinister.</p>
+          <p>Picture this: a fog-shrouded night, a woman's desperate voice cutting through the static, and the sound of footsteps—whose footsteps?—echoing closer in the darkness. In "The Search," Suspense delivers one of its most claustrophobic and psychologically unnerving tales, where the hunter becomes the hunted and nothing is quite as it seems. As our protagonist races against time to find answers, the walls seem to close in with each passing moment. The brilliant sound design—those signature Suspense creaks, crashes, and ominous orchestrations—transforms an ordinary search into a nightmare where every shadow could harbor danger. Listeners of 1944 found themselves gripping their armrests, unable to turn away as the mystery deepens and the stakes become increasingly personal and sinister.</p>
 <p>Suspense arrived on CBS radio at the perfect moment in broadcast history, when Americans were hungry for stories that could make their hearts race from the safety of their living rooms. Running from 1942 to 1962, the show became synonymous with quality thriller programming, attracting top talent both in front of and behind the microphone. "The Search" exemplifies why the program endured for two decades—it understood that true suspense isn't about jump scares but about uncertainty, about the slow burn of dread that builds as listeners realize the protagonist may be powerless to prevent disaster. The episode showcases the golden age of radio drama at its finest, when talented writers and sound technicians could create entire worlds with nothing but voices, music, and imagination.</p>
 <p>Don't miss your chance to experience this gripping 1944 broadcast. Tune in to "The Search" and discover why Suspense remained radio's most compelling thrill ride. Some mysteries, once started, demand to be solved—even if the truth terrifies you.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460919 211 Till The Day I Die (64 44) 14911 31m07s — Suspense | Ghost of Radio</title>
+  <title>Till The Day I Die (64 44) 14911 31m07s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460919 211 Till The Day I Die (64 44) 14911 31m07s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460919 211 Till The Day I Die (64 44) 14911 31m07s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460919 211 Till The Day I Die (64 44) 14911 31m07s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 19, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460919 211 Till The Day I Die (64 44) 14911 31m07s</h1>
+          <h1 class="episode__title">Till The Day I Die (64 44) 14911 31m07s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Till The Day I Die</p>
-<p>When the lights dim and that spine-tingling opening theme pierces the darkness, you're about to enter a world of mounting dread and psychological torment. In "Till The Day I Die," a man finds himself ensnared in a nightmare of his own making—trapped by guilt, circumstance, and the relentless machinery of fate. As the minutes tick away in this thirty-one minute masterpiece, you'll discover that sometimes the most terrifying prison is the one we construct within ourselves. Every creak of a door, every hushed conversation, every moment of suffocating silence builds toward a climax that will leave you breathless, questioning whether redemption or ruin awaits our desperate protagonist.</p>
-<p>*Suspense* became the gold standard of American radio terror during its remarkable twenty-year run, and episodes like this one showcase precisely why audiences remained captivated through the 1940s and beyond. Produced with meticulous attention to sound design and psychological nuance, the show transformed the living room into a theater of the mind where listeners' imaginations became willing collaborators in crafting horror far more potent than anything visual media could offer. "Till The Day I Die" exemplifies the show's genius for exploring the darkness lurking beneath everyday existence—the moral ambiguities and desperate choices that ordinary people might face when pushed to their limits.</p>
-<p>Don't miss this haunting journey into human desperation and fate. Settle in, dim your lights, and let the incomparable cast and sound engineers of *Suspense* transport you to a world where the stakes are life itself, and the clock is always ticking. This is radio drama at its finest—pure, unadulterated suspense that demands your complete attention and rewards it with unforgettable storytelling.</p>
+          <p>When the lights dim and that spine-tingling opening theme pierces the darkness, you're about to enter a world of mounting dread and psychological torment. In "Till The Day I Die," a man finds himself ensnared in a nightmare of his own making—trapped by guilt, circumstance, and the relentless machinery of fate. As the minutes tick away in this thirty-one minute masterpiece, you'll discover that sometimes the most terrifying prison is the one we construct within ourselves. Every creak of a door, every hushed conversation, every moment of suffocating silence builds toward a climax that will leave you breathless, questioning whether redemption or ruin awaits our desperate protagonist.</p>
+<p>Suspense became the gold standard of American radio terror during its remarkable twenty-year run, and episodes like this one showcase precisely why audiences remained captivated through the 1940s and beyond. Produced with meticulous attention to sound design and psychological nuance, the show transformed the living room into a theater of the mind where listeners' imaginations became willing collaborators in crafting horror far more potent than anything visual media could offer. "Till The Day I Die" exemplifies the show's genius for exploring the darkness lurking beneath everyday existence—the moral ambiguities and desperate choices that ordinary people might face when pushed to their limits.</p>
+<p>Don't miss this haunting journey into human desperation and fate. Settle in, dim your lights, and let the incomparable cast and sound engineers of Suspense transport you to a world where the stakes are life itself, and the clock is always ticking. This is radio drama at its finest—pure, unadulterated suspense that demands your complete attention and rewards it with unforgettable storytelling.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

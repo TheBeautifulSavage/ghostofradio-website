@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 610806 888 Bells (133 44) 23103 23m39s — Suspense | Ghost of Radio</title>
+  <title>Bells (133 44) 23103 23m39s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 610806 888 Bells (133 44) 23103 23m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 610806 888 Bells (133 44) 23103 23m39s — Suspense">
   <meta property="og:description" content="Listen to Suspense 610806 888 Bells (133 44) 23103 23m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 6, 1961</span>
           </div>
-          <h1 class="episode__title">Suspense 610806 888 Bells (133 44) 23103 23m39s</h1>
+          <h1 class="episode__title">Bells (133 44) 23103 23m39s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Bells"</p>
-<p>Picture yourself in a darkened living room on a summer evening in the 1940s, the radio dial glowing softly as the opening theme of *Suspense* swells—that unmistakable cascade of discordant piano notes that made millions of Americans grip their armrests in delicious dread. Tonight's presentation, "Bells," draws you into a world where sound itself becomes sinister. A simple tolling of bells—perhaps a church bell, perhaps something far more ominous—becomes the harbinger of something terrible. The talented cast weaves a tale of mounting tension where the listener must piece together the horror lurking just beyond the reach of understanding. What tragedy do those bells announce? What fate awaits our protagonist? In just over twenty-three minutes, *Suspense* will answer those questions with the clever plotting and atmospheric mastery that made this program a must-listen event for over two decades.</p>
-<p>*Suspense*, which premiered on CBS in 1942, became the gold standard of American radio thriller programming, commanding audiences week after week with its "tales calculated to keep you in suspense." The show's brilliance lay in its understanding that radio drama's greatest weapon was imagination—the sound design, the subtle pauses, the expertly delivered dialogue created horrors far more terrifying than any visual could achieve. "Bells" exemplifies the show's gift for transforming the mundane into the menacing, proving that even familiar sounds could become portents of doom in the right narrative hands. Produced with meticulous attention to detail, each episode demonstrated why *Suspense* earned its place in broadcasting history.</p>
+          <p>Picture yourself in a darkened living room on a summer evening in the 1940s, the radio dial glowing softly as the opening theme of Suspense swells—that unmistakable cascade of discordant piano notes that made millions of Americans grip their armrests in delicious dread. Tonight's presentation, "Bells," draws you into a world where sound itself becomes sinister. A simple tolling of bells—perhaps a church bell, perhaps something far more ominous—becomes the harbinger of something terrible. The talented cast weaves a tale of mounting tension where the listener must piece together the horror lurking just beyond the reach of understanding. What tragedy do those bells announce? What fate awaits our protagonist? In just over twenty-three minutes, Suspense will answer those questions with the clever plotting and atmospheric mastery that made this program a must-listen event for over two decades.</p>
+<p>Suspense, which premiered on CBS in 1942, became the gold standard of American radio thriller programming, commanding audiences week after week with its "tales calculated to keep you in suspense." The show's brilliance lay in its understanding that radio drama's greatest weapon was imagination—the sound design, the subtle pauses, the expertly delivered dialogue created horrors far more terrifying than any visual could achieve. "Bells" exemplifies the show's gift for transforming the mundane into the menacing, proving that even familiar sounds could become portents of doom in the right narrative hands. Produced with meticulous attention to detail, each episode demonstrated why Suspense earned its place in broadcasting history.</p>
 <p>Don't miss your chance to experience radio drama at its finest. Tune in to "Bells" and rediscover why millions huddled around their radio sets, hearts pounding, waiting to see what terrors this week's tale would unveil.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

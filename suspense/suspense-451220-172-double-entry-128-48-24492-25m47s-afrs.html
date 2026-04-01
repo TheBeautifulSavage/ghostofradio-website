@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 451220 172 Double Entry (128 48) 24492 25m47s Afrs — Suspense | Ghost of Radio</title>
+  <title>Double Entry (128 48) 24492 25m47s Afrs — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 451220 172 Double Entry (128 48) 24492 25m47s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 451220 172 Double Entry (128 48) 24492 25m47s Afrs — Suspense">
   <meta property="og:description" content="Listen to Suspense 451220 172 Double Entry (128 48) 24492 25m47s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 20, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 451220 172 Double Entry (128 48) 24492 25m47s Afrs</h1>
+          <h1 class="episode__title">Double Entry (128 48) 24492 25m47s Afrs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Double Entry</p>
-<p>Picture this: A meticulous accountant discovers a discrepancy in the ledgers—a small shadow of numbers that shouldn't exist. But as he digs deeper into the crisp pages and fading ink, what begins as a mundane puzzle becomes a labyrinth of deception that threatens everything he holds dear. In "Double Entry," the tension crackles through your speaker as our protagonist realizes that someone has meticulously, deliberately, woven a web of false entries designed to implicate *him* in a crime he didn't commit. The clock ticks. The evidence mounts. And in the suffocating darkness of that counting house, panic becomes his only companion as the walls close in. This is suspense in its purest form—not monsters or gunfire, but the terrifying machinery of circumstance and human malice grinding inexorably forward.</p>
-<p>*Suspense* stood as CBS's crown jewel of dramatic programming throughout the 1940s and into the 1950s, a masterclass in psychological tension that proved radio audiences craved stories that haunted the mind rather than assaulted the senses. Where lesser programs relied on cheap thrills, *Suspense* crafted narratives that could unfold entirely through dialogue and expertly layered sound design, allowing listeners' imaginations to conjure horrors far more vivid than any visual medium could provide. Each episode was a carefully constructed trap, sprung with impeccable timing by writers who understood that the greatest fear lives in uncertainty and the unknown.</p>
-<p>If you've never experienced the particular magic of *Suspense*—that electric moment when you realize the protagonist has walked straight into catastrophe—"Double Entry" is an exemplary introduction. Settle in, dim the lights, and let yourself be transported back to an era when radio was America's theater of dreams and nightmares. Press play, and prepare to be thoroughly, magnificently suspended.</p>
+          <p>Picture this: A meticulous accountant discovers a discrepancy in the ledgers—a small shadow of numbers that shouldn't exist. But as he digs deeper into the crisp pages and fading ink, what begins as a mundane puzzle becomes a labyrinth of deception that threatens everything he holds dear. In "Double Entry," the tension crackles through your speaker as our protagonist realizes that someone has meticulously, deliberately, woven a web of false entries designed to implicate him in a crime he didn't commit. The clock ticks. The evidence mounts. And in the suffocating darkness of that counting house, panic becomes his only companion as the walls close in. This is suspense in its purest form—not monsters or gunfire, but the terrifying machinery of circumstance and human malice grinding inexorably forward.</p>
+<p>Suspense stood as CBS's crown jewel of dramatic programming throughout the 1940s and into the 1950s, a masterclass in psychological tension that proved radio audiences craved stories that haunted the mind rather than assaulted the senses. Where lesser programs relied on cheap thrills, Suspense crafted narratives that could unfold entirely through dialogue and expertly layered sound design, allowing listeners' imaginations to conjure horrors far more vivid than any visual medium could provide. Each episode was a carefully constructed trap, sprung with impeccable timing by writers who understood that the greatest fear lives in uncertainty and the unknown.</p>
+<p>If you've never experienced the particular magic of Suspense—that electric moment when you realize the protagonist has walked straight into catastrophe—"Double Entry" is an exemplary introduction. Settle in, dim the lights, and let yourself be transported back to an era when radio was America's theater of dreams and nightmares. Press play, and prepare to be thoroughly, magnificently suspended.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

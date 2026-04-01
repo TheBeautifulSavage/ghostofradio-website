@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 610924 893 The Man In The Fog (133 44) 28314 28m56s — Suspense | Ghost of Radio</title>
+  <title>The Man In The Fog (133 44) 28314 28m56s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 610924 893 The Man In The Fog (133 44) 28314 28m56s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 610924 893 The Man In The Fog (133 44) 28314 28m56s — Suspense">
   <meta property="og:description" content="Listen to Suspense 610924 893 The Man In The Fog (133 44) 28314 28m56s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 24, 1961</span>
           </div>
-          <h1 class="episode__title">Suspense 610924 893 The Man In The Fog (133 44) 28314 28m56s</h1>
+          <h1 class="episode__title">The Man In The Fog (133 44) 28314 28m56s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Man In The Fog</p>
-<p>On a fog-shrouded evening, when visibility stretches no farther than a man's shadow, a stranger arrives in a small coastal town with purposes unknown and motives darker still. In this gripping installment of *Suspense*, you'll find yourself trapped alongside our protagonist in an atmosphere so thick with dread that you can almost taste the salt-laden mist seeping through the radio speakers. As night deepens and the fog presses closer, the mysterious visitor's true nature begins to unfold—and the stakes grow more sinister with each passing moment. The sound design alone will make your skin crawl: the distant fog horn's mournful wail, footsteps echoing on wet pavement, whispered conversations that seem to come from nowhere and everywhere at once. By the time the truth emerges from the murk, you'll understand why *Suspense* became America's most celebrated thriller program.</p>
-<p>During the golden age of radio drama, *Suspense* stood as CBS's flagship offering in psychological terror, earning its reputation through masterful storytelling and impeccable production values. From 1942 through its final broadcast in 1962, the show pioneered techniques that would later influence television and film, proving that the human imagination—when properly guided by skilled writers and actors—creates far more potent scares than any visual effect ever could. This 1940s episode exemplifies the show's genius for intimate, character-driven horror that lingers long after the final commercial break.</p>
-<p>Don't miss "The Man In The Fog"—a perfectly crafted twenty-eight minutes of mounting terror. Settle in, dim the lights, and prepare to meet the stranger in the mist. *Suspense* awaits.</p>
+          <p>On a fog-shrouded evening, when visibility stretches no farther than a man's shadow, a stranger arrives in a small coastal town with purposes unknown and motives darker still. In this gripping installment of Suspense, you'll find yourself trapped alongside our protagonist in an atmosphere so thick with dread that you can almost taste the salt-laden mist seeping through the radio speakers. As night deepens and the fog presses closer, the mysterious visitor's true nature begins to unfold—and the stakes grow more sinister with each passing moment. The sound design alone will make your skin crawl: the distant fog horn's mournful wail, footsteps echoing on wet pavement, whispered conversations that seem to come from nowhere and everywhere at once. By the time the truth emerges from the murk, you'll understand why Suspense became America's most celebrated thriller program.</p>
+<p>During the golden age of radio drama, Suspense stood as CBS's flagship offering in psychological terror, earning its reputation through masterful storytelling and impeccable production values. From 1942 through its final broadcast in 1962, the show pioneered techniques that would later influence television and film, proving that the human imagination—when properly guided by skilled writers and actors—creates far more potent scares than any visual effect ever could. This 1940s episode exemplifies the show's genius for intimate, character-driven horror that lingers long after the final commercial break.</p>
+<p>Don't miss "The Man In The Fog"—a perfectly crafted twenty-eight minutes of mounting terror. Settle in, dim the lights, and prepare to meet the stranger in the mist. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

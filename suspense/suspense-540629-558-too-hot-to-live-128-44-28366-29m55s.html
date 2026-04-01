@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 540629 558 Too Hot To Live (128 44) 28366 29m55s — Suspense | Ghost of Radio</title>
+  <title>Too Hot To Live (128 44) 28366 29m55s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 540629 558 Too Hot To Live (128 44) 28366 29m55s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 540629 558 Too Hot To Live (128 44) 28366 29m55s — Suspense">
   <meta property="og:description" content="Listen to Suspense 540629 558 Too Hot To Live (128 44) 28366 29m55s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 29, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 540629 558 Too Hot To Live (128 44) 28366 29m55s</h1>
+          <h1 class="episode__title">Too Hot To Live (128 44) 28366 29m55s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Too Hot To Live</p>
-<p>Picture yourself huddled near the radio on a sultry summer evening, when the very air seems to close in around you like a shroud. In "Too Hot To Live," the oppressive heat becomes more than mere weather—it transforms into a character of its own, a suffocating presence that drives ordinary people to extraordinary desperation. As temperatures soar and tempers flare, our protagonist finds himself caught in a web of passion and peril where the line between self-defense and murder blurs in the shimmering haze. The episode crackles with tension as secrets buried beneath small-town respectability begin to surface, each revelation raising the stakes higher. Listeners will find themselves sweating alongside the characters, unable to escape the mounting dread that suggests someone won't survive this sweltering night.</p>
-<p>*Suspense*, which graced CBS airwaves from 1942 to 1962, stands as one of radio's most masterfully crafted dramatic anthologies, consistently delivering psychological terror that transcended the medium's visual limitations. What set the series apart was its refusal to rely on monsters or supernatural gimmicks; instead, *Suspense* mined the darkest impulses of human nature itself. By the 1950s, when "Too Hot To Live" was produced, the show had perfected the art of the intimate thriller, creating claustrophobic scenarios where ordinary circumstances spiraled into nightmare. Each episode exploited listeners' deepest anxieties—betrayal, desperation, moral compromise—with a sophistication that influenced television dramas for generations to come.</p>
-<p>Don't miss your chance to experience this forgotten jewel of radio's Golden Age. Tune in to "Too Hot To Live" and rediscover why *Suspense* captivated millions, proving that terror needs no visual effects when it speaks directly to the human heart. Turn off the lights, settle in close to your speaker, and prepare to sweat.</p>
+          <p>Picture yourself huddled near the radio on a sultry summer evening, when the very air seems to close in around you like a shroud. In "Too Hot To Live," the oppressive heat becomes more than mere weather—it transforms into a character of its own, a suffocating presence that drives ordinary people to extraordinary desperation. As temperatures soar and tempers flare, our protagonist finds himself caught in a web of passion and peril where the line between self-defense and murder blurs in the shimmering haze. The episode crackles with tension as secrets buried beneath small-town respectability begin to surface, each revelation raising the stakes higher. Listeners will find themselves sweating alongside the characters, unable to escape the mounting dread that suggests someone won't survive this sweltering night.</p>
+<p>Suspense, which graced CBS airwaves from 1942 to 1962, stands as one of radio's most masterfully crafted dramatic anthologies, consistently delivering psychological terror that transcended the medium's visual limitations. What set the series apart was its refusal to rely on monsters or supernatural gimmicks; instead, Suspense mined the darkest impulses of human nature itself. By the 1950s, when "Too Hot To Live" was produced, the show had perfected the art of the intimate thriller, creating claustrophobic scenarios where ordinary circumstances spiraled into nightmare. Each episode exploited listeners' deepest anxieties—betrayal, desperation, moral compromise—with a sophistication that influenced television dramas for generations to come.</p>
+<p>Don't miss your chance to experience this forgotten jewel of radio's Golden Age. Tune in to "Too Hot To Live" and rediscover why Suspense captivated millions, proving that terror needs no visual effects when it speaks directly to the human heart. Turn off the lights, settle in close to your speaker, and prepare to sweat.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

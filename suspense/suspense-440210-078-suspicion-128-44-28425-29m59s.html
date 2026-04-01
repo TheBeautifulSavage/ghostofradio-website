@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440210 078 Suspicion (128 44) 28425 29m59s — Suspense | Ghost of Radio</title>
+  <title>Suspicion (128 44) 28425 29m59s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440210 078 Suspicion (128 44) 28425 29m59s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440210 078 Suspicion (128 44) 28425 29m59s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440210 078 Suspicion (128 44) 28425 29m59s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 10, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440210 078 Suspicion (128 44) 28425 29m59s</h1>
+          <h1 class="episode__title">Suspicion (128 44) 28425 29m59s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspicion</p>
-<p>As darkness falls and the familiar CBS orchestral sting fades into shadow, you settle into your chair for an evening of psychological terror. Tonight's episode of *Suspense* plunges you into a nightmare of intimate betrayal—a marriage slowly poisoned by doubt, where every glance becomes a potential threat and every innocent gesture conceals sinister intent. In *Suspicion*, a woman begins to question whether the charming man sleeping beside her might be plotting her demise. The tension builds not through external thrills, but through the claustrophobic horrors of everyday life twisted wrong—a drink offered with too-smooth reassurance, a life insurance policy discovered in a drawer, the dawning realization that you may never truly know the stranger you married. The cast delivers masterful performances that will keep you riveted to every word, every breathless pause, every ominous musical cue.</p>
-<p>*Suspense* earned its place as one of radio's most influential thriller programs by understanding that the greatest scares live in human nature itself. Debuting in 1942, the show eschewed rubber monsters and supernatural gimmickry, instead mining genuine dread from domestic crisis, moral ambiguity, and psychological torment. Drawing on some of literature's finest suspenseful tales and original teleplays, the program became appointment listening for Americans seeking intelligent, adult entertainment during broadcasting's golden age. These scripts pioneered the modern thriller formula, influencing everything that followed in television and film.</p>
-<p>This particular episode exemplifies why millions of listeners huddled around their radios week after week, suspended in that exquisite state between safety and terror. Whether you're a devoted fan of classic radio or discovering *Suspense* for the first time, *Suspicion* offers twenty-nine minutes of masterfully crafted dread that proves the most effective scares require nothing but words, silence, and a vivid imagination. Tune in—if you dare.</p>
+          <p>As darkness falls and the familiar CBS orchestral sting fades into shadow, you settle into your chair for an evening of psychological terror. Tonight's episode of Suspense plunges you into a nightmare of intimate betrayal—a marriage slowly poisoned by doubt, where every glance becomes a potential threat and every innocent gesture conceals sinister intent. In Suspicion, a woman begins to question whether the charming man sleeping beside her might be plotting her demise. The tension builds not through external thrills, but through the claustrophobic horrors of everyday life twisted wrong—a drink offered with too-smooth reassurance, a life insurance policy discovered in a drawer, the dawning realization that you may never truly know the stranger you married. The cast delivers masterful performances that will keep you riveted to every word, every breathless pause, every ominous musical cue.</p>
+<p>Suspense earned its place as one of radio's most influential thriller programs by understanding that the greatest scares live in human nature itself. Debuting in 1942, the show eschewed rubber monsters and supernatural gimmickry, instead mining genuine dread from domestic crisis, moral ambiguity, and psychological torment. Drawing on some of literature's finest suspenseful tales and original teleplays, the program became appointment listening for Americans seeking intelligent, adult entertainment during broadcasting's golden age. These scripts pioneered the modern thriller formula, influencing everything that followed in television and film.</p>
+<p>This particular episode exemplifies why millions of listeners huddled around their radios week after week, suspended in that exquisite state between safety and terror. Whether you're a devoted fan of classic radio or discovering Suspense for the first time, Suspicion offers twenty-nine minutes of masterfully crafted dread that proves the most effective scares require nothing but words, silence, and a vivid imagination. Tune in—if you dare.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

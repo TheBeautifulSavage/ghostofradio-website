@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550705 605 The Cave In (128 44) 24201 25m28s — Suspense | Ghost of Radio</title>
+  <title>The Cave In (128 44) 24201 25m28s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550705 605 The Cave In (128 44) 24201 25m28s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550705 605 The Cave In (128 44) 24201 25m28s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550705 605 The Cave In (128 44) 24201 25m28s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 5, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550705 605 The Cave In (128 44) 24201 25m28s</h1>
+          <h1 class="episode__title">The Cave In (128 44) 24201 25m28s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Cave In</p>
-<p>Deep beneath the earth, in passages of absolute darkness, a group of miners faces a terror far more sinister than the threat of cave-in alone. When the supports begin to fail and the walls close in, the men discover they are not dealing with mere geological misfortune—something ancient and malevolent stirs in the depths. This twenty-five minute descent into claustrophobic nightmare builds tension with every creak of timber and distant rumble, as the miners realize their greatest enemy may not be the collapsing stone around them, but something that has been waiting in the darkness for far longer. CBS's "Suspense" masters the art of psychological terror here, using sound design and the intimacy of radio to trap listeners alongside the doomed men as desperation mounts and trust begins to crack under pressure.</p>
+          <p>Deep beneath the earth, in passages of absolute darkness, a group of miners faces a terror far more sinister than the threat of cave-in alone. When the supports begin to fail and the walls close in, the men discover they are not dealing with mere geological misfortune—something ancient and malevolent stirs in the depths. This twenty-five minute descent into claustrophobic nightmare builds tension with every creak of timber and distant rumble, as the miners realize their greatest enemy may not be the collapsing stone around them, but something that has been waiting in the darkness for far longer. CBS's "Suspense" masters the art of psychological terror here, using sound design and the intimacy of radio to trap listeners alongside the doomed men as desperation mounts and trust begins to crack under pressure.</p>
 <p>For two decades, "Suspense" stood as American radio's premier anthology of fear, creating nightmares that required no special effects—only a microphone, expert actors, and scripts that understood how to weaponize the listener's own imagination. Broadcast live during the golden age of radio when millions gathered around their sets each week, these stories seized upon the anxieties of their time: isolation, entrapment, betrayal, and the unknown lurking just beyond perception. "The Cave In" exemplifies why the show earned its reputation, blending the very real workplace dangers of 1940s America with supernatural dread, reminding audiences that sometimes the most terrifying prisons are built by fate itself.</p>
 <p>Step into the darkness and experience the suffocating terror that captivated audiences over seventy years ago. Press play on "The Cave In" and discover why "Suspense" remains the gold standard of old-time radio horror.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

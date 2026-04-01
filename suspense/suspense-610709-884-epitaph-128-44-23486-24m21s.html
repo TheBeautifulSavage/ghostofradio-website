@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 610709 884 Epitaph (128 44) 23486 24m21s — Suspense | Ghost of Radio</title>
+  <title>Epitaph (128 44) 23486 24m21s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 610709 884 Epitaph (128 44) 23486 24m21s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 610709 884 Epitaph (128 44) 23486 24m21s — Suspense">
   <meta property="og:description" content="Listen to Suspense 610709 884 Epitaph (128 44) 23486 24m21s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 9, 1961</span>
           </div>
-          <h1 class="episode__title">Suspense 610709 884 Epitaph (128 44) 23486 24m21s</h1>
+          <h1 class="episode__title">Epitaph (128 44) 23486 24m21s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Epitaph</p>
-<p>Step into the shadowed chambers of a wealthy man's final hours as *Suspense* presents "Epitaph," a masterwork of psychological dread that prowls through the corridors of mortality itself. When a dying millionaire realizes his carefully constructed life has been nothing but a gilded lie, he faces a reckoning far more terrifying than death itself. As the clock ticks toward midnight and shadows lengthen across mahogany furniture and oil paintings, our protagonist grapples with the terrible weight of his own epitaph—the legacy he'll leave behind, and the question of whether any life, no matter how wealthy or celebrated, can truly matter. The master actors of CBS's finest dramatic troupe weave a chilling meditation on legacy, regret, and the ghosts we create through our own choices, building toward a twist that will haunt you long after the final fade-out.</p>
-<p>By the late 1940s, *Suspense* had established itself as the gold standard of American radio drama, commanding millions of listeners with its uncompromising commitment to psychological terror. Created with the understanding that the human imagination is the most powerful special effects studio ever built, each episode exploits that terrifying truth. "Epitaph" exemplifies the show's mastery: no gunshots or screams needed, only the quiet desperation of a man confronting the emptiness of his empire. These were stories for a nation learning that fear doesn't always announce itself with fanfare—sometimes it whispers.</p>
-<p>Tonight, settle into the crackling warmth of your radio speaker and let *Suspense* remind you why this golden age of broadcasting still casts such a long shadow. Press play, extinguish the lights, and discover what happens when a man's greatest enemy isn't outside his bedroom door—it's the reflection he's spent a lifetime avoiding.</p>
+          <p>Step into the shadowed chambers of a wealthy man's final hours as Suspense presents "Epitaph," a masterwork of psychological dread that prowls through the corridors of mortality itself. When a dying millionaire realizes his carefully constructed life has been nothing but a gilded lie, he faces a reckoning far more terrifying than death itself. As the clock ticks toward midnight and shadows lengthen across mahogany furniture and oil paintings, our protagonist grapples with the terrible weight of his own epitaph—the legacy he'll leave behind, and the question of whether any life, no matter how wealthy or celebrated, can truly matter. The master actors of CBS's finest dramatic troupe weave a chilling meditation on legacy, regret, and the ghosts we create through our own choices, building toward a twist that will haunt you long after the final fade-out.</p>
+<p>By the late 1940s, Suspense had established itself as the gold standard of American radio drama, commanding millions of listeners with its uncompromising commitment to psychological terror. Created with the understanding that the human imagination is the most powerful special effects studio ever built, each episode exploits that terrifying truth. "Epitaph" exemplifies the show's mastery: no gunshots or screams needed, only the quiet desperation of a man confronting the emptiness of his empire. These were stories for a nation learning that fear doesn't always announce itself with fanfare—sometimes it whispers.</p>
+<p>Tonight, settle into the crackling warmth of your radio speaker and let Suspense remind you why this golden age of broadcasting still casts such a long shadow. Press play, extinguish the lights, and discover what happens when a man's greatest enemy isn't outside his bedroom door—it's the reflection he's spent a lifetime avoiding.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

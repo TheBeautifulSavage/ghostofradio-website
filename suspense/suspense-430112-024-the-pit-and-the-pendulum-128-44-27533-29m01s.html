@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 430112 024 The Pit And The Pendulum (128 44) 27533 29m01s — Suspense | Ghost of Radio</title>
+  <title>The Pit And The Pendulum (128 44) 27533 29m01s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 430112 024 The Pit And The Pendulum (128 44) 27533 29m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 430112 024 The Pit And The Pendulum (128 44) 27533 29m01s — Suspense">
   <meta property="og:description" content="Listen to Suspense 430112 024 The Pit And The Pendulum (128 44) 27533 29m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 12, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 430112 024 The Pit And The Pendulum (128 44) 27533 29m01s</h1>
+          <h1 class="episode__title">The Pit And The Pendulum (128 44) 27533 29m01s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Pit and the Pendulum</p>
-<p>Descend with us into the suffocating darkness of a Spanish inquisitor's chamber, where a prisoner awakens to find himself strapped upon a stone slab beneath a slowly descending blade of razor-sharp steel. Edgar Allan Poe's masterpiece of psychological terror pulses with unbearable tension as our protagonist races against time itself, his mind and body pushed to the very brink of madness. The rhythmic swing of the pendulum—growing closer, ever closer—becomes the relentless heartbeat of despair, punctuated by the groaning of ancient mechanisms and the prisoner's desperate, gasping breaths. In this 29-minute adaptation, Suspense transforms Poe's claustrophobic nightmare into a visceral radio experience that will leave you clutching your armrest, counting each agonizing swing.</p>
-<p>For two decades, CBS's *Suspense* reigned as the gold standard of American thriller radio, attracting millions of listeners who tuned in weekly for tales that played upon humanity's deepest fears. This 1940s broadcast captures the show at its creative zenith, when writers and directors understood that the most terrifying images are those conjured by the listener's own imagination. With only sound effects, music, and superb voice acting at their disposal, the production team crafted an atmosphere of mounting dread that visual media would struggle to match. The show's reputation for quality programming attracted Hollywood's finest talent, making each episode a capsule of Golden Age radio drama at its most sophisticated.</p>
-<p>Step into the darkness. Feel the cold stone beneath you. Hear the whisper of descending steel. *Suspense* awaits—where imagination becomes terror, and a single broadcast can haunt you for days to come. This is theater for the mind, and once you've heard that pendulum swing, you'll never quite feel safe in the dark again.</p>
+          <p>Descend with us into the suffocating darkness of a Spanish inquisitor's chamber, where a prisoner awakens to find himself strapped upon a stone slab beneath a slowly descending blade of razor-sharp steel. Edgar Allan Poe's masterpiece of psychological terror pulses with unbearable tension as our protagonist races against time itself, his mind and body pushed to the very brink of madness. The rhythmic swing of the pendulum—growing closer, ever closer—becomes the relentless heartbeat of despair, punctuated by the groaning of ancient mechanisms and the prisoner's desperate, gasping breaths. In this 29-minute adaptation, Suspense transforms Poe's claustrophobic nightmare into a visceral radio experience that will leave you clutching your armrest, counting each agonizing swing.</p>
+<p>For two decades, CBS's Suspense reigned as the gold standard of American thriller radio, attracting millions of listeners who tuned in weekly for tales that played upon humanity's deepest fears. This 1940s broadcast captures the show at its creative zenith, when writers and directors understood that the most terrifying images are those conjured by the listener's own imagination. With only sound effects, music, and superb voice acting at their disposal, the production team crafted an atmosphere of mounting dread that visual media would struggle to match. The show's reputation for quality programming attracted Hollywood's finest talent, making each episode a capsule of Golden Age radio drama at its most sophisticated.</p>
+<p>Step into the darkness. Feel the cold stone beneath you. Hear the whisper of descending steel. Suspense awaits—where imagination becomes terror, and a single broadcast can haunt you for days to come. This is theater for the mind, and once you've heard that pendulum swing, you'll never quite feel safe in the dark again.</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

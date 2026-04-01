@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 480410 292 Crossfire (128 44) 56457 59m53s — Suspense | Ghost of Radio</title>
+  <title>Crossfire (128 44) 56457 59m53s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 480410 292 Crossfire (128 44) 56457 59m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 480410 292 Crossfire (128 44) 56457 59m53s — Suspense">
   <meta property="og:description" content="Listen to Suspense 480410 292 Crossfire (128 44) 56457 59m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 10, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 480410 292 Crossfire (128 44) 56457 59m53s</h1>
+          <h1 class="episode__title">Crossfire (128 44) 56457 59m53s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Crossfire</p>
-<p>Picture this: the neon-soaked streets of a late-night city, where shadows pool between streetlamps and danger lurks in every doorway. In "Crossfire," a traveler finds himself caught between warring criminal factions, each believing he holds the key to their empire. As the tension mounts and threats close in from all sides, our protagonist realizes he's become a pawn in a deadly game where one wrong move means curtains. The masterful sound design of Suspense puts you right there on those rain-slicked pavements—the squeal of tires, the crack of gunfire, the ragged breathing of hunted men—all conspiring to trap you in an inescapable web of peril and paranoia.</p>
+          <p>Picture this: the neon-soaked streets of a late-night city, where shadows pool between streetlamps and danger lurks in every doorway. In "Crossfire," a traveler finds himself caught between warring criminal factions, each believing he holds the key to their empire. As the tension mounts and threats close in from all sides, our protagonist realizes he's become a pawn in a deadly game where one wrong move means curtains. The masterful sound design of Suspense puts you right there on those rain-slicked pavements—the squeal of tires, the crack of gunfire, the ragged breathing of hunted men—all conspiring to trap you in an inescapable web of peril and paranoia.</p>
 <p>Suspense stands as one of radio's crowning achievements, the program that proved thrills could be delivered as effectively through sound and suggestion as through any visual medium. Premiering in 1942 on CBS, it captivated audiences for two decades by refusing to rely on supernatural gimmicks; instead, these were tales of ordinary people plunged into extraordinary danger. "Crossfire" exemplifies the show's formula at its finest—intimate character drama colliding with relentless forward momentum. The writers understood that true suspense isn't about jump scares; it's about watching intelligent people try to outthink their enemies while time and circumstance slip through their fingers. Episodes like this demonstrated why millions of Americans made Suspense appointment listening.</p>
 <p>Whether you're a devoted fan of classic radio or a newcomer curious about the medium's golden age, "Crossfire" offers fifty-nine minutes of pure tension. Tune in to experience why Suspense earned its place as broadcasting's premier thriller series, and discover why listeners huddled around their radios couldn't bear to miss a single episode.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

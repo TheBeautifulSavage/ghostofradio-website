@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 461114 219 The One Who Got Away (64 44) 14477 29m31s — Suspense | Ghost of Radio</title>
+  <title>The One Who Got Away (64 44) 14477 29m31s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 461114 219 The One Who Got Away (64 44) 14477 29m31s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 461114 219 The One Who Got Away (64 44) 14477 29m31s — Suspense">
   <meta property="og:description" content="Listen to Suspense 461114 219 The One Who Got Away (64 44) 14477 29m31s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 14, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 461114 219 The One Who Got Away (64 44) 14477 29m31s</h1>
+          <h1 class="episode__title">The One Who Got Away (64 44) 14477 29m31s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The One Who Got Away</p>
-<p>As the familiar Suspense theme pierces through the static—that haunting organ melody that sent shivers down the spines of millions—listeners in 1940s America prepared themselves for a tale of desperation and cunning. In "The One Who Got Away," a fugitive's carefully constructed life of anonymity threatens to unravel when someone from his past emerges from the shadows, armed with dangerous knowledge. What unfolds across these twenty-nine minutes is a cat-and-mouse game played in whispered conversations and meaningful silences, where every knock on the door could spell discovery, and every stranger on the street might be the one hunting him. The cast's masterful delivery transforms a modest studio into an intimate chamber of dread, where listeners must confront the terrible question: what would you do to keep your secrets buried?</p>
+          <p>As the familiar Suspense theme pierces through the static—that haunting organ melody that sent shivers down the spines of millions—listeners in 1940s America prepared themselves for a tale of desperation and cunning. In "The One Who Got Away," a fugitive's carefully constructed life of anonymity threatens to unravel when someone from his past emerges from the shadows, armed with dangerous knowledge. What unfolds across these twenty-nine minutes is a cat-and-mouse game played in whispered conversations and meaningful silences, where every knock on the door could spell discovery, and every stranger on the street might be the one hunting him. The cast's masterful delivery transforms a modest studio into an intimate chamber of dread, where listeners must confront the terrible question: what would you do to keep your secrets buried?</p>
 <p>Suspense arrived at CBS in 1942 as America grappled with its own anxieties—war raging abroad, espionage fears at home, and the very real possibility that danger lurked closer than anyone cared to admit. For two decades, the show became the gold standard of dramatic radio, proving that the most effective horror wasn't what you saw, but what your imagination conjured in the darkness of your living room. Each episode, introduced by the show's narrator with that distinctive blend of menace and sophistication, transformed ordinary Americans into victims, perpetrators, and accidental witnesses. This particular episode exemplifies the show's genius: stripping away elaborate effects to focus on human psychology, moral compromise, and the wages of deception.</p>
 <p>Don't miss "The One Who Got Away"—a haunting reminder of why Suspense captivated over six million listeners each week. Tune in, dim the lights, and discover what happens when the past refuses to stay buried.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460912 210 Hunting Trip (128 44) 28580 29m48s — Suspense | Ghost of Radio</title>
+  <title>Hunting Trip (128 44) 28580 29m48s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460912 210 Hunting Trip (128 44) 28580 29m48s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460912 210 Hunting Trip (128 44) 28580 29m48s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460912 210 Hunting Trip (128 44) 28580 29m48s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 12, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460912 210 Hunting Trip (128 44) 28580 29m48s</h1>
+          <h1 class="episode__title">Hunting Trip (128 44) 28580 29m48s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Hunting Trip"</p>
-<p>Deep in a moonlit forest, far from civilization's watchful eye, a hunting expedition takes a sinister turn. Three men venture into the wilderness seeking game, but what stalks them in the darkness proves far more dangerous than any animal. As the night deepens and isolation tightens its grip, trust fractures like thin ice. Was it truly an accident—or something far more deliberate? The crisp autumn air carries whispers of betrayal, desperation, and the terrible things ordinary men might do when facing the unknown. In this taut 30-minute thriller, the familiar becomes threatening, camaraderie curdles into suspicion, and every snapping twig becomes a harbinger of doom. The cast delivers masterful performances that crackle across the airwaves, drawing listeners into the suffocating tension of an intimate tragedy unfolding miles from help.</p>
-<p>*Suspense*, which ruled CBS airwaves throughout the 1940s and beyond, pioneered psychological terror for the radio audience. Rather than relying on monsters or science fiction gimmicks, these episodes weaponized the human imagination—the show's tagline promised "tales well calculated to keep you in suspense," and it delivered faithfully. Writers crafted stories where ordinary situations—a hunting trip, a dinner party, a chance meeting—spiraled into nightmares of moral complexity and paranoia. The show's influence on American thriller writing cannot be overstated, and episodes like "Hunting Trip" showcase why *Suspense* earned its place as one of radio's greatest dramatic achievements.</p>
+          <p>Deep in a moonlit forest, far from civilization's watchful eye, a hunting expedition takes a sinister turn. Three men venture into the wilderness seeking game, but what stalks them in the darkness proves far more dangerous than any animal. As the night deepens and isolation tightens its grip, trust fractures like thin ice. Was it truly an accident—or something far more deliberate? The crisp autumn air carries whispers of betrayal, desperation, and the terrible things ordinary men might do when facing the unknown. In this taut 30-minute thriller, the familiar becomes threatening, camaraderie curdles into suspicion, and every snapping twig becomes a harbinger of doom. The cast delivers masterful performances that crackle across the airwaves, drawing listeners into the suffocating tension of an intimate tragedy unfolding miles from help.</p>
+<p>Suspense, which ruled CBS airwaves throughout the 1940s and beyond, pioneered psychological terror for the radio audience. Rather than relying on monsters or science fiction gimmicks, these episodes weaponized the human imagination—the show's tagline promised "tales well calculated to keep you in suspense," and it delivered faithfully. Writers crafted stories where ordinary situations—a hunting trip, a dinner party, a chance meeting—spiraled into nightmares of moral complexity and paranoia. The show's influence on American thriller writing cannot be overstated, and episodes like "Hunting Trip" showcase why Suspense earned its place as one of radio's greatest dramatic achievements.</p>
 <p>If you've never experienced the visceral thrill of classic radio drama, this episode is your invitation. Dim the lights, turn up the volume, and let the crackling voices and sound effects transport you back to an era when stories lived entirely in the theater of the mind. "Hunting Trip" awaits—and something in those dark woods is very hungry.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

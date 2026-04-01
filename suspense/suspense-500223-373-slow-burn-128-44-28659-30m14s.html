@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 500223 373 Slow Burn (128 44) 28659 30m14s — Suspense | Ghost of Radio</title>
+  <title>Slow Burn (128 44) 28659 30m14s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 500223 373 Slow Burn (128 44) 28659 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 500223 373 Slow Burn (128 44) 28659 30m14s — Suspense">
   <meta property="og:description" content="Listen to Suspense 500223 373 Slow Burn (128 44) 28659 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 23, 1950</span>
           </div>
-          <h1 class="episode__title">Suspense 500223 373 Slow Burn (128 44) 28659 30m14s</h1>
+          <h1 class="episode__title">Slow Burn (128 44) 28659 30m14s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Slow Burn"</p>
-<p>As darkness falls and the orchestra strikes its familiar, spine-tingling theme, you'll find yourself drawn into a web of psychological terror where the most dangerous weapon isn't a gun or a knife—it's time itself. In "Slow Burn," the tension doesn't explode in a moment of violence; instead, it creeps across your consciousness like a shadow lengthening at dusk, building with unbearable deliberation toward a finale that will leave you breathless. The sound design is masterful: the ticking of a clock becomes menacing, everyday conversation turns sinister, and silence itself becomes a character in the drama. You'll hear the desperation mounting in every voice, feel the walls closing in, and understand that sometimes the most terrifying things are those we see coming but cannot stop.</p>
-<p>This episode exemplifies why *Suspense* became CBS's crown jewel of dramatic radio, running for twenty years and earning its place as the gold standard of thriller programming. Broadcast during the golden age when families gathered around their sets for appointment listening, *Suspense* pioneered the art of sonic storytelling—using only dialogue, music, and sound effects to create vivid worlds of danger and dread. The show's writers and directors understood a fundamental truth: the listener's imagination is far more powerful than any visual could ever be, and the mind conjures horrors far more potent than anything shown on screen. "Slow Burn" is a masterclass in this craft, a perfect example of why these broadcasts still captivate modern audiences nearly eighty years later.</p>
+          <p>As darkness falls and the orchestra strikes its familiar, spine-tingling theme, you'll find yourself drawn into a web of psychological terror where the most dangerous weapon isn't a gun or a knife—it's time itself. In "Slow Burn," the tension doesn't explode in a moment of violence; instead, it creeps across your consciousness like a shadow lengthening at dusk, building with unbearable deliberation toward a finale that will leave you breathless. The sound design is masterful: the ticking of a clock becomes menacing, everyday conversation turns sinister, and silence itself becomes a character in the drama. You'll hear the desperation mounting in every voice, feel the walls closing in, and understand that sometimes the most terrifying things are those we see coming but cannot stop.</p>
+<p>This episode exemplifies why Suspense became CBS's crown jewel of dramatic radio, running for twenty years and earning its place as the gold standard of thriller programming. Broadcast during the golden age when families gathered around their sets for appointment listening, Suspense pioneered the art of sonic storytelling—using only dialogue, music, and sound effects to create vivid worlds of danger and dread. The show's writers and directors understood a fundamental truth: the listener's imagination is far more powerful than any visual could ever be, and the mind conjures horrors far more potent than anything shown on screen. "Slow Burn" is a masterclass in this craft, a perfect example of why these broadcasts still captivate modern audiences nearly eighty years later.</p>
 <p>Don't miss this chilling thirty-minute journey into suspense. Dim the lights, tune in, and surrender yourself to the golden age of radio drama—when a story, a voice, and your own imagination were all you needed to experience genuine terror.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

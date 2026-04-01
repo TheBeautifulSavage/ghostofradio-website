@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440518 092 Donovan's Brain, Part One (128 44) 28258 29m48s — Suspense | Ghost of Radio</title>
+  <title>Donovan's Brain, Part One (128 44) 28258 29m48s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440518 092 Donovan's Brain, Part One (128 44) 28258 29m48s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440518 092 Donovan's Brain, Part One (128 44) 28258 29m48s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440518 092 Donovan's Brain, Part One (128 44) 28258 29m48s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 18, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440518 092 Donovan's Brain, Part One (128 44) 28258 29m48s</h1>
+          <h1 class="episode__title">Donovan's Brain, Part One (128 44) 28258 29m48s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Donovan's Brain, Part One</p>
-<p>In the darkened studios of CBS, where a single microphone and masterful sound effects conjured entire worlds of terror, tonight's presentation plunges listeners into a nightmare of scientific ambition gone catastrophically wrong. "Donovan's Brain" opens with the frantic pulse of a man's final heartbeat, the crackling urgency of laboratory equipment, and a question that would haunt 1940s audiences: what happens when the human brain—stripped of its moral anchors, freed from the constraints of body and conscience—achieves absolute power? This two-part thriller launches a descent into madness where a preserved brain, kept artificially alive in a laboratory vessel, begins to exert an inexplicable and terrifying influence over those who tend to it. The production crackles with the authentic paranoia of the atomic age, when science promised miracles but hinted at unimaginable dangers lurking just beyond comprehension.</p>
+          <p>In the darkened studios of CBS, where a single microphone and masterful sound effects conjured entire worlds of terror, tonight's presentation plunges listeners into a nightmare of scientific ambition gone catastrophically wrong. "Donovan's Brain" opens with the frantic pulse of a man's final heartbeat, the crackling urgency of laboratory equipment, and a question that would haunt 1940s audiences: what happens when the human brain—stripped of its moral anchors, freed from the constraints of body and conscience—achieves absolute power? This two-part thriller launches a descent into madness where a preserved brain, kept artificially alive in a laboratory vessel, begins to exert an inexplicable and terrifying influence over those who tend to it. The production crackles with the authentic paranoia of the atomic age, when science promised miracles but hinted at unimaginable dangers lurking just beyond comprehension.</p>
 <p>"Suspense" had already earned its reputation as radio's most intensely crafted thriller anthology when this episode aired, with nearly a decade of perfecting the craft of pure auditory terror. What made the show indispensable to American listeners was its refusal to rely on mere shock—instead, each episode built psychological dread through careful writing, superb performances, and the haunting artistry of sound design. "Donovan's Brain" represented the pinnacle of this formula, transforming a science-fiction premise into an intimate study of human vulnerability and the corruption of knowledge.</p>
 <p>Settle into your chair, adjust the dial, and prepare yourself for an evening of genuinely unsettling radio drama. Nearly eighty years after its broadcast, this episode remains a masterclass in suspense—a reminder of when the most terrifying stories came not with images, but with nothing but your own imagination and the power of human voices speaking into the darkness.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 421222 022 Two Sharp Knives (128 44) 28177 29m22s — Suspense | Ghost of Radio</title>
+  <title>Two Sharp Knives (128 44) 28177 29m22s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 421222 022 Two Sharp Knives (128 44) 28177 29m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 421222 022 Two Sharp Knives (128 44) 28177 29m22s — Suspense">
   <meta property="og:description" content="Listen to Suspense 421222 022 Two Sharp Knives (128 44) 28177 29m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 22, 1942</span>
           </div>
-          <h1 class="episode__title">Suspense 421222 022 Two Sharp Knives (128 44) 28177 29m22s</h1>
+          <h1 class="episode__title">Two Sharp Knives (128 44) 28177 29m22s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,9 +87,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Two Sharp Knives</p>
-<p>Picture this: a domestic kitchen rendered sinister in the darkness of your radio, where the ordinary clink of silverware becomes menacing, where a marriage built on civility threatens to splinter into something far more dangerous. In "Two Sharp Knives," listeners discover that the most lethal conflicts aren't waged with grand gestures, but with the quiet precision of two people who know exactly how to wound each other. As tension coils tighter through twenty-eight minutes of mounting dread, you'll find yourself caught between two characters locked in a psychological battle where betrayal, resentment, and desperation simmer just beneath the surface. Every pause, every carefully measured word becomes a weapon. The question isn't whether violence will erupt—it's who will strike first, and whether anyone will survive the aftermath.</p>
-<p>This episode represents *Suspense* at its finest, during the golden age of American radio when CBS's flagship thriller series commanded the nation's attention every Tuesday night. From 1942 to 1962, *Suspense* earned its reputation as the medium's premier psychological drama, eschewing monsters and supernatural gimmicks for the far more terrifying landscape of human nature. The show's brilliance lay in its understanding that fear lives not in the fantastic, but in the intimate—in domestic spaces, in trusted relationships, in the capacity of ordinary people to commit extraordinary cruelty. With accomplished actors and writers who understood the unique power of audio storytelling, *Suspense* created entire worlds of threat through dialogue, sound design, and the listener's own imagination.</p>
+          <p>Picture this: a domestic kitchen rendered sinister in the darkness of your radio, where the ordinary clink of silverware becomes menacing, where a marriage built on civility threatens to splinter into something far more dangerous. In "Two Sharp Knives," listeners discover that the most lethal conflicts aren't waged with grand gestures, but with the quiet precision of two people who know exactly how to wound each other. As tension coils tighter through twenty-eight minutes of mounting dread, you'll find yourself caught between two characters locked in a psychological battle where betrayal, resentment, and desperation simmer just beneath the surface. Every pause, every carefully measured word becomes a weapon. The question isn't whether violence will erupt—it's who will strike first, and whether anyone will survive the aftermath.</p>
+<p>This episode represents Suspense at its finest, during the golden age of American radio when CBS's flagship thriller series commanded the nation's attention every Tuesday night. From 1942 to 1962, Suspense earned its reputation as the medium's premier psychological drama, eschewing monsters and supernatural gimmicks for the far more terrifying landscape of human nature. The show's brilliance lay in its understanding that fear lives not in the fantastic, but in the intimate—in domestic spaces, in trusted relationships, in the capacity of ordinary people to commit extraordinary cruelty. With accomplished actors and writers who understood the unique power of audio storytelling, Suspense created entire worlds of threat through dialogue, sound design, and the listener's own imagination.</p>
 <p>Tonight, turn off the lights. Let the old radio crackle to life. And discover why, in 1940s America, millions of listeners huddled around their sets, riveted by stories that proved the greatest horrors need no monsters—only the human heart.</p>
         </div>
 
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

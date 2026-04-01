@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 601120 880 Night On Red Mountain (64 44) 12012 24m15s — Suspense | Ghost of Radio</title>
+  <title>Night On Red Mountain (64 44) 12012 24m15s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 601120 880 Night On Red Mountain (64 44) 12012 24m15s — Suspense (CBS, 2012). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 601120 880 Night On Red Mountain (64 44) 12012 24m15s — Suspense">
   <meta property="og:description" content="Listen to Suspense 601120 880 Night On Red Mountain (64 44) 12012 24m15s — Suspense (CBS, 2012). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 20, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 601120 880 Night On Red Mountain (64 44) 12012 24m15s</h1>
+          <h1 class="episode__title">Night On Red Mountain (64 44) 12012 24m15s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Night On Red Mountain</p>
-<p>As darkness descends upon the isolated peaks of Red Mountain, our protagonist finds himself trapped in a web of terror that grows tighter with each passing moment. When a simple overnight journey takes a sinister turn, the ordinary world falls away, replaced by shadows that seem to possess a will of their own. What begins as an encounter with a stranger on a lonely mountain road spirals into a nightmare of paranoia and dread, where every sound carries menace and trust becomes a luxury no one can afford. The radio crackles to life with unsettling sound effects—the howl of wind through rocky canyons, the scrape of footsteps on gravel, the ominous silence that precedes disaster—drawing listeners into an atmosphere thick with supernatural foreboding.</p>
-<p>*Suspense*, which graced CBS airwaves from 1942 to 1962, became the gold standard of dramatic radio thrillers, setting the template for an entire genre. Hosted by the urbane and authoritative E.G. Marshall, the series promised audiences genuine frights through masterful storytelling and innovative sound design rather than reliance on gore or shock value. "Night On Red Mountain" exemplifies why the show remained a cultural phenomenon across two decades: it understands that true horror lives in suggestion and anticipation, in the spaces between what we hear and what we imagine lurking beyond the microphone. This particular episode showcases the series' talent for transforming an ordinary setting into a claustrophobic chamber of dread, where geography itself becomes an antagonist.</p>
-<p>If you've never experienced the raw power of classic radio drama, *Suspense* offers the perfect entry point. Slip on your headphones, dim the lights, and prepare yourself for twenty-four minutes that will remind you why radio once captivated an entire nation. In this age of visual entertainment, sometimes the most terrifying images are the ones our own minds create.</p>
+          <p>As darkness descends upon the isolated peaks of Red Mountain, our protagonist finds himself trapped in a web of terror that grows tighter with each passing moment. When a simple overnight journey takes a sinister turn, the ordinary world falls away, replaced by shadows that seem to possess a will of their own. What begins as an encounter with a stranger on a lonely mountain road spirals into a nightmare of paranoia and dread, where every sound carries menace and trust becomes a luxury no one can afford. The radio crackles to life with unsettling sound effects—the howl of wind through rocky canyons, the scrape of footsteps on gravel, the ominous silence that precedes disaster—drawing listeners into an atmosphere thick with supernatural foreboding.</p>
+<p>Suspense, which graced CBS airwaves from 1942 to 1962, became the gold standard of dramatic radio thrillers, setting the template for an entire genre. Hosted by the urbane and authoritative E.G. Marshall, the series promised audiences genuine frights through masterful storytelling and innovative sound design rather than reliance on gore or shock value. "Night On Red Mountain" exemplifies why the show remained a cultural phenomenon across two decades: it understands that true horror lives in suggestion and anticipation, in the spaces between what we hear and what we imagine lurking beyond the microphone. This particular episode showcases the series' talent for transforming an ordinary setting into a claustrophobic chamber of dread, where geography itself becomes an antagonist.</p>
+<p>If you've never experienced the raw power of classic radio drama, Suspense offers the perfect entry point. Slip on your headphones, dim the lights, and prepare yourself for twenty-four minutes that will remind you why radio once captivated an entire nation. In this age of visual entertainment, sometimes the most terrifying images are the ones our own minds create.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 521215 491 The Man With Two Faces (64 44) 14627 29m50s — Suspense | Ghost of Radio</title>
+  <title>The Man With Two Faces (64 44) 14627 29m50s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 521215 491 The Man With Two Faces (64 44) 14627 29m50s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 521215 491 The Man With Two Faces (64 44) 14627 29m50s — Suspense">
   <meta property="og:description" content="Listen to Suspense 521215 491 The Man With Two Faces (64 44) 14627 29m50s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 15, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 521215 491 The Man With Two Faces (64 44) 14627 29m50s</h1>
+          <h1 class="episode__title">The Man With Two Faces (64 44) 14627 29m50s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Man With Two Faces</p>
-<p>Tune in as the fog rolls thick through the streets of a shadowed city, where nothing is quite what it seems. In *The Man With Two Faces*, a sinister duality lurks behind an ordinary façade—a psychological thriller that strips away the comfortable illusion of identity itself. Our protagonist finds himself ensnared in a web of deception where a trusted acquaintance harbors a monstrous secret, a second self that emerges from the darkness like Dr. Jekyll's Hyde. As the minutes tick away in this taut twenty-nine-minute masterpiece, tension mounts with each revelation, each carefully placed clue. The superb cast delivers performances that crackle with menace and desperation, their voices alone conjuring an atmosphere so claustrophobic you'll find yourself holding your breath. By the time the final twist arrives, you'll understand why audiences in the 1940s huddled around their radio sets, unable to turn away.</p>
-<p>*Suspense*, which aired from 1942 to 1962 on CBS, became the gold standard of American radio drama—a show so expertly crafted that it influenced generations of thriller writers and filmmakers. Each week, audiences were guaranteed stories of genuine terror and moral ambiguity, produced with a sophistication that treated listeners as intelligent adults. *The Man With Two Faces* exemplifies why the show earned its legendary status: it explores the fragility of identity and sanity with a psychological depth rarely attempted in mass entertainment, even today.</p>
-<p>Don't miss this haunting journey into the fractured mind of a man pursued by his own shadow. *The Man With Two Faces* awaits—if you dare to listen.</p>
+          <p>Tune in as the fog rolls thick through the streets of a shadowed city, where nothing is quite what it seems. In The Man With Two Faces, a sinister duality lurks behind an ordinary façade—a psychological thriller that strips away the comfortable illusion of identity itself. Our protagonist finds himself ensnared in a web of deception where a trusted acquaintance harbors a monstrous secret, a second self that emerges from the darkness like Dr. Jekyll's Hyde. As the minutes tick away in this taut twenty-nine-minute masterpiece, tension mounts with each revelation, each carefully placed clue. The superb cast delivers performances that crackle with menace and desperation, their voices alone conjuring an atmosphere so claustrophobic you'll find yourself holding your breath. By the time the final twist arrives, you'll understand why audiences in the 1940s huddled around their radio sets, unable to turn away.</p>
+<p>Suspense, which aired from 1942 to 1962 on CBS, became the gold standard of American radio drama—a show so expertly crafted that it influenced generations of thriller writers and filmmakers. Each week, audiences were guaranteed stories of genuine terror and moral ambiguity, produced with a sophistication that treated listeners as intelligent adults. The Man With Two Faces exemplifies why the show earned its legendary status: it explores the fragility of identity and sanity with a psychological depth rarely attempted in mass entertainment, even today.</p>
+<p>Don't miss this haunting journey into the fractured mind of a man pursued by his own shadow. The Man With Two Faces awaits—if you dare to listen.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

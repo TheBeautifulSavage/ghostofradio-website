@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 590809 814 Everything Will Be Different (128 44) 19586 20m33s — Suspense | Ghost of Radio</title>
+  <title>Everything Will Be Different (128 44) 19586 20m33s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 590809 814 Everything Will Be Different (128 44) 19586 20m33s — Suspense (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 590809 814 Everything Will Be Different (128 44) 19586 20m33s — Suspense">
   <meta property="og:description" content="Listen to Suspense 590809 814 Everything Will Be Different (128 44) 19586 20m33s — Suspense (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 9, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 590809 814 Everything Will Be Different (128 44) 19586 20m33s</h1>
+          <h1 class="episode__title">Everything Will Be Different (128 44) 19586 20m33s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Everything Will Be Different</p>
-<p>As darkness falls and the iconic *Suspense* theme pierces the night air, listeners are drawn into a tale of desperate hope and creeping dread. "Everything Will Be Different" presents a character at a crossroads, standing on the precipice of transformation—but as any devoted radio mystery fan knows, such pivotal moments rarely unfold as planned. The twenty-minute drama crackles with tension as we watch ordinary circumstances unravel into something far more sinister. Will a fresh start truly bring redemption, or does fate have other designs? The stellar cast breathes life into this psychological thriller with performances that linger long after the final fadeout, their voices conveying the subtle shifts from optimism to unease that define the episode's mounting dread.</p>
-<p>By 1958, *Suspense* had already cemented its legacy as radio's premier thriller anthology, having captivated millions since its CBS debut in 1942. The show's genius lay in its refusal to rely on cheap scares or supernatural gimmickry—instead, each episode mined genuine horror from human nature itself. By the program's sixteenth year on air, the writers and producers had perfected their craft, crafting narratives where the real terror emerges not from monsters, but from the choices we make and the consequences that follow. "Everything Will Be Different" exemplifies this mastery, presenting a story rooted in the anxieties and desires of everyday Americans navigating mid-century life.</p>
-<p>Tune in tonight and discover why *Suspense* remained appointment listening for devoted audiences throughout its two-decade run. In just over twenty minutes, you'll experience the consummate radio thriller—expertly paced, brilliantly performed, and utterly unforgettable. The suspense awaits.</p>
+          <p>As darkness falls and the iconic Suspense theme pierces the night air, listeners are drawn into a tale of desperate hope and creeping dread. "Everything Will Be Different" presents a character at a crossroads, standing on the precipice of transformation—but as any devoted radio mystery fan knows, such pivotal moments rarely unfold as planned. The twenty-minute drama crackles with tension as we watch ordinary circumstances unravel into something far more sinister. Will a fresh start truly bring redemption, or does fate have other designs? The stellar cast breathes life into this psychological thriller with performances that linger long after the final fadeout, their voices conveying the subtle shifts from optimism to unease that define the episode's mounting dread.</p>
+<p>By 1958, Suspense had already cemented its legacy as radio's premier thriller anthology, having captivated millions since its CBS debut in 1942. The show's genius lay in its refusal to rely on cheap scares or supernatural gimmickry—instead, each episode mined genuine horror from human nature itself. By the program's sixteenth year on air, the writers and producers had perfected their craft, crafting narratives where the real terror emerges not from monsters, but from the choices we make and the consequences that follow. "Everything Will Be Different" exemplifies this mastery, presenting a story rooted in the anxieties and desires of everyday Americans navigating mid-century life.</p>
+<p>Tune in tonight and discover why Suspense remained appointment listening for devoted audiences throughout its two-decade run. In just over twenty minutes, you'll experience the consummate radio thriller—expertly paced, brilliantly performed, and utterly unforgettable. The suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

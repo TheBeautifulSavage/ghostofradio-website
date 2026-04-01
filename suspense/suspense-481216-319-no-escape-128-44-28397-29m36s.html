@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 481216 319 No Escape (128 44) 28397 29m36s — Suspense | Ghost of Radio</title>
+  <title>No Escape (128 44) 28397 29m36s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 481216 319 No Escape (128 44) 28397 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 481216 319 No Escape (128 44) 28397 29m36s — Suspense">
   <meta property="og:description" content="Listen to Suspense 481216 319 No Escape (128 44) 28397 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 16, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 481216 319 No Escape (128 44) 28397 29m36s</h1>
+          <h1 class="episode__title">No Escape (128 44) 28397 29m36s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: No Escape</p>
-<p>Picture this: a man sits alone in a locked room, the walls closing in as his carefully constructed world crumbles around him. In "No Escape," listeners are thrust into a claustrophobic nightmare where the protagonist discovers that the most terrifying prisons are the ones we build for ourselves. As the tension mounts across these breathless twenty-nine minutes, every creak of a floorboard and whispered conversation becomes laden with dread. The CBS sound engineers craft an atmosphere so suffocating that you'll find yourself holding your breath, gripping your radio dial as our trapped hero realizes that escape may be far more costly than remaining imprisoned. This is psychological thriller territory at its finest—no monsters lurking in shadows, just the raw, unbearable weight of human desperation and impossible choices.</p>
-<p>*Suspense* arrived on CBS in 1942 as one of radio's most consistently brilliant programs, proving that genuine terror required nothing more than a skilled script, impeccable timing, and the listener's own imagination. Throughout its twenty-year run, the anthology series became a masterclass in suspenseful storytelling, attracting top talent both in front of and behind the microphone. "No Escape" exemplifies why *Suspense* earned its legendary status—it strips away sensationalism in favor of intimate, character-driven narratives that expose the fragility of normalcy. Each episode served as proof that the most compelling dramas unfold not in distant, exotic locales, but in the quiet moments when ordinary people face extraordinary circumstances.</p>
-<p>Don't miss this sterling example of radio drama at its peak. Tune in to *Suspense: No Escape* and discover why millions of Americans gathered around their sets each week, knowing they were about to hear something unforgettable. Some stories, once heard, never quite leave you.</p>
+          <p>Picture this: a man sits alone in a locked room, the walls closing in as his carefully constructed world crumbles around him. In "No Escape," listeners are thrust into a claustrophobic nightmare where the protagonist discovers that the most terrifying prisons are the ones we build for ourselves. As the tension mounts across these breathless twenty-nine minutes, every creak of a floorboard and whispered conversation becomes laden with dread. The CBS sound engineers craft an atmosphere so suffocating that you'll find yourself holding your breath, gripping your radio dial as our trapped hero realizes that escape may be far more costly than remaining imprisoned. This is psychological thriller territory at its finest—no monsters lurking in shadows, just the raw, unbearable weight of human desperation and impossible choices.</p>
+<p>Suspense arrived on CBS in 1942 as one of radio's most consistently brilliant programs, proving that genuine terror required nothing more than a skilled script, impeccable timing, and the listener's own imagination. Throughout its twenty-year run, the anthology series became a masterclass in suspenseful storytelling, attracting top talent both in front of and behind the microphone. "No Escape" exemplifies why Suspense earned its legendary status—it strips away sensationalism in favor of intimate, character-driven narratives that expose the fragility of normalcy. Each episode served as proof that the most compelling dramas unfold not in distant, exotic locales, but in the quiet moments when ordinary people face extraordinary circumstances.</p>
+<p>Don't miss this sterling example of radio drama at its peak. Tune in to Suspense: No Escape and discover why millions of Americans gathered around their sets each week, knowing they were about to hear something unforgettable. Some stories, once heard, never quite leave you.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

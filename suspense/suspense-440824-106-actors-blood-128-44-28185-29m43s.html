@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440824 106 Actor's Blood (128 44) 28185 29m43s — Suspense | Ghost of Radio</title>
+  <title>Actor's Blood (128 44) 28185 29m43s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440824 106 Actor's Blood (128 44) 28185 29m43s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440824 106 Actor's Blood (128 44) 28185 29m43s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440824 106 Actor's Blood (128 44) 28185 29m43s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 24, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440824 106 Actor's Blood (128 44) 28185 29m43s</h1>
+          <h1 class="episode__title">Actor's Blood (128 44) 28185 29m43s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Actor's Blood</p>
-<p>Picture this: the spotlight dims on a Broadway stage as our protagonist, a struggling actor clawing his way toward stardom, makes a Faustian bargain that will haunt him forever. In "Actor's Blood," the tension mounts with every ticking second of airtime as ambition curdles into obsession, and success begins to taste like blood. This CBS Suspense presentation weaves a tale of theatrical ambition gone terribly wrong, where the price of fame may be paid in something far more precious than money or dignity. With the orchestra swelling ominously in the background and the masterful sound design that CBS was famous for, listeners are transported into a world of velvet curtains, jealous rivals, and the creeping realization that some deals cannot be undone.</p>
-<p>During the golden age of radio drama, *Suspense* stood as the undisputed king of spine-tingling entertainment, captivating millions of Americans who gathered around their sets each week from 1942 to 1962. The program's legendary producer and creator understood that fear needed no visual special effects—just the right voice, the perfect pause, and the audience's own imagination to do the heavy lifting. "Actor's Blood" exemplifies this formula perfectly, tapping into the very real anxieties of mid-century America about ambition, morality, and the cost of pursuing dreams in a cutthroat entertainment industry that still resonates today.</p>
-<p>If you're seeking that authentic thrill of classic radio drama—the kind that leaves you checking over your shoulder in the dark—don't miss this gripping episode. Tune in and discover why millions tuned in week after week to experience the unforgettable terror that only *Suspense* could deliver.</p>
+          <p>Picture this: the spotlight dims on a Broadway stage as our protagonist, a struggling actor clawing his way toward stardom, makes a Faustian bargain that will haunt him forever. In "Actor's Blood," the tension mounts with every ticking second of airtime as ambition curdles into obsession, and success begins to taste like blood. This CBS Suspense presentation weaves a tale of theatrical ambition gone terribly wrong, where the price of fame may be paid in something far more precious than money or dignity. With the orchestra swelling ominously in the background and the masterful sound design that CBS was famous for, listeners are transported into a world of velvet curtains, jealous rivals, and the creeping realization that some deals cannot be undone.</p>
+<p>During the golden age of radio drama, Suspense stood as the undisputed king of spine-tingling entertainment, captivating millions of Americans who gathered around their sets each week from 1942 to 1962. The program's legendary producer and creator understood that fear needed no visual special effects—just the right voice, the perfect pause, and the audience's own imagination to do the heavy lifting. "Actor's Blood" exemplifies this formula perfectly, tapping into the very real anxieties of mid-century America about ambition, morality, and the cost of pursuing dreams in a cutthroat entertainment industry that still resonates today.</p>
+<p>If you're seeking that authentic thrill of classic radio drama—the kind that leaves you checking over your shoulder in the dark—don't miss this gripping episode. Tune in and discover why millions tuned in week after week to experience the unforgettable terror that only Suspense could deliver.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

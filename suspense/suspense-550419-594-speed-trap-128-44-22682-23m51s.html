@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550419 594 Speed Trap (128 44) 22682 23m51s — Suspense | Ghost of Radio</title>
+  <title>Speed Trap (128 44) 22682 23m51s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550419 594 Speed Trap (128 44) 22682 23m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550419 594 Speed Trap (128 44) 22682 23m51s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550419 594 Speed Trap (128 44) 22682 23m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 19, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550419 594 Speed Trap (128 44) 22682 23m51s</h1>
+          <h1 class="episode__title">Speed Trap (128 44) 22682 23m51s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Speed Trap</p>
-<p>Picture yourself hunched over a radio dial on a spring evening in 1944, the crackle of static giving way to that unforgettable organ theme—and suddenly you're speeding down a darkened highway with a man whose simple desire to reach home before midnight becomes a nightmare he can never escape. "Speed Trap" weaves a claustrophobic tale of desperation and consequence, where every mile marker brings our protagonist closer to an inexplicable doom. The officer's flashlight cuts through the darkness, the engine roars, and time itself becomes the true antagonist. In just under twenty-four minutes, this episode transforms the American open road—that symbol of freedom and possibility—into something sinister and inescapable, leaving listeners breathless and questioning whether they'd ever look at a speedometer the same way again.</p>
+          <p>Picture yourself hunched over a radio dial on a spring evening in 1944, the crackle of static giving way to that unforgettable organ theme—and suddenly you're speeding down a darkened highway with a man whose simple desire to reach home before midnight becomes a nightmare he can never escape. "Speed Trap" weaves a claustrophobic tale of desperation and consequence, where every mile marker brings our protagonist closer to an inexplicable doom. The officer's flashlight cuts through the darkness, the engine roars, and time itself becomes the true antagonist. In just under twenty-four minutes, this episode transforms the American open road—that symbol of freedom and possibility—into something sinister and inescapable, leaving listeners breathless and questioning whether they'd ever look at a speedometer the same way again.</p>
 <p>Suspense arrived at CBS in 1942 when America was hungry for intelligent, psychologically intricate entertainment that could still be produced economically in a studio. Unlike the blood-and-thunder adventures flooding the airwaves, Suspense trafficked in the mundane made terrifying, the ordinary turned inside out. "Speed Trap" exemplifies this perfectly—no monsters, no villains in black capes, just the inexorable logic of fate and a man caught in its gears. The show's writers understood that the most effective horror springs from our everyday anxieties, and they crafted episodes that would echo in listeners' minds long after the final dramatic sting.</p>
 <p>The golden age of radio offered few thrills as perfectly calibrated as Suspense at its peak. If you've never experienced this particular episode, you're in for a masterclass in tension-building and the subtle art of psychological suspense. Tune in, turn off the lights, and discover why millions of listeners made this their appointment with fear each week.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

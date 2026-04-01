@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 611119 901 The Black Door (128 44) 22512 23m40s — Suspense | Ghost of Radio</title>
+  <title>The Black Door (128 44) 22512 23m40s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 611119 901 The Black Door (128 44) 22512 23m40s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 611119 901 The Black Door (128 44) 22512 23m40s — Suspense">
   <meta property="og:description" content="Listen to Suspense 611119 901 The Black Door (128 44) 22512 23m40s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 19, 1961</span>
           </div>
-          <h1 class="episode__title">Suspense 611119 901 The Black Door (128 44) 22512 23m40s</h1>
+          <h1 class="episode__title">The Black Door (128 44) 22512 23m40s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Black Door</p>
-<p>On a fog-laden evening in 1940s America, millions of listeners huddled around their radio sets to experience one of broadcasting's most delicious terrors: *Suspense*. In "The Black Door," an ordinary person's curiosity becomes their undoing when they stumble upon a mysterious portal that promises forbidden knowledge. What lies beyond that threshold? Fortune? Damnation? The answer unfolds in twenty-three breathless minutes of pure psychological dread, where every creak of the soundstage floorboards and every dramatically placed silence builds toward a revelation that will chill your blood. The cast performs with the precision of master craftsmen, their voices conveying layers of temptation and mounting horror as our protagonist grapples with the ultimate human weakness: the desire to know what should remain hidden.</p>
-<p>*Suspense* premiered in 1942 on CBS as radio's answer to the literary thrillers and pulp magazines capturing America's imagination during wartime. The show became legendary for eschewing cheap jump scares in favor of psychological torment and moral quandaries—asking not merely "what happens next?" but "what would *you* do?" Hosted by the silken-voiced Orson Welles in its early years and featuring some of Hollywood's finest talent, each episode was meticulously crafted by writers, directors, and sound engineers who understood that radio's greatest power lay in what listeners *imagined* rather than what they saw. "The Black Door" exemplifies this philosophy perfectly, using suggestion and implication to construct a dread far more potent than any visual horror could achieve.</p>
-<p>Tune in now to *Suspense* and discover why audiences kept their hands on the radio dial for two decades. Sometimes the greatest terrors are the ones we choose to invite into our homes.</p>
+          <p>On a fog-laden evening in 1940s America, millions of listeners huddled around their radio sets to experience one of broadcasting's most delicious terrors: Suspense. In "The Black Door," an ordinary person's curiosity becomes their undoing when they stumble upon a mysterious portal that promises forbidden knowledge. What lies beyond that threshold? Fortune? Damnation? The answer unfolds in twenty-three breathless minutes of pure psychological dread, where every creak of the soundstage floorboards and every dramatically placed silence builds toward a revelation that will chill your blood. The cast performs with the precision of master craftsmen, their voices conveying layers of temptation and mounting horror as our protagonist grapples with the ultimate human weakness: the desire to know what should remain hidden.</p>
+<p>Suspense premiered in 1942 on CBS as radio's answer to the literary thrillers and pulp magazines capturing America's imagination during wartime. The show became legendary for eschewing cheap jump scares in favor of psychological torment and moral quandaries—asking not merely "what happens next?" but "what would you do?" Hosted by the silken-voiced Orson Welles in its early years and featuring some of Hollywood's finest talent, each episode was meticulously crafted by writers, directors, and sound engineers who understood that radio's greatest power lay in what listeners imagined rather than what they saw. "The Black Door" exemplifies this philosophy perfectly, using suggestion and implication to construct a dread far more potent than any visual horror could achieve.</p>
+<p>Tune in now to Suspense and discover why audiences kept their hands on the radio dial for two decades. Sometimes the greatest terrors are the ones we choose to invite into our homes.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

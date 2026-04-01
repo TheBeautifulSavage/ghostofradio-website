@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620304 915 Doom Machine (137 44) 21579 21m24s — Suspense | Ghost of Radio</title>
+  <title>Doom Machine (137 44) 21579 21m24s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620304 915 Doom Machine (137 44) 21579 21m24s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620304 915 Doom Machine (137 44) 21579 21m24s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620304 915 Doom Machine (137 44) 21579 21m24s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 4, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620304 915 Doom Machine (137 44) 21579 21m24s</h1>
+          <h1 class="episode__title">Doom Machine (137 44) 21579 21m24s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "The Doom Machine"</p>
-<p>Picture this: it's a winter's evening, the radio crackles to life, and you're pulled into a world of mechanical terror. In "The Doom Machine," an ordinary citizen stumbles upon a device of mysterious and terrible purpose—something that defies explanation, something that *kills*. As the minutes tick away and the protagonist races against time to understand what they've discovered, the sound design closes in: the relentless hum of machinery, footsteps echoing through darkened rooms, and whispered conversations that suggest forces far larger and more sinister than one person can comprehend. This is Suspense at its finest—not relying on monsters or ghosts, but on the primal fear of the unknown, of technology twisted toward destruction, of being utterly alone with something incomprehensible and deadly.</p>
+          <p>Picture this: it's a winter's evening, the radio crackles to life, and you're pulled into a world of mechanical terror. In "The Doom Machine," an ordinary citizen stumbles upon a device of mysterious and terrible purpose—something that defies explanation, something that kills. As the minutes tick away and the protagonist races against time to understand what they've discovered, the sound design closes in: the relentless hum of machinery, footsteps echoing through darkened rooms, and whispered conversations that suggest forces far larger and more sinister than one person can comprehend. This is Suspense at its finest—not relying on monsters or ghosts, but on the primal fear of the unknown, of technology twisted toward destruction, of being utterly alone with something incomprehensible and deadly.</p>
 <p>By the mid-1940s, when this episode aired, Suspense had become radio's premier thriller program, commanding millions of listeners every Tuesday night on CBS. The show's genius lay in its psychological approach to fear: episodes rarely depended on jump scares or supernatural nonsense, but instead explored the darkest corners of human nature and the anxieties of the modern age. World War II had made audiences acutely aware of new weapons and invisible dangers, and Suspense capitalized on these cultural tensions. "The Doom Machine" captures that era's worry about technology spiraling beyond control, a theme that would echo through decades of science fiction to come. The show featured Hollywood's finest talent—everyone from Orson Welles to Cary Grant lent their voices to these taut dramas.</p>
-<p>Don't miss your chance to experience this gripping piece of broadcasting history. Settle in, dim the lights, and let the voices and sound effects transport you back to an age when radio ruled the night and *Suspense* meant exactly what it promised.</p>
+<p>Don't miss your chance to experience this gripping piece of broadcasting history. Settle in, dim the lights, and let the voices and sound effects transport you back to an age when radio ruled the night and Suspense meant exactly what it promised.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600110 835 The Long Night (64 32) 12112 24m28s — Suspense | Ghost of Radio</title>
+  <title>The Long Night (64 32) 12112 24m28s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600110 835 The Long Night (64 32) 12112 24m28s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600110 835 The Long Night (64 32) 12112 24m28s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600110 835 The Long Night (64 32) 12112 24m28s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 10, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600110 835 The Long Night (64 32) 12112 24m28s</h1>
+          <h1 class="episode__title">The Long Night (64 32) 12112 24m28s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Long Night</p>
-<p>Picture yourself huddled near your radio set on a winter's eve, the rest of your household asleep, when *Suspense* begins its familiar theme—that spine-tingling prelude of music box melody twisted into something deeply unsettling. "The Long Night" plunges you immediately into claustrophobic dread as a man finds himself trapped in circumstances that grow more sinister with each passing moment. As the title suggests, what unfolds is an agonizing stretch of hours where every sound becomes a threat, every shadow a potential nemesis. The production masterfully uses silence and ambient sound—the creak of floorboards, the tick of a clock, a distant siren—to transform an ordinary evening into a pressure cooker of psychological terror. You won't know until the final moments whether our protagonist is fleeing a genuine danger or battling demons of his own making, and that uncertainty is precisely what *Suspense* does best.</p>
-<p>This episode exemplifies why CBS's *Suspense*, which ran for two decades beginning in 1942, became the gold standard of American thriller radio. Unlike the supernatural hokum of competing programs, *Suspense* grounded its horror in plausible human anxiety—featuring A-list talent like Orson Welles, Agnes Moorehead, and Vincent Price performing scripts crafted by the industry's finest writers. "The Long Night" showcases the show's genius for economical storytelling, building unbearable tension in a mere twenty-four minutes through nothing but a voice, a narrative, and your own imagination. Radio's greatest power lay in what it *didn't* show, and *Suspense* understood this perfectly.</p>
-<p>Tune in now and experience why millions of Americans made *Suspense* appointment listening for over two decades. In our age of visual spectacle, there's something profoundly terrifying about facing the dark with only your mind to conjure the horrors. "The Long Night" awaits.</p>
+          <p>Picture yourself huddled near your radio set on a winter's eve, the rest of your household asleep, when Suspense begins its familiar theme—that spine-tingling prelude of music box melody twisted into something deeply unsettling. "The Long Night" plunges you immediately into claustrophobic dread as a man finds himself trapped in circumstances that grow more sinister with each passing moment. As the title suggests, what unfolds is an agonizing stretch of hours where every sound becomes a threat, every shadow a potential nemesis. The production masterfully uses silence and ambient sound—the creak of floorboards, the tick of a clock, a distant siren—to transform an ordinary evening into a pressure cooker of psychological terror. You won't know until the final moments whether our protagonist is fleeing a genuine danger or battling demons of his own making, and that uncertainty is precisely what Suspense does best.</p>
+<p>This episode exemplifies why CBS's Suspense, which ran for two decades beginning in 1942, became the gold standard of American thriller radio. Unlike the supernatural hokum of competing programs, Suspense grounded its horror in plausible human anxiety—featuring A-list talent like Orson Welles, Agnes Moorehead, and Vincent Price performing scripts crafted by the industry's finest writers. "The Long Night" showcases the show's genius for economical storytelling, building unbearable tension in a mere twenty-four minutes through nothing but a voice, a narrative, and your own imagination. Radio's greatest power lay in what it didn't show, and Suspense understood this perfectly.</p>
+<p>Tune in now and experience why millions of Americans made Suspense appointment listening for over two decades. In our age of visual spectacle, there's something profoundly terrifying about facing the dark with only your mind to conjure the horrors. "The Long Night" awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

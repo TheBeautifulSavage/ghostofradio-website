@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 491103 357 The Search For Isabell (128 44) 28066 29m36s — Suspense | Ghost of Radio</title>
+  <title>The Search For Isabell (128 44) 28066 29m36s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 491103 357 The Search For Isabell (128 44) 28066 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 491103 357 The Search For Isabell (128 44) 28066 29m36s — Suspense">
   <meta property="og:description" content="Listen to Suspense 491103 357 The Search For Isabell (128 44) 28066 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 3, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 491103 357 The Search For Isabell (128 44) 28066 29m36s</h1>
+          <h1 class="episode__title">The Search For Isabell (128 44) 28066 29m36s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Search For Isabell</p>
-<p>Picture yourself huddled near the radio on a fog-thick evening, the dial tuned to CBS, as the unmistakable shuffle of those famous Suspense theme notes crackle through your speaker. Tonight brings "The Search for Isabell"—a tale that begins with desperate urgency and descends into psychological nightmare. A man's frantic search for a missing woman becomes something far more sinister as details unravel and reality bends in ways he never anticipated. The writing crackles with mounting dread, punctuated by expertly timed silences and the haunting sound design that made Suspense legendary. Every clue is a trap. Every lead, a dead end. By the time the final twist lands, you'll understand why this 29-minute masterpiece kept America glued to their radios through two decades of golden-age broadcasting.</p>
+          <p>Picture yourself huddled near the radio on a fog-thick evening, the dial tuned to CBS, as the unmistakable shuffle of those famous Suspense theme notes crackle through your speaker. Tonight brings "The Search for Isabell"—a tale that begins with desperate urgency and descends into psychological nightmare. A man's frantic search for a missing woman becomes something far more sinister as details unravel and reality bends in ways he never anticipated. The writing crackles with mounting dread, punctuated by expertly timed silences and the haunting sound design that made Suspense legendary. Every clue is a trap. Every lead, a dead end. By the time the final twist lands, you'll understand why this 29-minute masterpiece kept America glued to their radios through two decades of golden-age broadcasting.</p>
 <p>For over twenty years, Suspense dominated Thursday nights as CBS's premier thriller program, proving that imagination could terrify in ways no visual medium could match. Without sets or costumes, without anything but the human voice and cleverly layered sound effects, these stories burrowed into listeners' minds and took up permanent residence. The show's rotating cast of talented actors—many fresh from the stage—delivered performances of remarkable intensity, knowing they had nothing but their craft to convey the creeping dread audiences craved. "The Search for Isabell" exemplifies the show's gift for psychological horror, crafting suspense not from gore or violence, but from the slow realization that nothing is quite as it seems.</p>
 <p>Don't miss this remarkable window into radio's golden age. Switch on, dim the lights, and let your imagination do what CGI never could.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

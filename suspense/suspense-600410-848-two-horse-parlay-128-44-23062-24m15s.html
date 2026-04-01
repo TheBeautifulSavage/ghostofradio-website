@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600410 848 Two Horse Parlay (128 44) 23062 24m15s — Suspense | Ghost of Radio</title>
+  <title>Two Horse Parlay (128 44) 23062 24m15s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600410 848 Two Horse Parlay (128 44) 23062 24m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600410 848 Two Horse Parlay (128 44) 23062 24m15s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600410 848 Two Horse Parlay (128 44) 23062 24m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 10, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600410 848 Two Horse Parlay (128 44) 23062 24m15s</h1>
+          <h1 class="episode__title">Two Horse Parlay (128 44) 23062 24m15s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Two Horse Parlay</p>
-<p>Picture yourself hunched over your radio on a spring evening, the dial tuned to CBS, when a familiar voice cuts through the static with three spine-tingling words: "Su-u-u-spense!" In this gripping 1940s episode, a desperate gambler stands at the precipice of ruin, his fortune riding on a long-shot wager that will either save him from financial oblivion or condemn him to something far worse. As the horses thunder toward the finish line, the stakes grow darker—a promise made in desperation, a debt that cannot be repaid in mere money, and the creeping realization that he may have gambled away far more than his life savings. The scratching of pens, the murmur of anxious voices at the racetrack, and the relentless ticking of time create an suffocating tension that builds with each passing minute.</p>
-<p>*Suspense* stands as one of radio's greatest achievements, a weekly showcase of psychological terror that proved Americans needed no flickering images to feel genuine dread. For twenty years, CBS delivered stories that reached into listeners' homes and seized them by the throat, drawing power from what the imagination could conjure in the darkness. "Two Horse Parlay" exemplifies the show's mastery of ordinary circumstances spiraling into nightmare—the kind of story where the real horror emerges not from supernatural forces, but from human weakness and the terrible bargains we strike when cornered.</p>
-<p>For devotees of classic suspense and newcomers alike, this twenty-four-minute journey offers a masterclass in old-time radio drama. Press play, dim your lights, and let the golden age of broadcasting transport you to a world where danger lurks in unexpected places, where fate hangs on the turn of a card—or the finish of a race. *Suspense* awaits.</p>
+          <p>Picture yourself hunched over your radio on a spring evening, the dial tuned to CBS, when a familiar voice cuts through the static with three spine-tingling words: "Su-u-u-spense!" In this gripping 1940s episode, a desperate gambler stands at the precipice of ruin, his fortune riding on a long-shot wager that will either save him from financial oblivion or condemn him to something far worse. As the horses thunder toward the finish line, the stakes grow darker—a promise made in desperation, a debt that cannot be repaid in mere money, and the creeping realization that he may have gambled away far more than his life savings. The scratching of pens, the murmur of anxious voices at the racetrack, and the relentless ticking of time create an suffocating tension that builds with each passing minute.</p>
+<p>Suspense stands as one of radio's greatest achievements, a weekly showcase of psychological terror that proved Americans needed no flickering images to feel genuine dread. For twenty years, CBS delivered stories that reached into listeners' homes and seized them by the throat, drawing power from what the imagination could conjure in the darkness. "Two Horse Parlay" exemplifies the show's mastery of ordinary circumstances spiraling into nightmare—the kind of story where the real horror emerges not from supernatural forces, but from human weakness and the terrible bargains we strike when cornered.</p>
+<p>For devotees of classic suspense and newcomers alike, this twenty-four-minute journey offers a masterclass in old-time radio drama. Press play, dim your lights, and let the golden age of broadcasting transport you to a world where danger lurks in unexpected places, where fate hangs on the turn of a card—or the finish of a race. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

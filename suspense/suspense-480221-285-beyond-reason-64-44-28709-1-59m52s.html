@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 480221 285 Beyond Reason (64 44) 28709 1 59m52s — Suspense | Ghost of Radio</title>
+  <title>Beyond Reason (64 44) 28709 1 59m52s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 480221 285 Beyond Reason (64 44) 28709 1 59m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 480221 285 Beyond Reason (64 44) 28709 1 59m52s — Suspense">
   <meta property="og:description" content="Listen to Suspense 480221 285 Beyond Reason (64 44) 28709 1 59m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 21, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 480221 285 Beyond Reason (64 44) 28709 1 59m52s</h1>
+          <h1 class="episode__title">Beyond Reason (64 44) 28709 1 59m52s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Beyond Reason</p>
-<p>When the static crackles and the iconic *Suspense* theme swells into the darkness of your living room, you're about to descend into a psychological labyrinth where sanity itself becomes the enemy. In "Beyond Reason," the line between reality and delusion blurs as a protagonist finds themselves trapped in circumstances that defy logical explanation—hunted not by a visible threat, but by the mounting terror of their own unraveling mind. The sound design becomes your guide through this nightmare: the subtle distortion of everyday voices, the unsettling silence of empty rooms, the quickening pulse of a heart about to break. By the time the final twist lands, you'll question whether what you heard was tragedy, madness, or something far more sinister.</p>
-<p>*Suspense* stands as CBS's masterpiece of American radio drama, a weekly laboratory where writers and directors spent twenty years perfecting the art of pure terror delivered through sound alone. Without the crutch of visual effects, the show's brilliance lay in its psychological sophistication—episodes rarely relied on monsters or obvious scares, instead exploiting the listener's own imagination to manufacture dread. "Beyond Reason" exemplifies this approach, crafted during the golden age of the 1940s when radio was America's primary entertainment medium and the show boasted some of the era's finest actors and storytellers.</p>
-<p>Few experiences rival that of a *Suspense* episode heard as originally intended: late at night, in shadow, completely vulnerable to suggestion. "Beyond Reason" demands your full attention and rewards it with the kind of unease that lingers long after the final fade-out. Tune in, dim the lights, and prepare to venture beyond reason itself.</p>
+          <p>When the static crackles and the iconic Suspense theme swells into the darkness of your living room, you're about to descend into a psychological labyrinth where sanity itself becomes the enemy. In "Beyond Reason," the line between reality and delusion blurs as a protagonist finds themselves trapped in circumstances that defy logical explanation—hunted not by a visible threat, but by the mounting terror of their own unraveling mind. The sound design becomes your guide through this nightmare: the subtle distortion of everyday voices, the unsettling silence of empty rooms, the quickening pulse of a heart about to break. By the time the final twist lands, you'll question whether what you heard was tragedy, madness, or something far more sinister.</p>
+<p>Suspense stands as CBS's masterpiece of American radio drama, a weekly laboratory where writers and directors spent twenty years perfecting the art of pure terror delivered through sound alone. Without the crutch of visual effects, the show's brilliance lay in its psychological sophistication—episodes rarely relied on monsters or obvious scares, instead exploiting the listener's own imagination to manufacture dread. "Beyond Reason" exemplifies this approach, crafted during the golden age of the 1940s when radio was America's primary entertainment medium and the show boasted some of the era's finest actors and storytellers.</p>
+<p>Few experiences rival that of a Suspense episode heard as originally intended: late at night, in shadow, completely vulnerable to suggestion. "Beyond Reason" demands your full attention and rewards it with the kind of unease that lingers long after the final fade-out. Tune in, dim the lights, and prepare to venture beyond reason itself.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 500406 379 Salvage (128 44) 28771 30m00s — Suspense | Ghost of Radio</title>
+  <title>Salvage (128 44) 28771 30m00s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 500406 379 Salvage (128 44) 28771 30m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 500406 379 Salvage (128 44) 28771 30m00s — Suspense">
   <meta property="og:description" content="Listen to Suspense 500406 379 Salvage (128 44) 28771 30m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 6, 1950</span>
           </div>
-          <h1 class="episode__title">Suspense 500406 379 Salvage (128 44) 28771 30m00s</h1>
+          <h1 class="episode__title">Salvage (128 44) 28771 30m00s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Salvage</p>
-<p>When the fog rolls in thick off the harbor and honest work turns sinister, a salvage operation becomes something far more dangerous than any maritime hazard. In this taut episode of Suspense, a routine job to reclaim valuable scrap from a sunken vessel spirals into a nightmare of greed, betrayal, and consequences that no diver could have anticipated. As our protagonist descends into the murky depths, both literally and morally, the listener is pulled into claustrophobic tension where trust evaporates as quickly as air in a diving bell, and the real salvage at stake proves to be far more precious—and terrible—than metal and treasure.</p>
+          <p>When the fog rolls in thick off the harbor and honest work turns sinister, a salvage operation becomes something far more dangerous than any maritime hazard. In this taut episode of Suspense, a routine job to reclaim valuable scrap from a sunken vessel spirals into a nightmare of greed, betrayal, and consequences that no diver could have anticipated. As our protagonist descends into the murky depths, both literally and morally, the listener is pulled into claustrophobic tension where trust evaporates as quickly as air in a diving bell, and the real salvage at stake proves to be far more precious—and terrible—than metal and treasure.</p>
 <p>Suspense was CBS Radio's masterpiece of psychological terror, and during the 1940s when this episode aired, the show had perfected the art of building dread through meticulous sound design and performances that felt achingly real. Unlike the monsters and mad scientists of pulp fiction, Suspense specialized in the horror that lurked in ordinary circumstances—the neighbor, the business partner, the opportunity too good to refuse. Each episode was a carefully constructed trap that snapped shut on the listener's nerves, exploiting that most primal fear: that danger walks among us in everyday clothes. The program's half-hour format meant no wasted moments; every sound effect, every pause, every inflection of the actors' voices served the relentless momentum toward an inevitable, often darkly ironic conclusion.</p>
 <p>Tune in to experience radio drama at its finest, when a story needed no visual spectacle to terrorize an audience—only the power of suggestion, skilled performers, and your own vivid imagination. This is classic Suspense: where ordinary people face extraordinary darkness, and listening in the shadows will never feel quite safe again.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

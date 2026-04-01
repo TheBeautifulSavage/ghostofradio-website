@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460131 178 The Long Shot (128 44) 24158 25m05s Afrs — Suspense | Ghost of Radio</title>
+  <title>The Long Shot (128 44) 24158 25m05s Afrs — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460131 178 The Long Shot (128 44) 24158 25m05s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460131 178 The Long Shot (128 44) 24158 25m05s Afrs — Suspense">
   <meta property="og:description" content="Listen to Suspense 460131 178 The Long Shot (128 44) 24158 25m05s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 31, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460131 178 The Long Shot (128 44) 24158 25m05s Afrs</h1>
+          <h1 class="episode__title">The Long Shot (128 44) 24158 25m05s Afrs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Long Shot</p>
-<p>When a desperate man walks into a high-stakes poker game with nothing to lose but everything to gain, the stakes become terrifyingly personal. In "The Long Shot," the tension crackles through your radio speaker as our protagonist places a wager that will change his life forever—if he lives to collect. What begins as an ordinary night of cards descends into a nightmare of double-crosses, hidden motives, and the suffocating realization that sometimes the house always wins, no matter how lucky you think you are. The crisp dialogue cuts like a deck being shuffled, each line delivered with the precision that made Suspense the gold standard of dramatic radio, while the sound design pulls you deep into smoke-filled rooms and darkened hallways where betrayal lurks around every corner.</p>
-<p>*Suspense* commanded American radio throughout the 1940s and 1950s by understanding a fundamental truth: the most terrifying threats aren't always supernatural—they're profoundly human. This particular episode exemplifies the show's mastery of the con-game thriller, a subgenre that resonated deeply with postwar audiences wrestling with trust, fortune, and moral compromise. With narration that guides you through moral ambiguity and performances that strip away pretense to expose raw desperation, the program became a cultural phenomenon, spawning a devoted following that tuned in religiously to CBS every Thursday night. "The Long Shot" captures the show at its finest, balancing psychological suspense with the kind of twist ending that had listeners gasping and immediately debating what they'd just heard.</p>
-<p>If you've never experienced the electricity of *Suspense*—where every shadow could hide danger and every stranger could be your downfall—this is your invitation. Tune in, turn down the lights, and discover why an entire generation surrendered their evenings to this masterpiece of radio drama.</p>
+          <p>When a desperate man walks into a high-stakes poker game with nothing to lose but everything to gain, the stakes become terrifyingly personal. In "The Long Shot," the tension crackles through your radio speaker as our protagonist places a wager that will change his life forever—if he lives to collect. What begins as an ordinary night of cards descends into a nightmare of double-crosses, hidden motives, and the suffocating realization that sometimes the house always wins, no matter how lucky you think you are. The crisp dialogue cuts like a deck being shuffled, each line delivered with the precision that made Suspense the gold standard of dramatic radio, while the sound design pulls you deep into smoke-filled rooms and darkened hallways where betrayal lurks around every corner.</p>
+<p>Suspense commanded American radio throughout the 1940s and 1950s by understanding a fundamental truth: the most terrifying threats aren't always supernatural—they're profoundly human. This particular episode exemplifies the show's mastery of the con-game thriller, a subgenre that resonated deeply with postwar audiences wrestling with trust, fortune, and moral compromise. With narration that guides you through moral ambiguity and performances that strip away pretense to expose raw desperation, the program became a cultural phenomenon, spawning a devoted following that tuned in religiously to CBS every Thursday night. "The Long Shot" captures the show at its finest, balancing psychological suspense with the kind of twist ending that had listeners gasping and immediately debating what they'd just heard.</p>
+<p>If you've never experienced the electricity of Suspense—where every shadow could hide danger and every stranger could be your downfall—this is your invitation. Tune in, turn down the lights, and discover why an entire generation surrendered their evenings to this masterpiece of radio drama.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

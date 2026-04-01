@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 601106 878 The Green Lorelei (132 44) 23624 24m20s — Suspense | Ghost of Radio</title>
+  <title>The Green Lorelei (132 44) 23624 24m20s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 601106 878 The Green Lorelei (132 44) 23624 24m20s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 601106 878 The Green Lorelei (132 44) 23624 24m20s — Suspense">
   <meta property="og:description" content="Listen to Suspense 601106 878 The Green Lorelei (132 44) 23624 24m20s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 6, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 601106 878 The Green Lorelei (132 44) 23624 24m20s</h1>
+          <h1 class="episode__title">The Green Lorelei (132 44) 23624 24m20s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Green Lorelei</p>
-<p>Picture yourself in a dimly lit room, radio dial glowing amber in the darkness, as an unseen orchestra swells with discordant strings. *Suspense* welcomes you into "The Green Lorelei," a tale that begins innocently enough—a sea captain's obsession with a mysterious green-tinted portrait—but spirals inexorably into madness and supernatural dread. What starts as curious fascination becomes consuming compulsion as the captain finds himself utterly entranced by the enigmatic face gazing out from the canvas. Is the painting merely a work of art, or does it possess some malevolent power over those who gaze upon it? As the captain's grip on reality loosens, listeners are drawn deeper into a psychological labyrinth where the boundaries between desire and delusion blur dangerously. The radio's intimacy transforms your home into the captain's claustrophobic cabin, where every creak of floorboards and whispered voice amplifies the creeping sense that something unknowable watches from within the frame.</p>
-<p>For twenty years, *Suspense* was American radio's premier destination for sophisticated thriller entertainment, commanding audiences of over four million listeners during its golden age. Created by the master craftsmen of CBS's West Coast Drama Department, the show earned its reputation by refusing easy scares, instead crafting psychological narratives that explored the darker corners of human nature and obsession. "The Green Lorelei" exemplifies the show's greatest strengths: stellar voice acting, economical storytelling, and an understanding that the most terrifying things are often those our imaginations conjure from subtle suggestion.</p>
-<p>Don't miss your chance to experience why radio audiences huddled close to their sets each week, hanging on every word. *Suspense* awaits—if you dare to listen.</p>
+          <p>Picture yourself in a dimly lit room, radio dial glowing amber in the darkness, as an unseen orchestra swells with discordant strings. Suspense welcomes you into "The Green Lorelei," a tale that begins innocently enough—a sea captain's obsession with a mysterious green-tinted portrait—but spirals inexorably into madness and supernatural dread. What starts as curious fascination becomes consuming compulsion as the captain finds himself utterly entranced by the enigmatic face gazing out from the canvas. Is the painting merely a work of art, or does it possess some malevolent power over those who gaze upon it? As the captain's grip on reality loosens, listeners are drawn deeper into a psychological labyrinth where the boundaries between desire and delusion blur dangerously. The radio's intimacy transforms your home into the captain's claustrophobic cabin, where every creak of floorboards and whispered voice amplifies the creeping sense that something unknowable watches from within the frame.</p>
+<p>For twenty years, Suspense was American radio's premier destination for sophisticated thriller entertainment, commanding audiences of over four million listeners during its golden age. Created by the master craftsmen of CBS's West Coast Drama Department, the show earned its reputation by refusing easy scares, instead crafting psychological narratives that explored the darker corners of human nature and obsession. "The Green Lorelei" exemplifies the show's greatest strengths: stellar voice acting, economical storytelling, and an understanding that the most terrifying things are often those our imaginations conjure from subtle suggestion.</p>
+<p>Don't miss your chance to experience why radio audiences huddled close to their sets each week, hanging on every word. Suspense awaits—if you dare to listen.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

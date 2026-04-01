@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600320 845 Talk About Caruso (128 44) 22906 24m05s — Suspense | Ghost of Radio</title>
+  <title>Talk About Caruso (128 44) 22906 24m05s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600320 845 Talk About Caruso (128 44) 22906 24m05s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600320 845 Talk About Caruso (128 44) 22906 24m05s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600320 845 Talk About Caruso (128 44) 22906 24m05s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 20, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600320 845 Talk About Caruso (128 44) 22906 24m05s</h1>
+          <h1 class="episode__title">Talk About Caruso (128 44) 22906 24m05s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Talk About Caruso"</p>
-<p>Picture this: a dimly lit study late at night, the amber glow of a radio dial cutting through the darkness as a man sits alone with his thoughts—and his mounting dread. In "Talk About Caruso," listeners are drawn into an intimate psychological thriller where idle conversation about the legendary tenor becomes the twisted catalyst for something far more sinister. What begins as nostalgic reminiscence among friends spirals into a nightmare of suspicion, jealousy, and murderous intent. The delicious tension that defines Suspense crackles through every exchange, as the episode's title becomes a dark joke—a seemingly innocuous topic that unravels a web of deception and betrayal. By the time the final twist lands, you'll understand that sometimes the most dangerous conversations are those that reveal what a person is truly capable of.</p>
+          <p>Picture this: a dimly lit study late at night, the amber glow of a radio dial cutting through the darkness as a man sits alone with his thoughts—and his mounting dread. In "Talk About Caruso," listeners are drawn into an intimate psychological thriller where idle conversation about the legendary tenor becomes the twisted catalyst for something far more sinister. What begins as nostalgic reminiscence among friends spirals into a nightmare of suspicion, jealousy, and murderous intent. The delicious tension that defines Suspense crackles through every exchange, as the episode's title becomes a dark joke—a seemingly innocuous topic that unravels a web of deception and betrayal. By the time the final twist lands, you'll understand that sometimes the most dangerous conversations are those that reveal what a person is truly capable of.</p>
 <p>For nearly two decades, Suspense reigned as the gold standard of American radio drama, earning its place as one of broadcasting's most enduring achievements. Beginning in 1942, the series specialized in stories that exploited the intimate medium of radio itself—where a skilled voice actor and a perfectly-timed sound effect could trigger genuine fear in the listener's imagination far more effectively than any visual could. Each episode was a masterclass in psychological storytelling, drawing from literature, original scripts, and the collective anxieties of mid-century America. The show's rotating cast of Hollywood's finest actors brought gravitas and nuance to every role, while the production team's meticulous attention to sound design created atmospheres so vivid you could almost smell the fear.</p>
 <p>Don't miss your chance to experience this perfectly-crafted moment of radio suspense. Tune in and let yourself be transported to that fateful night where a simple conversation about a great singer becomes the prelude to something truly unforgettable.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

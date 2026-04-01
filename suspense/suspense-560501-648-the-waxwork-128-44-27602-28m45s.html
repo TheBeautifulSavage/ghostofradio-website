@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560501 648 The Waxwork (128 44) 27602 28m45s — Suspense | Ghost of Radio</title>
+  <title>The Waxwork (128 44) 27602 28m45s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560501 648 The Waxwork (128 44) 27602 28m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560501 648 The Waxwork (128 44) 27602 28m45s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560501 648 The Waxwork (128 44) 27602 28m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 1, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560501 648 The Waxwork (128 44) 27602 28m45s</h1>
+          <h1 class="episode__title">The Waxwork (128 44) 27602 28m45s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Waxwork</p>
-<p>Step into the shadowed halls of a London wax museum where nothing—and no one—is quite what they seem. In "The Waxwork," Suspense delivers a masterclass in creeping dread as our protagonist finds himself trapped in an elaborate game of deception where the line between living flesh and sculpted figure blurs into terrifying ambiguity. The ticking clock of twenty-eight minutes builds relentlessly toward a finale that will leave you questioning whether escape—or salvation—was ever truly possible. With every footfall echoing through darkened corridors and every whispered revelation peeling back another layer of conspiracy, this episode captures the essence of why America huddled around their radio speakers each week, hearts pounding in the darkness of their own living rooms.</p>
-<p>*Suspense* emerged from CBS in 1942 as radio drama at its finest, crafted for an audience hungry for sophisticated thrills that challenged rather than merely startled. The series became the gold standard of audio horror, attracting top-tier talent both before and behind the microphone. "The Waxwork" exemplifies the show's formula of psychological terror—where the greatest danger often lurks not in supernatural forces, but in the cunning and desperation of ordinary people. These episodes, recorded during the anxious 1940s, resonated with listeners navigating their own uncertain world, transforming the humble wax museum into a metaphor for the facades we all maintain.</p>
-<p>Don't miss your chance to experience one of radio's most enduring thrillers. Tune in to "The Waxwork" and discover why *Suspense* remained America's premier destination for intelligent, nerve-wracking drama for two decades. Some mysteries are best encountered in the dark.</p>
+          <p>Step into the shadowed halls of a London wax museum where nothing—and no one—is quite what they seem. In "The Waxwork," Suspense delivers a masterclass in creeping dread as our protagonist finds himself trapped in an elaborate game of deception where the line between living flesh and sculpted figure blurs into terrifying ambiguity. The ticking clock of twenty-eight minutes builds relentlessly toward a finale that will leave you questioning whether escape—or salvation—was ever truly possible. With every footfall echoing through darkened corridors and every whispered revelation peeling back another layer of conspiracy, this episode captures the essence of why America huddled around their radio speakers each week, hearts pounding in the darkness of their own living rooms.</p>
+<p>Suspense emerged from CBS in 1942 as radio drama at its finest, crafted for an audience hungry for sophisticated thrills that challenged rather than merely startled. The series became the gold standard of audio horror, attracting top-tier talent both before and behind the microphone. "The Waxwork" exemplifies the show's formula of psychological terror—where the greatest danger often lurks not in supernatural forces, but in the cunning and desperation of ordinary people. These episodes, recorded during the anxious 1940s, resonated with listeners navigating their own uncertain world, transforming the humble wax museum into a metaphor for the facades we all maintain.</p>
+<p>Don't miss your chance to experience one of radio's most enduring thrillers. Tune in to "The Waxwork" and discover why Suspense remained America's premier destination for intelligent, nerve-wracking drama for two decades. Some mysteries are best encountered in the dark.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 530302 502 The Storm (128 44) 28114 29m18s — Suspense | Ghost of Radio</title>
+  <title>The Storm (128 44) 28114 29m18s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 530302 502 The Storm (128 44) 28114 29m18s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 530302 502 The Storm (128 44) 28114 29m18s — Suspense">
   <meta property="og:description" content="Listen to Suspense 530302 502 The Storm (128 44) 28114 29m18s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 2, 1953</span>
           </div>
-          <h1 class="episode__title">Suspense 530302 502 The Storm (128 44) 28114 29m18s</h1>
+          <h1 class="episode__title">The Storm (128 44) 28114 29m18s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Storm</p>
-<p>When the lights flicker and the wind howls beyond your windows, you'll understand why listeners huddled around their radios for *Suspense*'s "The Storm." In this 1940s masterpiece, an isolated household becomes a pressure cooker of paranoia and dread as a fierce tempest traps its inhabitants inside—but is the real danger swirling outside, or lurking within? As thunder crashes and rain batters the roof, tension mounts through expertly timed silences and whispered conversations that will leave you glancing over your shoulder. The superb sound design transforms your living room into that shuttered house, where every creak of the floorboards and every shadow could conceal a threat. This is vintage *Suspense*: ordinary people thrust into extraordinary circumstances, where trust becomes as fragile as the storm-battered walls around them.</p>
-<p>For over two decades, *Suspense* commanded Tuesday nights on CBS with a reputation built on psychological terror rather than cheap scares—the kind of horror that lingers because it feels possible. Created during wartime and refined through the golden age of radio, each episode showcased Hollywood's finest talent delivering performances so visceral that listeners often forgot they were only hearing voices. "The Storm" exemplifies why the show became America's premier thriller program, combining meticulous writing, atmospheric direction, and that uniquely intimate power of radio to plant fear directly in the imagination. No special effects could compete with what your mind conjured.</p>
+          <p>When the lights flicker and the wind howls beyond your windows, you'll understand why listeners huddled around their radios for Suspense's "The Storm." In this 1940s masterpiece, an isolated household becomes a pressure cooker of paranoia and dread as a fierce tempest traps its inhabitants inside—but is the real danger swirling outside, or lurking within? As thunder crashes and rain batters the roof, tension mounts through expertly timed silences and whispered conversations that will leave you glancing over your shoulder. The superb sound design transforms your living room into that shuttered house, where every creak of the floorboards and every shadow could conceal a threat. This is vintage Suspense: ordinary people thrust into extraordinary circumstances, where trust becomes as fragile as the storm-battered walls around them.</p>
+<p>For over two decades, Suspense commanded Tuesday nights on CBS with a reputation built on psychological terror rather than cheap scares—the kind of horror that lingers because it feels possible. Created during wartime and refined through the golden age of radio, each episode showcased Hollywood's finest talent delivering performances so visceral that listeners often forgot they were only hearing voices. "The Storm" exemplifies why the show became America's premier thriller program, combining meticulous writing, atmospheric direction, and that uniquely intimate power of radio to plant fear directly in the imagination. No special effects could compete with what your mind conjured.</p>
 <p>As you settle in with the static crackling to life, allow yourself to be transported back to an era when entertainment meant surrendering to pure dramatic storytelling. Press play on "The Storm," dim your lights, and discover why an entire generation found their greatest frights not on screen, but in the shadows created by sound alone.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

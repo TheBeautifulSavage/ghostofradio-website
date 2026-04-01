@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 491222 364 Double Entry (128 44) 29072 30m19s — Suspense | Ghost of Radio</title>
+  <title>Double Entry (128 44) 29072 30m19s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 491222 364 Double Entry (128 44) 29072 30m19s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 491222 364 Double Entry (128 44) 29072 30m19s — Suspense">
   <meta property="og:description" content="Listen to Suspense 491222 364 Double Entry (128 44) 29072 30m19s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 22, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 491222 364 Double Entry (128 44) 29072 30m19s</h1>
+          <h1 class="episode__title">Double Entry (128 44) 29072 30m19s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Double Entry</p>
-<p>When the ledgers don't balance and a man's carefully constructed life begins to crumble, desperation whispers dangerous possibilities. In this tense installment of Suspense, a meticulous accountant discovers a discrepancy that threatens everything—his reputation, his freedom, and perhaps his very soul. As suspicion closes in from all sides, our protagonist must navigate a labyrinth of half-truths and calculated deceptions, each decision pulling him deeper into a moral abyss. The sound design crackles with mounting tension: the scratch of a pen on paper, the hollow echo of footsteps in an empty office, the pregnant pause before a confession. Listeners will find themselves locked in a claustrophobic world of spreadsheets and shadows, where one small mistake can unravel a lifetime of careful planning.</p>
+          <p>When the ledgers don't balance and a man's carefully constructed life begins to crumble, desperation whispers dangerous possibilities. In this tense installment of Suspense, a meticulous accountant discovers a discrepancy that threatens everything—his reputation, his freedom, and perhaps his very soul. As suspicion closes in from all sides, our protagonist must navigate a labyrinth of half-truths and calculated deceptions, each decision pulling him deeper into a moral abyss. The sound design crackles with mounting tension: the scratch of a pen on paper, the hollow echo of footsteps in an empty office, the pregnant pause before a confession. Listeners will find themselves locked in a claustrophobic world of spreadsheets and shadows, where one small mistake can unravel a lifetime of careful planning.</p>
 <p>For nearly two decades, Suspense commanded America's attention with tales that probed the darker corners of ordinary life. CBS's anthology series, which premiered in 1942, never relied on supernatural gimmickry or masked villains—instead, it found terror in the psychological fractures of everyday people. "Double Entry" exemplifies the show's masterly approach: watching an honest man contemplate dishonest acts, witnessing how circumstance and fear can corrupt character. With production values that rivaled any dramatic venture on radio, skilled voice actors, and scripts that crackled with intelligent dialogue, Suspense became the gold standard of thriller programming, earning multiple Emmy predecessors and cultivating a devoted national audience.</p>
 <p>Tune in now to experience what millions heard in the 1940s: a masterclass in psychological suspense that reminds us how thin the line is between right and wrong, between the person we believe ourselves to be and the person fear might make us become. Double Entry awaits.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

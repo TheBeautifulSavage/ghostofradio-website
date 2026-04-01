@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 530209 499 The Man Who Cried Wolf (128 44) 28647 30m13s — Suspense | Ghost of Radio</title>
+  <title>The Man Who Cried Wolf (128 44) 28647 30m13s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 530209 499 The Man Who Cried Wolf (128 44) 28647 30m13s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 530209 499 The Man Who Cried Wolf (128 44) 28647 30m13s — Suspense">
   <meta property="og:description" content="Listen to Suspense 530209 499 The Man Who Cried Wolf (128 44) 28647 30m13s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 9, 1953</span>
           </div>
-          <h1 class="episode__title">Suspense 530209 499 The Man Who Cried Wolf (128 44) 28647 30m13s</h1>
+          <h1 class="episode__title">The Man Who Cried Wolf (128 44) 28647 30m13s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Man Who Cried Wolf</p>
-<p>Picture yourself in the darkness of a living room circa 1949, the radio's warm amber glow the only light as an ordinary man's world spirals into extraordinary paranoia. In "The Man Who Cried Wolf," listeners encounter a protagonist trapped in a nightmare of his own making—a man who has lied so often that when genuine danger arrives, no one believes him. What begins as a tale of petty deception transforms into a razor-sharp study of isolation and consequence, where each frantic plea for help only tightens the noose of disbelief around him. The sound design cuts like a blade: footsteps that may or may not be real, whispered accusations, and the mounting terror of a voice crying out into an indifferent void. By the episode's climax, listeners will find themselves questioning whether the threat is external or born entirely from a guilty conscience.</p>
-<p>*Suspense* represented CBS radio at its finest—twenty years of consistently delivering psychological thrills that proved the human imagination, when properly ignited, could be more terrifying than any special effect. Broadcast during radio's golden age when millions gathered around their sets for appointment listening, the show pioneered the art of auditory horror, relying on voice, music, and silence to burrow into the listener's mind. "The Man Who Cried Wolf" exemplifies this mastery, delivering moral reckoning wrapped in genuine dread—a reminder that the stories we tell ourselves can become our darkest prisons.</p>
-<p>Settle in with the lights dimmed and let this nearly thirty-minute journey remind you why radio once held America spellbound. *Suspense* awaits.</p>
+          <p>Picture yourself in the darkness of a living room circa 1949, the radio's warm amber glow the only light as an ordinary man's world spirals into extraordinary paranoia. In "The Man Who Cried Wolf," listeners encounter a protagonist trapped in a nightmare of his own making—a man who has lied so often that when genuine danger arrives, no one believes him. What begins as a tale of petty deception transforms into a razor-sharp study of isolation and consequence, where each frantic plea for help only tightens the noose of disbelief around him. The sound design cuts like a blade: footsteps that may or may not be real, whispered accusations, and the mounting terror of a voice crying out into an indifferent void. By the episode's climax, listeners will find themselves questioning whether the threat is external or born entirely from a guilty conscience.</p>
+<p>Suspense represented CBS radio at its finest—twenty years of consistently delivering psychological thrills that proved the human imagination, when properly ignited, could be more terrifying than any special effect. Broadcast during radio's golden age when millions gathered around their sets for appointment listening, the show pioneered the art of auditory horror, relying on voice, music, and silence to burrow into the listener's mind. "The Man Who Cried Wolf" exemplifies this mastery, delivering moral reckoning wrapped in genuine dread—a reminder that the stories we tell ourselves can become our darkest prisons.</p>
+<p>Settle in with the lights dimmed and let this nearly thirty-minute journey remind you why radio once held America spellbound. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

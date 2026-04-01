@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440615 096 A Friend To Alexander (128 44) 25656 27m01s — Suspense | Ghost of Radio</title>
+  <title>A Friend To Alexander (128 44) 25656 27m01s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440615 096 A Friend To Alexander (128 44) 25656 27m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440615 096 A Friend To Alexander (128 44) 25656 27m01s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440615 096 A Friend To Alexander (128 44) 25656 27m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 15, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440615 096 A Friend To Alexander (128 44) 25656 27m01s</h1>
+          <h1 class="episode__title">A Friend To Alexander (128 44) 25656 27m01s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># A Friend To Alexander</p>
-<p>On a fog-laden evening in June 1944, CBS radio audiences tuned in to discover what dark secrets might be lurking behind the genteel facade of a small-town friendship. *A Friend To Alexander* weaves a tale of suspicion and betrayal where trust becomes a weapon and a simple act of loyalty masks something far more sinister. As the narrator's voice cuts through the static with barely concealed dread, listeners are drawn into a claustrophobic world where the line between confidant and conspirator blurs dangerously. The expertly crafted dialogue crackles with tension—every word measured, every pause heavy with implication—while the sound design conjures an atmosphere thick with menace. By the episode's final moments, the shocking revelation strikes like lightning, leaving audiences gasping in their living rooms and around kitchen tables.</p>
-<p>*Suspense*, which had become America's premier thriller program by the mid-1940s, represented the golden age of radio drama at its finest. Produced with meticulous attention to psychological terror rather than cheap scares, the series had already become legendary for its ability to unsettle millions of listeners simultaneously. The show's writers understood that true horror lives in implication and character—in the breakdown of ordinary relationships and the vulnerability of everyday life. *A Friend To Alexander* exemplifies this philosophy perfectly, delivering a compact, brilliantly executed drama that trusts its audience's imagination to complete the picture of dread.</p>
-<p>If you haven't yet experienced this masterpiece of mid-century broadcasting, now is your chance to understand why families across America huddled close to their radios each week, waiting to be terrified by the best. Over twenty-seven minutes, *Suspense* transforms the ordinary into the extraordinary—a reminder that the darkest secrets are often hidden in plain sight, within the circle of those we trust most.</p>
+          <p>On a fog-laden evening in June 1944, CBS radio audiences tuned in to discover what dark secrets might be lurking behind the genteel facade of a small-town friendship. A Friend To Alexander weaves a tale of suspicion and betrayal where trust becomes a weapon and a simple act of loyalty masks something far more sinister. As the narrator's voice cuts through the static with barely concealed dread, listeners are drawn into a claustrophobic world where the line between confidant and conspirator blurs dangerously. The expertly crafted dialogue crackles with tension—every word measured, every pause heavy with implication—while the sound design conjures an atmosphere thick with menace. By the episode's final moments, the shocking revelation strikes like lightning, leaving audiences gasping in their living rooms and around kitchen tables.</p>
+<p>Suspense, which had become America's premier thriller program by the mid-1940s, represented the golden age of radio drama at its finest. Produced with meticulous attention to psychological terror rather than cheap scares, the series had already become legendary for its ability to unsettle millions of listeners simultaneously. The show's writers understood that true horror lives in implication and character—in the breakdown of ordinary relationships and the vulnerability of everyday life. A Friend To Alexander exemplifies this philosophy perfectly, delivering a compact, brilliantly executed drama that trusts its audience's imagination to complete the picture of dread.</p>
+<p>If you haven't yet experienced this masterpiece of mid-century broadcasting, now is your chance to understand why families across America huddled close to their radios each week, waiting to be terrified by the best. Over twenty-seven minutes, Suspense transforms the ordinary into the extraordinary—a reminder that the darkest secrets are often hidden in plain sight, within the circle of those we trust most.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

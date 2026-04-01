@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 520331 467 The Lady Pamela (134 44) 29289 29m49s — Suspense | Ghost of Radio</title>
+  <title>The Lady Pamela (134 44) 29289 29m49s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 520331 467 The Lady Pamela (134 44) 29289 29m49s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 520331 467 The Lady Pamela (134 44) 29289 29m49s — Suspense">
   <meta property="og:description" content="Listen to Suspense 520331 467 The Lady Pamela (134 44) 29289 29m49s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 31, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 520331 467 The Lady Pamela (134 44) 29289 29m49s</h1>
+          <h1 class="episode__title">The Lady Pamela (134 44) 29289 29m49s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lady Pamela</p>
-<p>As the familiar creeping violin strains of the Suspense theme fade into the darkness of your living room, you find yourself trapped in an elegant drawing room where nothing is quite as it seems. "The Lady Pamela" unfolds like a jeweled box of secrets—a portrait of refined society masking something far more sinister beneath its polished surface. A mysterious woman, beautiful and poised, moves through the story with an unsettling grace, and our protagonist discovers that her charm conceals a predatory intelligence. The tension mounts with each revelation, each carefully chosen word of dialogue, as the line between victim and villain blurs into a heart-stopping ambiguity. What begins as an encounter with aristocratic grace becomes a psychological cat-and-mouse game where trust becomes your most dangerous liability.</p>
-<p>*Suspense* stands as one of radio's greatest achievements—a program that understood that the most terrifying horrors often wore a human face. Launched in 1942 on CBS, the show ran for two decades, pioneering techniques of sound design and narrative misdirection that became the gold standard for radio drama. "The Lady Pamela" exemplifies what made the series legendary: its refusal to rely on monsters or jump scares, instead building dread through character and implication. The writing crackles with intelligence, and the performances navigate the fine line between realism and theatrical intensity that made radio drama so uniquely intimate—performers acting inches from the microphone, their breathing and subtle vocal shifts transmitting emotion directly into your home.</p>
+          <p>As the familiar creeping violin strains of the Suspense theme fade into the darkness of your living room, you find yourself trapped in an elegant drawing room where nothing is quite as it seems. "The Lady Pamela" unfolds like a jeweled box of secrets—a portrait of refined society masking something far more sinister beneath its polished surface. A mysterious woman, beautiful and poised, moves through the story with an unsettling grace, and our protagonist discovers that her charm conceals a predatory intelligence. The tension mounts with each revelation, each carefully chosen word of dialogue, as the line between victim and villain blurs into a heart-stopping ambiguity. What begins as an encounter with aristocratic grace becomes a psychological cat-and-mouse game where trust becomes your most dangerous liability.</p>
+<p>Suspense stands as one of radio's greatest achievements—a program that understood that the most terrifying horrors often wore a human face. Launched in 1942 on CBS, the show ran for two decades, pioneering techniques of sound design and narrative misdirection that became the gold standard for radio drama. "The Lady Pamela" exemplifies what made the series legendary: its refusal to rely on monsters or jump scares, instead building dread through character and implication. The writing crackles with intelligence, and the performances navigate the fine line between realism and theatrical intensity that made radio drama so uniquely intimate—performers acting inches from the microphone, their breathing and subtle vocal shifts transmitting emotion directly into your home.</p>
 <p>Dim the lights, settle into your chair, and prepare yourself for twenty-nine minutes of expertly crafted suspense. This is radio drama at its finest—a tale where the most dangerous threats emerge not from the shadows, but from across the dinner table. Don't miss "The Lady Pamela."</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

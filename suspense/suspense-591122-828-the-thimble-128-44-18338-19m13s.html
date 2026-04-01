@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 591122 828 The Thimble (128 44) 18338 19m13s — Suspense | Ghost of Radio</title>
+  <title>The Thimble (128 44) 18338 19m13s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 591122 828 The Thimble (128 44) 18338 19m13s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 591122 828 The Thimble (128 44) 18338 19m13s — Suspense">
   <meta property="og:description" content="Listen to Suspense 591122 828 The Thimble (128 44) 18338 19m13s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 22, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 591122 828 The Thimble (128 44) 18338 19m13s</h1>
+          <h1 class="episode__title">The Thimble (128 44) 18338 19m13s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Thimble</p>
-<p>On a fog-shrouded evening, you settle into your favorite chair as the distinctive Suspense theme pierces the darkness—that haunting organ note that's made millions of Americans grip their armrests for two decades. Tonight's tale, "The Thimble," spins a deceptively simple object into an instrument of dread. What begins as a seemingly innocent keepsake becomes the nexus of psychological terror, as an ordinary thimble harbors secrets that will unravel a life. In just nineteen minutes, you'll find yourself transported into a world where the smallest things carry the weightiest consequences, where trust dissolves like morning mist, and where guilt—real or imagined—becomes as suffocating as a locked room. The stellar cast delivers performances that crackle with barely contained panic, their voices trembling with the kind of authentic fear that only radio could conjure in the listener's mind.</p>
+          <p>On a fog-shrouded evening, you settle into your favorite chair as the distinctive Suspense theme pierces the darkness—that haunting organ note that's made millions of Americans grip their armrests for two decades. Tonight's tale, "The Thimble," spins a deceptively simple object into an instrument of dread. What begins as a seemingly innocent keepsake becomes the nexus of psychological terror, as an ordinary thimble harbors secrets that will unravel a life. In just nineteen minutes, you'll find yourself transported into a world where the smallest things carry the weightiest consequences, where trust dissolves like morning mist, and where guilt—real or imagined—becomes as suffocating as a locked room. The stellar cast delivers performances that crackle with barely contained panic, their voices trembling with the kind of authentic fear that only radio could conjure in the listener's mind.</p>
 <p>Since its 1942 debut, Suspense has earned its reputation as the gold standard of radio drama, pioneering techniques that would define the medium for generations. This particular broadcast from the late 1940s exemplifies why CBS's flagship thriller anthology became appointment listening for over twenty years, drawing millions into its web of expertly crafted narratives. Each week, different stories and different stars—from Hollywood's finest to radio's most talented voices—proved that the most terrifying monsters often lurk not in shadows, but in the human heart.</p>
 <p>Don't let this week pass without experiencing "The Thimble." Dim your lights, silence your telephone, and prepare yourself for nineteen minutes that will remind you precisely why Suspense became the show that made America afraid of the dark. Your nervousness is only the beginning.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

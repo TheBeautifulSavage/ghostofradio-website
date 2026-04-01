@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600529 855 Perfect Plan (128 44) 20292 21m18s — Suspense | Ghost of Radio</title>
+  <title>Perfect Plan (128 44) 20292 21m18s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600529 855 Perfect Plan (128 44) 20292 21m18s — Suspense (CBS, 2029). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600529 855 Perfect Plan (128 44) 20292 21m18s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600529 855 Perfect Plan (128 44) 20292 21m18s — Suspense (CBS, 2029). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 29, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600529 855 Perfect Plan (128 44) 20292 21m18s</h1>
+          <h1 class="episode__title">Perfect Plan (128 44) 20292 21m18s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Perfect Plan</p>
-<p>When the clock strikes midnight on this fateful broadcast, you'll find yourself locked in a tale of meticulous scheming and unraveling nerves. "Perfect Plan" lures you into the calculated world of a man convinced he has orchestrated the ideal crime—every detail accounted for, every alibi ironclad. But as the minutes tick away with mounting tension, listeners discover that no plan is truly foolproof when human nature enters the equation. The sound design crackles with authenticity: the scrape of a chair, the deliberate click of a door latch, the heavy breathing of a killer wrestling with his conscience. This is psychological suspense at its finest, where the real horror blooms not from what happens on stage, but in the shadowy recesses of a guilty mind.</p>
-<p>For two decades, CBS's *Suspense* dominated the golden age of radio with its uncompromising commitment to genuine terror and moral complexity. Created by William Spier and featuring an ever-rotating cast of Hollywood's finest talent, the program refused the cheap thrills of monster stories and rubber-suited villains. Instead, it excavated the suspense inherent in ordinary circumstances gone catastrophically wrong—the neighbor next door, the trusted business partner, the carefully laid plan that crumbles under its own weight. Each episode opened with that iconic, discordant string chord and the unforgettable announcement: "Suspense!" By 1955, when this episode aired, the show had perfected its craft, blending literary sophistication with raw dramatic power that left audiences sleepless.</p>
+          <p>When the clock strikes midnight on this fateful broadcast, you'll find yourself locked in a tale of meticulous scheming and unraveling nerves. "Perfect Plan" lures you into the calculated world of a man convinced he has orchestrated the ideal crime—every detail accounted for, every alibi ironclad. But as the minutes tick away with mounting tension, listeners discover that no plan is truly foolproof when human nature enters the equation. The sound design crackles with authenticity: the scrape of a chair, the deliberate click of a door latch, the heavy breathing of a killer wrestling with his conscience. This is psychological suspense at its finest, where the real horror blooms not from what happens on stage, but in the shadowy recesses of a guilty mind.</p>
+<p>For two decades, CBS's Suspense dominated the golden age of radio with its uncompromising commitment to genuine terror and moral complexity. Created by William Spier and featuring an ever-rotating cast of Hollywood's finest talent, the program refused the cheap thrills of monster stories and rubber-suited villains. Instead, it excavated the suspense inherent in ordinary circumstances gone catastrophically wrong—the neighbor next door, the trusted business partner, the carefully laid plan that crumbles under its own weight. Each episode opened with that iconic, discordant string chord and the unforgettable announcement: "Suspense!" By 1955, when this episode aired, the show had perfected its craft, blending literary sophistication with raw dramatic power that left audiences sleepless.</p>
 <p>Tune in now and surrender yourself to a half-hour where intelligence and cunning collide with fate. "Perfect Plan" awaits those brave enough to listen in the dark.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

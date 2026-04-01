@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460606 196 The High Wall (64 44) 14495 29m33s — Suspense | Ghost of Radio</title>
+  <title>The High Wall (64 44) 14495 29m33s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460606 196 The High Wall (64 44) 14495 29m33s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460606 196 The High Wall (64 44) 14495 29m33s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460606 196 The High Wall (64 44) 14495 29m33s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 6, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460606 196 The High Wall (64 44) 14495 29m33s</h1>
+          <h1 class="episode__title">The High Wall (64 44) 14495 29m33s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The High Wall</p>
-<p>Picture this: a woman alone in the darkness, trapped behind the imposing walls of a psychiatric hospital, questioning everything she knows about her own mind. *The High Wall* draws listeners into a claustrophobic nightmare where the greatest terror isn't the institution itself, but the gnawing doubt that creeps in when sanity becomes subjective. As our protagonist desperately tries to convince those around her of her mental fitness, the line between rational fear and genuine delusion blurs with each passing scene. The episode crackles with mounting tension, expertly building through shadowy corridors and hushed conversations until the final revelation hits like a thunderbolt. This is psychological suspense at its finest—no monsters or supernatural tricks, just the terrifying possibility that no one will believe you when you need them most.</p>
-<p>*Suspense* reigned as CBS's crown jewel of dramatic programming throughout the 1940s and into the early '60s, a masterclass in how radio drama could manipulate sound, silence, and suggestion to unsettle millions of listeners huddled around their sets. The show's genius lay in its understanding that imagination is far more potent than any visual effect—a creaking door, a woman's barely controlled breathing, the ominous absence of expected noise could conjure horrors no budget could film. *The High Wall* exemplifies the show's signature approach: taking everyday settings and institutions we thought we understood and transforming them into arenas of doubt and dread. The episode emerged during radio's golden age, when weekly appointments with *Suspense* weren't mere entertainment but cultural events.</p>
-<p>Don't miss this haunting descent into institutional terror. Tune in to *The High Wall* and discover why audiences thirty minutes long could feel like an eternity when trapped inside the mind of someone no one believes.</p>
+          <p>Picture this: a woman alone in the darkness, trapped behind the imposing walls of a psychiatric hospital, questioning everything she knows about her own mind. The High Wall draws listeners into a claustrophobic nightmare where the greatest terror isn't the institution itself, but the gnawing doubt that creeps in when sanity becomes subjective. As our protagonist desperately tries to convince those around her of her mental fitness, the line between rational fear and genuine delusion blurs with each passing scene. The episode crackles with mounting tension, expertly building through shadowy corridors and hushed conversations until the final revelation hits like a thunderbolt. This is psychological suspense at its finest—no monsters or supernatural tricks, just the terrifying possibility that no one will believe you when you need them most.</p>
+<p>Suspense reigned as CBS's crown jewel of dramatic programming throughout the 1940s and into the early '60s, a masterclass in how radio drama could manipulate sound, silence, and suggestion to unsettle millions of listeners huddled around their sets. The show's genius lay in its understanding that imagination is far more potent than any visual effect—a creaking door, a woman's barely controlled breathing, the ominous absence of expected noise could conjure horrors no budget could film. The High Wall exemplifies the show's signature approach: taking everyday settings and institutions we thought we understood and transforming them into arenas of doubt and dread. The episode emerged during radio's golden age, when weekly appointments with Suspense weren't mere entertainment but cultural events.</p>
+<p>Don't miss this haunting descent into institutional terror. Tune in to The High Wall and discover why audiences thirty minutes long could feel like an eternity when trapped inside the mind of someone no one believes.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

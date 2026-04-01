@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620715 934 Snow On 66 (160 44) 26165 21m46s — Suspense | Ghost of Radio</title>
+  <title>Snow On 66 (160 44) 26165 21m46s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620715 934 Snow On 66 (160 44) 26165 21m46s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620715 934 Snow On 66 (160 44) 26165 21m46s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620715 934 Snow On 66 (160 44) 26165 21m46s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · 1940s</span>
           </div>
-          <h1 class="episode__title">Suspense 620715 934 Snow On 66 (160 44) 26165 21m46s</h1>
+          <h1 class="episode__title">Snow On 66 (160 44) 26165 21m46s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Snow on Route 66</p>
-<p>Picture this: a lone traveler stranded on America's most famous highway as a blizzard transforms the landscape into an endless white void. In "Snow on Route 66," the promise of westbound escape crumbles into something far more sinister when winter's grip closes around an isolated stretch of pavement. As our protagonist battles both the elements and the creeping dread of being utterly, impossibly alone, every shadow cast by the snow becomes suspect. Is that distant figure approaching through the storm a fellow traveler seeking shelter—or something far more dangerous? The howling wind on the sound stage becomes your wind, the cold becomes your cold, and the mounting tension crawls up your spine with each carefully placed footstep. In just under twenty-seven minutes, this episode captures everything that made Suspense the most electrifying program on radio: the collision of ordinary circumstance with extraordinary terror.</p>
+          <p>Picture this: a lone traveler stranded on America's most famous highway as a blizzard transforms the landscape into an endless white void. In "Snow on Route 66," the promise of westbound escape crumbles into something far more sinister when winter's grip closes around an isolated stretch of pavement. As our protagonist battles both the elements and the creeping dread of being utterly, impossibly alone, every shadow cast by the snow becomes suspect. Is that distant figure approaching through the storm a fellow traveler seeking shelter—or something far more dangerous? The howling wind on the sound stage becomes your wind, the cold becomes your cold, and the mounting tension crawls up your spine with each carefully placed footstep. In just under twenty-seven minutes, this episode captures everything that made Suspense the most electrifying program on radio: the collision of ordinary circumstance with extraordinary terror.</p>
 <p>Suspense reigned supreme during radio's golden age precisely because it understood that the most horrifying monsters often wear familiar faces. Broadcast during the 1940s—an era when Americans were already living with profound uncertainty and upheaval—the series tapped into fundamental human anxieties and transformed them into nail-biting drama. "Snow on Route 66" exemplifies the show's mastery of psychological tension: no supernatural gimmicks, no elaborate plots, just the vulnerability of one person against nature's indifference and the terrible unpredictability of strangers. With scripts that crackled with intelligence and performances that burned with authenticity, each episode reminded listeners that danger lurks not in distant gothic castles, but in the empty spaces between civilization.</p>
 <p>Tune in now and let yourself be transported back to an evening when the radio was your window to another world—one where trust becomes dangerous and survival is never guaranteed.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

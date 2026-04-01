@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470814 258 Smiley (64 44) 15058 30m45s — Suspense | Ghost of Radio</title>
+  <title>Smiley (64 44) 15058 30m45s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470814 258 Smiley (64 44) 15058 30m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470814 258 Smiley (64 44) 15058 30m45s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470814 258 Smiley (64 44) 15058 30m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 14, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470814 258 Smiley (64 44) 15058 30m45s</h1>
+          <h1 class="episode__title">Smiley (64 44) 15058 30m45s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Smiley"</p>
-<p>Picture this: it's a humid summer evening in the 1940s, and you've settled into your favorite chair with the radio glowing softly in the darkness. As the CBS Suspense theme swells—that unmistakable cascade of discordant strings—you're pulled into a world where something is terribly, inexplicably wrong. "Smiley" is a masterclass in psychological terror, a tale that begins innocuously enough but spirals into the kind of unease that lingers long after the final fade-out. What starts as an encounter with an ordinary person becomes a descent into dread, where a simple smile hides something far more sinister. Over thirty minutes, the sound effects—every creak, every whispered word, every deliberate pause—construct an invisible architecture of fear that your imagination completes in ways no visual medium ever could.</p>
+          <p>Picture this: it's a humid summer evening in the 1940s, and you've settled into your favorite chair with the radio glowing softly in the darkness. As the CBS Suspense theme swells—that unmistakable cascade of discordant strings—you're pulled into a world where something is terribly, inexplicably wrong. "Smiley" is a masterclass in psychological terror, a tale that begins innocuously enough but spirals into the kind of unease that lingers long after the final fade-out. What starts as an encounter with an ordinary person becomes a descent into dread, where a simple smile hides something far more sinister. Over thirty minutes, the sound effects—every creak, every whispered word, every deliberate pause—construct an invisible architecture of fear that your imagination completes in ways no visual medium ever could.</p>
 <p>For twenty years, Suspense was the gold standard of American thriller radio, and episodes like "Smiley" showcase exactly why. Produced at the height of radio's golden age when millions of listeners huddled around their sets for appointment listening, the show featured some of Hollywood's finest talent—from Joseph Cotten to Orson Welles—delivering performances that transformed living rooms into chambers of dread. The 1940s broadcast was an era when radio drama was serious business, where sound design was an art form and writers understood that the most terrifying monsters are often those we never quite see.</p>
 <p>If you appreciate storytelling that respects your intelligence and trusts in the power of suggestion over spectacle, "Smiley" demands your attention. Switch off the lights, adjust the dial, and let CBS Suspense transport you back to a time when a single voice in the darkness could keep you up until midnight.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

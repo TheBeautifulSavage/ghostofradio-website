@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 530309 503 The Dead Alive (64 44) 14530 29m38s — Suspense | Ghost of Radio</title>
+  <title>The Dead Alive (64 44) 14530 29m38s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 530309 503 The Dead Alive (64 44) 14530 29m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 530309 503 The Dead Alive (64 44) 14530 29m38s — Suspense">
   <meta property="og:description" content="Listen to Suspense 530309 503 The Dead Alive (64 44) 14530 29m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 9, 1953</span>
           </div>
-          <h1 class="episode__title">Suspense 530309 503 The Dead Alive (64 44) 14530 29m38s</h1>
+          <h1 class="episode__title">The Dead Alive (64 44) 14530 29m38s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Dead Alive</p>
-<p>Picture this: a fog-shrouded cemetery at midnight, where the impossible becomes terrifyingly real. In "The Dead Alive," listeners are plunged into a nightmare where death itself becomes negotiable—where a man presumed buried and decomposed for weeks somehow claws his way back to the land of the living, transformed into something neither fully alive nor completely dead. What begins as a mystery of grave-robbing and medical horror escalates into a chilling exploration of resurrection gone wrong, as those who knew the deceased must confront the walking evidence of their worst fears. The sound design of Suspense brings every creaking coffin lid and labored breath into your living room, while the cast delivers performances that blur the line between sanity and madness. You'll hear the desperation in voices as characters grapple with the impossible truth: the dead have returned, and they want answers.</p>
+          <p>Picture this: a fog-shrouded cemetery at midnight, where the impossible becomes terrifyingly real. In "The Dead Alive," listeners are plunged into a nightmare where death itself becomes negotiable—where a man presumed buried and decomposed for weeks somehow claws his way back to the land of the living, transformed into something neither fully alive nor completely dead. What begins as a mystery of grave-robbing and medical horror escalates into a chilling exploration of resurrection gone wrong, as those who knew the deceased must confront the walking evidence of their worst fears. The sound design of Suspense brings every creaking coffin lid and labored breath into your living room, while the cast delivers performances that blur the line between sanity and madness. You'll hear the desperation in voices as characters grapple with the impossible truth: the dead have returned, and they want answers.</p>
 <p>Suspense ran for two decades as radio's premiere thriller anthology, and episodes like "The Dead Alive" showcase why millions tuned in faithfully. In an era before television, before streaming, radio commanded the nation's attention with nothing but voices, music, and sound effects—yet somehow created images more vivid than any visual medium could achieve. The show's writers drew from classic horror literature while inventing distinctly modern anxieties, and the CBS production values ensured a cinematic experience delivered through your speaker. This particular episode, from the robust late-1940s period, represents Suspense at its creative peak, balancing B-movie premise with genuine psychological terror.</p>
 <p>If you've never experienced the golden age of radio drama, "The Dead Alive" is the perfect entry point—proof that storytelling powered by imagination can be more frightening than anything you'll see on screen. Adjust the lights, settle in, and prepare yourself. This is Suspense.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

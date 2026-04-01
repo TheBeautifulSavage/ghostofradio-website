@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550315 589 The Game (128 44) 23510 24m44s — Suspense | Ghost of Radio</title>
+  <title>The Game (128 44) 23510 24m44s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550315 589 The Game (128 44) 23510 24m44s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550315 589 The Game (128 44) 23510 24m44s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550315 589 The Game (128 44) 23510 24m44s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 15, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550315 589 The Game (128 44) 23510 24m44s</h1>
+          <h1 class="episode__title">The Game (128 44) 23510 24m44s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Game</p>
-<p>Picture yourself hunched over your radio on a spring evening in 1950, the living room dimly lit by a single lamp, when suddenly the familiar strains of that unsettling theremin wail pierce the darkness. *Suspense* has returned, and tonight's tale, "The Game," promises something more insidious than monsters or murder—a psychological cat-and-mouse game where the true terror lies in deception and the erosion of trust. As the drama unfolds, listeners discover themselves trapped alongside the protagonist in a claustrophobic world where nothing is quite as it seems, where every conversation becomes a calculated move, and where the greatest danger comes not from without, but from the sinister intellect of a player who understands the rules better than anyone. The sound design—those measured pauses, the careful inflections of each actor's voice—creates an atmosphere of mounting dread that no visual medium could quite capture. This is *Suspense* at its finest: pure theater for the mind.</p>
-<p>For over two decades, *Suspense* ruled CBS radio as America's premier thriller anthology, showcasing Hollywood's finest talent in stories that challenged the boundaries of what could be suggested rather than shown. The program's genius lay in its understanding that the audience's imagination was far more powerful than any special effect, that a well-placed silence or a strangled cry could unnerve millions in their own homes. Episodes like "The Game" exemplify why the show earned its reputation for sophisticated storytelling, sophisticated enough to captivate adults while remaining accessible to younger listeners eavesdropping from the hallway.</p>
-<p>Don't miss your opportunity to experience this masterwork of old-time radio. Settle in, dim the lights, and let *Suspense* remind you why this golden age of broadcasting still haunts our memories.</p>
+          <p>Picture yourself hunched over your radio on a spring evening in 1950, the living room dimly lit by a single lamp, when suddenly the familiar strains of that unsettling theremin wail pierce the darkness. Suspense has returned, and tonight's tale, "The Game," promises something more insidious than monsters or murder—a psychological cat-and-mouse game where the true terror lies in deception and the erosion of trust. As the drama unfolds, listeners discover themselves trapped alongside the protagonist in a claustrophobic world where nothing is quite as it seems, where every conversation becomes a calculated move, and where the greatest danger comes not from without, but from the sinister intellect of a player who understands the rules better than anyone. The sound design—those measured pauses, the careful inflections of each actor's voice—creates an atmosphere of mounting dread that no visual medium could quite capture. This is Suspense at its finest: pure theater for the mind.</p>
+<p>For over two decades, Suspense ruled CBS radio as America's premier thriller anthology, showcasing Hollywood's finest talent in stories that challenged the boundaries of what could be suggested rather than shown. The program's genius lay in its understanding that the audience's imagination was far more powerful than any special effect, that a well-placed silence or a strangled cry could unnerve millions in their own homes. Episodes like "The Game" exemplify why the show earned its reputation for sophisticated storytelling, sophisticated enough to captivate adults while remaining accessible to younger listeners eavesdropping from the hallway.</p>
+<p>Don't miss your opportunity to experience this masterwork of old-time radio. Settle in, dim the lights, and let Suspense remind you why this golden age of broadcasting still haunts our memories.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 520317 465 The Wreck Of The Old 97 (132 44) 27909 28m42s — Suspense | Ghost of Radio</title>
+  <title>The Wreck Of The Old 97 (132 44) 27909 28m42s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 520317 465 The Wreck Of The Old 97 (132 44) 27909 28m42s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 520317 465 The Wreck Of The Old 97 (132 44) 27909 28m42s — Suspense">
   <meta property="og:description" content="Listen to Suspense 520317 465 The Wreck Of The Old 97 (132 44) 27909 28m42s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 17, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 520317 465 The Wreck Of The Old 97 (132 44) 27909 28m42s</h1>
+          <h1 class="episode__title">The Wreck Of The Old 97 (132 44) 27909 28m42s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Wreck Of The Old 97</p>
-<p>Picture yourself huddled around a crackling radio set on a fateful evening, the amber glow of its dial your only companion in the darkness. "The Wreck of the Old 97" thunders into your living room with the deafening screech of metal on metal, the catastrophic collision of man's ambition with the unyielding laws of nature. This episode pulls you directly onto the rails of one of America's most notorious railroad disasters, where a desperate engineer races against the clock to deliver mail on time—a decision that will echo through history. As the train barrels forward at breakneck speed, the tension builds like steam in an overheated boiler. You'll hear the roar of the locomotive, the anguished voices of doomed passengers, and the internal torment of a man watching his fatal choice unfold in real-time. It's vintage Suspense: intimate terror delivered through sound alone.</p>
+          <p>Picture yourself huddled around a crackling radio set on a fateful evening, the amber glow of its dial your only companion in the darkness. "The Wreck of the Old 97" thunders into your living room with the deafening screech of metal on metal, the catastrophic collision of man's ambition with the unyielding laws of nature. This episode pulls you directly onto the rails of one of America's most notorious railroad disasters, where a desperate engineer races against the clock to deliver mail on time—a decision that will echo through history. As the train barrels forward at breakneck speed, the tension builds like steam in an overheated boiler. You'll hear the roar of the locomotive, the anguished voices of doomed passengers, and the internal torment of a man watching his fatal choice unfold in real-time. It's vintage Suspense: intimate terror delivered through sound alone.</p>
 <p>By the 1940s, when this episode aired, "Suspense" had become America's premier thriller anthology, attracting top-tier talent and pushing the boundaries of what radio drama could achieve. The show's genius lay in its restraint—no visual tricks, just masterful storytelling and Foley artistry that forced listeners to construct their own nightmares. The wreck of the Virginia-Carolina Limited in 1903 remained a fresh cultural wound, making this dramatization both a historical reckoning and a timeless meditation on recklessness and consequence. Each episode proved that the most terrifying threats weren't always supernatural; sometimes they emerged from ordinary human choices.</p>
 <p>Don't miss this harrowing journey into the past. Tune in and experience why millions of listeners made "Suspense" must-listen radio—where every episode promised to keep you on the edge of your seat long after the final dramatic chord faded into static.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

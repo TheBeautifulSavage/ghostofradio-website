@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450913 158 The Furnished Floor (128 44) 29786 31m26s — Suspense | Ghost of Radio</title>
+  <title>The Furnished Floor (128 44) 29786 31m26s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450913 158 The Furnished Floor (128 44) 29786 31m26s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450913 158 The Furnished Floor (128 44) 29786 31m26s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450913 158 The Furnished Floor (128 44) 29786 31m26s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 13, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450913 158 The Furnished Floor (128 44) 29786 31m26s</h1>
+          <h1 class="episode__title">The Furnished Floor (128 44) 29786 31m26s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Furnished Floor</p>
-<p>Picture yourself in a cramped Manhattan boarding house on a sweltering summer night, where the walls seem to press in with decades of secrets and desperation. In this masterfully crafted episode of *Suspense*, a seemingly ordinary rented room becomes a pressure cooker of paranoia and dread. A tenant discovers something deeply unsettling about the room's previous occupant—something the landlady refuses to discuss, something the police won't quite explain. As the clock ticks and shadows deepen, our protagonist finds himself trapped between the mundane reality of unpaid rent and the creeping certainty that he's stumbled upon evidence of something far darker. The Foley artists conjure every creak and whisper, while the taut script builds inexorably toward a revelation that challenges everything about justice, complicity, and the hidden lives of ordinary people.</p>
-<p>What made *Suspense* the gold standard of American radio drama—and what made this particular episode so memorable—was CBS's commitment to psychological terror over cheap thrills. Running for two decades, the show proved that the human voice and the listener's imagination were more terrifying than any special effect. Episodes like "The Furnished Floor" showcased the program's signature approach: intimate human drama with a knife edge of menace, where the real horror wasn't monsters, but the darkness that ordinary people are capable of hiding. These weren't supernatural tales but investigations into moral ambiguity and social complicity, themes that resonated powerfully with post-war American audiences grappling with uncomfortable truths.</p>
+          <p>Picture yourself in a cramped Manhattan boarding house on a sweltering summer night, where the walls seem to press in with decades of secrets and desperation. In this masterfully crafted episode of Suspense, a seemingly ordinary rented room becomes a pressure cooker of paranoia and dread. A tenant discovers something deeply unsettling about the room's previous occupant—something the landlady refuses to discuss, something the police won't quite explain. As the clock ticks and shadows deepen, our protagonist finds himself trapped between the mundane reality of unpaid rent and the creeping certainty that he's stumbled upon evidence of something far darker. The Foley artists conjure every creak and whisper, while the taut script builds inexorably toward a revelation that challenges everything about justice, complicity, and the hidden lives of ordinary people.</p>
+<p>What made Suspense the gold standard of American radio drama—and what made this particular episode so memorable—was CBS's commitment to psychological terror over cheap thrills. Running for two decades, the show proved that the human voice and the listener's imagination were more terrifying than any special effect. Episodes like "The Furnished Floor" showcased the program's signature approach: intimate human drama with a knife edge of menace, where the real horror wasn't monsters, but the darkness that ordinary people are capable of hiding. These weren't supernatural tales but investigations into moral ambiguity and social complicity, themes that resonated powerfully with post-war American audiences grappling with uncomfortable truths.</p>
 <p>This is essential listening for anyone who appreciates the power of suggestion and the craft of dramatic storytelling. Settle in, dim the lights, and let your mind do the heavy lifting—it will conjure something far more disturbing than any visual medium ever could.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

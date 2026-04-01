@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 590222 791 Star Over Hong Kong (64 32) 11731 23m39s — Suspense | Ghost of Radio</title>
+  <title>Star Over Hong Kong (64 32) 11731 23m39s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 590222 791 Star Over Hong Kong (64 32) 11731 23m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 590222 791 Star Over Hong Kong (64 32) 11731 23m39s — Suspense">
   <meta property="og:description" content="Listen to Suspense 590222 791 Star Over Hong Kong (64 32) 11731 23m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 22, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 590222 791 Star Over Hong Kong (64 32) 11731 23m39s</h1>
+          <h1 class="episode__title">Star Over Hong Kong (64 32) 11731 23m39s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Star Over Hong Kong</p>
-<p>As the familiar *Suspense* theme wails through your radio speaker and the scene-setting sound effects crackle to life, you're transported to the fog-shrouded streets of wartime Hong Kong—a city of intrigue, danger, and moral ambiguity. A mysterious star becomes the focal point of desperation as characters caught between empires scheme, betray, and fight for survival in a port city teetering on the edge of chaos. The tension mounts with each passing moment: whispered conversations in shadowy alleys, the threat of discovery, and the constant reminder that in such a place, trust is the most dangerous commodity of all. William N. Robson's masterful direction guides listeners through this maze of espionage and human conflict, where every footstep and door slam carries the weight of life-or-death consequences.</p>
-<p>*Suspense* was America's premier thriller program, and by the 1940s it had perfected the art of psychological terror and sophisticated storytelling. Rather than relying on supernatural gimmicks, the show's genius lay in exploring the darkest corners of human nature—greed, fear, betrayal, and the desperate choices ordinary people make under extraordinary circumstances. "Star Over Hong Kong" exemplifies this approach perfectly, grounding its drama in the very real anxieties of World War II, when international intrigue, espionage, and the fog of war were genuine terrors in listeners' minds. The episode showcases why CBS's *Suspense* commanded millions of devoted listeners who trusted the program to deliver intelligent, adult entertainment.</p>
+          <p>As the familiar Suspense theme wails through your radio speaker and the scene-setting sound effects crackle to life, you're transported to the fog-shrouded streets of wartime Hong Kong—a city of intrigue, danger, and moral ambiguity. A mysterious star becomes the focal point of desperation as characters caught between empires scheme, betray, and fight for survival in a port city teetering on the edge of chaos. The tension mounts with each passing moment: whispered conversations in shadowy alleys, the threat of discovery, and the constant reminder that in such a place, trust is the most dangerous commodity of all. William N. Robson's masterful direction guides listeners through this maze of espionage and human conflict, where every footstep and door slam carries the weight of life-or-death consequences.</p>
+<p>Suspense was America's premier thriller program, and by the 1940s it had perfected the art of psychological terror and sophisticated storytelling. Rather than relying on supernatural gimmicks, the show's genius lay in exploring the darkest corners of human nature—greed, fear, betrayal, and the desperate choices ordinary people make under extraordinary circumstances. "Star Over Hong Kong" exemplifies this approach perfectly, grounding its drama in the very real anxieties of World War II, when international intrigue, espionage, and the fog of war were genuine terrors in listeners' minds. The episode showcases why CBS's Suspense commanded millions of devoted listeners who trusted the program to deliver intelligent, adult entertainment.</p>
 <p>Settle in tonight with the lights dimmed low, dial in to this classic broadcast, and experience radio drama at its finest. In less than twenty-five minutes, you'll be pulled into a world of danger and deception where nothing is quite what it seems.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

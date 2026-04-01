@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620909 942 A Strange Day In May (128 44) 21879 23m00s — Suspense | Ghost of Radio</title>
+  <title>A Strange Day In May (128 44) 21879 23m00s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620909 942 A Strange Day In May (128 44) 21879 23m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620909 942 A Strange Day In May (128 44) 21879 23m00s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620909 942 A Strange Day In May (128 44) 21879 23m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 9, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620909 942 A Strange Day In May (128 44) 21879 23m00s</h1>
+          <h1 class="episode__title">A Strange Day In May (128 44) 21879 23m00s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># A Strange Day In May</p>
-<p>On an ordinary May afternoon, the ordinary becomes sinister. When our protagonist awakens to find the world subtly, inexplicably wrong—clocks running backwards, neighbors speaking in whispers, the very air thick with dread—listeners are drawn into a masterclass of psychological unease. "A Strange Day In May" unfolds with the creeping inevitability of a nightmare made real, where each moment tightens the noose of mystery around a man desperately trying to understand what has happened to reality itself. The production's masterful use of sound design—those unsettling silences, the distorted voices, the mechanical ticking that seems to mock normalcy—transforms the radio into a portal to pure, distilled terror.</p>
-<p>*Suspense* arrived on CBS in 1942 as American anxieties reached a fever pitch, and this particular episode exemplifies why the show became essential listening for a nation navigating wartime uncertainty and existential dread. Under the brilliant stewardship of producer-director William Spier, *Suspense* elevated the thriller format far beyond simple shocks and cheap scares, instead crafting psychological dramas that probed the fragile boundaries between sanity and madness, reality and delusion. The series drew top talent—writers, actors, and sound engineers—who understood that true suspense lives in what you *don't* see, in the spaces between the words, in the listener's own imagination.</p>
+          <p>On an ordinary May afternoon, the ordinary becomes sinister. When our protagonist awakens to find the world subtly, inexplicably wrong—clocks running backwards, neighbors speaking in whispers, the very air thick with dread—listeners are drawn into a masterclass of psychological unease. "A Strange Day In May" unfolds with the creeping inevitability of a nightmare made real, where each moment tightens the noose of mystery around a man desperately trying to understand what has happened to reality itself. The production's masterful use of sound design—those unsettling silences, the distorted voices, the mechanical ticking that seems to mock normalcy—transforms the radio into a portal to pure, distilled terror.</p>
+<p>Suspense arrived on CBS in 1942 as American anxieties reached a fever pitch, and this particular episode exemplifies why the show became essential listening for a nation navigating wartime uncertainty and existential dread. Under the brilliant stewardship of producer-director William Spier, Suspense elevated the thriller format far beyond simple shocks and cheap scares, instead crafting psychological dramas that probed the fragile boundaries between sanity and madness, reality and delusion. The series drew top talent—writers, actors, and sound engineers—who understood that true suspense lives in what you don't see, in the spaces between the words, in the listener's own imagination.</p>
 <p>For those seeking vintage radio drama at its most unsettling, "A Strange Day In May" offers an unmissable glimpse into that golden age when storytellers understood that the most powerful theater happens entirely in the mind. Tune in, dim the lights, and discover why millions of Americans huddled around their sets each week—sometimes unable to sleep afterward.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

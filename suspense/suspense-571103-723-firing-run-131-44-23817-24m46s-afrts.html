@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 571103 723 Firing Run (131 44) 23817 24m46s Afrts — Suspense | Ghost of Radio</title>
+  <title>Firing Run (131 44) 23817 24m46s Afrts — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 571103 723 Firing Run (131 44) 23817 24m46s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 571103 723 Firing Run (131 44) 23817 24m46s Afrts — Suspense">
   <meta property="og:description" content="Listen to Suspense 571103 723 Firing Run (131 44) 23817 24m46s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 3, 1957</span>
           </div>
-          <h1 class="episode__title">Suspense 571103 723 Firing Run (131 44) 23817 24m46s Afrts</h1>
+          <h1 class="episode__title">Firing Run (131 44) 23817 24m46s Afrts</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Firing Run</p>
-<p>Picture this: a lone pilot, engines screaming through the darkness, racing against time and his own fraying nerves. "Firing Run" pulls listeners into the cramped cockpit of a military aircraft during wartime, where split-second decisions mean the difference between glory and oblivion. The episode crackles with the authentic tension of aerial combat—the roar of engines, the staccato of gunfire, radio static cutting through orders and warnings. As our protagonist pushes deeper into enemy territory, the psychological pressure mounts alongside the physical danger. Is he thinking clearly, or is combat fatigue clouding his judgment? With each passing moment, the listener is locked in suspense, wondering if this brave flyer will make it back alive, or if this will be his final mission.</p>
+          <p>Picture this: a lone pilot, engines screaming through the darkness, racing against time and his own fraying nerves. "Firing Run" pulls listeners into the cramped cockpit of a military aircraft during wartime, where split-second decisions mean the difference between glory and oblivion. The episode crackles with the authentic tension of aerial combat—the roar of engines, the staccato of gunfire, radio static cutting through orders and warnings. As our protagonist pushes deeper into enemy territory, the psychological pressure mounts alongside the physical danger. Is he thinking clearly, or is combat fatigue clouding his judgment? With each passing moment, the listener is locked in suspense, wondering if this brave flyer will make it back alive, or if this will be his final mission.</p>
 <p>Suspense arrived on CBS radio in 1942 when Americans desperately needed stories that reflected their wartime anxieties. For two decades, the show became the gold standard of the thriller genre, employing some of radio's finest actors, writers, and sound engineers to create genuinely terrifying experiences. "Firing Run" is quintessential Suspense material—grounded in the real horrors of World War II that listeners were living through, yet elevated to high drama through expert storytelling and the intimate medium of radio. The show understood that the most effective scares weren't supernatural; they were deeply human. Fear of failure, fear of death, fear of losing your nerve when it matters most—these were the demons that kept America awake at night.</p>
 <p>So dim the lights, settle in with headphones if you can, and prepare yourself for twenty-five minutes of edge-of-your-seat aviation drama. "Firing Run" awaits—and this pilot's fate rests entirely in your imagination.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

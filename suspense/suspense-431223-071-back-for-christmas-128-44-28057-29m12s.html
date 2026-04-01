@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 431223 071 Back For Christmas (128 44) 28057 29m12s — Suspense | Ghost of Radio</title>
+  <title>Back For Christmas (128 44) 28057 29m12s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 431223 071 Back For Christmas (128 44) 28057 29m12s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 431223 071 Back For Christmas (128 44) 28057 29m12s — Suspense">
   <meta property="og:description" content="Listen to Suspense 431223 071 Back For Christmas (128 44) 28057 29m12s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 23, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 431223 071 Back For Christmas (128 44) 28057 29m12s</h1>
+          <h1 class="episode__title">Back For Christmas (128 44) 28057 29m12s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Back For Christmas</p>
-<p>Picture yourself huddled near your radio on a winter's eve, the fire crackling in the hearth, when a knock at the door shatters the quiet. In "Back For Christmas," Suspense delivers a masterwork of psychological dread that begins with an innocent promise and spirals into something far more sinister. A man's casual remark—that he'll return home by Christmas—becomes a haunting question mark hanging over his fate. As the holiday approaches and his return seems increasingly impossible, the drama builds with exquisite tension, forcing listeners to confront the darker possibilities lurking beneath domestic tranquility. The writing cuts straight to the bone, and the performances crackle with barely suppressed anxiety as comfortable assumptions unravel one by one.</p>
+          <p>Picture yourself huddled near your radio on a winter's eve, the fire crackling in the hearth, when a knock at the door shatters the quiet. In "Back For Christmas," Suspense delivers a masterwork of psychological dread that begins with an innocent promise and spirals into something far more sinister. A man's casual remark—that he'll return home by Christmas—becomes a haunting question mark hanging over his fate. As the holiday approaches and his return seems increasingly impossible, the drama builds with exquisite tension, forcing listeners to confront the darker possibilities lurking beneath domestic tranquility. The writing cuts straight to the bone, and the performances crackle with barely suppressed anxiety as comfortable assumptions unravel one by one.</p>
 <p>This episode exemplifies what made Suspense the gold standard of American thriller radio from 1942 to 1962. CBS's commitment to intelligent, atmospheric storytelling attracted the finest talent in broadcasting—writers crafted stories that exploited radio's greatest strength: the listener's imagination. With no visual distractions, every sound effect, every pause, every tremor in an actor's voice becomes weaponized for maximum psychological impact. "Back For Christmas" is radio drama at its most refined, proof that Suspense understood that true terror doesn't come from what you see, but from what you fear might happen in the darkness.</p>
 <p>If you've never experienced the golden age of radio thriller programming, this is the perfect entry point. Settle in, dim the lights, and let this twenty-eight-minute journey remind you why millions of Americans once gathered around their sets, hanging on every word. Suspense didn't just tell stories—it rewired how an entire generation experienced fear. Tune in and discover why.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440914 109 You'll Never See Me Again (128 44) 28674 30m14s — Suspense | Ghost of Radio</title>
+  <title>You'll Never See Me Again (128 44) 28674 30m14s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440914 109 You'll Never See Me Again (128 44) 28674 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440914 109 You'll Never See Me Again (128 44) 28674 30m14s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440914 109 You'll Never See Me Again (128 44) 28674 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 14, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440914 109 You'll Never See Me Again (128 44) 28674 30m14s</h1>
+          <h1 class="episode__title">You'll Never See Me Again (128 44) 28674 30m14s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># You'll Never See Me Again</p>
-<p>Picture this: a woman vanishes without a trace, leaving behind only questions and the creeping dread of the unknown. "You'll Never See Me Again" plunges listeners into the shadowy world of obsession and disappearance, where love curdles into something darker and more sinister. Over the next thirty minutes, CBS's *Suspense* will unravel a mystery that hits closer to home than any supernatural tale—the terror of losing someone to forces beyond rational explanation. The sound design pulls you into dimly lit apartments and fog-shrouded streets, where every creak and whisper carries menace. You'll find yourself gripping your radio dial as the protagonist desperately seeks answers, only to discover that the most dangerous mysteries are those that follow us from within.</p>
-<p>*Suspense* earned its reputation as one of radio's most artfully crafted thriller anthologies by refusing easy solutions or comfortable resolutions. Debuting on CBS in 1942, the show became the gold standard for psychological drama on the airwaves, featuring stellar performances from Hollywood's finest and scripts that understood that what you *don't* see is infinitely more frightening than what you do. This particular episode exemplifies the show's mastery—grounded in the mundane reality of everyday life, where ordinary people encounter extraordinary horror. The production quality and narrative sophistication showcase why *Suspense* remained essential listening for over two decades, commanding audiences during radio's golden age.</p>
-<p>Don't let this one slip away into the shadows. Tune in to "You'll Never See Me Again" and experience the masterful storytelling that kept millions of Americans huddled around their radios late into the night. This is *Suspense*—where the darkness between the stations becomes something altogether real.</p>
+          <p>Picture this: a woman vanishes without a trace, leaving behind only questions and the creeping dread of the unknown. "You'll Never See Me Again" plunges listeners into the shadowy world of obsession and disappearance, where love curdles into something darker and more sinister. Over the next thirty minutes, CBS's Suspense will unravel a mystery that hits closer to home than any supernatural tale—the terror of losing someone to forces beyond rational explanation. The sound design pulls you into dimly lit apartments and fog-shrouded streets, where every creak and whisper carries menace. You'll find yourself gripping your radio dial as the protagonist desperately seeks answers, only to discover that the most dangerous mysteries are those that follow us from within.</p>
+<p>Suspense earned its reputation as one of radio's most artfully crafted thriller anthologies by refusing easy solutions or comfortable resolutions. Debuting on CBS in 1942, the show became the gold standard for psychological drama on the airwaves, featuring stellar performances from Hollywood's finest and scripts that understood that what you don't see is infinitely more frightening than what you do. This particular episode exemplifies the show's mastery—grounded in the mundane reality of everyday life, where ordinary people encounter extraordinary horror. The production quality and narrative sophistication showcase why Suspense remained essential listening for over two decades, commanding audiences during radio's golden age.</p>
+<p>Don't let this one slip away into the shadows. Tune in to "You'll Never See Me Again" and experience the masterful storytelling that kept millions of Americans huddled around their radios late into the night. This is Suspense—where the darkness between the stations becomes something altogether real.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

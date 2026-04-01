@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 480508 295 Life Ends At Midnight (128 44) 28449 30m00s — Suspense | Ghost of Radio</title>
+  <title>Life Ends At Midnight (128 44) 28449 30m00s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 480508 295 Life Ends At Midnight (128 44) 28449 30m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 480508 295 Life Ends At Midnight (128 44) 28449 30m00s — Suspense">
   <meta property="og:description" content="Listen to Suspense 480508 295 Life Ends At Midnight (128 44) 28449 30m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 8, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 480508 295 Life Ends At Midnight (128 44) 28449 30m00s</h1>
+          <h1 class="episode__title">Life Ends At Midnight (128 44) 28449 30m00s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Life Ends At Midnight</p>
-<p>As the clock tower chimes approach the witching hour, a condemned man sits in his final cell, awaiting dawn and the gallows. But when a mysterious stranger arrives with an extraordinary proposition—a chance to escape his fate through means both supernatural and terrifying—our protagonist discovers that some bargains exact a price far steeper than death itself. In this taut thirty-minute thriller, *Suspense* masterfully weaves together the claustrophobic dread of a prison death row with metaphysical horror, as listeners are drawn deeper into a moral labyrinth where every escape route leads to a darker corner. The ticking clock becomes more than mere backdrop; it's a character unto itself, reminding us that time is the one force no man can ultimately bargain with. What transpires in those final minutes before midnight will chill your blood and linger long after the final fade-out.</p>
-<p>Throughout its two-decade run, *Suspense* earned its reputation as perhaps the finest thriller anthology ever broadcast, consistently delivering tales that gripped America's living rooms with white-knuckle intensity. The program's golden age in the 1940s, when this episode aired, represented radio drama at its artistic peak—featuring top-tier actors, master craftsmen behind the microphone, and scripts that understood the unique power of the unseen to burrow into the listener's imagination. The show's innovative sound design and pacing set the standard that would influence television and film for generations to come.</p>
-<p>Settle into your favorite chair, dim the lights, and prepare yourself for a masterclass in suspenseful storytelling. *Life Ends at Midnight* awaits—and the clock is ticking.</p>
+          <p>As the clock tower chimes approach the witching hour, a condemned man sits in his final cell, awaiting dawn and the gallows. But when a mysterious stranger arrives with an extraordinary proposition—a chance to escape his fate through means both supernatural and terrifying—our protagonist discovers that some bargains exact a price far steeper than death itself. In this taut thirty-minute thriller, Suspense masterfully weaves together the claustrophobic dread of a prison death row with metaphysical horror, as listeners are drawn deeper into a moral labyrinth where every escape route leads to a darker corner. The ticking clock becomes more than mere backdrop; it's a character unto itself, reminding us that time is the one force no man can ultimately bargain with. What transpires in those final minutes before midnight will chill your blood and linger long after the final fade-out.</p>
+<p>Throughout its two-decade run, Suspense earned its reputation as perhaps the finest thriller anthology ever broadcast, consistently delivering tales that gripped America's living rooms with white-knuckle intensity. The program's golden age in the 1940s, when this episode aired, represented radio drama at its artistic peak—featuring top-tier actors, master craftsmen behind the microphone, and scripts that understood the unique power of the unseen to burrow into the listener's imagination. The show's innovative sound design and pacing set the standard that would influence television and film for generations to come.</p>
+<p>Settle into your favorite chair, dim the lights, and prepare yourself for a masterclass in suspenseful storytelling. Life Ends at Midnight awaits—and the clock is ticking.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

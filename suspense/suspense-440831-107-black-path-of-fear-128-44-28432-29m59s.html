@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440831 107 Black Path Of Fear (128 44) 28432 29m59s — Suspense | Ghost of Radio</title>
+  <title>Black Path Of Fear (128 44) 28432 29m59s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440831 107 Black Path Of Fear (128 44) 28432 29m59s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440831 107 Black Path Of Fear (128 44) 28432 29m59s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440831 107 Black Path Of Fear (128 44) 28432 29m59s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 31, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440831 107 Black Path Of Fear (128 44) 28432 29m59s</h1>
+          <h1 class="episode__title">Black Path Of Fear (128 44) 28432 29m59s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Black Path of Fear</p>
-<p>When the lights dim and that familiar creeping violin score fills your living room, you know you're in for a night of mounting dread. In "Black Path of Fear," a traveler finds himself ensnared in a web of paranoia and accusation that spirals inexorably toward a destiny he cannot escape. As shadows close in and circumstantial evidence accumulates like fog rolling across a moor, our protagonist discovers that sometimes the most dangerous trap is the one built by circumstance itself. Every knock at the door, every whispered conversation carries the weight of suspicion. Will he prove his innocence, or will he become another victim of the relentless machinery of fate? The taut dialogue and expertly placed sound effects—the scrape of a chair, the distant wail of a siren—pull you deeper into his nightmare with each passing minute.</p>
-<p>*Suspense* stands as one of broadcasting's greatest achievements, a masterclass in how to terrify and captivate an audience using nothing but voices, music, and imagination. CBS's flagship thriller anthology ran for two decades, employing top-tier writers, sound engineers, and actors to craft stories that could freeze the blood of millions gathered around their radios. Each episode was a self-contained nightmare, designed to keep listeners awake long after the broadcast ended. "Black Path of Fear" exemplifies the show's genius—a tale of ordinary people confronting extraordinary dread, where the real horror lies not in monsters or violence, but in the terrible logic of suspicion.</p>
-<p>Settle in for twenty-nine minutes of pure, unadulterated tension. *Suspense* awaits.</p>
+          <p>When the lights dim and that familiar creeping violin score fills your living room, you know you're in for a night of mounting dread. In "Black Path of Fear," a traveler finds himself ensnared in a web of paranoia and accusation that spirals inexorably toward a destiny he cannot escape. As shadows close in and circumstantial evidence accumulates like fog rolling across a moor, our protagonist discovers that sometimes the most dangerous trap is the one built by circumstance itself. Every knock at the door, every whispered conversation carries the weight of suspicion. Will he prove his innocence, or will he become another victim of the relentless machinery of fate? The taut dialogue and expertly placed sound effects—the scrape of a chair, the distant wail of a siren—pull you deeper into his nightmare with each passing minute.</p>
+<p>Suspense stands as one of broadcasting's greatest achievements, a masterclass in how to terrify and captivate an audience using nothing but voices, music, and imagination. CBS's flagship thriller anthology ran for two decades, employing top-tier writers, sound engineers, and actors to craft stories that could freeze the blood of millions gathered around their radios. Each episode was a self-contained nightmare, designed to keep listeners awake long after the broadcast ended. "Black Path of Fear" exemplifies the show's genius—a tale of ordinary people confronting extraordinary dread, where the real horror lies not in monsters or violence, but in the terrible logic of suspicion.</p>
+<p>Settle in for twenty-nine minutes of pure, unadulterated tension. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

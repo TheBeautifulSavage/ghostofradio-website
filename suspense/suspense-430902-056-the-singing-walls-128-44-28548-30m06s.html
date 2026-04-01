@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 430902 056 The Singing Walls (128 44) 28548 30m06s — Suspense | Ghost of Radio</title>
+  <title>The Singing Walls (128 44) 28548 30m06s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 430902 056 The Singing Walls (128 44) 28548 30m06s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 430902 056 The Singing Walls (128 44) 28548 30m06s — Suspense">
   <meta property="og:description" content="Listen to Suspense 430902 056 The Singing Walls (128 44) 28548 30m06s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 2, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 430902 056 The Singing Walls (128 44) 28548 30m06s</h1>
+          <h1 class="episode__title">The Singing Walls (128 44) 28548 30m06s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,9 +87,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Singing Walls</p>
-<p>Picture this: a man returns to his childhood home after years abroad, only to discover that the very walls seem alive with whispers—fragments of conversations from the past, echoing through plaster and timber like ghosts trapped in the architecture itself. In "The Singing Walls," listeners will find themselves drawn into a masterfully crafted descent into psychological terror as our protagonist grapples with the inexplicable phenomenon haunting his family's estate. Is it madness creeping in, or something far more sinister? The CBS sound design team masterfully layers ambient effects—the creaking of old wood, the susurrus of wind through forgotten corners, and those haunting, indecipherable voices—to create an atmosphere of mounting dread that will have you checking the locks on your own doors long after the broadcast ends.</p>
-<p>For over two decades, *Suspense* remained America's premier gateway into psychological horror and thrilling mystery, pioneering techniques that modern filmmakers still emulate today. Broadcasting live from Hollywood, the show featured some of radio's finest dramatic talent and an orchestra that could shift a scene's emotional temperature in mere seconds. Episodes like "The Singing Walls" exemplify why *Suspense* earned its reputation: rather than relying solely on monsters or gore, the show understood that true terror lives in ambiguity, in the spaces between what we know and what we fear might be true. Each episode was a carefully calibrated exercise in suspenseful storytelling, proving that the imagination of a listener—guided by skilled writers, actors, and sound engineers—could be more frightening than anything visual.</p>
+          <p>Picture this: a man returns to his childhood home after years abroad, only to discover that the very walls seem alive with whispers—fragments of conversations from the past, echoing through plaster and timber like ghosts trapped in the architecture itself. In "The Singing Walls," listeners will find themselves drawn into a masterfully crafted descent into psychological terror as our protagonist grapples with the inexplicable phenomenon haunting his family's estate. Is it madness creeping in, or something far more sinister? The CBS sound design team masterfully layers ambient effects—the creaking of old wood, the susurrus of wind through forgotten corners, and those haunting, indecipherable voices—to create an atmosphere of mounting dread that will have you checking the locks on your own doors long after the broadcast ends.</p>
+<p>For over two decades, Suspense remained America's premier gateway into psychological horror and thrilling mystery, pioneering techniques that modern filmmakers still emulate today. Broadcasting live from Hollywood, the show featured some of radio's finest dramatic talent and an orchestra that could shift a scene's emotional temperature in mere seconds. Episodes like "The Singing Walls" exemplify why Suspense earned its reputation: rather than relying solely on monsters or gore, the show understood that true terror lives in ambiguity, in the spaces between what we know and what we fear might be true. Each episode was a carefully calibrated exercise in suspenseful storytelling, proving that the imagination of a listener—guided by skilled writers, actors, and sound engineers—could be more frightening than anything visual.</p>
 <p>Don't miss this haunting journey into the unknown. Tune in and let the walls speak to you.</p>
         </div>
 
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

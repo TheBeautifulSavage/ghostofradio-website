@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 430720 050 Murder Goes For A Swim (128 44) 28663 30m14s — Suspense | Ghost of Radio</title>
+  <title>Murder Goes For A Swim (128 44) 28663 30m14s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 430720 050 Murder Goes For A Swim (128 44) 28663 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 430720 050 Murder Goes For A Swim (128 44) 28663 30m14s — Suspense">
   <meta property="og:description" content="Listen to Suspense 430720 050 Murder Goes For A Swim (128 44) 28663 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 20, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 430720 050 Murder Goes For A Swim (128 44) 28663 30m14s</h1>
+          <h1 class="episode__title">Murder Goes For A Swim (128 44) 28663 30m14s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,9 +87,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Murder Goes For A Swim</p>
-<p>Picture this: a moonless night, the gentle lap of water against a dock, and a terrible secret waiting to be discovered. In "Murder Goes For A Swim," listeners are plunged into a nightmare of guilt and desperation as a killer attempts to dispose of incriminating evidence in the dark waters of a coastal inlet. What begins as a simple cover-up spirals into a web of blackmail, betrayal, and psychological terror as the perpetrator realizes that the lake keeps its own counsel—and exacts its own price. With Suspense's trademark attention to claustrophobic dread, this episode transforms an ordinary seaside setting into a prison of paranoia and fear. Every sound becomes sinister; every ripple, a harbinger of exposure.</p>
-<p>Throughout its twenty-year run on CBS, *Suspense* became the gold standard of American radio drama, consistently delivering the kind of spine-tingling storytelling that kept millions huddled around their sets. Created by the legendary William Spier and featuring an extraordinary roster of Hollywood talent—from Orson Welles to Agnes Moorehead—the program mastered the art of building terror through sound design, expert pacing, and the raw power of the listener's imagination. In an era before television, *Suspense* proved that the most terrifying monsters were often those we couldn't quite see, those lurking just beyond the reach of our understanding.</p>
+          <p>Picture this: a moonless night, the gentle lap of water against a dock, and a terrible secret waiting to be discovered. In "Murder Goes For A Swim," listeners are plunged into a nightmare of guilt and desperation as a killer attempts to dispose of incriminating evidence in the dark waters of a coastal inlet. What begins as a simple cover-up spirals into a web of blackmail, betrayal, and psychological terror as the perpetrator realizes that the lake keeps its own counsel—and exacts its own price. With Suspense's trademark attention to claustrophobic dread, this episode transforms an ordinary seaside setting into a prison of paranoia and fear. Every sound becomes sinister; every ripple, a harbinger of exposure.</p>
+<p>Throughout its twenty-year run on CBS, Suspense became the gold standard of American radio drama, consistently delivering the kind of spine-tingling storytelling that kept millions huddled around their sets. Created by the legendary William Spier and featuring an extraordinary roster of Hollywood talent—from Orson Welles to Agnes Moorehead—the program mastered the art of building terror through sound design, expert pacing, and the raw power of the listener's imagination. In an era before television, Suspense proved that the most terrifying monsters were often those we couldn't quite see, those lurking just beyond the reach of our understanding.</p>
 <p>If you've never experienced the full power of classic radio drama, "Murder Goes For A Swim" is the perfect entry point. Slip on your headphones, dim the lights, and surrender yourself to thirty minutes of perfectly crafted suspense—the kind of entertainment that shaped a nation's nightmares and reminded millions why they locked their doors at night. This is radio at its most potent.</p>
         </div>
 
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

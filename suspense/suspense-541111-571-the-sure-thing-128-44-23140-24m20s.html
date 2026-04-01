@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 541111 571 The Sure Thing (128 44) 23140 24m20s — Suspense | Ghost of Radio</title>
+  <title>The Sure Thing (128 44) 23140 24m20s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 541111 571 The Sure Thing (128 44) 23140 24m20s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 541111 571 The Sure Thing (128 44) 23140 24m20s — Suspense">
   <meta property="og:description" content="Listen to Suspense 541111 571 The Sure Thing (128 44) 23140 24m20s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 11, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 541111 571 The Sure Thing (128 44) 23140 24m20s</h1>
+          <h1 class="episode__title">The Sure Thing (128 44) 23140 24m20s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Sure Thing</p>
-<p>As the familiar *Suspense* theme creeps across your radio dial with its unsettling violin shriek and thundering orchestral swell, you settle in for a tale of greed, deception, and the terrible price of certainty. "The Sure Thing" pulls you into a world where a seemingly foolproof scheme unravels with devastating consequences. A man convinced he's found the answer to his problems—perhaps a rigged horse race, a fixed game, or a guaranteed investment—discovers that in the criminal underworld, there are no certainties, only victims and predators. Over the next twenty-four minutes, you'll hear the steady accumulation of tension as confidence curdles into dread, as the protagonist's certainty transforms into the horrifying realization that he's been played. Every footstep, every muffled conversation, every pause laden with menace pulls you deeper into a snare of his own making.</p>
-<p>*Suspense* ruled the American airwaves for two decades as the gold standard of audio drama—a show where skilled sound design, sharp writing, and powerhouse performances created pure psychological terror without needing a single visual frame. Broadcast live during the 1940s with a full orchestra and sound effects team, these episodes were cultural touchstones, commanding audiences of millions who huddled around their receivers in the dark. "The Sure Thing" exemplifies the show's mastery: a morality play wrapped in a thriller's packaging, where the real horror isn't monsters or violence, but the inexorable logic of cause and effect.</p>
-<p>Don't miss this restored broadcast—a window into an era when radio could stop a nation in its tracks. Tune in and discover why *Suspense* still holds the power to make the darkness outside your speaker seem a little bit closer.</p>
+          <p>As the familiar Suspense theme creeps across your radio dial with its unsettling violin shriek and thundering orchestral swell, you settle in for a tale of greed, deception, and the terrible price of certainty. "The Sure Thing" pulls you into a world where a seemingly foolproof scheme unravels with devastating consequences. A man convinced he's found the answer to his problems—perhaps a rigged horse race, a fixed game, or a guaranteed investment—discovers that in the criminal underworld, there are no certainties, only victims and predators. Over the next twenty-four minutes, you'll hear the steady accumulation of tension as confidence curdles into dread, as the protagonist's certainty transforms into the horrifying realization that he's been played. Every footstep, every muffled conversation, every pause laden with menace pulls you deeper into a snare of his own making.</p>
+<p>Suspense ruled the American airwaves for two decades as the gold standard of audio drama—a show where skilled sound design, sharp writing, and powerhouse performances created pure psychological terror without needing a single visual frame. Broadcast live during the 1940s with a full orchestra and sound effects team, these episodes were cultural touchstones, commanding audiences of millions who huddled around their receivers in the dark. "The Sure Thing" exemplifies the show's mastery: a morality play wrapped in a thriller's packaging, where the real horror isn't monsters or violence, but the inexorable logic of cause and effect.</p>
+<p>Don't miss this restored broadcast—a window into an era when radio could stop a nation in its tracks. Tune in and discover why Suspense still holds the power to make the darkness outside your speaker seem a little bit closer.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

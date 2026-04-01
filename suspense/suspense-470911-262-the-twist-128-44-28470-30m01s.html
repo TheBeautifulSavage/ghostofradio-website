@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470911 262 The Twist (128 44) 28470 30m01s — Suspense | Ghost of Radio</title>
+  <title>The Twist (128 44) 28470 30m01s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470911 262 The Twist (128 44) 28470 30m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470911 262 The Twist (128 44) 28470 30m01s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470911 262 The Twist (128 44) 28470 30m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 11, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470911 262 The Twist (128 44) 28470 30m01s</h1>
+          <h1 class="episode__title">The Twist (128 44) 28470 30m01s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Twist</p>
-<p>Picture yourself in a darkened room, the glow of your radio dial the only light, as an unsettling violin screech pierces the static. You've tuned into *Suspense*, and tonight's offering—"The Twist"—promises to unsettle everything you thought you knew about a seemingly ordinary situation. In this masterfully crafted thriller, a simple twist of fate becomes a weapon of psychological terror. The plot spirals inward like a noose, each revelation more shocking than the last, as ordinary people find themselves ensnared in circumstances that defy expectation. The sound design is impeccable: footsteps echoing in confined spaces, doors creaking with menace, and dialogue delivered with the precise tension of a taut wire about to snap. By the time the final twist lands—and it will land hard—you'll find yourself replaying the episode in your mind, searching for the clues you missed.</p>
-<p>*Suspense* stands as one of radio's most enduring achievements, and episodes like this demonstrate why CBS's flagship thriller anthology captivated audiences for two decades. Premiering in 1942 and running through the early 1960s, the show pioneered the art of psychological suspense on air, relying on superb writing, stellar acting, and innovative sound techniques rather than cheap scares. Each episode was self-contained, allowing writers to experiment boldly with narrative structure and twist endings. "The Twist" exemplifies this golden age of radio drama, when technology and talent converged to create unforgettable entertainment that required only your imagination to terrify.</p>
-<p>Dust off that radio this evening and experience what millions heard in the 1940s: genuine suspense, expertly crafted and perfectly paced. *Suspense* waits for no one—tune in and discover why "The Twist" remains a standout in the show's legendary catalog.</p>
+          <p>Picture yourself in a darkened room, the glow of your radio dial the only light, as an unsettling violin screech pierces the static. You've tuned into Suspense, and tonight's offering—"The Twist"—promises to unsettle everything you thought you knew about a seemingly ordinary situation. In this masterfully crafted thriller, a simple twist of fate becomes a weapon of psychological terror. The plot spirals inward like a noose, each revelation more shocking than the last, as ordinary people find themselves ensnared in circumstances that defy expectation. The sound design is impeccable: footsteps echoing in confined spaces, doors creaking with menace, and dialogue delivered with the precise tension of a taut wire about to snap. By the time the final twist lands—and it will land hard—you'll find yourself replaying the episode in your mind, searching for the clues you missed.</p>
+<p>Suspense stands as one of radio's most enduring achievements, and episodes like this demonstrate why CBS's flagship thriller anthology captivated audiences for two decades. Premiering in 1942 and running through the early 1960s, the show pioneered the art of psychological suspense on air, relying on superb writing, stellar acting, and innovative sound techniques rather than cheap scares. Each episode was self-contained, allowing writers to experiment boldly with narrative structure and twist endings. "The Twist" exemplifies this golden age of radio drama, when technology and talent converged to create unforgettable entertainment that required only your imagination to terrify.</p>
+<p>Dust off that radio this evening and experience what millions heard in the 1940s: genuine suspense, expertly crafted and perfectly paced. Suspense waits for no one—tune in and discover why "The Twist" remains a standout in the show's legendary catalog.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560612 654 A Matter Of Timing (64 44) 14572 29m43s — Suspense | Ghost of Radio</title>
+  <title>A Matter Of Timing (64 44) 14572 29m43s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560612 654 A Matter Of Timing (64 44) 14572 29m43s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560612 654 A Matter Of Timing (64 44) 14572 29m43s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560612 654 A Matter Of Timing (64 44) 14572 29m43s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 12, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560612 654 A Matter Of Timing (64 44) 14572 29m43s</h1>
+          <h1 class="episode__title">A Matter Of Timing (64 44) 14572 29m43s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># A Matter of Timing</p>
-<p>When the clock strikes in the dead of night, a man realizes his carefully laid plans have unraveled by mere minutes—and now there's no turning back. In this taut episode of *Suspense*, the seemingly simple matter of synchronizing watches becomes a matter of life and death. As tension mounts with each passing second, listeners will find themselves gripped by the psychological machinery of a thriller where timing is everything and fate hangs on the swing of a pendulum. The cast delivers performances crackling with desperation and cunning, their voices painting a world where one wrong second can mean the difference between freedom and ruin.</p>
-<p>For over two decades, *Suspense* became America's appointment with terror—the show that transformed the radio into a portal of psychological dread and nail-biting drama. Premiering in 1942 on CBS, it became legendary for its commitment to craft, featuring some of Hollywood's finest actors in tales that proved the human imagination could terrify far more effectively than any visual effect. The program's golden age in the 1940s represents the medium at its artistic peak, when a creaking floorboard, a whispered confession, or the tick of a clock could paralyze an entire nation of listeners. Each episode was meticulously constructed to exploit the unique power of radio—forcing audiences to construct their own nightmares from pure suggestion and sound.</p>
-<p>Settle into your evening, dim the lights, and let this classic episode remind you why radio drama remains unmatched in its power to unsettle. *Suspense* awaits—where every second counts, and the greatest dangers often lurk in matters we thought were merely procedural. Press play, and discover why millions tuned in, week after week, to confront their deepest fears.</p>
+          <p>When the clock strikes in the dead of night, a man realizes his carefully laid plans have unraveled by mere minutes—and now there's no turning back. In this taut episode of Suspense, the seemingly simple matter of synchronizing watches becomes a matter of life and death. As tension mounts with each passing second, listeners will find themselves gripped by the psychological machinery of a thriller where timing is everything and fate hangs on the swing of a pendulum. The cast delivers performances crackling with desperation and cunning, their voices painting a world where one wrong second can mean the difference between freedom and ruin.</p>
+<p>For over two decades, Suspense became America's appointment with terror—the show that transformed the radio into a portal of psychological dread and nail-biting drama. Premiering in 1942 on CBS, it became legendary for its commitment to craft, featuring some of Hollywood's finest actors in tales that proved the human imagination could terrify far more effectively than any visual effect. The program's golden age in the 1940s represents the medium at its artistic peak, when a creaking floorboard, a whispered confession, or the tick of a clock could paralyze an entire nation of listeners. Each episode was meticulously constructed to exploit the unique power of radio—forcing audiences to construct their own nightmares from pure suggestion and sound.</p>
+<p>Settle into your evening, dim the lights, and let this classic episode remind you why radio drama remains unmatched in its power to unsettle. Suspense awaits—where every second counts, and the greatest dangers often lurk in matters we thought were merely procedural. Press play, and discover why millions tuned in, week after week, to confront their deepest fears.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

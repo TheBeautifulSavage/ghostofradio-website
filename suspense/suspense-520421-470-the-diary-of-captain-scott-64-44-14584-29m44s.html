@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 520421 470 The Diary Of Captain Scott (64 44) 14584 29m44s — Suspense | Ghost of Radio</title>
+  <title>The Diary Of Captain Scott (64 44) 14584 29m44s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 520421 470 The Diary Of Captain Scott (64 44) 14584 29m44s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 520421 470 The Diary Of Captain Scott (64 44) 14584 29m44s — Suspense">
   <meta property="og:description" content="Listen to Suspense 520421 470 The Diary Of Captain Scott (64 44) 14584 29m44s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 21, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 520421 470 The Diary Of Captain Scott (64 44) 14584 29m44s</h1>
+          <h1 class="episode__title">The Diary Of Captain Scott (64 44) 14584 29m44s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Diary Of Captain Scott</p>
-<p>As the familiar *Suspense* signature theme fades into the static of a distant Antarctic night, listeners are transported to the frozen edge of the world—to the final, haunting days of Captain Robert Falcon Scott's doomed polar expedition. This gripping adaptation traces the explorer's descent through the pages of his own diary, a document as spare and unforgiving as the white wasteland that surrounds him. The production captures the slow creep of desperation: fingers too numb to hold a pen, provisions dwindling to nothing, hope crystallizing into ice. What unfolds is not a conventional thriller with sudden shocks, but something perhaps more terrifying—the inexorable march of fate itself, recorded in real time by a man confronting his own mortality. The expert voice acting and minimal sound design create an intimacy that turns Scott's private thoughts into your private nightmare.</p>
-<p>*Suspense* revolutionized radio drama by proving that psychological dread could rival the manufactured scares of pulp adventures. In the 1940s, when millions huddled around their sets each week, producer William S. Boyd understood that the greatest terrors lived in human experience—in true stories of tragedy, in the spaces between words, in the listener's own imagination. Scott's expedition was still within living memory, making this episode both historical preservation and immediate horror. The show's commitment to literary quality and emotional depth set it apart from cheaper competitors, earning it a devoted audience and a reputation that endures today.</p>
-<p>Tune in to *The Diary of Captain Scott* and experience radio drama at its most ambitious: intimate, historically resonant, and genuinely haunting. You'll hear not monsters, but something far more chilling—a man's last testament, preserved in amber.</p>
+          <p>As the familiar Suspense signature theme fades into the static of a distant Antarctic night, listeners are transported to the frozen edge of the world—to the final, haunting days of Captain Robert Falcon Scott's doomed polar expedition. This gripping adaptation traces the explorer's descent through the pages of his own diary, a document as spare and unforgiving as the white wasteland that surrounds him. The production captures the slow creep of desperation: fingers too numb to hold a pen, provisions dwindling to nothing, hope crystallizing into ice. What unfolds is not a conventional thriller with sudden shocks, but something perhaps more terrifying—the inexorable march of fate itself, recorded in real time by a man confronting his own mortality. The expert voice acting and minimal sound design create an intimacy that turns Scott's private thoughts into your private nightmare.</p>
+<p>Suspense revolutionized radio drama by proving that psychological dread could rival the manufactured scares of pulp adventures. In the 1940s, when millions huddled around their sets each week, producer William S. Boyd understood that the greatest terrors lived in human experience—in true stories of tragedy, in the spaces between words, in the listener's own imagination. Scott's expedition was still within living memory, making this episode both historical preservation and immediate horror. The show's commitment to literary quality and emotional depth set it apart from cheaper competitors, earning it a devoted audience and a reputation that endures today.</p>
+<p>Tune in to The Diary of Captain Scott and experience radio drama at its most ambitious: intimate, historically resonant, and genuinely haunting. You'll hear not monsters, but something far more chilling—a man's last testament, preserved in amber.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

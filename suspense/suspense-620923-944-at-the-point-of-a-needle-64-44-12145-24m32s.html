@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620923 944 At The Point Of A Needle (64 44) 12145 24m32s — Suspense | Ghost of Radio</title>
+  <title>At The Point Of A Needle (64 44) 12145 24m32s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620923 944 At The Point Of A Needle (64 44) 12145 24m32s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620923 944 At The Point Of A Needle (64 44) 12145 24m32s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620923 944 At The Point Of A Needle (64 44) 12145 24m32s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 23, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620923 944 At The Point Of A Needle (64 44) 12145 24m32s</h1>
+          <h1 class="episode__title">At The Point Of A Needle (64 44) 12145 24m32s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># At the Point of a Needle</p>
-<p>As darkness falls and the needle drops on your turntable, you'll find yourself drawn into a claustrophobic world of medical terror and psychological suspense. "At the Point of a Needle" traps you in an examination room where a seemingly routine visit becomes a nightmare of paranoia and danger. The meticulous sound design—the crisp rustle of papers, the ominous click of instruments, the quickening heartbeat of our protagonist—creates an intimate horror that proves far more unsettling than any monster could be. What begins as an innocent medical procedure evolves into something far more sinister, and before long, you'll question whether the doctor across the desk is healer or something infinitely more menacing. The episode's brilliance lies not in what's explicitly stated, but in what's suggested in the pregnant pauses and the trembling voice of an ordinary person confronting an extraordinary threat.</p>
-<p>*Suspense* stands as CBS Radio's crown jewel of dramatic programming, a show that understood that the human imagination, when properly guided, is the most powerful special effect ever created. Running from 1942 through 1962, it became the gold standard for thriller radio, attracting top-tier talent both in front of and behind the microphone. During the 1940s, when this episode aired, radio remained the primary form of home entertainment, and *Suspense* delivered week after week of meticulously crafted stories that kept America on the edge of its seat. The show's writers knew that true fear lives in ambiguity and the unknown—not in elaborate set pieces.</p>
-<p>If you've never experienced the electric thrill of classic radio drama, "At the Point of a Needle" is the perfect entry point into a golden age of entertainment. Dim your lights, settle in, and prepare to discover why millions of Americans made *Suspense* appointment listening. Some terrors, you'll discover, are best experienced in the dark.</p>
+          <p>As darkness falls and the needle drops on your turntable, you'll find yourself drawn into a claustrophobic world of medical terror and psychological suspense. "At the Point of a Needle" traps you in an examination room where a seemingly routine visit becomes a nightmare of paranoia and danger. The meticulous sound design—the crisp rustle of papers, the ominous click of instruments, the quickening heartbeat of our protagonist—creates an intimate horror that proves far more unsettling than any monster could be. What begins as an innocent medical procedure evolves into something far more sinister, and before long, you'll question whether the doctor across the desk is healer or something infinitely more menacing. The episode's brilliance lies not in what's explicitly stated, but in what's suggested in the pregnant pauses and the trembling voice of an ordinary person confronting an extraordinary threat.</p>
+<p>Suspense stands as CBS Radio's crown jewel of dramatic programming, a show that understood that the human imagination, when properly guided, is the most powerful special effect ever created. Running from 1942 through 1962, it became the gold standard for thriller radio, attracting top-tier talent both in front of and behind the microphone. During the 1940s, when this episode aired, radio remained the primary form of home entertainment, and Suspense delivered week after week of meticulously crafted stories that kept America on the edge of its seat. The show's writers knew that true fear lives in ambiguity and the unknown—not in elaborate set pieces.</p>
+<p>If you've never experienced the electric thrill of classic radio drama, "At the Point of a Needle" is the perfect entry point into a golden age of entertainment. Dim your lights, settle in, and prepare to discover why millions of Americans made Suspense appointment listening. Some terrors, you'll discover, are best experienced in the dark.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

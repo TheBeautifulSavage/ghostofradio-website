@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460822 207 The Great Horrell (64 44) 14603 30m27s — Suspense | Ghost of Radio</title>
+  <title>The Great Horrell (64 44) 14603 30m27s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460822 207 The Great Horrell (64 44) 14603 30m27s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460822 207 The Great Horrell (64 44) 14603 30m27s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460822 207 The Great Horrell (64 44) 14603 30m27s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 22, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460822 207 The Great Horrell (64 44) 14603 30m27s</h1>
+          <h1 class="episode__title">The Great Horrell (64 44) 14603 30m27s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Great Horrell</p>
-<p>Picture this: it's a sweltering summer evening, and you've settled into your favorite chair with the lights dimmed low. The CBS airwaves crackle to life, and *Suspense* begins its signature building tension—that masterful orchestral swell that sends shivers down your spine. Tonight's tale, "The Great Horrell," draws you into a world of mystery and menace where nothing is quite what it seems. A seemingly ordinary encounter with a renowned magician spirals into something far more sinister, as the line between illusion and reality blurs into dangerous territory. With each passing moment, the noose of suspense tightens, and you find yourself breathless, uncertain whether the threat is supernatural or all too human. The superb cast and expertly crafted sound design—the whispered conversations, the ominous musical cues, the perfectly timed pauses—create an atmosphere so immersive that you forget the outside world exists.</p>
-<p>For over two decades, *Suspense* reigned as radio's premier thriller, consistently delivering forty minutes of edge-of-your-seat entertainment to millions of listeners. Premiering during the golden age of radio in 1942, the show became legendary for its innovative storytelling and its ability to exploit the unique power of the medium: the listener's own imagination. Unlike visual media, radio's strength lay in what it *didn't* show—leaving terrifying possibilities to flourish in the minds of its audience. Episodes like "The Great Horrell" exemplify this mastery, showcasing the writers' talent for psychological suspense and atmospheric dread.</p>
-<p>Don't miss your chance to experience one of broadcasting's greatest thrillers. Tune in to this classic episode and discover why *Suspense* remains the gold standard of radio drama. Settle in, turn down those lights, and prepare yourself—you'll be gripping your armrest before the first act concludes.</p>
+          <p>Picture this: it's a sweltering summer evening, and you've settled into your favorite chair with the lights dimmed low. The CBS airwaves crackle to life, and Suspense begins its signature building tension—that masterful orchestral swell that sends shivers down your spine. Tonight's tale, "The Great Horrell," draws you into a world of mystery and menace where nothing is quite what it seems. A seemingly ordinary encounter with a renowned magician spirals into something far more sinister, as the line between illusion and reality blurs into dangerous territory. With each passing moment, the noose of suspense tightens, and you find yourself breathless, uncertain whether the threat is supernatural or all too human. The superb cast and expertly crafted sound design—the whispered conversations, the ominous musical cues, the perfectly timed pauses—create an atmosphere so immersive that you forget the outside world exists.</p>
+<p>For over two decades, Suspense reigned as radio's premier thriller, consistently delivering forty minutes of edge-of-your-seat entertainment to millions of listeners. Premiering during the golden age of radio in 1942, the show became legendary for its innovative storytelling and its ability to exploit the unique power of the medium: the listener's own imagination. Unlike visual media, radio's strength lay in what it didn't show—leaving terrifying possibilities to flourish in the minds of its audience. Episodes like "The Great Horrell" exemplify this mastery, showcasing the writers' talent for psychological suspense and atmospheric dread.</p>
+<p>Don't miss your chance to experience one of broadcasting's greatest thrillers. Tune in to this classic episode and discover why Suspense remains the gold standard of radio drama. Settle in, turn down those lights, and prepare yourself—you'll be gripping your armrest before the first act concludes.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 561104 672 The Signalman (64 44) 14518 29m36s — Suspense | Ghost of Radio</title>
+  <title>The Signalman (64 44) 14518 29m36s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 561104 672 The Signalman (64 44) 14518 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 561104 672 The Signalman (64 44) 14518 29m36s — Suspense">
   <meta property="og:description" content="Listen to Suspense 561104 672 The Signalman (64 44) 14518 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 4, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 561104 672 The Signalman (64 44) 14518 29m36s</h1>
+          <h1 class="episode__title">The Signalman (64 44) 14518 29m36s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Signalman</p>
-<p>A solitary figure stands in the gathering darkness of a remote railway station, watching the tracks stretch endlessly into shadow. When the mysterious passenger arrives with an urgent, whispered message about a train that cannot be stopped, our signalman finds himself bound by a terrible secret—one that will test not just his nerve, but his very conscience. In "The Signalman," Suspense weaves a claustrophobic tale of duty, dread, and the impossible choice between following orders and saving lives. The fog rolls thick around the station house, and as the fateful hour approaches, listeners will feel the mounting tension in every carefully measured word and ambient sound effect—the distant whistle of an approaching locomotive becoming increasingly ominous.</p>
+          <p>A solitary figure stands in the gathering darkness of a remote railway station, watching the tracks stretch endlessly into shadow. When the mysterious passenger arrives with an urgent, whispered message about a train that cannot be stopped, our signalman finds himself bound by a terrible secret—one that will test not just his nerve, but his very conscience. In "The Signalman," Suspense weaves a claustrophobic tale of duty, dread, and the impossible choice between following orders and saving lives. The fog rolls thick around the station house, and as the fateful hour approaches, listeners will feel the mounting tension in every carefully measured word and ambient sound effect—the distant whistle of an approaching locomotive becoming increasingly ominous.</p>
 <p>By the mid-1940s, Suspense had perfected the art of psychological terror, and this episode exemplifies why CBS's landmark anthology series became appointment listening for millions of Americans. Rather than relying on monsters or mayhem, the show's writers understood that true fear blooms in ordinary places when ordinary people face extraordinary moral dilemmas. The program's meticulous sound design—that distant train, the clicking of telegraph keys, the creak of wooden floorboards—transformed living rooms into intimate chambers of dread. Radio's invisibility became its greatest strength; listeners' imaginations did the heavy lifting, conjuring horrors far more potent than any visual effect could achieve.</p>
 <p>Whether you're a devoted fan of classic radio or discovering Suspense for the first time, "The Signalman" offers everything the show promised: masterful storytelling, expert performances, and that particular brand of creeping unease that only radio can deliver. Tune in and find out what terrible choice awaits at the station when night falls.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

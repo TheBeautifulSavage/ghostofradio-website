@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620225 914 Date Night (128 44) 22892 23m43s — Suspense | Ghost of Radio</title>
+  <title>Date Night (128 44) 22892 23m43s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620225 914 Date Night (128 44) 22892 23m43s — Suspense (CBS, 2022). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620225 914 Date Night (128 44) 22892 23m43s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620225 914 Date Night (128 44) 22892 23m43s — Suspense (CBS, 2022). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 25, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620225 914 Date Night (128 44) 22892 23m43s</h1>
+          <h1 class="episode__title">Date Night (128 44) 22892 23m43s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Date Night</p>
-<p>Picture this: It's 1942, and you've settled into your favorite chair with the lights dimmed low. The opening theme of *Suspense* cuts through the darkness—that spine-tingling violin screech that still raises hackles decades later—and you're transported into "Date Night," a deceptively intimate thriller where romance takes a sinister turn. What begins as an ordinary evening between two people unfolds into a nightmare of suspicion and dread, where the comfortable familiarity of a relationship becomes a breeding ground for terror. Every pause in dialogue carries weight, every sound effect—a door closing, a glass clinking—becomes pregnant with menace. This is masterclass psychological thriller radio, where the true horror lives not in monsters or madness, but in the chilling possibility that the person you trust most might harbor dark secrets.</p>
-<p>*Suspense* premiered in 1942 on CBS and became the gold standard of American radio drama, running for twenty years and becoming the network's flagship program. With over a thousand episodes produced, it set the template for how suspense could be crafted for audio: minimal music, sparse but evocative sound design, and scripts that understood that the human imagination, guided by a skilled narrator and cast, could conjure terrors far more potent than any visual medium. The show's commitment to psychological realism over sensationalism earned it critical acclaim and a devoted following, attracting top talent from Hollywood and New York's theatrical scene.</p>
-<p>For modern listeners seeking authentic golden age radio drama, "Date Night" represents *Suspense* at its finest—a lean, taut twenty-three minutes that proves the format's timeless power. Tune in and discover why audiences huddled around their sets for two decades, unable to turn away from tales that lingered long after the final note faded into static.</p>
+          <p>Picture this: It's 1942, and you've settled into your favorite chair with the lights dimmed low. The opening theme of Suspense cuts through the darkness—that spine-tingling violin screech that still raises hackles decades later—and you're transported into "Date Night," a deceptively intimate thriller where romance takes a sinister turn. What begins as an ordinary evening between two people unfolds into a nightmare of suspicion and dread, where the comfortable familiarity of a relationship becomes a breeding ground for terror. Every pause in dialogue carries weight, every sound effect—a door closing, a glass clinking—becomes pregnant with menace. This is masterclass psychological thriller radio, where the true horror lives not in monsters or madness, but in the chilling possibility that the person you trust most might harbor dark secrets.</p>
+<p>Suspense premiered in 1942 on CBS and became the gold standard of American radio drama, running for twenty years and becoming the network's flagship program. With over a thousand episodes produced, it set the template for how suspense could be crafted for audio: minimal music, sparse but evocative sound design, and scripts that understood that the human imagination, guided by a skilled narrator and cast, could conjure terrors far more potent than any visual medium. The show's commitment to psychological realism over sensationalism earned it critical acclaim and a devoted following, attracting top talent from Hollywood and New York's theatrical scene.</p>
+<p>For modern listeners seeking authentic golden age radio drama, "Date Night" represents Suspense at its finest—a lean, taut twenty-three minutes that proves the format's timeless power. Tune in and discover why audiences huddled around their sets for two decades, unable to turn away from tales that lingered long after the final note faded into static.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

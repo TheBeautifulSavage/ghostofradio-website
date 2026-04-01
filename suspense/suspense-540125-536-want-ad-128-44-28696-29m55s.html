@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 540125 536 Want Ad (128 44) 28696 29m55s — Suspense | Ghost of Radio</title>
+  <title>Want Ad (128 44) 28696 29m55s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 540125 536 Want Ad (128 44) 28696 29m55s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 540125 536 Want Ad (128 44) 28696 29m55s — Suspense">
   <meta property="og:description" content="Listen to Suspense 540125 536 Want Ad (128 44) 28696 29m55s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 25, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 540125 536 Want Ad (128 44) 28696 29m55s</h1>
+          <h1 class="episode__title">Want Ad (128 44) 28696 29m55s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Want Ad</p>
-<p>Picture this: a seemingly innocent classified advertisement in the morning newspaper becomes the thread that unravels a web of deception and danger. In "Want Ad," a desperate job seeker responds to what appears to be a legitimate employment opportunity, only to find themselves drawn into circumstances far more sinister than they could have imagined. As the episode unfolds with mounting tension, listeners will discover that some advertisements promise more than they can deliver—and some promises come with a price paid in fear. The atmospheric sound design of CBS's legendary effects department transforms the mundane world of want ads into a labyrinth of shadows and whispered threats, where every telephone ring and knock at the door signals potential peril.</p>
+          <p>Picture this: a seemingly innocent classified advertisement in the morning newspaper becomes the thread that unravels a web of deception and danger. In "Want Ad," a desperate job seeker responds to what appears to be a legitimate employment opportunity, only to find themselves drawn into circumstances far more sinister than they could have imagined. As the episode unfolds with mounting tension, listeners will discover that some advertisements promise more than they can deliver—and some promises come with a price paid in fear. The atmospheric sound design of CBS's legendary effects department transforms the mundane world of want ads into a labyrinth of shadows and whispered threats, where every telephone ring and knock at the door signals potential peril.</p>
 <p>"Suspense" stands as one of the crown jewels of American radio drama, a show that dominated CBS airwaves for two decades by understanding a fundamental truth: the most terrifying horrors are often hidden behind ordinary facades. Premiering in 1942 and running until 1962, the program became famous for pushing the boundaries of what could be suggested rather than stated, relying on master actors, haunting orchestration, and the listener's own imagination to create dread. Each episode was crafted with meticulous attention to psychological realism, exploring the darkest corners of everyday American life rather than retreating into pure fantasy.</p>
 <p>This particular episode exemplifies everything that made "Suspense" essential listening for millions of Americans huddled around their radios. With nearly thirty minutes of expertly paced storytelling, "Want Ad" demonstrates the show's genius for finding terror in the familiar. Don't miss this masterclass in radio suspense—tune in and discover why listeners couldn't turn away, no matter how their hearts raced.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

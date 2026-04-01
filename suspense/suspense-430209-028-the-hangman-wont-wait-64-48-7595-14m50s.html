@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 430209 028 The Hangman Won't Wait (64 48) 7595 14m50s — Suspense | Ghost of Radio</title>
+  <title>The Hangman Won't Wait (64 48) 7595 14m50s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 430209 028 The Hangman Won't Wait (64 48) 7595 14m50s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 430209 028 The Hangman Won't Wait (64 48) 7595 14m50s — Suspense">
   <meta property="og:description" content="Listen to Suspense 430209 028 The Hangman Won't Wait (64 48) 7595 14m50s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 9, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 430209 028 The Hangman Won't Wait (64 48) 7595 14m50s</h1>
+          <h1 class="episode__title">The Hangman Won't Wait (64 48) 7595 14m50s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Hangman Won't Wait</p>
-<p>Picture this: it's a cold evening in 1943, and you've settled into your chair as the familiar *Suspense* theme swells through your radio speaker—that haunting orchestral prelude that's become the soundtrack to your nightmares. Tonight's tale, "The Hangman Won't Wait," plunges you into the fevered mind of a man racing against the clock, with death itself as his relentless opponent. As the minutes tick away with agonizing slowness, our protagonist discovers that some debts demand payment in flesh and blood, and that justice—or revenge—often arrives with a noose already tied. The tension builds inexorably, each scene tightening the knot around both character and listener alike, until the final moments deliver a twist that will leave you gripping your armrest.</p>
-<p>For over two decades, *Suspense* established itself as American radio's premier thriller program, the gold standard that competitors couldn't match. CBS's commitment to literary quality and stellar casts—drawing from both Broadway and Hollywood's finest talent—meant each episode was a small masterpiece of dramatic tension. "The Hangman Won't Wait" exemplifies the show's mastery of psychological horror, where the real terror isn't what lurks in the shadows, but what festers in the human heart. These episodes represent a golden age of entertainment when families gathered around their sets, when sound effects and voice acting could conjure entire worlds of dread.</p>
-<p>If you're seeking that authentic thrill that made radio the dominant medium of its era—that electric fear that comes from imagination unbound by visual constraints—then *Suspense* remains your destination. Dim the lights, settle in, and let this forgotten masterpiece remind you why radio once owned America's evenings. "The Hangman Won't Wait" is calling. Will you answer?</p>
+          <p>Picture this: it's a cold evening in 1943, and you've settled into your chair as the familiar Suspense theme swells through your radio speaker—that haunting orchestral prelude that's become the soundtrack to your nightmares. Tonight's tale, "The Hangman Won't Wait," plunges you into the fevered mind of a man racing against the clock, with death itself as his relentless opponent. As the minutes tick away with agonizing slowness, our protagonist discovers that some debts demand payment in flesh and blood, and that justice—or revenge—often arrives with a noose already tied. The tension builds inexorably, each scene tightening the knot around both character and listener alike, until the final moments deliver a twist that will leave you gripping your armrest.</p>
+<p>For over two decades, Suspense established itself as American radio's premier thriller program, the gold standard that competitors couldn't match. CBS's commitment to literary quality and stellar casts—drawing from both Broadway and Hollywood's finest talent—meant each episode was a small masterpiece of dramatic tension. "The Hangman Won't Wait" exemplifies the show's mastery of psychological horror, where the real terror isn't what lurks in the shadows, but what festers in the human heart. These episodes represent a golden age of entertainment when families gathered around their sets, when sound effects and voice acting could conjure entire worlds of dread.</p>
+<p>If you're seeking that authentic thrill that made radio the dominant medium of its era—that electric fear that comes from imagination unbound by visual constraints—then Suspense remains your destination. Dim the lights, settle in, and let this forgotten masterpiece remind you why radio once owned America's evenings. "The Hangman Won't Wait" is calling. Will you answer?</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

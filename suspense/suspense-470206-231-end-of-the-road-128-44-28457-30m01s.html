@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470206 231 End Of The Road (128 44) 28457 30m01s — Suspense | Ghost of Radio</title>
+  <title>End Of The Road (128 44) 28457 30m01s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470206 231 End Of The Road (128 44) 28457 30m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470206 231 End Of The Road (128 44) 28457 30m01s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470206 231 End Of The Road (128 44) 28457 30m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 6, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470206 231 End Of The Road (128 44) 28457 30m01s</h1>
+          <h1 class="episode__title">End Of The Road (128 44) 28457 30m01s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># End of the Road</p>
-<p>Picture yourself huddled beside the radio on a winter's evening, the familiar CBS chime fading into darkness as the announcer's voice cuts through the static with that single, spine-tingling word: *Suspense*. Tonight's journey takes you down a desolate highway where the rules of civilization seem to vanish with the daylight. In "End of the Road," a traveler finds themselves at a crossroads—literally and figuratively—where a chance encounter with a stranger becomes something far more sinister than a simple roadside meeting. As the minutes tick away, the dialogue grows taut with menace, and you'll find yourself questioning every word, every motive, wondering what horror awaits at journey's end. The sound design pulls you right into the darkness of that lonely stretch of pavement, where help is miles away and trust becomes a luxury neither character can afford.</p>
-<p>*Suspense* revolutionized American entertainment during its two-decade run, becoming the gold standard for radio drama precisely because it understood that the most terrifying horrors live in the listener's imagination. Without the visual crutch of cinema, the show's writers, directors, and actors had to craft pure psychological dread through dialogue, music, and ambient sound. This particular episode exemplifies that mastery—a stripped-down, intimate cat-and-mouse game that proves you need nothing more than two voices and mounting tension to paralyze an audience of millions. The show's reputation was built on episodes exactly like this one, where ordinary circumstances deteriorate into extraordinary danger.</p>
+          <p>Picture yourself huddled beside the radio on a winter's evening, the familiar CBS chime fading into darkness as the announcer's voice cuts through the static with that single, spine-tingling word: Suspense. Tonight's journey takes you down a desolate highway where the rules of civilization seem to vanish with the daylight. In "End of the Road," a traveler finds themselves at a crossroads—literally and figuratively—where a chance encounter with a stranger becomes something far more sinister than a simple roadside meeting. As the minutes tick away, the dialogue grows taut with menace, and you'll find yourself questioning every word, every motive, wondering what horror awaits at journey's end. The sound design pulls you right into the darkness of that lonely stretch of pavement, where help is miles away and trust becomes a luxury neither character can afford.</p>
+<p>Suspense revolutionized American entertainment during its two-decade run, becoming the gold standard for radio drama precisely because it understood that the most terrifying horrors live in the listener's imagination. Without the visual crutch of cinema, the show's writers, directors, and actors had to craft pure psychological dread through dialogue, music, and ambient sound. This particular episode exemplifies that mastery—a stripped-down, intimate cat-and-mouse game that proves you need nothing more than two voices and mounting tension to paralyze an audience of millions. The show's reputation was built on episodes exactly like this one, where ordinary circumstances deteriorate into extraordinary danger.</p>
 <p>So dim the lights, turn up the volume, and settle in for thirty minutes of classic American radio thriller craft. "End of the Road" awaits—just remember, once you start down that highway, there's no turning back. Are you ready to see where it leads?</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

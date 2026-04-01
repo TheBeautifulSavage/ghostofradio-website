@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550426 595 Sight Unseen (64 44) 11932 24m06s — Suspense | Ghost of Radio</title>
+  <title>Sight Unseen (64 44) 11932 24m06s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550426 595 Sight Unseen (64 44) 11932 24m06s — Suspense (CBS, 1932). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550426 595 Sight Unseen (64 44) 11932 24m06s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550426 595 Sight Unseen (64 44) 11932 24m06s — Suspense (CBS, 1932). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 26, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550426 595 Sight Unseen (64 44) 11932 24m06s</h1>
+          <h1 class="episode__title">Sight Unseen (64 44) 11932 24m06s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Sight Unseen</p>
-<p>Picture yourself hunched over the radio on a spring evening in 1944, the darkness of your living room broken only by the amber glow of the dial. In "Sight Unseen," a man's world unravels not from what he can see, but from what he cannot. A seemingly ordinary transaction takes a sinister turn when a stranger arrives at his door with a peculiar proposition—one that exploits the very thing he's been trying to hide. As the tension mounts, our protagonist discovers that some bargains exact prices far more terrible than money, and that in the shadows of deception, the truth has a way of clawing its way into the light. The expert sound design of *Suspense*—the creaking floorboards, the hesitant breathing, the ominous musical stings—transforms your safe home into a chamber of psychological dread, where danger lurks not in physical violence, but in the terrifying machinery of human desperation and betrayal.</p>
-<p>For two decades, *Suspense* reigned as CBS's master of the macabre, delivering weekly tales that gripped millions of Americans during the golden age of radio. The show became legendary for its sophisticated writing, stellar cast of Hollywood talent, and meticulous sound effects that set the standard for the medium. "Sight Unseen" exemplifies why *Suspense* endured so successfully—it doesn't rely on monsters or murder alone, but on the deeply human capacity for moral compromise. Each episode was crafted to burrow into the listener's imagination, creating horror from the ordinary and terror from the everyday.</p>
-<p>If you've never experienced *Suspense*, now is your chance to discover why this landmark series captivated an entire nation. Dim your lights, silence your distractions, and prepare yourself for an unforgettable journey into darkness. Press play, and let the master of suspense remind you why radio's golden age remains unmatched in its ability to frighten, fascinate, and forever change the way you see the shadows around you.</p>
+          <p>Picture yourself hunched over the radio on a spring evening in 1944, the darkness of your living room broken only by the amber glow of the dial. In "Sight Unseen," a man's world unravels not from what he can see, but from what he cannot. A seemingly ordinary transaction takes a sinister turn when a stranger arrives at his door with a peculiar proposition—one that exploits the very thing he's been trying to hide. As the tension mounts, our protagonist discovers that some bargains exact prices far more terrible than money, and that in the shadows of deception, the truth has a way of clawing its way into the light. The expert sound design of Suspense—the creaking floorboards, the hesitant breathing, the ominous musical stings—transforms your safe home into a chamber of psychological dread, where danger lurks not in physical violence, but in the terrifying machinery of human desperation and betrayal.</p>
+<p>For two decades, Suspense reigned as CBS's master of the macabre, delivering weekly tales that gripped millions of Americans during the golden age of radio. The show became legendary for its sophisticated writing, stellar cast of Hollywood talent, and meticulous sound effects that set the standard for the medium. "Sight Unseen" exemplifies why Suspense endured so successfully—it doesn't rely on monsters or murder alone, but on the deeply human capacity for moral compromise. Each episode was crafted to burrow into the listener's imagination, creating horror from the ordinary and terror from the everyday.</p>
+<p>If you've never experienced Suspense, now is your chance to discover why this landmark series captivated an entire nation. Dim your lights, silence your distractions, and prepare yourself for an unforgettable journey into darkness. Press play, and let the master of suspense remind you why radio's golden age remains unmatched in its ability to frighten, fascinate, and forever change the way you see the shadows around you.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

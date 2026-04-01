@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470807 257 Quiet Desperation (128 44) 28763 30m20s — Suspense | Ghost of Radio</title>
+  <title>Quiet Desperation (128 44) 28763 30m20s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470807 257 Quiet Desperation (128 44) 28763 30m20s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470807 257 Quiet Desperation (128 44) 28763 30m20s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470807 257 Quiet Desperation (128 44) 28763 30m20s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 7, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470807 257 Quiet Desperation (128 44) 28763 30m20s</h1>
+          <h1 class="episode__title">Quiet Desperation (128 44) 28763 30m20s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Quiet Desperation</p>
-<p>When the lights dim and that iconic *Suspense* theme swells through your speaker, you're about to enter a world where the most terrifying horrors aren't found in shadowed mansions or fog-shrouded moors, but in the ordinary lives of ordinary people. "Quiet Desperation" draws you into the suffocating reality of a life unraveling—where desperation breeds dangerous choices and the walls of normalcy close in tighter with each passing moment. The master sound design that made *Suspense* legendary creates an atmosphere thick with dread, as our protagonist descends deeper into circumstances from which there seems no escape. You'll hear every footstep, every nervous breath, every whispered confession, all building toward a climax that cuts to the very heart of human vulnerability.</p>
-<p>During the golden age of radio in the 1940s, when families gathered around their sets for an evening of thrills, *Suspense* stood apart as CBS's crown jewel of dramatic suspense—a show that understood that the greatest terrors live in plausible scenarios, not fantasy. The series became legendary for its meticulous sound engineering and scripts that examined the psychological breaking points of everyday Americans. Radio actors like Joseph Cotten, Orson Welles, and Cary Grant lent their talents to create moments of pure theatrical tension. "Quiet Desperation" exemplifies what made the show essential listening: it transforms a simple premise into an exploration of how circumstances can push anyone toward the unthinkable.</p>
-<p>This is radio drama at its finest—where your imagination becomes the most powerful special effect. Tune in to *Suspense* and discover why, for over two decades, Americans couldn't wait to hear what quiet horrors would unfold. Some mysteries demand to be heard.</p>
+          <p>When the lights dim and that iconic Suspense theme swells through your speaker, you're about to enter a world where the most terrifying horrors aren't found in shadowed mansions or fog-shrouded moors, but in the ordinary lives of ordinary people. "Quiet Desperation" draws you into the suffocating reality of a life unraveling—where desperation breeds dangerous choices and the walls of normalcy close in tighter with each passing moment. The master sound design that made Suspense legendary creates an atmosphere thick with dread, as our protagonist descends deeper into circumstances from which there seems no escape. You'll hear every footstep, every nervous breath, every whispered confession, all building toward a climax that cuts to the very heart of human vulnerability.</p>
+<p>During the golden age of radio in the 1940s, when families gathered around their sets for an evening of thrills, Suspense stood apart as CBS's crown jewel of dramatic suspense—a show that understood that the greatest terrors live in plausible scenarios, not fantasy. The series became legendary for its meticulous sound engineering and scripts that examined the psychological breaking points of everyday Americans. Radio actors like Joseph Cotten, Orson Welles, and Cary Grant lent their talents to create moments of pure theatrical tension. "Quiet Desperation" exemplifies what made the show essential listening: it transforms a simple premise into an exploration of how circumstances can push anyone toward the unthinkable.</p>
+<p>This is radio drama at its finest—where your imagination becomes the most powerful special effect. Tune in to Suspense and discover why, for over two decades, Americans couldn't wait to hear what quiet horrors would unfold. Some mysteries demand to be heard.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

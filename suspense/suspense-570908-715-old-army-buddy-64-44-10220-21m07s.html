@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570908 715 Old Army Buddy (64 44) 10220 21m07s — Suspense | Ghost of Radio</title>
+  <title>Old Army Buddy (64 44) 10220 21m07s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570908 715 Old Army Buddy (64 44) 10220 21m07s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570908 715 Old Army Buddy (64 44) 10220 21m07s — Suspense">
   <meta property="og:description" content="Listen to Suspense 570908 715 Old Army Buddy (64 44) 10220 21m07s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 8, 1957</span>
           </div>
-          <h1 class="episode__title">Suspense 570908 715 Old Army Buddy (64 44) 10220 21m07s</h1>
+          <h1 class="episode__title">Old Army Buddy (64 44) 10220 21m07s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Old Army Buddy"</p>
-<p>Picture this: a knock on the door of an ordinary American home, and the past comes calling—not as a welcome visitor, but as a specter of danger. In this chilling installment of *Suspense*, an old wartime comrade reappears under shadowy circumstances, his friendly overtures masking something far more sinister. As the episode unfolds across twenty tense minutes, listeners will find themselves drawn into a masterclass of psychological dread, where the familiar becomes threatening and trust becomes a liability. Every creak of a floorboard, every pause in dialogue, every carefully placed sound effect becomes a weapon in the hands of master craftsmen dedicated to unsettling the American public right in their living rooms. The chemistry between characters crackles with barely concealed menace, and by the episode's climax, the bonds of wartime brotherhood have curdled into something dark and inexplicable.</p>
-<p>*Suspense* arrived on CBS in 1942 at precisely the moment America needed it most—a nation at war, hungry for entertainment that acknowledged genuine human anxiety while providing a safe space to experience it. For twenty years, the show remained the gold standard of radio thriller programming, featuring top Hollywood talent and scripts of remarkable sophistication. This particular episode exemplifies why the series became legendary: it takes the universally resonant fear of betrayal and wraps it in the specific texture of 1940s American life, where the boundaries between hero and threat could blur in an instant.</p>
-<p>If you've never experienced *Suspense* before, "Old Army Buddy" is the perfect entry point—a superb example of why millions of Americans tuned in religiously, lights off, hearts racing. Settle in, dim the lights if you dare, and prepare to have your nerves thoroughly jangled.</p>
+          <p>Picture this: a knock on the door of an ordinary American home, and the past comes calling—not as a welcome visitor, but as a specter of danger. In this chilling installment of Suspense, an old wartime comrade reappears under shadowy circumstances, his friendly overtures masking something far more sinister. As the episode unfolds across twenty tense minutes, listeners will find themselves drawn into a masterclass of psychological dread, where the familiar becomes threatening and trust becomes a liability. Every creak of a floorboard, every pause in dialogue, every carefully placed sound effect becomes a weapon in the hands of master craftsmen dedicated to unsettling the American public right in their living rooms. The chemistry between characters crackles with barely concealed menace, and by the episode's climax, the bonds of wartime brotherhood have curdled into something dark and inexplicable.</p>
+<p>Suspense arrived on CBS in 1942 at precisely the moment America needed it most—a nation at war, hungry for entertainment that acknowledged genuine human anxiety while providing a safe space to experience it. For twenty years, the show remained the gold standard of radio thriller programming, featuring top Hollywood talent and scripts of remarkable sophistication. This particular episode exemplifies why the series became legendary: it takes the universally resonant fear of betrayal and wraps it in the specific texture of 1940s American life, where the boundaries between hero and threat could blur in an instant.</p>
+<p>If you've never experienced Suspense before, "Old Army Buddy" is the perfect entry point—a superb example of why millions of Americans tuned in religiously, lights off, hearts racing. Settle in, dim the lights if you dare, and prepare to have your nerves thoroughly jangled.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

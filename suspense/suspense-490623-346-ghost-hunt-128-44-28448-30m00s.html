@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 490623 346 Ghost Hunt (128 44) 28448 30m00s — Suspense | Ghost of Radio</title>
+  <title>Ghost Hunt (128 44) 28448 30m00s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 490623 346 Ghost Hunt (128 44) 28448 30m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 490623 346 Ghost Hunt (128 44) 28448 30m00s — Suspense">
   <meta property="og:description" content="Listen to Suspense 490623 346 Ghost Hunt (128 44) 28448 30m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 23, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 490623 346 Ghost Hunt (128 44) 28448 30m00s</h1>
+          <h1 class="episode__title">Ghost Hunt (128 44) 28448 30m00s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Ghost Hunt</p>
-<p>When the scratching begins at the attic door, you'll understand why *Suspense* became America's most trusted purveyor of terror. In "Ghost Hunt," an ordinary investigation into a haunted mansion spirals into something far more sinister, where each creak of the floorboards and whispered accusation pulls our protagonist deeper into a web of psychological dread. Is the ghost real, or is something far more human—and infinitely more dangerous—lurking in the shadows? The genius of this half-hour thriller lies not in cheap scares, but in the slow-burning certainty that the real danger may come from the living, not the dead. You'll find yourself holding your breath during the silences, listening intently as voices echo through empty halls, wondering which mystery will be solved first: the haunting, or the darker secret someone is willing to kill to protect.</p>
-<p>*Suspense* aired during the golden age of radio drama, when millions of Americans gathered around their receivers in the darkness for stories that would keep them awake at night. Created by producer-director William Spier, the series became legendary for its meticulous sound design and ability to terrify without ever showing a thing—proving that the most frightening stories unfold entirely in the imagination. From 1942 through 1962, *Suspense* crafted narratives that explored not just supernatural horror, but the psychological terror of ordinary people encountering extraordinary circumstances. Each episode was self-contained, allowing listeners to experience complete, satisfying journeys into fear and uncertainty in just thirty minutes.</p>
+          <p>When the scratching begins at the attic door, you'll understand why Suspense became America's most trusted purveyor of terror. In "Ghost Hunt," an ordinary investigation into a haunted mansion spirals into something far more sinister, where each creak of the floorboards and whispered accusation pulls our protagonist deeper into a web of psychological dread. Is the ghost real, or is something far more human—and infinitely more dangerous—lurking in the shadows? The genius of this half-hour thriller lies not in cheap scares, but in the slow-burning certainty that the real danger may come from the living, not the dead. You'll find yourself holding your breath during the silences, listening intently as voices echo through empty halls, wondering which mystery will be solved first: the haunting, or the darker secret someone is willing to kill to protect.</p>
+<p>Suspense aired during the golden age of radio drama, when millions of Americans gathered around their receivers in the darkness for stories that would keep them awake at night. Created by producer-director William Spier, the series became legendary for its meticulous sound design and ability to terrify without ever showing a thing—proving that the most frightening stories unfold entirely in the imagination. From 1942 through 1962, Suspense crafted narratives that explored not just supernatural horror, but the psychological terror of ordinary people encountering extraordinary circumstances. Each episode was self-contained, allowing listeners to experience complete, satisfying journeys into fear and uncertainty in just thirty minutes.</p>
 <p>Whether you're a devoted fan of classic radio or a newcomer curious about how suspense was manufactured in radio's heyday, "Ghost Hunt" stands as a perfect example of the medium's unmatched power to chill and enthrall. Tune in, dim the lights, and discover why listeners called this "the show that suspends you."</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

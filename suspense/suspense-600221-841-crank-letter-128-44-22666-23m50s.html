@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600221 841 Crank Letter (128 44) 22666 23m50s — Suspense | Ghost of Radio</title>
+  <title>Crank Letter (128 44) 22666 23m50s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600221 841 Crank Letter (128 44) 22666 23m50s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600221 841 Crank Letter (128 44) 22666 23m50s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600221 841 Crank Letter (128 44) 22666 23m50s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 21, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600221 841 Crank Letter (128 44) 22666 23m50s</h1>
+          <h1 class="episode__title">Crank Letter (128 44) 22666 23m50s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Crank Letter"</p>
-<p>Picture yourself in 1941, huddled close to your radio set as the night deepens around you. The Suspense opening theme—that piercing, discordant violin shriek—splits the darkness, and you're pulled into a world of mounting dread. Tonight's tale: "Crank Letter," a deceptively simple premise that spirals into psychological terror. What begins as mere annoyance—threatening letters arriving at a home, each one more disturbing than the last—transforms into a suffocating nightmare of paranoia and danger. Who lurks behind these poison-pen messages? Is the threat real or imagined? As the minutes tick away, you'll find yourself gripping the armrest, your imagination filling in shadows darker than any special effect could render. The sound design alone—the rustle of envelopes, the menacing silence between lines of dialogue—creates an unbearable tension that only old-time radio could achieve.</p>
+          <p>Picture yourself in 1941, huddled close to your radio set as the night deepens around you. The Suspense opening theme—that piercing, discordant violin shriek—splits the darkness, and you're pulled into a world of mounting dread. Tonight's tale: "Crank Letter," a deceptively simple premise that spirals into psychological terror. What begins as mere annoyance—threatening letters arriving at a home, each one more disturbing than the last—transforms into a suffocating nightmare of paranoia and danger. Who lurks behind these poison-pen messages? Is the threat real or imagined? As the minutes tick away, you'll find yourself gripping the armrest, your imagination filling in shadows darker than any special effect could render. The sound design alone—the rustle of envelopes, the menacing silence between lines of dialogue—creates an unbearable tension that only old-time radio could achieve.</p>
 <p>Suspense premiered on CBS in 1942 and became the gold standard of American thriller broadcasting, running for an astonishing twenty years with over 900 episodes. This series understood that fear lived not on the screen but in the listener's mind—each creak, each pause, each carefully crafted word building worlds of genuine terror. "Crank Letter" exemplifies the show's mastery: it takes an ordinary domestic horror and transforms it into something deeply unsettling, proof that the most terrifying monsters are often those we create in our own heads.</p>
 <p>Don't miss this chilling journey into the twisted mind of obsession. Tune in to "Crank Letter" and rediscover why, for millions of Americans, Suspense was appointment listening—the show that proved radio's most powerful special effect was the human imagination.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 461205 222 The House In Cypress Canyon (128 44) 29006 30m15s — Suspense | Ghost of Radio</title>
+  <title>The House In Cypress Canyon (128 44) 29006 30m15s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 461205 222 The House In Cypress Canyon (128 44) 29006 30m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 461205 222 The House In Cypress Canyon (128 44) 29006 30m15s — Suspense">
   <meta property="og:description" content="Listen to Suspense 461205 222 The House In Cypress Canyon (128 44) 29006 30m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 5, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 461205 222 The House In Cypress Canyon (128 44) 29006 30m15s</h1>
+          <h1 class="episode__title">The House In Cypress Canyon (128 44) 29006 30m15s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The House In Cypress Canyon</p>
-<p>Deep in the shadowed canyon lands of Southern California, where the fog rolls thick and the isolation is absolute, stands a house that harbors unspeakable secrets. When our protagonist arrives at this desolate refuge, seeking solitude and respite, he discovers that some sanctuaries conceal darker purposes than the world he fled. Over the next thirty minutes, the walls themselves seem to close in, and what begins as an escape becomes a psychological nightmare where trust crumbles and paranoia blooms like nightshade. The creeping dread builds with each passing moment—a dropped object, a whispered conversation, the sound of footsteps in an empty hallway—until the listener realizes that the greatest threat may come not from without, but from those who welcome you as guests.</p>
-<p>*Suspense*, which dominated CBS airwaves from 1942 through its final broadcast in 1962, became the gold standard of radio terror through its masterful orchestration of ordinary life turned sinister. With a rotating cast of Hollywood's finest and a writing staff that understood the peculiar power of the invisible medium, each episode exploited what the listener's imagination could conjure far more effectively than any visual spectacle. Episode 222, "The House in Cypress Canyon," exemplifies this formula perfectly—a confined setting, mounting tension, and the dissolution of rational certainty that made the show essential listening for an entire generation of Americans huddled around their receivers after dark.</p>
-<p>The echo of this golden age of broadcasting survives now only in preserved recordings and the vivid memories of those who lived through radio's finest hour. Step into the darkened canyon, tune your dial to *Suspense*, and rediscover why millions of listeners couldn't bear to miss an episode. Some thrills, some terrors, never fade.</p>
+          <p>Deep in the shadowed canyon lands of Southern California, where the fog rolls thick and the isolation is absolute, stands a house that harbors unspeakable secrets. When our protagonist arrives at this desolate refuge, seeking solitude and respite, he discovers that some sanctuaries conceal darker purposes than the world he fled. Over the next thirty minutes, the walls themselves seem to close in, and what begins as an escape becomes a psychological nightmare where trust crumbles and paranoia blooms like nightshade. The creeping dread builds with each passing moment—a dropped object, a whispered conversation, the sound of footsteps in an empty hallway—until the listener realizes that the greatest threat may come not from without, but from those who welcome you as guests.</p>
+<p>Suspense, which dominated CBS airwaves from 1942 through its final broadcast in 1962, became the gold standard of radio terror through its masterful orchestration of ordinary life turned sinister. With a rotating cast of Hollywood's finest and a writing staff that understood the peculiar power of the invisible medium, each episode exploited what the listener's imagination could conjure far more effectively than any visual spectacle. Episode 222, "The House in Cypress Canyon," exemplifies this formula perfectly—a confined setting, mounting tension, and the dissolution of rational certainty that made the show essential listening for an entire generation of Americans huddled around their receivers after dark.</p>
+<p>The echo of this golden age of broadcasting survives now only in preserved recordings and the vivid memories of those who lived through radio's finest hour. Step into the darkened canyon, tune your dial to Suspense, and rediscover why millions of listeners couldn't bear to miss an episode. Some thrills, some terrors, never fade.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 441116 118 Dead Of The Night (130 44) 28645 29m58s — Suspense | Ghost of Radio</title>
+  <title>Dead Of The Night (130 44) 28645 29m58s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 441116 118 Dead Of The Night (130 44) 28645 29m58s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 441116 118 Dead Of The Night (130 44) 28645 29m58s — Suspense">
   <meta property="og:description" content="Listen to Suspense 441116 118 Dead Of The Night (130 44) 28645 29m58s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 16, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 441116 118 Dead Of The Night (130 44) 28645 29m58s</h1>
+          <h1 class="episode__title">Dead Of The Night (130 44) 28645 29m58s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Dead of the Night</p>
-<p>When the clock strikes midnight and the fog rolls thick through empty streets, there's nowhere safe to hide—not even in your own home. In this chilling installment of *Suspense*, a seemingly ordinary night becomes a descent into psychological terror as an unsuspecting protagonist discovers that the greatest threats aren't always those we can see. As shadows lengthen and strange sounds echo through darkened corridors, the line between reality and nightmare dissolves entirely. The expertly crafted sound design—creaking floorboards, distant footsteps, whispered warnings—pulls listeners into an atmosphere of suffocating dread, while the stellar cast delivers performances that will make your skin crawl long after the final curtain falls.</p>
-<p>*Suspense* earned its reputation as radio's premier thriller during an era when the medium commanded America's undivided attention. Premiering on CBS in 1942 and running for two decades, the show became the gold standard of dramatic tension, featuring Hollywood's finest talent and stories that ranged from supernatural horror to everyday paranoia. Each episode was meticulously produced to exploit radio's unique power—the listener's imagination, left to conjure its own horrors, could conjure something far more terrifying than any visual medium could ever achieve. "Dead of the Night" exemplifies this mastery, leveraging the intimacy of the medium to transform an ordinary evening into something genuinely unsettling.</p>
-<p>Tune in and experience why audiences across America huddled around their radios night after night, unable to resist the pull of *Suspense*. Whether you're a longtime devotee of classic radio or discovering the golden age for the first time, this episode promises exactly what the show's famous opening promised: thirty minutes of tense, spine-tingling entertainment. Dare you enter the darkness?</p>
+          <p>When the clock strikes midnight and the fog rolls thick through empty streets, there's nowhere safe to hide—not even in your own home. In this chilling installment of Suspense, a seemingly ordinary night becomes a descent into psychological terror as an unsuspecting protagonist discovers that the greatest threats aren't always those we can see. As shadows lengthen and strange sounds echo through darkened corridors, the line between reality and nightmare dissolves entirely. The expertly crafted sound design—creaking floorboards, distant footsteps, whispered warnings—pulls listeners into an atmosphere of suffocating dread, while the stellar cast delivers performances that will make your skin crawl long after the final curtain falls.</p>
+<p>Suspense earned its reputation as radio's premier thriller during an era when the medium commanded America's undivided attention. Premiering on CBS in 1942 and running for two decades, the show became the gold standard of dramatic tension, featuring Hollywood's finest talent and stories that ranged from supernatural horror to everyday paranoia. Each episode was meticulously produced to exploit radio's unique power—the listener's imagination, left to conjure its own horrors, could conjure something far more terrifying than any visual medium could ever achieve. "Dead of the Night" exemplifies this mastery, leveraging the intimacy of the medium to transform an ordinary evening into something genuinely unsettling.</p>
+<p>Tune in and experience why audiences across America huddled around their radios night after night, unable to resist the pull of Suspense. Whether you're a longtime devotee of classic radio or discovering the golden age for the first time, this episode promises exactly what the show's famous opening promised: thirty minutes of tense, spine-tingling entertainment. Dare you enter the darkness?</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

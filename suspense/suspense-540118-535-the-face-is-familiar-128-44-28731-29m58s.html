@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 540118 535 The Face Is Familiar (128 44) 28731 29m58s — Suspense | Ghost of Radio</title>
+  <title>The Face Is Familiar (128 44) 28731 29m58s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 540118 535 The Face Is Familiar (128 44) 28731 29m58s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 540118 535 The Face Is Familiar (128 44) 28731 29m58s — Suspense">
   <meta property="og:description" content="Listen to Suspense 540118 535 The Face Is Familiar (128 44) 28731 29m58s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 18, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 540118 535 The Face Is Familiar (128 44) 28731 29m58s</h1>
+          <h1 class="episode__title">The Face Is Familiar (128 44) 28731 29m58s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Face Is Familiar</p>
-<p>Picture yourself in a dimly lit room on a winter's evening, the glow of your radio dial casting dancing shadows across the walls. When you dial into this chilling installment of *Suspense*, you'll find yourself ensnared in a psychological nightmare where the most terrifying threat isn't lurking in dark alleys—it's the nagging, creeping realization that you can't trust your own mind. "The Face Is Familiar" spins a tale of uncanny recognition and mounting dread, where a chance encounter with a stranger's face triggers an avalanche of questions: *Why do I know this person? What have they done? What have I forgotten?* The superb cast delivers every line with the kind of naturalistic terror that only radio could achieve, their voices trembling with genuine uncertainty as the mystery deepens, building to a revelation that will leave you questioning your own memory long after the final fade-out.</p>
-<p>*Suspense*, which graced American living rooms throughout the 1940s and 1950s, was CBS's masterclass in psychological terror. Where other programs relied on monsters and jump scares, *Suspense* understood that the human imagination is far more powerful than any sound effect. With writers and producers who understood Hitchcockian principles of tension, the show crafted scenarios pulled from everyday life—a business deal, a chance meeting, a favor asked—and twisted them into nightmares of moral ambiguity and creeping dread. "The Face Is Familiar" exemplifies this philosophy perfectly, proving that sometimes the most unsettling mysteries are those that hide behind a familiar visage.</p>
-<p>Don't miss this unforgettable twenty-eight minutes of broadcasting excellence. Tune in, dim the lights, and let *Suspense* remind you why radio drama remains an unmatched art form—one that speaks directly to the darkest corners of the listener's mind.</p>
+          <p>Picture yourself in a dimly lit room on a winter's evening, the glow of your radio dial casting dancing shadows across the walls. When you dial into this chilling installment of Suspense, you'll find yourself ensnared in a psychological nightmare where the most terrifying threat isn't lurking in dark alleys—it's the nagging, creeping realization that you can't trust your own mind. "The Face Is Familiar" spins a tale of uncanny recognition and mounting dread, where a chance encounter with a stranger's face triggers an avalanche of questions: Why do I know this person? What have they done? What have I forgotten? The superb cast delivers every line with the kind of naturalistic terror that only radio could achieve, their voices trembling with genuine uncertainty as the mystery deepens, building to a revelation that will leave you questioning your own memory long after the final fade-out.</p>
+<p>Suspense, which graced American living rooms throughout the 1940s and 1950s, was CBS's masterclass in psychological terror. Where other programs relied on monsters and jump scares, Suspense understood that the human imagination is far more powerful than any sound effect. With writers and producers who understood Hitchcockian principles of tension, the show crafted scenarios pulled from everyday life—a business deal, a chance meeting, a favor asked—and twisted them into nightmares of moral ambiguity and creeping dread. "The Face Is Familiar" exemplifies this philosophy perfectly, proving that sometimes the most unsettling mysteries are those that hide behind a familiar visage.</p>
+<p>Don't miss this unforgettable twenty-eight minutes of broadcasting excellence. Tune in, dim the lights, and let Suspense remind you why radio drama remains an unmatched art form—one that speaks directly to the darkest corners of the listener's mind.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

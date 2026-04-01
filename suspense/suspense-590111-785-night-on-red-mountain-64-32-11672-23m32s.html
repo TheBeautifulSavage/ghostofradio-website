@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 590111 785 Night On Red Mountain (64 32) 11672 23m32s — Suspense | Ghost of Radio</title>
+  <title>Night On Red Mountain (64 32) 11672 23m32s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 590111 785 Night On Red Mountain (64 32) 11672 23m32s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 590111 785 Night On Red Mountain (64 32) 11672 23m32s — Suspense">
   <meta property="og:description" content="Listen to Suspense 590111 785 Night On Red Mountain (64 32) 11672 23m32s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 11, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 590111 785 Night On Red Mountain (64 32) 11672 23m32s</h1>
+          <h1 class="episode__title">Night On Red Mountain (64 32) 11672 23m32s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Night on Red Mountain</p>
-<p>As darkness descends over the isolated peaks of Red Mountain, a traveler finds himself trapped in circumstances far more sinister than any storm could conjure. With nothing but the howling wind and the creeping dread of the unknown, this twenty-three-minute journey plunges listeners into a psychological thriller where the greatest danger may lurk not in the shadows of the mountain, but in the fractured minds of those seeking shelter. CBS's *Suspense* masterfully constructs an atmosphere of claustrophobic terror, where every creak of a floorboard and every unexplained sound becomes a harbinger of doom. The episode builds with meticulous precision, transforming an ordinary night into an extraordinary nightmare that will keep you riveted to your radio set.</p>
-<p>For nearly two decades, *Suspense* stood as the gold standard of dramatic radio programming, captivating millions of listeners with its unflinching exploration of human vulnerability and psychological horror. Premiering in 1942, the show distinguished itself through sophisticated writing, stellar performances, and an willingness to venture into genuinely unsettling territory at a time when entertainment was often expected to provide comfort rather than chills. Each episode showcased the talents of Hollywood's finest actors, lending prestige and authenticity to tales that ranged from supernatural terror to the all-too-real horrors of human nature. *Suspense* proved that radio could rival any visual medium in its ability to terrify and mesmerize.</p>
-<p>Tune in tonight and discover why generations of listeners made *Suspense* appointment radio. The mountain awaits—but will you make it through the night?</p>
+          <p>As darkness descends over the isolated peaks of Red Mountain, a traveler finds himself trapped in circumstances far more sinister than any storm could conjure. With nothing but the howling wind and the creeping dread of the unknown, this twenty-three-minute journey plunges listeners into a psychological thriller where the greatest danger may lurk not in the shadows of the mountain, but in the fractured minds of those seeking shelter. CBS's Suspense masterfully constructs an atmosphere of claustrophobic terror, where every creak of a floorboard and every unexplained sound becomes a harbinger of doom. The episode builds with meticulous precision, transforming an ordinary night into an extraordinary nightmare that will keep you riveted to your radio set.</p>
+<p>For nearly two decades, Suspense stood as the gold standard of dramatic radio programming, captivating millions of listeners with its unflinching exploration of human vulnerability and psychological horror. Premiering in 1942, the show distinguished itself through sophisticated writing, stellar performances, and an willingness to venture into genuinely unsettling territory at a time when entertainment was often expected to provide comfort rather than chills. Each episode showcased the talents of Hollywood's finest actors, lending prestige and authenticity to tales that ranged from supernatural terror to the all-too-real horrors of human nature. Suspense proved that radio could rival any visual medium in its ability to terrify and mesmerize.</p>
+<p>Tune in tonight and discover why generations of listeners made Suspense appointment radio. The mountain awaits—but will you make it through the night?</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

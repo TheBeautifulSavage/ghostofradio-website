@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 531214 530 The Mystery Of Marie Roget (64 44) 14543 29m39s — Suspense | Ghost of Radio</title>
+  <title>The Mystery Of Marie Roget (64 44) 14543 29m39s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 531214 530 The Mystery Of Marie Roget (64 44) 14543 29m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 531214 530 The Mystery Of Marie Roget (64 44) 14543 29m39s — Suspense">
   <meta property="og:description" content="Listen to Suspense 531214 530 The Mystery Of Marie Roget (64 44) 14543 29m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 14, 1953</span>
           </div>
-          <h1 class="episode__title">Suspense 531214 530 The Mystery Of Marie Roget (64 44) 14543 29m39s</h1>
+          <h1 class="episode__title">The Mystery Of Marie Roget (64 44) 14543 29m39s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Mystery of Marie Roget</p>
-<p>As the Suspense theme swells through your radio speaker on a cold December evening, you're transported into the fog-shrouded streets of 1840s Paris, where a young woman's disappearance has set the city trembling with fear and speculation. "The Mystery of Marie Roget" draws listeners into Edgar Allan Poe's masterpiece of deductive reasoning, where a brilliant amateur detective must unravel the truth behind a girl's vanishing from a crowded bathing establishment. What begins as whispered rumors in cafés quickly spirals into a vortex of conflicting testimonies, false leads, and the terrible realization that the public's hunger for sensation may obscure the actual crime. The episode crackles with the tension of a puzzle being assembled piece by piece, as our protagonist confronts not only the mystery itself but the corruption and indifference of those who would rather see justice obscured than their comfortable assumptions challenged.</p>
+          <p>As the Suspense theme swells through your radio speaker on a cold December evening, you're transported into the fog-shrouded streets of 1840s Paris, where a young woman's disappearance has set the city trembling with fear and speculation. "The Mystery of Marie Roget" draws listeners into Edgar Allan Poe's masterpiece of deductive reasoning, where a brilliant amateur detective must unravel the truth behind a girl's vanishing from a crowded bathing establishment. What begins as whispered rumors in cafés quickly spirals into a vortex of conflicting testimonies, false leads, and the terrible realization that the public's hunger for sensation may obscure the actual crime. The episode crackles with the tension of a puzzle being assembled piece by piece, as our protagonist confronts not only the mystery itself but the corruption and indifference of those who would rather see justice obscured than their comfortable assumptions challenged.</p>
 <p>Suspense brought America's finest theatrical talent to the microphone each week, transforming literary classics and original teleplays into lean, visceral dramas that proved radio was a medium of unmatched psychological power. This adaptation of Poe's tale of ratiocination—perhaps the first modern detective story ever written—exemplifies the show's commitment to intelligent, literary programming that respected its audience's intelligence. At nearly thirty minutes, the episode allows the mystery to breathe and twist, building an atmosphere thick with period detail and mounting dread.</p>
 <p>If you've ever wondered what made radio's golden age golden, this is your answer. Settle into your favorite chair, dim the lights, and let the crackling signal transport you to a Paris where danger lurks just beyond the lamplight, waiting to be understood—if you're clever enough to listen carefully.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

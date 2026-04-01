@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 540208 538 Death At Skirkerud Pond (128 44) 28252 29m27s — Suspense | Ghost of Radio</title>
+  <title>Death At Skirkerud Pond (128 44) 28252 29m27s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 540208 538 Death At Skirkerud Pond (128 44) 28252 29m27s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 540208 538 Death At Skirkerud Pond (128 44) 28252 29m27s — Suspense">
   <meta property="og:description" content="Listen to Suspense 540208 538 Death At Skirkerud Pond (128 44) 28252 29m27s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 8, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 540208 538 Death At Skirkerud Pond (128 44) 28252 29m27s</h1>
+          <h1 class="episode__title">Death At Skirkerud Pond (128 44) 28252 29m27s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Death at Skirkerud Pond</p>
-<p>Deep in the Norwegian countryside, beside a still and mysterious pond, a terrible secret lies waiting to surface. When a body is discovered at Skirkerud, suspicion falls upon those closest to the victim—and no one can be trusted. Over the next twenty-nine minutes, the noose tightens around the guilty party as motives unravel and alibis crumble under the weight of circumstantial evidence. The remote landscape itself becomes a character, isolating our players in a claustrophobic drama where every footstep echoes with menace and every glance conceals a lie. This is Suspense at its finest: a masterclass in psychological tension where the greatest danger lurks not in shadows, but in the human heart.</p>
+          <p>Deep in the Norwegian countryside, beside a still and mysterious pond, a terrible secret lies waiting to surface. When a body is discovered at Skirkerud, suspicion falls upon those closest to the victim—and no one can be trusted. Over the next twenty-nine minutes, the noose tightens around the guilty party as motives unravel and alibis crumble under the weight of circumstantial evidence. The remote landscape itself becomes a character, isolating our players in a claustrophobic drama where every footstep echoes with menace and every glance conceals a lie. This is Suspense at its finest: a masterclass in psychological tension where the greatest danger lurks not in shadows, but in the human heart.</p>
 <p>For two decades, Suspense held America in thrall with tales of ordinary people confronted by extraordinary danger. Premiering in 1942 and running until 1962, the show earned its reputation as "radio's outstanding theater of thrills" through meticulous writing, stellar performances from Hollywood's finest actors, and a production team that understood that the most terrifying images are those conjured by the listener's own imagination. Death at Skirkerud Pond exemplifies the show's commitment to intimate, character-driven mysteries—stories grounded in recognizable human drama rather than supernatural spectacle. As wartime audiences huddled around their radios, shows like Suspense offered both escape and reflection, exploring the darkness that could lurk in any community, even the picturesque villages of distant lands.</p>
 <p>If you've never experienced the power of vintage radio drama, or if you're a devoted Suspense enthusiast seeking to complete your collection, this episode awaits. Dim the lights, settle into your chair, and prepare yourself. The pond at Skirkerud is calling—and it demands justice.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

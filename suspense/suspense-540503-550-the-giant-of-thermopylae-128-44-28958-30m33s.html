@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 540503 550 The Giant Of Thermopylae (128 44) 28958 30m33s — Suspense | Ghost of Radio</title>
+  <title>The Giant Of Thermopylae (128 44) 28958 30m33s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 540503 550 The Giant Of Thermopylae (128 44) 28958 30m33s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 540503 550 The Giant Of Thermopylae (128 44) 28958 30m33s — Suspense">
   <meta property="og:description" content="Listen to Suspense 540503 550 The Giant Of Thermopylae (128 44) 28958 30m33s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 3, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 540503 550 The Giant Of Thermopylae (128 44) 28958 30m33s</h1>
+          <h1 class="episode__title">The Giant Of Thermopylae (128 44) 28958 30m33s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Giant of Thermopylae</p>
-<p>Picture this: it's a humid spring evening in 1955, and you've just tuned your radio to CBS at that crucial moment when the familiar *Suspense* theme swells—that haunting orchestral prelude that's kept America on the edge of its seat for thirteen years. Tonight's offering, "The Giant of Thermopylae," transports you from your living room to ancient Greece, where history and legend collide in shadow and terror. What begins as a tale of military valor transforms into something far darker, as the legendary battle of Thermopylae becomes the backdrop for a psychological thriller that questions the nature of heroism itself. The crackling static between scenes, the carefully modulated voices of seasoned radio actors, and the strategic use of silence create an atmosphere thick with dread—you'll find yourself leaning closer to the speaker, caught between your knowledge of history and the sinister drama unfolding in your imagination.</p>
-<p>*Suspense* built its formidable reputation on precisely this formula: taking familiar stories and twisting them into something deliciously unsettling. The show's creators understood that radio audiences craved intellectual engagement alongside their thrills, that educated listeners wanted their entertainment to challenge them. By the mid-1950s, when this episode aired, *Suspense* had become the gold standard of dramatic radio—a prestige program that attracted top talent and garnered critical acclaim. Each episode was a carefully crafted puzzle, relying entirely on sound design, dialogue, and the listener's own imagination to conjure genuine fear.</p>
+          <p>Picture this: it's a humid spring evening in 1955, and you've just tuned your radio to CBS at that crucial moment when the familiar Suspense theme swells—that haunting orchestral prelude that's kept America on the edge of its seat for thirteen years. Tonight's offering, "The Giant of Thermopylae," transports you from your living room to ancient Greece, where history and legend collide in shadow and terror. What begins as a tale of military valor transforms into something far darker, as the legendary battle of Thermopylae becomes the backdrop for a psychological thriller that questions the nature of heroism itself. The crackling static between scenes, the carefully modulated voices of seasoned radio actors, and the strategic use of silence create an atmosphere thick with dread—you'll find yourself leaning closer to the speaker, caught between your knowledge of history and the sinister drama unfolding in your imagination.</p>
+<p>Suspense built its formidable reputation on precisely this formula: taking familiar stories and twisting them into something deliciously unsettling. The show's creators understood that radio audiences craved intellectual engagement alongside their thrills, that educated listeners wanted their entertainment to challenge them. By the mid-1950s, when this episode aired, Suspense had become the gold standard of dramatic radio—a prestige program that attracted top talent and garnered critical acclaim. Each episode was a carefully crafted puzzle, relying entirely on sound design, dialogue, and the listener's own imagination to conjure genuine fear.</p>
 <p>Whether you're a devoted fan of classic radio or a curious newcomer, "The Giant of Thermopylae" offers a masterclass in suspenseful storytelling. Settle in, dim the lights, and let this thirty-minute escape remind you why radio's golden age still captivates audiences today.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

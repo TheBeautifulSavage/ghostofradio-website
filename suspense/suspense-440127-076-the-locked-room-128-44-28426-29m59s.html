@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440127 076 The Locked Room (128 44) 28426 29m59s — Suspense | Ghost of Radio</title>
+  <title>The Locked Room (128 44) 28426 29m59s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440127 076 The Locked Room (128 44) 28426 29m59s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440127 076 The Locked Room (128 44) 28426 29m59s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440127 076 The Locked Room (128 44) 28426 29m59s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 27, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440127 076 The Locked Room (128 44) 28426 29m59s</h1>
+          <h1 class="episode__title">The Locked Room (128 44) 28426 29m59s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Locked Room</p>
-<p>Picture yourself in a dimly lit study late one winter's night, the howling wind rattling the windows as a man discovers something that will chill him to the bone: he is trapped. The door to his room won't budge. The windows are sealed shut. And somewhere in the darkness of that enclosed space, death waits with patient inevitability. In this episode of *Suspense*, the master craftsmen of CBS radio weave a claustrophobic nightmare where the very walls become a character, pressing in tighter with each passing moment. Every creak of floorboard, every whispered revelation, every failed attempt at escape strips away another layer of composure. What begins as a locked-room mystery transforms into a descent into psychological terror, where the listener discovers that sometimes the most dangerous prison is the one we cannot see.</p>
-<p>For two decades, *Suspense* commanded the attention of millions of Americans huddled around their radios, establishing the show as the gold standard of dramatic thriller programming. Each episode was meticulously crafted to exploit the unique power of radio—the intimate voice in the darkness, the sound design that conjures entire worlds from nothing but noise and silence. Recorded in 1944, "The Locked Room" represents *Suspense* at the height of its creative powers, when veteran writers and directors understood that true horror lives not in what we see, but in what we imagine. The show's legacy influenced generations of filmmakers and remains a masterclass in building tension through the spoken word.</p>
-<p>If you've never experienced the electric thrill of *Suspense*, this locked room is the perfect place to enter. Settle in, dim the lights, and prepare yourself for nearly thirty minutes of expertly crafted dread. Some mysteries aren't meant to be solved—only endured.</p>
+          <p>Picture yourself in a dimly lit study late one winter's night, the howling wind rattling the windows as a man discovers something that will chill him to the bone: he is trapped. The door to his room won't budge. The windows are sealed shut. And somewhere in the darkness of that enclosed space, death waits with patient inevitability. In this episode of Suspense, the master craftsmen of CBS radio weave a claustrophobic nightmare where the very walls become a character, pressing in tighter with each passing moment. Every creak of floorboard, every whispered revelation, every failed attempt at escape strips away another layer of composure. What begins as a locked-room mystery transforms into a descent into psychological terror, where the listener discovers that sometimes the most dangerous prison is the one we cannot see.</p>
+<p>For two decades, Suspense commanded the attention of millions of Americans huddled around their radios, establishing the show as the gold standard of dramatic thriller programming. Each episode was meticulously crafted to exploit the unique power of radio—the intimate voice in the darkness, the sound design that conjures entire worlds from nothing but noise and silence. Recorded in 1944, "The Locked Room" represents Suspense at the height of its creative powers, when veteran writers and directors understood that true horror lives not in what we see, but in what we imagine. The show's legacy influenced generations of filmmakers and remains a masterclass in building tension through the spoken word.</p>
+<p>If you've never experienced the electric thrill of Suspense, this locked room is the perfect place to enter. Settle in, dim the lights, and prepare yourself for nearly thirty minutes of expertly crafted dread. Some mysteries aren't meant to be solved—only endured.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

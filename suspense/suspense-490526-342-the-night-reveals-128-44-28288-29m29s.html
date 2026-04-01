@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 490526 342 The Night Reveals (128 44) 28288 29m29s — Suspense | Ghost of Radio</title>
+  <title>The Night Reveals (128 44) 28288 29m29s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 490526 342 The Night Reveals (128 44) 28288 29m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 490526 342 The Night Reveals (128 44) 28288 29m29s — Suspense">
   <meta property="og:description" content="Listen to Suspense 490526 342 The Night Reveals (128 44) 28288 29m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 26, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 490526 342 The Night Reveals (128 44) 28288 29m29s</h1>
+          <h1 class="episode__title">The Night Reveals (128 44) 28288 29m29s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Night Reveals</p>
-<p>As darkness falls and the city sleeps, ordinary lives take extraordinary turns in "The Night Reveals," a masterwork of psychological terror that proves Suspense's greatest strength: the ability to transform the mundane into the sinister. In this 1940s broadcast, listeners will experience the suffocating dread of secrets that refuse to stay buried, of ordinary people whose carefully constructed facades crumble when night falls and truth becomes impossible to hide. The sound design builds from deceptive calm to mounting horror—creaking floorboards, whispered confessions, and that relentless ticking clock that marks time running out. What begins as a quietly unsettling situation spirals into genuine terror, exploiting the listener's own imagination to conjure horrors far more effective than any visual medium could achieve. This is Suspense at its finest, where the real monster isn't always what you think, and the greatest threats often come from those closest to us.</p>
-<p>For over two decades, Suspense commanded Tuesday nights on CBS radio, pioneering the thriller format with meticulous attention to craft and performance. Each episode was a self-contained nightmare, drawing from literature, contemporary crime, and original stories written specifically for radio's intimate medium. The show's genius lay in understanding that radio audiences didn't need to see danger—they needed to *hear* it, feel it encroaching through their speakers into their living rooms. Episodes like "The Night Reveals" showcase why Suspense became the gold standard for broadcast drama, influencing generations of filmmakers and writers who understood that suggestion often terrifies more profoundly than revelation.</p>
+          <p>As darkness falls and the city sleeps, ordinary lives take extraordinary turns in "The Night Reveals," a masterwork of psychological terror that proves Suspense's greatest strength: the ability to transform the mundane into the sinister. In this 1940s broadcast, listeners will experience the suffocating dread of secrets that refuse to stay buried, of ordinary people whose carefully constructed facades crumble when night falls and truth becomes impossible to hide. The sound design builds from deceptive calm to mounting horror—creaking floorboards, whispered confessions, and that relentless ticking clock that marks time running out. What begins as a quietly unsettling situation spirals into genuine terror, exploiting the listener's own imagination to conjure horrors far more effective than any visual medium could achieve. This is Suspense at its finest, where the real monster isn't always what you think, and the greatest threats often come from those closest to us.</p>
+<p>For over two decades, Suspense commanded Tuesday nights on CBS radio, pioneering the thriller format with meticulous attention to craft and performance. Each episode was a self-contained nightmare, drawing from literature, contemporary crime, and original stories written specifically for radio's intimate medium. The show's genius lay in understanding that radio audiences didn't need to see danger—they needed to hear it, feel it encroaching through their speakers into their living rooms. Episodes like "The Night Reveals" showcase why Suspense became the gold standard for broadcast drama, influencing generations of filmmakers and writers who understood that suggestion often terrifies more profoundly than revelation.</p>
 <p>Settle into your favorite chair, dim the lights, and let "The Night Reveals" remind you why an earlier generation gathered around their radios, hearts pounding, unable to turn away. Some thrills never age.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

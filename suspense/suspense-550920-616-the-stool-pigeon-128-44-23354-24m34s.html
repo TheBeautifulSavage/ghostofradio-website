@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550920 616 The Stool Pigeon (128 44) 23354 24m34s — Suspense | Ghost of Radio</title>
+  <title>The Stool Pigeon (128 44) 23354 24m34s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550920 616 The Stool Pigeon (128 44) 23354 24m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550920 616 The Stool Pigeon (128 44) 23354 24m34s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550920 616 The Stool Pigeon (128 44) 23354 24m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 20, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550920 616 The Stool Pigeon (128 44) 23354 24m34s</h1>
+          <h1 class="episode__title">The Stool Pigeon (128 44) 23354 24m34s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Stool Pigeon</p>
-<p>In the shadowy underbelly of a 1940s city, an informant's conscience becomes his most dangerous liability. When a small-time criminal agrees to testify against the mob, he discovers that redemption and survival are two very different things. *The Stool Pigeon* grips listeners with the suffocating tension of a man caught between his moral awakening and the relentless machinery of organized crime—where every shadow might conceal a killer's hand, and every phone call could be his last. The brilliant sound design pulls you into dimly lit interrogation rooms and empty parking garages where violence lurks in the static between words. What begins as a simple moral choice spirals into a nightmare of consequences, betrayals, and the desperate calculation of whether a man's redemption means anything if he doesn't live to see it.</p>
-<p>*Suspense* stood as American radio's premier thriller series throughout two decades of broadcasting, pioneering the psychological intensity that would later define film noir and television crime dramas. CBS's commitment to sophisticated storytelling and A-list talent meant each installment was crafted with meticulous attention to pacing, dialogue, and atmosphere. Episodes like *The Stool Pigeon* showcased the medium's unique power: without visual distraction, listeners sat in complete darkness, vulnerable to every carefully placed sound effect and ominous pause. The show demanded active imagination from its audience, making each listener complicit in the unfolding horrors. In an era before television, *Suspense* proved that the scariest thing you could do was let people's minds do the frightening.</p>
-<p>Settle into your favorite chair, dim the lights, and prepare yourself for twenty-five minutes of pure mounting dread. *The Stool Pigeon* awaits—a masterclass in suspense that proves sometimes the deadliest threat comes not from what you hear, but from what you fear might come next.</p>
+          <p>In the shadowy underbelly of a 1940s city, an informant's conscience becomes his most dangerous liability. When a small-time criminal agrees to testify against the mob, he discovers that redemption and survival are two very different things. The Stool Pigeon grips listeners with the suffocating tension of a man caught between his moral awakening and the relentless machinery of organized crime—where every shadow might conceal a killer's hand, and every phone call could be his last. The brilliant sound design pulls you into dimly lit interrogation rooms and empty parking garages where violence lurks in the static between words. What begins as a simple moral choice spirals into a nightmare of consequences, betrayals, and the desperate calculation of whether a man's redemption means anything if he doesn't live to see it.</p>
+<p>Suspense stood as American radio's premier thriller series throughout two decades of broadcasting, pioneering the psychological intensity that would later define film noir and television crime dramas. CBS's commitment to sophisticated storytelling and A-list talent meant each installment was crafted with meticulous attention to pacing, dialogue, and atmosphere. Episodes like The Stool Pigeon showcased the medium's unique power: without visual distraction, listeners sat in complete darkness, vulnerable to every carefully placed sound effect and ominous pause. The show demanded active imagination from its audience, making each listener complicit in the unfolding horrors. In an era before television, Suspense proved that the scariest thing you could do was let people's minds do the frightening.</p>
+<p>Settle into your favorite chair, dim the lights, and prepare yourself for twenty-five minutes of pure mounting dread. The Stool Pigeon awaits—a masterclass in suspense that proves sometimes the deadliest threat comes not from what you hear, but from what you fear might come next.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

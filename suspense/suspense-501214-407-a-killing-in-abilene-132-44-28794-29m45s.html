@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 501214 407 A Killing In Abilene (132 44) 28794 29m45s — Suspense | Ghost of Radio</title>
+  <title>A Killing In Abilene (132 44) 28794 29m45s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 501214 407 A Killing In Abilene (132 44) 28794 29m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 501214 407 A Killing In Abilene (132 44) 28794 29m45s — Suspense">
   <meta property="og:description" content="Listen to Suspense 501214 407 A Killing In Abilene (132 44) 28794 29m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 14, 1950</span>
           </div>
-          <h1 class="episode__title">Suspense 501214 407 A Killing In Abilene (132 44) 28794 29m45s</h1>
+          <h1 class="episode__title">A Killing In Abilene (132 44) 28794 29m45s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># A Killing in Abilene</p>
-<p>The dusty streets of Abilene stretch endlessly under a merciless Texas sun as our story unfolds—a tale of passion, betrayal, and the kind of killing that leaves no witnesses but haunts every soul who hears its secrets. When a man's body is discovered in a small western town, the investigation that follows unravels a web of jealousy and desire so thick you can almost feel it pressing through your radio speaker. The suspenseful narrative pulls you into the very heart of frontier justice, where right and wrong blur like heat waves on the horizon, and every character harbors dangerous knowledge they're desperate to conceal. With masterful pacing and dialogue that crackles with tension, this half-hour drama builds inexorably toward a revelation that will leave you breathless.</p>
-<p>*Suspense*, which graced CBS airwaves from 1942 to 1962, became the gold standard of radio thriller programming, earning its place in the pantheon of American broadcasting through relentless commitment to psychological terror and human drama. Hosted by the legendary announcer who set the tone with his spine-tingling introduction, each episode was a carefully crafted descent into darkness, featuring some of radio's finest actors in stories that preferred the shadow to the spotlight. "A Killing in Abilene" exemplifies the show's genius for taking ordinary American settings—small towns, everyday conflicts, domestic betrayal—and transforming them into crucibles of suspense where the listener's imagination becomes complicit in the mystery.</p>
-<p>If you've never experienced the raw power of classic radio drama, this is the moment to surrender to that peculiar magic where sound, silence, and suggestion create terror more profound than any image could conjure. Tune in, turn off the lights, and discover why millions of listeners kept *Suspense* in their hearts for two thrilling decades.</p>
+          <p>The dusty streets of Abilene stretch endlessly under a merciless Texas sun as our story unfolds—a tale of passion, betrayal, and the kind of killing that leaves no witnesses but haunts every soul who hears its secrets. When a man's body is discovered in a small western town, the investigation that follows unravels a web of jealousy and desire so thick you can almost feel it pressing through your radio speaker. The suspenseful narrative pulls you into the very heart of frontier justice, where right and wrong blur like heat waves on the horizon, and every character harbors dangerous knowledge they're desperate to conceal. With masterful pacing and dialogue that crackles with tension, this half-hour drama builds inexorably toward a revelation that will leave you breathless.</p>
+<p>Suspense, which graced CBS airwaves from 1942 to 1962, became the gold standard of radio thriller programming, earning its place in the pantheon of American broadcasting through relentless commitment to psychological terror and human drama. Hosted by the legendary announcer who set the tone with his spine-tingling introduction, each episode was a carefully crafted descent into darkness, featuring some of radio's finest actors in stories that preferred the shadow to the spotlight. "A Killing in Abilene" exemplifies the show's genius for taking ordinary American settings—small towns, everyday conflicts, domestic betrayal—and transforming them into crucibles of suspense where the listener's imagination becomes complicit in the mystery.</p>
+<p>If you've never experienced the raw power of classic radio drama, this is the moment to surrender to that peculiar magic where sound, silence, and suggestion create terror more profound than any image could conjure. Tune in, turn off the lights, and discover why millions of listeners kept Suspense in their hearts for two thrilling decades.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 581109 776 Two For The Road (128 44) 28001 29m11s — Suspense | Ghost of Radio</title>
+  <title>Two For The Road (128 44) 28001 29m11s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 581109 776 Two For The Road (128 44) 28001 29m11s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 581109 776 Two For The Road (128 44) 28001 29m11s — Suspense">
   <meta property="og:description" content="Listen to Suspense 581109 776 Two For The Road (128 44) 28001 29m11s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 9, 1958</span>
           </div>
-          <h1 class="episode__title">Suspense 581109 776 Two For The Road (128 44) 28001 29m11s</h1>
+          <h1 class="episode__title">Two For The Road (128 44) 28001 29m11s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Two for the Road</p>
-<p>Picture this: a lonely stretch of highway at dusk, the kind of desolate road where anything might happen and nobody would ever know. Two strangers—bound by circumstances both have secrets to hide—find themselves trapped together in an automobile, hurtling through the gathering darkness. One needs a ride. One needs an alibi. What begins as a simple transaction becomes a nightmare of suspicion, tension, and creeping dread as each passenger wonders: *Is my companion friend or executioner?* The CBS sound engineers create an almost suffocating intimacy, trapping you inside that car alongside these characters, where every creak of the chassis and whispered aside carries the weight of potential violence. Director William N. Robson masterfully ratchets up the psychological pressure until you're gripping your seat, waiting for the moment when civility shatters and one of them makes their fatal move.</p>
-<p>*Suspense* stands as radio's premier thriller anthology—a show that understood that the most terrifying horrors are born in the listener's imagination rather than displayed before their eyes. For two decades, from 1942 through 1962, CBS proved that radio drama could deliver genuine chills through expert pacing, stellar performances, and writers who knew that suggestion often terrifies more than revelation. Episodes like "Two for the Road" exemplify why millions tuned in faithfully, why the show spawned countless imitators, and why its legacy endures: it trusted its audience to fill in the blanks with their own darkest fears.</p>
+          <p>Picture this: a lonely stretch of highway at dusk, the kind of desolate road where anything might happen and nobody would ever know. Two strangers—bound by circumstances both have secrets to hide—find themselves trapped together in an automobile, hurtling through the gathering darkness. One needs a ride. One needs an alibi. What begins as a simple transaction becomes a nightmare of suspicion, tension, and creeping dread as each passenger wonders: Is my companion friend or executioner? The CBS sound engineers create an almost suffocating intimacy, trapping you inside that car alongside these characters, where every creak of the chassis and whispered aside carries the weight of potential violence. Director William N. Robson masterfully ratchets up the psychological pressure until you're gripping your seat, waiting for the moment when civility shatters and one of them makes their fatal move.</p>
+<p>Suspense stands as radio's premier thriller anthology—a show that understood that the most terrifying horrors are born in the listener's imagination rather than displayed before their eyes. For two decades, from 1942 through 1962, CBS proved that radio drama could deliver genuine chills through expert pacing, stellar performances, and writers who knew that suggestion often terrifies more than revelation. Episodes like "Two for the Road" exemplify why millions tuned in faithfully, why the show spawned countless imitators, and why its legacy endures: it trusted its audience to fill in the blanks with their own darkest fears.</p>
 <p>So dim the lights, settle into that worn armchair, and prepare yourself. Somewhere out there on that deserted highway, two strangers are meeting—and only one of them may reach their destination alive. Press play and discover what CBS audiences discovered decades ago: sometimes the most dangerous journeys are the ones taken with a complete stranger.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

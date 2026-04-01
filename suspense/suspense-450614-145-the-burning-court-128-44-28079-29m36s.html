@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450614 145 The Burning Court (128 44) 28079 29m36s — Suspense | Ghost of Radio</title>
+  <title>The Burning Court (128 44) 28079 29m36s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450614 145 The Burning Court (128 44) 28079 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450614 145 The Burning Court (128 44) 28079 29m36s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450614 145 The Burning Court (128 44) 28079 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 14, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450614 145 The Burning Court (128 44) 28079 29m36s</h1>
+          <h1 class="episode__title">The Burning Court (128 44) 28079 29m36s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Burning Court</p>
-<p>Step into a shadowed mansion where the past refuses to stay buried. In "The Burning Court," listeners will find themselves trapped alongside characters caught between the rational world and something far more sinister—a mystery that blurs the line between murder and the supernatural. As the drama unfolds across nearly thirty minutes, the tension builds masterfully: whispered accusations, footsteps in darkened halls, and the creeping realization that not everything can be explained by logic alone. The sound design transports you directly into this gothic nightmare, where every creak and sigh carries the weight of terrible secrets.</p>
-<p>*Suspense*, which graced CBS airwaves for two decades beginning in 1942, became the gold standard of radio drama precisely because it understood what listeners craved during an uncertain era—stories that made the ordinary world feel dangerous and unpredictable. This particular episode exemplifies the show's mastery of psychological horror, drawing from literary sources and crafting narratives that resonated deeply with post-war audiences seeking both escape and exploration of life's darker mysteries. The program's commitment to atmospheric storytelling and talented ensemble casts made it a cultural phenomenon, influencing generations of thriller writers and demonstrating radio's unique power to terrify through suggestion rather than spectacle.</p>
-<p>Whether you're a devoted fan of classic radio or discovering this medium's extraordinary potential for the first time, "The Burning Court" offers the perfect entry point into *Suspense*'s hypnotic world. Settle in with the lights low, silence your surroundings, and prepare for twenty-eight minutes that will remind you why, in radio's golden age, the most terrifying images were always the ones your imagination created.</p>
+          <p>Step into a shadowed mansion where the past refuses to stay buried. In "The Burning Court," listeners will find themselves trapped alongside characters caught between the rational world and something far more sinister—a mystery that blurs the line between murder and the supernatural. As the drama unfolds across nearly thirty minutes, the tension builds masterfully: whispered accusations, footsteps in darkened halls, and the creeping realization that not everything can be explained by logic alone. The sound design transports you directly into this gothic nightmare, where every creak and sigh carries the weight of terrible secrets.</p>
+<p>Suspense, which graced CBS airwaves for two decades beginning in 1942, became the gold standard of radio drama precisely because it understood what listeners craved during an uncertain era—stories that made the ordinary world feel dangerous and unpredictable. This particular episode exemplifies the show's mastery of psychological horror, drawing from literary sources and crafting narratives that resonated deeply with post-war audiences seeking both escape and exploration of life's darker mysteries. The program's commitment to atmospheric storytelling and talented ensemble casts made it a cultural phenomenon, influencing generations of thriller writers and demonstrating radio's unique power to terrify through suggestion rather than spectacle.</p>
+<p>Whether you're a devoted fan of classic radio or discovering this medium's extraordinary potential for the first time, "The Burning Court" offers the perfect entry point into Suspense's hypnotic world. Settle in with the lights low, silence your surroundings, and prepare for twenty-eight minutes that will remind you why, in radio's golden age, the most terrifying images were always the ones your imagination created.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

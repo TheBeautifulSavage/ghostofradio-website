@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460829 208 Blue Eyes (64 44) 14475 29m30s — Suspense | Ghost of Radio</title>
+  <title>Blue Eyes (64 44) 14475 29m30s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460829 208 Blue Eyes (64 44) 14475 29m30s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460829 208 Blue Eyes (64 44) 14475 29m30s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460829 208 Blue Eyes (64 44) 14475 29m30s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 29, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460829 208 Blue Eyes (64 44) 14475 29m30s</h1>
+          <h1 class="episode__title">Blue Eyes (64 44) 14475 29m30s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Blue Eyes</p>
-<p>Picture this: it's late evening, the lights are dimmed, and you settle into your favorite chair with a cup of coffee growing cold beside you. CBS presents *Suspense*, and tonight's tale is "Blue Eyes"—a psychological thriller that will keep you guessing until the final, shocking revelation. A seemingly innocent detail—the color of someone's eyes—becomes the linchpin of a deadly mystery. As the drama unfolds across nearly thirty minutes, you'll find yourself drawn into a web of deception, mistaken identity, and murder where nothing is quite as it seems. The performances crackle with authentic tension, the sound design placing you directly in the scene: footsteps echoing down empty hallways, doors creaking open, and voices trembling with barely concealed terror. By the time the truth emerges from the shadows, you'll have questioned every character's motives and second-guessed every plot turn.</p>
-<p>*Suspense* stands as one of radio's greatest achievements, a CBS institution that pioneered the theatrical thriller format from 1942 through its final broadcast in 1962. The show's genius lay in its commitment to genuine atmosphere and psychological complexity—this wasn't pulp melodrama, but sophisticated storytelling for intelligent listeners. Each episode was crafted to exploit the unique power of radio: by leaving everything to imagination, the medium created terrors more vivid than any visual could achieve. "Blue Eyes" exemplifies the show's golden era of the 1940s, when talented writers and actors pushed the boundaries of what radio drama could accomplish.</p>
-<p>Don't miss this opportunity to experience radio as our ancestors did. In an age of streaming and instant gratification, *Suspense* offers something increasingly rare: genuine mystery, superb acting, and the thrill of not knowing what comes next. Tune in to "Blue Eyes" and rediscover why millions huddled around their radios each week, breathless and transfixed.</p>
+          <p>Picture this: it's late evening, the lights are dimmed, and you settle into your favorite chair with a cup of coffee growing cold beside you. CBS presents Suspense, and tonight's tale is "Blue Eyes"—a psychological thriller that will keep you guessing until the final, shocking revelation. A seemingly innocent detail—the color of someone's eyes—becomes the linchpin of a deadly mystery. As the drama unfolds across nearly thirty minutes, you'll find yourself drawn into a web of deception, mistaken identity, and murder where nothing is quite as it seems. The performances crackle with authentic tension, the sound design placing you directly in the scene: footsteps echoing down empty hallways, doors creaking open, and voices trembling with barely concealed terror. By the time the truth emerges from the shadows, you'll have questioned every character's motives and second-guessed every plot turn.</p>
+<p>Suspense stands as one of radio's greatest achievements, a CBS institution that pioneered the theatrical thriller format from 1942 through its final broadcast in 1962. The show's genius lay in its commitment to genuine atmosphere and psychological complexity—this wasn't pulp melodrama, but sophisticated storytelling for intelligent listeners. Each episode was crafted to exploit the unique power of radio: by leaving everything to imagination, the medium created terrors more vivid than any visual could achieve. "Blue Eyes" exemplifies the show's golden era of the 1940s, when talented writers and actors pushed the boundaries of what radio drama could accomplish.</p>
+<p>Don't miss this opportunity to experience radio as our ancestors did. In an age of streaming and instant gratification, Suspense offers something increasingly rare: genuine mystery, superb acting, and the thrill of not knowing what comes next. Tune in to "Blue Eyes" and rediscover why millions huddled around their radios each week, breathless and transfixed.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

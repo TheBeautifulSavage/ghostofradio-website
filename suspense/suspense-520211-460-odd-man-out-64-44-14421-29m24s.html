@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 520211 460 Odd Man Out (64 44) 14421 29m24s — Suspense | Ghost of Radio</title>
+  <title>Odd Man Out (64 44) 14421 29m24s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 520211 460 Odd Man Out (64 44) 14421 29m24s — Suspense (CBS, 2021). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 520211 460 Odd Man Out (64 44) 14421 29m24s — Suspense">
   <meta property="og:description" content="Listen to Suspense 520211 460 Odd Man Out (64 44) 14421 29m24s — Suspense (CBS, 2021). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 11, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 520211 460 Odd Man Out (64 44) 14421 29m24s</h1>
+          <h1 class="episode__title">Odd Man Out (64 44) 14421 29m24s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Odd Man Out"</p>
-<p>Picture yourself huddled around a wooden radio console on a winter evening in 1946, the dial glowing amber in the darkened room. *Suspense* crackles to life with its signature pipe organ theme—three discordant notes that send a chill down your spine—and you're pulled into the claustrophobic world of "Odd Man Out." What begins as an ordinary scenario spirals into a web of paranoia and dread as one man realizes he doesn't belong, that something is fundamentally wrong with the people around him, the place he's found himself in. The sound design is masterful: footsteps echo unnaturally, voices distort with threatening undertones, and silences grow heavy with menace. Nearly twenty-nine minutes of pure psychological tension unfolds as the protagonist desperately searches for answers, for escape, for anything that makes sense in a world that has suddenly become alien and sinister.</p>
-<p>*Suspense* was CBS's crown jewel of dramatic broadcasting, running from 1942 to 1962 and setting the gold standard for American radio thriller programming. With over 2,000 episodes produced, it featured top-tier talent—both established Hollywood names and gifted radio actors—delivering performances that proved the medium's power to terrify and captivate without a single visual effect. "Odd Man Out" exemplifies the show's brilliance: a premise so simple it could be told in a sentence, yet executed with such psychological sophistication that listeners found themselves questioning reality alongside the protagonist.</p>
-<p>This is radio drama at its finest—intimate, intense, and utterly unforgettable. Tune in to *Suspense: "Odd Man Out"* and discover why millions of Americans made appointment listening a nightly ritual. In the dark, with only your imagination and the voices in your speaker, you may find yourself just as trapped as the man in the story.</p>
+          <p>Picture yourself huddled around a wooden radio console on a winter evening in 1946, the dial glowing amber in the darkened room. Suspense crackles to life with its signature pipe organ theme—three discordant notes that send a chill down your spine—and you're pulled into the claustrophobic world of "Odd Man Out." What begins as an ordinary scenario spirals into a web of paranoia and dread as one man realizes he doesn't belong, that something is fundamentally wrong with the people around him, the place he's found himself in. The sound design is masterful: footsteps echo unnaturally, voices distort with threatening undertones, and silences grow heavy with menace. Nearly twenty-nine minutes of pure psychological tension unfolds as the protagonist desperately searches for answers, for escape, for anything that makes sense in a world that has suddenly become alien and sinister.</p>
+<p>Suspense was CBS's crown jewel of dramatic broadcasting, running from 1942 to 1962 and setting the gold standard for American radio thriller programming. With over 2,000 episodes produced, it featured top-tier talent—both established Hollywood names and gifted radio actors—delivering performances that proved the medium's power to terrify and captivate without a single visual effect. "Odd Man Out" exemplifies the show's brilliance: a premise so simple it could be told in a sentence, yet executed with such psychological sophistication that listeners found themselves questioning reality alongside the protagonist.</p>
+<p>This is radio drama at its finest—intimate, intense, and utterly unforgettable. Tune in to Suspense: "Odd Man Out" and discover why millions of Americans made appointment listening a nightly ritual. In the dark, with only your imagination and the voices in your speaker, you may find yourself just as trapped as the man in the story.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

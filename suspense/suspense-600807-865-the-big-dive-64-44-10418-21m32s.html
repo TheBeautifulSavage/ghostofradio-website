@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600807 865 The Big Dive (64 44) 10418 21m32s — Suspense | Ghost of Radio</title>
+  <title>The Big Dive (64 44) 10418 21m32s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600807 865 The Big Dive (64 44) 10418 21m32s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600807 865 The Big Dive (64 44) 10418 21m32s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600807 865 The Big Dive (64 44) 10418 21m32s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 7, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600807 865 The Big Dive (64 44) 10418 21m32s</h1>
+          <h1 class="episode__title">The Big Dive (64 44) 10418 21m32s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Big Dive</p>
-<p>Imagine yourself in the suffocating darkness of a deep-sea diving bell, suspended hundreds of feet below the surface, with nothing but inches of steel between you and crushing black water. This is the nightmare that unfolds in "The Big Dive," where a routine salvage operation transforms into a claustrophobic descent into madness and murder. As our protagonist descends into the abyss to retrieve a fortune in lost cargo, sinister forces conspire above—and below. Every creak of the cable, every whisper of the radio connection, every moment of radio silence becomes unbearable. The deep holds secrets darker than any ocean trench, and when greed, desperation, and isolation collide in that tiny metal sphere, the listener discovers that the most terrifying depths aren't measured in fathoms.</p>
-<p>*Suspense* debuted on CBS in 1942 as one of radio's premier thriller anthologies, thrilling audiences for two decades with stories that proved the human imagination needed no visual effects—only expert writing, sound design, and the power of suggestion. By the 1940s, when "The Big Dive" aired, the show had perfected the art of psychological terror, employing innovative audio techniques to transport listeners into extraordinary—and extraordinarily dangerous—scenarios. Each week, *Suspense* delivered standalone tales that tapped into universal fears: betrayal, isolation, the unknown, and the darkness lurking within ordinary people.</p>
+          <p>Imagine yourself in the suffocating darkness of a deep-sea diving bell, suspended hundreds of feet below the surface, with nothing but inches of steel between you and crushing black water. This is the nightmare that unfolds in "The Big Dive," where a routine salvage operation transforms into a claustrophobic descent into madness and murder. As our protagonist descends into the abyss to retrieve a fortune in lost cargo, sinister forces conspire above—and below. Every creak of the cable, every whisper of the radio connection, every moment of radio silence becomes unbearable. The deep holds secrets darker than any ocean trench, and when greed, desperation, and isolation collide in that tiny metal sphere, the listener discovers that the most terrifying depths aren't measured in fathoms.</p>
+<p>Suspense debuted on CBS in 1942 as one of radio's premier thriller anthologies, thrilling audiences for two decades with stories that proved the human imagination needed no visual effects—only expert writing, sound design, and the power of suggestion. By the 1940s, when "The Big Dive" aired, the show had perfected the art of psychological terror, employing innovative audio techniques to transport listeners into extraordinary—and extraordinarily dangerous—scenarios. Each week, Suspense delivered standalone tales that tapped into universal fears: betrayal, isolation, the unknown, and the darkness lurking within ordinary people.</p>
 <p>If you've never experienced the visceral power of classic radio drama, "The Big Dive" offers the perfect introduction. Switch off the lights, close your eyes, and let the sound engineers of the Golden Age of Radio carry you down into that diving bell. Twenty-one minutes of pure, unfiltered suspense awaits—no commercials, no distractions, just you and the dark.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

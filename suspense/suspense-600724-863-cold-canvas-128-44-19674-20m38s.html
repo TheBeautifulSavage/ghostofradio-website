@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600724 863 Cold Canvas (128 44) 19674 20m38s — Suspense | Ghost of Radio</title>
+  <title>Cold Canvas (128 44) 19674 20m38s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600724 863 Cold Canvas (128 44) 19674 20m38s — Suspense (CBS, 1967). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600724 863 Cold Canvas (128 44) 19674 20m38s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600724 863 Cold Canvas (128 44) 19674 20m38s — Suspense (CBS, 1967). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 24, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600724 863 Cold Canvas (128 44) 19674 20m38s</h1>
+          <h1 class="episode__title">Cold Canvas (128 44) 19674 20m38s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Cold Canvas</p>
-<p>On a fog-shrouded evening, listeners tuned into CBS to discover a tale of obsession that would chill them to the bone. *Cold Canvas* plunges you into the twilight world of an artist consumed by a singular, maddening vision—a masterpiece that demands completion at any cost. As the drama unfolds, the line between creative passion and psychological unraveling grows perilously thin. The sound design pulls you deeper into a studio thick with tension: the scrape of brushes, the creak of floorboards, whispered confessions that betray a mind teetering on the edge. By the time the final twist arrives, you'll understand why *Suspense* had kept millions of Americans glued to their radios for a quarter-century.</p>
-<p>Though *Suspense* premiered in 1942 and had been a cultural institution for decades, this 1967 episode demonstrates the show's remarkable ability to evolve while maintaining its core brilliance. Even as television monopolized entertainment and radio audiences dwindled, the program refused to fade into obscurity—instead, it deepened its psychological complexity and refined its craft. *Cold Canvas* is a late-period gem, proof that the golden age of radio drama didn't end abruptly but rather transformed into something more sophisticated, more psychologically penetrating. The show's legendary producers and writers understood that the human voice, combined with expert sound work and a compelling narrative, could conjure horror more effectively than any visual medium.</p>
-<p>Step away from your screens and reclaim the lost art of imaginative listening. *Cold Canvas* awaits—twenty minutes of pure, undiluted suspense that will remind you why millions once gathered around their radios for thrills that only the mind could fully appreciate. Press play and surrender to the darkness.</p>
+          <p>On a fog-shrouded evening, listeners tuned into CBS to discover a tale of obsession that would chill them to the bone. Cold Canvas plunges you into the twilight world of an artist consumed by a singular, maddening vision—a masterpiece that demands completion at any cost. As the drama unfolds, the line between creative passion and psychological unraveling grows perilously thin. The sound design pulls you deeper into a studio thick with tension: the scrape of brushes, the creak of floorboards, whispered confessions that betray a mind teetering on the edge. By the time the final twist arrives, you'll understand why Suspense had kept millions of Americans glued to their radios for a quarter-century.</p>
+<p>Though Suspense premiered in 1942 and had been a cultural institution for decades, this 1967 episode demonstrates the show's remarkable ability to evolve while maintaining its core brilliance. Even as television monopolized entertainment and radio audiences dwindled, the program refused to fade into obscurity—instead, it deepened its psychological complexity and refined its craft. Cold Canvas is a late-period gem, proof that the golden age of radio drama didn't end abruptly but rather transformed into something more sophisticated, more psychologically penetrating. The show's legendary producers and writers understood that the human voice, combined with expert sound work and a compelling narrative, could conjure horror more effectively than any visual medium.</p>
+<p>Step away from your screens and reclaim the lost art of imaginative listening. Cold Canvas awaits—twenty minutes of pure, undiluted suspense that will remind you why millions once gathered around their radios for thrills that only the mind could fully appreciate. Press play and surrender to the darkness.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470410 240 Community Property (128 44) 28334 29m53s — Suspense | Ghost of Radio</title>
+  <title>Community Property (128 44) 28334 29m53s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470410 240 Community Property (128 44) 28334 29m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470410 240 Community Property (128 44) 28334 29m53s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470410 240 Community Property (128 44) 28334 29m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 10, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470410 240 Community Property (128 44) 28334 29m53s</h1>
+          <h1 class="episode__title">Community Property (128 44) 28334 29m53s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Community Property</p>
-<p>When a seemingly ordinary marriage begins to crack beneath the surface, a husband and wife find themselves locked in a battle over more than just possessions—they're fighting for control of their very lives. In "Community Property," Suspense delivers a chilling domestic thriller that transforms the sanctity of home into a pressure cooker of suspicion and greed. As the tension mounts and secrets unravel, listeners will discover that the most dangerous enemy often wears a familiar face across the dinner table. The episode crackles with the kind of intimate menace that radio excels at capturing—where the terror isn't found in monsters or criminals, but in the slow realization that the person you trusted most may be your greatest threat.</p>
+          <p>When a seemingly ordinary marriage begins to crack beneath the surface, a husband and wife find themselves locked in a battle over more than just possessions—they're fighting for control of their very lives. In "Community Property," Suspense delivers a chilling domestic thriller that transforms the sanctity of home into a pressure cooker of suspicion and greed. As the tension mounts and secrets unravel, listeners will discover that the most dangerous enemy often wears a familiar face across the dinner table. The episode crackles with the kind of intimate menace that radio excels at capturing—where the terror isn't found in monsters or criminals, but in the slow realization that the person you trusted most may be your greatest threat.</p>
 <p>Suspense premiered on CBS in 1942 and quickly became appointment listening for millions of Americans seeking escape into meticulously crafted tales of psychological terror and moral ambiguity. The show's genius lay in its refusal to offer easy answers or clear-cut villains; instead, each episode peeled back the layers of ordinary life to expose the darkness lurking beneath. With its distinctive opening—the eerie piano flourish and whispered "Suspense!"—the program became the gold standard of radio drama, earning critical acclaim and a devoted following that persisted throughout its two-decade run. "Community Property" exemplifies the show's trademark style: a premise rooted in real human conflicts elevated into something far more sinister through expert writing and haunting performances.</p>
 <p>Tune in and experience why millions of listeners made Suspense an essential part of their evening. In just under thirty minutes, this episode will prove that sometimes the greatest suspense doesn't come from what we fear—it comes from what we think we know.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

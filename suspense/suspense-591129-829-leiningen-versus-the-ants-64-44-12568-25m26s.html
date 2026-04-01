@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 591129 829 Leiningen Versus The Ants (64 44) 12568 25m26s — Suspense | Ghost of Radio</title>
+  <title>Leiningen Versus The Ants (64 44) 12568 25m26s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 591129 829 Leiningen Versus The Ants (64 44) 12568 25m26s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 591129 829 Leiningen Versus The Ants (64 44) 12568 25m26s — Suspense">
   <meta property="og:description" content="Listen to Suspense 591129 829 Leiningen Versus The Ants (64 44) 12568 25m26s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 29, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 591129 829 Leiningen Versus The Ants (64 44) 12568 25m26s</h1>
+          <h1 class="episode__title">Leiningen Versus The Ants (64 44) 12568 25m26s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Leiningen Versus The Ants</p>
-<p>Picture yourself hunched over the radio on a tense November evening in 1941, the static crackling with possibility as an unsettling hum grows louder—the sound of millions of approaching army ants, an unstoppable biological tide advancing toward a South American plantation. In this electrifying episode of *Suspense*, a determined planter named Leiningen must pit his intellect and will against an enemy that recognizes no mercy, no negotiation, only consumption. With water rising and supplies dwindling, our protagonist races against nature's relentless clock, implementing one desperate stratagem after another as the insect swarm encircles his domain. The production's masterful sound design transforms the humble radio speaker into a gateway to primal terror—you'll hear the chittering, crawling mass, the frantic urgency in Leiningen's voice, and the deafening silence of inevitability pressing in from all sides.</p>
-<p>*Suspense*, CBS's legendary anthology series that ran from 1942 to 1962, became the gold standard of American radio drama by adapting literature's most gripping tales and original scripts designed to unsettle the listening public. At just over twenty-five minutes, each episode delivers concentrated dread with remarkable efficiency, relying entirely on voice acting, sound effects, and the listener's imagination to create terror far more vivid than any visual medium could achieve. The show's brilliance lay in its accessibility—broadcast during prime time, *Suspense* reached millions of ordinary Americans seeking thrills without leaving their living rooms, making it a cultural institution that defined an entire generation's relationship with dramatic storytelling.</p>
-<p>Don't miss this masterpiece of existential horror where human ingenuity confronts the blind, overwhelming force of nature. Tune in to *Suspense* and discover why this 1940s broadcast still quickens the pulse today.</p>
+          <p>Picture yourself hunched over the radio on a tense November evening in 1941, the static crackling with possibility as an unsettling hum grows louder—the sound of millions of approaching army ants, an unstoppable biological tide advancing toward a South American plantation. In this electrifying episode of Suspense, a determined planter named Leiningen must pit his intellect and will against an enemy that recognizes no mercy, no negotiation, only consumption. With water rising and supplies dwindling, our protagonist races against nature's relentless clock, implementing one desperate stratagem after another as the insect swarm encircles his domain. The production's masterful sound design transforms the humble radio speaker into a gateway to primal terror—you'll hear the chittering, crawling mass, the frantic urgency in Leiningen's voice, and the deafening silence of inevitability pressing in from all sides.</p>
+<p>Suspense, CBS's legendary anthology series that ran from 1942 to 1962, became the gold standard of American radio drama by adapting literature's most gripping tales and original scripts designed to unsettle the listening public. At just over twenty-five minutes, each episode delivers concentrated dread with remarkable efficiency, relying entirely on voice acting, sound effects, and the listener's imagination to create terror far more vivid than any visual medium could achieve. The show's brilliance lay in its accessibility—broadcast during prime time, Suspense reached millions of ordinary Americans seeking thrills without leaving their living rooms, making it a cultural institution that defined an entire generation's relationship with dramatic storytelling.</p>
+<p>Don't miss this masterpiece of existential horror where human ingenuity confronts the blind, overwhelming force of nature. Tune in to Suspense and discover why this 1940s broadcast still quickens the pulse today.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

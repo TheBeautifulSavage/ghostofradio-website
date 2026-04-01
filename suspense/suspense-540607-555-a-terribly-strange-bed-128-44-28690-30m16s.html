@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 540607 555 A Terribly Strange Bed (128 44) 28690 30m16s — Suspense | Ghost of Radio</title>
+  <title>A Terribly Strange Bed (128 44) 28690 30m16s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 540607 555 A Terribly Strange Bed (128 44) 28690 30m16s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 540607 555 A Terribly Strange Bed (128 44) 28690 30m16s — Suspense">
   <meta property="og:description" content="Listen to Suspense 540607 555 A Terribly Strange Bed (128 44) 28690 30m16s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 7, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 540607 555 A Terribly Strange Bed (128 44) 28690 30m16s</h1>
+          <h1 class="episode__title">A Terribly Strange Bed (128 44) 28690 30m16s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># A Terribly Strange Bed</p>
-<p>Picture this: a weary traveler finds himself in a luxurious Parisian hotel room, grateful for shelter and rest after days of exhausting journey. But as darkness falls and sleep beckons, something sinister awakens in the shadows. The bed itself—ornate, inviting, seemingly innocent—becomes an instrument of unspeakable terror. Based on Wilkie Collins' classic Victorian tale, this thirty-minute descent into nightmare explores the primal fear of vulnerability in sleep, of trust betrayed in the most intimate moments. As the protagonist realizes the deadly mechanism slowly, inexorably closing around him, the tension mounts with each labored breath. You'll hear every creak of the mattress, every whispered threat, the mounting panic of a man trapped by the very thing meant to offer comfort. It's the kind of story that makes you check your own bed before turning out the lights.</p>
-<p>*Suspense*, which dominated American radio from 1942 through 1962, became the gold standard for audio terror, winning the prestigious Peabody Award and captivating millions of listeners in their homes night after night. The show's genius lay in its restraint—with only sound effects, music, and voice acting, producers crafted genuine dread that imagination amplified far beyond what any visual medium could achieve. "A Terribly Strange Bed" exemplifies this mastery, transforming a confined setting into a chamber of horrors through expert pacing and psychological manipulation. The episode's roots in Victorian literature gave it intellectual weight while maintaining pure, visceral suspense.</p>
-<p>The golden age of radio demanded that listeners surrender themselves completely to the unseen, and *Suspense* knew exactly how to exploit that vulnerability. Tune in to experience why this program remained appointment listening for an entire generation, and discover why some stories, freed from the constraints of vision, burrow deepest into the mind.</p>
+          <p>Picture this: a weary traveler finds himself in a luxurious Parisian hotel room, grateful for shelter and rest after days of exhausting journey. But as darkness falls and sleep beckons, something sinister awakens in the shadows. The bed itself—ornate, inviting, seemingly innocent—becomes an instrument of unspeakable terror. Based on Wilkie Collins' classic Victorian tale, this thirty-minute descent into nightmare explores the primal fear of vulnerability in sleep, of trust betrayed in the most intimate moments. As the protagonist realizes the deadly mechanism slowly, inexorably closing around him, the tension mounts with each labored breath. You'll hear every creak of the mattress, every whispered threat, the mounting panic of a man trapped by the very thing meant to offer comfort. It's the kind of story that makes you check your own bed before turning out the lights.</p>
+<p>Suspense, which dominated American radio from 1942 through 1962, became the gold standard for audio terror, winning the prestigious Peabody Award and captivating millions of listeners in their homes night after night. The show's genius lay in its restraint—with only sound effects, music, and voice acting, producers crafted genuine dread that imagination amplified far beyond what any visual medium could achieve. "A Terribly Strange Bed" exemplifies this mastery, transforming a confined setting into a chamber of horrors through expert pacing and psychological manipulation. The episode's roots in Victorian literature gave it intellectual weight while maintaining pure, visceral suspense.</p>
+<p>The golden age of radio demanded that listeners surrender themselves completely to the unseen, and Suspense knew exactly how to exploit that vulnerability. Tune in to experience why this program remained appointment listening for an entire generation, and discover why some stories, freed from the constraints of vision, burrow deepest into the mind.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

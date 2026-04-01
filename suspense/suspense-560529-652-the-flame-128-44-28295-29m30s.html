@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560529 652 The Flame (128 44) 28295 29m30s — Suspense | Ghost of Radio</title>
+  <title>The Flame (128 44) 28295 29m30s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560529 652 The Flame (128 44) 28295 29m30s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560529 652 The Flame (128 44) 28295 29m30s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560529 652 The Flame (128 44) 28295 29m30s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 29, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560529 652 The Flame (128 44) 28295 29m30s</h1>
+          <h1 class="episode__title">The Flame (128 44) 28295 29m30s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Flame</p>
-<p>Picture yourself in a darkened living room, the amber glow of your radio dial the only light as an unsettling orchestra swells through the speaker. In "The Flame," a mystery unfolds that will keep you riveted to every crackling word—a tale of obsession, betrayal, and a love so consuming it threatens to devour everything in its path. As the plot twists tighten around you like smoke, you'll find yourself leaning closer to the radio, straining to catch each whispered confession and accusation. What begins as a story of passion descends into psychological terror, where the greatest danger lurks not in shadows, but in the human heart itself.</p>
-<p>This episode represents *Suspense* at its finest—the program that, for two decades, defined the thriller format for American radio audiences. CBS's masterwork premiered in 1942 with the simple promise: "Tales well calculated to keep you in *Suspense*." What followed was an extraordinary run that attracted Hollywood's finest talent and proved that radio could deliver sophisticated, edge-of-your-seat drama without relying on special effects. Instead, master sound engineers conjured entire worlds through careful layering of footsteps, doors, breathing, and silence itself. Hosted by the legendary Orson Welles in its earliest seasons, *Suspense* influenced countless writers and became the gold standard for dramatic radio—proof that the most terrifying stories are those we hear in our minds' eye.</p>
+          <p>Picture yourself in a darkened living room, the amber glow of your radio dial the only light as an unsettling orchestra swells through the speaker. In "The Flame," a mystery unfolds that will keep you riveted to every crackling word—a tale of obsession, betrayal, and a love so consuming it threatens to devour everything in its path. As the plot twists tighten around you like smoke, you'll find yourself leaning closer to the radio, straining to catch each whispered confession and accusation. What begins as a story of passion descends into psychological terror, where the greatest danger lurks not in shadows, but in the human heart itself.</p>
+<p>This episode represents Suspense at its finest—the program that, for two decades, defined the thriller format for American radio audiences. CBS's masterwork premiered in 1942 with the simple promise: "Tales well calculated to keep you in Suspense." What followed was an extraordinary run that attracted Hollywood's finest talent and proved that radio could deliver sophisticated, edge-of-your-seat drama without relying on special effects. Instead, master sound engineers conjured entire worlds through careful layering of footsteps, doors, breathing, and silence itself. Hosted by the legendary Orson Welles in its earliest seasons, Suspense influenced countless writers and became the gold standard for dramatic radio—proof that the most terrifying stories are those we hear in our minds' eye.</p>
 <p>Don't miss your chance to experience radio drama as it was meant to be heard. Tune in to "The Flame" and rediscover why millions of Americans huddled around their sets, hearts pounding, during radio's golden age. Some thrills are timeless.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

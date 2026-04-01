@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460627 199 Return Trip (128 44) 28486 30m02s — Suspense | Ghost of Radio</title>
+  <title>Return Trip (128 44) 28486 30m02s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460627 199 Return Trip (128 44) 28486 30m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460627 199 Return Trip (128 44) 28486 30m02s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460627 199 Return Trip (128 44) 28486 30m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 27, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460627 199 Return Trip (128 44) 28486 30m02s</h1>
+          <h1 class="episode__title">Return Trip (128 44) 28486 30m02s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Return Trip</p>
-<p>When the static clears and you settle into your chair this evening, prepare yourself for a journey that begins in broad daylight but descends into mounting dread. "Return Trip" pulls you aboard a seemingly ordinary commute that transforms into something far more sinister—a tale where the familiar becomes uncanny, and the everyday world suddenly tilts at a sickening angle. As our protagonist makes what should be a simple journey home, the listener discovers that some trips exact a price that cannot be measured in time or distance. The sound design will draw you deeper into claustrophobia and creeping terror, each footstep and distant voice adding another layer to the mystery.</p>
-<p>CBS's *Suspense* stands as one of the golden age's most influential thriller programs, running from 1942 through 1962 with an extraordinary commitment to psychological horror and narrative ingenuity. Rather than relying solely on monsters or violence, the show's genius lay in its exploration of ordinary people confronted with extraordinary circumstances—the rupture of reality that leaves listeners questioning what they thought they knew. "Return Trip" exemplifies this mastery, arriving during the show's peak years when writers and sound engineers had perfected the art of suggesting terror through implication rather than exposition. Each episode, including this one, became a masterclass in sustaining tension through voice acting, subtle sound effects, and scripts that understood how the human imagination completes the picture far better than any explicit description could.</p>
+          <p>When the static clears and you settle into your chair this evening, prepare yourself for a journey that begins in broad daylight but descends into mounting dread. "Return Trip" pulls you aboard a seemingly ordinary commute that transforms into something far more sinister—a tale where the familiar becomes uncanny, and the everyday world suddenly tilts at a sickening angle. As our protagonist makes what should be a simple journey home, the listener discovers that some trips exact a price that cannot be measured in time or distance. The sound design will draw you deeper into claustrophobia and creeping terror, each footstep and distant voice adding another layer to the mystery.</p>
+<p>CBS's Suspense stands as one of the golden age's most influential thriller programs, running from 1942 through 1962 with an extraordinary commitment to psychological horror and narrative ingenuity. Rather than relying solely on monsters or violence, the show's genius lay in its exploration of ordinary people confronted with extraordinary circumstances—the rupture of reality that leaves listeners questioning what they thought they knew. "Return Trip" exemplifies this mastery, arriving during the show's peak years when writers and sound engineers had perfected the art of suggesting terror through implication rather than exposition. Each episode, including this one, became a masterclass in sustaining tension through voice acting, subtle sound effects, and scripts that understood how the human imagination completes the picture far better than any explicit description could.</p>
 <p>Don't miss "Return Trip"—thirty minutes of pure, uneasy fascination that will linger long after the final dramatic music fades. Tune in, turn off the lights, and let the radio conjure shadows that belong entirely to your own mind.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

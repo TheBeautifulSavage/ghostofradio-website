@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570818 712 Peanut Brittle (128 44) 28519 29m44s Afrs — Suspense | Ghost of Radio</title>
+  <title>Peanut Brittle (128 44) 28519 29m44s Afrs — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570818 712 Peanut Brittle (128 44) 28519 29m44s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570818 712 Peanut Brittle (128 44) 28519 29m44s Afrs — Suspense">
   <meta property="og:description" content="Listen to Suspense 570818 712 Peanut Brittle (128 44) 28519 29m44s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 18, 1957</span>
           </div>
-          <h1 class="episode__title">Suspense 570818 712 Peanut Brittle (128 44) 28519 29m44s Afrs</h1>
+          <h1 class="episode__title">Peanut Brittle (128 44) 28519 29m44s Afrs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Peanut Brittle</p>
-<p>As the familiar Suspense theme wails through your radio speaker—that spine-tingling organ crescendo—you settle into your chair for an evening of delicious dread. Tonight's tale, "Peanut Brittle," promises something deceptively innocent wrapped in sinister intent. What could be more wholesome than homemade candy? Yet within this quarter-hour, the simple pleasures of small-town America will curdle into something far more disturbing. The sound design pulls you close: the crackle of boiling sugar, the murmur of casual conversation, the subtle shift in a voice when true nature reveals itself. By the episode's climax, that innocent confection becomes the instrument of something darker—a reminder that danger lurks not in distant shadows but in the familiar hands of neighbors.</p>
+          <p>As the familiar Suspense theme wails through your radio speaker—that spine-tingling organ crescendo—you settle into your chair for an evening of delicious dread. Tonight's tale, "Peanut Brittle," promises something deceptively innocent wrapped in sinister intent. What could be more wholesome than homemade candy? Yet within this quarter-hour, the simple pleasures of small-town America will curdle into something far more disturbing. The sound design pulls you close: the crackle of boiling sugar, the murmur of casual conversation, the subtle shift in a voice when true nature reveals itself. By the episode's climax, that innocent confection becomes the instrument of something darker—a reminder that danger lurks not in distant shadows but in the familiar hands of neighbors.</p>
 <p>For over two decades, Suspense reigned as CBS's premier thriller program, drawing millions of listeners into carefully crafted nightmares broadcast live into American homes. Each episode was a masterclass in psychological horror, eschewing cheap jump-scares for the slow burn of dread. "Peanut Brittle" exemplifies the show's genius: taking the mundane world of 1940s domesticity and subtly warping it until nothing feels safe. These were stories designed for a nation learning to live with anxiety—radio provided a controlled space where ordinary people could confront their deepest fears, guided by expert writers and performers who understood that imagination was far more terrifying than anything mere scenery could convey.</p>
 <p>Turn down the lights. Let the warm glow of your radio dial be your only companion. "Peanut Brittle" awaits, ready to remind you that suspense isn't found in monsters or dark castles, but in the spaces between what we assume and what is true. This is Suspense.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

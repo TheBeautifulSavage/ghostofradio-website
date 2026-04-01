@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550927 617 The Frightened City (128 44) 22484 23m38s — Suspense | Ghost of Radio</title>
+  <title>The Frightened City (128 44) 22484 23m38s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550927 617 The Frightened City (128 44) 22484 23m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550927 617 The Frightened City (128 44) 22484 23m38s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550927 617 The Frightened City (128 44) 22484 23m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 27, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550927 617 The Frightened City (128 44) 22484 23m38s</h1>
+          <h1 class="episode__title">The Frightened City (128 44) 22484 23m38s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Frightened City</p>
-<p>Picture yourself huddled near your radio on a September evening in 1945, the living room dimmed to shadow. Static crackles, and suddenly you're plunged into a metropolis gripped by inexplicable terror—*The Frightened City*. Unknown horrors stalk the streets after dark, transforming the bustling urban landscape into a maze of paranoia and dread. Citizens barricade themselves indoors as night falls, while the radio broadcasts desperate pleas for information and warnings to stay vigilant. With each passing minute, the mystery deepens: What unseen menace prowls the darkness? Who will survive the night? The sound design—street ambiance punctuated by ominous musical stabs and the frantic voices of frightened urbanites—creates an atmosphere so claustrophobic and suffocating that you'll find yourself glancing toward your windows.</p>
-<p>*Suspense* earned its place as one of radio's greatest achievements precisely because it understood that terror thrives in the listener's imagination. Running from 1942 to 1962, the show became legendary for its sophisticated writing, superb ensemble casts, and the principle that what you *don't* see is infinitely more frightening than what you do. Episodes like *The Frightened City* demonstrate the show's mastery of building psychological dread—not relying on cheap shocks but rather on mounting tension, credible characters facing incomprehensible circumstances, and the primal fear of the unknown. The show's influence echoed through decades of horror and thriller entertainment.</p>
-<p>If you haven't experienced *Suspense*, this 23-minute journey into urban terror is the perfect introduction. Let the actors' voices guide you into darkness, and discover why millions of listeners made it must-listen radio. Turn off the lights, turn up the volume, and prepare to be truly *suspended* between reason and fear.</p>
+          <p>Picture yourself huddled near your radio on a September evening in 1945, the living room dimmed to shadow. Static crackles, and suddenly you're plunged into a metropolis gripped by inexplicable terror—The Frightened City. Unknown horrors stalk the streets after dark, transforming the bustling urban landscape into a maze of paranoia and dread. Citizens barricade themselves indoors as night falls, while the radio broadcasts desperate pleas for information and warnings to stay vigilant. With each passing minute, the mystery deepens: What unseen menace prowls the darkness? Who will survive the night? The sound design—street ambiance punctuated by ominous musical stabs and the frantic voices of frightened urbanites—creates an atmosphere so claustrophobic and suffocating that you'll find yourself glancing toward your windows.</p>
+<p>Suspense earned its place as one of radio's greatest achievements precisely because it understood that terror thrives in the listener's imagination. Running from 1942 to 1962, the show became legendary for its sophisticated writing, superb ensemble casts, and the principle that what you don't see is infinitely more frightening than what you do. Episodes like The Frightened City demonstrate the show's mastery of building psychological dread—not relying on cheap shocks but rather on mounting tension, credible characters facing incomprehensible circumstances, and the primal fear of the unknown. The show's influence echoed through decades of horror and thriller entertainment.</p>
+<p>If you haven't experienced Suspense, this 23-minute journey into urban terror is the perfect introduction. Let the actors' voices guide you into darkness, and discover why millions of listeners made it must-listen radio. Turn off the lights, turn up the volume, and prepare to be truly suspended between reason and fear.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

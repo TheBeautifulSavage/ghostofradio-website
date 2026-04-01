@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440525 093 Donovan's Brain, Part Two (128 44) 28118 29m39s — Suspense | Ghost of Radio</title>
+  <title>Donovan's Brain, Part Two (128 44) 28118 29m39s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440525 093 Donovan's Brain, Part Two (128 44) 28118 29m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440525 093 Donovan's Brain, Part Two (128 44) 28118 29m39s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440525 093 Donovan's Brain, Part Two (128 44) 28118 29m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 25, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440525 093 Donovan's Brain, Part Two (128 44) 28118 29m39s</h1>
+          <h1 class="episode__title">Donovan's Brain, Part Two (128 44) 28118 29m39s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Donovan's Brain, Part Two</p>
-<p>Picture yourself hunched over a wooden radio console in the gathering darkness of evening, the dial glowing amber as an unsettling organ theme swells from the speaker. In this second installment of "Donovan's Brain," the nightmare deepens as a brilliant scientist finds himself trapped in a psychological war with the disembodied mind of a ruthless criminal kept artificially alive in a laboratory tank. What begins as a triumph of modern science becomes a descent into madness and dread. The voice acting crackles with barely contained terror—whispered conversations, mounting paranoia, and the relentless presence of an intelligence that exists beyond the boundaries of flesh and mortality. With nearly thirty minutes of uninterrupted tension, this episode builds upon the previous week's cliffhanger with claustrophobic intensity, exploring themes of ambition, control, and the sinister potential lurking beneath scientific progress.</p>
-<p>"Suspense" was CBS Radio's flagship thriller program for two decades, pioneering the art of audio horror and psychological drama at a time when radio still commanded the American imagination. Adapted from Curt Siodmak's 1942 novel, "Donovan's Brain" became one of the series' most celebrated storylines, later immortalized in film. The show's genius lay in what listeners *couldn't* see—the power of suggestion, sound design, and skilled performers conjuring genuine terror through nothing but voices and ambient sound. These episodes represent the golden age of radio drama, when millions would abandon other plans to tune in and experience genuine suspense.</p>
+          <p>Picture yourself hunched over a wooden radio console in the gathering darkness of evening, the dial glowing amber as an unsettling organ theme swells from the speaker. In this second installment of "Donovan's Brain," the nightmare deepens as a brilliant scientist finds himself trapped in a psychological war with the disembodied mind of a ruthless criminal kept artificially alive in a laboratory tank. What begins as a triumph of modern science becomes a descent into madness and dread. The voice acting crackles with barely contained terror—whispered conversations, mounting paranoia, and the relentless presence of an intelligence that exists beyond the boundaries of flesh and mortality. With nearly thirty minutes of uninterrupted tension, this episode builds upon the previous week's cliffhanger with claustrophobic intensity, exploring themes of ambition, control, and the sinister potential lurking beneath scientific progress.</p>
+<p>"Suspense" was CBS Radio's flagship thriller program for two decades, pioneering the art of audio horror and psychological drama at a time when radio still commanded the American imagination. Adapted from Curt Siodmak's 1942 novel, "Donovan's Brain" became one of the series' most celebrated storylines, later immortalized in film. The show's genius lay in what listeners couldn't see—the power of suggestion, sound design, and skilled performers conjuring genuine terror through nothing but voices and ambient sound. These episodes represent the golden age of radio drama, when millions would abandon other plans to tune in and experience genuine suspense.</p>
 <p>Don't miss the continuation of this unforgettable tale. Settle in, dim the lights, and discover why an entire generation credited "Suspense" with their most memorable frights. Some stories demand to be heard in the dark.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

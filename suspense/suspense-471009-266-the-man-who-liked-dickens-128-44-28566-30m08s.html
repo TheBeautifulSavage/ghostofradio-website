@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 471009 266 The Man Who Liked Dickens (128 44) 28566 30m08s — Suspense | Ghost of Radio</title>
+  <title>The Man Who Liked Dickens (128 44) 28566 30m08s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 471009 266 The Man Who Liked Dickens (128 44) 28566 30m08s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 471009 266 The Man Who Liked Dickens (128 44) 28566 30m08s — Suspense">
   <meta property="og:description" content="Listen to Suspense 471009 266 The Man Who Liked Dickens (128 44) 28566 30m08s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 9, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 471009 266 The Man Who Liked Dickens (128 44) 28566 30m08s</h1>
+          <h1 class="episode__title">The Man Who Liked Dickens (128 44) 28566 30m08s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Man Who Liked Dickens</p>
-<p>Deep in the heart of the South American jungle, where civilization dissolves into shadow and madness, a mysterious scholar harbors a dangerous obsession. *The Man Who Liked Dickens* plunges listeners into an atmosphere of suffocating dread, where the boundary between intellectual passion and psychological torment blurs into something utterly terrifying. As our protagonist becomes ensnared in the twisted world of a reclusive gentleman whose devotion to Charles Dickens masks something far more sinister, the familiar comfort of literature transforms into a weapon of psychological warfare. What begins as a chance encounter becomes a battle of wits played out in isolation, where every quotation from *Great Expectations* and *David Copperfield* carries menace, and escape seems impossible. The dense jungle pressing in from all sides mirrors the tightening noose of the plot—a masterclass in claustrophobic terror delivered through the intimacy of radio.</p>
-<p>*Suspense* earned its reputation as CBS's premier anthology series by delivering precisely this kind of literary sophistication married to genuine fright. Broadcasting from 1942 through 1962, the show became a cultural institution, attracting not only A-list Hollywood talent but also stories adapted from prestigious authors and original scripts that rivaled any published thriller. The program's genius lay in its understanding that the most effective horror exists in suggestion rather than spectacle—what listeners *imagined* in the darkness of their homes proved far more frightening than any sound effect could convey. *The Man Who Liked Dickens* exemplifies this approach, transforming a protagonist's love of literature into the very mechanism of his doom.</p>
+          <p>Deep in the heart of the South American jungle, where civilization dissolves into shadow and madness, a mysterious scholar harbors a dangerous obsession. The Man Who Liked Dickens plunges listeners into an atmosphere of suffocating dread, where the boundary between intellectual passion and psychological torment blurs into something utterly terrifying. As our protagonist becomes ensnared in the twisted world of a reclusive gentleman whose devotion to Charles Dickens masks something far more sinister, the familiar comfort of literature transforms into a weapon of psychological warfare. What begins as a chance encounter becomes a battle of wits played out in isolation, where every quotation from Great Expectations and David Copperfield carries menace, and escape seems impossible. The dense jungle pressing in from all sides mirrors the tightening noose of the plot—a masterclass in claustrophobic terror delivered through the intimacy of radio.</p>
+<p>Suspense earned its reputation as CBS's premier anthology series by delivering precisely this kind of literary sophistication married to genuine fright. Broadcasting from 1942 through 1962, the show became a cultural institution, attracting not only A-list Hollywood talent but also stories adapted from prestigious authors and original scripts that rivaled any published thriller. The program's genius lay in its understanding that the most effective horror exists in suggestion rather than spectacle—what listeners imagined in the darkness of their homes proved far more frightening than any sound effect could convey. The Man Who Liked Dickens exemplifies this approach, transforming a protagonist's love of literature into the very mechanism of his doom.</p>
 <p>Don your headphones and venture into that humid, oppressive jungle. You'll never read Dickens the same way again.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

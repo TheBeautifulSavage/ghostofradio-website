@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 500413 380 Six Feet Under (128 44) 28528 29m42s — Suspense | Ghost of Radio</title>
+  <title>Six Feet Under (128 44) 28528 29m42s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 500413 380 Six Feet Under (128 44) 28528 29m42s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 500413 380 Six Feet Under (128 44) 28528 29m42s — Suspense">
   <meta property="og:description" content="Listen to Suspense 500413 380 Six Feet Under (128 44) 28528 29m42s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 13, 1950</span>
           </div>
-          <h1 class="episode__title">Suspense 500413 380 Six Feet Under (128 44) 28528 29m42s</h1>
+          <h1 class="episode__title">Six Feet Under (128 44) 28528 29m42s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Six Feet Under</p>
-<p>Picture this: the muffled darkness of an underground tomb, where a man awakens to the horrifying realization that he's been buried alive. What unfolds in this thirty-minute descent into nightmare is a masterclass in claustrophobic terror—a psychological thriller that traps both character and listener in the suffocating confines of a coffin. "Six Feet Under" exploits one of humanity's deepest primal fears, building tension not through orchestral shrieking or ghoulish sound effects, but through the desperate, ragged breathing of a man fighting against the impossible: wooden walls pressing in from all sides, and the terrible knowledge that no one knows where he is. The writhing desperation in the protagonist's voice transforms a simple premise into an unbearable exercise in dread, where the most devastating moments come not from what happens to him, but from what might.</p>
+          <p>Picture this: the muffled darkness of an underground tomb, where a man awakens to the horrifying realization that he's been buried alive. What unfolds in this thirty-minute descent into nightmare is a masterclass in claustrophobic terror—a psychological thriller that traps both character and listener in the suffocating confines of a coffin. "Six Feet Under" exploits one of humanity's deepest primal fears, building tension not through orchestral shrieking or ghoulish sound effects, but through the desperate, ragged breathing of a man fighting against the impossible: wooden walls pressing in from all sides, and the terrible knowledge that no one knows where he is. The writhing desperation in the protagonist's voice transforms a simple premise into an unbearable exercise in dread, where the most devastating moments come not from what happens to him, but from what might.</p>
 <p>Suspense earned its legendary reputation by trafficking in exactly this kind of psychological precision. CBS's landmark thriller series, running from 1942 through 1962, pioneered the art of making listeners' skin crawl through intimate vocal performance and clever sound design rather than cheap scares. "Six Feet Under" exemplifies why the show became essential listening during radio's golden age—it understands that genuine terror lives in the space between heartbeats, in the pauses where imagination runs wild. Each episode was meticulously crafted to burrow into the listener's mind, transforming comfortable living rooms into chambers of anxiety.</p>
 <p>If you've never experienced the raw power of classic radio drama, this episode offers the perfect entry point—a tight, relentless narrative that proves some of the most effective horror ever produced required nothing but a microphone, darkness, and a gifted voice actor's ability to convey absolute panic. Tune in, dim the lights, and discover why audiences huddled around their radios at 9:30 PM on Thursday nights, utterly transfixed.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

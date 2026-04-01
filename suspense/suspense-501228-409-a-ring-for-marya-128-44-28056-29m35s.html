@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 501228 409 A Ring For Marya (128 44) 28056 29m35s — Suspense | Ghost of Radio</title>
+  <title>A Ring For Marya (128 44) 28056 29m35s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 501228 409 A Ring For Marya (128 44) 28056 29m35s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 501228 409 A Ring For Marya (128 44) 28056 29m35s — Suspense">
   <meta property="og:description" content="Listen to Suspense 501228 409 A Ring For Marya (128 44) 28056 29m35s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 28, 1950</span>
           </div>
-          <h1 class="episode__title">Suspense 501228 409 A Ring For Marya (128 44) 28056 29m35s</h1>
+          <h1 class="episode__title">A Ring For Marya (128 44) 28056 29m35s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># A Ring For Marya</p>
-<p>As the familiar creeping violin strains of the *Suspense* theme fade into the darkness of your living room, you find yourself drawn into the intimate world of Marya—a woman whose desperate desire for love may cost her everything. What begins as a tender romance, whispered promises, and the glint of an offered ring soon twists into something far more sinister. A mysterious suitor appears with seemingly perfect intentions, but something about his courtship doesn't quite add up. The dialogue crackles with barely concealed menace, each compliment laden with hidden meaning, each gesture pregnant with dread. As the episode unfolds, listeners will find themselves caught between hope and horror, never quite certain whether Marya has found true love or fallen prey to something far more dangerous. The radio medium works its dark magic here—what you *don't* see becomes far more terrifying than what you do.</p>
-<p>*Suspense* earned its reputation as CBS's most reliably thrilling program through episodes like this one, where the mundane rituals of courtship become vehicles for psychological terror. Airing during the golden age of radio drama in the late 1940s, the show understood that true suspense lives not in explosions or visible violence, but in the spaces between words, in the ambiguity of human intention. With some of Hollywood's finest actors rotating through each week's roles, *Suspense* delivered sophisticated horror that appealed to adult audiences seeking intelligent entertainment during an era when radio still commanded the nation's attention after dark.</p>
-<p>If you've never experienced the particular thrill of *Suspense*—that delicious uncertainty, that mounting dread transmitted directly into your home through a single speaker—"A Ring for Marya" makes an excellent place to begin. Settle in, dim the lights, and discover why millions of Americans made this their appointment with terror every week.</p>
+          <p>As the familiar creeping violin strains of the Suspense theme fade into the darkness of your living room, you find yourself drawn into the intimate world of Marya—a woman whose desperate desire for love may cost her everything. What begins as a tender romance, whispered promises, and the glint of an offered ring soon twists into something far more sinister. A mysterious suitor appears with seemingly perfect intentions, but something about his courtship doesn't quite add up. The dialogue crackles with barely concealed menace, each compliment laden with hidden meaning, each gesture pregnant with dread. As the episode unfolds, listeners will find themselves caught between hope and horror, never quite certain whether Marya has found true love or fallen prey to something far more dangerous. The radio medium works its dark magic here—what you don't see becomes far more terrifying than what you do.</p>
+<p>Suspense earned its reputation as CBS's most reliably thrilling program through episodes like this one, where the mundane rituals of courtship become vehicles for psychological terror. Airing during the golden age of radio drama in the late 1940s, the show understood that true suspense lives not in explosions or visible violence, but in the spaces between words, in the ambiguity of human intention. With some of Hollywood's finest actors rotating through each week's roles, Suspense delivered sophisticated horror that appealed to adult audiences seeking intelligent entertainment during an era when radio still commanded the nation's attention after dark.</p>
+<p>If you've never experienced the particular thrill of Suspense—that delicious uncertainty, that mounting dread transmitted directly into your home through a single speaker—"A Ring for Marya" makes an excellent place to begin. Settle in, dim the lights, and discover why millions of Americans made this their appointment with terror every week.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

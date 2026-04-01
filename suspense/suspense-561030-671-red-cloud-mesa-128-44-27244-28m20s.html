@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 561030 671 Red Cloud Mesa (128 44) 27244 28m20s — Suspense | Ghost of Radio</title>
+  <title>Red Cloud Mesa (128 44) 27244 28m20s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 561030 671 Red Cloud Mesa (128 44) 27244 28m20s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 561030 671 Red Cloud Mesa (128 44) 27244 28m20s — Suspense">
   <meta property="og:description" content="Listen to Suspense 561030 671 Red Cloud Mesa (128 44) 27244 28m20s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 30, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 561030 671 Red Cloud Mesa (128 44) 27244 28m20s</h1>
+          <h1 class="episode__title">Red Cloud Mesa (128 44) 27244 28m20s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Red Cloud Mesa</p>
-<p>As darkness falls over the desolate Arizona landscape, a stranger's arrival at a remote trading post sets in motion a chain of events that will test the bonds of loyalty and survival. *Red Cloud Mesa* thrusts listeners into an atmosphere thick with isolation and mounting dread, where whispered accusations and suspicious glances crackle through every scene like heat lightning. The mesa itself becomes a character—looming, ancient, and somehow complicit in the sinister forces gathering around the trading post. You'll find yourself gripping the radio dial as an innocent man faces not just the accusation of murder, but the very real possibility that he may become the mob's next victim. With superb sound design and pacing that never lets the tension ease, this episode demonstrates why *Suspense* held America's ears captive for two decades.</p>
-<p>*Suspense* premiered in 1942 as CBS's answer to audience hunger for intelligent, sophisticated thrills—and it delivered with remarkable consistency. Drawing on mystery, psychological terror, and the raw power of the human voice to conjure fear, the series became appointment listening for millions. By the late 1940s, when "Red Cloud Mesa" aired, the show had perfected its craft, employing first-rate writers, skilled character actors, and innovative sound engineers. Each episode proved that radio's greatest strength wasn't visual spectacle but imagination itself—the listener's mind became the stage for horrors far more potent than any Hollywood set could produce.</p>
-<p>Don't miss your chance to experience this masterpiece of American radio drama. Tune in to *Suspense: Red Cloud Mesa* and discover why this episode remains a sterling example of the golden age of broadcasting—when storytelling was an art form, and the only special effect you needed was a good script and a brilliant cast.</p>
+          <p>As darkness falls over the desolate Arizona landscape, a stranger's arrival at a remote trading post sets in motion a chain of events that will test the bonds of loyalty and survival. Red Cloud Mesa thrusts listeners into an atmosphere thick with isolation and mounting dread, where whispered accusations and suspicious glances crackle through every scene like heat lightning. The mesa itself becomes a character—looming, ancient, and somehow complicit in the sinister forces gathering around the trading post. You'll find yourself gripping the radio dial as an innocent man faces not just the accusation of murder, but the very real possibility that he may become the mob's next victim. With superb sound design and pacing that never lets the tension ease, this episode demonstrates why Suspense held America's ears captive for two decades.</p>
+<p>Suspense premiered in 1942 as CBS's answer to audience hunger for intelligent, sophisticated thrills—and it delivered with remarkable consistency. Drawing on mystery, psychological terror, and the raw power of the human voice to conjure fear, the series became appointment listening for millions. By the late 1940s, when "Red Cloud Mesa" aired, the show had perfected its craft, employing first-rate writers, skilled character actors, and innovative sound engineers. Each episode proved that radio's greatest strength wasn't visual spectacle but imagination itself—the listener's mind became the stage for horrors far more potent than any Hollywood set could produce.</p>
+<p>Don't miss your chance to experience this masterpiece of American radio drama. Tune in to Suspense: Red Cloud Mesa and discover why this episode remains a sterling example of the golden age of broadcasting—when storytelling was an art form, and the only special effect you needed was a good script and a brilliant cast.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

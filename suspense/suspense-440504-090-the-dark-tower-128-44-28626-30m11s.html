@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440504 090 The Dark Tower (128 44) 28626 30m11s — Suspense | Ghost of Radio</title>
+  <title>The Dark Tower (128 44) 28626 30m11s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440504 090 The Dark Tower (128 44) 28626 30m11s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440504 090 The Dark Tower (128 44) 28626 30m11s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440504 090 The Dark Tower (128 44) 28626 30m11s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 4, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440504 090 The Dark Tower (128 44) 28626 30m11s</h1>
+          <h1 class="episode__title">The Dark Tower (128 44) 28626 30m11s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Dark Tower</p>
-<p>As midnight strikes and rain hammers against London's Gothic rooftops, a man climbs the spiral stairs of an ancient tower, each step echoing with dread. *Suspense* presents "The Dark Tower," a masterwork of atmospheric terror where shadows seem to whisper and every creak of aged wood threatens unspeakable horror. The protagonist finds himself trapped in a labyrinth of secrets, pursued by forces both human and inexplicable, while the tower itself becomes a character—oppressive, malevolent, closing in with each passing moment. This 1940s broadcast captures the essence of what made radio's golden age truly golden: the power of suggestion, the terrifying gaps filled by imagination, and performances so genuine you can hear the perspiration and fear in every gasped breath.</p>
-<p>*Suspense* ran for twenty years as one of broadcasting's most consistently excellent thrillers, perfecting the art of psychological terror when television wouldn't exist for another decade. The show's genius lay in its understanding that the most frightening monsters live in the listener's mind—a creaking door becomes infinitely more menacing than any crude sound effect, a pause in dialogue more unsettling than screams. "The Dark Tower" exemplifies this mastery, using the confined space of a medieval tower to create mounting claustrophobia and paranoia. Broadcast in the 1940s, when radio was still the dominant form of mass entertainment, episodes like this commanded the rapt attention of entire households gathered around their receivers, proving that invisible terror was far more potent than anything a camera could capture.</p>
-<p>Don't miss this haunting descent into madness and mystery. Tune in to *Suspense* and experience why audiences of the 1940s spent their evenings in delicious fright, knowing that sometimes the most terrifying stories are the ones we imagine ourselves.</p>
+          <p>As midnight strikes and rain hammers against London's Gothic rooftops, a man climbs the spiral stairs of an ancient tower, each step echoing with dread. Suspense presents "The Dark Tower," a masterwork of atmospheric terror where shadows seem to whisper and every creak of aged wood threatens unspeakable horror. The protagonist finds himself trapped in a labyrinth of secrets, pursued by forces both human and inexplicable, while the tower itself becomes a character—oppressive, malevolent, closing in with each passing moment. This 1940s broadcast captures the essence of what made radio's golden age truly golden: the power of suggestion, the terrifying gaps filled by imagination, and performances so genuine you can hear the perspiration and fear in every gasped breath.</p>
+<p>Suspense ran for twenty years as one of broadcasting's most consistently excellent thrillers, perfecting the art of psychological terror when television wouldn't exist for another decade. The show's genius lay in its understanding that the most frightening monsters live in the listener's mind—a creaking door becomes infinitely more menacing than any crude sound effect, a pause in dialogue more unsettling than screams. "The Dark Tower" exemplifies this mastery, using the confined space of a medieval tower to create mounting claustrophobia and paranoia. Broadcast in the 1940s, when radio was still the dominant form of mass entertainment, episodes like this commanded the rapt attention of entire households gathered around their receivers, proving that invisible terror was far more potent than anything a camera could capture.</p>
+<p>Don't miss this haunting descent into madness and mystery. Tune in to Suspense and experience why audiences of the 1940s spent their evenings in delicious fright, knowing that sometimes the most terrifying stories are the ones we imagine ourselves.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

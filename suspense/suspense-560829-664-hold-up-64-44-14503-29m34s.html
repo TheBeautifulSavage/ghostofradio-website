@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560829 664 Hold Up (64 44) 14503 29m34s — Suspense | Ghost of Radio</title>
+  <title>Hold Up (64 44) 14503 29m34s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560829 664 Hold Up (64 44) 14503 29m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560829 664 Hold Up (64 44) 14503 29m34s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560829 664 Hold Up (64 44) 14503 29m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 29, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560829 664 Hold Up (64 44) 14503 29m34s</h1>
+          <h1 class="episode__title">Hold Up (64 44) 14503 29m34s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Hold Up</p>
-<p>As the distinctive creaking door and ominous musical stab announce another evening of terror, listeners in 1940s America settle in for a tale of desperation and danger. In *Hold Up*, the carefully ordered world of an ordinary person shatters in moments when a gun-wielding criminal forces his way into their life. What begins as a routine night becomes a nightmare of tension and moral complexity, where every word spoken could be the difference between life and death. The superb cast—masters of conveying psychological terror through voice alone—will have you gripping your armrest as the minutes tick by. With no visual distractions, only the raw power of dialogue, sound effects, and that masterful orchestral score, you'll experience suspense in its purest form: the kind that plays entirely in your imagination, making it far more terrifying than anything you could see on a screen.</p>
-<p>For two decades, *Suspense* dominated America's airwaves as the gold standard of dramatic radio thrills. Premiering in 1942 on CBS, the series became a cultural phenomenon by refusing to rely on supernatural gimmicks or elaborate fantasy—instead, it found horror in the psychological realities of everyday life. Criminals, blackmailers, desperate people, and ordinary citizens pushed to their breaking points populated each episode. The show's unflinching exploration of human vulnerability and moral ambiguity resonated deeply with wartime and postwar audiences, earning critical acclaim and sponsorship by leading brands. Episodes like *Hold Up* exemplify why the series remained appointment listening for millions.</p>
-<p>Now you can experience the same electric dread that captivated listeners over seventy years ago. Press play, dim the lights, and let your mind conjure the shadows—*Suspense* promises thirty minutes of the kind of genuine, intelligent terror that has only grown more potent with age.</p>
+          <p>As the distinctive creaking door and ominous musical stab announce another evening of terror, listeners in 1940s America settle in for a tale of desperation and danger. In Hold Up, the carefully ordered world of an ordinary person shatters in moments when a gun-wielding criminal forces his way into their life. What begins as a routine night becomes a nightmare of tension and moral complexity, where every word spoken could be the difference between life and death. The superb cast—masters of conveying psychological terror through voice alone—will have you gripping your armrest as the minutes tick by. With no visual distractions, only the raw power of dialogue, sound effects, and that masterful orchestral score, you'll experience suspense in its purest form: the kind that plays entirely in your imagination, making it far more terrifying than anything you could see on a screen.</p>
+<p>For two decades, Suspense dominated America's airwaves as the gold standard of dramatic radio thrills. Premiering in 1942 on CBS, the series became a cultural phenomenon by refusing to rely on supernatural gimmicks or elaborate fantasy—instead, it found horror in the psychological realities of everyday life. Criminals, blackmailers, desperate people, and ordinary citizens pushed to their breaking points populated each episode. The show's unflinching exploration of human vulnerability and moral ambiguity resonated deeply with wartime and postwar audiences, earning critical acclaim and sponsorship by leading brands. Episodes like Hold Up exemplify why the series remained appointment listening for millions.</p>
+<p>Now you can experience the same electric dread that captivated listeners over seventy years ago. Press play, dim the lights, and let your mind conjure the shadows—Suspense promises thirty minutes of the kind of genuine, intelligent terror that has only grown more potent with age.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

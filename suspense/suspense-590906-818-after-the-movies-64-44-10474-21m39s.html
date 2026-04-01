@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 590906 818 After The Movies (64 44) 10474 21m39s — Suspense | Ghost of Radio</title>
+  <title>After The Movies (64 44) 10474 21m39s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 590906 818 After The Movies (64 44) 10474 21m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 590906 818 After The Movies (64 44) 10474 21m39s — Suspense">
   <meta property="og:description" content="Listen to Suspense 590906 818 After The Movies (64 44) 10474 21m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 6, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 590906 818 After The Movies (64 44) 10474 21m39s</h1>
+          <h1 class="episode__title">After The Movies (64 44) 10474 21m39s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># After the Movies</p>
-<p>Picture this: it's a cool autumn evening, and you've just left the cinema with your date, the marquee lights fading behind you as you stroll down a quiet street. The glow of streetlamps casts long shadows across empty sidewalks, and somewhere in the darkness, something sinister is unfolding. In "After the Movies," CBS's *Suspense* takes that innocent moment of romantic bliss and twists it into something far more chilling. What begins as a tender walk home deteriorates into a nightmare of paranoia, danger, and the creeping realization that evil doesn't announce itself—it waits in the spaces between the familiar and the unknown. Every footstep echoing behind you, every shadow that moves a fraction too slowly, becomes a potential threat in this masterclass of psychological terror.</p>
-<p>*Suspense* arrived on CBS in 1942 at a moment when American audiences desperately needed escape—and fear. The show became television's predecessor, a towering achievement in audio drama that would influence generations of storytellers. With its iconic opening of creaking doors and ominous music, each episode delivered exactly what the title promised: suspense so palpable you could feel your heart quicken in the safety of your living room. "After the Movies" exemplifies the show's genius for finding horror in the mundane, transforming everyday experiences into crucibles of dread. The writers understood that the most terrifying stories aren't about monsters lurking in distant castles, but about the darkness hiding in plain sight.</p>
-<p>Turn off the lights, settle in close to your radio, and prepare yourself for twenty-one minutes that will make you question every shadow on your own street. *Suspense* awaits.</p>
+          <p>Picture this: it's a cool autumn evening, and you've just left the cinema with your date, the marquee lights fading behind you as you stroll down a quiet street. The glow of streetlamps casts long shadows across empty sidewalks, and somewhere in the darkness, something sinister is unfolding. In "After the Movies," CBS's Suspense takes that innocent moment of romantic bliss and twists it into something far more chilling. What begins as a tender walk home deteriorates into a nightmare of paranoia, danger, and the creeping realization that evil doesn't announce itself—it waits in the spaces between the familiar and the unknown. Every footstep echoing behind you, every shadow that moves a fraction too slowly, becomes a potential threat in this masterclass of psychological terror.</p>
+<p>Suspense arrived on CBS in 1942 at a moment when American audiences desperately needed escape—and fear. The show became television's predecessor, a towering achievement in audio drama that would influence generations of storytellers. With its iconic opening of creaking doors and ominous music, each episode delivered exactly what the title promised: suspense so palpable you could feel your heart quicken in the safety of your living room. "After the Movies" exemplifies the show's genius for finding horror in the mundane, transforming everyday experiences into crucibles of dread. The writers understood that the most terrifying stories aren't about monsters lurking in distant castles, but about the darkness hiding in plain sight.</p>
+<p>Turn off the lights, settle in close to your radio, and prepare yourself for twenty-one minutes that will make you question every shadow on your own street. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

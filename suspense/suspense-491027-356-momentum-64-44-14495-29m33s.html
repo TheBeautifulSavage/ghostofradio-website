@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 491027 356 Momentum (64 44) 14495 29m33s — Suspense | Ghost of Radio</title>
+  <title>Momentum (64 44) 14495 29m33s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 491027 356 Momentum (64 44) 14495 29m33s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 491027 356 Momentum (64 44) 14495 29m33s — Suspense">
   <meta property="og:description" content="Listen to Suspense 491027 356 Momentum (64 44) 14495 29m33s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 27, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 491027 356 Momentum (64 44) 14495 29m33s</h1>
+          <h1 class="episode__title">Momentum (64 44) 14495 29m33s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Momentum</p>
-<p>Picture yourself settled into your living room on a cool autumn evening, the amber glow of your radio dial cutting through the darkness. As the familiar Suspense theme swells—that spine-tingling orchestral sting that has become the signature of Thursday night terror—you lean forward in anticipation. Tonight's episode, "Momentum," plunges you into a psychological thriller where unstoppable force meets immovable object, where ordinary circumstances spiral into something far more sinister. A seemingly simple premise develops with relentless intensity, each scene building upon the last like a boulder rolling downhill, gathering speed and crushing everything in its path. The talented cast delivers performances that blur the line between sanity and obsession, their voices alone conjuring an atmosphere thick with dread and moral ambiguity. You won't know whether to root for or fear the protagonist by the time the final twist arrives.</p>
+          <p>Picture yourself settled into your living room on a cool autumn evening, the amber glow of your radio dial cutting through the darkness. As the familiar Suspense theme swells—that spine-tingling orchestral sting that has become the signature of Thursday night terror—you lean forward in anticipation. Tonight's episode, "Momentum," plunges you into a psychological thriller where unstoppable force meets immovable object, where ordinary circumstances spiral into something far more sinister. A seemingly simple premise develops with relentless intensity, each scene building upon the last like a boulder rolling downhill, gathering speed and crushing everything in its path. The talented cast delivers performances that blur the line between sanity and obsession, their voices alone conjuring an atmosphere thick with dread and moral ambiguity. You won't know whether to root for or fear the protagonist by the time the final twist arrives.</p>
 <p>Suspense arrived during radio's golden age, when CBS understood that the human imagination was far more powerful than any visual effect. From 1942 onward, the show became a masterclass in psychological horror, eschewing cheap thrills for intelligent, character-driven narratives that explored the darker corners of human nature. "Momentum" exemplifies why the series earned its place alongside The Shadow and Inner Sanctum as essential listening for thriller devotees. The writers understood that true suspense emerges not from monsters or ghosts, but from the inexorable logic of circumstance and the fragile psychology of ordinary people caught in extraordinary situations.</p>
 <p>Don't miss this gripping installment from the show that defined a genre and captivated millions of listeners through the golden age of American radio. Tune in to "Momentum" and discover why Suspense remained appointment listening for nearly two decades—where every episode promised that anything could happen, and often did.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

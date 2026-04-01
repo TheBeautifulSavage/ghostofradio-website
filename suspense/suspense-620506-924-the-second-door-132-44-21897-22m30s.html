@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620506 924 The Second Door (132 44) 21897 22m30s — Suspense | Ghost of Radio</title>
+  <title>The Second Door (132 44) 21897 22m30s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620506 924 The Second Door (132 44) 21897 22m30s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620506 924 The Second Door (132 44) 21897 22m30s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620506 924 The Second Door (132 44) 21897 22m30s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 6, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620506 924 The Second Door (132 44) 21897 22m30s</h1>
+          <h1 class="episode__title">The Second Door (132 44) 21897 22m30s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Second Door</p>
-<p>As the familiar Suspense theme crackles through your radio speaker—those ominous organ notes building like a gathering storm—you're drawn into a tale of claustrophobia and impossible choices. In "The Second Door," an ordinary person faces an extraordinary nightmare: locked in a room with only two exits, one leading to salvation and one to certain doom, with no way to know which is which. The tension mounts with each passing moment as our protagonist grapples with the paralyzing logic of their predicament. Will intuition guide them? Will desperation cloud their judgment? The ticking clock of their circumstances becomes almost audible, and you'll find yourself leaning closer to the radio, your heart quickening with every agonizing decision.</p>
+          <p>As the familiar Suspense theme crackles through your radio speaker—those ominous organ notes building like a gathering storm—you're drawn into a tale of claustrophobia and impossible choices. In "The Second Door," an ordinary person faces an extraordinary nightmare: locked in a room with only two exits, one leading to salvation and one to certain doom, with no way to know which is which. The tension mounts with each passing moment as our protagonist grapples with the paralyzing logic of their predicament. Will intuition guide them? Will desperation cloud their judgment? The ticking clock of their circumstances becomes almost audible, and you'll find yourself leaning closer to the radio, your heart quickening with every agonizing decision.</p>
 <p>For over two decades, Suspense maintained its stranglehold on American radio audiences by understanding a fundamental truth: the most terrifying threats are often those that lurk within everyday situations, twisted into nightmarish scenarios. The show's writers crafted tales that exploited universal anxieties—being trapped, being deceived, being powerless—and by the late 1940s, Suspense had become appointment listening for millions seeking to test their nerve. With production values that rivaled film studios and performances from Hollywood's finest actors, each episode was a master class in atmospheric storytelling. "The Second Door" exemplifies this mastery, building psychological dread through clever writing and superb sound design rather than cheap tricks.</p>
 <p>If you haven't yet experienced the thrill of stepping through that studio door with Suspense, now is your moment. Dim the lights, settle into your favorite chair, and prepare yourself for twenty-two minutes of pure, intelligent terror. Your only question will be: which door would you choose?</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

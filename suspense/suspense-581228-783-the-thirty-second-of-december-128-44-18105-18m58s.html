@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 581228 783 The Thirty Second Of December (128 44) 18105 18m58s — Suspense | Ghost of Radio</title>
+  <title>The Thirty Second Of December (128 44) 18105 18m58s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 581228 783 The Thirty Second Of December (128 44) 18105 18m58s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 581228 783 The Thirty Second Of December (128 44) 18105 18m58s — Suspense">
   <meta property="og:description" content="Listen to Suspense 581228 783 The Thirty Second Of December (128 44) 18105 18m58s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 28, 1958</span>
           </div>
-          <h1 class="episode__title">Suspense 581228 783 The Thirty Second Of December (128 44) 18105 18m58s</h1>
+          <h1 class="episode__title">The Thirty Second Of December (128 44) 18105 18m58s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Thirty-Second of December</p>
-<p>As the clock strikes midnight on New Year's Eve, a man stands alone in his study with a terrible knowledge: he has exactly one year to live. But this is no ordinary death sentence—it's a curse born from a moment of weakness, a bargain struck in desperation that now haunts his every waking hour. In "The Thirty-Second of December," listeners will experience the suffocating dread of a countdown they cannot stop, as our protagonist grapples with the question that burns beneath every tick of the metronome: Can a man cheat fate itself? The episode unfolds with mounting psychological terror, each scene peeling back another layer of his unraveling sanity, building toward a finale that crackles with the kind of twist only Suspense could deliver. The sound design pulls you directly into his paranoid mind—footsteps that may or may not be real, whispers that echo through empty rooms, and the relentless rhythm of time itself become instruments of torment.</p>
-<p>For over two decades, CBS's *Suspense* reigned as America's premier thriller program, attracting millions of listeners who craved intelligent, expertly crafted tales of psychological terror and moral ambiguity. This particular episode exemplifies the show's golden age in the late 1940s, when the writers had perfected the art of squeezing maximum dread from fifteen minutes of radio drama. Featuring some of broadcasting's finest character actors and backed by the orchestra's masterful use of silence and sound, *Suspense* episodes like this one proved that radio could achieve psychological depths Hollywood could only dream of.</p>
+          <p>As the clock strikes midnight on New Year's Eve, a man stands alone in his study with a terrible knowledge: he has exactly one year to live. But this is no ordinary death sentence—it's a curse born from a moment of weakness, a bargain struck in desperation that now haunts his every waking hour. In "The Thirty-Second of December," listeners will experience the suffocating dread of a countdown they cannot stop, as our protagonist grapples with the question that burns beneath every tick of the metronome: Can a man cheat fate itself? The episode unfolds with mounting psychological terror, each scene peeling back another layer of his unraveling sanity, building toward a finale that crackles with the kind of twist only Suspense could deliver. The sound design pulls you directly into his paranoid mind—footsteps that may or may not be real, whispers that echo through empty rooms, and the relentless rhythm of time itself become instruments of torment.</p>
+<p>For over two decades, CBS's Suspense reigned as America's premier thriller program, attracting millions of listeners who craved intelligent, expertly crafted tales of psychological terror and moral ambiguity. This particular episode exemplifies the show's golden age in the late 1940s, when the writers had perfected the art of squeezing maximum dread from fifteen minutes of radio drama. Featuring some of broadcasting's finest character actors and backed by the orchestra's masterful use of silence and sound, Suspense episodes like this one proved that radio could achieve psychological depths Hollywood could only dream of.</p>
 <p>Don't let this moment slip away—tune in now and experience the racing heartbeat, the cold sweat, and the exquisite agony of watching a man race against destiny itself. Some thrills, after all, are timeless.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 461219 224 The Thing In The Window (128 44) 28540 30m06s — Suspense | Ghost of Radio</title>
+  <title>The Thing In The Window (128 44) 28540 30m06s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 461219 224 The Thing In The Window (128 44) 28540 30m06s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 461219 224 The Thing In The Window (128 44) 28540 30m06s — Suspense">
   <meta property="og:description" content="Listen to Suspense 461219 224 The Thing In The Window (128 44) 28540 30m06s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 19, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 461219 224 The Thing In The Window (128 44) 28540 30m06s</h1>
+          <h1 class="episode__title">The Thing In The Window (128 44) 28540 30m06s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Thing In The Window</p>
-<p>On a fog-shrouded evening, a ordinary home becomes a prison of terror when an unseen presence begins its relentless assault from beyond the glass. In "The Thing In The Window," the intimate sanctuary of four walls offers no protection against something that watches, waits, and claws at the barrier between worlds. What begins as an inexplicable scratching at the windowpane escalates into a nightmarish siege of the senses—a masterclass in psychological horror where the true terror lies not in what is seen, but in the unbearable anticipation of what *might* be. The talented cast delivers performances of raw desperation as rational explanations crumble and the line between the possible and the impossible dissolves into darkness. For thirty minutes, listeners find themselves locked inside that house, pressed against those windows, wondering if the barrier will hold.</p>
-<p>*Suspense* stands as one of broadcasting's greatest achievements, a show that understood the fundamental power of radio—that the most terrifying image is always the one the listener conjures in their own mind. Running from 1942 to 1962, CBS's flagship thriller anthology became legendary for its willingness to explore the darkest corners of human experience, from supernatural horror to psychological torment. With a repertory of accomplished actors, innovative sound design that set industry standards, and writers unafraid to challenge their audience, *Suspense* proved that radio drama could achieve genuine artistry. This episode exemplifies the show's golden period in the 1940s, when production values and creative ambition reached their zenith.</p>
-<p>Don't merely read about "The Thing In The Window"—*hear* it. Let the scratching begin. Let the uncertainty grow. This is *Suspense*, where danger lurks just beyond perception, and the night is very long indeed.</p>
+          <p>On a fog-shrouded evening, a ordinary home becomes a prison of terror when an unseen presence begins its relentless assault from beyond the glass. In "The Thing In The Window," the intimate sanctuary of four walls offers no protection against something that watches, waits, and claws at the barrier between worlds. What begins as an inexplicable scratching at the windowpane escalates into a nightmarish siege of the senses—a masterclass in psychological horror where the true terror lies not in what is seen, but in the unbearable anticipation of what might be. The talented cast delivers performances of raw desperation as rational explanations crumble and the line between the possible and the impossible dissolves into darkness. For thirty minutes, listeners find themselves locked inside that house, pressed against those windows, wondering if the barrier will hold.</p>
+<p>Suspense stands as one of broadcasting's greatest achievements, a show that understood the fundamental power of radio—that the most terrifying image is always the one the listener conjures in their own mind. Running from 1942 to 1962, CBS's flagship thriller anthology became legendary for its willingness to explore the darkest corners of human experience, from supernatural horror to psychological torment. With a repertory of accomplished actors, innovative sound design that set industry standards, and writers unafraid to challenge their audience, Suspense proved that radio drama could achieve genuine artistry. This episode exemplifies the show's golden period in the 1940s, when production values and creative ambition reached their zenith.</p>
+<p>Don't merely read about "The Thing In The Window"—hear it. Let the scratching begin. Let the uncertainty grow. This is Suspense, where danger lurks just beyond perception, and the night is very long indeed.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

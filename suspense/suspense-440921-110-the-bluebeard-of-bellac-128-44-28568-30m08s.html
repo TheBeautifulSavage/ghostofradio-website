@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440921 110 The Bluebeard Of Bellac (128 44) 28568 30m08s — Suspense | Ghost of Radio</title>
+  <title>The Bluebeard Of Bellac (128 44) 28568 30m08s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440921 110 The Bluebeard Of Bellac (128 44) 28568 30m08s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440921 110 The Bluebeard Of Bellac (128 44) 28568 30m08s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440921 110 The Bluebeard Of Bellac (128 44) 28568 30m08s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 21, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440921 110 The Bluebeard Of Bellac (128 44) 28568 30m08s</h1>
+          <h1 class="episode__title">The Bluebeard Of Bellac (128 44) 28568 30m08s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Bluebeard of Bellac</p>
-<p>Step into the shadowed streets of a small French village where whispers of murder hang as thick as morning fog. In "The Bluebeard of Bellac," the master of suspense invites you into a tale of dark obsession and terrible secrets—where a charming stranger has woven himself into the fabric of a quiet community, leaving only mystery and dread in his wake. As the drama unfolds across thirty tense minutes, you'll find yourself pulled deeper into an atmosphere of creeping dread, where every knock on a door might herald catastrophe and every seemingly innocent conversation masks sinister intent. The cast delivers performances that burrow into your mind, their voices trembling with fear and suspicion as the truth slowly, horrifyingly emerges from the darkness.</p>
-<p>*Suspense* stood as radio's greatest thriller during the Golden Age, and episodes like this demonstrate precisely why audiences huddled around their sets week after week. Premiering in 1942 on CBS, the show perfected the art of psychological terror through sound design alone—the creak of floorboards, the nervous catch in a breath, the ominous silence before violence. Drawing inspiration from classic tales of folklore and human depravity, "The Bluebeard of Bellac" transforms a centuries-old legend of a serial killer into an intimate, claustrophobic nightmare that resonates with timeless human fears. The show's writers understood that terror needs no special effects; it only needs skilled storytelling, stellar acting, and the limitless canvas of the listener's imagination.</p>
-<p>Tune in now and discover why *Suspense* remains essential listening nearly eighty years later. Let the voices carry you backward in time to an era when radio commanded the nation's attention and a single story could hold millions captive through the night.</p>
+          <p>Step into the shadowed streets of a small French village where whispers of murder hang as thick as morning fog. In "The Bluebeard of Bellac," the master of suspense invites you into a tale of dark obsession and terrible secrets—where a charming stranger has woven himself into the fabric of a quiet community, leaving only mystery and dread in his wake. As the drama unfolds across thirty tense minutes, you'll find yourself pulled deeper into an atmosphere of creeping dread, where every knock on a door might herald catastrophe and every seemingly innocent conversation masks sinister intent. The cast delivers performances that burrow into your mind, their voices trembling with fear and suspicion as the truth slowly, horrifyingly emerges from the darkness.</p>
+<p>Suspense stood as radio's greatest thriller during the Golden Age, and episodes like this demonstrate precisely why audiences huddled around their sets week after week. Premiering in 1942 on CBS, the show perfected the art of psychological terror through sound design alone—the creak of floorboards, the nervous catch in a breath, the ominous silence before violence. Drawing inspiration from classic tales of folklore and human depravity, "The Bluebeard of Bellac" transforms a centuries-old legend of a serial killer into an intimate, claustrophobic nightmare that resonates with timeless human fears. The show's writers understood that terror needs no special effects; it only needs skilled storytelling, stellar acting, and the limitless canvas of the listener's imagination.</p>
+<p>Tune in now and discover why Suspense remains essential listening nearly eighty years later. Let the voices carry you backward in time to an era when radio commanded the nation's attention and a single story could hold millions captive through the night.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 561002 667 Waiting (128 44) 28431 29m38s — Suspense | Ghost of Radio</title>
+  <title>Waiting (128 44) 28431 29m38s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 561002 667 Waiting (128 44) 28431 29m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 561002 667 Waiting (128 44) 28431 29m38s — Suspense">
   <meta property="og:description" content="Listen to Suspense 561002 667 Waiting (128 44) 28431 29m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 2, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 561002 667 Waiting (128 44) 28431 29m38s</h1>
+          <h1 class="episode__title">Waiting (128 44) 28431 29m38s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Waiting"</p>
-<p>In this masterwork of psychological tension, *Suspense* strips away the Gothic trappings and supernatural theatrics to confront something far more intimate and terrifying—the human capacity for dread born of uncertainty. A woman waits. And waits. As minutes stretch into an eternity of mounting anxiety, listeners are drawn into the suffocating intimacy of her deteriorating mind, where every sound in the darkness becomes a harbinger of doom, and the simple act of waiting transforms into an ordeal of unbearable suspense. The sparse soundscape—a ticking clock, a creaking floorboard, the ragged rhythm of breathing—becomes the score to an internal nightmare. What is she waiting for? Who is coming? By the time the truth emerges from the darkness, the listener has been wrung through an emotional gauntlet that no monster could achieve. This is *Suspense* at its finest: the terror that dwells not in the extraordinary, but in the ordinary moments we all endure.</p>
-<p>During the Golden Age of Radio, *Suspense* stood as CBS's flagship thriller program, delivering weekly doses of meticulously crafted dread to millions of Americans huddled around their sets. Debuting in 1942 and running through 1962, the show perfected the art of audio horror, proving that the most vivid monsters are those conjured by the imagination. With the signature introduction—*"in the dark of a Radio City theater"*—listeners knew they were entering a realm where sound effects and voice acting would do the work of Hollywood budgets and special effects. The show featured some of radio's finest actors and became legendary for its innovative use of silence and suggestion.</p>
-<p>If you've yet to experience the chilling artistry of *Suspense*, "Waiting" is the perfect entry point—a nearly 30-minute descent into psychological terror that reminds us why radio drama remains unsurpassed in its ability to invade and haunt the listener's mind.</p>
+          <p>In this masterwork of psychological tension, Suspense strips away the Gothic trappings and supernatural theatrics to confront something far more intimate and terrifying—the human capacity for dread born of uncertainty. A woman waits. And waits. As minutes stretch into an eternity of mounting anxiety, listeners are drawn into the suffocating intimacy of her deteriorating mind, where every sound in the darkness becomes a harbinger of doom, and the simple act of waiting transforms into an ordeal of unbearable suspense. The sparse soundscape—a ticking clock, a creaking floorboard, the ragged rhythm of breathing—becomes the score to an internal nightmare. What is she waiting for? Who is coming? By the time the truth emerges from the darkness, the listener has been wrung through an emotional gauntlet that no monster could achieve. This is Suspense at its finest: the terror that dwells not in the extraordinary, but in the ordinary moments we all endure.</p>
+<p>During the Golden Age of Radio, Suspense stood as CBS's flagship thriller program, delivering weekly doses of meticulously crafted dread to millions of Americans huddled around their sets. Debuting in 1942 and running through 1962, the show perfected the art of audio horror, proving that the most vivid monsters are those conjured by the imagination. With the signature introduction—"in the dark of a Radio City theater"—listeners knew they were entering a realm where sound effects and voice acting would do the work of Hollywood budgets and special effects. The show featured some of radio's finest actors and became legendary for its innovative use of silence and suggestion.</p>
+<p>If you've yet to experience the chilling artistry of Suspense, "Waiting" is the perfect entry point—a nearly 30-minute descent into psychological terror that reminds us why radio drama remains unsurpassed in its ability to invade and haunt the listener's mind.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

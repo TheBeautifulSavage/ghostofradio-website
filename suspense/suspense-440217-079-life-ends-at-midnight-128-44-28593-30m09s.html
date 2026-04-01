@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440217 079 Life Ends At Midnight (128 44) 28593 30m09s — Suspense | Ghost of Radio</title>
+  <title>Life Ends At Midnight (128 44) 28593 30m09s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440217 079 Life Ends At Midnight (128 44) 28593 30m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440217 079 Life Ends At Midnight (128 44) 28593 30m09s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440217 079 Life Ends At Midnight (128 44) 28593 30m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 17, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440217 079 Life Ends At Midnight (128 44) 28593 30m09s</h1>
+          <h1 class="episode__title">Life Ends At Midnight (128 44) 28593 30m09s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Life Ends At Midnight</p>
-<p>Picture yourself in a dimly lit room, the glow of your radio dial the only light, as an unseen clock begins its relentless countdown. In "Life Ends At Midnight," CBS's *Suspense* pulls you into a nightmare of mathematical precision—where an unknown force has decreed that someone's time on earth will expire when the clock strikes twelve. As the minutes tick away and our desperate protagonist races against fate itself, you'll find yourself gripping your armrest, every creaking floorboard and whispered conversation amplified by the power of your imagination. The episode masterfully builds dread through sound design alone: the ticking of clocks growing louder, voices becoming increasingly frantic, and the mounting certainty that no locked door, no police protection, no prayer can stop what's coming. This is *Suspense* at its finest—exploiting the intimacy of radio to burrow directly into your psyche.</p>
-<p>For nearly two decades, *Suspense* reigned as CBS's most electrifying thriller program, attracting millions of listeners who gathered faithfully each week for thirty minutes of pure, unadulterated terror. Premiering in 1942, the show's genius lay in its understanding that the most frightening images are those our minds conjure ourselves. Without special effects or visual spectacle, talented writers and sound engineers weaponized the human imagination, crafting scenarios both supernatural and terrifyingly mundane. "Life Ends At Midnight" exemplifies this approach—a simple, high-concept premise that transforms into an exercise in existential dread, proving that radio drama could rival any visual medium in generating authentic fear.</p>
-<p>Don't let midnight pass you by. Tune in and experience the moment when the boundary between safety and oblivion collapses, when one person's final hours become our collective nightmare. *Suspense* awaits.</p>
+          <p>Picture yourself in a dimly lit room, the glow of your radio dial the only light, as an unseen clock begins its relentless countdown. In "Life Ends At Midnight," CBS's Suspense pulls you into a nightmare of mathematical precision—where an unknown force has decreed that someone's time on earth will expire when the clock strikes twelve. As the minutes tick away and our desperate protagonist races against fate itself, you'll find yourself gripping your armrest, every creaking floorboard and whispered conversation amplified by the power of your imagination. The episode masterfully builds dread through sound design alone: the ticking of clocks growing louder, voices becoming increasingly frantic, and the mounting certainty that no locked door, no police protection, no prayer can stop what's coming. This is Suspense at its finest—exploiting the intimacy of radio to burrow directly into your psyche.</p>
+<p>For nearly two decades, Suspense reigned as CBS's most electrifying thriller program, attracting millions of listeners who gathered faithfully each week for thirty minutes of pure, unadulterated terror. Premiering in 1942, the show's genius lay in its understanding that the most frightening images are those our minds conjure ourselves. Without special effects or visual spectacle, talented writers and sound engineers weaponized the human imagination, crafting scenarios both supernatural and terrifyingly mundane. "Life Ends At Midnight" exemplifies this approach—a simple, high-concept premise that transforms into an exercise in existential dread, proving that radio drama could rival any visual medium in generating authentic fear.</p>
+<p>Don't let midnight pass you by. Tune in and experience the moment when the boundary between safety and oblivion collapses, when one person's final hours become our collective nightmare. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

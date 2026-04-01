@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 540727 562 Destruction (128 44) 27887 29m04s — Suspense | Ghost of Radio</title>
+  <title>Destruction (128 44) 27887 29m04s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 540727 562 Destruction (128 44) 27887 29m04s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 540727 562 Destruction (128 44) 27887 29m04s — Suspense">
   <meta property="og:description" content="Listen to Suspense 540727 562 Destruction (128 44) 27887 29m04s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 27, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 540727 562 Destruction (128 44) 27887 29m04s</h1>
+          <h1 class="episode__title">Destruction (128 44) 27887 29m04s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Destruction"</p>
-<p>Picture this: it's a summer evening in 1940s America, and you've settled into your favorite chair with the lights dimmed low. CBS is about to deliver one of their most sinister tales—*Destruction*—a psychological thriller that will leave you questioning the very foundations of safety and sanity. In this haunting episode, a seemingly ordinary person discovers that the world around them is conspiring toward their annihilation, though the threat remains maddeningly unclear. Is it real, or a product of a fractured mind? As tensions mount and paranoia creeps in like fog through an open window, the line between reality and delusion dissolves entirely. The sound design envelops you in creeping dread: footsteps that may or may not be there, whispered accusations, the relentless tick of time running out. By the episode's climax, listeners are left breathless and profoundly unsettled.</p>
-<p>*Suspense* was CBS Radio's masterpiece of psychological terror, a show that understood that what you *don't* see is far more frightening than what you do. Running from 1942 to 1962, it pioneered the art of aural horror, employing innovative sound effects and pitch-perfect performances from Hollywood's finest actors to bypass the ear and strike directly at the imagination. Each episode was crafted as a miniature chamber play of dread, eschewing cheap thrills for genuine atmospheric terror and moral complexity.</p>
-<p>If you've never experienced the raw power of classic radio drama, *Destruction* is the perfect entry point—a masterclass in suspenseful storytelling that proves the golden age of broadcasting earned its reputation. Tune in, turn off the lights, and prepare yourself for nearly thirty minutes of spine-tingling brilliance. Just don't blame us if you check your locks twice before bed.</p>
+          <p>Picture this: it's a summer evening in 1940s America, and you've settled into your favorite chair with the lights dimmed low. CBS is about to deliver one of their most sinister tales—Destruction—a psychological thriller that will leave you questioning the very foundations of safety and sanity. In this haunting episode, a seemingly ordinary person discovers that the world around them is conspiring toward their annihilation, though the threat remains maddeningly unclear. Is it real, or a product of a fractured mind? As tensions mount and paranoia creeps in like fog through an open window, the line between reality and delusion dissolves entirely. The sound design envelops you in creeping dread: footsteps that may or may not be there, whispered accusations, the relentless tick of time running out. By the episode's climax, listeners are left breathless and profoundly unsettled.</p>
+<p>Suspense was CBS Radio's masterpiece of psychological terror, a show that understood that what you don't see is far more frightening than what you do. Running from 1942 to 1962, it pioneered the art of aural horror, employing innovative sound effects and pitch-perfect performances from Hollywood's finest actors to bypass the ear and strike directly at the imagination. Each episode was crafted as a miniature chamber play of dread, eschewing cheap thrills for genuine atmospheric terror and moral complexity.</p>
+<p>If you've never experienced the raw power of classic radio drama, Destruction is the perfect entry point—a masterclass in suspenseful storytelling that proves the golden age of broadcasting earned its reputation. Tune in, turn off the lights, and prepare yourself for nearly thirty minutes of spine-tingling brilliance. Just don't blame us if you check your locks twice before bed.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

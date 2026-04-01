@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550510 597 Going, Going, Gone (128 44) 22804 23m38s — Suspense | Ghost of Radio</title>
+  <title>Going, Going, Gone (128 44) 22804 23m38s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550510 597 Going, Going, Gone (128 44) 22804 23m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550510 597 Going, Going, Gone (128 44) 22804 23m38s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550510 597 Going, Going, Gone (128 44) 22804 23m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 10, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550510 597 Going, Going, Gone (128 44) 22804 23m38s</h1>
+          <h1 class="episode__title">Going, Going, Gone (128 44) 22804 23m38s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Going, Going, Gone</p>
-<p>When the gavel falls and the auctioneer's voice rises to a fever pitch, ordinary men become desperate. In "Going, Going, Gone," a seemingly routine estate auction becomes the crucible for human desperation, where bids transform into threats and the price of possessions spirals into the price of a life. CBS's *Suspense* masterfully traps listeners in the sweltering tension of an auction house, where every object on the block carries hidden weight—and one fateful sale threatens to expose secrets that men would kill to keep buried. As the broadcast unfolds over its tight twenty-three minutes, the walls close in, voices rise to fevered pitches, and listeners discover that sometimes what's about to be "sold to the highest bidder" is far more valuable—and dangerous—than mere money.</p>
-<p>*Suspense* stands as one of American radio's finest achievements, running from 1942 to 1962 with an uncompromising commitment to psychological terror over cheap gimmicks. Created by William Spier, the program pioneered a sophisticated audio approach to thriller storytelling, relying on sharp dialogue, brilliant sound design, and a carefully cultivated sense of escalating dread rather than monsters or jump scares. This 1950s episode exemplifies the show's golden period, when it commanded millions of listeners every week, and its inventive writers mined everyday scenarios—an auction, a business deal, a chance encounter—for their hidden capacity for horror. The program became a training ground for Hollywood's finest talents and influenced everything from noir cinema to modern television drama.</p>
-<p>Tune in to *Suspense* and discover why critics hailed it as "radio's finest achievement." In "Going, Going, Gone," the bidding opens at a price no one should have to pay.</p>
+          <p>When the gavel falls and the auctioneer's voice rises to a fever pitch, ordinary men become desperate. In "Going, Going, Gone," a seemingly routine estate auction becomes the crucible for human desperation, where bids transform into threats and the price of possessions spirals into the price of a life. CBS's Suspense masterfully traps listeners in the sweltering tension of an auction house, where every object on the block carries hidden weight—and one fateful sale threatens to expose secrets that men would kill to keep buried. As the broadcast unfolds over its tight twenty-three minutes, the walls close in, voices rise to fevered pitches, and listeners discover that sometimes what's about to be "sold to the highest bidder" is far more valuable—and dangerous—than mere money.</p>
+<p>Suspense stands as one of American radio's finest achievements, running from 1942 to 1962 with an uncompromising commitment to psychological terror over cheap gimmicks. Created by William Spier, the program pioneered a sophisticated audio approach to thriller storytelling, relying on sharp dialogue, brilliant sound design, and a carefully cultivated sense of escalating dread rather than monsters or jump scares. This 1950s episode exemplifies the show's golden period, when it commanded millions of listeners every week, and its inventive writers mined everyday scenarios—an auction, a business deal, a chance encounter—for their hidden capacity for horror. The program became a training ground for Hollywood's finest talents and influenced everything from noir cinema to modern television drama.</p>
+<p>Tune in to Suspense and discover why critics hailed it as "radio's finest achievement." In "Going, Going, Gone," the bidding opens at a price no one should have to pay.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

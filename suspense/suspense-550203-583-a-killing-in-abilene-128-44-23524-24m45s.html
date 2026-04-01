@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550203 583 A Killing In Abilene (128 44) 23524 24m45s — Suspense | Ghost of Radio</title>
+  <title>A Killing In Abilene (128 44) 23524 24m45s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550203 583 A Killing In Abilene (128 44) 23524 24m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550203 583 A Killing In Abilene (128 44) 23524 24m45s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550203 583 A Killing In Abilene (128 44) 23524 24m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 3, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550203 583 A Killing In Abilene (128 44) 23524 24m45s</h1>
+          <h1 class="episode__title">A Killing In Abilene (128 44) 23524 24m45s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># A Killing in Abilene</p>
-<p>Picture this: it's a sweltering night in Abilene, Texas, and a man lies dead in his study—a bullet through his heart and a mystery that refuses to yield its secrets. As our protagonist enters that shadowed room, you'll hear the creak of floorboards, the whisper of curtains stirring in the hot prairie wind, and the measured breathing of someone who knows far more than they're telling. This thirty-minute journey into small-town corruption and hidden motives will have you gripped from the opening gunshot to its final, devastating revelation. With every alibi questioned and every suspect shadier than the last, Suspense masterfully constructs a web of deceit where anyone—*anyone*—could be the killer. The stellar cast delivers performances so authentic, so laden with tension and barely concealed desperation, that you'll forget you're listening to actors and believe instead that you've stumbled upon a real tragedy unfolding in real time.</p>
+          <p>Picture this: it's a sweltering night in Abilene, Texas, and a man lies dead in his study—a bullet through his heart and a mystery that refuses to yield its secrets. As our protagonist enters that shadowed room, you'll hear the creak of floorboards, the whisper of curtains stirring in the hot prairie wind, and the measured breathing of someone who knows far more than they're telling. This thirty-minute journey into small-town corruption and hidden motives will have you gripped from the opening gunshot to its final, devastating revelation. With every alibi questioned and every suspect shadier than the last, Suspense masterfully constructs a web of deceit where anyone—anyone—could be the killer. The stellar cast delivers performances so authentic, so laden with tension and barely concealed desperation, that you'll forget you're listening to actors and believe instead that you've stumbled upon a real tragedy unfolding in real time.</p>
 <p>For two decades, Suspense reigned as CBS Radio's crown jewel of dramatic programming, setting the gold standard for thriller entertainment and influencing everything from film noir to modern television. Each week, millions of listeners tuned in for stories that understood the true nature of fear—that it lurks not in the fantastic or supernatural, but in the ordinary moments of ordinary lives turned sinister. The show's creator and producer William S. Boyd assembled the finest talent in radio, from writers who crafted scripts of surgical precision to sound engineers who painted entire worlds with nothing but audio. "A Killing in Abilene" exemplifies why Suspense endured: its unflinching examination of motive, its refusal to let audiences rest comfortably in their assumptions.</p>
 <p>So dim the lights, settle into your chair, and prepare yourself. Justice may be served, but not before the truth takes you through every possible permutation of guilt and innocence. This is Suspense at its finest.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

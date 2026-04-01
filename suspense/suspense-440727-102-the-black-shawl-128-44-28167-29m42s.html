@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440727 102 The Black Shawl (128 44) 28167 29m42s — Suspense | Ghost of Radio</title>
+  <title>The Black Shawl (128 44) 28167 29m42s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440727 102 The Black Shawl (128 44) 28167 29m42s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440727 102 The Black Shawl (128 44) 28167 29m42s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440727 102 The Black Shawl (128 44) 28167 29m42s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 27, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440727 102 The Black Shawl (128 44) 28167 29m42s</h1>
+          <h1 class="episode__title">The Black Shawl (128 44) 28167 29m42s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Black Shawl</p>
-<p>On a fog-laden evening, when shadows seem to possess a life of their own, *Suspense* draws you into the sinister world of "The Black Shawl"—a tale where an innocent garment becomes an instrument of psychological terror. As the opening organ notes pierce the darkness, you'll find yourself in a confined space with mounting dread, watching as a simple piece of cloth transforms into an obsession that threatens to unravel the sanity of everyone it touches. The sound design crackles with period authenticity: footsteps on creaking floorboards, the rustle of fabric, whispered confessions in the dark. What begins as a curiosity becomes a curse, and by the episode's climax, listeners will be gripping their chairs as the mystery unfolds with the relentless momentum that made this series legendary.</p>
-<p>For two decades, *Suspense* stood as CBS's masterpiece of audio terror, crafting narratives where the unseen became more frightening than anything visible could ever be. Premiering in 1942, the show understood that radio's true power lay in the listener's imagination—every creak, every silence, every perfectly timed pause became a collaborator in fear. "The Black Shawl" exemplifies this golden age of broadcasting, when talented actors and sound engineers wielded nothing but voices, music, and effects to create visceral horror. This particular episode showcases the show's genius for turning the mundane into the macabre, proving that suspense isn't always about monsters—sometimes it's about the ordinary objects we pass by every day.</p>
-<p>Tune in to *Suspense* and step back into an era when entertainment meant surrendering yourself to the darkness, trusting only your ears and your imagination. "The Black Shawl" awaits.</p>
+          <p>On a fog-laden evening, when shadows seem to possess a life of their own, Suspense draws you into the sinister world of "The Black Shawl"—a tale where an innocent garment becomes an instrument of psychological terror. As the opening organ notes pierce the darkness, you'll find yourself in a confined space with mounting dread, watching as a simple piece of cloth transforms into an obsession that threatens to unravel the sanity of everyone it touches. The sound design crackles with period authenticity: footsteps on creaking floorboards, the rustle of fabric, whispered confessions in the dark. What begins as a curiosity becomes a curse, and by the episode's climax, listeners will be gripping their chairs as the mystery unfolds with the relentless momentum that made this series legendary.</p>
+<p>For two decades, Suspense stood as CBS's masterpiece of audio terror, crafting narratives where the unseen became more frightening than anything visible could ever be. Premiering in 1942, the show understood that radio's true power lay in the listener's imagination—every creak, every silence, every perfectly timed pause became a collaborator in fear. "The Black Shawl" exemplifies this golden age of broadcasting, when talented actors and sound engineers wielded nothing but voices, music, and effects to create visceral horror. This particular episode showcases the show's genius for turning the mundane into the macabre, proving that suspense isn't always about monsters—sometimes it's about the ordinary objects we pass by every day.</p>
+<p>Tune in to Suspense and step back into an era when entertainment meant surrendering yourself to the darkness, trusting only your ears and your imagination. "The Black Shawl" awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450322 135 Heart's Desire (64 44) 14505 29m34s — Suspense | Ghost of Radio</title>
+  <title>Heart's Desire (64 44) 14505 29m34s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450322 135 Heart's Desire (64 44) 14505 29m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450322 135 Heart's Desire (64 44) 14505 29m34s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450322 135 Heart's Desire (64 44) 14505 29m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 22, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450322 135 Heart's Desire (64 44) 14505 29m34s</h1>
+          <h1 class="episode__title">Heart's Desire (64 44) 14505 29m34s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Heart's Desire</p>
-<p>Picture this: a dimly lit room where a man sits alone, holding a photograph of the woman he once loved—a woman now married to someone else. As the needle drops on the phonograph and a haunting melody fills the air, his mind begins to spiral. What if he could undo the past? What if desire could rewrite fate itself? In this gripping installment of *Suspense*, listeners will be drawn into the psychological torment of a man whose obsession with reclaiming what he's lost leads him down a path far darker than he ever imagined. The sound design alone—creaking floorboards, the whisper of wind through an open window, the subtle distortion of reality itself—creates an atmosphere of unbearable tension that will keep you riveted to your radio.</p>
-<p>*Suspense* was CBS's answer to the growing appetite for psychological thrillers during the Golden Age of Radio, and episodes like "Heart's Desire" showcase exactly why the program became a cultural institution from 1942 to 1962. Rather than relying on monsters or supernatural gimmicks, the show's true genius lay in its exploration of the human capacity for delusion, revenge, and madness. The program pioneered techniques of radio drama that made listeners feel as though they were trapped inside the protagonist's fractured mind, using innovative sound effects and brilliantly crafted scripts to blur the line between reality and obsession.</p>
-<p>If you've never experienced *Suspense*, this is the perfect entry point—a masterclass in dramatic storytelling that proves radio's golden era produced some of the finest psychological drama ever created. Tune in and discover what millions of listeners experienced decades ago: the unforgettable thrill of facing your deepest fears through nothing but sound and imagination.</p>
+          <p>Picture this: a dimly lit room where a man sits alone, holding a photograph of the woman he once loved—a woman now married to someone else. As the needle drops on the phonograph and a haunting melody fills the air, his mind begins to spiral. What if he could undo the past? What if desire could rewrite fate itself? In this gripping installment of Suspense, listeners will be drawn into the psychological torment of a man whose obsession with reclaiming what he's lost leads him down a path far darker than he ever imagined. The sound design alone—creaking floorboards, the whisper of wind through an open window, the subtle distortion of reality itself—creates an atmosphere of unbearable tension that will keep you riveted to your radio.</p>
+<p>Suspense was CBS's answer to the growing appetite for psychological thrillers during the Golden Age of Radio, and episodes like "Heart's Desire" showcase exactly why the program became a cultural institution from 1942 to 1962. Rather than relying on monsters or supernatural gimmicks, the show's true genius lay in its exploration of the human capacity for delusion, revenge, and madness. The program pioneered techniques of radio drama that made listeners feel as though they were trapped inside the protagonist's fractured mind, using innovative sound effects and brilliantly crafted scripts to blur the line between reality and obsession.</p>
+<p>If you've never experienced Suspense, this is the perfect entry point—a masterclass in dramatic storytelling that proves radio's golden era produced some of the finest psychological drama ever created. Tune in and discover what millions of listeners experienced decades ago: the unforgettable thrill of facing your deepest fears through nothing but sound and imagination.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

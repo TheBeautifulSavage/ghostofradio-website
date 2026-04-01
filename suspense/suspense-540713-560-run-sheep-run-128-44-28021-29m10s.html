@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 540713 560 Run Sheep Run (128 44) 28021 29m10s — Suspense | Ghost of Radio</title>
+  <title>Run Sheep Run (128 44) 28021 29m10s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 540713 560 Run Sheep Run (128 44) 28021 29m10s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 540713 560 Run Sheep Run (128 44) 28021 29m10s — Suspense">
   <meta property="og:description" content="Listen to Suspense 540713 560 Run Sheep Run (128 44) 28021 29m10s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 13, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 540713 560 Run Sheep Run (128 44) 28021 29m10s</h1>
+          <h1 class="episode__title">Run Sheep Run (128 44) 28021 29m10s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Run Sheep Run</p>
-<p>As darkness falls over an isolated English countryside, a simple shepherd's life spirals into nightmare when his flock begins to vanish without explanation. Each night brings fresh terror—the animals disappearing into the fog that rolls across the moors, their desperate bleats echoing through the blackness before an unnatural silence descends. When the shepherd discovers the horrifying truth behind the disappearances, he realizes that something far more sinister than a common predator stalks his land, and that he and his family may be next. The tension builds relentlessly through forty-four minutes of masterfully crafted suspense, as ordinary rural life transforms into a descent into the unknown, where every shadow conceals a threat and every sound in the night carries the weight of dread.</p>
-<p>*Suspense*, which aired from 1942 to 1962 on CBS, stands as one of radio's most influential and acclaimed thriller anthology series, renowned for transforming everyday scenarios into chambers of psychological terror. Hosted by the legendary Jason Robards, the program thrived on the medium's greatest strength—the listener's imagination—crafting horror from unseen dangers and the fear of the unknown rather than cheap special effects. Each week brought a different tale of ordinary people confronting extraordinary darkness, whether supernatural or all too human in origin. The show's commitment to atmospheric storytelling and moral complexity earned it a devoted following and established the template for suspense radio drama that influenced generations of broadcasters.</p>
-<p>Tune in to *Suspense* and rediscover why audiences huddled around their radios, spellbound by stories that proved the most terrifying dangers often lurk just beyond our understanding. "Run Sheep Run" awaits in the archives—a haunting tale that reminds us why radio's golden age remains unsurpassed in its power to chill the spine and quicken the pulse.</p>
+          <p>As darkness falls over an isolated English countryside, a simple shepherd's life spirals into nightmare when his flock begins to vanish without explanation. Each night brings fresh terror—the animals disappearing into the fog that rolls across the moors, their desperate bleats echoing through the blackness before an unnatural silence descends. When the shepherd discovers the horrifying truth behind the disappearances, he realizes that something far more sinister than a common predator stalks his land, and that he and his family may be next. The tension builds relentlessly through forty-four minutes of masterfully crafted suspense, as ordinary rural life transforms into a descent into the unknown, where every shadow conceals a threat and every sound in the night carries the weight of dread.</p>
+<p>Suspense, which aired from 1942 to 1962 on CBS, stands as one of radio's most influential and acclaimed thriller anthology series, renowned for transforming everyday scenarios into chambers of psychological terror. Hosted by the legendary Jason Robards, the program thrived on the medium's greatest strength—the listener's imagination—crafting horror from unseen dangers and the fear of the unknown rather than cheap special effects. Each week brought a different tale of ordinary people confronting extraordinary darkness, whether supernatural or all too human in origin. The show's commitment to atmospheric storytelling and moral complexity earned it a devoted following and established the template for suspense radio drama that influenced generations of broadcasters.</p>
+<p>Tune in to Suspense and rediscover why audiences huddled around their radios, spellbound by stories that proved the most terrifying dangers often lurk just beyond our understanding. "Run Sheep Run" awaits in the archives—a haunting tale that reminds us why radio's golden age remains unsurpassed in its power to chill the spine and quicken the pulse.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

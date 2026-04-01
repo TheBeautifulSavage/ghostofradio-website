@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570825 713 Leiningen Versus The Ants (130 44) 28648 29m53s Afrts — Suspense | Ghost of Radio</title>
+  <title>Leiningen Versus The Ants (130 44) 28648 29m53s Afrts — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570825 713 Leiningen Versus The Ants (130 44) 28648 29m53s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570825 713 Leiningen Versus The Ants (130 44) 28648 29m53s Afrts — Suspense">
   <meta property="og:description" content="Listen to Suspense 570825 713 Leiningen Versus The Ants (130 44) 28648 29m53s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · 1940s</span>
           </div>
-          <h1 class="episode__title">Suspense 570825 713 Leiningen Versus The Ants (130 44) 28648 29m53s Afrts</h1>
+          <h1 class="episode__title">Leiningen Versus The Ants (130 44) 28648 29m53s Afrts</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,9 +71,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Leiningen Versus The Ants</p>
-<p>Picture this: a remote plantation deep in the Brazilian wilderness, where the very earth itself has turned against one man's ambition. In this unforgettable episode of *Suspense*, listeners are thrust into Carl Leiningen's desperate battle against an unstoppable force of nature—millions upon millions of army ants advancing like a living tide across his land. As the relentless swarm approaches, consuming everything in its path, Leiningen must pit his wits and will against an enemy that knows neither mercy nor surrender. The tension builds exquisitely through every moment: the distant hum growing louder, the crackling of wood and vegetation being devoured, the frantic calculations of a man racing against time itself. Radio's invisible magic transforms the listener's imagination into the perfect canvas—you don't see the ants, but you hear them, feel them, and fear them with an intensity no visual medium could match.</p>
-<p>*Suspense* earned its legendary status by delivering psychological terror week after week, and this adaptation of Carl Stephenson's 1938 short story exemplifies exactly why the show captivated America throughout the 1940s and 1950s. In an era when radio drama reigned supreme, *Suspense* became the gold standard—a CBS production featuring top-tier talent, sophisticated sound design, and stories that lingered in listeners' minds long after the broadcast ended. This particular episode showcases the program's genius for transforming external threats into deeply personal struggles, making the audience invest completely in one man's fight for survival.</p>
+          <p>Picture this: a remote plantation deep in the Brazilian wilderness, where the very earth itself has turned against one man's ambition. In this unforgettable episode of Suspense, listeners are thrust into Carl Leiningen's desperate battle against an unstoppable force of nature—millions upon millions of army ants advancing like a living tide across his land. As the relentless swarm approaches, consuming everything in its path, Leiningen must pit his wits and will against an enemy that knows neither mercy nor surrender. The tension builds exquisitely through every moment: the distant hum growing louder, the crackling of wood and vegetation being devoured, the frantic calculations of a man racing against time itself. Radio's invisible magic transforms the listener's imagination into the perfect canvas—you don't see the ants, but you hear them, feel them, and fear them with an intensity no visual medium could match.</p>
+<p>Suspense earned its legendary status by delivering psychological terror week after week, and this adaptation of Carl Stephenson's 1938 short story exemplifies exactly why the show captivated America throughout the 1940s and 1950s. In an era when radio drama reigned supreme, Suspense became the gold standard—a CBS production featuring top-tier talent, sophisticated sound design, and stories that lingered in listeners' minds long after the broadcast ended. This particular episode showcases the program's genius for transforming external threats into deeply personal struggles, making the audience invest completely in one man's fight for survival.</p>
 <p>Don't miss this masterpiece of radio suspense. Settle in, dim the lights, and let your imagination do what it does best. Nearly three minutes of pure, undiluted tension await—proof that sometimes the most terrifying enemies are the ones we cannot see.</p>
         </div>
 
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460516 193 The Plan (64 44) 14747 30m05s — Suspense | Ghost of Radio</title>
+  <title>The Plan (64 44) 14747 30m05s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460516 193 The Plan (64 44) 14747 30m05s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460516 193 The Plan (64 44) 14747 30m05s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460516 193 The Plan (64 44) 14747 30m05s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 16, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460516 193 The Plan (64 44) 14747 30m05s</h1>
+          <h1 class="episode__title">The Plan (64 44) 14747 30m05s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Plan</p>
-<p>Settle into your armchair and extinguish the lights—*Suspense* has a particularly devious scheme in store for you this evening. "The Plan" unfolds like a dark blueprint of human ambition gone terribly wrong, where careful calculation meets the unpredictable chaos of the human heart. As the title suggests, someone has engineered something sinister, and as the thirty minutes tick away, you'll find yourself wondering whether meticulous planning can truly account for every variable of human nature. The sound design crackles with tension; every footstep, every whispered conversation, every telling silence becomes a crucial piece of the puzzle. By the time the final minutes arrive, you'll discover that the best-laid plans often crumble in the face of unexpected consequences.</p>
-<p>For twenty years, CBS's *Suspense* reigned as America's premier thriller program, attracting millions of listeners with its unflinching exploration of ordinary people in extraordinary peril. The show's genius lay in its refusal to rely solely on monsters or ghosts—instead, it mined the deepest psychological anxieties of the 1940s audience: betrayal, greed, obsession, and revenge. Each episode was a masterclass in dramatic construction, with talented writers crafting taut narratives that built inexorably toward shocking conclusions. The program became legendary for its innovative sound effects, its ability to suggest violence and danger through implication rather than graphic description, and its stable of talented actors who could convey complex emotion through voice alone.</p>
+          <p>Settle into your armchair and extinguish the lights—Suspense has a particularly devious scheme in store for you this evening. "The Plan" unfolds like a dark blueprint of human ambition gone terribly wrong, where careful calculation meets the unpredictable chaos of the human heart. As the title suggests, someone has engineered something sinister, and as the thirty minutes tick away, you'll find yourself wondering whether meticulous planning can truly account for every variable of human nature. The sound design crackles with tension; every footstep, every whispered conversation, every telling silence becomes a crucial piece of the puzzle. By the time the final minutes arrive, you'll discover that the best-laid plans often crumble in the face of unexpected consequences.</p>
+<p>For twenty years, CBS's Suspense reigned as America's premier thriller program, attracting millions of listeners with its unflinching exploration of ordinary people in extraordinary peril. The show's genius lay in its refusal to rely solely on monsters or ghosts—instead, it mined the deepest psychological anxieties of the 1940s audience: betrayal, greed, obsession, and revenge. Each episode was a masterclass in dramatic construction, with talented writers crafting taut narratives that built inexorably toward shocking conclusions. The program became legendary for its innovative sound effects, its ability to suggest violence and danger through implication rather than graphic description, and its stable of talented actors who could convey complex emotion through voice alone.</p>
 <p>If you've never experienced the particular thrill of radio drama at its peak, "The Plan" offers the perfect invitation. Close the door, turn off the distractions, and prepare yourself for thirty minutes of genuine suspense—the kind that lingers long after the final fade-out.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

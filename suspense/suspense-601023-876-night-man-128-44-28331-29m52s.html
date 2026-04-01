@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 601023 876 Night Man (128 44) 28331 29m52s — Suspense | Ghost of Radio</title>
+  <title>Night Man (128 44) 28331 29m52s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 601023 876 Night Man (128 44) 28331 29m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 601023 876 Night Man (128 44) 28331 29m52s — Suspense">
   <meta property="og:description" content="Listen to Suspense 601023 876 Night Man (128 44) 28331 29m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 23, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 601023 876 Night Man (128 44) 28331 29m52s</h1>
+          <h1 class="episode__title">Night Man (128 44) 28331 29m52s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Night Man"</p>
-<p>As darkness falls and the city sleeps, a sinister figure emerges from the shadows—a man of the night whose motives remain shrouded in mystery. In this chilling installment of *Suspense*, listeners will find themselves gripped by mounting dread as an ordinary evening transforms into a nightmare of psychological terror. The sound design pulls you deeper into the darkness with each creaking floorboard and whispered threat, while the expert cast delivers performances that make your skin crawl. You'll never know what the Night Man wants or from whom he hunts, and that uncertainty is precisely what makes this episode so devastatingly effective. The tension builds relentlessly across its nearly thirty minutes, leaving you breathless and questioning every shadow in your own home.</p>
-<p>*Suspense* stands as one of radio's most enduring achievements, a CBS institution that perfected the art of psychological horror during an era when imagination was the most powerful special effect available. Premiering in 1942 and running through the early 1960s, the series became legendary for its willingness to venture into the darkest corners of human nature—not through gore or spectacle, but through masterful storytelling and bone-chilling atmosphere. Each episode was a carefully crafted descent into fear, featuring some of Hollywood's finest actors bringing literary classics and original teleplays to vivid, terrifying life. The show understood that what you *don't* see is far more frightening than what you do.</p>
-<p>Tune in tonight and discover why millions of listeners made *Suspense* an appointment with fear. Lock your doors, dim the lights, and prepare yourself—the Night Man is waiting.</p>
+          <p>As darkness falls and the city sleeps, a sinister figure emerges from the shadows—a man of the night whose motives remain shrouded in mystery. In this chilling installment of Suspense, listeners will find themselves gripped by mounting dread as an ordinary evening transforms into a nightmare of psychological terror. The sound design pulls you deeper into the darkness with each creaking floorboard and whispered threat, while the expert cast delivers performances that make your skin crawl. You'll never know what the Night Man wants or from whom he hunts, and that uncertainty is precisely what makes this episode so devastatingly effective. The tension builds relentlessly across its nearly thirty minutes, leaving you breathless and questioning every shadow in your own home.</p>
+<p>Suspense stands as one of radio's most enduring achievements, a CBS institution that perfected the art of psychological horror during an era when imagination was the most powerful special effect available. Premiering in 1942 and running through the early 1960s, the series became legendary for its willingness to venture into the darkest corners of human nature—not through gore or spectacle, but through masterful storytelling and bone-chilling atmosphere. Each episode was a carefully crafted descent into fear, featuring some of Hollywood's finest actors bringing literary classics and original teleplays to vivid, terrifying life. The show understood that what you don't see is far more frightening than what you do.</p>
+<p>Tune in tonight and discover why millions of listeners made Suspense an appointment with fear. Lock your doors, dim the lights, and prepare yourself—the Night Man is waiting.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

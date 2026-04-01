@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 591115 827 The Companion (64 32) 12552 25m24s — Suspense | Ghost of Radio</title>
+  <title>The Companion (64 32) 12552 25m24s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 591115 827 The Companion (64 32) 12552 25m24s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 591115 827 The Companion (64 32) 12552 25m24s — Suspense">
   <meta property="og:description" content="Listen to Suspense 591115 827 The Companion (64 32) 12552 25m24s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 15, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 591115 827 The Companion (64 32) 12552 25m24s</h1>
+          <h1 class="episode__title">The Companion (64 32) 12552 25m24s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Companion</p>
-<p>When a lonely woman opens her door to a mysterious stranger seeking shelter, she invites far more than simple companionship into her life. "The Companion" draws listeners into a shadowy realm where courtesy becomes entrapment and kindness becomes a curse. As this unsettling drama unfolds across twenty-five suspenseful minutes, the line between savior and specter grows impossibly thin. The radio audience is left guessing at every turn: Is this stranger genuinely lost, or is he something far more sinister—a phantom drawn to human vulnerability, a creature of darkness masquerading in borrowed flesh? The crackling intimacy of the medium transforms a simple parlor into a claustrophobic trap, where every creaking floorboard and ominous pause in dialogue tightens the noose of dread around the listener's imagination.</p>
-<p>For over two decades, CBS's *Suspense* remained America's premier showcase for psychological terror and gothic thrills, earning its reputation as "radio's outstanding theater of thrills." Broadcasting at the height of radio's golden age, each episode promised a complete journey into the macabre, the unexplained, and the deeply human horrors lurking beneath ordinary circumstances. "The Companion" exemplifies the show's masterful manipulation of sound and silence—where the absence of music often proved more terrifying than any orchestral swell. The program attracted top talent, both in front of and behind the microphone, crafting narratives that exploited radio's unique power to bypass the eye and assault the listener's deepest anxieties.</p>
-<p>Tune in to experience the dark artistry that made *Suspense* legendary. In this golden age of broadcasting, terror needs no special effects—only your imagination, a crackling speaker, and a visitor who may be far more than he appears.</p>
+          <p>When a lonely woman opens her door to a mysterious stranger seeking shelter, she invites far more than simple companionship into her life. "The Companion" draws listeners into a shadowy realm where courtesy becomes entrapment and kindness becomes a curse. As this unsettling drama unfolds across twenty-five suspenseful minutes, the line between savior and specter grows impossibly thin. The radio audience is left guessing at every turn: Is this stranger genuinely lost, or is he something far more sinister—a phantom drawn to human vulnerability, a creature of darkness masquerading in borrowed flesh? The crackling intimacy of the medium transforms a simple parlor into a claustrophobic trap, where every creaking floorboard and ominous pause in dialogue tightens the noose of dread around the listener's imagination.</p>
+<p>For over two decades, CBS's Suspense remained America's premier showcase for psychological terror and gothic thrills, earning its reputation as "radio's outstanding theater of thrills." Broadcasting at the height of radio's golden age, each episode promised a complete journey into the macabre, the unexplained, and the deeply human horrors lurking beneath ordinary circumstances. "The Companion" exemplifies the show's masterful manipulation of sound and silence—where the absence of music often proved more terrifying than any orchestral swell. The program attracted top talent, both in front of and behind the microphone, crafting narratives that exploited radio's unique power to bypass the eye and assault the listener's deepest anxieties.</p>
+<p>Tune in to experience the dark artistry that made Suspense legendary. In this golden age of broadcasting, terror needs no special effects—only your imagination, a crackling speaker, and a visitor who may be far more than he appears.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

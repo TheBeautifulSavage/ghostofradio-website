@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470731 256 Mortmain (128 44) 28650 30m13s — Suspense | Ghost of Radio</title>
+  <title>Mortmain (128 44) 28650 30m13s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470731 256 Mortmain (128 44) 28650 30m13s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470731 256 Mortmain (128 44) 28650 30m13s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470731 256 Mortmain (128 44) 28650 30m13s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 31, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470731 256 Mortmain (128 44) 28650 30m13s</h1>
+          <h1 class="episode__title">Mortmain (128 44) 28650 30m13s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Mortmain</p>
-<p>As the clock strikes midnight and your radio crackles to life, you're drawn into a shadowy world of obsession and supernatural dread. In "Mortmain," a man discovers that some debts cannot be paid in currency—only in blood and sacrifice. A mysterious stranger arrives with an impossible proposition, and our protagonist finds himself ensnared in a bargain that seems almost too good to be true. As he soon learns, the price of his newfound fortune grows darker with each passing night, and the invisible chains of his agreement tighten inexorably around him. The episode unfolds with mounting tension, building from psychological unease to genuine terror, as the line between reality and something far more sinister begins to blur. By the final moments, listeners will find themselves holding their breath, uncertain whether the protagonist can break free—or if he's already lost everything that matters.</p>
-<p>"Suspense" was radio's supreme master of tension, and this 1940s episode exemplifies why the show became a cultural phenomenon that gripped America for two decades. CBS crafted each installment with meticulous attention to sound design, using subtle effects and carefully modulated voices to burrow into the listener's imagination. Unlike visual media, radio demanded that audiences actively participate in creating the horror—filling in the shadows with their own deepest fears. Episodes like "Mortmain" showcase the show's particular genius for existential dread, exploring not just what we fear, but what we *want*, and the terrible consequences of our desires.</p>
+          <p>As the clock strikes midnight and your radio crackles to life, you're drawn into a shadowy world of obsession and supernatural dread. In "Mortmain," a man discovers that some debts cannot be paid in currency—only in blood and sacrifice. A mysterious stranger arrives with an impossible proposition, and our protagonist finds himself ensnared in a bargain that seems almost too good to be true. As he soon learns, the price of his newfound fortune grows darker with each passing night, and the invisible chains of his agreement tighten inexorably around him. The episode unfolds with mounting tension, building from psychological unease to genuine terror, as the line between reality and something far more sinister begins to blur. By the final moments, listeners will find themselves holding their breath, uncertain whether the protagonist can break free—or if he's already lost everything that matters.</p>
+<p>"Suspense" was radio's supreme master of tension, and this 1940s episode exemplifies why the show became a cultural phenomenon that gripped America for two decades. CBS crafted each installment with meticulous attention to sound design, using subtle effects and carefully modulated voices to burrow into the listener's imagination. Unlike visual media, radio demanded that audiences actively participate in creating the horror—filling in the shadows with their own deepest fears. Episodes like "Mortmain" showcase the show's particular genius for existential dread, exploring not just what we fear, but what we want, and the terrible consequences of our desires.</p>
 <p>Settle into your chair, dim the lights, and let the golden age of radio transport you to a realm where unseen horrors feel entirely too real. "Mortmain" is waiting for you in the static and shadows.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

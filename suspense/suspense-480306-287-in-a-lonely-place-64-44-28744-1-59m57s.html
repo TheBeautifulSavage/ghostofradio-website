@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 480306 287 In A Lonely Place (64 44) 28744 1 59m57s — Suspense | Ghost of Radio</title>
+  <title>In A Lonely Place (64 44) 28744 1 59m57s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 480306 287 In A Lonely Place (64 44) 28744 1 59m57s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 480306 287 In A Lonely Place (64 44) 28744 1 59m57s — Suspense">
   <meta property="og:description" content="Listen to Suspense 480306 287 In A Lonely Place (64 44) 28744 1 59m57s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 6, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 480306 287 In A Lonely Place (64 44) 28744 1 59m57s</h1>
+          <h1 class="episode__title">In A Lonely Place (64 44) 28744 1 59m57s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># In A Lonely Place</p>
-<p>When the lights dim and the orchestra strikes that unsettling opening chord, you'll find yourself in the shadowy world of a man consumed by suspicion and desire—a psychological thriller that cuts deeper than any knife. In this episode of Suspense, a dangerous attraction blooms in isolation, where every glance carries menace and every word might be a lie. As our protagonist becomes increasingly entangled with a mysterious woman in a remote setting, the question that gnaws at the listener becomes unbearable: Is she a confidante or a conspirator? The intimate sound design—footsteps on creaking floorboards, the rustle of curtains, whispered confessions—draws you into claustrophobic spaces where paranoia and passion become indistinguishable. With each passing moment, trust erodes and danger tightens its grip. This is Suspense at its finest: not jump-scares or monsters, but the terrifying fragility of the human mind when isolated and afraid.</p>
+          <p>When the lights dim and the orchestra strikes that unsettling opening chord, you'll find yourself in the shadowy world of a man consumed by suspicion and desire—a psychological thriller that cuts deeper than any knife. In this episode of Suspense, a dangerous attraction blooms in isolation, where every glance carries menace and every word might be a lie. As our protagonist becomes increasingly entangled with a mysterious woman in a remote setting, the question that gnaws at the listener becomes unbearable: Is she a confidante or a conspirator? The intimate sound design—footsteps on creaking floorboards, the rustle of curtains, whispered confessions—draws you into claustrophobic spaces where paranoia and passion become indistinguishable. With each passing moment, trust erodes and danger tightens its grip. This is Suspense at its finest: not jump-scares or monsters, but the terrifying fragility of the human mind when isolated and afraid.</p>
 <p>For nearly two decades, Suspense captivated millions of Americans with tales that proved the greatest horror lives not in the supernatural but in ordinary life twisted by circumstance and character. Premiering on CBS in 1942, the show became a masterclass in atmospheric radio drama, pioneering techniques that would influence generations of thriller writers. Each episode was a carefully crafted puzzle of motive and consequence, featuring accomplished actors and sophisticated scripts that treated their audience as intelligent, discerning listeners. The show's success lay in its understanding that true suspense comes from knowing too little—or perhaps too much—about the people we encounter.</p>
 <p>Tune in tonight and surrender yourself to the darkness. Bolt your doors, dim the lights, and let the voice of the narrator guide you into a place where loneliness and danger share the same breath. You won't forget what you hear.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

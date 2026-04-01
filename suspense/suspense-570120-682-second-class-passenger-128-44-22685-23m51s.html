@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570120 682 Second Class Passenger (128 44) 22685 23m51s — Suspense | Ghost of Radio</title>
+  <title>Second Class Passenger (128 44) 22685 23m51s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570120 682 Second Class Passenger (128 44) 22685 23m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570120 682 Second Class Passenger (128 44) 22685 23m51s — Suspense">
   <meta property="og:description" content="Listen to Suspense 570120 682 Second Class Passenger (128 44) 22685 23m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 20, 1957</span>
           </div>
-          <h1 class="episode__title">Suspense 570120 682 Second Class Passenger (128 44) 22685 23m51s</h1>
+          <h1 class="episode__title">Second Class Passenger (128 44) 22685 23m51s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Second Class Passenger</p>
-<p>Picture yourself in the dim glow of a cabin aboard a fog-shrouded ocean liner, where the boundary between passenger and predator blurs in the darkness. In "Second Class Passenger," a seemingly ordinary voyage transforms into a nightmare of paranoia and dread as our protagonist discovers that someone—or something—is hunting among the crowded corridors and cramped quarters of the ship's lower decks. With each creaking bulkhead and whispered conversation, the tension mounts unbearably. Is it murder, madness, or something far more sinister lurking in the depths below the waterline? The masterful sound design of the CBS workshop creates an immersive maritime hell, where every footstep echoes with menace and the isolation of being at sea takes on horrifying new dimensions. Twenty-three minutes have never felt so claustrophobic.</p>
-<p>*Suspense* stands as one of radio's greatest achievements, a program that understood that the most terrifying monsters often lurk in the spaces between what we hear and what we imagine. Premiering in 1942 and running for two decades, the show became synonymous with psychological terror and carefully crafted narrative tension. Each episode began with the iconic warning—"Now, presenting *Suspense*!"—followed by stories adapted from literature's masters of the macabre, original teleplays, and tales drawn from the headlines themselves. The show's golden age of the 1940s, when this episode aired, represents radio drama at its absolute peak: writers, directors, and actors pushing the medium's possibilities to create pure, distilled fear delivered directly into living rooms across America.</p>
-<p>Tune in to experience a masterclass in building dread, where the intimacy of radio puts you directly in the shoes of the hunted. *Suspense* demands your attention and rewards it with unforgettable chills that linger long after the final fade-out.</p>
+          <p>Picture yourself in the dim glow of a cabin aboard a fog-shrouded ocean liner, where the boundary between passenger and predator blurs in the darkness. In "Second Class Passenger," a seemingly ordinary voyage transforms into a nightmare of paranoia and dread as our protagonist discovers that someone—or something—is hunting among the crowded corridors and cramped quarters of the ship's lower decks. With each creaking bulkhead and whispered conversation, the tension mounts unbearably. Is it murder, madness, or something far more sinister lurking in the depths below the waterline? The masterful sound design of the CBS workshop creates an immersive maritime hell, where every footstep echoes with menace and the isolation of being at sea takes on horrifying new dimensions. Twenty-three minutes have never felt so claustrophobic.</p>
+<p>Suspense stands as one of radio's greatest achievements, a program that understood that the most terrifying monsters often lurk in the spaces between what we hear and what we imagine. Premiering in 1942 and running for two decades, the show became synonymous with psychological terror and carefully crafted narrative tension. Each episode began with the iconic warning—"Now, presenting Suspense!"—followed by stories adapted from literature's masters of the macabre, original teleplays, and tales drawn from the headlines themselves. The show's golden age of the 1940s, when this episode aired, represents radio drama at its absolute peak: writers, directors, and actors pushing the medium's possibilities to create pure, distilled fear delivered directly into living rooms across America.</p>
+<p>Tune in to experience a masterclass in building dread, where the intimacy of radio puts you directly in the shoes of the hunted. Suspense demands your attention and rewards it with unforgettable chills that linger long after the final fade-out.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

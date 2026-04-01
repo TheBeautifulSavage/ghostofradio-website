@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460711 201 Feast Of The Furies (128 44) 28768 30m21s — Suspense | Ghost of Radio</title>
+  <title>Feast Of The Furies (128 44) 28768 30m21s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460711 201 Feast Of The Furies (128 44) 28768 30m21s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460711 201 Feast Of The Furies (128 44) 28768 30m21s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460711 201 Feast Of The Furies (128 44) 28768 30m21s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 11, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460711 201 Feast Of The Furies (128 44) 28768 30m21s</h1>
+          <h1 class="episode__title">Feast Of The Furies (128 44) 28768 30m21s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Feast of the Furies</p>
-<p>Picture yourself huddled around the radio on a dark evening, the glow of the dial your only comfort, as an unsettling tale of vengeance and supernatural terror unfolds. In "Feast of the Furies," the ancient myths come terrifyingly alive when a man discovers that the sins of his past have summoned forces far older and more terrible than any mortal justice. As the minutes tick away in this carefully crafted thirty-minute nightmare, you'll find yourself caught between the rational world and something far more sinister—where the boundary between guilt and madness blurs into shadow, and every sound carries the weight of impending doom. The expert sound design of Suspense transforms the intimate space of your home into a claustrophobic arena of dread, where the only escape is to hear how this dark tale concludes.</p>
+          <p>Picture yourself huddled around the radio on a dark evening, the glow of the dial your only comfort, as an unsettling tale of vengeance and supernatural terror unfolds. In "Feast of the Furies," the ancient myths come terrifyingly alive when a man discovers that the sins of his past have summoned forces far older and more terrible than any mortal justice. As the minutes tick away in this carefully crafted thirty-minute nightmare, you'll find yourself caught between the rational world and something far more sinister—where the boundary between guilt and madness blurs into shadow, and every sound carries the weight of impending doom. The expert sound design of Suspense transforms the intimate space of your home into a claustrophobic arena of dread, where the only escape is to hear how this dark tale concludes.</p>
 <p>For two decades, Suspense reigned as radio's premier thriller program, commanding audiences of millions who tuned in every week seeking that delicious chill up the spine. Broadcasting from CBS studios, the show became legendary for its atmospheric direction, stellar ensemble cast, and willingness to plumb both classic literature and original dark fantasies for source material. Episodes like "Feast of the Furies" demonstrate why critics praised the show's psychological sophistication—it understood that true horror lurks not in monsters, but in the consequences of human action and the terrors that lurk within the guilty conscience. This particular episode perfectly captures the program's golden age of the 1940s, when radio drama commanded the nation's undivided attention.</p>
 <p>Don't miss this haunting masterpiece. Tune in and discover why Suspense earned its place as one of broadcasting's most enduring legacies. After all, as the program's introduction promised, "in the dark, watch out for Suspense..."</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

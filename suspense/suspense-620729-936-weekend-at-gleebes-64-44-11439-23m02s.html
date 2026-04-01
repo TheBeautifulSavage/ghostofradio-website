@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620729 936 Weekend At Gleebes (64 44) 11439 23m02s — Suspense | Ghost of Radio</title>
+  <title>Weekend At Gleebes (64 44) 11439 23m02s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620729 936 Weekend At Gleebes (64 44) 11439 23m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620729 936 Weekend At Gleebes (64 44) 11439 23m02s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620729 936 Weekend At Gleebes (64 44) 11439 23m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 29, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620729 936 Weekend At Gleebes (64 44) 11439 23m02s</h1>
+          <h1 class="episode__title">Weekend At Gleebes (64 44) 11439 23m02s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Weekend at Gleebes</p>
-<p>Picture this: a fog-shrouded English countryside estate where weekend guests arrive with whispered expectations and hidden dread. "Weekend at Gleebes" plunges listeners into an atmosphere thick with suspicion and menace, where a gathering meant for civilized relaxation becomes a pressure cooker of secrets, lies, and danger. As the night deepens and the fog closes in tighter around the manor, what began as pleasant social banter transforms into something far more sinister. The writing crackles with the kind of psychological tension that *Suspense* perfected—not relying on monsters or supernatural frights, but on the terrifying unpredictability of human nature itself. With expert sound design painting every creaking floorboard, every meaningful pause in conversation, listeners are transported directly into drawing rooms where nobody can be trusted and everyone has something to hide.</p>
-<p>For over two decades, *Suspense* commanded Thursday night radio audiences with an unmatched mastery of the thriller format. CBS's crown jewel of dramatic programming gave voice to the anxieties of mid-century America, exploring not distant horrors but the everyday terrors lurking beneath polite society. This particular episode exemplifies what made the show legendary—a tightly constructed narrative that builds dread through character interaction and implication rather than overt violence. Drawing on the golden age of mystery writing, episodes like "Weekend at Gleebes" showcase sophisticated storytelling that trusted audiences to be frightened by what they *imagined* happening off-mike.</p>
-<p>Whether you're a devoted fan of classic radio or newly discovering the golden age of audio drama, "Weekend at Gleebes" delivers precisely what *Suspense* promised: twenty-three minutes of mounting tension that will leave you glancing over your shoulder. Tune in and discover why millions of listeners made *Suspense* appointment radio—a thrilling journey into the unknown that begins the moment you press play.</p>
+          <p>Picture this: a fog-shrouded English countryside estate where weekend guests arrive with whispered expectations and hidden dread. "Weekend at Gleebes" plunges listeners into an atmosphere thick with suspicion and menace, where a gathering meant for civilized relaxation becomes a pressure cooker of secrets, lies, and danger. As the night deepens and the fog closes in tighter around the manor, what began as pleasant social banter transforms into something far more sinister. The writing crackles with the kind of psychological tension that Suspense perfected—not relying on monsters or supernatural frights, but on the terrifying unpredictability of human nature itself. With expert sound design painting every creaking floorboard, every meaningful pause in conversation, listeners are transported directly into drawing rooms where nobody can be trusted and everyone has something to hide.</p>
+<p>For over two decades, Suspense commanded Thursday night radio audiences with an unmatched mastery of the thriller format. CBS's crown jewel of dramatic programming gave voice to the anxieties of mid-century America, exploring not distant horrors but the everyday terrors lurking beneath polite society. This particular episode exemplifies what made the show legendary—a tightly constructed narrative that builds dread through character interaction and implication rather than overt violence. Drawing on the golden age of mystery writing, episodes like "Weekend at Gleebes" showcase sophisticated storytelling that trusted audiences to be frightened by what they imagined happening off-mike.</p>
+<p>Whether you're a devoted fan of classic radio or newly discovering the golden age of audio drama, "Weekend at Gleebes" delivers precisely what Suspense promised: twenty-three minutes of mounting tension that will leave you glancing over your shoulder. Tune in and discover why millions of listeners made Suspense appointment radio—a thrilling journey into the unknown that begins the moment you press play.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

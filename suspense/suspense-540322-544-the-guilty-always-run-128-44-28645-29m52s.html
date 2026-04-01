@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 540322 544 The Guilty Always Run (128 44) 28645 29m52s — Suspense | Ghost of Radio</title>
+  <title>The Guilty Always Run (128 44) 28645 29m52s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 540322 544 The Guilty Always Run (128 44) 28645 29m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 540322 544 The Guilty Always Run (128 44) 28645 29m52s — Suspense">
   <meta property="og:description" content="Listen to Suspense 540322 544 The Guilty Always Run (128 44) 28645 29m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 22, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 540322 544 The Guilty Always Run (128 44) 28645 29m52s</h1>
+          <h1 class="episode__title">The Guilty Always Run (128 44) 28645 29m52s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: The Guilty Always Run</p>
-<p>When the lights dim and that unforgettable theme music pierces the darkness, listeners know they're about to enter a world where paranoia prowls and conscience becomes a weapon. In "The Guilty Always Run," a hunted figure flees through the night, pursued not by law enforcement but by their own moral reckoning. The narrative unfolds with mounting tension as our protagonist discovers that some crimes cannot be outrun—that guilt, like a shadow, follows relentlessly through dimly lit streets and anonymous crowds. The sound design crackles with urgency: footsteps echoing through empty corridors, the screech of tires, whispered accusations. By the episode's climax, listeners will find themselves breathlessly wondering whether justice catches its quarry, or whether conscience itself becomes the final judge.</p>
-<p>*Suspense* dominated American radio throughout the 1940s and beyond, becoming the gold standard for psychological thrillers on the airwaves. CBS's anthology series pioneered the exploration of ordinary people confronting extraordinary moral dilemmas, transforming living rooms into stages where human fear and guilt played out in real time. With no visual distraction, only voices, music, and sound effects, the show demanded listeners' complete attention and active imagination—creating an intimacy that television could rarely match. "The Guilty Always Run" exemplifies this mastery, using the medium's unique power to make listeners complicit in their protagonist's mounting dread.</p>
-<p>Don't miss this gripping thirty-minute journey into the psychology of guilt and consequence. Settle in, turn up the volume, and prepare yourself for *Suspense*.</p>
+          <p>When the lights dim and that unforgettable theme music pierces the darkness, listeners know they're about to enter a world where paranoia prowls and conscience becomes a weapon. In "The Guilty Always Run," a hunted figure flees through the night, pursued not by law enforcement but by their own moral reckoning. The narrative unfolds with mounting tension as our protagonist discovers that some crimes cannot be outrun—that guilt, like a shadow, follows relentlessly through dimly lit streets and anonymous crowds. The sound design crackles with urgency: footsteps echoing through empty corridors, the screech of tires, whispered accusations. By the episode's climax, listeners will find themselves breathlessly wondering whether justice catches its quarry, or whether conscience itself becomes the final judge.</p>
+<p>Suspense dominated American radio throughout the 1940s and beyond, becoming the gold standard for psychological thrillers on the airwaves. CBS's anthology series pioneered the exploration of ordinary people confronting extraordinary moral dilemmas, transforming living rooms into stages where human fear and guilt played out in real time. With no visual distraction, only voices, music, and sound effects, the show demanded listeners' complete attention and active imagination—creating an intimacy that television could rarely match. "The Guilty Always Run" exemplifies this mastery, using the medium's unique power to make listeners complicit in their protagonist's mounting dread.</p>
+<p>Don't miss this gripping thirty-minute journey into the psychology of guilt and consequence. Settle in, turn up the volume, and prepare yourself for Suspense.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

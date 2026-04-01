@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 521208 490 Joker Wild (128 44) 28055 29m14s — Suspense | Ghost of Radio</title>
+  <title>Joker Wild (128 44) 28055 29m14s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 521208 490 Joker Wild (128 44) 28055 29m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 521208 490 Joker Wild (128 44) 28055 29m14s — Suspense">
   <meta property="og:description" content="Listen to Suspense 521208 490 Joker Wild (128 44) 28055 29m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 8, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 521208 490 Joker Wild (128 44) 28055 29m14s</h1>
+          <h1 class="episode__title">Joker Wild (128 44) 28055 29m14s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Joker Wild</p>
-<p>Picture yourself huddled near the radio on a December evening in 1948, the winter darkness pressing against your windows as an ordinary card game spirals into something far more sinister. In "Joker Wild," a seemingly innocent night of poker among friends transforms into a psychological thriller where every shuffle of the deck and glance across the table carries menace. As the stakes climb higher than mere money, the players discover that one among them harbors a secret dark enough to justify murder—and they must determine who the killer is before the final hand is played. The crackling tension, the whispered accusations, and the masterful sound design create an atmosphere where trust evaporates like smoke, leaving only paranoia and danger in its wake.</p>
+          <p>Picture yourself huddled near the radio on a December evening in 1948, the winter darkness pressing against your windows as an ordinary card game spirals into something far more sinister. In "Joker Wild," a seemingly innocent night of poker among friends transforms into a psychological thriller where every shuffle of the deck and glance across the table carries menace. As the stakes climb higher than mere money, the players discover that one among them harbors a secret dark enough to justify murder—and they must determine who the killer is before the final hand is played. The crackling tension, the whispered accusations, and the masterful sound design create an atmosphere where trust evaporates like smoke, leaving only paranoia and danger in its wake.</p>
 <p>"Suspense," which aired on CBS for twenty years, became the gold standard of radio thriller programming by refusing easy answers and comfortable resolutions. This particular episode exemplifies the show's genius for turning familiar scenarios—a card game, old friends, an evening at home—into chambers of mounting dread. The program's writers understood that true horror often lurks in the ordinary, waiting to ambush us when our guard is down. With an ensemble cast delivering layered performances and sound effects that make every creaking floorboard and ringing phone feel ominous, "Joker Wild" demonstrates why millions of Americans made "Suspense" an unmissable appointment with terror.</p>
 <p>If you've ever felt that inexplicable chill when a friend's smile seems suddenly false, or wondered what secrets lurk behind familiar faces, "Joker Wild" will remind you why the darkness beyond the radio speaker felt so very close. Tune in and discover that sometimes the greatest danger comes from those we thought we knew.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

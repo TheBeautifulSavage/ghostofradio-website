@@ -66,7 +66,7 @@ The individual episodes hav">
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/suspense/the-lucky-lady-80-44-17838-29m54s-ec.mp3" type="audio/mpeg"></audio>
 </div>
 
-<h2>The Episode</h2><p>**EPISODE SUMMARY**</p>
+<h2>The Episode</h2><p>EPISODE SUMMARY</p>
 <p>"The Lucky Lady" is a masterclass in building tension and suspense through clever storytelling and atmosphere. The episode revolves around a mysterious woman, known as "The Lucky Lady," who has been making an unprecedented run of good fortune at the local racetrack. As the story unfolds, it becomes clear that there's more to this enigmatic figure than meets the eye. With each passing moment, the listener is drawn deeper into a web of intrigue and deception, where nothing is</p>
 
 <div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1946</h3><p>A classic episode from the golden age of radio.</p></div>
@@ -91,9 +91,9 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),pb2=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),brs=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';return Math.floor(s/60)+':'+(Math.floor(s%60)<10?'0':'')+Math.floor(s%60);}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;brs.forEach((b,i)=>b.classList.toggle('active',i<Math.floor(p*brs.length)));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;brs.forEach((b,i)=>b.classList.toggle('active',i<Math.floor(pbrs.length)));af=requestAnimationFrame(anim);}
 pb2.addEventListener('click',()=>{if(audio.paused){audio.play();pb2.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();pb2.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{pb2.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
 pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});

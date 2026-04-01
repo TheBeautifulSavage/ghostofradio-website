@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560619 655 A Sleeping Draught (128 44) 28528 30m05s — Suspense | Ghost of Radio</title>
+  <title>A Sleeping Draught (128 44) 28528 30m05s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560619 655 A Sleeping Draught (128 44) 28528 30m05s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560619 655 A Sleeping Draught (128 44) 28528 30m05s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560619 655 A Sleeping Draught (128 44) 28528 30m05s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 19, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560619 655 A Sleeping Draught (128 44) 28528 30m05s</h1>
+          <h1 class="episode__title">A Sleeping Draught (128 44) 28528 30m05s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># A Sleeping Draught</p>
-<p>Picture this: a moonless night, the creak of floorboards, and the soft clink of a glass being set upon a nightstand. In "A Sleeping Draught," the master of suspense himself guides you through a tale of domestic intimacy twisted into something sinister—where the line between care and conspiracy blurs like poison dissolving in a darkened drink. As our protagonist settles into bed, trusting in the gentle ministrations of a loved one, listeners are drawn into a psychological thriller where every sip becomes an act of faith, every gesture a potential betrayal. The radio crackles with tension as voices lower to whispers, and the question haunts the darkness: what secrets lurk behind closed bedroom doors, and how well do we truly know those closest to us?</p>
-<p>*Suspense* became America's premier purveyor of thrills during its twenty-year reign on CBS, setting the gold standard for audio drama that would influence generations of storytellers. Broadcasting from 1942 to 1962, the show's rotating cast of Hollywood's finest—from Orson Welles to Cary Grant—brought gravitas and nuance to tales of murder, madness, and moral ambiguity. "A Sleeping Draught" exemplifies the show's genius: transforming the ordinary into the ominous, using the intimate medium of radio to burrow directly into listeners' minds, where imagination conjures horrors far more vivid than any visual medium could achieve. In an era before television demanded its audience's full attention, *Suspense* commanded listeners to sit alone with their thoughts, their fears, and the uncanny whispers emanating from their speakers.</p>
+          <p>Picture this: a moonless night, the creak of floorboards, and the soft clink of a glass being set upon a nightstand. In "A Sleeping Draught," the master of suspense himself guides you through a tale of domestic intimacy twisted into something sinister—where the line between care and conspiracy blurs like poison dissolving in a darkened drink. As our protagonist settles into bed, trusting in the gentle ministrations of a loved one, listeners are drawn into a psychological thriller where every sip becomes an act of faith, every gesture a potential betrayal. The radio crackles with tension as voices lower to whispers, and the question haunts the darkness: what secrets lurk behind closed bedroom doors, and how well do we truly know those closest to us?</p>
+<p>Suspense became America's premier purveyor of thrills during its twenty-year reign on CBS, setting the gold standard for audio drama that would influence generations of storytellers. Broadcasting from 1942 to 1962, the show's rotating cast of Hollywood's finest—from Orson Welles to Cary Grant—brought gravitas and nuance to tales of murder, madness, and moral ambiguity. "A Sleeping Draught" exemplifies the show's genius: transforming the ordinary into the ominous, using the intimate medium of radio to burrow directly into listeners' minds, where imagination conjures horrors far more vivid than any visual medium could achieve. In an era before television demanded its audience's full attention, Suspense commanded listeners to sit alone with their thoughts, their fears, and the uncanny whispers emanating from their speakers.</p>
 <p>Don't miss this masterclass in psychological terror. Tune in and discover why a nation once gathered around their radios, breathless with dread.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

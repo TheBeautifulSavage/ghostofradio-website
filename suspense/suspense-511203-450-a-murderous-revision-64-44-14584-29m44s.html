@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 511203 450 A Murderous Revision (64 44) 14584 29m44s — Suspense | Ghost of Radio</title>
+  <title>A Murderous Revision (64 44) 14584 29m44s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 511203 450 A Murderous Revision (64 44) 14584 29m44s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 511203 450 A Murderous Revision (64 44) 14584 29m44s — Suspense">
   <meta property="og:description" content="Listen to Suspense 511203 450 A Murderous Revision (64 44) 14584 29m44s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 3, 1951</span>
           </div>
-          <h1 class="episode__title">Suspense 511203 450 A Murderous Revision (64 44) 14584 29m44s</h1>
+          <h1 class="episode__title">A Murderous Revision (64 44) 14584 29m44s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># A Murderous Revision</p>
-<p>Picture yourself huddled around the radio on a December evening in 1945, the winter darkness pressing against your windows as an unsettling piano chord cuts through the static. In "A Murderous Revision," a struggling writer discovers that his latest manuscript—a tale of perfect murder—has become terrifyingly real. As he races to understand how his fictional crime has manifested in the world beyond the page, the line between imagination and reality dissolves into shadow and suspicion. With each ticking moment, our protagonist realizes that someone has read his work not as entertainment, but as instruction. The tension builds relentlessly as he confronts the horrifying possibility that his words have been a blueprint for an actual killer, and worse—that he may be next.</p>
+          <p>Picture yourself huddled around the radio on a December evening in 1945, the winter darkness pressing against your windows as an unsettling piano chord cuts through the static. In "A Murderous Revision," a struggling writer discovers that his latest manuscript—a tale of perfect murder—has become terrifyingly real. As he races to understand how his fictional crime has manifested in the world beyond the page, the line between imagination and reality dissolves into shadow and suspicion. With each ticking moment, our protagonist realizes that someone has read his work not as entertainment, but as instruction. The tension builds relentlessly as he confronts the horrifying possibility that his words have been a blueprint for an actual killer, and worse—that he may be next.</p>
 <p>Suspense endured for two decades as CBS's masterwork of psychological terror, pioneering techniques that would define the thriller genre for generations. Broadcasting from 1942 to 1962, the show became legendary for its innovative use of sound design—creaking doors, footsteps that seem inches from your ear, breathing in the dark—creating an intimacy of fear that video would struggle to replicate. "A Murderous Revision" exemplifies why Suspense commanded loyal audiences night after night: it tapped into the primal fear of losing control, of ideas escaping their creator with lethal consequences. The show's writers understood that the most terrifying horror isn't always what's shown, but what listeners imagine in the darkness.</p>
 <p>Don't miss this masterpiece of radio terror. Switch on your receiver, dim the lights, and let the crackling airwaves transport you to a world where a writer's nightmare becomes everyone's fear. "A Murderous Revision" awaits.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

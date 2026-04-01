@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550503 596 Remember Me (64 32) 12027 24m17s — Suspense | Ghost of Radio</title>
+  <title>Remember Me (64 32) 12027 24m17s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550503 596 Remember Me (64 32) 12027 24m17s — Suspense (CBS, 2027). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550503 596 Remember Me (64 32) 12027 24m17s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550503 596 Remember Me (64 32) 12027 24m17s — Suspense (CBS, 2027). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 3, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550503 596 Remember Me (64 32) 12027 24m17s</h1>
+          <h1 class="episode__title">Remember Me (64 32) 12027 24m17s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Remember Me</p>
-<p>On a fog-laden evening in May of 1950, *Suspense* invites you into the shadowed world of a man haunted by his own forgotten past. When a mysterious stranger arrives at the door with a simple request—"Remember me?"—our protagonist discovers that some debts cannot be paid with money, and some promises, once broken, echo across the years with terrifying consequences. As the tension mounts and identities blur between present and past, listeners will find themselves gripping their radio sets, uncertain whether the real danger lurks in faded memory or in the sinister present. With every knock at the door, every whispered accusation, the noose of reckoning tightens. This is *Suspense* at its most intimate and unsettling—not relying on monsters or criminals, but on the human capacity for guilt, denial, and the inescapable weight of the past.</p>
-<p>For over two decades, *Suspense* held millions of Americans captive in their living rooms and kitchens, delivering meticulously crafted tales of psychological terror and moral ambiguity. Produced by William Spier and hosted by the silken-voiced E.B. Dynamite (later Cathy Lewis), the show became the gold standard of radio drama—a weekly reminder that the most terrifying stories are those rooted in recognizable human experience. By 1950, when "Remember Me" aired, the show had perfected its formula: talented character actors, evocative sound design by Bailey Fesler and crew, and scripts that burrowed into the listener's mind long after the final fadeout.</p>
-<p>Don't miss this masterwork of psychological suspense. Tune in to *Suspense* and discover why, for an entire generation, Tuesday nights meant unforgettable terror delivered through speakers in their homes—where the darkness felt just a little bit closer.</p>
+          <p>On a fog-laden evening in May of 1950, Suspense invites you into the shadowed world of a man haunted by his own forgotten past. When a mysterious stranger arrives at the door with a simple request—"Remember me?"—our protagonist discovers that some debts cannot be paid with money, and some promises, once broken, echo across the years with terrifying consequences. As the tension mounts and identities blur between present and past, listeners will find themselves gripping their radio sets, uncertain whether the real danger lurks in faded memory or in the sinister present. With every knock at the door, every whispered accusation, the noose of reckoning tightens. This is Suspense at its most intimate and unsettling—not relying on monsters or criminals, but on the human capacity for guilt, denial, and the inescapable weight of the past.</p>
+<p>For over two decades, Suspense held millions of Americans captive in their living rooms and kitchens, delivering meticulously crafted tales of psychological terror and moral ambiguity. Produced by William Spier and hosted by the silken-voiced E.B. Dynamite (later Cathy Lewis), the show became the gold standard of radio drama—a weekly reminder that the most terrifying stories are those rooted in recognizable human experience. By 1950, when "Remember Me" aired, the show had perfected its formula: talented character actors, evocative sound design by Bailey Fesler and crew, and scripts that burrowed into the listener's mind long after the final fadeout.</p>
+<p>Don't miss this masterwork of psychological suspense. Tune in to Suspense and discover why, for an entire generation, Tuesday nights meant unforgettable terror delivered through speakers in their homes—where the darkness felt just a little bit closer.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

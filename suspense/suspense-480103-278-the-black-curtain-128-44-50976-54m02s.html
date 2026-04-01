@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 480103 278 The Black Curtain (128 44) 50976 54m02s — Suspense | Ghost of Radio</title>
+  <title>The Black Curtain (128 44) 50976 54m02s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 480103 278 The Black Curtain (128 44) 50976 54m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 480103 278 The Black Curtain (128 44) 50976 54m02s — Suspense">
   <meta property="og:description" content="Listen to Suspense 480103 278 The Black Curtain (128 44) 50976 54m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 3, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 480103 278 The Black Curtain (128 44) 50976 54m02s</h1>
+          <h1 class="episode__title">The Black Curtain (128 44) 50976 54m02s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Black Curtain</p>
-<p>Picture yourself in a dimly lit room, the glow of your radio set the only light as the familiar announcements fade and an eerie musical sting pierces the darkness. In "The Black Curtain," listeners are plunged into a nightmare of fractured memory and creeping dread—a man awakens with no recollection of who he is, where he came from, or what terrible thing he may have done. As the hours unfold, strangers appear at his door with cryptic warnings, old acquaintances regard him with fear and suspicion, and a mysterious black curtain becomes the haunting symbol of secrets he can neither remember nor escape. The tension builds with each revelation, each false lead, each moment he fears the truth about himself may be far worse than the blank terror of his amnesia. This is *Suspense* at its finest: a psychological thriller that traps you in one man's paranoid descent as thoroughly as the radio waves carry the actors' voices into your home.</p>
-<p>For two decades, CBS's *Suspense* reigned as America's premier showcase for sophisticated thriller storytelling, featuring some of radio's greatest talents in taut dramas that prized psychological horror over cheap scares. The series pioneered the art of unsettling listeners through suggestion and mounting dread—letting imagination do the heavy lifting. Episodes like "The Black Curtain" demonstrated the show's mastery of the amnesia-thriller subgenre, a format perfectly suited to radio's intimacy and its ability to trap audiences inside a protagonist's confused perspective.</p>
+          <p>Picture yourself in a dimly lit room, the glow of your radio set the only light as the familiar announcements fade and an eerie musical sting pierces the darkness. In "The Black Curtain," listeners are plunged into a nightmare of fractured memory and creeping dread—a man awakens with no recollection of who he is, where he came from, or what terrible thing he may have done. As the hours unfold, strangers appear at his door with cryptic warnings, old acquaintances regard him with fear and suspicion, and a mysterious black curtain becomes the haunting symbol of secrets he can neither remember nor escape. The tension builds with each revelation, each false lead, each moment he fears the truth about himself may be far worse than the blank terror of his amnesia. This is Suspense at its finest: a psychological thriller that traps you in one man's paranoid descent as thoroughly as the radio waves carry the actors' voices into your home.</p>
+<p>For two decades, CBS's Suspense reigned as America's premier showcase for sophisticated thriller storytelling, featuring some of radio's greatest talents in taut dramas that prized psychological horror over cheap scares. The series pioneered the art of unsettling listeners through suggestion and mounting dread—letting imagination do the heavy lifting. Episodes like "The Black Curtain" demonstrated the show's mastery of the amnesia-thriller subgenre, a format perfectly suited to radio's intimacy and its ability to trap audiences inside a protagonist's confused perspective.</p>
 <p>Step through that black curtain tonight and experience the kind of gripping, intelligent entertainment that kept millions of Americans huddled around their speakers, afraid to move. This is classic radio drama—where the most terrifying visions play out in the theater of your own mind.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

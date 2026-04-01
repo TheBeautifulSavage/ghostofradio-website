@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570428 696 Escape To Death (64 44) 13674 28m29s — Suspense | Ghost of Radio</title>
+  <title>Escape To Death (64 44) 13674 28m29s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570428 696 Escape To Death (64 44) 13674 28m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570428 696 Escape To Death (64 44) 13674 28m29s — Suspense">
   <meta property="og:description" content="Listen to Suspense 570428 696 Escape To Death (64 44) 13674 28m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 28, 1957</span>
           </div>
-          <h1 class="episode__title">Suspense 570428 696 Escape To Death (64 44) 13674 28m29s</h1>
+          <h1 class="episode__title">Escape To Death (64 44) 13674 28m29s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Escape to Death</p>
-<p>Picture yourself huddled near the radio on a foggy evening as the Suspense theme creeps through your living room—that unmistakable, nerve-jangling prelude that promised America's most spine-tingling tales. In "Escape to Death," listeners encounter a diabolical trap where the only way out is through the very thing that terrifies us most. A desperate protagonist discovers that freedom and oblivion have become intertwined, and every choice tightens the noose. William Castle's direction and the masterful sound design create an atmosphere of claustrophobic dread: the ticking of a clock, the grinding of machinery, whispered threats echoing through narrow corridors. This is Suspense at its finest—not relying on monsters or mayhem, but on the suffocating terror of inescapable circumstances and impossible decisions.</p>
+          <p>Picture yourself huddled near the radio on a foggy evening as the Suspense theme creeps through your living room—that unmistakable, nerve-jangling prelude that promised America's most spine-tingling tales. In "Escape to Death," listeners encounter a diabolical trap where the only way out is through the very thing that terrifies us most. A desperate protagonist discovers that freedom and oblivion have become intertwined, and every choice tightens the noose. William Castle's direction and the masterful sound design create an atmosphere of claustrophobic dread: the ticking of a clock, the grinding of machinery, whispered threats echoing through narrow corridors. This is Suspense at its finest—not relying on monsters or mayhem, but on the suffocating terror of inescapable circumstances and impossible decisions.</p>
 <p>For nearly two decades, Suspense defined the golden age of radio drama, commanding millions of listeners each week with stories that wallowed in psychological torment rather than cheap thrills. CBS's anthology format meant audiences never knew what lurked behind the next commercial break—whether they'd encounter a murderous spouse, a sinister stranger, or the darkness within themselves. The 1940s episodes, particularly those from the show's peak years, represented radio drama at its most sophisticated; they proved that unseen horrors, conjured by talented voice actors and sound technicians, could burrow deeper into the American consciousness than any visual medium. These weren't mere entertainments—they were cultural touchstones that sparked conversation and left listeners sleeping with the lights on.</p>
 <p>"Escape to Death" represents everything that made Suspense legendary: taut writing, atmospheric production, and performances that made the impossible feel terrifyingly real. Whether you're a devoted fan of classic radio or discovering this thrilling world for the first time, this twenty-eight minute journey into darkness deserves your attention. Tune in—if you dare.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

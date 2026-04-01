@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 490203 326 Backseat Driver (128 44) 28499 30m03s — Suspense | Ghost of Radio</title>
+  <title>Backseat Driver (128 44) 28499 30m03s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 490203 326 Backseat Driver (128 44) 28499 30m03s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 490203 326 Backseat Driver (128 44) 28499 30m03s — Suspense">
   <meta property="og:description" content="Listen to Suspense 490203 326 Backseat Driver (128 44) 28499 30m03s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 3, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 490203 326 Backseat Driver (128 44) 28499 30m03s</h1>
+          <h1 class="episode__title">Backseat Driver (128 44) 28499 30m03s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Backseat Driver</p>
-<p>Picture this: a lonely stretch of highway at dusk, the engine rumbling beneath you, and then—a stranger slides into your back seat. You didn't stop for him. You didn't see him get in. But there he is, and he won't leave. In "Backseat Driver," CBS's legendary *Suspense* program delivers a masterclass in automotive terror, trapping listeners in a confined metal box where every mile brings a new twist of the knife. The unknown passenger speaks in measured tones, calm and polite, yet his very presence radiates menace. As our protagonist driver frantically calculates his options—speeding up, pulling over, calling for help—the radio audience finds themselves gripping the arms of their chairs, unable to look away from an invisible nightmare that unfolds entirely in the theater of the mind.</p>
-<p>*Suspense* stood as CBS's crown jewel of dramatic programming throughout its twenty-year run, pioneering a style of psychological terror that Hollywood would spend decades trying to replicate on screen. Premiering in 1942, the anthology series made its reputation on scripts that understood fear's most potent weapon: the unknown. Where lesser shows relied on monsters and gunfire, *Suspense* architects like the prolific radio writer William Spier crafted scenarios of ordinary people facing extraordinary danger, often in confined spaces where escape seemed impossible. Episodes like "Backseat Driver" proved that the most terrifying threats aren't always supernatural—sometimes they're disturbingly, horrifyingly human.</p>
-<p>Today, tuning into this restored broadcast is to experience what captivated millions of Americans huddled around their radios in the 1940s: pure, undeniable dread transmitted through nothing but voices, sound effects, and the boundless imagination. Press play, turn off the lights, and let *Suspense* remind you why radio's golden age created an art form no television could ever quite capture.</p>
+          <p>Picture this: a lonely stretch of highway at dusk, the engine rumbling beneath you, and then—a stranger slides into your back seat. You didn't stop for him. You didn't see him get in. But there he is, and he won't leave. In "Backseat Driver," CBS's legendary Suspense program delivers a masterclass in automotive terror, trapping listeners in a confined metal box where every mile brings a new twist of the knife. The unknown passenger speaks in measured tones, calm and polite, yet his very presence radiates menace. As our protagonist driver frantically calculates his options—speeding up, pulling over, calling for help—the radio audience finds themselves gripping the arms of their chairs, unable to look away from an invisible nightmare that unfolds entirely in the theater of the mind.</p>
+<p>Suspense stood as CBS's crown jewel of dramatic programming throughout its twenty-year run, pioneering a style of psychological terror that Hollywood would spend decades trying to replicate on screen. Premiering in 1942, the anthology series made its reputation on scripts that understood fear's most potent weapon: the unknown. Where lesser shows relied on monsters and gunfire, Suspense architects like the prolific radio writer William Spier crafted scenarios of ordinary people facing extraordinary danger, often in confined spaces where escape seemed impossible. Episodes like "Backseat Driver" proved that the most terrifying threats aren't always supernatural—sometimes they're disturbingly, horrifyingly human.</p>
+<p>Today, tuning into this restored broadcast is to experience what captivated millions of Americans huddled around their radios in the 1940s: pure, undeniable dread transmitted through nothing but voices, sound effects, and the boundless imagination. Press play, turn off the lights, and let Suspense remind you why radio's golden age created an art form no television could ever quite capture.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

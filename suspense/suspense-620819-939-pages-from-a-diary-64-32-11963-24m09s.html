@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620819 939 Pages From A Diary (64 32) 11963 24m09s — Suspense | Ghost of Radio</title>
+  <title>Pages From A Diary (64 32) 11963 24m09s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620819 939 Pages From A Diary (64 32) 11963 24m09s — Suspense (CBS, 1963). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620819 939 Pages From A Diary (64 32) 11963 24m09s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620819 939 Pages From A Diary (64 32) 11963 24m09s — Suspense (CBS, 1963). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 19, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620819 939 Pages From A Diary (64 32) 11963 24m09s</h1>
+          <h1 class="episode__title">Pages From A Diary (64 32) 11963 24m09s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Pages From A Diary</p>
-<p>When a woman discovers an old leather journal hidden in the walls of her new home, she believes she's found a harmless relic of the house's past. But as she begins to read the cryptic, increasingly disturbing entries—written in a shaking hand decades ago—she realizes the diary's author was documenting something unspeakable. Each page pulls her deeper into a nightmare of psychological terror, where the boundary between past and present begins to blur dangerously. What happened in these rooms? And why does the author's final entry seem to be written as a warning directly to *her*? In this chilling installment of *Suspense*, the simple act of reading becomes an act of trespassing into madness itself.</p>
-<p>By 1963, *Suspense* had already redefined the thriller format for nearly two decades, pioneering the use of sound design, narrative unreliability, and psychological horror that would influence television and film for generations. This late-era episode exemplifies what made the show legendary: an intimate, character-driven story that transforms an ordinary scenario into something profoundly unsettling. Rather than relying on monsters or murder plots, "Pages From A Diary" trades in the real currency of human terror—the unknown secrets of strangers, the haunting power of written words, and the creeping realization that some mysteries shouldn't be solved. The sparse sound work and controlled performances create a suffocating atmosphere that proves why radio remained a master medium for psychological suspense long after television emerged as the dominant entertainment force.</p>
-<p>Step into the darkness with us. Tune in to *Suspense* and discover why, even in 1963, the most terrifying stories were still best told in the shadows where imagination runs wild.</p>
+          <p>When a woman discovers an old leather journal hidden in the walls of her new home, she believes she's found a harmless relic of the house's past. But as she begins to read the cryptic, increasingly disturbing entries—written in a shaking hand decades ago—she realizes the diary's author was documenting something unspeakable. Each page pulls her deeper into a nightmare of psychological terror, where the boundary between past and present begins to blur dangerously. What happened in these rooms? And why does the author's final entry seem to be written as a warning directly to her? In this chilling installment of Suspense, the simple act of reading becomes an act of trespassing into madness itself.</p>
+<p>By 1963, Suspense had already redefined the thriller format for nearly two decades, pioneering the use of sound design, narrative unreliability, and psychological horror that would influence television and film for generations. This late-era episode exemplifies what made the show legendary: an intimate, character-driven story that transforms an ordinary scenario into something profoundly unsettling. Rather than relying on monsters or murder plots, "Pages From A Diary" trades in the real currency of human terror—the unknown secrets of strangers, the haunting power of written words, and the creeping realization that some mysteries shouldn't be solved. The sparse sound work and controlled performances create a suffocating atmosphere that proves why radio remained a master medium for psychological suspense long after television emerged as the dominant entertainment force.</p>
+<p>Step into the darkness with us. Tune in to Suspense and discover why, even in 1963, the most terrifying stories were still best told in the shadows where imagination runs wild.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

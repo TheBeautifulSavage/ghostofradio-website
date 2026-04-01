@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 500914 394 Over The Bounding Main (131 44) 28801 29m49s — Suspense | Ghost of Radio</title>
+  <title>Over The Bounding Main (131 44) 28801 29m49s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 500914 394 Over The Bounding Main (131 44) 28801 29m49s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 500914 394 Over The Bounding Main (131 44) 28801 29m49s — Suspense">
   <meta property="og:description" content="Listen to Suspense 500914 394 Over The Bounding Main (131 44) 28801 29m49s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 14, 1950</span>
           </div>
-          <h1 class="episode__title">Suspense 500914 394 Over The Bounding Main (131 44) 28801 29m49s</h1>
+          <h1 class="episode__title">Over The Bounding Main (131 44) 28801 29m49s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Over The Bounding Main</p>
-<p>Picture yourself hunched close to your radio set as darkness falls, the rest of the household settled in for the evening. "Over The Bounding Main" pulls you into the claustrophobic terror of the open sea—where the horizon stretches endlessly in every direction and help is impossibly far away. A ship cuts through fog-shrouded waters, and somewhere aboard, danger lurks in the shadows between the cargo hold and the captain's quarters. The creaking of the vessel's timbers becomes as menacing as a heartbeat, each creak a reminder that at sea, there is nowhere truly safe to hide. What began as a routine voyage transforms into a nightmare of suspicion, paranoia, and survival, where the ocean itself becomes a character—indifferent, ancient, and hungry.</p>
-<p>For nearly two decades, CBS's *Suspense* reigned as America's premier thriller program, attracting millions of listeners who craved intelligent, expertly crafted tales of the macabre and mysterious. The show's golden age—this very episode hailing from the 1940s—represented radio drama at its finest, employing the medium's greatest strength: the power of suggestion. With nothing but sound effects, music, and stellar voice actors, the program conjured worlds more vivid than any screen could produce. "Over The Bounding Main" exemplifies this mastery, using the isolation of a ship at sea to generate pure, distilled dread.</p>
-<p>Whether you're a devoted fan of classic radio or discovering *Suspense* for the first time, this episode rewards your attention. Turn down the lights, silence the distractions, and let the sound design transport you across treacherous waters and into genuine peril. In thirty minutes, you'll understand why millions of Americans made *Suspense* must-listen radio—and why these stories still grip our imaginations today.</p>
+          <p>Picture yourself hunched close to your radio set as darkness falls, the rest of the household settled in for the evening. "Over The Bounding Main" pulls you into the claustrophobic terror of the open sea—where the horizon stretches endlessly in every direction and help is impossibly far away. A ship cuts through fog-shrouded waters, and somewhere aboard, danger lurks in the shadows between the cargo hold and the captain's quarters. The creaking of the vessel's timbers becomes as menacing as a heartbeat, each creak a reminder that at sea, there is nowhere truly safe to hide. What began as a routine voyage transforms into a nightmare of suspicion, paranoia, and survival, where the ocean itself becomes a character—indifferent, ancient, and hungry.</p>
+<p>For nearly two decades, CBS's Suspense reigned as America's premier thriller program, attracting millions of listeners who craved intelligent, expertly crafted tales of the macabre and mysterious. The show's golden age—this very episode hailing from the 1940s—represented radio drama at its finest, employing the medium's greatest strength: the power of suggestion. With nothing but sound effects, music, and stellar voice actors, the program conjured worlds more vivid than any screen could produce. "Over The Bounding Main" exemplifies this mastery, using the isolation of a ship at sea to generate pure, distilled dread.</p>
+<p>Whether you're a devoted fan of classic radio or discovering Suspense for the first time, this episode rewards your attention. Turn down the lights, silence the distractions, and let the sound design transport you across treacherous waters and into genuine peril. In thirty minutes, you'll understand why millions of Americans made Suspense must-listen radio—and why these stories still grip our imaginations today.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

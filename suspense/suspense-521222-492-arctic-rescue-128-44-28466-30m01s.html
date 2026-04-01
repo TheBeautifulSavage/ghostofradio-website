@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 521222 492 Arctic Rescue (128 44) 28466 30m01s — Suspense | Ghost of Radio</title>
+  <title>Arctic Rescue (128 44) 28466 30m01s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 521222 492 Arctic Rescue (128 44) 28466 30m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 521222 492 Arctic Rescue (128 44) 28466 30m01s — Suspense">
   <meta property="og:description" content="Listen to Suspense 521222 492 Arctic Rescue (128 44) 28466 30m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 22, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 521222 492 Arctic Rescue (128 44) 28466 30m01s</h1>
+          <h1 class="episode__title">Arctic Rescue (128 44) 28466 30m01s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Arctic Rescue</p>
-<p>Picture yourself huddled beside a crackling radio on a winter's night, the darkness pressing in from all sides, as a desperate SOS crackles through the static from the frozen wastes of the Arctic. In *Arctic Rescue*, the Suspense program transports you to a nightmarish landscape of ice and isolation, where a small rescue team battles not only the merciless elements but the mounting psychological terror of being trapped at the edge of the world. As rescue attempts unfold in the suffocating cold, listeners discover that the greatest dangers aren't always the ones we can see—sometimes they lurk in the mind, festering in the silence and shadows of the endless white expanse. The episode builds with masterful tension, each radio effect—the howling wind, the groan of shifting ice, the fading radio signals—pulling you deeper into an atmosphere of dread and claustrophobia that only the golden age of radio could conjure.</p>
-<p>*Suspense* was CBS's crown jewel of suspense programming, commanding millions of listeners throughout its two-decade run with stories that proved the most terrifying images are those our own imaginations create. Airing during the 1940s—when radio was the primary source of evening entertainment—episodes like *Arctic Rescue* demonstrated why families gathered around their sets night after night. Without the crutch of visual effects, the show's writers, directors, and performers relied entirely on intelligent scripting, evocative sound design, and powerhouse acting to create scenarios that would haunt listeners long after the final musical sting faded into silence.</p>
-<p>Don't miss your chance to experience a vintage *Suspense* episode that exemplifies why radio drama remains unmatched in its power to thrill and terrify. Tune in to *Arctic Rescue* and rediscover the magic of imagination meeting artistry—your next sleepless night awaits.</p>
+          <p>Picture yourself huddled beside a crackling radio on a winter's night, the darkness pressing in from all sides, as a desperate SOS crackles through the static from the frozen wastes of the Arctic. In Arctic Rescue, the Suspense program transports you to a nightmarish landscape of ice and isolation, where a small rescue team battles not only the merciless elements but the mounting psychological terror of being trapped at the edge of the world. As rescue attempts unfold in the suffocating cold, listeners discover that the greatest dangers aren't always the ones we can see—sometimes they lurk in the mind, festering in the silence and shadows of the endless white expanse. The episode builds with masterful tension, each radio effect—the howling wind, the groan of shifting ice, the fading radio signals—pulling you deeper into an atmosphere of dread and claustrophobia that only the golden age of radio could conjure.</p>
+<p>Suspense was CBS's crown jewel of suspense programming, commanding millions of listeners throughout its two-decade run with stories that proved the most terrifying images are those our own imaginations create. Airing during the 1940s—when radio was the primary source of evening entertainment—episodes like Arctic Rescue demonstrated why families gathered around their sets night after night. Without the crutch of visual effects, the show's writers, directors, and performers relied entirely on intelligent scripting, evocative sound design, and powerhouse acting to create scenarios that would haunt listeners long after the final musical sting faded into silence.</p>
+<p>Don't miss your chance to experience a vintage Suspense episode that exemplifies why radio drama remains unmatched in its power to thrill and terrify. Tune in to Arctic Rescue and rediscover the magic of imagination meeting artistry—your next sleepless night awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 540301 541 The Barking Death (128 44) 28660 29m53s — Suspense | Ghost of Radio</title>
+  <title>The Barking Death (128 44) 28660 29m53s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 540301 541 The Barking Death (128 44) 28660 29m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 540301 541 The Barking Death (128 44) 28660 29m53s — Suspense">
   <meta property="og:description" content="Listen to Suspense 540301 541 The Barking Death (128 44) 28660 29m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 1, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 540301 541 The Barking Death (128 44) 28660 29m53s</h1>
+          <h1 class="episode__title">The Barking Death (128 44) 28660 29m53s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Barking Death</p>
-<p>When the mysterious illness strikes a quiet English village, the only symptom is peculiar—a sound that echoes through the fog-laden nights, a rhythmic barking that grows louder, more insistent, more *wrong*. As our protagonist investigates the eerie affliction, he discovers that each victim has heard the barking before their own voices transform into that same terrible sound. Is it supernatural? A weapon? A curse passed from throat to throat? With every knock on a cottage door and each whispered confession from a terrified villager, the tension mounts inexorably. The sound design of *The Barking Death* is the true star here—Suspense's masterful sound engineers craft an atmosphere so oppressive and uncanny that listeners found themselves jumping at every creak and howl, their own radios seeming to emit that dreadful barking from the very static between stations.</p>
-<p>*Suspense* defined the golden age of dramatic radio, presenting weekly tales of terror and psychological torment that required nothing but an active imagination and a darkened room. Broadcast live from CBS studios, each episode represented the cutting edge of audio entertainment, with stellar casts, elaborate sound effects, and scripts that understood how to make the invisible infinitely more terrifying than anything seen on screen. This 1940s installment exemplifies why the show earned its legendary status—not through gore or explicit violence, but through pure, distilled dread and the power of suggestion.</p>
-<p>If you've never experienced *Suspense*, *The Barking Death* is an ideal entry point into a world where sound *is* the entire spectrum of fear. Tune in, dim the lights, and prepare yourself for nearly thirty minutes of mounting horror that proves, once again, why what we cannot see frightens us most profoundly.</p>
+          <p>When the mysterious illness strikes a quiet English village, the only symptom is peculiar—a sound that echoes through the fog-laden nights, a rhythmic barking that grows louder, more insistent, more wrong. As our protagonist investigates the eerie affliction, he discovers that each victim has heard the barking before their own voices transform into that same terrible sound. Is it supernatural? A weapon? A curse passed from throat to throat? With every knock on a cottage door and each whispered confession from a terrified villager, the tension mounts inexorably. The sound design of The Barking Death is the true star here—Suspense's masterful sound engineers craft an atmosphere so oppressive and uncanny that listeners found themselves jumping at every creak and howl, their own radios seeming to emit that dreadful barking from the very static between stations.</p>
+<p>Suspense defined the golden age of dramatic radio, presenting weekly tales of terror and psychological torment that required nothing but an active imagination and a darkened room. Broadcast live from CBS studios, each episode represented the cutting edge of audio entertainment, with stellar casts, elaborate sound effects, and scripts that understood how to make the invisible infinitely more terrifying than anything seen on screen. This 1940s installment exemplifies why the show earned its legendary status—not through gore or explicit violence, but through pure, distilled dread and the power of suggestion.</p>
+<p>If you've never experienced Suspense, The Barking Death is an ideal entry point into a world where sound is the entire spectrum of fear. Tune in, dim the lights, and prepare yourself for nearly thirty minutes of mounting horror that proves, once again, why what we cannot see frightens us most profoundly.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

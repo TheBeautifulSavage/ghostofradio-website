@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 500427 382 The Chain (128 44) 28936 30m08s — Suspense | Ghost of Radio</title>
+  <title>The Chain (128 44) 28936 30m08s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 500427 382 The Chain (128 44) 28936 30m08s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 500427 382 The Chain (128 44) 28936 30m08s — Suspense">
   <meta property="og:description" content="Listen to Suspense 500427 382 The Chain (128 44) 28936 30m08s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 27, 1950</span>
           </div>
-          <h1 class="episode__title">Suspense 500427 382 The Chain (128 44) 28936 30m08s</h1>
+          <h1 class="episode__title">The Chain (128 44) 28936 30m08s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Chain</p>
-<p>Picture this: a seemingly ordinary night in 1940s America, but beneath the surface lurks a sinister web of consequence and fate. In "The Chain," an unsuspecting protagonist discovers that one thoughtless action has set in motion an unstoppable cascade of events—each link forged by desperate choices, mounting terror, and the creeping realization that some chains, once begun, cannot be broken. As the tension tightens around our hapless character, listeners will find themselves gripping their radio sets, wondering whether redemption is possible or if the chain's final link leads only to darkness. The expert sound design of CBS's legendary effects team creates an atmosphere of claustrophobic dread, where every creak, every whispered conversation, and every ominous musical sting pulls you deeper into the web.</p>
-<p>For nearly two decades, *Suspense* reigned as radio's premier thriller series, earning its reputation as "radio's outstanding theater of thrills" through meticulous storytelling and unforgettable performances. Airing live from the CBS studios, each episode was a nail-biting exercise in psychological tension, often exploring the thin line between innocent circumstance and guilty consequence. The show featured celebrated actors—from Agnes Moorehead to Joseph Cotten—and crafted narratives that reflected the anxieties of wartime and post-war America: paranoia, moral ambiguity, and the fragility of everyday life. "The Chain" exemplifies this mastery, delivering a morality tale wrapped in genuine suspense.</p>
-<p>So dim the lights, adjust your dial to the frequency of fear, and settle in for thirty minutes that will leave you breathless. *Suspense* awaits.</p>
+          <p>Picture this: a seemingly ordinary night in 1940s America, but beneath the surface lurks a sinister web of consequence and fate. In "The Chain," an unsuspecting protagonist discovers that one thoughtless action has set in motion an unstoppable cascade of events—each link forged by desperate choices, mounting terror, and the creeping realization that some chains, once begun, cannot be broken. As the tension tightens around our hapless character, listeners will find themselves gripping their radio sets, wondering whether redemption is possible or if the chain's final link leads only to darkness. The expert sound design of CBS's legendary effects team creates an atmosphere of claustrophobic dread, where every creak, every whispered conversation, and every ominous musical sting pulls you deeper into the web.</p>
+<p>For nearly two decades, Suspense reigned as radio's premier thriller series, earning its reputation as "radio's outstanding theater of thrills" through meticulous storytelling and unforgettable performances. Airing live from the CBS studios, each episode was a nail-biting exercise in psychological tension, often exploring the thin line between innocent circumstance and guilty consequence. The show featured celebrated actors—from Agnes Moorehead to Joseph Cotten—and crafted narratives that reflected the anxieties of wartime and post-war America: paranoia, moral ambiguity, and the fragility of everyday life. "The Chain" exemplifies this mastery, delivering a morality tale wrapped in genuine suspense.</p>
+<p>So dim the lights, adjust your dial to the frequency of fear, and settle in for thirty minutes that will leave you breathless. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

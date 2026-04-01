@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450531 143 August Heat (128 44) 28389 29m36s — Suspense | Ghost of Radio</title>
+  <title>August Heat (128 44) 28389 29m36s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450531 143 August Heat (128 44) 28389 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450531 143 August Heat (128 44) 28389 29m36s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450531 143 August Heat (128 44) 28389 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 31, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450531 143 August Heat (128 44) 28389 29m36s</h1>
+          <h1 class="episode__title">August Heat (128 44) 28389 29m36s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># August Heat</p>
-<p>On a sweltering summer night, when the very air seems to shimmer with malevolence, a man receives a chilling prophecy that sets him on a collision course with fate itself. *August Heat* plunges listeners into the suffocating heat of an oppressive day, where a chance encounter with a mysterious stranger—a gravedigger who claims to have foreseen the protagonist's violent death—transforms an ordinary afternoon into a nightmare of paranoia and dread. As the hours tick away and the temperature rises, our hapless hero finds himself questioning every shadow, every coincidence, every stranger he meets. Is the gravedigger truly cursed with supernatural foresight, or is the suggestion of doom enough to drive a reasonable man toward his own destruction? The episode crackles with psychological tension, layering suspicion and inevitability as the listener is drawn inexorably toward an ending that may have been written in stone all along.</p>
-<p>*Suspense*, which aired from 1942 to 1962 on CBS, became the gold standard of American radio drama—a show that understood that the most terrifying images are those conjured by the imagination. Each week, the program's narrator would invite listeners to settle in for "tales well calculated to keep you in suspense," delivering everything from supernatural horror to noir crime thrillers with the finest actors and writers of the era. Based on the classic M.R. James short story of the same name, *August Heat* exemplifies the show's genius for transforming literary horror into intimate, personal terror—the kind that lives in the listener's mind long after the final credits roll.</p>
-<p>Dim the lights, settle into your chair, and prepare yourself for an evening where fate and free will collide in the stifling darkness. *August Heat* awaits.</p>
+          <p>On a sweltering summer night, when the very air seems to shimmer with malevolence, a man receives a chilling prophecy that sets him on a collision course with fate itself. August Heat plunges listeners into the suffocating heat of an oppressive day, where a chance encounter with a mysterious stranger—a gravedigger who claims to have foreseen the protagonist's violent death—transforms an ordinary afternoon into a nightmare of paranoia and dread. As the hours tick away and the temperature rises, our hapless hero finds himself questioning every shadow, every coincidence, every stranger he meets. Is the gravedigger truly cursed with supernatural foresight, or is the suggestion of doom enough to drive a reasonable man toward his own destruction? The episode crackles with psychological tension, layering suspicion and inevitability as the listener is drawn inexorably toward an ending that may have been written in stone all along.</p>
+<p>Suspense, which aired from 1942 to 1962 on CBS, became the gold standard of American radio drama—a show that understood that the most terrifying images are those conjured by the imagination. Each week, the program's narrator would invite listeners to settle in for "tales well calculated to keep you in suspense," delivering everything from supernatural horror to noir crime thrillers with the finest actors and writers of the era. Based on the classic M.R. James short story of the same name, August Heat exemplifies the show's genius for transforming literary horror into intimate, personal terror—the kind that lives in the listener's mind long after the final credits roll.</p>
+<p>Dim the lights, settle into your chair, and prepare yourself for an evening where fate and free will collide in the stifling darkness. August Heat awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

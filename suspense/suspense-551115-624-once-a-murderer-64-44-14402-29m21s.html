@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 551115 624 Once A Murderer (64 44) 14402 29m21s — Suspense | Ghost of Radio</title>
+  <title>Once A Murderer (64 44) 14402 29m21s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 551115 624 Once A Murderer (64 44) 14402 29m21s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 551115 624 Once A Murderer (64 44) 14402 29m21s — Suspense">
   <meta property="og:description" content="Listen to Suspense 551115 624 Once A Murderer (64 44) 14402 29m21s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 15, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 551115 624 Once A Murderer (64 44) 14402 29m21s</h1>
+          <h1 class="episode__title">Once A Murderer (64 44) 14402 29m21s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Once A Murderer</p>
-<p>Picture yourself in a dimly lit study on a fog-laden evening, the radio crackling to life as an unsettling organ note pierces the silence. In "Once A Murderer," *Suspense* weaves a masterwork of psychological dread around a man haunted by his past—a past he thought buried forever. As the minutes unfold, listeners find themselves trapped in a claustrophobic web of paranoia and guilt, where every knock at the door, every unexpected phone call, becomes a potential reckoning. The episode builds with methodical precision, layering doubt upon doubt, as our protagonist questions whether redemption is truly possible, or if the stain of murder is eternal. With sharp dialogue and expertly timed sound effects—footsteps echoing down hallways, the hiss of cigarette smoke, doors slamming with terrible finality—this broadcast invites you into the tormented mind of a man convinced that justice, however delayed, will inevitably arrive.</p>
-<p>For two decades, *Suspense* was the gold standard of American thriller radio, debuting in 1942 when wartime audiences craved escapism laced with genuine danger. The show's genius lay in its commitment to psychological terror over cheap scares; writers crafted intricate scenarios exploring human weakness, moral compromise, and the inescapable consequences of our choices. "Once A Murderer" exemplifies this philosophy, turning a simple premise into a meditation on guilt and the possibility of second chances—themes that resonated deeply with postwar listeners grappling with their own moral uncertainties.</p>
-<p>If you've never experienced the raw power of golden age radio drama, this episode is an ideal entry point. Turn off the lights, settle in, and let the actors and sound designers transport you back to an era when imagination, not special effects, was the most terrifying tool available. *Suspense* awaits.</p>
+          <p>Picture yourself in a dimly lit study on a fog-laden evening, the radio crackling to life as an unsettling organ note pierces the silence. In "Once A Murderer," Suspense weaves a masterwork of psychological dread around a man haunted by his past—a past he thought buried forever. As the minutes unfold, listeners find themselves trapped in a claustrophobic web of paranoia and guilt, where every knock at the door, every unexpected phone call, becomes a potential reckoning. The episode builds with methodical precision, layering doubt upon doubt, as our protagonist questions whether redemption is truly possible, or if the stain of murder is eternal. With sharp dialogue and expertly timed sound effects—footsteps echoing down hallways, the hiss of cigarette smoke, doors slamming with terrible finality—this broadcast invites you into the tormented mind of a man convinced that justice, however delayed, will inevitably arrive.</p>
+<p>For two decades, Suspense was the gold standard of American thriller radio, debuting in 1942 when wartime audiences craved escapism laced with genuine danger. The show's genius lay in its commitment to psychological terror over cheap scares; writers crafted intricate scenarios exploring human weakness, moral compromise, and the inescapable consequences of our choices. "Once A Murderer" exemplifies this philosophy, turning a simple premise into a meditation on guilt and the possibility of second chances—themes that resonated deeply with postwar listeners grappling with their own moral uncertainties.</p>
+<p>If you've never experienced the raw power of golden age radio drama, this episode is an ideal entry point. Turn off the lights, settle in, and let the actors and sound designers transport you back to an era when imagination, not special effects, was the most terrifying tool available. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

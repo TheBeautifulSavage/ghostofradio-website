@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 590208 789 Death Notice (64 32) 11284 23m22s — Suspense | Ghost of Radio</title>
+  <title>Death Notice (64 32) 11284 23m22s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 590208 789 Death Notice (64 32) 11284 23m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 590208 789 Death Notice (64 32) 11284 23m22s — Suspense">
   <meta property="og:description" content="Listen to Suspense 590208 789 Death Notice (64 32) 11284 23m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 8, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 590208 789 Death Notice (64 32) 11284 23m22s</h1>
+          <h1 class="episode__title">Death Notice (64 32) 11284 23m22s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Death Notice</p>
-<p>A man receives a mysterious letter in the mail—a death notice bearing his own name. As the appointed hour draws near, our protagonist finds himself trapped in a suffocating spiral of dread, unable to dismiss the warning or escape its implications. Is this an elaborate hoax, a case of mistaken identity, or something far more sinister? With each passing minute, the walls close in. The ticking clock becomes unbearable. In this taut forty-minute thriller, listeners will experience the mounting terror of a condemned man as he races against fate itself, questioning every face he encounters, every sound in the darkness. The CBS sound effects team conjures an atmosphere of creeping paranoia—footsteps that follow, doors that creak open to reveal nothing, and the relentless rustle of that damned letter in trembling hands.</p>
-<p>*Suspense*, which captivated America from 1942 to 1962, became the gold standard of broadcast drama by refusing cheap thrills. Under producer-director William N. Robson's meticulous direction, the show elevated the genre through intelligent writing, masterful voice acting, and a commitment to psychological terror over gimmickry. "Death Notice" exemplifies the program's genius: taking an ordinary American in an ordinary moment and plunging him into extraordinary dread. These weren't tales of monsters or mad scientists, but explorations of fate, guilt, and the fragility of our assumed safety. During an era when radio was America's paramount entertainment, *Suspense* delivered weekly proof that the most frightening things are often invisible.</p>
-<p>Step into the shadows with us. This is *Suspense*—where your imagination becomes the most dangerous element in the room. Tune in and discover why audiences huddled around their sets nearly eighty years ago, afraid to turn off their radios.</p>
+          <p>A man receives a mysterious letter in the mail—a death notice bearing his own name. As the appointed hour draws near, our protagonist finds himself trapped in a suffocating spiral of dread, unable to dismiss the warning or escape its implications. Is this an elaborate hoax, a case of mistaken identity, or something far more sinister? With each passing minute, the walls close in. The ticking clock becomes unbearable. In this taut forty-minute thriller, listeners will experience the mounting terror of a condemned man as he races against fate itself, questioning every face he encounters, every sound in the darkness. The CBS sound effects team conjures an atmosphere of creeping paranoia—footsteps that follow, doors that creak open to reveal nothing, and the relentless rustle of that damned letter in trembling hands.</p>
+<p>Suspense, which captivated America from 1942 to 1962, became the gold standard of broadcast drama by refusing cheap thrills. Under producer-director William N. Robson's meticulous direction, the show elevated the genre through intelligent writing, masterful voice acting, and a commitment to psychological terror over gimmickry. "Death Notice" exemplifies the program's genius: taking an ordinary American in an ordinary moment and plunging him into extraordinary dread. These weren't tales of monsters or mad scientists, but explorations of fate, guilt, and the fragility of our assumed safety. During an era when radio was America's paramount entertainment, Suspense delivered weekly proof that the most frightening things are often invisible.</p>
+<p>Step into the shadows with us. This is Suspense—where your imagination becomes the most dangerous element in the room. Tune in and discover why audiences huddled around their sets nearly eighty years ago, afraid to turn off their radios.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

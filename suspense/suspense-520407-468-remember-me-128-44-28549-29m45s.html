@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 520407 468 Remember Me (128 44) 28549 29m45s — Suspense | Ghost of Radio</title>
+  <title>Remember Me (128 44) 28549 29m45s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 520407 468 Remember Me (128 44) 28549 29m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 520407 468 Remember Me (128 44) 28549 29m45s — Suspense">
   <meta property="og:description" content="Listen to Suspense 520407 468 Remember Me (128 44) 28549 29m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 7, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 520407 468 Remember Me (128 44) 28549 29m45s</h1>
+          <h1 class="episode__title">Remember Me (128 44) 28549 29m45s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Remember Me</p>
-<p>As the familiar Suspense theme rises from the static—that spine-tingling organ melody that's become the heartbeat of Thursday night terror—you're drawn into a shadowy world where memory itself becomes a weapon. In "Remember Me," a man finds himself haunted not by ghosts, but by the relentless power of a woman's voice, a past he cannot escape, and the creeping realization that forgetting may be his only chance at survival. What begins as a chance encounter spirals into psychological dread, each scene tightening around the listener like a noose of whispered accusations and half-remembered betrayals. The performances crackle with desperate urgency—every pause, every gasp, every trembling confession drawing you deeper into a mystery that asks the question every listener fears: *What if the past could reach out and drag you under?*</p>
+          <p>As the familiar Suspense theme rises from the static—that spine-tingling organ melody that's become the heartbeat of Thursday night terror—you're drawn into a shadowy world where memory itself becomes a weapon. In "Remember Me," a man finds himself haunted not by ghosts, but by the relentless power of a woman's voice, a past he cannot escape, and the creeping realization that forgetting may be his only chance at survival. What begins as a chance encounter spirals into psychological dread, each scene tightening around the listener like a noose of whispered accusations and half-remembered betrayals. The performances crackle with desperate urgency—every pause, every gasp, every trembling confession drawing you deeper into a mystery that asks the question every listener fears: What if the past could reach out and drag you under?</p>
 <p>Suspense became America's premier showcase for tales of ordinary people caught in extraordinary terror during its two-decade run, and episodes like this one reveal why CBS's program earned its legendary status. Produced by William N. Robson and featuring some of the finest character actors radio could summon, the show understood that true horror lives not in monsters, but in the fragile psychology of human beings. The late 1940s episodes particularly showcase this mastery—when post-war anxieties about identity, trust, and the unknowable made psychological suspense more potent than any creature feature. These were stories that didn't need sound effects; they needed only a voice, a confession, a moment of awful recognition.</p>
 <p>Tune in now and surrender yourself to the dark artistry that made Suspense unmissable radio. Just remember—sometimes the most dangerous thing we carry is our own past.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

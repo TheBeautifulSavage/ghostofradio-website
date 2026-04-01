@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 431202 068 The Black Curtain (128 44) 28656 29m50s — Suspense | Ghost of Radio</title>
+  <title>The Black Curtain (128 44) 28656 29m50s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 431202 068 The Black Curtain (128 44) 28656 29m50s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 431202 068 The Black Curtain (128 44) 28656 29m50s — Suspense">
   <meta property="og:description" content="Listen to Suspense 431202 068 The Black Curtain (128 44) 28656 29m50s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 2, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 431202 068 The Black Curtain (128 44) 28656 29m50s</h1>
+          <h1 class="episode__title">The Black Curtain (128 44) 28656 29m50s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,8 +87,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Black Curtain</p>
-<p>When the lights dimmed on living rooms across America on that December evening, millions of listeners leaned closer to their radio sets as an ordinary man awakened in a hospital bed with no memory of who he was—or what terrible crime he might have committed. In "The Black Curtain," Suspense pulls listeners into a nightmare of psychological terror where the greatest threat isn't lurking in shadows, but locked away in the protagonist's own fractured mind. As he searches desperately for clues to his identity, each revelation becomes more sinister than the last, and the question haunting every moment becomes unbearable: did he commit murder? The episode crackles with mounting dread, masterfully blending the intimate vulnerability of a man stripped of his past with the claustrophobic tension of a mystery that may destroy him. The sound design—creaking hospital corridors, whispered conversations, the protagonist's own panicked breathing—transforms the airwaves into a confined space where escape seems impossible.</p>
+          <p>When the lights dimmed on living rooms across America on that December evening, millions of listeners leaned closer to their radio sets as an ordinary man awakened in a hospital bed with no memory of who he was—or what terrible crime he might have committed. In "The Black Curtain," Suspense pulls listeners into a nightmare of psychological terror where the greatest threat isn't lurking in shadows, but locked away in the protagonist's own fractured mind. As he searches desperately for clues to his identity, each revelation becomes more sinister than the last, and the question haunting every moment becomes unbearable: did he commit murder? The episode crackles with mounting dread, masterfully blending the intimate vulnerability of a man stripped of his past with the claustrophobic tension of a mystery that may destroy him. The sound design—creaking hospital corridors, whispered conversations, the protagonist's own panicked breathing—transforms the airwaves into a confined space where escape seems impossible.</p>
 <p>For two decades, Suspense reigned as CBS's crown jewel of dramatic anthology programming, attracting top-tier talent and innovative producers who understood that radio's greatest special effect was the listener's imagination. Each week brought a different tale of terror and psychological torment, but it was episodes like "The Black Curtain" that cemented the show's legacy as essential American broadcasting. Rather than relying on gore or cheap frights, the series explored the darker corners of human experience—paranoia, guilt, obsession, and the fragility of sanity itself.</p>
 <p>In an era before television could show audiences their nightmares, Suspense conjured terrors far more potent than any image could convey. Tune in to experience why listeners huddled around their radios, why critics praised the show's sophistication, and why "The Black Curtain" remains an unforgettable masterpiece of dramatic tension.</p>
         </div>
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

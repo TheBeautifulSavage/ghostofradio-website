@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620916 943 Golden Years (128 44) 23660 24m54s — Suspense | Ghost of Radio</title>
+  <title>Golden Years (128 44) 23660 24m54s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620916 943 Golden Years (128 44) 23660 24m54s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620916 943 Golden Years (128 44) 23660 24m54s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620916 943 Golden Years (128 44) 23660 24m54s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 16, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620916 943 Golden Years (128 44) 23660 24m54s</h1>
+          <h1 class="episode__title">Golden Years (128 44) 23660 24m54s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Golden Years</p>
-<p>As darkness falls and the needle drops on the turntable, you'll hear the familiar signature—those chilling three notes that made millions of Americans lock their doors and pull their chairs closer to the radio. In "Golden Years," Suspense delivers a masterclass in psychological terror, spinning a tale where the promise of eternal youth becomes a nightmare far more sinister than the ravages of time itself. What begins as a whispered conversation between old friends in a shadowy study will leave you questioning the price of vanity and the true meaning of growing old gracefully. The steady voice of the narrator draws you deeper into a world where temptation and dread intertwine, where every creak of the floorboards might signal the return of something better left forgotten.</p>
+          <p>As darkness falls and the needle drops on the turntable, you'll hear the familiar signature—those chilling three notes that made millions of Americans lock their doors and pull their chairs closer to the radio. In "Golden Years," Suspense delivers a masterclass in psychological terror, spinning a tale where the promise of eternal youth becomes a nightmare far more sinister than the ravages of time itself. What begins as a whispered conversation between old friends in a shadowy study will leave you questioning the price of vanity and the true meaning of growing old gracefully. The steady voice of the narrator draws you deeper into a world where temptation and dread intertwine, where every creak of the floorboards might signal the return of something better left forgotten.</p>
 <p>This episode epitomizes why Suspense became radio's most celebrated anthology series during its remarkable twenty-year run. Premiering in 1942 at the height of America's wartime anxiety, the show tapped into a primal hunger for stories that explored the darkness lurking beneath everyday life—not the monsters of pulp fiction, but the very human terrors of obsession, betrayal, and unchecked desire. "Golden Years" showcases the program's particular genius: a deceptively simple premise, expert pacing by director William Spier, and performances that crackle with authenticity, whether the actors were Hollywood legends or talented character players honing their craft before the microphone.</p>
 <p>Step into the living room of the past and let Suspense transport you. For nearly twenty-five minutes, the modern world will fade away, replaced by a realm where fate turns on a single choice and consequences echo through time itself. This is radio at its most potent—intimate, immediate, and unforgettable.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

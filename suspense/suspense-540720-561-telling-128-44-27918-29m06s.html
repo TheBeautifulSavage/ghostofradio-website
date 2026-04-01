@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 540720 561 Telling (128 44) 27918 29m06s — Suspense | Ghost of Radio</title>
+  <title>Telling (128 44) 27918 29m06s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 540720 561 Telling (128 44) 27918 29m06s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 540720 561 Telling (128 44) 27918 29m06s — Suspense">
   <meta property="og:description" content="Listen to Suspense 540720 561 Telling (128 44) 27918 29m06s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 20, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 540720 561 Telling (128 44) 27918 29m06s</h1>
+          <h1 class="episode__title">Telling (128 44) 27918 29m06s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Telling" (1940s)</p>
-<p>As the familiar piano theme cuts through the static and that iconic voice intones *Suspense*, you settle into your chair for an evening of delicious dread. In "Telling," the ordinary becomes sinister when a simple act of confession threatens to unravel a carefully constructed life. The tension builds with each hushed conversation, each loaded pause, as a secret—dark and dangerous—teeters on the edge of exposure. You'll find yourself leaning closer to the radio, straining to hear the barely whispered revelations, wondering whether honesty will bring redemption or ruin. The sound design creates an almost suffocating intimacy; the crack of a door, the rasp of breath, the ambient hum of a room where everything hangs in terrible balance. This is psychological terror at its finest—no monsters, no gunshots, just the raw human fear of being truly known.</p>
-<p>*Suspense* became the gold standard of radio thrillers during its two-decade run, proving that the most terrifying stories unfold in the theater of the mind. Each week, CBS delivered meticulously crafted tales that exploited listeners' imaginations far more effectively than any visual medium could. The show's genius lay in its versatility—drawing on crime fiction, gothic horror, and the anxieties of everyday life—while maintaining an uncompromising commitment to quality writing and stellar performances. Episodes like "Telling" showcased the medium's unique power to tunnel directly into the listener's consciousness, transforming a quiet evening into an experience of genuine dread.</p>
-<p>Don't miss this masterpiece of psychological suspense. Tune in to *Suspense* and rediscover why millions of Americans once huddled around their radios in the dark, thrilled and terrified by tales that proved the most dangerous things in life are often the secrets we keep.</p>
+          <p>As the familiar piano theme cuts through the static and that iconic voice intones Suspense, you settle into your chair for an evening of delicious dread. In "Telling," the ordinary becomes sinister when a simple act of confession threatens to unravel a carefully constructed life. The tension builds with each hushed conversation, each loaded pause, as a secret—dark and dangerous—teeters on the edge of exposure. You'll find yourself leaning closer to the radio, straining to hear the barely whispered revelations, wondering whether honesty will bring redemption or ruin. The sound design creates an almost suffocating intimacy; the crack of a door, the rasp of breath, the ambient hum of a room where everything hangs in terrible balance. This is psychological terror at its finest—no monsters, no gunshots, just the raw human fear of being truly known.</p>
+<p>Suspense became the gold standard of radio thrillers during its two-decade run, proving that the most terrifying stories unfold in the theater of the mind. Each week, CBS delivered meticulously crafted tales that exploited listeners' imaginations far more effectively than any visual medium could. The show's genius lay in its versatility—drawing on crime fiction, gothic horror, and the anxieties of everyday life—while maintaining an uncompromising commitment to quality writing and stellar performances. Episodes like "Telling" showcased the medium's unique power to tunnel directly into the listener's consciousness, transforming a quiet evening into an experience of genuine dread.</p>
+<p>Don't miss this masterpiece of psychological suspense. Tune in to Suspense and rediscover why millions of Americans once huddled around their radios in the dark, thrilled and terrified by tales that proved the most dangerous things in life are often the secrets we keep.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

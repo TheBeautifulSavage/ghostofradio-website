@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440420 088 The Palmer Method (128 44) 28655 30m13s — Suspense | Ghost of Radio</title>
+  <title>The Palmer Method (128 44) 28655 30m13s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440420 088 The Palmer Method (128 44) 28655 30m13s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440420 088 The Palmer Method (128 44) 28655 30m13s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440420 088 The Palmer Method (128 44) 28655 30m13s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 20, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440420 088 The Palmer Method (128 44) 28655 30m13s</h1>
+          <h1 class="episode__title">The Palmer Method (128 44) 28655 30m13s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Palmer Method</p>
-<p>As the familiar *Suspense* theme swells through your speaker—that unforgettable violin shriek cutting through the darkness—you're drawn into a world where penmanship becomes peril. "The Palmer Method" presents a deceptively simple premise that transforms into something far more sinister: what if the way a person writes could betray them? A desperate criminal believes his handwriting is the only evidence linking him to his crime, and in the gathering shadows of suspense, he embarks on an obsessive, maddening quest to master the very discipline that might save—or damn—him. With each stroke of the pen, tension mounts. The meticulous precision of the Palmer Method, once taught in schoolrooms across America as a mark of gentility and discipline, becomes a labyrinth of psychological torment as our protagonist races against time and his own trembling hands.</p>
-<p>*Suspense* revolutionized American radio by proving that terror didn't require monsters or ghosts—it required only the human capacity for desperation and the creeping realization that fate closes in from all sides. During the 1940s, when this episode aired, the show had already become appointment listening for millions, and CBS's commitment to intelligent, character-driven thrillers set the gold standard for the medium. The writers understood that true suspense lives not in the supernatural, but in the ordinary world made extraordinary through moral compromise and psychological unraveling. "The Palmer Method" exemplifies this philosophy perfectly, transforming a mundane skill into an instrument of existential dread.</p>
-<p>Don't miss this masterclass in tension. Turn off the lights, settle in, and let the crackling broadcast transport you to a world where a perfect handwriting technique becomes the measure of a man's survival. *Suspense* awaits.</p>
+          <p>As the familiar Suspense theme swells through your speaker—that unforgettable violin shriek cutting through the darkness—you're drawn into a world where penmanship becomes peril. "The Palmer Method" presents a deceptively simple premise that transforms into something far more sinister: what if the way a person writes could betray them? A desperate criminal believes his handwriting is the only evidence linking him to his crime, and in the gathering shadows of suspense, he embarks on an obsessive, maddening quest to master the very discipline that might save—or damn—him. With each stroke of the pen, tension mounts. The meticulous precision of the Palmer Method, once taught in schoolrooms across America as a mark of gentility and discipline, becomes a labyrinth of psychological torment as our protagonist races against time and his own trembling hands.</p>
+<p>Suspense revolutionized American radio by proving that terror didn't require monsters or ghosts—it required only the human capacity for desperation and the creeping realization that fate closes in from all sides. During the 1940s, when this episode aired, the show had already become appointment listening for millions, and CBS's commitment to intelligent, character-driven thrillers set the gold standard for the medium. The writers understood that true suspense lives not in the supernatural, but in the ordinary world made extraordinary through moral compromise and psychological unraveling. "The Palmer Method" exemplifies this philosophy perfectly, transforming a mundane skill into an instrument of existential dread.</p>
+<p>Don't miss this masterclass in tension. Turn off the lights, settle in, and let the crackling broadcast transport you to a world where a perfect handwriting technique becomes the measure of a man's survival. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

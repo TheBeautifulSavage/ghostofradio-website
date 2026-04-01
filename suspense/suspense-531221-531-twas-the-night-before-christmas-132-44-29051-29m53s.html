@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 531221 531 'twas The Night Before Christmas (132 44) 29051 29m53s — Suspense | Ghost of Radio</title>
+  <title>'twas The Night Before Christmas (132 44) 29051 29m53s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 531221 531 'twas The Night Before Christmas (132 44) 29051 29m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 531221 531 'twas The Night Before Christmas (132 44) 29051 29m53s — Suspense">
   <meta property="og:description" content="Listen to Suspense 531221 531 'twas The Night Before Christmas (132 44) 29051 29m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 21, 1953</span>
           </div>
-          <h1 class="episode__title">Suspense 531221 531 'twas The Night Before Christmas (132 44) 29051 29m53s</h1>
+          <h1 class="episode__title">'twas The Night Before Christmas (132 44) 29051 29m53s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># 'Twas The Night Before Christmas</p>
-<p>On a winter's eve thick with malevolence, *Suspense* takes the most sacred night of the year and transforms it into something sinister. This chilling adaptation of Clement Clarke Moore's beloved poem strips away the magic and wonder, replacing it with creeping dread that coils tighter with each passing minute. As snow falls silently outside and families gather around their radio sets expecting warmth and nostalgia, listeners instead find themselves drawn into an unsettling reimagining where St. Nick becomes something far more ominous. The familiar sleigh bells grow discordant; the ho-ho-ho echoes with menace. What begins as a cozy Christmas Eve descends into psychological terror, where every shadow holds danger and trust becomes a liability. This isn't the children's tale you remember—this is *Suspense*, where tradition becomes a weapon and the stockings hung by the chimney with care harbor something altogether unexpected.</p>
-<p>*Suspense* dominated American radio throughout the 1940s and 1950s, becoming the gold standard of dramatic thriller programming under the direction of William Spier. The show's brilliance lay in its ability to subvert familiar narratives and tap into primal anxieties lurking beneath everyday life. By choosing to darken one of America's most cherished cultural touchstones, this December 1949 episode exemplifies the show's fearless approach to storytelling—demonstrating how expertly the writers understood that true horror blooms when it invades the spaces we consider safest.</p>
-<p>Pull up a chair beside the fire, but keep one ear alert to the darkness beyond. This is radio drama at its finest—professionally crafted, atmospherically rich, and deeply unsettling. *Suspense* awaits, and this Christmas Eve will never quite feel the same again.</p>
+          <p>On a winter's eve thick with malevolence, Suspense takes the most sacred night of the year and transforms it into something sinister. This chilling adaptation of Clement Clarke Moore's beloved poem strips away the magic and wonder, replacing it with creeping dread that coils tighter with each passing minute. As snow falls silently outside and families gather around their radio sets expecting warmth and nostalgia, listeners instead find themselves drawn into an unsettling reimagining where St. Nick becomes something far more ominous. The familiar sleigh bells grow discordant; the ho-ho-ho echoes with menace. What begins as a cozy Christmas Eve descends into psychological terror, where every shadow holds danger and trust becomes a liability. This isn't the children's tale you remember—this is Suspense, where tradition becomes a weapon and the stockings hung by the chimney with care harbor something altogether unexpected.</p>
+<p>Suspense dominated American radio throughout the 1940s and 1950s, becoming the gold standard of dramatic thriller programming under the direction of William Spier. The show's brilliance lay in its ability to subvert familiar narratives and tap into primal anxieties lurking beneath everyday life. By choosing to darken one of America's most cherished cultural touchstones, this December 1949 episode exemplifies the show's fearless approach to storytelling—demonstrating how expertly the writers understood that true horror blooms when it invades the spaces we consider safest.</p>
+<p>Pull up a chair beside the fire, but keep one ear alert to the darkness beyond. This is radio drama at its finest—professionally crafted, atmospherically rich, and deeply unsettling. Suspense awaits, and this Christmas Eve will never quite feel the same again.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

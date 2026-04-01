@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560306 640 Quiet Night (128 44) 28683 30m15s — Suspense | Ghost of Radio</title>
+  <title>Quiet Night (128 44) 28683 30m15s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560306 640 Quiet Night (128 44) 28683 30m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560306 640 Quiet Night (128 44) 28683 30m15s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560306 640 Quiet Night (128 44) 28683 30m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 6, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560306 640 Quiet Night (128 44) 28683 30m15s</h1>
+          <h1 class="episode__title">Quiet Night (128 44) 28683 30m15s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Quiet Night</p>
-<p>When the clock strikes midnight and the world falls silent, that's when true terror awakens. In "Quiet Night," the gentle peace of an ordinary evening becomes a suffocating prison as our protagonist discovers that sometimes the most dangerous threats wear the mask of tranquility. What begins as a simple, unremarkable night gradually transforms into a descent into psychological dread, where every shadow holds menace and every sound—or the absence of it—harbors unspeakable danger. The masterful sound design that made Suspense legendary creates an intimate horror, pulling listeners into a claustrophobic world where reason and sanity seem to slip away with each passing moment. This is Suspense at its finest: not relying on monsters or gunfire, but on the primal fear that lurks in the spaces between heartbeats.</p>
+          <p>When the clock strikes midnight and the world falls silent, that's when true terror awakens. In "Quiet Night," the gentle peace of an ordinary evening becomes a suffocating prison as our protagonist discovers that sometimes the most dangerous threats wear the mask of tranquility. What begins as a simple, unremarkable night gradually transforms into a descent into psychological dread, where every shadow holds menace and every sound—or the absence of it—harbors unspeakable danger. The masterful sound design that made Suspense legendary creates an intimate horror, pulling listeners into a claustrophobic world where reason and sanity seem to slip away with each passing moment. This is Suspense at its finest: not relying on monsters or gunfire, but on the primal fear that lurks in the spaces between heartbeats.</p>
 <p>For two decades, CBS's Suspense commanded the American imagination, bringing cinema-quality thrills directly into living rooms across the nation. Airing from 1942 to 1962, the show became the gold standard of dramatic radio, featuring Hollywood's finest actors and some of the most skilled writers in the medium. "Quiet Night" represents the show's golden age in the 1940s, when production values were at their peak and writers understood the unique power of radio—that it plays directly to the listener's imagination, making fear intensely personal. Each episode was crafted with meticulous attention to pacing and atmosphere, proving that the most effective horror requires no visual effects, only superb storytelling and evocative sound.</p>
 <p>Step back in time and experience why millions gathered around their radios in rapt attention. Let "Quiet Night" remind you why radio drama remains unmatched in its ability to burrow into your mind and stay there, long after the final fade-out. Tune in if you dare.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

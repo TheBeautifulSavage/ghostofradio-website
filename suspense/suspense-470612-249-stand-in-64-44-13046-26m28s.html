@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470612 249 Stand In (64 44) 13046 26m28s — Suspense | Ghost of Radio</title>
+  <title>Stand In (64 44) 13046 26m28s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470612 249 Stand In (64 44) 13046 26m28s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470612 249 Stand In (64 44) 13046 26m28s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470612 249 Stand In (64 44) 13046 26m28s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 12, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470612 249 Stand In (64 44) 13046 26m28s</h1>
+          <h1 class="episode__title">Stand In (64 44) 13046 26m28s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Stand In</p>
-<p>Picture this: Hollywood, 1940s. The glittering façade of a movie studio hides something far more sinister than the manufactured dreams flickering across silver screens. In "Stand In," a struggling extra finds himself inexplicably chosen to double for a famous leading man—an opportunity that should be a career-making break. But as he steps into this coveted role, he discovers that some performances demand a far more permanent commitment than a day's work on set. The episode pulses with the paranoia of ambition, where every shadow on a soundstage becomes a threat and every whispered conversation between producers carries the weight of dark intention. You'll find yourself suspended in that peculiar dread that only *Suspense* could conjure: the terror of having everything you've desperately wanted suddenly offered to you at an unknowable price.</p>
-<p>This episode represents *Suspense* at its creative peak—a show that dominated Thursday nights on CBS for two decades by understanding that true horror lives in the everyday. Unlike the pulpy monsters and masked villains of lesser programs, *Suspense* trafficked in psychological torment and moral ambiguity, where ordinary people faced extraordinary choices that would echo through their lives. By the time "Stand In" aired in the mid-1940s, the series had perfected the art of the twist, the sudden revelation that recontextualizes everything you thought you understood. The writing was surgical, the sound design immersive, and the performances—often featuring Hollywood's finest—carried an authenticity that made every gasp and whispered threat feel devastatingly real.</p>
-<p>Tune in for twenty-six minutes of pure, unadulterated tension. *Suspense* doesn't waste a moment, doesn't offer false comfort, and never lets you predict where the final commercial break will leave you—psychologically unsettled and deeply satisfied.</p>
+          <p>Picture this: Hollywood, 1940s. The glittering façade of a movie studio hides something far more sinister than the manufactured dreams flickering across silver screens. In "Stand In," a struggling extra finds himself inexplicably chosen to double for a famous leading man—an opportunity that should be a career-making break. But as he steps into this coveted role, he discovers that some performances demand a far more permanent commitment than a day's work on set. The episode pulses with the paranoia of ambition, where every shadow on a soundstage becomes a threat and every whispered conversation between producers carries the weight of dark intention. You'll find yourself suspended in that peculiar dread that only Suspense could conjure: the terror of having everything you've desperately wanted suddenly offered to you at an unknowable price.</p>
+<p>This episode represents Suspense at its creative peak—a show that dominated Thursday nights on CBS for two decades by understanding that true horror lives in the everyday. Unlike the pulpy monsters and masked villains of lesser programs, Suspense trafficked in psychological torment and moral ambiguity, where ordinary people faced extraordinary choices that would echo through their lives. By the time "Stand In" aired in the mid-1940s, the series had perfected the art of the twist, the sudden revelation that recontextualizes everything you thought you understood. The writing was surgical, the sound design immersive, and the performances—often featuring Hollywood's finest—carried an authenticity that made every gasp and whispered threat feel devastatingly real.</p>
+<p>Tune in for twenty-six minutes of pure, unadulterated tension. Suspense doesn't waste a moment, doesn't offer false comfort, and never lets you predict where the final commercial break will leave you—psychologically unsettled and deeply satisfied.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

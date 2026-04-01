@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450719 150 Bank Holiday (128 44) 28279 29m29s — Suspense | Ghost of Radio</title>
+  <title>Bank Holiday (128 44) 28279 29m29s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450719 150 Bank Holiday (128 44) 28279 29m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450719 150 Bank Holiday (128 44) 28279 29m29s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450719 150 Bank Holiday (128 44) 28279 29m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 19, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450719 150 Bank Holiday (128 44) 28279 29m29s</h1>
+          <h1 class="episode__title">Bank Holiday (128 44) 28279 29m29s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Bank Holiday</p>
-<p>On a sweltering summer evening in 1947, millions of Americans twisted their radio dials to CBS and stepped into the suffocating confines of a small-town bank after closing time. In "Bank Holiday," tension coils like smoke in an airless vault as ordinary people find themselves trapped in extraordinary circumstances. What begins as a routine holiday evening descends into a nightmare of locked doors, dark secrets, and the terrible realization that escape may be impossible. The sound design crackles with authentic detail—the heavy clang of the vault door, the frantic scraping of fingernails against unyielding metal, whispered accusations echoing through marble corridors. As the night deepens and desperation mounts, listeners are left wondering: who among the trapped will survive, and at what cost?</p>
-<p>*Suspense* was radio's crown jewel of psychological terror, a show that understood that the most chilling horrors exist not in the supernatural, but in the human heart. From 1942 to 1962, the program's writers and producers crafted scenarios that stripped away the comfortable veneer of everyday American life, revealing the violence and desperation lurking beneath. With a rotating roster of Hollywood's finest actors and directors like Alfred Hitchcock at the helm, each episode became a masterclass in building dread. "Bank Holiday" exemplifies the show's genius—taking a mundane setting and transforming it into a pressure cooker of fear and moral compromise.</p>
-<p>This is *Suspense* at its finest: lean, relentless, and unforgettable. Tune in and discover why audiences huddled around their speakers, breath held, for two decades. Some doors, once closed, should never be opened.</p>
+          <p>On a sweltering summer evening in 1947, millions of Americans twisted their radio dials to CBS and stepped into the suffocating confines of a small-town bank after closing time. In "Bank Holiday," tension coils like smoke in an airless vault as ordinary people find themselves trapped in extraordinary circumstances. What begins as a routine holiday evening descends into a nightmare of locked doors, dark secrets, and the terrible realization that escape may be impossible. The sound design crackles with authentic detail—the heavy clang of the vault door, the frantic scraping of fingernails against unyielding metal, whispered accusations echoing through marble corridors. As the night deepens and desperation mounts, listeners are left wondering: who among the trapped will survive, and at what cost?</p>
+<p>Suspense was radio's crown jewel of psychological terror, a show that understood that the most chilling horrors exist not in the supernatural, but in the human heart. From 1942 to 1962, the program's writers and producers crafted scenarios that stripped away the comfortable veneer of everyday American life, revealing the violence and desperation lurking beneath. With a rotating roster of Hollywood's finest actors and directors like Alfred Hitchcock at the helm, each episode became a masterclass in building dread. "Bank Holiday" exemplifies the show's genius—taking a mundane setting and transforming it into a pressure cooker of fear and moral compromise.</p>
+<p>This is Suspense at its finest: lean, relentless, and unforgettable. Tune in and discover why audiences huddled around their speakers, breath held, for two decades. Some doors, once closed, should never be opened.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600911 870 Rakovsky's Rubles (64 44) 9960 19m52s — Suspense | Ghost of Radio</title>
+  <title>Rakovsky's Rubles (64 44) 9960 19m52s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600911 870 Rakovsky's Rubles (64 44) 9960 19m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600911 870 Rakovsky's Rubles (64 44) 9960 19m52s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600911 870 Rakovsky's Rubles (64 44) 9960 19m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · 1940s</span>
           </div>
-          <h1 class="episode__title">Suspense 600911 870 Rakovsky's Rubles (64 44) 9960 19m52s</h1>
+          <h1 class="episode__title">Rakovsky's Rubles (64 44) 9960 19m52s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,10 +71,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Rakovsky's Rubles</p>
-<p>Picture this: the year is 1943, and you're huddled near your radio as the familiar organ notes of *Suspense* pierce the darkness. Tonight's tale plunges you into a shadowy world of espionage and desperation where a seemingly innocent exchange of currency becomes a death trap. "Rakovsky's Rubles" unfolds like a carefully constructed puzzle—each scene tightening the noose around our protagonist as foreign intrigue, blackmail, and cold-blooded calculation converge in just under twenty minutes of breathless drama. You won't know who to trust, and neither will the characters caught in this web of deception. The crackle of the airwaves carries every gasp, every tense whisper, every footstep that might be salvation or damnation.</p>
-<p>For nearly two decades, *Suspense* commanded Tuesday nights on CBS, becoming the gold standard of American radio thriller programming. Created during wartime anxiety when audiences craved both escapism and stories that reflected their genuine fears of espionage and betrayal, the show delivered authentic terror without relying on monsters or the supernatural. Instead, it mined the darkest corners of human nature—greed, jealousy, desperation—making every episode feel disturbingly possible. By the 1940s, *Suspense* had become a cultural institution, with stellar casts performing stories that would later influence television and cinema for decades to come.</p>
-<p>In an era before streaming services and on-demand entertainment, families gathered around their radios for genuine communal thrills, voices and sound effects painting vivid scenes across the canvas of imagination. "Rakovsky's Rubles" represents *Suspense* at its finest—tight storytelling, impeccable performances, and the kind of mounting dread that only radio could deliver. Tune in, dim the lights, and discover why millions of listeners made this their unmissable appointment with terror.</p>
+          <p>Picture this: the year is 1943, and you're huddled near your radio as the familiar organ notes of Suspense pierce the darkness. Tonight's tale plunges you into a shadowy world of espionage and desperation where a seemingly innocent exchange of currency becomes a death trap. "Rakovsky's Rubles" unfolds like a carefully constructed puzzle—each scene tightening the noose around our protagonist as foreign intrigue, blackmail, and cold-blooded calculation converge in just under twenty minutes of breathless drama. You won't know who to trust, and neither will the characters caught in this web of deception. The crackle of the airwaves carries every gasp, every tense whisper, every footstep that might be salvation or damnation.</p>
+<p>For nearly two decades, Suspense commanded Tuesday nights on CBS, becoming the gold standard of American radio thriller programming. Created during wartime anxiety when audiences craved both escapism and stories that reflected their genuine fears of espionage and betrayal, the show delivered authentic terror without relying on monsters or the supernatural. Instead, it mined the darkest corners of human nature—greed, jealousy, desperation—making every episode feel disturbingly possible. By the 1940s, Suspense had become a cultural institution, with stellar casts performing stories that would later influence television and cinema for decades to come.</p>
+<p>In an era before streaming services and on-demand entertainment, families gathered around their radios for genuine communal thrills, voices and sound effects painting vivid scenes across the canvas of imagination. "Rakovsky's Rubles" represents Suspense at its finest—tight storytelling, impeccable performances, and the kind of mounting dread that only radio could deliver. Tune in, dim the lights, and discover why millions of listeners made this their unmissable appointment with terror.</p>
         </div>
 
         <footer class="episode__footer">
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

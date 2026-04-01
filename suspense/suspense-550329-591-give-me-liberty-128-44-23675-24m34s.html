@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550329 591 Give Me Liberty (128 44) 23675 24m34s — Suspense | Ghost of Radio</title>
+  <title>Give Me Liberty (128 44) 23675 24m34s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550329 591 Give Me Liberty (128 44) 23675 24m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550329 591 Give Me Liberty (128 44) 23675 24m34s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550329 591 Give Me Liberty (128 44) 23675 24m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 29, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550329 591 Give Me Liberty (128 44) 23675 24m34s</h1>
+          <h1 class="episode__title">Give Me Liberty (128 44) 23675 24m34s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Give Me Liberty</p>
-<p>As the familiar *Suspense* theme swells through your radio speaker—that piercing string arrangement that made millions of listeners check their locks—you're transported to a moment of unbearable tension. In "Give Me Liberty," the stakes are intensely personal: a man faces an impossible choice between his own freedom and the safety of those he loves. What begins as an ordinary day spirals into a nightmare of moral compromise, where every decision carries the weight of life and death. The writing crackles with genuine dread, building from whispered conversations to explosive confrontations, as our protagonist discovers that liberty itself can become a cage. You'll find yourself breathless as the drama unfolds in real time, the sound effects—a door slamming, footsteps on pavement, the click of a revolver—placing you directly into the story's suffocating grip.</p>
-<p>*Suspense* earned its reputation as CBS's most terrifying program by understanding something fundamental: the human imagination is more frightening than any visual could ever be. During the 1940s, when America grappled with questions of freedom, sacrifice, and moral clarity in a world at war, episodes like "Give Me Liberty" spoke directly to listeners' deepest anxieties. The show's brilliant ensemble cast and top-tier writers crafted stories that lingered long after broadcast—tales that forced you to confront uncomfortable truths about human nature and the choices we'd make under pressure. Each episode became appointment listening, a weekly descent into psychological terror that required nothing but a radio and a willingness to be genuinely frightened.</p>
+          <p>As the familiar Suspense theme swells through your radio speaker—that piercing string arrangement that made millions of listeners check their locks—you're transported to a moment of unbearable tension. In "Give Me Liberty," the stakes are intensely personal: a man faces an impossible choice between his own freedom and the safety of those he loves. What begins as an ordinary day spirals into a nightmare of moral compromise, where every decision carries the weight of life and death. The writing crackles with genuine dread, building from whispered conversations to explosive confrontations, as our protagonist discovers that liberty itself can become a cage. You'll find yourself breathless as the drama unfolds in real time, the sound effects—a door slamming, footsteps on pavement, the click of a revolver—placing you directly into the story's suffocating grip.</p>
+<p>Suspense earned its reputation as CBS's most terrifying program by understanding something fundamental: the human imagination is more frightening than any visual could ever be. During the 1940s, when America grappled with questions of freedom, sacrifice, and moral clarity in a world at war, episodes like "Give Me Liberty" spoke directly to listeners' deepest anxieties. The show's brilliant ensemble cast and top-tier writers crafted stories that lingered long after broadcast—tales that forced you to confront uncomfortable truths about human nature and the choices we'd make under pressure. Each episode became appointment listening, a weekly descent into psychological terror that required nothing but a radio and a willingness to be genuinely frightened.</p>
 <p>Don't miss this masterclass in suspenseful storytelling. Dim the lights, settle in with your radio, and prepare yourself for twenty-five minutes of pure, undiluted tension that only the golden age of radio could deliver.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

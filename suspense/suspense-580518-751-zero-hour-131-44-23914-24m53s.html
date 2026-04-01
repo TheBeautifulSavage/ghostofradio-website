@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 580518 751 Zero Hour (131 44) 23914 24m53s — Suspense | Ghost of Radio</title>
+  <title>Zero Hour (131 44) 23914 24m53s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 580518 751 Zero Hour (131 44) 23914 24m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 580518 751 Zero Hour (131 44) 23914 24m53s — Suspense">
   <meta property="og:description" content="Listen to Suspense 580518 751 Zero Hour (131 44) 23914 24m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 18, 1958</span>
           </div>
-          <h1 class="episode__title">Suspense 580518 751 Zero Hour (131 44) 23914 24m53s</h1>
+          <h1 class="episode__title">Zero Hour (131 44) 23914 24m53s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Zero Hour</p>
-<p>As the familiar screech of the Suspense theme pierces the darkness of your living room, you settle into your chair for a tale that will keep you glued to every word. *Zero Hour* plunges listeners into a world of mounting tension where ordinary circumstances collide with extraordinary danger. What begins as a seemingly routine scenario spirals into a nightmare of suspense, each minute ticking away like a countdown to catastrophe. The sound design is masterful—ambient noise, sharp dialogue, and strategic silence all conspire to build an atmosphere thick with dread. You'll find yourself holding your breath as characters race against the clock, their fates hanging in the balance. This is Suspense at its finest: a psychological thriller that trades in the currency of human fear and desperation, reminding us that our greatest perils often emerge from the most unexpected circumstances.</p>
-<p>*Suspense* debuted on CBS in 1942 during the heart of World War II, when radio was America's primary source of evening entertainment and escapism. For two decades, the show became synonymous with expertly crafted thriller storytelling, attracting top talent both in front of and behind the microphone. Each episode was a masterclass in pacing and atmosphere, relying entirely on dialogue, sound effects, and music to transport listeners into scenarios of genuine peril. The program became famous for its innovative use of the medium itself—employing every trick of radio drama to manipulate listener expectations and deliver genuine frights through speakers rather than screens.</p>
-<p>If you appreciate stories where tension builds like a pressure cooker, where ordinary people face extraordinary circumstances, and where every sound carries meaning, *Zero Hour* demands your attention. Tune in and discover why audiences huddled around their radios night after night, unable to turn away from the possibilities of what Suspense might unfold next.</p>
+          <p>As the familiar screech of the Suspense theme pierces the darkness of your living room, you settle into your chair for a tale that will keep you glued to every word. Zero Hour plunges listeners into a world of mounting tension where ordinary circumstances collide with extraordinary danger. What begins as a seemingly routine scenario spirals into a nightmare of suspense, each minute ticking away like a countdown to catastrophe. The sound design is masterful—ambient noise, sharp dialogue, and strategic silence all conspire to build an atmosphere thick with dread. You'll find yourself holding your breath as characters race against the clock, their fates hanging in the balance. This is Suspense at its finest: a psychological thriller that trades in the currency of human fear and desperation, reminding us that our greatest perils often emerge from the most unexpected circumstances.</p>
+<p>Suspense debuted on CBS in 1942 during the heart of World War II, when radio was America's primary source of evening entertainment and escapism. For two decades, the show became synonymous with expertly crafted thriller storytelling, attracting top talent both in front of and behind the microphone. Each episode was a masterclass in pacing and atmosphere, relying entirely on dialogue, sound effects, and music to transport listeners into scenarios of genuine peril. The program became famous for its innovative use of the medium itself—employing every trick of radio drama to manipulate listener expectations and deliver genuine frights through speakers rather than screens.</p>
+<p>If you appreciate stories where tension builds like a pressure cooker, where ordinary people face extraordinary circumstances, and where every sound carries meaning, Zero Hour demands your attention. Tune in and discover why audiences huddled around their radios night after night, unable to turn away from the possibilities of what Suspense might unfold next.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

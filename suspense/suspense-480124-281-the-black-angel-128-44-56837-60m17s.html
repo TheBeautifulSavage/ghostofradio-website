@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 480124 281 The Black Angel (128 44) 56837 60m17s — Suspense | Ghost of Radio</title>
+  <title>The Black Angel (128 44) 56837 60m17s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 480124 281 The Black Angel (128 44) 56837 60m17s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 480124 281 The Black Angel (128 44) 56837 60m17s — Suspense">
   <meta property="og:description" content="Listen to Suspense 480124 281 The Black Angel (128 44) 56837 60m17s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 24, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 480124 281 The Black Angel (128 44) 56837 60m17s</h1>
+          <h1 class="episode__title">The Black Angel (128 44) 56837 60m17s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Black Angel</p>
-<p>Step into the shadowed streets of a desperate city where innocence hangs by a thread and a wife's desperate gamble becomes a descent into moral darkness. "The Black Angel" pulls you into the claustrophobic world of a woman searching for a murder weapon that could save her husband from the gallows—but what she discovers in the underworld of jazz joints, flophouses, and corrupt cops threatens to destroy her very soul. As midnight church bells toll and rain-slicked pavements echo with footsteps, the line between justice and vengeance blurs into terrifying ambiguity. This is psychological suspense at its most intimate, where the real horror isn't found in supernatural terrors but in the depths of human desperation and the choices we make when cornered by fate.</p>
+          <p>Step into the shadowed streets of a desperate city where innocence hangs by a thread and a wife's desperate gamble becomes a descent into moral darkness. "The Black Angel" pulls you into the claustrophobic world of a woman searching for a murder weapon that could save her husband from the gallows—but what she discovers in the underworld of jazz joints, flophouses, and corrupt cops threatens to destroy her very soul. As midnight church bells toll and rain-slicked pavements echo with footsteps, the line between justice and vengeance blurs into terrifying ambiguity. This is psychological suspense at its most intimate, where the real horror isn't found in supernatural terrors but in the depths of human desperation and the choices we make when cornered by fate.</p>
 <p>"Suspense" dominated American airwaves as radio's premier thriller series, a weekly appointment with the unknown that kept millions on the edge of their seats for two decades. Each episode was meticulously crafted to exploit the power of sound and silence—the creak of a door, the catch in a voice, the pregnant pause before revelation—creating cinematic tension that no visual medium could quite replicate. Featuring top-tier talent from stage and screen, the show was a proving ground for dramatic acting, attracting everyone from Orson Welles to Cary Grant. "The Black Angel" exemplifies why Suspense endured: it ventures beyond mere scares into moral quandaries and psychological complexity, treating listeners as intelligent audiences capable of confronting ambiguous, uncomfortable truths.</p>
 <p>Don't miss this masterclass in old-time radio drama. Tune in to "The Black Angel" and discover why a generation of Americans couldn't wait for their weekly date with Suspense—where every shadow holds danger and every choice reverberates with consequence.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

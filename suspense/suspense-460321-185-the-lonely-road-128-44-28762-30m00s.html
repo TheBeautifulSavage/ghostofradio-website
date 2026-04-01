@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460321 185 The Lonely Road (128 44) 28762 30m00s — Suspense | Ghost of Radio</title>
+  <title>The Lonely Road (128 44) 28762 30m00s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460321 185 The Lonely Road (128 44) 28762 30m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460321 185 The Lonely Road (128 44) 28762 30m00s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460321 185 The Lonely Road (128 44) 28762 30m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 21, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460321 185 The Lonely Road (128 44) 28762 30m00s</h1>
+          <h1 class="episode__title">The Lonely Road (128 44) 28762 30m00s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lonely Road</p>
-<p>Picture yourself alone on a desolate stretch of highway as darkness falls. A stranger appears—polite, unassuming, yet something about their manner unsettles you in ways you can't quite articulate. In "The Lonely Road," listeners venture into that twilight space where civility masks menace, and a simple act of charity becomes a descent into psychological terror. With only the ambient hum of tires on asphalt and carefully calibrated silences, the sound design of this 1948 broadcast transforms an ordinary journey into a nightmare of paranoia and dread. What begins as a Good Samaritan's impulse to help a hitchhiker evolves into a masterclass of mounting tension, where each word carries the weight of hidden intentions and every moment bristles with the possibility of violence.</p>
-<p>*Suspense* earned its reputation as radio's premier thriller precisely because it understood that the most terrifying horrors exist in the spaces between what we hear and what we imagine. Airing throughout the Golden Age of Radio from 1942 to 1962, the series proved night after night that sound could penetrate the listener's mind more effectively than any visual medium. By leveraging outstanding writing, superb acting, and innovative audio techniques, *Suspense* created an intimacy of fear—the monsters weren't on a distant screen but whispered directly into your ear. "The Lonely Road" exemplifies this approach, building dread through suggestion and implication rather than spectacle.</p>
-<p>The perfect evening awaits the daring listener. Turn off the lights, settle in, and let this thirty-minute journey unfold. By the time the final notes fade to static, you'll understand why audiences huddled around their radios for two decades, why *Suspense* became legend, and why some roads are best traveled in daylight.</p>
+          <p>Picture yourself alone on a desolate stretch of highway as darkness falls. A stranger appears—polite, unassuming, yet something about their manner unsettles you in ways you can't quite articulate. In "The Lonely Road," listeners venture into that twilight space where civility masks menace, and a simple act of charity becomes a descent into psychological terror. With only the ambient hum of tires on asphalt and carefully calibrated silences, the sound design of this 1948 broadcast transforms an ordinary journey into a nightmare of paranoia and dread. What begins as a Good Samaritan's impulse to help a hitchhiker evolves into a masterclass of mounting tension, where each word carries the weight of hidden intentions and every moment bristles with the possibility of violence.</p>
+<p>Suspense earned its reputation as radio's premier thriller precisely because it understood that the most terrifying horrors exist in the spaces between what we hear and what we imagine. Airing throughout the Golden Age of Radio from 1942 to 1962, the series proved night after night that sound could penetrate the listener's mind more effectively than any visual medium. By leveraging outstanding writing, superb acting, and innovative audio techniques, Suspense created an intimacy of fear—the monsters weren't on a distant screen but whispered directly into your ear. "The Lonely Road" exemplifies this approach, building dread through suggestion and implication rather than spectacle.</p>
+<p>The perfect evening awaits the daring listener. Turn off the lights, settle in, and let this thirty-minute journey unfold. By the time the final notes fade to static, you'll understand why audiences huddled around their radios for two decades, why Suspense became legend, and why some roads are best traveled in daylight.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

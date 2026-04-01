@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 520128 458 Carnival (64 44) 14540 29m39s — Suspense | Ghost of Radio</title>
+  <title>Carnival (64 44) 14540 29m39s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 520128 458 Carnival (64 44) 14540 29m39s — Suspense (CBS, 2012). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 520128 458 Carnival (64 44) 14540 29m39s — Suspense">
   <meta property="og:description" content="Listen to Suspense 520128 458 Carnival (64 44) 14540 29m39s — Suspense (CBS, 2012). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 28, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 520128 458 Carnival (64 44) 14540 29m39s</h1>
+          <h1 class="episode__title">Carnival (64 44) 14540 29m39s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Carnival</p>
-<p>As the calliope's discordant notes pierce through the static and fade into an ominous minor key, you find yourself walking the shadowed midway of a traveling carnival—a place of innocent joy transformed into something far more sinister. In "Carnival," a visitor encounters far more than rigged games and overpriced corn dogs; beneath the faded paint and flickering lights lurks a mystery that will test the very limits of reason and sanity. The episode masterfully weaves together the Americana nostalgia of the traveling fair with creeping dread, as our protagonist discovers that some attractions refuse to let their visitors leave. With only twenty-nine minutes of airtime, the writers craft an intimate psychological thriller where the greatest danger isn't the machinery or the crowds, but the inexplicable pull of the carnival itself—and what it truly wants from those who wander into its embrace.</p>
-<p>*Suspense*, which aired on CBS from 1942 to 1962, stands as the golden age of American radio drama at its most refined. With over a thousand episodes produced, the show became the benchmark for tension and narrative sophistication, attracting top-tier talent both before the microphone and behind it. Each week, a new fear was excavated and explored with surgical precision, proving that the most terrifying visions are those conjured in the mind's eye. By the time "Carnival" was broadcast, *Suspense* had perfected its craft—the sound design, the measured pacing, the twist ending that recontextualizes everything you thought you knew.</p>
-<p>Don't miss your ticket to this haunting midway attraction. Tune in and discover why *Suspense* remains unmatched in its ability to burrow under your skin, long after the final curtain falls and the carnival lights fade to black.</p>
+          <p>As the calliope's discordant notes pierce through the static and fade into an ominous minor key, you find yourself walking the shadowed midway of a traveling carnival—a place of innocent joy transformed into something far more sinister. In "Carnival," a visitor encounters far more than rigged games and overpriced corn dogs; beneath the faded paint and flickering lights lurks a mystery that will test the very limits of reason and sanity. The episode masterfully weaves together the Americana nostalgia of the traveling fair with creeping dread, as our protagonist discovers that some attractions refuse to let their visitors leave. With only twenty-nine minutes of airtime, the writers craft an intimate psychological thriller where the greatest danger isn't the machinery or the crowds, but the inexplicable pull of the carnival itself—and what it truly wants from those who wander into its embrace.</p>
+<p>Suspense, which aired on CBS from 1942 to 1962, stands as the golden age of American radio drama at its most refined. With over a thousand episodes produced, the show became the benchmark for tension and narrative sophistication, attracting top-tier talent both before the microphone and behind it. Each week, a new fear was excavated and explored with surgical precision, proving that the most terrifying visions are those conjured in the mind's eye. By the time "Carnival" was broadcast, Suspense had perfected its craft—the sound design, the measured pacing, the twist ending that recontextualizes everything you thought you knew.</p>
+<p>Don't miss your ticket to this haunting midway attraction. Tune in and discover why Suspense remains unmatched in its ability to burrow under your skin, long after the final curtain falls and the carnival lights fade to black.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

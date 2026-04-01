@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 520519 474 The Flight Of The Bumblebee (128 44) 28469 29m40s — Suspense | Ghost of Radio</title>
+  <title>The Flight Of The Bumblebee (128 44) 28469 29m40s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 520519 474 The Flight Of The Bumblebee (128 44) 28469 29m40s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 520519 474 The Flight Of The Bumblebee (128 44) 28469 29m40s — Suspense">
   <meta property="og:description" content="Listen to Suspense 520519 474 The Flight Of The Bumblebee (128 44) 28469 29m40s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 19, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 520519 474 The Flight Of The Bumblebee (128 44) 28469 29m40s</h1>
+          <h1 class="episode__title">The Flight Of The Bumblebee (128 44) 28469 29m40s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Flight of the Bumblebee</p>
-<p>Picture yourself huddled near a glowing radio dial on a quiet evening, the world outside forgotten as an unsettling silence crackles through the speaker. In "The Flight of the Bumblebee," Suspense delivers a masterclass in psychological terror—a tale where the innocent hum of an insect becomes the harbinger of something far more sinister. As the drama unfolds across nearly thirty minutes, listeners will find themselves caught between the rational and the inexplicable, where a seemingly trivial detail spirals into obsession and dread. The episode builds its tension not through sensational violence, but through the claustrophobic mounting of doubt, fear, and the question of what is real and what is imagined. The sound design—that fateful buzzing, the ambient creaks of an ordinary space transformed into a chamber of horrors—wraps around you like a shroud.</p>
+          <p>Picture yourself huddled near a glowing radio dial on a quiet evening, the world outside forgotten as an unsettling silence crackles through the speaker. In "The Flight of the Bumblebee," Suspense delivers a masterclass in psychological terror—a tale where the innocent hum of an insect becomes the harbinger of something far more sinister. As the drama unfolds across nearly thirty minutes, listeners will find themselves caught between the rational and the inexplicable, where a seemingly trivial detail spirals into obsession and dread. The episode builds its tension not through sensational violence, but through the claustrophobic mounting of doubt, fear, and the question of what is real and what is imagined. The sound design—that fateful buzzing, the ambient creaks of an ordinary space transformed into a chamber of horrors—wraps around you like a shroud.</p>
 <p>This episode represents Suspense at its golden age, when CBS's flagship thriller program commanded millions of listeners across America, from 1942 through the early 1960s. The show's genius lay in its understanding that true terror lives in suggestion, in the spaces between words, in what the listener's own imagination supplies. By the late 1940s, when this broadcast aired, Suspense had perfected the art of the psychological thriller, moving beyond pulpy sensationalism into genuinely intelligent storytelling that respected its audience's intelligence and nerve. The program featured some of radio's finest talent both before and behind the microphone, crafting episodes that would resonate long after the final musical sting faded into static.</p>
 <p>Don't miss your chance to experience a forgotten chapter of American entertainment that still possesses the power to unsettle. Tune in to "The Flight of the Bumblebee" and discover why millions once sat in darkened rooms, transfixed by nothing but their radios and their own racing hearts.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

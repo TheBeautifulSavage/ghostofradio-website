@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560522 651 Fragile Contents Death (128 44) 27935 29m27s — Suspense | Ghost of Radio</title>
+  <title>Fragile Contents Death (128 44) 27935 29m27s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560522 651 Fragile Contents Death (128 44) 27935 29m27s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560522 651 Fragile Contents Death (128 44) 27935 29m27s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560522 651 Fragile Contents Death (128 44) 27935 29m27s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 22, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560522 651 Fragile Contents Death (128 44) 27935 29m27s</h1>
+          <h1 class="episode__title">Fragile Contents Death (128 44) 27935 29m27s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Fragile Contents—Handle with Care</p>
-<p>Picture this: a lonely railway platform shrouded in fog, the distant whistle of an approaching train cutting through the darkness. A mysterious crate marked "FRAGILE—HANDLE WITH CARE" sits waiting in the shadows, and the man assigned to transport it knows only one terrible truth: inside lies something far more sinister than any cargo manifest could reveal. As the minutes tick away, our protagonist finds himself caught in a suffocating web of circumstance and dread, where every decision could mean the difference between life and death. In this masterclass of mounting tension, Suspense weaves psychological terror with the claustrophobic dread of a man racing against fate itself, building an atmosphere so thick you could cut it with a knife.</p>
-<p>Suspense stands as one of American radio's most enduring monuments to theatrical terror, and episodes like "Fragile Contents" showcase exactly why it captivated millions of listeners through two decades of broadcasts. Debuting on CBS in 1942, the series became renowned for eschewing cheap jump-scares in favor of creeping, intelligent dread—stories that infiltrate the mind and linger long after the closing credits. Each episode unfolds with meticulous pacing, employing radio's greatest strength: the power of suggestion and the listener's own imagination. The talented cast and writers understood that what you *don't* hear is often more frightening than what you do, transforming ordinary scenarios into nightmarish dilemmas with devastating consequences.</p>
+          <p>Picture this: a lonely railway platform shrouded in fog, the distant whistle of an approaching train cutting through the darkness. A mysterious crate marked "FRAGILE—HANDLE WITH CARE" sits waiting in the shadows, and the man assigned to transport it knows only one terrible truth: inside lies something far more sinister than any cargo manifest could reveal. As the minutes tick away, our protagonist finds himself caught in a suffocating web of circumstance and dread, where every decision could mean the difference between life and death. In this masterclass of mounting tension, Suspense weaves psychological terror with the claustrophobic dread of a man racing against fate itself, building an atmosphere so thick you could cut it with a knife.</p>
+<p>Suspense stands as one of American radio's most enduring monuments to theatrical terror, and episodes like "Fragile Contents" showcase exactly why it captivated millions of listeners through two decades of broadcasts. Debuting on CBS in 1942, the series became renowned for eschewing cheap jump-scares in favor of creeping, intelligent dread—stories that infiltrate the mind and linger long after the closing credits. Each episode unfolds with meticulous pacing, employing radio's greatest strength: the power of suggestion and the listener's own imagination. The talented cast and writers understood that what you don't hear is often more frightening than what you do, transforming ordinary scenarios into nightmarish dilemmas with devastating consequences.</p>
 <p>Don't let this one pass you by. In just twenty-nine minutes, "Fragile Contents" delivers the kind of suspenseful storytelling that made late-night radio listening an unforgettable experience for an entire generation. Tune in and discover why Suspense remains unmatched in its ability to unsettle, intrigue, and absolutely mesmerize.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 420624 002 Wet Saturday (128 44) 28033 29m10s — Suspense | Ghost of Radio</title>
+  <title>Wet Saturday (128 44) 28033 29m10s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 420624 002 Wet Saturday (128 44) 28033 29m10s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 420624 002 Wet Saturday (128 44) 28033 29m10s — Suspense">
   <meta property="og:description" content="Listen to Suspense 420624 002 Wet Saturday (128 44) 28033 29m10s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 24, 1942</span>
           </div>
-          <h1 class="episode__title">Suspense 420624 002 Wet Saturday (128 44) 28033 29m10s</h1>
+          <h1 class="episode__title">Wet Saturday (128 44) 28033 29m10s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Wet Saturday</p>
-<p>On a dark, rain-soaked evening, a respectable middle-class family faces an impossible moral crisis that will test the very bonds of blood and loyalty. When their daughter confesses to a terrible crime, her parents must choose between protecting her or facing the consequences of justice. As the storm rages outside and the police investigation draws closer, each family member is drawn into a web of complicity and deception, where every lie begets another, and the weight of their shared secret threatens to destroy them from within. *Wet Saturday* delivers the kind of intimate, claustrophobic dread that made listeners bolt their doors—not from external threats, but from the terrifying realization that evil wears the face of the everyday, and that good people are capable of profound darkness when protecting those they love.</p>
-<p>*Suspense*, which graced American radio waves from 1942 to 1962, became the gold standard of psychological thriller programming, proving that the most frightening stories need no special effects or gore—only the power of suggestion and a brilliant script. This particular episode exemplifies the show's genius: rather than relying on monsters or masked killers, it explores the criminal psychology of ordinary people and the moral corrosion that begins when conscience meets desperation. The writing crackles with authenticity, and the performances feel uncomfortably real, making listeners squirm in their chairs as they contemplate what they themselves might do in such circumstances.</p>
-<p>Settle into your favorite chair, dim the lights, and prepare for twenty-nine minutes of masterful suspense that will keep you hanging on every word. *Wet Saturday* awaits—a rain-soaked descent into a family's darkest hour, where the only certainty is that nothing will ever be quite the same.</p>
+          <p>On a dark, rain-soaked evening, a respectable middle-class family faces an impossible moral crisis that will test the very bonds of blood and loyalty. When their daughter confesses to a terrible crime, her parents must choose between protecting her or facing the consequences of justice. As the storm rages outside and the police investigation draws closer, each family member is drawn into a web of complicity and deception, where every lie begets another, and the weight of their shared secret threatens to destroy them from within. Wet Saturday delivers the kind of intimate, claustrophobic dread that made listeners bolt their doors—not from external threats, but from the terrifying realization that evil wears the face of the everyday, and that good people are capable of profound darkness when protecting those they love.</p>
+<p>Suspense, which graced American radio waves from 1942 to 1962, became the gold standard of psychological thriller programming, proving that the most frightening stories need no special effects or gore—only the power of suggestion and a brilliant script. This particular episode exemplifies the show's genius: rather than relying on monsters or masked killers, it explores the criminal psychology of ordinary people and the moral corrosion that begins when conscience meets desperation. The writing crackles with authenticity, and the performances feel uncomfortably real, making listeners squirm in their chairs as they contemplate what they themselves might do in such circumstances.</p>
+<p>Settle into your favorite chair, dim the lights, and prepare for twenty-nine minutes of masterful suspense that will keep you hanging on every word. Wet Saturday awaits—a rain-soaked descent into a family's darkest hour, where the only certainty is that nothing will ever be quite the same.</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

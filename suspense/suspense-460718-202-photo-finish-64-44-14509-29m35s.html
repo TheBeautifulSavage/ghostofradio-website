@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460718 202 Photo Finish (64 44) 14509 29m35s — Suspense | Ghost of Radio</title>
+  <title>Photo Finish (64 44) 14509 29m35s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460718 202 Photo Finish (64 44) 14509 29m35s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460718 202 Photo Finish (64 44) 14509 29m35s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460718 202 Photo Finish (64 44) 14509 29m35s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 18, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460718 202 Photo Finish (64 44) 14509 29m35s</h1>
+          <h1 class="episode__title">Photo Finish (64 44) 14509 29m35s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Photo Finish</p>
-<p>When a struggling photographer accepts a lucrative commission to capture candid shots at an exclusive society gathering, he believes he's finally caught a break. But as the evening unfolds beneath the glittering chandeliers, he discovers that the camera doesn't merely record what the eye can see—it reveals something far more sinister. In *Photo Finish*, the tension builds with every click of the shutter as our protagonist realizes that some images, once developed, expose truths that powerful people would kill to keep hidden. The wet darkroom becomes a chamber of dread, and each photograph developed becomes a potential death warrant. Don Ameche's urbane narration guides listeners through a maze of blackmail, desperation, and murder, where a simple snapshot becomes the most dangerous evidence imaginable.</p>
-<p>*Suspense* was radio's premier thriller, earning its reputation as "radio's outstanding dramatic program" through meticulous production values and stellar Hollywood talent. Airing from 1942 to 1962, the show became a masterclass in audio suspense, employing innovative sound design—creaking doors, footsteps on wet pavement, heartbeats amplified to unbearable intensity—to transform living rooms into chambers of psychological terror. The series attracted A-list performers like Orson Welles, Cary Grant, and Joseph Cotton, who understood that radio acting required a different artistry entirely; every emotion had to live in the voice alone. Episodes like *Photo Finish* showcase why the show maintained its iron grip on the American imagination throughout two decades of broadcasting.</p>
-<p>If you've never experienced the spine-tingling suspense that captivated millions of listeners huddled around their radios in the 1940s, this is your invitation to step into that shadowy world. Adjust the dial, dim the lights, and let the darkness speak through the speaker. *Suspense* awaits.</p>
+          <p>When a struggling photographer accepts a lucrative commission to capture candid shots at an exclusive society gathering, he believes he's finally caught a break. But as the evening unfolds beneath the glittering chandeliers, he discovers that the camera doesn't merely record what the eye can see—it reveals something far more sinister. In Photo Finish, the tension builds with every click of the shutter as our protagonist realizes that some images, once developed, expose truths that powerful people would kill to keep hidden. The wet darkroom becomes a chamber of dread, and each photograph developed becomes a potential death warrant. Don Ameche's urbane narration guides listeners through a maze of blackmail, desperation, and murder, where a simple snapshot becomes the most dangerous evidence imaginable.</p>
+<p>Suspense was radio's premier thriller, earning its reputation as "radio's outstanding dramatic program" through meticulous production values and stellar Hollywood talent. Airing from 1942 to 1962, the show became a masterclass in audio suspense, employing innovative sound design—creaking doors, footsteps on wet pavement, heartbeats amplified to unbearable intensity—to transform living rooms into chambers of psychological terror. The series attracted A-list performers like Orson Welles, Cary Grant, and Joseph Cotton, who understood that radio acting required a different artistry entirely; every emotion had to live in the voice alone. Episodes like Photo Finish showcase why the show maintained its iron grip on the American imagination throughout two decades of broadcasting.</p>
+<p>If you've never experienced the spine-tingling suspense that captivated millions of listeners huddled around their radios in the 1940s, this is your invitation to step into that shadowy world. Adjust the dial, dim the lights, and let the darkness speak through the speaker. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

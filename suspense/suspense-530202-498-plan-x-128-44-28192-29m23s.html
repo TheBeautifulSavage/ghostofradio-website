@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 530202 498 Plan X (128 44) 28192 29m23s — Suspense | Ghost of Radio</title>
+  <title>Plan X (128 44) 28192 29m23s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 530202 498 Plan X (128 44) 28192 29m23s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 530202 498 Plan X (128 44) 28192 29m23s — Suspense">
   <meta property="og:description" content="Listen to Suspense 530202 498 Plan X (128 44) 28192 29m23s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 2, 1953</span>
           </div>
-          <h1 class="episode__title">Suspense 530202 498 Plan X (128 44) 28192 29m23s</h1>
+          <h1 class="episode__title">Plan X (128 44) 28192 29m23s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Plan X</p>
-<p>When the lights dimmed and that familiar theremin wail pierced the darkness on February 2nd, 1953, listeners across America settled into their chairs for a journey into the shadowy world of espionage and sabotage. *Suspense* brought them "Plan X"—a taut thriller about a sinister conspiracy that unfolds in the cramped quarters of a government facility where every shadow conceals a potential traitor. As the minutes tick away, our protagonist discovers that someone inside the operation has set a catastrophic scheme in motion, one designed to cripple the nation's defenses. The tension builds relentlessly: coded messages, hushed telephone conversations, the creeping realization that trust is a luxury no one can afford. You can almost hear the protagonist's racing heartbeat as the noose tightens around him.</p>
-<p>For over a decade, *Suspense* had been radio's premier purveyor of thrills, a show that understood that the most terrifying monsters were born from human ambition, betrayal, and cunning. Unlike the monsters and mad scientists that populated other programs, *Suspense* dealt in cold, calculated menace—the kind that could happen to ordinary people in ordinary circumstances. This particular episode, buried in the show's robust catalog, exemplifies why the series earned such devoted listeners and enduring critical respect. The production values are sterling, the writing crackles with intelligence, and the performances burn with urgency.</p>
-<p>Don't let this gem slip past you. "Plan X" reminds us why millions of Americans huddled around their radios, why they held their breath during commercial breaks, and why these broadcasts still possess the power to unsettle and entrance. Step into the darkness—*Suspense* awaits.</p>
+          <p>When the lights dimmed and that familiar theremin wail pierced the darkness on February 2nd, 1953, listeners across America settled into their chairs for a journey into the shadowy world of espionage and sabotage. Suspense brought them "Plan X"—a taut thriller about a sinister conspiracy that unfolds in the cramped quarters of a government facility where every shadow conceals a potential traitor. As the minutes tick away, our protagonist discovers that someone inside the operation has set a catastrophic scheme in motion, one designed to cripple the nation's defenses. The tension builds relentlessly: coded messages, hushed telephone conversations, the creeping realization that trust is a luxury no one can afford. You can almost hear the protagonist's racing heartbeat as the noose tightens around him.</p>
+<p>For over a decade, Suspense had been radio's premier purveyor of thrills, a show that understood that the most terrifying monsters were born from human ambition, betrayal, and cunning. Unlike the monsters and mad scientists that populated other programs, Suspense dealt in cold, calculated menace—the kind that could happen to ordinary people in ordinary circumstances. This particular episode, buried in the show's robust catalog, exemplifies why the series earned such devoted listeners and enduring critical respect. The production values are sterling, the writing crackles with intelligence, and the performances burn with urgency.</p>
+<p>Don't let this gem slip past you. "Plan X" reminds us why millions of Americans huddled around their radios, why they held their breath during commercial breaks, and why these broadcasts still possess the power to unsettle and entrance. Step into the darkness—Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

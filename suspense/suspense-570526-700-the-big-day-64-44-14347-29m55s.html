@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570526 700 The Big Day (64 44) 14347 29m55s — Suspense | Ghost of Radio</title>
+  <title>The Big Day (64 44) 14347 29m55s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570526 700 The Big Day (64 44) 14347 29m55s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570526 700 The Big Day (64 44) 14347 29m55s — Suspense">
   <meta property="og:description" content="Listen to Suspense 570526 700 The Big Day (64 44) 14347 29m55s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 26, 1957</span>
           </div>
-          <h1 class="episode__title">Suspense 570526 700 The Big Day (64 44) 14347 29m55s</h1>
+          <h1 class="episode__title">The Big Day (64 44) 14347 29m55s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Big Day</p>
-<p>As the opening organ swells and that unmistakable voice intones "Suspense," listeners are transported into the mounting dread of a man facing his execution at dawn. In *The Big Day*, the condemned prisoner lies sleepless in his cell as midnight approaches, wrestling with the terrible certainty of what the morning light will bring. But is justice about to be served, or is an innocent man about to walk to his doom? With each tick of the clock and every footstep in the corridor, the tension coils tighter. The superb cast delivers every line with an intensity that makes your mouth go dry—no visual effects needed when the fear lives entirely in the listener's imagination, painting pictures far more terrifying than any screen could show.</p>
-<p>*Suspense* stands as one of radio's greatest achievements, a program that proved the medium's unmatched power to burrow into the human psyche. From 1942 to 1962, it produced nearly a thousand episodes of meticulously crafted psychological terror, drawing on the talents of Hollywood's finest actors and writers. The show's genius lay in its restraint—the things left unsaid, the implications hanging in the darkness—creating a intimacy with fear that no other medium could replicate. Episodes like this one showcase why radio drama remains unsurpassed; without a single visual cue, the audience becomes a silent witness to moral dilemmas and mounting dread.</p>
-<p>For those who've never experienced classic radio drama, *The Big Day* is the perfect entry point. Settle in during the evening hours, dim the lights if you dare, and let the voices and sound effects work their ancient magic. This is storytelling at its purest—no screen to hide behind, just you, the darkness, and the inexorable march toward dawn.</p>
+          <p>As the opening organ swells and that unmistakable voice intones "Suspense," listeners are transported into the mounting dread of a man facing his execution at dawn. In The Big Day, the condemned prisoner lies sleepless in his cell as midnight approaches, wrestling with the terrible certainty of what the morning light will bring. But is justice about to be served, or is an innocent man about to walk to his doom? With each tick of the clock and every footstep in the corridor, the tension coils tighter. The superb cast delivers every line with an intensity that makes your mouth go dry—no visual effects needed when the fear lives entirely in the listener's imagination, painting pictures far more terrifying than any screen could show.</p>
+<p>Suspense stands as one of radio's greatest achievements, a program that proved the medium's unmatched power to burrow into the human psyche. From 1942 to 1962, it produced nearly a thousand episodes of meticulously crafted psychological terror, drawing on the talents of Hollywood's finest actors and writers. The show's genius lay in its restraint—the things left unsaid, the implications hanging in the darkness—creating a intimacy with fear that no other medium could replicate. Episodes like this one showcase why radio drama remains unsurpassed; without a single visual cue, the audience becomes a silent witness to moral dilemmas and mounting dread.</p>
+<p>For those who've never experienced classic radio drama, The Big Day is the perfect entry point. Settle in during the evening hours, dim the lights if you dare, and let the voices and sound effects work their ancient magic. This is storytelling at its purest—no screen to hide behind, just you, the darkness, and the inexorable march toward dawn.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

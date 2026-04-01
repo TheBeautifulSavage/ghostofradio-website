@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460314 184 No More Alice (64 44) 14461 29m29s — Suspense | Ghost of Radio</title>
+  <title>No More Alice (64 44) 14461 29m29s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460314 184 No More Alice (64 44) 14461 29m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460314 184 No More Alice (64 44) 14461 29m29s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460314 184 No More Alice (64 44) 14461 29m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 14, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460314 184 No More Alice (64 44) 14461 29m29s</h1>
+          <h1 class="episode__title">No More Alice (64 44) 14461 29m29s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># No More Alice</p>
-<p>Picture this: a darkened living room in 1940s America, the radio glowing warmly as you settle in for the evening. Then comes that unforgettable signature—*Suspense*—and a tale of obsession begins to unfold. "No More Alice" draws you into a psychological nightmare where a man's desperate attempts to escape his past collide with a present that refuses to let him go. As the minutes tick by in this twenty-nine-minute thriller, you'll find yourself trapped alongside the protagonist, questioning what's real and what's merely the phantom echo of a love lost. The tension builds not through screaming violins, but through the measured cadence of voices, the subtle sound design that makes ordinary moments feel sinister, and dialogue that cuts right to the heart of human desperation.</p>
-<p>*Suspense* was the gold standard of thriller radio throughout its two-decade run on CBS, distinguished by its commitment to psychological depth over cheap scares. Each episode was crafted with the precision of a master jeweler, drawing from literature's finest suspenseful tales and original scripts that explored the darkness lurking beneath everyday life. By the mid-1940s, when "No More Alice" aired, the show had perfected its formula—pairing stellar voice actors with innovative sound design to create an intimacy that only radio could achieve. This wasn't horror for horror's sake; these were explorations of the human condition under pressure, of sanity fraying at its edges.</p>
+          <p>Picture this: a darkened living room in 1940s America, the radio glowing warmly as you settle in for the evening. Then comes that unforgettable signature—Suspense—and a tale of obsession begins to unfold. "No More Alice" draws you into a psychological nightmare where a man's desperate attempts to escape his past collide with a present that refuses to let him go. As the minutes tick by in this twenty-nine-minute thriller, you'll find yourself trapped alongside the protagonist, questioning what's real and what's merely the phantom echo of a love lost. The tension builds not through screaming violins, but through the measured cadence of voices, the subtle sound design that makes ordinary moments feel sinister, and dialogue that cuts right to the heart of human desperation.</p>
+<p>Suspense was the gold standard of thriller radio throughout its two-decade run on CBS, distinguished by its commitment to psychological depth over cheap scares. Each episode was crafted with the precision of a master jeweler, drawing from literature's finest suspenseful tales and original scripts that explored the darkness lurking beneath everyday life. By the mid-1940s, when "No More Alice" aired, the show had perfected its formula—pairing stellar voice actors with innovative sound design to create an intimacy that only radio could achieve. This wasn't horror for horror's sake; these were explorations of the human condition under pressure, of sanity fraying at its edges.</p>
 <p>If you've never experienced the remarkable power of classic radio drama, "No More Alice" is an ideal entry point. Let yourself be transported back to an era when storytelling meant something different, when the invisible became unforgettable, and when thirty minutes could feel like a lifetime of dread. Tune in, dim the lights, and discover why audiences huddled around their radios, captivated by suspense itself.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

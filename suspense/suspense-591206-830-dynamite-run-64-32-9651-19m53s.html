@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 591206 830 Dynamite Run (64 32) 9651 19m53s — Suspense | Ghost of Radio</title>
+  <title>Dynamite Run (64 32) 9651 19m53s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 591206 830 Dynamite Run (64 32) 9651 19m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 591206 830 Dynamite Run (64 32) 9651 19m53s — Suspense">
   <meta property="og:description" content="Listen to Suspense 591206 830 Dynamite Run (64 32) 9651 19m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 6, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 591206 830 Dynamite Run (64 32) 9651 19m53s</h1>
+          <h1 class="episode__title">Dynamite Run (64 32) 9651 19m53s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Dynamite Run</p>
-<p>Picture yourself huddled near the radio on a cold evening, the static crackling to life as a lone truck driver faces an impossible choice on a treacherous mountain road. In "Dynamite Run," the tension mounts with every mile as our protagonist discovers he's transporting something far more dangerous than he bargained for—and someone wants it badly enough to kill. What begins as a simple hauling job descends into a nightmare of cat-and-mouse pursuit, where every curve in the road could be his last and every shadow conceals a threat. The sound design pulls you right into that cab, the engine rumbling, the wind howling, and the tick-tick-tick of his racing heartbeat as danger closes in from all sides.</p>
-<p>*Suspense* stands as one of radio's greatest achievements, a show that understood that the most terrifying monsters are often human ones. Broadcasting from 1942 to 1962, this CBS anthology series became legendary for its ability to transform everyday situations into nightmares through masterful writing, innovative sound engineering, and performances from Hollywood's finest actors. Each episode was a self-contained thriller that kept millions of listeners awake at night, proving that radio's power lay not in what you could see, but in what your imagination could conjure. "Dynamite Run" exemplifies everything the show did best—real stakes, claustrophobic tension, and the kind of driving narrative (pun intended) that makes you forget to breathe.</p>
-<p>Don't miss your chance to experience this classic slice of Golden Age radio entertainment. Tune in to *Suspense 591206* and discover why this landmark series still captivates audiences nearly eighty years later.</p>
+          <p>Picture yourself huddled near the radio on a cold evening, the static crackling to life as a lone truck driver faces an impossible choice on a treacherous mountain road. In "Dynamite Run," the tension mounts with every mile as our protagonist discovers he's transporting something far more dangerous than he bargained for—and someone wants it badly enough to kill. What begins as a simple hauling job descends into a nightmare of cat-and-mouse pursuit, where every curve in the road could be his last and every shadow conceals a threat. The sound design pulls you right into that cab, the engine rumbling, the wind howling, and the tick-tick-tick of his racing heartbeat as danger closes in from all sides.</p>
+<p>Suspense stands as one of radio's greatest achievements, a show that understood that the most terrifying monsters are often human ones. Broadcasting from 1942 to 1962, this CBS anthology series became legendary for its ability to transform everyday situations into nightmares through masterful writing, innovative sound engineering, and performances from Hollywood's finest actors. Each episode was a self-contained thriller that kept millions of listeners awake at night, proving that radio's power lay not in what you could see, but in what your imagination could conjure. "Dynamite Run" exemplifies everything the show did best—real stakes, claustrophobic tension, and the kind of driving narrative (pun intended) that makes you forget to breathe.</p>
+<p>Don't miss your chance to experience this classic slice of Golden Age radio entertainment. Tune in to Suspense 591206 and discover why this landmark series still captivates audiences nearly eighty years later.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

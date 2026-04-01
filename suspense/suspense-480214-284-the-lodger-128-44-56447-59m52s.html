@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 480214 284 The Lodger (128 44) 56447 59m52s — Suspense | Ghost of Radio</title>
+  <title>The Lodger (128 44) 56447 59m52s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 480214 284 The Lodger (128 44) 56447 59m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 480214 284 The Lodger (128 44) 56447 59m52s — Suspense">
   <meta property="og:description" content="Listen to Suspense 480214 284 The Lodger (128 44) 56447 59m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 14, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 480214 284 The Lodger (128 44) 56447 59m52s</h1>
+          <h1 class="episode__title">The Lodger (128 44) 56447 59m52s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lodger</p>
-<p>Picture this: a fog-shrouded London street, gaslight casting eerie shadows across wet cobblestones, and a mysterious stranger arriving at a respectable boarding house with nothing but a locked trunk and a hunger for solitude. In "The Lodger," *Suspense* weaves a tale of creeping dread that builds with each knock on the door, each hushed conversation, each uneasy glance. As the landlady and her tenants grow increasingly suspicious of their enigmatic guest—his strange hours, his muffled movements in the dead of night, his peculiar requests—listeners are drawn into a labyrinth of doubt and terror. Is he merely an eccentric gentleman seeking refuge, or does something far more sinister lurk behind that composed façade? The episode masterfully exploits the claustrophobia of shared walls and the paranoia of everyday suspicion, transforming a simple boarding house into a pressure cooker of psychological torment.</p>
-<p>*Suspense*, which dominated CBS airwaves from 1942 to 1962, became the gold standard of radio thriller programming through its unflinching commitment to psychological horror and sophisticated storytelling. Drawing from classic literature and original scripts alike, the series pioneered techniques that would later influence television and film noir. "The Lodger," adapted from Marie Belloc Lowndes' chilling novella, exemplifies the show's brilliance—it needs no monsters or gunfire, only the power of suggestion, stellar voice acting, and expertly timed sound design to chill the spine. This was an era when listeners sat in darkened living rooms, utterly dependent on their imaginations, and *Suspense* knew exactly how to weaponize that vulnerability.</p>
-<p>Don't miss this masterclass in atmospheric terror. Tune in and discover why millions of Americans once huddled around their radios, breathless and terrified, as *Suspense* reminded them that the most dangerous mysteries often wear the most ordinary faces.</p>
+          <p>Picture this: a fog-shrouded London street, gaslight casting eerie shadows across wet cobblestones, and a mysterious stranger arriving at a respectable boarding house with nothing but a locked trunk and a hunger for solitude. In "The Lodger," Suspense weaves a tale of creeping dread that builds with each knock on the door, each hushed conversation, each uneasy glance. As the landlady and her tenants grow increasingly suspicious of their enigmatic guest—his strange hours, his muffled movements in the dead of night, his peculiar requests—listeners are drawn into a labyrinth of doubt and terror. Is he merely an eccentric gentleman seeking refuge, or does something far more sinister lurk behind that composed façade? The episode masterfully exploits the claustrophobia of shared walls and the paranoia of everyday suspicion, transforming a simple boarding house into a pressure cooker of psychological torment.</p>
+<p>Suspense, which dominated CBS airwaves from 1942 to 1962, became the gold standard of radio thriller programming through its unflinching commitment to psychological horror and sophisticated storytelling. Drawing from classic literature and original scripts alike, the series pioneered techniques that would later influence television and film noir. "The Lodger," adapted from Marie Belloc Lowndes' chilling novella, exemplifies the show's brilliance—it needs no monsters or gunfire, only the power of suggestion, stellar voice acting, and expertly timed sound design to chill the spine. This was an era when listeners sat in darkened living rooms, utterly dependent on their imaginations, and Suspense knew exactly how to weaponize that vulnerability.</p>
+<p>Don't miss this masterclass in atmospheric terror. Tune in and discover why millions of Americans once huddled around their radios, breathless and terrified, as Suspense reminded them that the most dangerous mysteries often wear the most ordinary faces.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

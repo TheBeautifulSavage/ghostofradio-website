@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 430615 046 Last Night (128 44) 27985 29m30s — Suspense | Ghost of Radio</title>
+  <title>Last Night (128 44) 27985 29m30s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 430615 046 Last Night (128 44) 27985 29m30s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 430615 046 Last Night (128 44) 27985 29m30s — Suspense">
   <meta property="og:description" content="Listen to Suspense 430615 046 Last Night (128 44) 27985 29m30s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 15, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 430615 046 Last Night (128 44) 27985 29m30s</h1>
+          <h1 class="episode__title">Last Night (128 44) 27985 29m30s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,8 +87,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Last Night</p>
-<p>Picture this: it's a sweltering summer evening, the kind where shadows stretch long across your living room and every creak of the house sets your nerves on edge. In "Last Night," a man sits alone with the terrible knowledge that something unspeakable occurred in the darkness—and he can't quite remember what. As the clock ticks forward, reality and memory begin to fracture. Was it a dream? A murder? An act of madness? The brilliant sound design of Suspense pulls you into his descending panic, with each commercial break offering only brief respite before the next twist tightens the noose. Your own living room becomes the stage for psychological terror, and by the episode's end, you'll question whether you'd want to remember—or if forgetting might be the greater mercy.</p>
+          <p>Picture this: it's a sweltering summer evening, the kind where shadows stretch long across your living room and every creak of the house sets your nerves on edge. In "Last Night," a man sits alone with the terrible knowledge that something unspeakable occurred in the darkness—and he can't quite remember what. As the clock ticks forward, reality and memory begin to fracture. Was it a dream? A murder? An act of madness? The brilliant sound design of Suspense pulls you into his descending panic, with each commercial break offering only brief respite before the next twist tightens the noose. Your own living room becomes the stage for psychological terror, and by the episode's end, you'll question whether you'd want to remember—or if forgetting might be the greater mercy.</p>
 <p>Suspense premiered in 1942 as CBS's answer to the public's insatiable appetite for intelligent horror and mystery. Unlike its competitors, the show eschewed cheap jump-scares in favor of sophisticated scripts that explored the darkness lurking within the human psyche. Drawing from the best writers of the era and featuring top-tier radio talent, each half-hour episode was meticulously crafted to exploit the unique power of audio storytelling—where the listener's imagination becomes the most terrifying special effect. "Last Night" exemplifies everything the show did best: a taut narrative that leaves you guessing, stellar performances that feel genuine and immediate, and a moral ambiguity that lingers long after the final fade-out.</p>
 <p>This is radio at its finest—no filters, no cuts, pure suspense beaming directly into your home. Turn down the lights, turn up the volume, and prepare yourself for an evening you won't soon forget. Suspense delivers on its promise: thrills, chills, and the delicious terror of not knowing what's real.</p>
         </div>
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

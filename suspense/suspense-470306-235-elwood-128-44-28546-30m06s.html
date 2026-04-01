@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470306 235 Elwood (128 44) 28546 30m06s — Suspense | Ghost of Radio</title>
+  <title>Elwood (128 44) 28546 30m06s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470306 235 Elwood (128 44) 28546 30m06s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470306 235 Elwood (128 44) 28546 30m06s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470306 235 Elwood (128 44) 28546 30m06s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 6, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470306 235 Elwood (128 44) 28546 30m06s</h1>
+          <h1 class="episode__title">Elwood (128 44) 28546 30m06s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Elwood</p>
-<p>On a fog-shrouded evening in 1947, CBS listeners settled into their parlors expecting another night of Suspense—and what they received was a masterclass in psychological dread. "Elwood" unfolds with claustrophobic precision, trapping its protagonist in a nightmare of mistaken identity and mounting paranoia. As the minutes tick away in real time, the listener becomes increasingly uncertain whether our hero faces external danger or his own fracturing mind. The sound design—those creaking floorboards, the ominous telephone that rings at precisely the wrong moments, the breathing that grows heavier with each commercial break—creates an almost unbearable tension. By the episode's climax, you'll find yourself gripping your radio dial, desperate for resolution while dreading what it might bring.</p>
+          <p>On a fog-shrouded evening in 1947, CBS listeners settled into their parlors expecting another night of Suspense—and what they received was a masterclass in psychological dread. "Elwood" unfolds with claustrophobic precision, trapping its protagonist in a nightmare of mistaken identity and mounting paranoia. As the minutes tick away in real time, the listener becomes increasingly uncertain whether our hero faces external danger or his own fracturing mind. The sound design—those creaking floorboards, the ominous telephone that rings at precisely the wrong moments, the breathing that grows heavier with each commercial break—creates an almost unbearable tension. By the episode's climax, you'll find yourself gripping your radio dial, desperate for resolution while dreading what it might bring.</p>
 <p>Suspense had already established itself as America's premier horror-thriller program by this point in its remarkable twenty-year run, pioneering techniques that would later define the very language of cinematic suspense. The show's brilliance lay in its understanding that radio's invisible narrator was far more terrifying than any visual medium could be—your imagination, guided by masterful sound technicians and compelling scripts, became the true architect of fear. "Elwood" represents the show at its peak, when writers had fully grasped how to weaponize the listener's own mind against them, building dread through suggestion and implication rather than gore or spectacle. This episode exemplifies why Suspense remained America's most reliable appointment with terror throughout the 1940s and beyond.</p>
 <p>If you've never experienced a classic Suspense episode, "Elwood" is an ideal entry point—intimate, unsettling, and mercifully brief enough to consume in one sitting. Dim the lights, silence your telephone, and prepare yourself for thirty minutes that will rearrange your understanding of what radio drama can accomplish. You may never answer your phone quite the same way again.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

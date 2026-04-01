@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470116 228 Overture In Two Keys (128 48) 28832 30m24s — Suspense | Ghost of Radio</title>
+  <title>Overture In Two Keys (128 48) 28832 30m24s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470116 228 Overture In Two Keys (128 48) 28832 30m24s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470116 228 Overture In Two Keys (128 48) 28832 30m24s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470116 228 Overture In Two Keys (128 48) 28832 30m24s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 16, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470116 228 Overture In Two Keys (128 48) 28832 30m24s</h1>
+          <h1 class="episode__title">Overture In Two Keys (128 48) 28832 30m24s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Overture In Two Keys</p>
-<p>Picture yourself huddled near your radio on a crisp evening, the amber glow of the dial your only comfort as an unsettling melody begins to play—not quite major, not quite minor, but something altogether sinister. In "Overture In Two Keys," listeners are drawn into a tale where music itself becomes a harbinger of doom. A composer's work, meant to express the duality of human nature, somehow seems to predict the very darkness that will unfold. As the narrative unfolds through masterfully timed dialogue and an orchestral score that shifts between beauty and menace, you'll find yourself wondering whether art imitates life—or if life is being orchestrated by forces beyond our understanding. The tension mounts with each revelation, each character's motivation peeling back like layers of a dark composition, leaving you suspended in delicious uncertainty.</p>
-<p>*Suspense*, which gripped American audiences from 1942 through the early 1960s, became the gold standard of radio drama precisely because it understood the invisible mechanics of fear. Operating under the principle that what you *imagine* in the darkness is always more terrifying than what you see, the show's writers, directors, and talented roster of Hollywood actors created some of broadcast radio's most enduring moments. Each episode was constructed with surgical precision—every footstep, every pause, every violin screech placed exactly where it would lodge deepest in a listener's mind. "Overture In Two Keys" exemplifies the show's sophisticated approach to psychological terror, where the threat emerges not from monsters, but from the human capacity for deception and the eerie ways fate can seem to arrange itself.</p>
+          <p>Picture yourself huddled near your radio on a crisp evening, the amber glow of the dial your only comfort as an unsettling melody begins to play—not quite major, not quite minor, but something altogether sinister. In "Overture In Two Keys," listeners are drawn into a tale where music itself becomes a harbinger of doom. A composer's work, meant to express the duality of human nature, somehow seems to predict the very darkness that will unfold. As the narrative unfolds through masterfully timed dialogue and an orchestral score that shifts between beauty and menace, you'll find yourself wondering whether art imitates life—or if life is being orchestrated by forces beyond our understanding. The tension mounts with each revelation, each character's motivation peeling back like layers of a dark composition, leaving you suspended in delicious uncertainty.</p>
+<p>Suspense, which gripped American audiences from 1942 through the early 1960s, became the gold standard of radio drama precisely because it understood the invisible mechanics of fear. Operating under the principle that what you imagine in the darkness is always more terrifying than what you see, the show's writers, directors, and talented roster of Hollywood actors created some of broadcast radio's most enduring moments. Each episode was constructed with surgical precision—every footstep, every pause, every violin screech placed exactly where it would lodge deepest in a listener's mind. "Overture In Two Keys" exemplifies the show's sophisticated approach to psychological terror, where the threat emerges not from monsters, but from the human capacity for deception and the eerie ways fate can seem to arrange itself.</p>
 <p>Don't miss your chance to experience this masterpiece of audio storytelling. Tune in, dim the lights, and let the overture begin—but be warned: some melodies, once heard, are impossible to forget.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

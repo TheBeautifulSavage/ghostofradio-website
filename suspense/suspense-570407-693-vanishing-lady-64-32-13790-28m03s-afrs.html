@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570407 693 Vanishing Lady (64 32) 13790 28m03s Afrs — Suspense | Ghost of Radio</title>
+  <title>Vanishing Lady (64 32) 13790 28m03s Afrs — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570407 693 Vanishing Lady (64 32) 13790 28m03s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570407 693 Vanishing Lady (64 32) 13790 28m03s Afrs — Suspense">
   <meta property="og:description" content="Listen to Suspense 570407 693 Vanishing Lady (64 32) 13790 28m03s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 7, 1957</span>
           </div>
-          <h1 class="episode__title">Suspense 570407 693 Vanishing Lady (64 32) 13790 28m03s Afrs</h1>
+          <h1 class="episode__title">Vanishing Lady (64 32) 13790 28m03s Afrs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Vanishing Lady</p>
-<p>Picture this: a dimly lit drawing room where a gentleman's wife simply ceases to exist—vanishing as if she were nothing more than cigarette smoke curling into the shadows. In "Vanishing Lady," Suspense delivers one of its most deliciously unsettling mysteries, where the ordinary becomes impossible and every alibi crumbles like old paper. As our protagonist desperately traces the movements of his missing wife through a maze of conflicting testimonies and sinister coincidences, the listener is drawn deeper into a labyrinth where nothing can be trusted—not even the most obvious explanations. The suspenseful sound design, sparse yet hauntingly effective, transforms an intimate tragedy into a nightmare of doubt and dread, leaving you gripping your radio dial as the truth remains tantalizingly out of reach.</p>
+          <p>Picture this: a dimly lit drawing room where a gentleman's wife simply ceases to exist—vanishing as if she were nothing more than cigarette smoke curling into the shadows. In "Vanishing Lady," Suspense delivers one of its most deliciously unsettling mysteries, where the ordinary becomes impossible and every alibi crumbles like old paper. As our protagonist desperately traces the movements of his missing wife through a maze of conflicting testimonies and sinister coincidences, the listener is drawn deeper into a labyrinth where nothing can be trusted—not even the most obvious explanations. The suspenseful sound design, sparse yet hauntingly effective, transforms an intimate tragedy into a nightmare of doubt and dread, leaving you gripping your radio dial as the truth remains tantalizingly out of reach.</p>
 <p>Suspense premiered in 1942 on CBS at precisely the moment America needed it most—a war-weary nation hungry for thrills that didn't require leaving the living room. For twenty years, this legendary anthology series became the gold standard of radio drama, earning legions of devoted listeners through its commitment to intelligent scripts and impeccable performances. Each episode represented what made the golden age of radio irreplaceable: genuine suspense built through voice alone, without the crutch of visual effects. "Vanishing Lady" exemplifies the show's mastery of psychological terror, proving that the most frightening stories unfold not on screen but in the imagination.</p>
 <p>Don't miss this mesmerizing descent into mystery. Tune in and discover why audiences huddled around their sets every Tuesday evening, surrendering themselves to the darkness and the unknown. Suspense awaits—and it still has the power to keep you awake at night.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

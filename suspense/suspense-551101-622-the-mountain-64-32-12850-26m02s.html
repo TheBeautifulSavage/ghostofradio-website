@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 551101 622 The Mountain (64 32) 12850 26m02s — Suspense | Ghost of Radio</title>
+  <title>The Mountain (64 32) 12850 26m02s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 551101 622 The Mountain (64 32) 12850 26m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 551101 622 The Mountain (64 32) 12850 26m02s — Suspense">
   <meta property="og:description" content="Listen to Suspense 551101 622 The Mountain (64 32) 12850 26m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 1, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 551101 622 The Mountain (64 32) 12850 26m02s</h1>
+          <h1 class="episode__title">The Mountain (64 32) 12850 26m02s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Mountain</p>
-<p>As the familiar scratching of the Suspense needle drops onto the record, you're transported to the windswept peaks of an unforgiving landscape where isolation breeds paranoia and trust becomes a luxury no one can afford. "The Mountain" traps its characters in a claustrophobic struggle against both the elements and each other, where every shadow cast by firelight might conceal a threat, and every unexpected sound echoing through the darkness demands explanation. The crackling radio static between scenes heightens the tension, while the sound design—howling winds, creaking timbers, the crunch of footsteps on frozen ground—pulls you deeper into the mounting dread. What begins as an ordinary tale of survival quickly curdles into something far more sinister, as suspicions take root and human nature proves as dangerous as any blizzard.</p>
-<p>By the 1940s, Suspense had become America's premier thriller anthology, a weekly appointment with terror that drew millions of listeners huddled around their radios. CBS's commitment to sophisticated storytelling, stellar voice actors, and meticulous production design elevated radio drama to an art form—each episode crafted like a miniature feature film, complete with orchestral scores and sound effects that still astound modern audiences. "The Mountain" exemplifies the show's golden age, when writers understood that the most terrifying horrors aren't always what you see, but what you *imagine* lurking just beyond the reach of your understanding.</p>
+          <p>As the familiar scratching of the Suspense needle drops onto the record, you're transported to the windswept peaks of an unforgiving landscape where isolation breeds paranoia and trust becomes a luxury no one can afford. "The Mountain" traps its characters in a claustrophobic struggle against both the elements and each other, where every shadow cast by firelight might conceal a threat, and every unexpected sound echoing through the darkness demands explanation. The crackling radio static between scenes heightens the tension, while the sound design—howling winds, creaking timbers, the crunch of footsteps on frozen ground—pulls you deeper into the mounting dread. What begins as an ordinary tale of survival quickly curdles into something far more sinister, as suspicions take root and human nature proves as dangerous as any blizzard.</p>
+<p>By the 1940s, Suspense had become America's premier thriller anthology, a weekly appointment with terror that drew millions of listeners huddled around their radios. CBS's commitment to sophisticated storytelling, stellar voice actors, and meticulous production design elevated radio drama to an art form—each episode crafted like a miniature feature film, complete with orchestral scores and sound effects that still astound modern audiences. "The Mountain" exemplifies the show's golden age, when writers understood that the most terrifying horrors aren't always what you see, but what you imagine lurking just beyond the reach of your understanding.</p>
 <p>If you've never experienced Suspense, this haunting episode offers the perfect entry point into a world where every creak and whisper carries weight. Tune in, dim the lights, and let your imagination do what no visual effect ever could—transform an ordinary mountain refuge into a chamber of secrets and fear.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

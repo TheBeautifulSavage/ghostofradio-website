@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 490630 347 The Day I Died (128 44) 28771 30m00s — Suspense | Ghost of Radio</title>
+  <title>The Day I Died (128 44) 28771 30m00s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 490630 347 The Day I Died (128 44) 28771 30m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 490630 347 The Day I Died (128 44) 28771 30m00s — Suspense">
   <meta property="og:description" content="Listen to Suspense 490630 347 The Day I Died (128 44) 28771 30m00s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 30, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 490630 347 The Day I Died (128 44) 28771 30m00s</h1>
+          <h1 class="episode__title">The Day I Died (128 44) 28771 30m00s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Day I Died</p>
-<p>Picture yourself huddled beside the radio on a cool evening, the living room bathed in amber lamplight, when a mysterious voice cuts through the static with four words that freeze your blood: *The Day I Died.* What follows is a masterfully crafted descent into the uncanny—a tale of a man confronting the impossible, the inexplicable moment when he discovers he's already dead. As the narrative unfolds with mounting dread, listeners are drawn into a labyrinth of doubt and terror, where nothing is certain and every shadow could conceal a terrible truth. The sound design crackles with urgency: footsteps echoing down empty corridors, doors creaking open to reveal unsettling silence, and dialogue that grows increasingly frantic as the protagonist grapples with his horrifying predicament. This is *Suspense* at its finest—psychological horror that doesn't rely on monsters, but on the very real terror of losing one's grip on reality.</p>
-<p>For twenty years, *Suspense* defined the golden age of radio drama, and CBS's commitment to authentic thrills made it the most trusted name in broadcast horror. Premiering in 1942, the series earned its reputation through meticulous writing, stellar performances from Hollywood's finest actors, and a production team that understood that true suspense lives in suggestion rather than spectacle. Episodes like *The Day I Died* showcase why millions of Americans made the show an appointment with terror—it offered an escape into carefully constructed nightmares that felt disturbingly plausible, crafted for an audience that understood radio's greatest power was its ability to transform words into vivid, unforgettable imagery.</p>
-<p>Tune in now and experience the dread that captivated a nation. *The Day I Died* awaits—a half-hour that will linger in your imagination long after the final fade-out.</p>
+          <p>Picture yourself huddled beside the radio on a cool evening, the living room bathed in amber lamplight, when a mysterious voice cuts through the static with four words that freeze your blood: The Day I Died. What follows is a masterfully crafted descent into the uncanny—a tale of a man confronting the impossible, the inexplicable moment when he discovers he's already dead. As the narrative unfolds with mounting dread, listeners are drawn into a labyrinth of doubt and terror, where nothing is certain and every shadow could conceal a terrible truth. The sound design crackles with urgency: footsteps echoing down empty corridors, doors creaking open to reveal unsettling silence, and dialogue that grows increasingly frantic as the protagonist grapples with his horrifying predicament. This is Suspense at its finest—psychological horror that doesn't rely on monsters, but on the very real terror of losing one's grip on reality.</p>
+<p>For twenty years, Suspense defined the golden age of radio drama, and CBS's commitment to authentic thrills made it the most trusted name in broadcast horror. Premiering in 1942, the series earned its reputation through meticulous writing, stellar performances from Hollywood's finest actors, and a production team that understood that true suspense lives in suggestion rather than spectacle. Episodes like The Day I Died showcase why millions of Americans made the show an appointment with terror—it offered an escape into carefully constructed nightmares that felt disturbingly plausible, crafted for an audience that understood radio's greatest power was its ability to transform words into vivid, unforgettable imagery.</p>
+<p>Tune in now and experience the dread that captivated a nation. The Day I Died awaits—a half-hour that will linger in your imagination long after the final fade-out.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

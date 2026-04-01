@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620114 908 Feathers (64 44) 11625 24m07s — Suspense | Ghost of Radio</title>
+  <title>Feathers (64 44) 11625 24m07s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620114 908 Feathers (64 44) 11625 24m07s — Suspense (CBS, 2011). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620114 908 Feathers (64 44) 11625 24m07s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620114 908 Feathers (64 44) 11625 24m07s — Suspense (CBS, 2011). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 14, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620114 908 Feathers (64 44) 11625 24m07s</h1>
+          <h1 class="episode__title">Feathers (64 44) 11625 24m07s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Feathers"</p>
-<p>Picture this: a darkened room, the hiss of a phonograph needle settling into grooves, and then—that unmistakable orchestral sting that made millions of Americans check their locks before bed. This January evening in 1962, listeners tuned in to find themselves drawn into a tale of mounting dread where something as innocent as feathers becomes the harbinger of supernatural terror. What begins as an ordinary circumstance spirals into psychological horror, each revelation more unsettling than the last. The shadow-play of sound—creaking floors, whispered conversations, that peculiar rustling—builds an atmosphere thick enough to suffocate, while the cast delivers performances of controlled desperation that echo long after the final fade-out.</p>
-<p>*Suspense* commanded the American imagination for two decades precisely because it understood that fear lives in suggestion, not spectacle. CBS's master thriller series, which premiered in 1942 and ran through 1962, became the gold standard of radio drama by treating its listeners as intelligent adults capable of conjuring their own nightmares. Each week, whether adapting established literature or originating new material, the show proved that the most terrifying monster is always the one you can't quite see—the one lurking in the spaces between the dialogue. "Feathers" represents the show at its mature peak, when the formula of creeping dread had been perfected into an art form, and the ensemble of talented actors understood exactly how to make silence more frightening than screams.</p>
-<p>So dim the lights, settle into your chair, and let your imagination do what radio does best. "Feathers" awaits, ready to remind you why our grandparents slept with the lights on. Press play and surrender to *Suspense*.</p>
+          <p>Picture this: a darkened room, the hiss of a phonograph needle settling into grooves, and then—that unmistakable orchestral sting that made millions of Americans check their locks before bed. This January evening in 1962, listeners tuned in to find themselves drawn into a tale of mounting dread where something as innocent as feathers becomes the harbinger of supernatural terror. What begins as an ordinary circumstance spirals into psychological horror, each revelation more unsettling than the last. The shadow-play of sound—creaking floors, whispered conversations, that peculiar rustling—builds an atmosphere thick enough to suffocate, while the cast delivers performances of controlled desperation that echo long after the final fade-out.</p>
+<p>Suspense commanded the American imagination for two decades precisely because it understood that fear lives in suggestion, not spectacle. CBS's master thriller series, which premiered in 1942 and ran through 1962, became the gold standard of radio drama by treating its listeners as intelligent adults capable of conjuring their own nightmares. Each week, whether adapting established literature or originating new material, the show proved that the most terrifying monster is always the one you can't quite see—the one lurking in the spaces between the dialogue. "Feathers" represents the show at its mature peak, when the formula of creeping dread had been perfected into an art form, and the ensemble of talented actors understood exactly how to make silence more frightening than screams.</p>
+<p>So dim the lights, settle into your chair, and let your imagination do what radio does best. "Feathers" awaits, ready to remind you why our grandparents slept with the lights on. Press play and surrender to Suspense.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

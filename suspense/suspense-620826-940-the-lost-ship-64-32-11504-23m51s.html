@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620826 940 The Lost Ship (64 32) 11504 23m51s — Suspense | Ghost of Radio</title>
+  <title>The Lost Ship (64 32) 11504 23m51s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620826 940 The Lost Ship (64 32) 11504 23m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620826 940 The Lost Ship (64 32) 11504 23m51s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620826 940 The Lost Ship (64 32) 11504 23m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 26, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620826 940 The Lost Ship (64 32) 11504 23m51s</h1>
+          <h1 class="episode__title">The Lost Ship (64 32) 11504 23m51s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lost Ship</p>
-<p>Picture yourself huddled beside the radio on a sultry summer evening, the dial tuned to CBS as the familiar *Suspense* theme swells—that piercing violin shriek cutting through the darkness of your living room. "The Lost Ship" pulls you aboard a vessel lost to time itself, where the boundary between the living world and something far more sinister grows dangerously thin. As fog rolls thick across invisible waves, our protagonist discovers a ship that shouldn't exist, crewed by sailors who died decades ago. The mounting dread is palpable; each creaking plank, each mournful foghorn blast becomes a harbinger of supernatural terror. Will our hero escape this phantom vessel, or will he join its cursed crew for eternity? The production's masterful sound design transforms your parlor into the heaving deck of a ghost ship, leaving listeners breathless until the final, chilling resolution.</p>
-<p>*Suspense* was radio's premier anthology of terror, commanding millions of listeners throughout the 1940s and beyond. CBS's commitment to sophisticated storytelling—employing top talent from Hollywood and Broadway—elevated the show far beyond mere sensationalism. This particular episode exemplifies the golden age of radio drama when sound effects, music, and vocal performance alone could conjure worlds as vivid as any film. The late 1940s represented *Suspense* at its creative peak, when writers understood that what listeners *imagined* was infinitely more terrifying than anything shown on screen.</p>
-<p>If you've never experienced classic radio drama, "The Lost Ship" is the perfect entry point—a masterclass in atmospheric storytelling that proves why millions gathered around their sets each week, eager to be frightened. Tune in and discover why *Suspense* remained America's most gripping radio program for two decades.</p>
+          <p>Picture yourself huddled beside the radio on a sultry summer evening, the dial tuned to CBS as the familiar Suspense theme swells—that piercing violin shriek cutting through the darkness of your living room. "The Lost Ship" pulls you aboard a vessel lost to time itself, where the boundary between the living world and something far more sinister grows dangerously thin. As fog rolls thick across invisible waves, our protagonist discovers a ship that shouldn't exist, crewed by sailors who died decades ago. The mounting dread is palpable; each creaking plank, each mournful foghorn blast becomes a harbinger of supernatural terror. Will our hero escape this phantom vessel, or will he join its cursed crew for eternity? The production's masterful sound design transforms your parlor into the heaving deck of a ghost ship, leaving listeners breathless until the final, chilling resolution.</p>
+<p>Suspense was radio's premier anthology of terror, commanding millions of listeners throughout the 1940s and beyond. CBS's commitment to sophisticated storytelling—employing top talent from Hollywood and Broadway—elevated the show far beyond mere sensationalism. This particular episode exemplifies the golden age of radio drama when sound effects, music, and vocal performance alone could conjure worlds as vivid as any film. The late 1940s represented Suspense at its creative peak, when writers understood that what listeners imagined was infinitely more terrifying than anything shown on screen.</p>
+<p>If you've never experienced classic radio drama, "The Lost Ship" is the perfect entry point—a masterclass in atmospheric storytelling that proves why millions gathered around their sets each week, eager to be frightened. Tune in and discover why Suspense remained America's most gripping radio program for two decades.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

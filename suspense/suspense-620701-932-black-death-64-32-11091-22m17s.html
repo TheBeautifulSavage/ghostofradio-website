@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620701 932 Black Death (64 32) 11091 22m17s — Suspense | Ghost of Radio</title>
+  <title>Black Death (64 32) 11091 22m17s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620701 932 Black Death (64 32) 11091 22m17s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620701 932 Black Death (64 32) 11091 22m17s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620701 932 Black Death (64 32) 11091 22m17s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 1, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620701 932 Black Death (64 32) 11091 22m17s</h1>
+          <h1 class="episode__title">Black Death (64 32) 11091 22m17s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Black Death"</p>
-<p>On a fog-laden evening in July 1946, CBS radio listeners braced themselves for thirty-two minutes of pure psychological terror. "Black Death" plunges you into a suffocating world where invisible plague and human paranoia become indistinguishable threats. As the episode opens, a small community discovers its first victim—and with mounting dread, realizes that death itself has taken root in their midst. The sound design crackles with period authenticity: creaking floorboards, hushed conversations, the ominous silence of a town holding its breath. You'll find yourself trapped alongside characters who must navigate impossible choices: whom to trust, where to hide, and whether escape is even possible when the enemy cannot be seen. The tension builds relentlessly, anchored by understated performances that make every gasp and whispered accusation feel devastatingly real.</p>
-<p>By 1946, *Suspense* had already established itself as America's premier thriller program—a show that understood that radio's greatest power lay not in what it showed, but in what it made listeners *imagine*. Each episode was a masterclass in atmospheric storytelling, employing sound effects and voice work to transform ordinary suburban settings into claustrophobic chambers of dread. "Black Death" exemplifies this brilliance, tapping into post-war anxieties about invisible threats and social breakdown, while maintaining the show's signature blend of period-appropriate dialogue and timeless human terror. The episode stands as a testament to how *Suspense* could transform a simple premise—disease, isolation, fear—into penetrating drama.</p>
-<p>If you haven't experienced *Suspense* in its full radio glory, "Black Death" is an ideal entry point. Dim the lights, adjust the volume, and surrender to the darkness—your imagination will do the rest. This is radio drama at its finest, where every sound counts and silence itself becomes unbearable.</p>
+          <p>On a fog-laden evening in July 1946, CBS radio listeners braced themselves for thirty-two minutes of pure psychological terror. "Black Death" plunges you into a suffocating world where invisible plague and human paranoia become indistinguishable threats. As the episode opens, a small community discovers its first victim—and with mounting dread, realizes that death itself has taken root in their midst. The sound design crackles with period authenticity: creaking floorboards, hushed conversations, the ominous silence of a town holding its breath. You'll find yourself trapped alongside characters who must navigate impossible choices: whom to trust, where to hide, and whether escape is even possible when the enemy cannot be seen. The tension builds relentlessly, anchored by understated performances that make every gasp and whispered accusation feel devastatingly real.</p>
+<p>By 1946, Suspense had already established itself as America's premier thriller program—a show that understood that radio's greatest power lay not in what it showed, but in what it made listeners imagine. Each episode was a masterclass in atmospheric storytelling, employing sound effects and voice work to transform ordinary suburban settings into claustrophobic chambers of dread. "Black Death" exemplifies this brilliance, tapping into post-war anxieties about invisible threats and social breakdown, while maintaining the show's signature blend of period-appropriate dialogue and timeless human terror. The episode stands as a testament to how Suspense could transform a simple premise—disease, isolation, fear—into penetrating drama.</p>
+<p>If you haven't experienced Suspense in its full radio glory, "Black Death" is an ideal entry point. Dim the lights, adjust the volume, and surrender to the darkness—your imagination will do the rest. This is radio drama at its finest, where every sound counts and silence itself becomes unbearable.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

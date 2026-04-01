@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600124 837 Turnabout (128 44) 23418 24m38s — Suspense | Ghost of Radio</title>
+  <title>Turnabout (128 44) 23418 24m38s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600124 837 Turnabout (128 44) 23418 24m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600124 837 Turnabout (128 44) 23418 24m38s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600124 837 Turnabout (128 44) 23418 24m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 24, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600124 837 Turnabout (128 44) 23418 24m38s</h1>
+          <h1 class="episode__title">Turnabout (128 44) 23418 24m38s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Turnabout"</p>
-<p>Step into the shadows with us as a seemingly ordinary day takes a sinister turn in "Turnabout," a masterclass in psychological suspense that will keep you guessing until the final, shocking revelation. In this taut twenty-four minute drama, the tables turn on someone who thought themselves clever—perhaps too clever. What begins as a straightforward tale of deception spirals into a labyrinth of double-crosses and dark intentions, where every assumption you make becomes a potential trap. The stellar cast delivers performances that crackle with tension, their voices alone conjuring an atmosphere of creeping dread as they navigate a plot where nothing is quite as it seems. By the time the final curtain falls, you'll understand why this episode became one of Suspense's most memorable entries.</p>
+          <p>Step into the shadows with us as a seemingly ordinary day takes a sinister turn in "Turnabout," a masterclass in psychological suspense that will keep you guessing until the final, shocking revelation. In this taut twenty-four minute drama, the tables turn on someone who thought themselves clever—perhaps too clever. What begins as a straightforward tale of deception spirals into a labyrinth of double-crosses and dark intentions, where every assumption you make becomes a potential trap. The stellar cast delivers performances that crackle with tension, their voices alone conjuring an atmosphere of creeping dread as they navigate a plot where nothing is quite as it seems. By the time the final curtain falls, you'll understand why this episode became one of Suspense's most memorable entries.</p>
 <p>For two decades, CBS's Suspense stood as the gold standard of dramatic radio, a program where acclaimed writers, directors, and actors crafted stories that transcended the medium itself. Premiering in 1942 and running through 1962, the show earned its legendary status by refusing to settle for simple scares—instead, it excavated the psychological terror lurking beneath ordinary circumstances. "Turnabout" exemplifies what made Suspense essential listening: the recognition that the most terrifying moments often emerge not from monsters or supernatural forces, but from human nature itself, from the schemes we concoct and the consequences we cannot escape.</p>
 <p>If you cherish classic drama that respects your intelligence and rewards your attention, "Turnabout" demands your ear. Tune in, settle into your chair, and prepare yourself for a story where justice takes an unexpected form. In the world of Suspense, nothing ever works out quite as planned—and that's precisely what makes it unforgettable.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570804 710 Flesh Peddler (128 44) 28770 30m00s Afrts — Suspense | Ghost of Radio</title>
+  <title>Flesh Peddler (128 44) 28770 30m00s Afrts — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570804 710 Flesh Peddler (128 44) 28770 30m00s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570804 710 Flesh Peddler (128 44) 28770 30m00s Afrts — Suspense">
   <meta property="og:description" content="Listen to Suspense 570804 710 Flesh Peddler (128 44) 28770 30m00s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 4, 1957</span>
           </div>
-          <h1 class="episode__title">Suspense 570804 710 Flesh Peddler (128 44) 28770 30m00s Afrts</h1>
+          <h1 class="episode__title">Flesh Peddler (128 44) 28770 30m00s Afrts</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Flesh Peddler"</p>
-<p>When the scratchy opening notes of the *Suspense* theme crackle through your speaker on a dark evening, you know you're about to enter a world of moral compromise and creeping dread. In "Flesh Peddler," listeners are drawn into the murky underworld of a man whose business is trafficking in human desperation—trading on the vulnerable, the broken, and the desperate for a quick profit. As the narrative unfolds with period-authentic dialogue and the masterful use of sound effects—footsteps on wet pavement, the rustle of illicit dealings, the tremor of fear in a voice—you'll find yourself caught in an increasingly tightening noose of suspense. The episode brilliantly captures the paranoia and moral erosion that comes when one man's greed intersects with another's vulnerability, building to a climax where justice and fate intertwine in deeply satisfying ways.</p>
-<p>*Suspense* was the gold standard of American radio drama during the 1940s, airing live on CBS and attracting millions of listeners who huddled around their sets each week. The show's genius lay in its refusal to traffic in simple good-versus-evil narratives; instead, it explored the shadowy spaces where ordinary people made extraordinary compromises. "Flesh Peddler" exemplifies this approach, presenting a protagonist who is neither hero nor irredeemable villain, but rather a cautionary figure whose choices spiral inexorably toward reckoning. These episodes were produced with meticulous attention to performance and sound design, featuring some of Hollywood's finest actors who treated radio drama as legitimate art.</p>
-<p>Settle in for thirty minutes of masterfully crafted tension that will keep you guessing right until the final, fateful moment. This is *Suspense* at its finest—thrilling, thought-provoking, and utterly unforgettable.</p>
+          <p>When the scratchy opening notes of the Suspense theme crackle through your speaker on a dark evening, you know you're about to enter a world of moral compromise and creeping dread. In "Flesh Peddler," listeners are drawn into the murky underworld of a man whose business is trafficking in human desperation—trading on the vulnerable, the broken, and the desperate for a quick profit. As the narrative unfolds with period-authentic dialogue and the masterful use of sound effects—footsteps on wet pavement, the rustle of illicit dealings, the tremor of fear in a voice—you'll find yourself caught in an increasingly tightening noose of suspense. The episode brilliantly captures the paranoia and moral erosion that comes when one man's greed intersects with another's vulnerability, building to a climax where justice and fate intertwine in deeply satisfying ways.</p>
+<p>Suspense was the gold standard of American radio drama during the 1940s, airing live on CBS and attracting millions of listeners who huddled around their sets each week. The show's genius lay in its refusal to traffic in simple good-versus-evil narratives; instead, it explored the shadowy spaces where ordinary people made extraordinary compromises. "Flesh Peddler" exemplifies this approach, presenting a protagonist who is neither hero nor irredeemable villain, but rather a cautionary figure whose choices spiral inexorably toward reckoning. These episodes were produced with meticulous attention to performance and sound design, featuring some of Hollywood's finest actors who treated radio drama as legitimate art.</p>
+<p>Settle in for thirty minutes of masterfully crafted tension that will keep you guessing right until the final, fateful moment. This is Suspense at its finest—thrilling, thought-provoking, and utterly unforgettable.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

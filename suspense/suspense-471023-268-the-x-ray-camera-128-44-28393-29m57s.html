@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 471023 268 The X Ray Camera (128 44) 28393 29m57s — Suspense | Ghost of Radio</title>
+  <title>The X Ray Camera (128 44) 28393 29m57s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 471023 268 The X Ray Camera (128 44) 28393 29m57s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 471023 268 The X Ray Camera (128 44) 28393 29m57s — Suspense">
   <meta property="og:description" content="Listen to Suspense 471023 268 The X Ray Camera (128 44) 28393 29m57s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 23, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 471023 268 The X Ray Camera (128 44) 28393 29m57s</h1>
+          <h1 class="episode__title">The X Ray Camera (128 44) 28393 29m57s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The X-Ray Camera</p>
-<p>Step into the darkened studio with us as a brilliant photographer discovers that his latest invention—a revolutionary camera capable of seeing through solid matter—has become a window into something far more sinister than scientific progress. When the X-ray lens begins revealing images no mortal should witness, our protagonist finds himself caught between the allure of unlimited power and the creeping horror of knowledge that corrupts the soul. With each developed photograph, the line between innovation and obsession blurs dangerously, while unseen forces seem determined to claim both the camera and its creator. This taut 30-minute thriller crackles with paranoia and wonder, building an atmosphere thick with dread as the protagonist realizes that some secrets of the universe were meant to remain hidden.</p>
-<p>*Suspense*, which gripped American audiences from 1942 to 1962, became the gold standard of audio drama during radio's golden age. This particular installment showcases the program's signature blend of psychological tension and speculative fiction—a hallmark that kept listeners on the edge of their seats through two decades of ingenious storytelling. The show's legendary sound design and the haunting musical score by Izzy Zupnik create an almost tactile sense of menace that transcends the era in which it was broadcast. CBS's commitment to sophisticated scripting and stellar voice acting elevated *Suspense* beyond mere pulp entertainment, making it essential listening for anyone seeking to understand how radio shaped American culture and imagination.</p>
-<p>Don't miss "The X-Ray Camera"—a masterclass in building suspense through the simple premise that humanity's greatest achievements may come at an unspeakable cost. Tune in and discover why *Suspense* remains the benchmark against which all dramatic radio is measured.</p>
+          <p>Step into the darkened studio with us as a brilliant photographer discovers that his latest invention—a revolutionary camera capable of seeing through solid matter—has become a window into something far more sinister than scientific progress. When the X-ray lens begins revealing images no mortal should witness, our protagonist finds himself caught between the allure of unlimited power and the creeping horror of knowledge that corrupts the soul. With each developed photograph, the line between innovation and obsession blurs dangerously, while unseen forces seem determined to claim both the camera and its creator. This taut 30-minute thriller crackles with paranoia and wonder, building an atmosphere thick with dread as the protagonist realizes that some secrets of the universe were meant to remain hidden.</p>
+<p>Suspense, which gripped American audiences from 1942 to 1962, became the gold standard of audio drama during radio's golden age. This particular installment showcases the program's signature blend of psychological tension and speculative fiction—a hallmark that kept listeners on the edge of their seats through two decades of ingenious storytelling. The show's legendary sound design and the haunting musical score by Izzy Zupnik create an almost tactile sense of menace that transcends the era in which it was broadcast. CBS's commitment to sophisticated scripting and stellar voice acting elevated Suspense beyond mere pulp entertainment, making it essential listening for anyone seeking to understand how radio shaped American culture and imagination.</p>
+<p>Don't miss "The X-Ray Camera"—a masterclass in building suspense through the simple premise that humanity's greatest achievements may come at an unspeakable cost. Tune in and discover why Suspense remains the benchmark against which all dramatic radio is measured.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

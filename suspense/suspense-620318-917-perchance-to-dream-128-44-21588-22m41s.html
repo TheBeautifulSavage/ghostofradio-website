@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620318 917 Perchance To Dream (128 44) 21588 22m41s — Suspense | Ghost of Radio</title>
+  <title>Perchance To Dream (128 44) 21588 22m41s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620318 917 Perchance To Dream (128 44) 21588 22m41s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620318 917 Perchance To Dream (128 44) 21588 22m41s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620318 917 Perchance To Dream (128 44) 21588 22m41s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 18, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620318 917 Perchance To Dream (128 44) 21588 22m41s</h1>
+          <h1 class="episode__title">Perchance To Dream (128 44) 21588 22m41s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Perchance To Dream</p>
-<p>In the dead of night, a man's nightmares begin to blur dangerously with waking reality. As sleep-deprived and desperate, our protagonist finds himself unable to distinguish between dream and nightmare, between what is real and what his tortured mind conjures in the darkness. Each time he closes his eyes, terror awaits—yet staying awake offers no salvation either. The tension builds methodically, the sound design working in concert with the script to create an atmosphere of creeping dread that will have listeners glancing nervously over their shoulders. This is *Suspense* at its finest: a psychological descent that trades explicit horror for the far more unsettling prospect of a mind turning against itself.</p>
-<p>When *Suspense* debuted on CBS in 1942, it arrived at a time when Americans huddled around their radios seeking escape from the very real anxieties of wartime. The program became the network's flagship thriller series, running for two decades with a philosophy that terror need not be supernatural to be effective. With Hollywood talent regularly gracing the microphone and writers crafting scenarios rooted in human vulnerability, each episode offered a masterclass in suspenseful storytelling. "Perchance To Dream" exemplifies this approach—its power lies not in monsters or mayhem, but in the fragility of the human mind under extreme stress, a theme that resonated powerfully with audiences of the 1940s.</p>
-<p>Settle into your seat, dim the lights, and prepare yourself for twenty-two minutes of pure psychological tension. *Suspense* awaits—and this time, you won't be able to trust your own senses.</p>
+          <p>In the dead of night, a man's nightmares begin to blur dangerously with waking reality. As sleep-deprived and desperate, our protagonist finds himself unable to distinguish between dream and nightmare, between what is real and what his tortured mind conjures in the darkness. Each time he closes his eyes, terror awaits—yet staying awake offers no salvation either. The tension builds methodically, the sound design working in concert with the script to create an atmosphere of creeping dread that will have listeners glancing nervously over their shoulders. This is Suspense at its finest: a psychological descent that trades explicit horror for the far more unsettling prospect of a mind turning against itself.</p>
+<p>When Suspense debuted on CBS in 1942, it arrived at a time when Americans huddled around their radios seeking escape from the very real anxieties of wartime. The program became the network's flagship thriller series, running for two decades with a philosophy that terror need not be supernatural to be effective. With Hollywood talent regularly gracing the microphone and writers crafting scenarios rooted in human vulnerability, each episode offered a masterclass in suspenseful storytelling. "Perchance To Dream" exemplifies this approach—its power lies not in monsters or mayhem, but in the fragility of the human mind under extreme stress, a theme that resonated powerfully with audiences of the 1940s.</p>
+<p>Settle into your seat, dim the lights, and prepare yourself for twenty-two minutes of pure psychological tension. Suspense awaits—and this time, you won't be able to trust your own senses.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620513 925 Hide And Seek (128 44) 22839 23m40s — Suspense | Ghost of Radio</title>
+  <title>Hide And Seek (128 44) 22839 23m40s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620513 925 Hide And Seek (128 44) 22839 23m40s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620513 925 Hide And Seek (128 44) 22839 23m40s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620513 925 Hide And Seek (128 44) 22839 23m40s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 13, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620513 925 Hide And Seek (128 44) 22839 23m40s</h1>
+          <h1 class="episode__title">Hide And Seek (128 44) 22839 23m40s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Hide and Seek</p>
-<p>Picture yourself huddled near the radio on a spring evening in 1946, the living room bathed in lamplight, when suddenly a child's innocent game of hide and seek takes a sinister turn. In this chilling episode of Suspense, what begins as familiar childhood play transforms into a nightmare of psychological terror and paranoia. As the seeker searches through darkened rooms and shadowed corners, the line between game and reality blurs dangerously. The brilliant sound design—creaking floorboards, muffled breathing, the rustle of clothing in confined spaces—creates an intimacy of fear that only radio could achieve, pulling listeners into the hunter's growing dread with each passing minute. By the time the final revelation arrives, you'll question whether childhood games ever truly are innocent.</p>
+          <p>Picture yourself huddled near the radio on a spring evening in 1946, the living room bathed in lamplight, when suddenly a child's innocent game of hide and seek takes a sinister turn. In this chilling episode of Suspense, what begins as familiar childhood play transforms into a nightmare of psychological terror and paranoia. As the seeker searches through darkened rooms and shadowed corners, the line between game and reality blurs dangerously. The brilliant sound design—creaking floorboards, muffled breathing, the rustle of clothing in confined spaces—creates an intimacy of fear that only radio could achieve, pulling listeners into the hunter's growing dread with each passing minute. By the time the final revelation arrives, you'll question whether childhood games ever truly are innocent.</p>
 <p>Suspense was CBS's crown jewel of thriller programming, a show that understood radio's unique power to inhabit the listener's imagination in ways television never could. During its two-decade run from 1942 to 1962, the program became legendary for transforming ordinary situations into vessels of mounting terror. Each episode was a masterclass in suspenseful storytelling, featuring some of Hollywood's finest talent—from Joseph Cotten to Orson Welles—lending their voices to tales that prioritized psychological unease over cheap scares. Hide and Seek exemplifies the show's genius: taking something as wholesome as a children's game and mining it for existential dread.</p>
 <p>If you cherish the golden age of radio drama, when imagination was the only special effect needed, this episode demands your attention. Adjust the dial, dim the lights, and prepare yourself—because sometimes the most frightening monsters aren't lurking in shadows, but in the spaces between what we see and what we fear.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

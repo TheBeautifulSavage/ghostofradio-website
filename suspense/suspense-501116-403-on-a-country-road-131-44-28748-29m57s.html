@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 501116 403 On A Country Road (131 44) 28748 29m57s — Suspense | Ghost of Radio</title>
+  <title>On A Country Road (131 44) 28748 29m57s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 501116 403 On A Country Road (131 44) 28748 29m57s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 501116 403 On A Country Road (131 44) 28748 29m57s — Suspense">
   <meta property="og:description" content="Listen to Suspense 501116 403 On A Country Road (131 44) 28748 29m57s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 16, 1950</span>
           </div>
-          <h1 class="episode__title">Suspense 501116 403 On A Country Road (131 44) 28748 29m57s</h1>
+          <h1 class="episode__title">On A Country Road (131 44) 28748 29m57s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># On a Country Road</p>
-<p>Picture this: a lone traveler flagging down a car on a dark country road, miles from the nearest town. The driver seems pleasant enough—perhaps too pleasant. As the night deepens and the conversation turns stranger, our hitchhiker realizes he may have made a terrible mistake stepping into that automobile. In "On a Country Road," Suspense peels back the mundane facade of an ordinary encounter to reveal something far more sinister lurking beneath. With nothing but the hum of the engine, the whisper of wind through open windows, and two voices in the darkness, this episode builds an almost unbearable tension that will keep you gripping your armrest. The sound design is masterful—every pause, every inflection carries weight—as the drama escalates toward a finale that will leave you shaken long after the final commercial break.</p>
+          <p>Picture this: a lone traveler flagging down a car on a dark country road, miles from the nearest town. The driver seems pleasant enough—perhaps too pleasant. As the night deepens and the conversation turns stranger, our hitchhiker realizes he may have made a terrible mistake stepping into that automobile. In "On a Country Road," Suspense peels back the mundane facade of an ordinary encounter to reveal something far more sinister lurking beneath. With nothing but the hum of the engine, the whisper of wind through open windows, and two voices in the darkness, this episode builds an almost unbearable tension that will keep you gripping your armrest. The sound design is masterful—every pause, every inflection carries weight—as the drama escalates toward a finale that will leave you shaken long after the final commercial break.</p>
 <p>This episode exemplifies why Suspense became America's premier thriller program throughout the 1940s and beyond. CBS crafted a show that understood something fundamental about radio: the listener's imagination is far more terrifying than any visual effect could ever be. Without seeing the car, the road, or the characters' faces, listeners were forced to construct their own nightmare, making each broadcast intensely personal and visceral. The show's rotating cast of Hollywood talent, combined with taut scripts and innovative sound techniques, created an addiction that kept millions tuning in week after week during radio's golden age.</p>
 <p>Don't miss this masterclass in suspenseful storytelling. Settle in, turn off the lights, and let your imagination do the work—because on a country road at night, anything could happen. This is Suspense at its finest.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

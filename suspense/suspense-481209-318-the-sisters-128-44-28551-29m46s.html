@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 481209 318 The Sisters (128 44) 28551 29m46s — Suspense | Ghost of Radio</title>
+  <title>The Sisters (128 44) 28551 29m46s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 481209 318 The Sisters (128 44) 28551 29m46s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 481209 318 The Sisters (128 44) 28551 29m46s — Suspense">
   <meta property="og:description" content="Listen to Suspense 481209 318 The Sisters (128 44) 28551 29m46s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 9, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 481209 318 The Sisters (128 44) 28551 29m46s</h1>
+          <h1 class="episode__title">The Sisters (128 44) 28551 29m46s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: The Sisters</p>
-<p>Picture yourself in a dimly lit parlor, the radio's warm glow casting shadows across your face as "The Sisters" unfolds with mounting dread. Two women bound by blood find themselves entangled in a web of secrets, jealousy, and suspicion that threatens to unravel everything they hold dear. As the minutes tick by, you'll find yourself drawn deeper into their world—every creaking floorboard, every whispered accusation, every pause heavy with unspoken accusation becomes a thread in a tapestry of psychological terror. The Sisters doesn't rely on monsters or mayhem; instead, it lets the darkness of human nature do the chilling work, exploring how intimacy and resentment can become indistinguishable.</p>
+          <p>Picture yourself in a dimly lit parlor, the radio's warm glow casting shadows across your face as "The Sisters" unfolds with mounting dread. Two women bound by blood find themselves entangled in a web of secrets, jealousy, and suspicion that threatens to unravel everything they hold dear. As the minutes tick by, you'll find yourself drawn deeper into their world—every creaking floorboard, every whispered accusation, every pause heavy with unspoken accusation becomes a thread in a tapestry of psychological terror. The Sisters doesn't rely on monsters or mayhem; instead, it lets the darkness of human nature do the chilling work, exploring how intimacy and resentment can become indistinguishable.</p>
 <p>Suspense stands as one of radio's greatest achievements, and this episode exemplifies why the series commanded audiences for two decades. Broadcast during the golden age of dramatic radio, when families huddled around receivers for their evening entertainment, the show pioneered the art of audio storytelling—using music, sound effects, and skilled performances to create vivid horror in the listener's imagination. "The Sisters" represents the show's sophisticated approach to psychological drama, moving beyond simple scares to explore the complex emotional landscapes where real terror lives. The CBS network's commitment to quality production meant listeners received exceptional writing and talented casts who brought intimate human drama to thrilling life.</p>
 <p>If you've never experienced the unique power of classic radio drama, or if you're a devoted fan seeking to revisit these treasures, "The Sisters" offers nearly thirty minutes of masterfully crafted suspense. Tune in and discover why millions of listeners made Suspense an essential part of their week—a reminder that sometimes the most terrifying stories unfold not in the darkness of night, but in the hidden corners of the human heart.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

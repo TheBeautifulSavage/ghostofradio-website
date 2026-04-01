@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600515 853 Deadman's Story (128 44) 20046 21m02s — Suspense | Ghost of Radio</title>
+  <title>Deadman's Story (128 44) 20046 21m02s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600515 853 Deadman's Story (128 44) 20046 21m02s — Suspense (CBS, 2004). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600515 853 Deadman's Story (128 44) 20046 21m02s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600515 853 Deadman's Story (128 44) 20046 21m02s — Suspense (CBS, 2004). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 15, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600515 853 Deadman's Story (128 44) 20046 21m02s</h1>
+          <h1 class="episode__title">Deadman's Story (128 44) 20046 21m02s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Deadman's Story"</p>
-<p>Picture yourself in the amber glow of a living room, the year 1942, as the CBS orchestra swells with those unmistakable opening notes—*Suspense*. Tonight's tale pulls you into the shadowed world of a man touched by death itself. In "Deadman's Story," listeners encounter a protagonist haunted by circumstances that blur the line between the living and the damned, where every shadow might conceal judgment and every unexpected knock at the door threatens to upend everything. The writers craft an atmosphere thick with moral ambiguity and creeping dread, where the real horror isn't monsters or madmen, but the weight of secrets and the inescapable consequences of fate. With superb sound design—footsteps on rain-slicked pavement, the crackle of a dying fire, whispered accusations—this episode envelops you in a world where safety is an illusion and redemption may be impossible.</p>
-<p>*Suspense* remains one of radio's golden achievements, a show that understood that the most terrifying images are those our minds conjure. For two decades, CBS delivered psychological thrills that outdid any visual medium, relying on stellar writing, stellar acting, and the power of suggestion. This particular episode, preserved from the broadcast archives, represents the show's mastery of intimate terror—the kind that doesn't fade when the broadcast ends but lingers in your thoughts during quiet moments.</p>
-<p>These twenty-one minutes deserve your undivided attention. Dim the lights, eliminate distractions, and let yourself be transported to an era when radio could grip a nation's imagination. "Deadman's Story" exemplifies everything *Suspense* perfected: atmosphere, ambiguity, and the bone-deep unease of confronting our own mortality. Tune in.</p>
+          <p>Picture yourself in the amber glow of a living room, the year 1942, as the CBS orchestra swells with those unmistakable opening notes—Suspense. Tonight's tale pulls you into the shadowed world of a man touched by death itself. In "Deadman's Story," listeners encounter a protagonist haunted by circumstances that blur the line between the living and the damned, where every shadow might conceal judgment and every unexpected knock at the door threatens to upend everything. The writers craft an atmosphere thick with moral ambiguity and creeping dread, where the real horror isn't monsters or madmen, but the weight of secrets and the inescapable consequences of fate. With superb sound design—footsteps on rain-slicked pavement, the crackle of a dying fire, whispered accusations—this episode envelops you in a world where safety is an illusion and redemption may be impossible.</p>
+<p>Suspense remains one of radio's golden achievements, a show that understood that the most terrifying images are those our minds conjure. For two decades, CBS delivered psychological thrills that outdid any visual medium, relying on stellar writing, stellar acting, and the power of suggestion. This particular episode, preserved from the broadcast archives, represents the show's mastery of intimate terror—the kind that doesn't fade when the broadcast ends but lingers in your thoughts during quiet moments.</p>
+<p>These twenty-one minutes deserve your undivided attention. Dim the lights, eliminate distractions, and let yourself be transported to an era when radio could grip a nation's imagination. "Deadman's Story" exemplifies everything Suspense perfected: atmosphere, ambiguity, and the bone-deep unease of confronting our own mortality. Tune in.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

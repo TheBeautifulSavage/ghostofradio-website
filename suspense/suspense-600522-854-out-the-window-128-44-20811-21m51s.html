@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600522 854 Out The Window (128 44) 20811 21m51s — Suspense | Ghost of Radio</title>
+  <title>Out The Window (128 44) 20811 21m51s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600522 854 Out The Window (128 44) 20811 21m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600522 854 Out The Window (128 44) 20811 21m51s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600522 854 Out The Window (128 44) 20811 21m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 22, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600522 854 Out The Window (128 44) 20811 21m51s</h1>
+          <h1 class="episode__title">Out The Window (128 44) 20811 21m51s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Out the Window</p>
-<p>When the curtains draw closed and the orchestra strikes its first ominous chord, you find yourself trapped in a Manhattan apartment where paranoia breeds like vermin in the walls. "Out the Window" pulls you into the suffocating world of a man consumed by a single, terrifying conviction: someone is trying to murder him by throwing him from his twentieth-story window. As night falls and shadows lengthen across his room, the boundary between genuine threat and madness dissolves into darkness. Every creak of the floorboard, every whisper in the hallway becomes a potential harbinger of doom. The superb cast inhabits this claustrophobic nightmare with such conviction that you'll find yourself glancing nervously at your own windows, wondering if the danger closing in is real or simply the fevered imagination of a mind coming undone.</p>
-<p>*Suspense*, which dominated CBS airwaves from 1942 to 1962, became the gold standard of American thriller radio—a show where the supernatural met the mundane, where psychological terror proved far more devastating than any monster. Each episode, introduced by that iconic creaking door, represented the pinnacle of dramatic radio craft: superb writing, intelligent acting, and sound design so sophisticated it practically invented the language of audio horror. "Out the Window" exemplifies why millions of listeners made *Suspense* appointment radio, delivering a story that lingers in the mind long after the final fade-out, leaving audiences uncertain whether they've witnessed a genuine threat or descended into madness alongside its protagonist.</p>
-<p>Don't miss this masterclass in psychological suspense. Settle into your chair, dim the lights, and prepare yourself for twenty minutes that will make you question everything you hear. *Suspense* awaits—if you dare to listen.</p>
+          <p>When the curtains draw closed and the orchestra strikes its first ominous chord, you find yourself trapped in a Manhattan apartment where paranoia breeds like vermin in the walls. "Out the Window" pulls you into the suffocating world of a man consumed by a single, terrifying conviction: someone is trying to murder him by throwing him from his twentieth-story window. As night falls and shadows lengthen across his room, the boundary between genuine threat and madness dissolves into darkness. Every creak of the floorboard, every whisper in the hallway becomes a potential harbinger of doom. The superb cast inhabits this claustrophobic nightmare with such conviction that you'll find yourself glancing nervously at your own windows, wondering if the danger closing in is real or simply the fevered imagination of a mind coming undone.</p>
+<p>Suspense, which dominated CBS airwaves from 1942 to 1962, became the gold standard of American thriller radio—a show where the supernatural met the mundane, where psychological terror proved far more devastating than any monster. Each episode, introduced by that iconic creaking door, represented the pinnacle of dramatic radio craft: superb writing, intelligent acting, and sound design so sophisticated it practically invented the language of audio horror. "Out the Window" exemplifies why millions of listeners made Suspense appointment radio, delivering a story that lingers in the mind long after the final fade-out, leaving audiences uncertain whether they've witnessed a genuine threat or descended into madness alongside its protagonist.</p>
+<p>Don't miss this masterclass in psychological suspense. Settle into your chair, dim the lights, and prepare yourself for twenty minutes that will make you question everything you hear. Suspense awaits—if you dare to listen.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

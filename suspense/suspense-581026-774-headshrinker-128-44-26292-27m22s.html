@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 581026 774 Headshrinker (128 44) 26292 27m22s — Suspense | Ghost of Radio</title>
+  <title>Headshrinker (128 44) 26292 27m22s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 581026 774 Headshrinker (128 44) 26292 27m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 581026 774 Headshrinker (128 44) 26292 27m22s — Suspense">
   <meta property="og:description" content="Listen to Suspense 581026 774 Headshrinker (128 44) 26292 27m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 26, 1958</span>
           </div>
-          <h1 class="episode__title">Suspense 581026 774 Headshrinker (128 44) 26292 27m22s</h1>
+          <h1 class="episode__title">Headshrinker (128 44) 26292 27m22s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Headshrinker"</p>
-<p>Picture yourself in a dimly lit study, the crackle of a radio's warm glow the only light piercing the autumn darkness outside. As the Suspense theme wails through the speaker—that haunting orchestral cry that has become synonymous with thrills—you settle in for a tale that probes the darkest corners of the human mind. "Headshrinker" drags listeners into the shadowy world of psychoanalysis and obsession, where the line between doctor and patient, healer and hunter, blurs into terrifying ambiguity. What begins as a clinical relationship transforms into something far more sinister, as the carefully controlled sessions descend into psychological warfare. Every pause carries weight, every whispered confession becomes a weapon. Twenty-seven minutes of mounting dread unfolds as the actors—masters of their craft—use nothing but their voices to construct an intimate nightmare impossible to escape once you've entered.</p>
+          <p>Picture yourself in a dimly lit study, the crackle of a radio's warm glow the only light piercing the autumn darkness outside. As the Suspense theme wails through the speaker—that haunting orchestral cry that has become synonymous with thrills—you settle in for a tale that probes the darkest corners of the human mind. "Headshrinker" drags listeners into the shadowy world of psychoanalysis and obsession, where the line between doctor and patient, healer and hunter, blurs into terrifying ambiguity. What begins as a clinical relationship transforms into something far more sinister, as the carefully controlled sessions descend into psychological warfare. Every pause carries weight, every whispered confession becomes a weapon. Twenty-seven minutes of mounting dread unfolds as the actors—masters of their craft—use nothing but their voices to construct an intimate nightmare impossible to escape once you've entered.</p>
 <p>Suspense ruled the airwaves as CBS's flagship drama anthology, broadcasting relentlessly for two decades and establishing the template for psychological thrillers in American media. In the 1940s, when "Headshrinker" aired, radio drama stood as the supreme entertainment medium, drawing millions of listeners into shared stories of terror and intrigue. The show's genius lay in its understanding that the most frightening things are those we cannot see—leaving imagination to fill the void. Each episode was a masterclass in tension building, featuring top talent both before and after their film careers, and exploring themes that remain disturbingly relevant decades later.</p>
 <p>If you've never experienced the raw power of classic radio drama, "Headshrinker" is the perfect invitation into this vanished world. Dim the lights, tune out distractions, and let your mind be your only canvas. Suspense is waiting.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440601 094 Fugue In C Minor (128 44) 28362 29m54s Rehearsal — Suspense | Ghost of Radio</title>
+  <title>Fugue In C Minor (128 44) 28362 29m54s Rehearsal — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440601 094 Fugue In C Minor (128 44) 28362 29m54s Rehearsal — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440601 094 Fugue In C Minor (128 44) 28362 29m54s Rehearsal — Suspense">
   <meta property="og:description" content="Listen to Suspense 440601 094 Fugue In C Minor (128 44) 28362 29m54s Rehearsal — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 1, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440601 094 Fugue In C Minor (128 44) 28362 29m54s Rehearsal</h1>
+          <h1 class="episode__title">Fugue In C Minor (128 44) 28362 29m54s Rehearsal</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Fugue in C Minor</p>
-<p>Picture yourself in your living room on a June evening in 1940, the amber glow of your radio dial the only light as you lean in to hear what fresh terror awaits. *Suspense* presents "Fugue in C Minor"—a masterwork of psychological terror that dissolves the boundary between sanity and madness through the power of a classical composition. When a talented pianist finds himself possessed by the memory of a piece he can no longer control, each note becomes a thread pulling him deeper into darkness. The sound design is exquisite: the haunting piano melody interweaves with ambient tension, voice acting that captures the slow erosion of a mind under siege, and sudden silences that hit harder than any scream. This is not a story of monsters lurking in shadows, but something far more insidious—the terror of losing oneself to forces beyond comprehension.</p>
-<p>*Suspense* revolutionized radio drama by proving that the most effective scares don't come from monsters or gunfire, but from psychological vulnerability and the unknown. Operating from 1942 to 1962, the anthology series became CBS's flagship thriller program, featuring some of Hollywood's greatest talents—Orson Welles, Agnes Moorehead, and Joseph Cotten among them—alongside innovative sound effects and orchestral scores that elevated radio drama to an art form. Each episode was a contained nightmare, often adapted from established literature but transformed through the unique intimacy of radio into something uniquely disturbing.</p>
-<p>"Fugue in C Minor" exemplifies why listeners kept their dials tuned to *Suspense* week after week, their hearts pounding in the darkness. Turn down the lights, settle into your chair, and prepare for twenty-nine minutes of masterful storytelling. What begins as an evening with music may become something you cannot unhear.</p>
+          <p>Picture yourself in your living room on a June evening in 1940, the amber glow of your radio dial the only light as you lean in to hear what fresh terror awaits. Suspense presents "Fugue in C Minor"—a masterwork of psychological terror that dissolves the boundary between sanity and madness through the power of a classical composition. When a talented pianist finds himself possessed by the memory of a piece he can no longer control, each note becomes a thread pulling him deeper into darkness. The sound design is exquisite: the haunting piano melody interweaves with ambient tension, voice acting that captures the slow erosion of a mind under siege, and sudden silences that hit harder than any scream. This is not a story of monsters lurking in shadows, but something far more insidious—the terror of losing oneself to forces beyond comprehension.</p>
+<p>Suspense revolutionized radio drama by proving that the most effective scares don't come from monsters or gunfire, but from psychological vulnerability and the unknown. Operating from 1942 to 1962, the anthology series became CBS's flagship thriller program, featuring some of Hollywood's greatest talents—Orson Welles, Agnes Moorehead, and Joseph Cotten among them—alongside innovative sound effects and orchestral scores that elevated radio drama to an art form. Each episode was a contained nightmare, often adapted from established literature but transformed through the unique intimacy of radio into something uniquely disturbing.</p>
+<p>"Fugue in C Minor" exemplifies why listeners kept their dials tuned to Suspense week after week, their hearts pounding in the darkness. Turn down the lights, settle into your chair, and prepare for twenty-nine minutes of masterful storytelling. What begins as an evening with music may become something you cannot unhear.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

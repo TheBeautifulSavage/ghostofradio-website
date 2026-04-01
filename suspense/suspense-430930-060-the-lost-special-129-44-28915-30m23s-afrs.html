@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 430930 060 The Lost Special (129 44) 28915 30m23s Afrs — Suspense | Ghost of Radio</title>
+  <title>The Lost Special (129 44) 28915 30m23s Afrs — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 430930 060 The Lost Special (129 44) 28915 30m23s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 430930 060 The Lost Special (129 44) 28915 30m23s Afrs — Suspense">
   <meta property="og:description" content="Listen to Suspense 430930 060 The Lost Special (129 44) 28915 30m23s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 30, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 430930 060 The Lost Special (129 44) 28915 30m23s Afrs</h1>
+          <h1 class="episode__title">The Lost Special (129 44) 28915 30m23s Afrs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,8 +87,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lost Special</p>
-<p>Picture yourself huddled near your radio on a September evening in 1943, the amber glow of the dial your only comfort as the familiar Suspense theme creeps across the airwaves—that spine-tingling organ melody that sends shivers down your spine before a single word of dialogue is spoken. In "The Lost Special," you'll find yourself drawn into a labyrinth of mystery and dread as an ordinary person becomes entangled in circumstances far beyond their comprehension. The episode unfolds with mounting tension: cryptic clues, unsettling revelations, and the creeping realization that nothing is quite what it seems. As the minutes tick away, you'll discover that sometimes the most dangerous mysteries are those that arrive unannounced at our doorstep, wearing the mask of the mundane.</p>
+          <p>Picture yourself huddled near your radio on a September evening in 1943, the amber glow of the dial your only comfort as the familiar Suspense theme creeps across the airwaves—that spine-tingling organ melody that sends shivers down your spine before a single word of dialogue is spoken. In "The Lost Special," you'll find yourself drawn into a labyrinth of mystery and dread as an ordinary person becomes entangled in circumstances far beyond their comprehension. The episode unfolds with mounting tension: cryptic clues, unsettling revelations, and the creeping realization that nothing is quite what it seems. As the minutes tick away, you'll discover that sometimes the most dangerous mysteries are those that arrive unannounced at our doorstep, wearing the mask of the mundane.</p>
 <p>Suspense stands as one of radio's greatest achievements—a show that understood the raw power of suggestion and silence, where the listener's own imagination becomes the most effective special effect. Broadcast live from CBS studios, each episode showcased Hollywood's finest talent and innovative sound design that transformed the medium into an art form. "The Lost Special" exemplifies the show's mastery of psychological tension, building dread not through explicit horror but through the slow, methodical unraveling of rational explanations. By the early 1940s, Suspense had already established itself as appointment listening for Americans seeking genuine thrills—a far cry from the sensationalism that would later dominate entertainment.</p>
 <p>Don't miss your chance to experience this remarkable artifact of radio's golden age. Let yourself be transported back to a time when the human voice and carefully crafted sound effects could haunt you for days, when broadcast drama was live, dangerous, and utterly unpredictable. Press play, dim the lights, and prepare to be thoroughly, deliciously unsettled.</p>
         </div>
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

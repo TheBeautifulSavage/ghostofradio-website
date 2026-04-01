@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 580622 756 The Last Kilometer (131 44) 23806 24m46s Afrts — Suspense | Ghost of Radio</title>
+  <title>The Last Kilometer (131 44) 23806 24m46s Afrts — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 580622 756 The Last Kilometer (131 44) 23806 24m46s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 580622 756 The Last Kilometer (131 44) 23806 24m46s Afrts — Suspense">
   <meta property="og:description" content="Listen to Suspense 580622 756 The Last Kilometer (131 44) 23806 24m46s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 22, 1958</span>
           </div>
-          <h1 class="episode__title">Suspense 580622 756 The Last Kilometer (131 44) 23806 24m46s Afrts</h1>
+          <h1 class="episode__title">The Last Kilometer (131 44) 23806 24m46s Afrts</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Last Kilometer</p>
-<p>As night falls over occupied Europe, a desperate man clutches forged papers and a single chance at freedom. In "The Last Kilometer," a fugitive must navigate the final stretch of his escape route—a seemingly ordinary journey that becomes a labyrinth of suspicion, close calls, and psychological terror. Every checkpoint looms with dread, every fellow traveler becomes a potential betrayer, and every kilometer traveled could be his last. The episode masterfully builds tension through the protagonist's internal monologue, trapping listeners in the claustrophobic world of wartime espionage where trust is a luxury no one can afford. What begins as a straightforward escape becomes a meditation on human desperation, with each passing mile revealing the razor-thin margin between salvation and capture.</p>
-<p>*Suspense*, which premiered on CBS in 1942, became radio's premier thriller program during an era when Americans huddled around their sets seeking both entertainment and connection to the anxieties of World War II. The show's genius lay in its ability to transform ordinary situations into extraordinary nightmares—a delayed train, a ringing telephone, a stranger's footstep could spiral into catastrophe. "The Last Kilometer" exemplifies the program's wartime sensibility, offering listeners visceral drama infused with the real fears that gripped a nation at war. The AFRTS transcription indicates this episode was also distributed to armed forces broadcasts, bringing these stories of escape and survival directly to soldiers stationed across the globe.</p>
-<p>Whether you're a devotee of classic radio drama or discovering this golden age treasure for the first time, *Suspense* awaits. Tune in, dim the lights, and let your imagination populate the darkness—because on radio, where the pictures are painted in sound and silence, true horror blooms in the spaces between words.</p>
+          <p>As night falls over occupied Europe, a desperate man clutches forged papers and a single chance at freedom. In "The Last Kilometer," a fugitive must navigate the final stretch of his escape route—a seemingly ordinary journey that becomes a labyrinth of suspicion, close calls, and psychological terror. Every checkpoint looms with dread, every fellow traveler becomes a potential betrayer, and every kilometer traveled could be his last. The episode masterfully builds tension through the protagonist's internal monologue, trapping listeners in the claustrophobic world of wartime espionage where trust is a luxury no one can afford. What begins as a straightforward escape becomes a meditation on human desperation, with each passing mile revealing the razor-thin margin between salvation and capture.</p>
+<p>Suspense, which premiered on CBS in 1942, became radio's premier thriller program during an era when Americans huddled around their sets seeking both entertainment and connection to the anxieties of World War II. The show's genius lay in its ability to transform ordinary situations into extraordinary nightmares—a delayed train, a ringing telephone, a stranger's footstep could spiral into catastrophe. "The Last Kilometer" exemplifies the program's wartime sensibility, offering listeners visceral drama infused with the real fears that gripped a nation at war. The AFRTS transcription indicates this episode was also distributed to armed forces broadcasts, bringing these stories of escape and survival directly to soldiers stationed across the globe.</p>
+<p>Whether you're a devotee of classic radio drama or discovering this golden age treasure for the first time, Suspense awaits. Tune in, dim the lights, and let your imagination populate the darkness—because on radio, where the pictures are painted in sound and silence, true horror blooms in the spaces between words.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

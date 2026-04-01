@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 500119 368 The Escape Of Lacey Abbott (64 44) 14787 30m10s — Suspense | Ghost of Radio</title>
+  <title>The Escape Of Lacey Abbott (64 44) 14787 30m10s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 500119 368 The Escape Of Lacey Abbott (64 44) 14787 30m10s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 500119 368 The Escape Of Lacey Abbott (64 44) 14787 30m10s — Suspense">
   <meta property="og:description" content="Listen to Suspense 500119 368 The Escape Of Lacey Abbott (64 44) 14787 30m10s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 19, 1950</span>
           </div>
-          <h1 class="episode__title">Suspense 500119 368 The Escape Of Lacey Abbott (64 44) 14787 30m10s</h1>
+          <h1 class="episode__title">The Escape Of Lacey Abbott (64 44) 14787 30m10s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Escape of Lacey Abbott</p>
-<p>Picture this: a humid summer night in 1940s America, the living room dimly lit by a single table lamp, your family gathered close to the radio as the familiar *Suspense* theme creeps through the speaker—those three jarring piano notes that still send shivers down spines decades later. In "The Escape of Lacey Abbott," listeners are thrust into a claustrophobic nightmare where a fugitive on the run must outwit both the law and his own unraveling conscience. With each tick of the clock and every unexpected sound in the darkness, the tension mounts unbearably. Is that the police at the door? A betrayed ally? The episode masterfully uses silence, footsteps, and whispered dialogue to construct a psychological pressure cooker where escape seems impossible and trust is a luxury no one can afford.</p>
-<p>*Suspense* was broadcasting's most prestigious thriller anthology, commanding millions of listeners during radio's golden age and earning CBS the reputation as home to sophisticated, adult entertainment. This particular episode showcases the show's trademark formula: taking ordinary people and dropping them into extraordinary moral dilemmas where survival demands impossible choices. The writing was sharp, the performances genuinely unnerving, and the sound design—creaking floorboards, slamming doors, ominous music swells—created a shared experience of fear that no visual medium could quite replicate. These broadcasts became cultural touchstones, proving that what listeners *imagined* in their minds was far more terrifying than anything shown on screen.</p>
+          <p>Picture this: a humid summer night in 1940s America, the living room dimly lit by a single table lamp, your family gathered close to the radio as the familiar Suspense theme creeps through the speaker—those three jarring piano notes that still send shivers down spines decades later. In "The Escape of Lacey Abbott," listeners are thrust into a claustrophobic nightmare where a fugitive on the run must outwit both the law and his own unraveling conscience. With each tick of the clock and every unexpected sound in the darkness, the tension mounts unbearably. Is that the police at the door? A betrayed ally? The episode masterfully uses silence, footsteps, and whispered dialogue to construct a psychological pressure cooker where escape seems impossible and trust is a luxury no one can afford.</p>
+<p>Suspense was broadcasting's most prestigious thriller anthology, commanding millions of listeners during radio's golden age and earning CBS the reputation as home to sophisticated, adult entertainment. This particular episode showcases the show's trademark formula: taking ordinary people and dropping them into extraordinary moral dilemmas where survival demands impossible choices. The writing was sharp, the performances genuinely unnerving, and the sound design—creaking floorboards, slamming doors, ominous music swells—created a shared experience of fear that no visual medium could quite replicate. These broadcasts became cultural touchstones, proving that what listeners imagined in their minds was far more terrifying than anything shown on screen.</p>
 <p>Tune in now and experience what kept America on the edge of its seat for twenty years. Let the darkness of your own imagination do the heavy lifting as "The Escape of Lacey Abbott" unfolds—because sometimes the most frightening prison has no walls at all.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560320 642 Gallardo (64 44) 14562 29m41s — Suspense | Ghost of Radio</title>
+  <title>Gallardo (64 44) 14562 29m41s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560320 642 Gallardo (64 44) 14562 29m41s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560320 642 Gallardo (64 44) 14562 29m41s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560320 642 Gallardo (64 44) 14562 29m41s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 20, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560320 642 Gallardo (64 44) 14562 29m41s</h1>
+          <h1 class="episode__title">Gallardo (64 44) 14562 29m41s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Gallardo"</p>
-<p>Picture yourself settling into your favorite chair on a spring evening in the 1940s, the living room darkened save for the gentle glow of your radio dial. As the familiar Suspense theme crescendos—that piercing orchestral stab that still raises hackles decades later—you lean forward, knowing you're about to enter a world where danger lurks in the most unexpected places. "Gallardo" draws you into a taut psychological thriller where trust becomes a luxury and every shadow conceals a potential threat. What begins as an ordinary encounter transforms into a labyrinth of deception and peril, with voice actors delivering performances so naturalistic you'd swear you were eavesdropping on actual events. The sound design—footsteps on rain-slicked pavement, the creak of a closing door, a telephone's ominous ring—envelops you completely, making your own surroundings fade away.</p>
+          <p>Picture yourself settling into your favorite chair on a spring evening in the 1940s, the living room darkened save for the gentle glow of your radio dial. As the familiar Suspense theme crescendos—that piercing orchestral stab that still raises hackles decades later—you lean forward, knowing you're about to enter a world where danger lurks in the most unexpected places. "Gallardo" draws you into a taut psychological thriller where trust becomes a luxury and every shadow conceals a potential threat. What begins as an ordinary encounter transforms into a labyrinth of deception and peril, with voice actors delivering performances so naturalistic you'd swear you were eavesdropping on actual events. The sound design—footsteps on rain-slicked pavement, the creak of a closing door, a telephone's ominous ring—envelops you completely, making your own surroundings fade away.</p>
 <p>Suspense stood as CBS's flagship anxiety-inducing program, a masterwork of radio drama that ran for twenty years and became the gold standard for the thriller genre. Each episode was meticulously crafted by writers and producers who understood that the human imagination, when properly guided by sound and suggestion alone, could conjure terrors far more effective than any special effect. The show featured rotating casts of Hollywood's finest talent, from Orson Welles to Agnes Moorehead, bringing star power and dramatic credibility to every broadcast. "Gallardo," like the best Suspense episodes, relied not on gore or violence but on mounting tension, moral ambiguity, and the creeping realization that danger may come from the most trusted quarters.</p>
 <p>Tune in to "Gallardo" and rediscover why millions of Americans huddled around their radios, utterly captivated, unable to look away from a medium that asked them to see with their ears.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

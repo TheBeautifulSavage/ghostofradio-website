@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 501109 402 Blood On The Trumpet (128 44) 29219 30m49s — Suspense | Ghost of Radio</title>
+  <title>Blood On The Trumpet (128 44) 29219 30m49s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 501109 402 Blood On The Trumpet (128 44) 29219 30m49s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 501109 402 Blood On The Trumpet (128 44) 29219 30m49s — Suspense">
   <meta property="og:description" content="Listen to Suspense 501109 402 Blood On The Trumpet (128 44) 29219 30m49s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 9, 1950</span>
           </div>
-          <h1 class="episode__title">Suspense 501109 402 Blood On The Trumpet (128 44) 29219 30m49s</h1>
+          <h1 class="episode__title">Blood On The Trumpet (128 44) 29219 30m49s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Blood on the Trumpet</p>
-<p>When a jazz musician's prized instrument becomes the silent witness to a terrible crime, listeners are drawn into a shadowy world where the notes of a trumpet tell a story far more sinister than any confession. "Blood on the Trumpet" wraps its listeners in the smoky atmosphere of 1940s jazz clubs and dingy backstage rooms, where ambition, jealousy, and desperation converge in the darkest of acts. As the investigation unfolds, each character's motive becomes more twisted, and the audience is left guessing: who among these musicians harbors a murderer's heart? The broadcast masterfully builds dread through carefully placed silences and the haunting replay of a musical phrase that becomes inextricably linked with guilt and death.</p>
-<p>*Suspense* became CBS's crown jewel of terror programming precisely because it understood that the human voice and carefully orchestrated sound effects could penetrate the listener's mind in ways no visual medium could match. During the show's twenty-year run, episodes like "Blood on the Trumpet" proved that sophistication and psychological horror belonged on the airwaves alongside straightforward murder mysteries. The series attracted top talent—actors, directors, and writers who treated radio drama as serious art—resulting in narratives that explored not just what happened, but the moral and emotional weight of evil itself. This particular episode exemplifies the show's genius for taking an ordinary object and transforming it into something sinister.</p>
-<p>Settle into your favorite chair, dim the lights, and prepare yourself for a journey into musical mystery and murderous secrets. *Suspense* awaits—and this trumpet's crimson stains are just the beginning of your descent into darkness.</p>
+          <p>When a jazz musician's prized instrument becomes the silent witness to a terrible crime, listeners are drawn into a shadowy world where the notes of a trumpet tell a story far more sinister than any confession. "Blood on the Trumpet" wraps its listeners in the smoky atmosphere of 1940s jazz clubs and dingy backstage rooms, where ambition, jealousy, and desperation converge in the darkest of acts. As the investigation unfolds, each character's motive becomes more twisted, and the audience is left guessing: who among these musicians harbors a murderer's heart? The broadcast masterfully builds dread through carefully placed silences and the haunting replay of a musical phrase that becomes inextricably linked with guilt and death.</p>
+<p>Suspense became CBS's crown jewel of terror programming precisely because it understood that the human voice and carefully orchestrated sound effects could penetrate the listener's mind in ways no visual medium could match. During the show's twenty-year run, episodes like "Blood on the Trumpet" proved that sophistication and psychological horror belonged on the airwaves alongside straightforward murder mysteries. The series attracted top talent—actors, directors, and writers who treated radio drama as serious art—resulting in narratives that explored not just what happened, but the moral and emotional weight of evil itself. This particular episode exemplifies the show's genius for taking an ordinary object and transforming it into something sinister.</p>
+<p>Settle into your favorite chair, dim the lights, and prepare yourself for a journey into musical mystery and murderous secrets. Suspense awaits—and this trumpet's crimson stains are just the beginning of your descent into darkness.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

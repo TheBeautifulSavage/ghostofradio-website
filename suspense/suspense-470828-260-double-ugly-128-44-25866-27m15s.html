@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470828 260 Double Ugly (128 44) 25866 27m15s — Suspense | Ghost of Radio</title>
+  <title>Double Ugly (128 44) 25866 27m15s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470828 260 Double Ugly (128 44) 25866 27m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470828 260 Double Ugly (128 44) 25866 27m15s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470828 260 Double Ugly (128 44) 25866 27m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 28, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470828 260 Double Ugly (128 44) 25866 27m15s</h1>
+          <h1 class="episode__title">Double Ugly (128 44) 25866 27m15s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Double Ugly"</p>
-<p>Picture this: it's late evening, the dial glows amber in the darkness of your living room, and you've tuned into CBS for *Suspense*. Tonight's offering, "Double Ugly," presents a twisted tale of desperation and deception that will keep you riveted to your radio. A character consumed by vanity faces a sinister proposition—one that promises to transform their appearance, but at what cost? As the narrative unfolds across twenty-seven tense minutes, you'll be drawn into a web of moral corruption where the line between beauty and monstrosity becomes terrifyingly blurred. The sound design is masterful: every footstep echoes with menace, every whispered conversation drips with barely concealed evil. By the episode's climax, you'll realize the true horror has nothing to do with physical appearance—it's the ugliness of the human soul when ambition and vanity override conscience.</p>
-<p>*Suspense* stands as one of radio's finest achievements, a CBS cornerstone that ran for two decades and defined the thriller genre during broadcasting's golden age. The show's genius lay in its psychological approach to horror—rather than relying on monsters or mayhem, each episode excavated the darker recesses of human nature. Produced with meticulous attention to sound design and casting, *Suspense* attracted the era's finest talent and tackled stories that resonated with post-war anxieties about identity, morality, and the masks we wear in society. "Double Ugly" exemplifies this philosophy perfectly, transforming a simple premise about appearance into a meditation on character.</p>
-<p>So pull up a chair, dim those lights, and prepare yourself for twenty-seven minutes of pure, unadulterated suspense. *Suspense* awaits—and tonight, appearances truly deceive.</p>
+          <p>Picture this: it's late evening, the dial glows amber in the darkness of your living room, and you've tuned into CBS for Suspense. Tonight's offering, "Double Ugly," presents a twisted tale of desperation and deception that will keep you riveted to your radio. A character consumed by vanity faces a sinister proposition—one that promises to transform their appearance, but at what cost? As the narrative unfolds across twenty-seven tense minutes, you'll be drawn into a web of moral corruption where the line between beauty and monstrosity becomes terrifyingly blurred. The sound design is masterful: every footstep echoes with menace, every whispered conversation drips with barely concealed evil. By the episode's climax, you'll realize the true horror has nothing to do with physical appearance—it's the ugliness of the human soul when ambition and vanity override conscience.</p>
+<p>Suspense stands as one of radio's finest achievements, a CBS cornerstone that ran for two decades and defined the thriller genre during broadcasting's golden age. The show's genius lay in its psychological approach to horror—rather than relying on monsters or mayhem, each episode excavated the darker recesses of human nature. Produced with meticulous attention to sound design and casting, Suspense attracted the era's finest talent and tackled stories that resonated with post-war anxieties about identity, morality, and the masks we wear in society. "Double Ugly" exemplifies this philosophy perfectly, transforming a simple premise about appearance into a meditation on character.</p>
+<p>So pull up a chair, dim those lights, and prepare yourself for twenty-seven minutes of pure, unadulterated suspense. Suspense awaits—and tonight, appearances truly deceive.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 561023 670 The Doll (128 44) 23934 24m51s — Suspense | Ghost of Radio</title>
+  <title>The Doll (128 44) 23934 24m51s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 561023 670 The Doll (128 44) 23934 24m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 561023 670 The Doll (128 44) 23934 24m51s — Suspense">
   <meta property="og:description" content="Listen to Suspense 561023 670 The Doll (128 44) 23934 24m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 23, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 561023 670 The Doll (128 44) 23934 24m51s</h1>
+          <h1 class="episode__title">The Doll (128 44) 23934 24m51s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Doll</p>
-<p>When a mysterious antique doll arrives at a woman's door—gift of an unknown sender—it becomes the catalyst for a descent into psychological terror that will keep you riveted to your radio. As shadows deepen and midnight approaches, our heroine discovers that this porcelain-faced plaything may harbor something far more sinister than innocent childhood nostalgia. Every creak of the floorboards, every subtle shift in the doll's expression, becomes a harbinger of unseen malevolence. The production's masterful use of sound design transforms an ordinary drawing room into a claustrophobic chamber of dread, where the line between imagination and reality blurs with each passing moment. By the time the final twist arrives, you'll understand why audiences in 1947 huddled closer to their sets, unwilling to miss a single chilling word.</p>
-<p>*Suspense* stood as CBS's flagship thriller program for two decades, commanding a devoted national audience during radio's golden age. The show's genius lay in its ability to transform everyday objects and situations into instruments of terror—a locked room, a telephone call, a seemingly innocent gift—proving that horror needs no monsters when the human mind itself becomes the villain. This particular episode exemplifies the series' sophisticated approach to psychological horror, eschewing cheap jump scares for a slow-burn tension that accumulates with methodical precision. The stellar cast and crisp writing by some of the era's finest dramatists ensured that *Suspense* earned its place alongside *The Twilight Zone* as a cornerstone of American suspense entertainment.</p>
-<p>Don't dare turn that dial elsewhere. Tune in now and experience the uncanny terror of *The Doll*—a spine-tingling journey that proves some gifts come with a price far too terrible to bear.</p>
+          <p>When a mysterious antique doll arrives at a woman's door—gift of an unknown sender—it becomes the catalyst for a descent into psychological terror that will keep you riveted to your radio. As shadows deepen and midnight approaches, our heroine discovers that this porcelain-faced plaything may harbor something far more sinister than innocent childhood nostalgia. Every creak of the floorboards, every subtle shift in the doll's expression, becomes a harbinger of unseen malevolence. The production's masterful use of sound design transforms an ordinary drawing room into a claustrophobic chamber of dread, where the line between imagination and reality blurs with each passing moment. By the time the final twist arrives, you'll understand why audiences in 1947 huddled closer to their sets, unwilling to miss a single chilling word.</p>
+<p>Suspense stood as CBS's flagship thriller program for two decades, commanding a devoted national audience during radio's golden age. The show's genius lay in its ability to transform everyday objects and situations into instruments of terror—a locked room, a telephone call, a seemingly innocent gift—proving that horror needs no monsters when the human mind itself becomes the villain. This particular episode exemplifies the series' sophisticated approach to psychological horror, eschewing cheap jump scares for a slow-burn tension that accumulates with methodical precision. The stellar cast and crisp writing by some of the era's finest dramatists ensured that Suspense earned its place alongside The Twilight Zone as a cornerstone of American suspense entertainment.</p>
+<p>Don't dare turn that dial elsewhere. Tune in now and experience the uncanny terror of The Doll—a spine-tingling journey that proves some gifts come with a price far too terrible to bear.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

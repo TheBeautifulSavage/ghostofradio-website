@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 561118 674 The Long Night (128 44) 29584 31m13s — Suspense | Ghost of Radio</title>
+  <title>The Long Night (128 44) 29584 31m13s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 561118 674 The Long Night (128 44) 29584 31m13s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 561118 674 The Long Night (128 44) 29584 31m13s — Suspense">
   <meta property="og:description" content="Listen to Suspense 561118 674 The Long Night (128 44) 29584 31m13s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 18, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 561118 674 The Long Night (128 44) 29584 31m13s</h1>
+          <h1 class="episode__title">The Long Night (128 44) 29584 31m13s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Long Night</p>
-<p>As darkness falls and the wind howls through the corridors of an isolated estate, a desperate woman finds herself trapped in a nightmare of her own making. In "The Long Night," Suspense delivers a claustrophobic tale of mounting terror where every shadow conceals danger and every locked door becomes a prison. The minutes stretch like hours as our protagonist realizes that escape may be impossible—and that the greatest threat might be the secrets she's been harboring all along. With each creaking floorboard and distant footstep, the tension mounts unbearably, pulling listeners deeper into a psychological maze where trust evaporates and paranoia takes hold.</p>
+          <p>As darkness falls and the wind howls through the corridors of an isolated estate, a desperate woman finds herself trapped in a nightmare of her own making. In "The Long Night," Suspense delivers a claustrophobic tale of mounting terror where every shadow conceals danger and every locked door becomes a prison. The minutes stretch like hours as our protagonist realizes that escape may be impossible—and that the greatest threat might be the secrets she's been harboring all along. With each creaking floorboard and distant footstep, the tension mounts unbearably, pulling listeners deeper into a psychological maze where trust evaporates and paranoia takes hold.</p>
 <p>Suspense stands as CBS's crown jewel of audio drama, a show that perfected the art of making listeners' skin crawl through nothing but carefully orchestrated sound and masterful storytelling. Throughout its two-decade run, the program became synonymous with sophisticated thriller entertainment, attracting Hollywood's finest talent—from Orson Welles to Joan Crawford—who understood that radio demanded a different kind of performance, one rooted in vocal nuance and atmospheric precision. "The Long Night," typical of the show's peak period in the 1940s, showcases exactly why millions of Americans gathered around their receivers each week, seeking that delicious combination of dread and fascination that only Suspense could provide.</p>
 <p>Don't miss this remarkable journey into shadow and suspicion. Settle in, dim your lights, and discover why "The Long Night" remains a haunting example of radio's golden age—where the most terrifying monsters were those conjured in the listener's imagination, far more vivid than anything a camera could capture.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

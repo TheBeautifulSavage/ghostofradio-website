@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 551129 626 This Will Kill You (64 44) 14634 29m51s — Suspense | Ghost of Radio</title>
+  <title>This Will Kill You (64 44) 14634 29m51s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 551129 626 This Will Kill You (64 44) 14634 29m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 551129 626 This Will Kill You (64 44) 14634 29m51s — Suspense">
   <meta property="og:description" content="Listen to Suspense 551129 626 This Will Kill You (64 44) 14634 29m51s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 29, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 551129 626 This Will Kill You (64 44) 14634 29m51s</h1>
+          <h1 class="episode__title">This Will Kill You (64 44) 14634 29m51s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: This Will Kill You</p>
-<p>Picture yourself huddled beside the radio on a November night in 1949, the amber glow of the dial illuminating your face as an unsettling whisper emerges from the speaker. "This Will Kill You" plunges you into a nightmare of paranoia and psychological terror, where the most ordinary objects become instruments of doom. A simple gift arrives—innocent enough on the surface—but its very purpose is murder. As the minutes tick away and the protagonist realizes the deadly intent behind this present, tension coils tighter with each breath. The sound design crackles with menace: footsteps that might be following you, doors closing with sinister finality, and voices dripping with barely concealed malice. This is Suspense at its most visceral, transforming domestic tranquility into a pressure cooker of dread.</p>
-<p>For nearly two decades, CBS's *Suspense* was America's premier anxiety machine, delivering meticulously crafted tales of ordinary people confronted by extraordinary evil. At nearly thirty minutes of unrelenting tension, this episode showcases the formula that made the program legendary: a simple premise, expertly escalated. The late 1940s were the golden age of radio thriller programming, and *Suspense* dominated the format with its reliable parade of murder plots, psychological breakdowns, and supernatural intrusions into the everyday. By this point in the series' run, the writers had perfected the art of suggestion and implication, understanding that what listeners imagined was far more terrifying than what they were explicitly told.</p>
+          <p>Picture yourself huddled beside the radio on a November night in 1949, the amber glow of the dial illuminating your face as an unsettling whisper emerges from the speaker. "This Will Kill You" plunges you into a nightmare of paranoia and psychological terror, where the most ordinary objects become instruments of doom. A simple gift arrives—innocent enough on the surface—but its very purpose is murder. As the minutes tick away and the protagonist realizes the deadly intent behind this present, tension coils tighter with each breath. The sound design crackles with menace: footsteps that might be following you, doors closing with sinister finality, and voices dripping with barely concealed malice. This is Suspense at its most visceral, transforming domestic tranquility into a pressure cooker of dread.</p>
+<p>For nearly two decades, CBS's Suspense was America's premier anxiety machine, delivering meticulously crafted tales of ordinary people confronted by extraordinary evil. At nearly thirty minutes of unrelenting tension, this episode showcases the formula that made the program legendary: a simple premise, expertly escalated. The late 1940s were the golden age of radio thriller programming, and Suspense dominated the format with its reliable parade of murder plots, psychological breakdowns, and supernatural intrusions into the everyday. By this point in the series' run, the writers had perfected the art of suggestion and implication, understanding that what listeners imagined was far more terrifying than what they were explicitly told.</p>
 <p>Tune in and let your imagination do the heavy lifting. In the pre-television era, radio demanded more from its audience—and gave more in return. "This Will Kill You" awaits, ready to prove that the most dangerous gift is the one you never see coming.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

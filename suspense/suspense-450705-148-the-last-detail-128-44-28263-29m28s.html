@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450705 148 The Last Detail (128 44) 28263 29m28s — Suspense | Ghost of Radio</title>
+  <title>The Last Detail (128 44) 28263 29m28s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450705 148 The Last Detail (128 44) 28263 29m28s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450705 148 The Last Detail (128 44) 28263 29m28s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450705 148 The Last Detail (128 44) 28263 29m28s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 5, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450705 148 The Last Detail (128 44) 28263 29m28s</h1>
+          <h1 class="episode__title">The Last Detail (128 44) 28263 29m28s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Last Detail</p>
-<p>Picture this: a July evening in 1947, the summer heat pressing down on your living room as you lean toward your radio set. *Suspense* crackles to life with that iconic announcement—"*Suspense*"—and you're drawn into a world where the ordinary becomes sinister. In "The Last Detail," a seemingly routine encounter between strangers spirals into something far more dangerous. What begins as polite conversation becomes a psychological chess match, each word a calculated move. The sound design wraps around you like fog—creaking floorboards, pregnant silences, voices that shift between familiar warmth and cold menace. You find yourself gripping the armrest, unsure who to trust, knowing that in the final moments something irreversible is about to unfold. This is *Suspense* at its finest: not monsters or gore, but the terrifying fragility of human trust.</p>
-<p>For two decades, *Suspense* reigned as CBS's crown jewel of dramatic anthology radio, delivering nearly a thousand episodes of meticulously crafted terror to millions of American households. The show's genius lay in its psychological approach—it understood that what you *couldn't* see was far more frightening than what you could. "The Last Detail" exemplifies this mastery, using voice actors, sound effects, and dead air to construct dread in the listener's imagination. *Suspense* launched careers, set industry standards, and proved that radio drama could achieve literary depth, attracting top-tier talent and creating moments that remained seared into listeners' memories.</p>
-<p>Don't miss this masterclass in tension and human vulnerability. Tune in to *Suspense* and discover why this episode has endured in the archives—a reminder that sometimes the most terrifying threats wear a human face.</p>
+          <p>Picture this: a July evening in 1947, the summer heat pressing down on your living room as you lean toward your radio set. Suspense crackles to life with that iconic announcement—"Suspense"—and you're drawn into a world where the ordinary becomes sinister. In "The Last Detail," a seemingly routine encounter between strangers spirals into something far more dangerous. What begins as polite conversation becomes a psychological chess match, each word a calculated move. The sound design wraps around you like fog—creaking floorboards, pregnant silences, voices that shift between familiar warmth and cold menace. You find yourself gripping the armrest, unsure who to trust, knowing that in the final moments something irreversible is about to unfold. This is Suspense at its finest: not monsters or gore, but the terrifying fragility of human trust.</p>
+<p>For two decades, Suspense reigned as CBS's crown jewel of dramatic anthology radio, delivering nearly a thousand episodes of meticulously crafted terror to millions of American households. The show's genius lay in its psychological approach—it understood that what you couldn't see was far more frightening than what you could. "The Last Detail" exemplifies this mastery, using voice actors, sound effects, and dead air to construct dread in the listener's imagination. Suspense launched careers, set industry standards, and proved that radio drama could achieve literary depth, attracting top-tier talent and creating moments that remained seared into listeners' memories.</p>
+<p>Don't miss this masterclass in tension and human vulnerability. Tune in to Suspense and discover why this episode has endured in the archives—a reminder that sometimes the most terrifying threats wear a human face.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

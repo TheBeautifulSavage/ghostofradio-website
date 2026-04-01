@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 590802 813 Red Cloud Mesa (128 44) 19373 20m19s — Suspense | Ghost of Radio</title>
+  <title>Red Cloud Mesa (128 44) 19373 20m19s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 590802 813 Red Cloud Mesa (128 44) 19373 20m19s — Suspense (CBS, 1937). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 590802 813 Red Cloud Mesa (128 44) 19373 20m19s — Suspense">
   <meta property="og:description" content="Listen to Suspense 590802 813 Red Cloud Mesa (128 44) 19373 20m19s — Suspense (CBS, 1937). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 2, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 590802 813 Red Cloud Mesa (128 44) 19373 20m19s</h1>
+          <h1 class="episode__title">Red Cloud Mesa (128 44) 19373 20m19s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Red Cloud Mesa</p>
-<p>Deep in the Arizona badlands, where crimson rock formations tower like the monuments of some forgotten civilization, a desperate man flees into the gathering dusk. His crime? Perhaps murder. His refuge? A desolate mesa where no lawman dares venture after sundown. In "Red Cloud Mesa," Suspense pulls listeners into a taut thriller of pursuit and paranoia, where the hunter becomes the hunted and the desert itself seems conspiring against escape. As shadows lengthen across that blood-red landscape, our protagonist discovers that some places hold secrets older and darker than any human transgression—secrets that the land itself guards jealously.</p>
+          <p>Deep in the Arizona badlands, where crimson rock formations tower like the monuments of some forgotten civilization, a desperate man flees into the gathering dusk. His crime? Perhaps murder. His refuge? A desolate mesa where no lawman dares venture after sundown. In "Red Cloud Mesa," Suspense pulls listeners into a taut thriller of pursuit and paranoia, where the hunter becomes the hunted and the desert itself seems conspiring against escape. As shadows lengthen across that blood-red landscape, our protagonist discovers that some places hold secrets older and darker than any human transgression—secrets that the land itself guards jealously.</p>
 <p>Suspense aired during radio's golden age, when CBS's legendary anthology series commanded millions of listeners on Tuesday evenings, transforming ordinary living rooms into chambers of suspense and dread. Produced with meticulous attention to sound design, the show's creators understood that terror lives in what we cannot see: in creaking floorboards, sudden silences, and the subtle suggestion of danger lurking just beyond the microphone's reach. Each episode, drawn from crime fiction, psychological horror, and original teleplays, showcased Hollywood's finest actors in intimate, spine-tingling drama. This 1937 recording exemplifies the show's mastery of atmosphere—an era before television when the human voice and strategic sound effects could conjure entire worlds of menace.</p>
 <p>If you've never experienced old-time radio drama at its finest, or if you're a devoted Suspense devotee seeking to revisit this classic tale, "Red Cloud Mesa" awaits. Tune in, dim the lights, and prepare yourself for twenty minutes of masterful storytelling that will remind you why an entire generation sat transfixed before their radios, gripping their armchair handles as the line between safety and terror dissolved into static.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 581019 773 Three Skeleton Key (64 44) 9645 19m12s — Suspense | Ghost of Radio</title>
+  <title>Three Skeleton Key (64 44) 9645 19m12s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 581019 773 Three Skeleton Key (64 44) 9645 19m12s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 581019 773 Three Skeleton Key (64 44) 9645 19m12s — Suspense">
   <meta property="og:description" content="Listen to Suspense 581019 773 Three Skeleton Key (64 44) 9645 19m12s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 19, 1958</span>
           </div>
-          <h1 class="episode__title">Suspense 581019 773 Three Skeleton Key (64 44) 9645 19m12s</h1>
+          <h1 class="episode__title">Three Skeleton Key (64 44) 9645 19m12s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Three Skeleton Key</p>
-<p>Picture yourself in the warm glow of your living room on a October evening in 1944, the radio dial glowing amber before you. You settle in for *Suspense*, and within moments you're spirited away to a desolate lighthouse off the coast of French Guiana, where three keepers have been left to tend the beacon in isolation. But they are not alone. A ship carrying convicts has wrecked upon the rocks, and in the darkness, something far more sinister than escaped prisoners stalks the lighthouse—a writhing, chittering mass of rats, thousands strong, driven mad by hunger and determined to breach the tower's fragile defenses. As the keepers barricade themselves inside, the tension mounts with each scratching sound, each gnaw at the wooden door. William Holden's voice carries the desperate terror of a man watching his last refuge crumble, while sound effects—the skittering of claws, the horrible squealing—create an almost tactile sense of dread that no film could quite capture. It's pure radio horror at its finest.</p>
-<p>*Suspense*, which premiered on CBS in 1942, became the gold standard of thriller radio drama, earning the tagline "radio's outstanding theater of thrills." This episode, drawn from a classic Georges-Étienne Magnan story, exemplifies why the show captivated millions: in an era before television, the radio drama demanded imagination from its audience, making listeners active participants in their own terror. The show's commitment to literary quality and atmospheric sound design set it apart from lesser programs, attracting top talent and loyal audiences throughout its remarkable twenty-year run.</p>
+          <p>Picture yourself in the warm glow of your living room on a October evening in 1944, the radio dial glowing amber before you. You settle in for Suspense, and within moments you're spirited away to a desolate lighthouse off the coast of French Guiana, where three keepers have been left to tend the beacon in isolation. But they are not alone. A ship carrying convicts has wrecked upon the rocks, and in the darkness, something far more sinister than escaped prisoners stalks the lighthouse—a writhing, chittering mass of rats, thousands strong, driven mad by hunger and determined to breach the tower's fragile defenses. As the keepers barricade themselves inside, the tension mounts with each scratching sound, each gnaw at the wooden door. William Holden's voice carries the desperate terror of a man watching his last refuge crumble, while sound effects—the skittering of claws, the horrible squealing—create an almost tactile sense of dread that no film could quite capture. It's pure radio horror at its finest.</p>
+<p>Suspense, which premiered on CBS in 1942, became the gold standard of thriller radio drama, earning the tagline "radio's outstanding theater of thrills." This episode, drawn from a classic Georges-Étienne Magnan story, exemplifies why the show captivated millions: in an era before television, the radio drama demanded imagination from its audience, making listeners active participants in their own terror. The show's commitment to literary quality and atmospheric sound design set it apart from lesser programs, attracting top talent and loyal audiences throughout its remarkable twenty-year run.</p>
 <p>Even now, across the decades, "Three Skeleton Key" retains its power to unsettle and entrance. Plug in, dim the lights, and let yourself surrender to one of radio's most perfectly crafted tales of survival and primal fear.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

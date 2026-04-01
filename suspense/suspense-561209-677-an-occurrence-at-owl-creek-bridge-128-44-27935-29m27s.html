@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 561209 677 An Occurrence At Owl Creek Bridge (128 44) 27935 29m27s — Suspense | Ghost of Radio</title>
+  <title>An Occurrence At Owl Creek Bridge (128 44) 27935 29m27s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 561209 677 An Occurrence At Owl Creek Bridge (128 44) 27935 29m27s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 561209 677 An Occurrence At Owl Creek Bridge (128 44) 27935 29m27s — Suspense">
   <meta property="og:description" content="Listen to Suspense 561209 677 An Occurrence At Owl Creek Bridge (128 44) 27935 29m27s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 9, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 561209 677 An Occurrence At Owl Creek Bridge (128 44) 27935 29m27s</h1>
+          <h1 class="episode__title">An Occurrence At Owl Creek Bridge (128 44) 27935 29m27s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># An Occurrence at Owl Creek Bridge</p>
-<p>Picture this: a man stands on a narrow railway bridge at dawn, a noose around his neck, Union soldiers preparing to execute him as a Confederate spy. But in the space between the drum roll and the gunshot, something extraordinary unfolds. This December 1949 installment of *Suspense* transports you into the fevered mind of Peyton Farquhar as he experiences what may be his final moments—or perhaps something far more extraordinary. Through masterful sound design and a performance that captures both desperation and desperate hope, listeners are pulled into a harrowing tale of escape, longing, and the terrifying ambiguity of fate. The ticking clock, the rushing water, the crunch of footsteps through leaves—every sonic detail collapses reality into a single, breathless moment.</p>
-<p>Adapted from Ambrose Bierce's haunting 1891 short story, this episode exemplifies why *Suspense* became radio's most celebrated thriller anthology. CBS's legendary program never relied on cheap scares or monsters; instead, it excavated the terror lurking within human psychology and circumstance. By the late 1940s, the show had perfected the art of intimate horror, using the radio format's unique power to make listeners complicit in the protagonist's internal experience. There's nowhere to hide from Farquhar's thoughts, nowhere to look away from the screen. You *are* suspended in his consciousness.</p>
-<p>If you've never experienced the artistry of classic radio drama, this episode is an ideal entry point—a complete psychological journey contained in just under thirty minutes. Tune in and discover why millions of listeners cleared their evenings for *Suspense*, and why these performances still possess the power to unsettle and move us today.</p>
+          <p>Picture this: a man stands on a narrow railway bridge at dawn, a noose around his neck, Union soldiers preparing to execute him as a Confederate spy. But in the space between the drum roll and the gunshot, something extraordinary unfolds. This December 1949 installment of Suspense transports you into the fevered mind of Peyton Farquhar as he experiences what may be his final moments—or perhaps something far more extraordinary. Through masterful sound design and a performance that captures both desperation and desperate hope, listeners are pulled into a harrowing tale of escape, longing, and the terrifying ambiguity of fate. The ticking clock, the rushing water, the crunch of footsteps through leaves—every sonic detail collapses reality into a single, breathless moment.</p>
+<p>Adapted from Ambrose Bierce's haunting 1891 short story, this episode exemplifies why Suspense became radio's most celebrated thriller anthology. CBS's legendary program never relied on cheap scares or monsters; instead, it excavated the terror lurking within human psychology and circumstance. By the late 1940s, the show had perfected the art of intimate horror, using the radio format's unique power to make listeners complicit in the protagonist's internal experience. There's nowhere to hide from Farquhar's thoughts, nowhere to look away from the screen. You are suspended in his consciousness.</p>
+<p>If you've never experienced the artistry of classic radio drama, this episode is an ideal entry point—a complete psychological journey contained in just under thirty minutes. Tune in and discover why millions of listeners cleared their evenings for Suspense, and why these performances still possess the power to unsettle and move us today.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

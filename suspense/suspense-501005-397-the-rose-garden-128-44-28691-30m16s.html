@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 501005 397 The Rose Garden (128 44) 28691 30m16s — Suspense | Ghost of Radio</title>
+  <title>The Rose Garden (128 44) 28691 30m16s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 501005 397 The Rose Garden (128 44) 28691 30m16s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 501005 397 The Rose Garden (128 44) 28691 30m16s — Suspense">
   <meta property="og:description" content="Listen to Suspense 501005 397 The Rose Garden (128 44) 28691 30m16s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 5, 1950</span>
           </div>
-          <h1 class="episode__title">Suspense 501005 397 The Rose Garden (128 44) 28691 30m16s</h1>
+          <h1 class="episode__title">The Rose Garden (128 44) 28691 30m16s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Rose Garden</p>
-<p>Step into the moonlit grounds of a seemingly genteel estate where beauty masks something profoundly sinister. In "The Rose Garden," a woman's obsessive cultivation of her prize blooms conceals a darkness that grows more suffocating with each passing scene. As the episode unfolds, listeners will find themselves trapped in an atmosphere thick with tension and dread—where the scent of roses mingles with whispered accusations, hidden secrets, and the creeping realization that some gardens harbor more than just flowers. The masterful sound design pulls you directly into shadowed corridors and overgrown pathways, while the performances crackle with psychological complexity. By the final moments, you'll understand that the true horror isn't what lurks in the soil, but what dwells in the human heart.</p>
-<p>*Suspense*, which debuted on CBS in 1942, became the gold standard of American radio drama precisely through episodes like this one. The show's famous opening—that ominous creaking door and Bernard Herrmann's unforgettable theme—signaled listeners that they were entering territory where rational fear gave way to existential dread. Unlike simple mystery programs, *Suspense* specialized in psychological terror and moral ambiguity, often featuring ordinary people confronted by extraordinary circumstances or their own inner demons. "The Rose Garden" exemplifies this approach, exploring themes of obsession and hidden lives that resonated powerfully with wartime audiences seeking both escape and cathartic anxiety.</p>
-<p>Whether you're a devoted collector of golden-age radio or discovering *Suspense* for the first time, "The Rose Garden" demands your full attention. Dim the lights, settle in, and prepare yourself for thirty minutes of expertly crafted radio drama. Some gardens, after all, are best visited after dark.</p>
+          <p>Step into the moonlit grounds of a seemingly genteel estate where beauty masks something profoundly sinister. In "The Rose Garden," a woman's obsessive cultivation of her prize blooms conceals a darkness that grows more suffocating with each passing scene. As the episode unfolds, listeners will find themselves trapped in an atmosphere thick with tension and dread—where the scent of roses mingles with whispered accusations, hidden secrets, and the creeping realization that some gardens harbor more than just flowers. The masterful sound design pulls you directly into shadowed corridors and overgrown pathways, while the performances crackle with psychological complexity. By the final moments, you'll understand that the true horror isn't what lurks in the soil, but what dwells in the human heart.</p>
+<p>Suspense, which debuted on CBS in 1942, became the gold standard of American radio drama precisely through episodes like this one. The show's famous opening—that ominous creaking door and Bernard Herrmann's unforgettable theme—signaled listeners that they were entering territory where rational fear gave way to existential dread. Unlike simple mystery programs, Suspense specialized in psychological terror and moral ambiguity, often featuring ordinary people confronted by extraordinary circumstances or their own inner demons. "The Rose Garden" exemplifies this approach, exploring themes of obsession and hidden lives that resonated powerfully with wartime audiences seeking both escape and cathartic anxiety.</p>
+<p>Whether you're a devoted collector of golden-age radio or discovering Suspense for the first time, "The Rose Garden" demands your full attention. Dim the lights, settle in, and prepare yourself for thirty minutes of expertly crafted radio drama. Some gardens, after all, are best visited after dark.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

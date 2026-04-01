@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 510419 425 The Rescue (128 44) 24801 26m06s Afrs — Suspense | Ghost of Radio</title>
+  <title>The Rescue (128 44) 24801 26m06s Afrs — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 510419 425 The Rescue (128 44) 24801 26m06s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 510419 425 The Rescue (128 44) 24801 26m06s Afrs — Suspense">
   <meta property="og:description" content="Listen to Suspense 510419 425 The Rescue (128 44) 24801 26m06s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 19, 1951</span>
           </div>
-          <h1 class="episode__title">Suspense 510419 425 The Rescue (128 44) 24801 26m06s Afrs</h1>
+          <h1 class="episode__title">The Rescue (128 44) 24801 26m06s Afrs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Rescue</p>
-<p>Picture this: a storm-battered ship groaning in the Atlantic swells, its distress beacon cutting through fog thick as wool. A rescue cutter races against time and tide, but aboard that sinking vessel, something far more sinister than the weather threatens the desperate souls clinging to hope. In "The Rescue," Suspense delivers the claustrophobic terror of men trapped between the mercy of the sea and secrets that may prove deadlier than drowning. As the rescue operation unfolds with agonizing slowness, listeners will discover that not everyone aboard wants to be saved—and that some passengers carry dangers more treacherous than any tempest. The crackling sound effects of splitting hulls and crashing waves pull you directly into the chaos, while the cast's raw, breathless performances capture the primal fear of those facing their final moments. What begins as a straightforward act of heroism unravels into something far more twisted, proving that human nature in extremis can be more horrifying than any sea monster.</p>
+          <p>Picture this: a storm-battered ship groaning in the Atlantic swells, its distress beacon cutting through fog thick as wool. A rescue cutter races against time and tide, but aboard that sinking vessel, something far more sinister than the weather threatens the desperate souls clinging to hope. In "The Rescue," Suspense delivers the claustrophobic terror of men trapped between the mercy of the sea and secrets that may prove deadlier than drowning. As the rescue operation unfolds with agonizing slowness, listeners will discover that not everyone aboard wants to be saved—and that some passengers carry dangers more treacherous than any tempest. The crackling sound effects of splitting hulls and crashing waves pull you directly into the chaos, while the cast's raw, breathless performances capture the primal fear of those facing their final moments. What begins as a straightforward act of heroism unravels into something far more twisted, proving that human nature in extremis can be more horrifying than any sea monster.</p>
 <p>For two decades, CBS's Suspense anthology series set the gold standard for American thriller radio, captivating audiences with its unflinching willingness to explore the darkest corners of human experience. Each week brought a new nightmare, yet the show never relied on cheap tricks—instead, master writers and directors crafted psychologically complex narratives that lingered long after the closing signature. "The Rescue" exemplifies why Suspense commanded such devotion among listeners: it takes a familiar scenario and transfigures it into something deeply unsettling, reminding us that danger rarely comes with warning, and rescue doesn't always mean salvation.</p>
 <p>Tune in for "The Rescue" and discover why, over seventy years later, this program still haunts the memory. Some broadcasts are simply unforgettable.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

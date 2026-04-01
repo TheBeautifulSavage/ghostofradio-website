@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 430622 047 The Man Without A Body (128 44) 28584 30m09s — Suspense | Ghost of Radio</title>
+  <title>The Man Without A Body (128 44) 28584 30m09s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 430622 047 The Man Without A Body (128 44) 28584 30m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 430622 047 The Man Without A Body (128 44) 28584 30m09s — Suspense">
   <meta property="og:description" content="Listen to Suspense 430622 047 The Man Without A Body (128 44) 28584 30m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 22, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 430622 047 The Man Without A Body (128 44) 28584 30m09s</h1>
+          <h1 class="episode__title">The Man Without A Body (128 44) 28584 30m09s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Man Without A Body</p>
-<p>As the CBS orchestra swells into that unmistakable theme of creeping dread, you're pulled into a nightmare of surgical horror and fractured identity. *The Man Without A Body* presents a grotesque premise that would send shivers down the spine of any 1940s listener huddled around the radio after dark: a brilliant but obsessed surgeon discovers how to transplant the human brain—but when he attempts his greatest triumph, the distinction between genius and madness dissolves like smoke. What follows is a taut thirty minutes of psychological unraveling, where the question isn't just whether the procedure succeeds, but what remains of a man when body and mind are violently separated. The voice acting crackles with barely suppressed hysteria, and the sound effects—surgical instruments, labored breathing, the wet horror of the operating theater—transform your living room into a chamber of medical nightmares.</p>
-<p>*Suspense*, which terrified listeners for two decades on CBS, earned its legendary status by doing something most radio programs wouldn't: trusting the listener's imagination as the most powerful special effect. Without visual distractions, your mind completes every gruesome detail, every shadowed corner of the tale. This episode exemplifies the show's commitment to psychological horror over cheap thrills—it's the *idea* of a man without a body that haunts you, the philosophical vertigo of consciousness untethered from flesh.</p>
-<p>If you've ever wondered why old-time radio remains unmatched in its ability to provoke genuine unease, *The Man Without A Body* answers the question conclusively. Dim the lights, tune in, and discover why this broadcast once had America bolt-checking their doors before bed.</p>
+          <p>As the CBS orchestra swells into that unmistakable theme of creeping dread, you're pulled into a nightmare of surgical horror and fractured identity. The Man Without A Body presents a grotesque premise that would send shivers down the spine of any 1940s listener huddled around the radio after dark: a brilliant but obsessed surgeon discovers how to transplant the human brain—but when he attempts his greatest triumph, the distinction between genius and madness dissolves like smoke. What follows is a taut thirty minutes of psychological unraveling, where the question isn't just whether the procedure succeeds, but what remains of a man when body and mind are violently separated. The voice acting crackles with barely suppressed hysteria, and the sound effects—surgical instruments, labored breathing, the wet horror of the operating theater—transform your living room into a chamber of medical nightmares.</p>
+<p>Suspense, which terrified listeners for two decades on CBS, earned its legendary status by doing something most radio programs wouldn't: trusting the listener's imagination as the most powerful special effect. Without visual distractions, your mind completes every gruesome detail, every shadowed corner of the tale. This episode exemplifies the show's commitment to psychological horror over cheap thrills—it's the idea of a man without a body that haunts you, the philosophical vertigo of consciousness untethered from flesh.</p>
+<p>If you've ever wondered why old-time radio remains unmatched in its ability to provoke genuine unease, The Man Without A Body answers the question conclusively. Dim the lights, tune in, and discover why this broadcast once had America bolt-checking their doors before bed.</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

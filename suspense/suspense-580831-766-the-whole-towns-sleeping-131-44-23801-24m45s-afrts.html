@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 580831 766 The Whole Town's Sleeping (131 44) 23801 24m45s Afrts — Suspense | Ghost of Radio</title>
+  <title>The Whole Town's Sleeping (131 44) 23801 24m45s Afrts — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 580831 766 The Whole Town's Sleeping (131 44) 23801 24m45s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 580831 766 The Whole Town's Sleeping (131 44) 23801 24m45s Afrts — Suspense">
   <meta property="og:description" content="Listen to Suspense 580831 766 The Whole Town's Sleeping (131 44) 23801 24m45s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 31, 1958</span>
           </div>
-          <h1 class="episode__title">Suspense 580831 766 The Whole Town's Sleeping (131 44) 23801 24m45s Afrts</h1>
+          <h1 class="episode__title">The Whole Town's Sleeping (131 44) 23801 24m45s Afrts</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Whole Town's Sleeping</p>
-<p>As darkness falls over a drowsy midwestern town, a young woman named Lavinia finds herself alone—utterly, terrifyingly alone. The men are away on a hunting trip, leaving the women to fend for themselves in a community gripped by whispered fears: a killer is stalking the sleeping town, slipping through unlocked doors and open windows under cover of night. What begins as neighborly concern transforms into creeping paranoia as Lavinia realizes that safety is an illusion, that trust can be weaponized, and that sometimes the greatest threats come not from strangers in the shadows, but from the familiar faces we've known all our lives. The twenty-five minute runtime crackles with mounting dread, each sound amplified by the intimate medium of radio—a creaking floorboard becomes a burglar's footstep, a shadow becomes a murderer's silhouette painted only in sound and suggestion.</p>
-<p>*Suspense*, CBS's legendary anthology series that ran for two decades beginning in 1942, pioneered the art of psychological terror tailored perfectly for the medium. Radio demanded nothing but expert sound design, brilliant writing, and the listener's own imagination—the most terrifying tool of all. "The Whole Town's Sleeping" exemplifies the show's mastery of this formula, placing ordinary people in extraordinary danger and letting the tension simmer until it boils over. Created during wartime when America craved both escape and catharsis, these episodes became cultural touchstones, their plots and performances still recalled by listeners decades later.</p>
-<p>Step into the darkness with us. Switch off the lights, settle into your chair, and let the voice of the announcer draw you into a world where safety is merely a pretty lie and danger wears a familiar face. *Suspense* awaits—and once you tune in, you may never sleep quite the same way again.</p>
+          <p>As darkness falls over a drowsy midwestern town, a young woman named Lavinia finds herself alone—utterly, terrifyingly alone. The men are away on a hunting trip, leaving the women to fend for themselves in a community gripped by whispered fears: a killer is stalking the sleeping town, slipping through unlocked doors and open windows under cover of night. What begins as neighborly concern transforms into creeping paranoia as Lavinia realizes that safety is an illusion, that trust can be weaponized, and that sometimes the greatest threats come not from strangers in the shadows, but from the familiar faces we've known all our lives. The twenty-five minute runtime crackles with mounting dread, each sound amplified by the intimate medium of radio—a creaking floorboard becomes a burglar's footstep, a shadow becomes a murderer's silhouette painted only in sound and suggestion.</p>
+<p>Suspense, CBS's legendary anthology series that ran for two decades beginning in 1942, pioneered the art of psychological terror tailored perfectly for the medium. Radio demanded nothing but expert sound design, brilliant writing, and the listener's own imagination—the most terrifying tool of all. "The Whole Town's Sleeping" exemplifies the show's mastery of this formula, placing ordinary people in extraordinary danger and letting the tension simmer until it boils over. Created during wartime when America craved both escape and catharsis, these episodes became cultural touchstones, their plots and performances still recalled by listeners decades later.</p>
+<p>Step into the darkness with us. Switch off the lights, settle into your chair, and let the voice of the announcer draw you into a world where safety is merely a pretty lie and danger wears a familiar face. Suspense awaits—and once you tune in, you may never sleep quite the same way again.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

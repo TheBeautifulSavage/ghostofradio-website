@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450607 144 Two Sharp Knives (128 44) 28473 30m02s — Suspense | Ghost of Radio</title>
+  <title>Two Sharp Knives (128 44) 28473 30m02s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450607 144 Two Sharp Knives (128 44) 28473 30m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450607 144 Two Sharp Knives (128 44) 28473 30m02s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450607 144 Two Sharp Knives (128 44) 28473 30m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 7, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450607 144 Two Sharp Knives (128 44) 28473 30m02s</h1>
+          <h1 class="episode__title">Two Sharp Knives (128 44) 28473 30m02s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Two Sharp Knives</p>
-<p>Picture this: a woman alone in her kitchen, the soft glow of lamplight casting long shadows across worn linoleum. She's waiting for her husband to return home, but something feels terribly wrong. Then comes the sound—a deliberate scrape of metal on stone, the methodical sharpening of a blade. Is it innocent housework, or something far more sinister? In "Two Sharp Knives," Suspense delivers one of radio's most claustrophobic nightmares, where the ordinary becomes sinister and a woman's mounting dread becomes our own. Every creak of the floorboards, every pause in conversation carries the weight of impending violence. As tension coils tighter, listeners are forced to contemplate the unthinkable: what happens when suspicion poisons the bonds of marriage itself?</p>
+          <p>Picture this: a woman alone in her kitchen, the soft glow of lamplight casting long shadows across worn linoleum. She's waiting for her husband to return home, but something feels terribly wrong. Then comes the sound—a deliberate scrape of metal on stone, the methodical sharpening of a blade. Is it innocent housework, or something far more sinister? In "Two Sharp Knives," Suspense delivers one of radio's most claustrophobic nightmares, where the ordinary becomes sinister and a woman's mounting dread becomes our own. Every creak of the floorboards, every pause in conversation carries the weight of impending violence. As tension coils tighter, listeners are forced to contemplate the unthinkable: what happens when suspicion poisons the bonds of marriage itself?</p>
 <p>This episode represents Suspense at its psychological finest, during an era when the show had perfected the art of making listeners squirm in their parlor chairs. From 1942 to 1962, Suspense became CBS radio's crown jewel of terror, adapting stories from pulp magazines and original scripts that proved you didn't need monsters or gore—just skilled writing and stellar voice acting. The show's willingness to explore marital tension and domestic paranoia set it apart from competitors, treating its audience as intelligent adults capable of imagining horrors far worse than anything described aloud. "Two Sharp Knives" exemplifies this approach: a chamber piece of pure psychological warfare where the real monster might be doubt itself.</p>
 <p>The beauty of radio drama lay in its intimacy, and this episode proves it. Settle in with the lights dimmed, let the dialogue wash over you, and discover why listeners made Suspense appointment radio for two decades. You'll never sharpen a kitchen knife quite the same way again.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

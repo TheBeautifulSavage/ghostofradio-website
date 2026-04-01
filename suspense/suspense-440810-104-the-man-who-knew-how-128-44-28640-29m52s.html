@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440810 104 The Man Who Knew How (128 44) 28640 29m52s — Suspense | Ghost of Radio</title>
+  <title>The Man Who Knew How (128 44) 28640 29m52s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440810 104 The Man Who Knew How (128 44) 28640 29m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440810 104 The Man Who Knew How (128 44) 28640 29m52s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440810 104 The Man Who Knew How (128 44) 28640 29m52s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 10, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440810 104 The Man Who Knew How (128 44) 28640 29m52s</h1>
+          <h1 class="episode__title">The Man Who Knew How (128 44) 28640 29m52s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Man Who Knew How</p>
-<p>Picture this: a late evening in 1940s America, the glow of your radio dial casting amber light across the darkened parlor as an ordinary man's expertise becomes his greatest curse. In "The Man Who Knew How," listeners are drawn into a taut psychological thriller where knowledge itself transforms into a weapon of unbearable tension. A seemingly innocent fellow finds himself pursued—not by villains with guns, but by shadowy figures who recognize that his technical expertise makes him dangerously valuable. As the minutes tick away in just under thirty minutes, the noose tightens with each crackle of static and carefully placed dramatic pause. The production masterfully builds dread through dialogue and sound design, turning what could have been a simple adventure yarn into something far more sinister: a meditation on how the modern world can trap even the most ordinary citizen in extraordinary peril.</p>
-<p>*Suspense* was CBS radio's crown jewel of dramatic programming, broadcasting from 1942 through 1962 and earning legions of devoted listeners who religiously tuned in to experience the show's uncompromising commitment to psychological terror over cheap thrills. Each episode was meticulously crafted, featuring top-tier talent both behind the microphone and in the writers' room, creating narratives that lingered long after the final organ note faded. This particular episode exemplifies why the series became legendary—not through gore or violence, but through the subtle art of making listeners question their own safety in an increasingly complex world.</p>
-<p>Don't miss this gripping installment of broadcasting's most celebrated thriller program. Switch your dial to experience the golden age of radio drama, where imagination and sound conjure terror more effectively than any visual medium ever could. *The Man Who Knew How* awaits.</p>
+          <p>Picture this: a late evening in 1940s America, the glow of your radio dial casting amber light across the darkened parlor as an ordinary man's expertise becomes his greatest curse. In "The Man Who Knew How," listeners are drawn into a taut psychological thriller where knowledge itself transforms into a weapon of unbearable tension. A seemingly innocent fellow finds himself pursued—not by villains with guns, but by shadowy figures who recognize that his technical expertise makes him dangerously valuable. As the minutes tick away in just under thirty minutes, the noose tightens with each crackle of static and carefully placed dramatic pause. The production masterfully builds dread through dialogue and sound design, turning what could have been a simple adventure yarn into something far more sinister: a meditation on how the modern world can trap even the most ordinary citizen in extraordinary peril.</p>
+<p>Suspense was CBS radio's crown jewel of dramatic programming, broadcasting from 1942 through 1962 and earning legions of devoted listeners who religiously tuned in to experience the show's uncompromising commitment to psychological terror over cheap thrills. Each episode was meticulously crafted, featuring top-tier talent both behind the microphone and in the writers' room, creating narratives that lingered long after the final organ note faded. This particular episode exemplifies why the series became legendary—not through gore or violence, but through the subtle art of making listeners question their own safety in an increasingly complex world.</p>
+<p>Don't miss this gripping installment of broadcasting's most celebrated thriller program. Switch your dial to experience the golden age of radio drama, where imagination and sound conjure terror more effectively than any visual medium ever could. The Man Who Knew How awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

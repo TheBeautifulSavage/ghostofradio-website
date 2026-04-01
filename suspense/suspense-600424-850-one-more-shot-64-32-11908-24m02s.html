@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600424 850 One More Shot (64 32) 11908 24m02s — Suspense | Ghost of Radio</title>
+  <title>One More Shot (64 32) 11908 24m02s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600424 850 One More Shot (64 32) 11908 24m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600424 850 One More Shot (64 32) 11908 24m02s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600424 850 One More Shot (64 32) 11908 24m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 24, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600424 850 One More Shot (64 32) 11908 24m02s</h1>
+          <h1 class="episode__title">One More Shot (64 32) 11908 24m02s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># One More Shot</p>
-<p>In the fog-shrouded streets of a desperate man's final hours, *Suspense* presents "One More Shot," a taut psychological thriller that grips listeners from its opening moment. A down-on-his-luck protagonist faces the ultimate crossroads—a chance to reclaim everything he's lost, but at what cost? As the clock ticks toward midnight, you'll hear the scrape of footsteps on wet pavement, the ominous creaking of doors, and voices thick with menace and moral ambiguity. Director-producer Norman Macdonnell orchestrates every sound effect and dramatic pause to maximum effect, building an atmosphere of suffocating tension. The question haunts the airwaves: will our hero take the shot being offered, knowing full well it might damn him forever? This is *Suspense* at its finest—intimate, claustrophobic, and absolutely unrelenting.</p>
-<p>Throughout its twenty-year reign as radio's premier thriller program, *Suspense* earned its reputation by refusing comfortable resolutions and moral certainties. Each episode thrust ordinary people into extraordinary circumstances where split-second decisions determined their fates. Broadcast live to millions of Americans during the 1940s, these dramas reflected the anxieties of a nation at war and beyond—fear, temptation, betrayal, and the thin line separating civilization from chaos. "One More Shot" exemplifies the show's genius for exploring the darker corners of human nature, asking what desperation can drive a person to do.</p>
-<p>Whether you're a devoted aficionado of vintage radio drama or discovering *Suspense* for the first time, this episode demands your undivided attention. Dim the lights, settle into your favorite chair, and prepare yourself for twenty-four minutes of pure, unadulterated suspense. Press play and step into the shadows.</p>
+          <p>In the fog-shrouded streets of a desperate man's final hours, Suspense presents "One More Shot," a taut psychological thriller that grips listeners from its opening moment. A down-on-his-luck protagonist faces the ultimate crossroads—a chance to reclaim everything he's lost, but at what cost? As the clock ticks toward midnight, you'll hear the scrape of footsteps on wet pavement, the ominous creaking of doors, and voices thick with menace and moral ambiguity. Director-producer Norman Macdonnell orchestrates every sound effect and dramatic pause to maximum effect, building an atmosphere of suffocating tension. The question haunts the airwaves: will our hero take the shot being offered, knowing full well it might damn him forever? This is Suspense at its finest—intimate, claustrophobic, and absolutely unrelenting.</p>
+<p>Throughout its twenty-year reign as radio's premier thriller program, Suspense earned its reputation by refusing comfortable resolutions and moral certainties. Each episode thrust ordinary people into extraordinary circumstances where split-second decisions determined their fates. Broadcast live to millions of Americans during the 1940s, these dramas reflected the anxieties of a nation at war and beyond—fear, temptation, betrayal, and the thin line separating civilization from chaos. "One More Shot" exemplifies the show's genius for exploring the darker corners of human nature, asking what desperation can drive a person to do.</p>
+<p>Whether you're a devoted aficionado of vintage radio drama or discovering Suspense for the first time, this episode demands your undivided attention. Dim the lights, settle into your favorite chair, and prepare yourself for twenty-four minutes of pure, unadulterated suspense. Press play and step into the shadows.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

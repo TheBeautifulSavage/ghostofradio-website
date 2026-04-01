@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440713 100 The Beast Must Die (128 44) 28579 30m08s — Suspense | Ghost of Radio</title>
+  <title>The Beast Must Die (128 44) 28579 30m08s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440713 100 The Beast Must Die (128 44) 28579 30m08s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440713 100 The Beast Must Die (128 44) 28579 30m08s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440713 100 The Beast Must Die (128 44) 28579 30m08s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 13, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440713 100 The Beast Must Die (128 44) 28579 30m08s</h1>
+          <h1 class="episode__title">The Beast Must Die (128 44) 28579 30m08s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Beast Must Die</p>
-<p>As night falls and the wind howls through the studio speakers, *Suspense* plunges listeners into a nightmare of primal terror with "The Beast Must Die." In this thirty-minute descent into darkness, an ordinary man confronts the unthinkable—a creature, barely human, stalking the shadows of civilization. Is it a wild animal escaped from captivity? A madman driven to bestial violence? Or something far worse, something that defies rational explanation? The atmosphere crackles with mounting dread as our protagonist races against time, armed only with his wits and desperation, knowing that either he must kill the beast—or become its next victim. Every creaking floorboard, every distant howl, every moment of breathless silence draws listeners deeper into claustrophobic horror, where the line between hunter and hunted blurs into terrifying ambiguity.</p>
-<p>*Suspense* represented the golden age of American radio drama, and this episode exemplifies why the show commanded millions of listeners throughout the 1940s and beyond. CBS's flagship thriller series pioneered sophisticated sound design and psychological storytelling that transformed the intimate space of the home into an arena of unbearable tension. In an era before television dominated entertainment, these thirty minutes of expertly crafted suspense—featuring only voice actors and meticulously orchestrated sound effects—proved that the most terrifying monsters were those conjured by the listener's own imagination. The show's creators understood a fundamental truth: what you *don't* see is infinitely more frightening than what you do.</p>
-<p>If you're seeking an authentic taste of vintage radio horror, *Suspense* offers the genuine article. "The Beast Must Die" delivers everything that made this landmark series unforgettable: atmospheric tension, superb performances, and a climax that will leave you checking your locks long after the final fade-out. Tune in—if you dare.</p>
+          <p>As night falls and the wind howls through the studio speakers, Suspense plunges listeners into a nightmare of primal terror with "The Beast Must Die." In this thirty-minute descent into darkness, an ordinary man confronts the unthinkable—a creature, barely human, stalking the shadows of civilization. Is it a wild animal escaped from captivity? A madman driven to bestial violence? Or something far worse, something that defies rational explanation? The atmosphere crackles with mounting dread as our protagonist races against time, armed only with his wits and desperation, knowing that either he must kill the beast—or become its next victim. Every creaking floorboard, every distant howl, every moment of breathless silence draws listeners deeper into claustrophobic horror, where the line between hunter and hunted blurs into terrifying ambiguity.</p>
+<p>Suspense represented the golden age of American radio drama, and this episode exemplifies why the show commanded millions of listeners throughout the 1940s and beyond. CBS's flagship thriller series pioneered sophisticated sound design and psychological storytelling that transformed the intimate space of the home into an arena of unbearable tension. In an era before television dominated entertainment, these thirty minutes of expertly crafted suspense—featuring only voice actors and meticulously orchestrated sound effects—proved that the most terrifying monsters were those conjured by the listener's own imagination. The show's creators understood a fundamental truth: what you don't see is infinitely more frightening than what you do.</p>
+<p>If you're seeking an authentic taste of vintage radio horror, Suspense offers the genuine article. "The Beast Must Die" delivers everything that made this landmark series unforgettable: atmospheric tension, superb performances, and a climax that will leave you checking your locks long after the final fade-out. Tune in—if you dare.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

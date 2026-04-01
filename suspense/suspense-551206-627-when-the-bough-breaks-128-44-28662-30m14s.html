@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 551206 627 When The Bough Breaks (128 44) 28662 30m14s — Suspense | Ghost of Radio</title>
+  <title>When The Bough Breaks (128 44) 28662 30m14s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 551206 627 When The Bough Breaks (128 44) 28662 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 551206 627 When The Bough Breaks (128 44) 28662 30m14s — Suspense">
   <meta property="og:description" content="Listen to Suspense 551206 627 When The Bough Breaks (128 44) 28662 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 6, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 551206 627 When The Bough Breaks (128 44) 28662 30m14s</h1>
+          <h1 class="episode__title">When The Bough Breaks (128 44) 28662 30m14s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># When The Bough Breaks</p>
-<p>Picture yourself huddled by the radio on a December evening, the winter darkness pressing against your windows, when suddenly the familiar CBS chime cuts through the silence and that ominous voice intones: "Suspense." In this chilling installment, the comfortable sanctuary of the home becomes a cage of psychological terror. When The Bough Breaks weaves a haunting tale of domestic dread where the line between protection and possession blurs dangerously. What begins as a parent's natural devotion spirals into something far more sinister, where love curdles into obsession and a child's innocent needs become the spark for a family tragedy. The intimate setting of household rooms—so familiar to every listener—transforms into a landscape of creeping menace. With Suspense's masterful sound design, you'll hear every footstep, every loaded silence, every tremor of desperate emotion as the drama builds toward its inevitable, devastating climax.</p>
+          <p>Picture yourself huddled by the radio on a December evening, the winter darkness pressing against your windows, when suddenly the familiar CBS chime cuts through the silence and that ominous voice intones: "Suspense." In this chilling installment, the comfortable sanctuary of the home becomes a cage of psychological terror. When The Bough Breaks weaves a haunting tale of domestic dread where the line between protection and possession blurs dangerously. What begins as a parent's natural devotion spirals into something far more sinister, where love curdles into obsession and a child's innocent needs become the spark for a family tragedy. The intimate setting of household rooms—so familiar to every listener—transforms into a landscape of creeping menace. With Suspense's masterful sound design, you'll hear every footstep, every loaded silence, every tremor of desperate emotion as the drama builds toward its inevitable, devastating climax.</p>
 <p>For twenty years, Suspense reigned as CBS's crown jewel of dramatic entertainment, defining the very art of audio suspense for millions of Americans. Each week brought a new nightmare, adapted from literature or penned specifically for radio by some of Hollywood's finest writers. The show's genius lay in what it didn't show—the human imagination, guided by brilliant voice acting and sound effects, created horror far more potent than anything visual could achieve. By the late 1940s, Suspense had perfected its formula, crafting episodes like this one that explored the psychological shadows lurking beneath ordinary life.</p>
 <p>Don't miss this unforgettable journey into the dark corners of human nature. Settle in, dim the lights, and let Suspense remind you why radio drama remains the most intimate—and terrifying—form of storytelling ever created.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

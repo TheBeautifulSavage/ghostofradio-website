@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550524 599 I Saw Myself Running (64 44) 11498 23m09s — Suspense | Ghost of Radio</title>
+  <title>I Saw Myself Running (64 44) 11498 23m09s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550524 599 I Saw Myself Running (64 44) 11498 23m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550524 599 I Saw Myself Running (64 44) 11498 23m09s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550524 599 I Saw Myself Running (64 44) 11498 23m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 24, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550524 599 I Saw Myself Running (64 44) 11498 23m09s</h1>
+          <h1 class="episode__title">I Saw Myself Running (64 44) 11498 23m09s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># I Saw Myself Running</p>
-<p>Picture this: a man stumbles through the fog-shrouded streets of a nameless city, pursued by a figure he recognizes instantly—himself. But how can he be fleeing from his own reflection? In "I Saw Myself Running," the brilliant sound designers and voice actors of CBS's *Suspense* plunge you into a nightmare logic where the boundary between self and shadow dissolves entirely. Every footstep echoes with double meaning, every breath seems to come from two lungs. As our protagonist races through rain-slicked alleys, desperately trying to understand this impossible doppelgänger, the mystery deepens into something far more unsettling than a simple case of mistaken identity. Within twenty-three minutes, the episode builds to a climax that will leave you questioning the nature of identity itself—a signature move of a program that always knew how to burrow beneath the skin.</p>
-<p>*Suspense* stood as radio's premier theatrical thriller program for two decades, and episodes like this showcase precisely why audiences across America made it appointment listening. The show's producers understood that radio's greatest strength lay not in showing monsters but in suggesting them through clever dialogue, dissonant music, and that most powerful tool: the listener's imagination. Each week brought tales of psychological terror and inexplicable danger, refusing the easy answers that lesser programs offered. "I Saw Myself Running" exemplifies the show's commitment to exploring the uncanny spaces within ordinary life, where the familiar becomes strange and the rational crumbles.</p>
-<p>Tune in and experience what millions heard in an era when radio was the gateway to other worlds. *Suspense* awaits—and it promises that you've never heard anything quite like it before.</p>
+          <p>Picture this: a man stumbles through the fog-shrouded streets of a nameless city, pursued by a figure he recognizes instantly—himself. But how can he be fleeing from his own reflection? In "I Saw Myself Running," the brilliant sound designers and voice actors of CBS's Suspense plunge you into a nightmare logic where the boundary between self and shadow dissolves entirely. Every footstep echoes with double meaning, every breath seems to come from two lungs. As our protagonist races through rain-slicked alleys, desperately trying to understand this impossible doppelgänger, the mystery deepens into something far more unsettling than a simple case of mistaken identity. Within twenty-three minutes, the episode builds to a climax that will leave you questioning the nature of identity itself—a signature move of a program that always knew how to burrow beneath the skin.</p>
+<p>Suspense stood as radio's premier theatrical thriller program for two decades, and episodes like this showcase precisely why audiences across America made it appointment listening. The show's producers understood that radio's greatest strength lay not in showing monsters but in suggesting them through clever dialogue, dissonant music, and that most powerful tool: the listener's imagination. Each week brought tales of psychological terror and inexplicable danger, refusing the easy answers that lesser programs offered. "I Saw Myself Running" exemplifies the show's commitment to exploring the uncanny spaces within ordinary life, where the familiar becomes strange and the rational crumbles.</p>
+<p>Tune in and experience what millions heard in an era when radio was the gateway to other worlds. Suspense awaits—and it promises that you've never heard anything quite like it before.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

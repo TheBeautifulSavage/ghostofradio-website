@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 480403 291 Suspicion (128 44) 56457 59m53s — Suspense | Ghost of Radio</title>
+  <title>Suspicion (128 44) 56457 59m53s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 480403 291 Suspicion (128 44) 56457 59m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 480403 291 Suspicion (128 44) 56457 59m53s — Suspense">
   <meta property="og:description" content="Listen to Suspense 480403 291 Suspicion (128 44) 56457 59m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 3, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 480403 291 Suspicion (128 44) 56457 59m53s</h1>
+          <h1 class="episode__title">Suspicion (128 44) 56457 59m53s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspicion</p>
-<p>Picture this: it's a quiet evening in 1944, and you settle into your favorite chair as the CBS orchestra swells with that unmistakable theme—that creeping violin that makes the hair on your neck stand on end. "Suspicion" wastes no time plunging you into a web of doubt and deception where nothing is quite what it seems. In this particular installment, a marriage begins to unravel as innocent gestures transform into sinister shadows. A cup of tea. A lingering glance. The creak of floorboards at midnight. The brilliance of this episode lies in how it twists the mundane intimacy of domestic life into something terrifying—where the person you trust most becomes your greatest fear. The tension builds with surgical precision as our protagonist questions every motive, every word, every movement of their spouse. By the time the final twist arrives, you'll be gripping your armrest, uncertain whether you've witnessed a tragedy or a delicious manipulation.</p>
-<p>*Suspense* was radio drama at its finest, and this era of the show—broadcast during the anxious 1940s—captured the paranoia and uncertainty of wartime America perfectly. With top-tier writers, directors, and a repertory of exceptional actors, each episode was a masterclass in psychological terror. The show pioneered techniques that would influence horror and thriller media for decades to come, proving that the most frightening images are often the ones your imagination conjures in the darkness.</p>
-<p>If you've never experienced the raw, intimate terror of golden-age radio drama, this is your invitation. Dim the lights, silence your distractions, and let your mind do what it does best—fill in the shadows. *Suspicion* awaits, and trust us: you won't sleep soundly afterward.</p>
+          <p>Picture this: it's a quiet evening in 1944, and you settle into your favorite chair as the CBS orchestra swells with that unmistakable theme—that creeping violin that makes the hair on your neck stand on end. "Suspicion" wastes no time plunging you into a web of doubt and deception where nothing is quite what it seems. In this particular installment, a marriage begins to unravel as innocent gestures transform into sinister shadows. A cup of tea. A lingering glance. The creak of floorboards at midnight. The brilliance of this episode lies in how it twists the mundane intimacy of domestic life into something terrifying—where the person you trust most becomes your greatest fear. The tension builds with surgical precision as our protagonist questions every motive, every word, every movement of their spouse. By the time the final twist arrives, you'll be gripping your armrest, uncertain whether you've witnessed a tragedy or a delicious manipulation.</p>
+<p>Suspense was radio drama at its finest, and this era of the show—broadcast during the anxious 1940s—captured the paranoia and uncertainty of wartime America perfectly. With top-tier writers, directors, and a repertory of exceptional actors, each episode was a masterclass in psychological terror. The show pioneered techniques that would influence horror and thriller media for decades to come, proving that the most frightening images are often the ones your imagination conjures in the darkness.</p>
+<p>If you've never experienced the raw, intimate terror of golden-age radio drama, this is your invitation. Dim the lights, silence your distractions, and let your mind do what it does best—fill in the shadows. Suspicion awaits, and trust us: you won't sleep soundly afterward.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

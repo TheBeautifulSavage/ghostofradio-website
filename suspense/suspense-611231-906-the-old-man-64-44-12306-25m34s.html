@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 611231 906 The Old Man (64 44) 12306 25m34s — Suspense | Ghost of Radio</title>
+  <title>The Old Man (64 44) 12306 25m34s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 611231 906 The Old Man (64 44) 12306 25m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 611231 906 The Old Man (64 44) 12306 25m34s — Suspense">
   <meta property="og:description" content="Listen to Suspense 611231 906 The Old Man (64 44) 12306 25m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 31, 1961</span>
           </div>
-          <h1 class="episode__title">Suspense 611231 906 The Old Man (64 44) 12306 25m34s</h1>
+          <h1 class="episode__title">The Old Man (64 44) 12306 25m34s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Old Man</p>
-<p>As darkness falls and your radio crackles to life, you'll find yourself drawn into the shadowy world of a mysterious cottage where an elderly stranger's arrival sets off a chain of sinister events that will keep you riveted to your seat. "The Old Man" unfolds with the mounting dread that *Suspense* perfected—each footstep, each whispered conversation, and each ominous silence building toward a revelation that will make you question everything you've heard. In just over twenty-five minutes, this episode weaves a tale of secrets, isolation, and the terrifying unknown that lurks beneath the surface of ordinary lives. The performances crackle with tension, and the sound design transports you completely into an atmosphere thick with menace and psychological unease.</p>
-<p>*Suspense* stands as one of radio's most enduring achievements, a show that understood the power of suggestion and the human imagination far better than any visual medium could. From 1942 through 1962, CBS produced nearly a thousand episodes that became the gold standard for broadcast drama, featuring legendary performers and writers who understood that true terror doesn't need to be seen—it needs to be felt. This particular episode exemplifies the show's mastery of intimate, character-driven horror, where the greatest threats come not from monsters or villains, but from the ordinary people around us and the secrets they keep. Every episode was a masterclass in suspenseful storytelling, and this one is no exception.</p>
+          <p>As darkness falls and your radio crackles to life, you'll find yourself drawn into the shadowy world of a mysterious cottage where an elderly stranger's arrival sets off a chain of sinister events that will keep you riveted to your seat. "The Old Man" unfolds with the mounting dread that Suspense perfected—each footstep, each whispered conversation, and each ominous silence building toward a revelation that will make you question everything you've heard. In just over twenty-five minutes, this episode weaves a tale of secrets, isolation, and the terrifying unknown that lurks beneath the surface of ordinary lives. The performances crackle with tension, and the sound design transports you completely into an atmosphere thick with menace and psychological unease.</p>
+<p>Suspense stands as one of radio's most enduring achievements, a show that understood the power of suggestion and the human imagination far better than any visual medium could. From 1942 through 1962, CBS produced nearly a thousand episodes that became the gold standard for broadcast drama, featuring legendary performers and writers who understood that true terror doesn't need to be seen—it needs to be felt. This particular episode exemplifies the show's mastery of intimate, character-driven horror, where the greatest threats come not from monsters or villains, but from the ordinary people around us and the secrets they keep. Every episode was a masterclass in suspenseful storytelling, and this one is no exception.</p>
 <p>Don't miss your chance to experience a piece of radio's golden age. Tune in to "The Old Man" and rediscover why millions of listeners sat transfixed by their sets, unable to turn away as the mystery unfolded. It's a reminder of a time when stories were told through voices alone—and those voices were enough to haunt you for days.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

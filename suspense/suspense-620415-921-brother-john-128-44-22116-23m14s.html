@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620415 921 Brother John (128 44) 22116 23m14s — Suspense | Ghost of Radio</title>
+  <title>Brother John (128 44) 22116 23m14s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620415 921 Brother John (128 44) 22116 23m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620415 921 Brother John (128 44) 22116 23m14s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620415 921 Brother John (128 44) 22116 23m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 15, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620415 921 Brother John (128 44) 22116 23m14s</h1>
+          <h1 class="episode__title">Brother John (128 44) 22116 23m14s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Brother John</p>
-<p>When the knock comes at midnight, your sanctuary becomes a prison. In this chilling installment of *Suspense*, a man confronts the return of a brother he thought long dead—a ghost made flesh, arriving with mysterious purpose and an unsettling familiarity that cuts deeper than any stranger's blade. As the evening unfolds in claustrophobic dread, you'll find yourself trapped in a web of family secrets and unspoken sins, where every revelation peels back another layer of deception. The sound design pulls you directly into that shadowed room: the creak of floorboards, the measured breathing of two men who share blood but not understanding, the weight of years suspended in a single conversation. What does Brother John want? Why has he returned *now*? By the final moments, you won't be sure whether to pray for his departure or fear it more.</p>
-<p>*Suspense* earned its reputation as the most consistently terrifying program in radio history precisely because it understood that true horror lives in psychology, not monsters. During the Golden Age of radio, when families huddled around their sets in living rooms across America, *Suspense* delivered stories that lingered long after the broadcast ended—tales of ordinary people encountering extraordinary darkness. This 1940s episode exemplifies the show's mastery: a intimate, character-driven drama where the greatest threat wears a familiar face. The production showcases the remarkable talents of CBS's sound effects department and the understated genius of *Suspense*'s rotating cast of accomplished actors.</p>
-<p>Step into that room on a night when a stranger who knows your name arrives at your door. Tune in to *Suspense* and discover why millions of listeners made this program an appointment with fear—a fear that feels uncomfortably real, uncomfortably close, and utterly impossible to shake.</p>
+          <p>When the knock comes at midnight, your sanctuary becomes a prison. In this chilling installment of Suspense, a man confronts the return of a brother he thought long dead—a ghost made flesh, arriving with mysterious purpose and an unsettling familiarity that cuts deeper than any stranger's blade. As the evening unfolds in claustrophobic dread, you'll find yourself trapped in a web of family secrets and unspoken sins, where every revelation peels back another layer of deception. The sound design pulls you directly into that shadowed room: the creak of floorboards, the measured breathing of two men who share blood but not understanding, the weight of years suspended in a single conversation. What does Brother John want? Why has he returned now? By the final moments, you won't be sure whether to pray for his departure or fear it more.</p>
+<p>Suspense earned its reputation as the most consistently terrifying program in radio history precisely because it understood that true horror lives in psychology, not monsters. During the Golden Age of radio, when families huddled around their sets in living rooms across America, Suspense delivered stories that lingered long after the broadcast ended—tales of ordinary people encountering extraordinary darkness. This 1940s episode exemplifies the show's mastery: a intimate, character-driven drama where the greatest threat wears a familiar face. The production showcases the remarkable talents of CBS's sound effects department and the understated genius of Suspense's rotating cast of accomplished actors.</p>
+<p>Step into that room on a night when a stranger who knows your name arrives at your door. Tune in to Suspense and discover why millions of listeners made this program an appointment with fear—a fear that feels uncomfortably real, uncomfortably close, and utterly impossible to shake.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

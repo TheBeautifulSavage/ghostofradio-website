@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470515 245 Death At Live Oak (128 44) 28755 30m20s — Suspense | Ghost of Radio</title>
+  <title>Death At Live Oak (128 44) 28755 30m20s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470515 245 Death At Live Oak (128 44) 28755 30m20s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470515 245 Death At Live Oak (128 44) 28755 30m20s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470515 245 Death At Live Oak (128 44) 28755 30m20s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 15, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470515 245 Death At Live Oak (128 44) 28755 30m20s</h1>
+          <h1 class="episode__title">Death At Live Oak (128 44) 28755 30m20s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Death at Live Oak</p>
-<p>Picture this: a sweltering Southern night, the kind where the air itself seems to conspire against you. In *Death at Live Oak*, listeners are drawn into the shadowy world of a plantation where secrets run as deep as the moss-laden oaks that surround it. A death occurs under circumstances that appear innocent enough on the surface, but as the investigation unfolds, layer after layer of deception peels away, revealing motives born of passion, greed, and long-festering resentment. The episode crackles with tension as suspects emerge from the darkness, each with something to hide, and the true killer remains maddeningly elusive. Sound effects—the creak of a porch swing, the distant call of night birds, the sharp crack of accusation—create an atmosphere so thick you could cut it with a knife.</p>
-<p>*Suspense*, which aired on CBS from 1942 to 1962, became the gold standard of American radio drama, and episodes like *Death at Live Oak* exemplify why. With a different thriller or horror story each week, the show's writers crafted tales that gripped listeners' imaginations in ways no visual medium could match. The brilliance lay in forcing audiences to construct their own nightmares—to see the faces of villains, to sense the presence of danger in every shadow. This particular episode, from the 1940s, represents the show at its zenith, when post-war audiences craved the escapism and genuine thrills that only *Suspense* could deliver.</p>
-<p>Don't miss your chance to experience *Death at Live Oak*. Dim the lights, settle in, and prepare yourself for thirty minutes of spine-tingling mystery. In the darkness of old-time radio, the most terrifying threats are often the ones you cannot see.</p>
+          <p>Picture this: a sweltering Southern night, the kind where the air itself seems to conspire against you. In Death at Live Oak, listeners are drawn into the shadowy world of a plantation where secrets run as deep as the moss-laden oaks that surround it. A death occurs under circumstances that appear innocent enough on the surface, but as the investigation unfolds, layer after layer of deception peels away, revealing motives born of passion, greed, and long-festering resentment. The episode crackles with tension as suspects emerge from the darkness, each with something to hide, and the true killer remains maddeningly elusive. Sound effects—the creak of a porch swing, the distant call of night birds, the sharp crack of accusation—create an atmosphere so thick you could cut it with a knife.</p>
+<p>Suspense, which aired on CBS from 1942 to 1962, became the gold standard of American radio drama, and episodes like Death at Live Oak exemplify why. With a different thriller or horror story each week, the show's writers crafted tales that gripped listeners' imaginations in ways no visual medium could match. The brilliance lay in forcing audiences to construct their own nightmares—to see the faces of villains, to sense the presence of danger in every shadow. This particular episode, from the 1940s, represents the show at its zenith, when post-war audiences craved the escapism and genuine thrills that only Suspense could deliver.</p>
+<p>Don't miss your chance to experience Death at Live Oak. Dim the lights, settle in, and prepare yourself for thirty minutes of spine-tingling mystery. In the darkness of old-time radio, the most terrifying threats are often the ones you cannot see.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

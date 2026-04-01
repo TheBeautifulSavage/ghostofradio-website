@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 590719 811 An Occurrence At Owl Creek Bridge (64 32) 12432 25m09s — Suspense | Ghost of Radio</title>
+  <title>An Occurrence At Owl Creek Bridge (64 32) 12432 25m09s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 590719 811 An Occurrence At Owl Creek Bridge (64 32) 12432 25m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 590719 811 An Occurrence At Owl Creek Bridge (64 32) 12432 25m09s — Suspense">
   <meta property="og:description" content="Listen to Suspense 590719 811 An Occurrence At Owl Creek Bridge (64 32) 12432 25m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 19, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 590719 811 An Occurrence At Owl Creek Bridge (64 32) 12432 25m09s</h1>
+          <h1 class="episode__title">An Occurrence At Owl Creek Bridge (64 32) 12432 25m09s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># An Occurrence at Owl Creek Bridge</p>
-<p>Picture this: a man stands on a wooden bridge at dawn, a noose around his neck, waiting for the volley that will end his life. As the drums of war thunder in the distance, he hears the sound of the rope being tied, feels the weight of his impending doom—and then, in a heartbeat, everything changes. What follows is a descent into the fractured consciousness of a condemned spy, where seconds stretch like hours and hope blooms impossibly bright in the shadow of death. This adaptation of Ambrose Bierce's masterpiece captures every torturous moment of Peyton Farquhar's final experience, pulling listeners into a mind teetering between reality and desperate fantasy. The sound design is exquisite: the creak of the gallows, the lap of water below, the pounding of a desperate man's pulse. By the time the final revelation hits, you'll understand why this tale has haunted American literature for over a century.</p>
-<p>*Suspense*, which brought psychological terror into living rooms across America for two decades, was never content with simple jump scares or obvious villains. This particular episode exemplifies the show's genius for exploring the fragile boundary between sanity and madness, between what is and what we desperately wish to be true. Broadcasting during wartime, when audiences were already saturated with real darkness, *Suspense* offered something more subtle and insidious—the horror of the human mind turned inward. The episode's meticulous pacing and the lead performance create an almost unbearable tension that builds to a twist you won't see coming.</p>
-<p>Tune in tonight and experience radio drama at its finest. In just over 25 minutes, you'll live a lifetime of terror, hope, and revelation. *Suspense* awaits.</p>
+          <p>Picture this: a man stands on a wooden bridge at dawn, a noose around his neck, waiting for the volley that will end his life. As the drums of war thunder in the distance, he hears the sound of the rope being tied, feels the weight of his impending doom—and then, in a heartbeat, everything changes. What follows is a descent into the fractured consciousness of a condemned spy, where seconds stretch like hours and hope blooms impossibly bright in the shadow of death. This adaptation of Ambrose Bierce's masterpiece captures every torturous moment of Peyton Farquhar's final experience, pulling listeners into a mind teetering between reality and desperate fantasy. The sound design is exquisite: the creak of the gallows, the lap of water below, the pounding of a desperate man's pulse. By the time the final revelation hits, you'll understand why this tale has haunted American literature for over a century.</p>
+<p>Suspense, which brought psychological terror into living rooms across America for two decades, was never content with simple jump scares or obvious villains. This particular episode exemplifies the show's genius for exploring the fragile boundary between sanity and madness, between what is and what we desperately wish to be true. Broadcasting during wartime, when audiences were already saturated with real darkness, Suspense offered something more subtle and insidious—the horror of the human mind turned inward. The episode's meticulous pacing and the lead performance create an almost unbearable tension that builds to a twist you won't see coming.</p>
+<p>Tune in tonight and experience radio drama at its finest. In just over 25 minutes, you'll live a lifetime of terror, hope, and revelation. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

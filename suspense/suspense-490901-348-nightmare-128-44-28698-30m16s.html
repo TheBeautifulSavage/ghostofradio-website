@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 490901 348 Nightmare (128 44) 28698 30m16s — Suspense | Ghost of Radio</title>
+  <title>Nightmare (128 44) 28698 30m16s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 490901 348 Nightmare (128 44) 28698 30m16s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 490901 348 Nightmare (128 44) 28698 30m16s — Suspense">
   <meta property="og:description" content="Listen to Suspense 490901 348 Nightmare (128 44) 28698 30m16s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 1, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 490901 348 Nightmare (128 44) 28698 30m16s</h1>
+          <h1 class="episode__title">Nightmare (128 44) 28698 30m16s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Nightmare"</p>
-<p>Step into the shadowy corridors of a tortured mind as *Suspense* presents "Nightmare," an episode that blurs the terrifying line between sleep and waking horror. Our protagonist finds himself ensnared in a labyrinth of surreal dread—a nightmarish world where nothing can be trusted, not even his own senses. With each twist of the plot, reality fragments further, and listeners will find themselves gripping their radio sets as the protagonist desperately seeks to distinguish nightmare from truth. The superb sound design—unsettling orchestral stings, whispered voices, and the creeping silence of psychological terror—creates an atmosphere thick with paranoia. By the episode's climax, the distinction between dream and reality has become devastatingly, irrevocably blurred.</p>
-<p>*Suspense* stands as one of radio's most acclaimed thriller anthologies, and this episode exemplifies why the series captivated millions of listeners throughout the 1940s and beyond. Produced during an era when radio dominated American entertainment, the show's formula of monthly theatrical dramas proved endlessly adaptable—whether tackling psychological breakdown, supernatural phenomena, or the darker impulses of ordinary people. "Nightmare" showcases the medium's unparalleled power to invade the listener's imagination, achieving through sound alone what cinema would require elaborate visual effects to accomplish. The performances are intimate, urgent, and utterly convincing.</p>
-<p>For anyone seeking to understand why radio drama remains a masterclass in suspenseful storytelling, "Nightmare" is essential listening. The thirty-minute runtime flies by, leaving you questioning what you've just experienced. Tune in tonight and discover why America couldn't turn their dials away from *Suspense*—where every episode promised to keep you on the edge of your seat long after the final fade-out.</p>
+          <p>Step into the shadowy corridors of a tortured mind as Suspense presents "Nightmare," an episode that blurs the terrifying line between sleep and waking horror. Our protagonist finds himself ensnared in a labyrinth of surreal dread—a nightmarish world where nothing can be trusted, not even his own senses. With each twist of the plot, reality fragments further, and listeners will find themselves gripping their radio sets as the protagonist desperately seeks to distinguish nightmare from truth. The superb sound design—unsettling orchestral stings, whispered voices, and the creeping silence of psychological terror—creates an atmosphere thick with paranoia. By the episode's climax, the distinction between dream and reality has become devastatingly, irrevocably blurred.</p>
+<p>Suspense stands as one of radio's most acclaimed thriller anthologies, and this episode exemplifies why the series captivated millions of listeners throughout the 1940s and beyond. Produced during an era when radio dominated American entertainment, the show's formula of monthly theatrical dramas proved endlessly adaptable—whether tackling psychological breakdown, supernatural phenomena, or the darker impulses of ordinary people. "Nightmare" showcases the medium's unparalleled power to invade the listener's imagination, achieving through sound alone what cinema would require elaborate visual effects to accomplish. The performances are intimate, urgent, and utterly convincing.</p>
+<p>For anyone seeking to understand why radio drama remains a masterclass in suspenseful storytelling, "Nightmare" is essential listening. The thirty-minute runtime flies by, leaving you questioning what you've just experienced. Tune in tonight and discover why America couldn't turn their dials away from Suspense—where every episode promised to keep you on the edge of your seat long after the final fade-out.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

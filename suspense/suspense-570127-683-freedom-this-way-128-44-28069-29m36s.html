@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570127 683 Freedom This Way (128 44) 28069 29m36s — Suspense | Ghost of Radio</title>
+  <title>Freedom This Way (128 44) 28069 29m36s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570127 683 Freedom This Way (128 44) 28069 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570127 683 Freedom This Way (128 44) 28069 29m36s — Suspense">
   <meta property="og:description" content="Listen to Suspense 570127 683 Freedom This Way (128 44) 28069 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 27, 1957</span>
           </div>
-          <h1 class="episode__title">Suspense 570127 683 Freedom This Way (128 44) 28069 29m36s</h1>
+          <h1 class="episode__title">Freedom This Way (128 44) 28069 29m36s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Freedom This Way</p>
-<p>Picture this: it's a cold winter night, and you've settled into your favorite chair with the radio warming up beside you. As the theme music swells—that iconic organ score that sends shivers down your spine—you're transported into "Freedom This Way," an episode that promises to explore the darkest corners of human desperation. What begins as a seemingly ordinary tale of escape quickly spirals into a nightmare of moral ambiguity and psychological terror. Suspense has always excelled at finding horror not in monsters, but in the choices ordinary people make when cornered, and this episode delivers precisely that brand of intimate dread. The clock ticks toward 29 minutes of mounting tension as the characters' secrets unravel and the true cost of their actions becomes horrifyingly clear.</p>
-<p>Broadcast during the golden age of radio in the late 1940s, *Suspense* stood as CBS's flagship thriller program, a show that proved audiences craved intelligent, sophisticated horror wrapped in superb performances and expertly crafted scripts. The series employed some of Hollywood's finest talent—actors, writers, and sound designers who understood that radio thrived on suggestion rather than spectacle. Each episode was a masterclass in building atmosphere through dialogue, music, and those ingenious sound effects that made listeners grip their armrests. "Freedom This Way" exemplifies the show's commitment to stories that lingered in the mind long after the final commercial had aired, exploring themes of escape, morality, and the inescapable weight of conscience.</p>
-<p>If you cherish the golden age of radio drama—when storytelling relied on the power of voices and imagination—*Suspense* remains essential listening. Tune in to "Freedom This Way" and discover why millions of listeners made this broadcast appointment radio at its most compelling.</p>
+          <p>Picture this: it's a cold winter night, and you've settled into your favorite chair with the radio warming up beside you. As the theme music swells—that iconic organ score that sends shivers down your spine—you're transported into "Freedom This Way," an episode that promises to explore the darkest corners of human desperation. What begins as a seemingly ordinary tale of escape quickly spirals into a nightmare of moral ambiguity and psychological terror. Suspense has always excelled at finding horror not in monsters, but in the choices ordinary people make when cornered, and this episode delivers precisely that brand of intimate dread. The clock ticks toward 29 minutes of mounting tension as the characters' secrets unravel and the true cost of their actions becomes horrifyingly clear.</p>
+<p>Broadcast during the golden age of radio in the late 1940s, Suspense stood as CBS's flagship thriller program, a show that proved audiences craved intelligent, sophisticated horror wrapped in superb performances and expertly crafted scripts. The series employed some of Hollywood's finest talent—actors, writers, and sound designers who understood that radio thrived on suggestion rather than spectacle. Each episode was a masterclass in building atmosphere through dialogue, music, and those ingenious sound effects that made listeners grip their armrests. "Freedom This Way" exemplifies the show's commitment to stories that lingered in the mind long after the final commercial had aired, exploring themes of escape, morality, and the inescapable weight of conscience.</p>
+<p>If you cherish the golden age of radio drama—when storytelling relied on the power of voices and imagination—Suspense remains essential listening. Tune in to "Freedom This Way" and discover why millions of listeners made this broadcast appointment radio at its most compelling.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

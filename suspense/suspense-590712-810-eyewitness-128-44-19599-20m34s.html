@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 590712 810 Eyewitness (128 44) 19599 20m34s — Suspense | Ghost of Radio</title>
+  <title>Eyewitness (128 44) 19599 20m34s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 590712 810 Eyewitness (128 44) 19599 20m34s — Suspense (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 590712 810 Eyewitness (128 44) 19599 20m34s — Suspense">
   <meta property="og:description" content="Listen to Suspense 590712 810 Eyewitness (128 44) 19599 20m34s — Suspense (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 12, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 590712 810 Eyewitness (128 44) 19599 20m34s</h1>
+          <h1 class="episode__title">Eyewitness (128 44) 19599 20m34s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Eyewitness (July 12, 1959)</p>
-<p>Picture yourself in a darkened room, the radio's amber dial glowing softly as an ordinary citizen's world unravels in twenty breathless minutes. In "Eyewitness," an unsuspecting witness to a crime becomes entangled in a web of suspicion, danger, and moral ambiguity—forced to confront the terrifying question: what if no one believes you? As the tension mounts through expertly crafted dialogue and haunting sound design, you'll find yourself gripping your seat, wondering whether this person's testimony will save an innocent life or condemn them to something far worse. The episode masterfully exploits the vulnerability of being the sole witness, the isolation of knowing something terrible that no one else will credit, building dread through psychological pressure rather than mere violence.</p>
-<p>By 1959, *Suspense* had already redefined what radio drama could achieve across nearly two decades of broadcast excellence. CBS's legendary anthology series became the gold standard of tension-building, consistently attracting millions of listeners with its literate scripts, stellar performances, and meticulous attention to atmosphere. "Eyewitness" exemplifies why *Suspense* endured so successfully—it grounds its horror not in supernatural elements, but in the everyday nightmare of circumstance, perception, and doubt. The show's ability to transform ordinary situations into extraordinary peril gave listeners something they couldn't find elsewhere: genuine, sustained terror wrought from credible human conflict.</p>
-<p>Tune in for twenty minutes that will stay with you long after the final fade-out. Experience why audiences huddled around their radios night after night, eager for the next impossible predicament. *Suspense* awaits—if you dare to witness what unfolds.</p>
+          <p>Picture yourself in a darkened room, the radio's amber dial glowing softly as an ordinary citizen's world unravels in twenty breathless minutes. In "Eyewitness," an unsuspecting witness to a crime becomes entangled in a web of suspicion, danger, and moral ambiguity—forced to confront the terrifying question: what if no one believes you? As the tension mounts through expertly crafted dialogue and haunting sound design, you'll find yourself gripping your seat, wondering whether this person's testimony will save an innocent life or condemn them to something far worse. The episode masterfully exploits the vulnerability of being the sole witness, the isolation of knowing something terrible that no one else will credit, building dread through psychological pressure rather than mere violence.</p>
+<p>By 1959, Suspense had already redefined what radio drama could achieve across nearly two decades of broadcast excellence. CBS's legendary anthology series became the gold standard of tension-building, consistently attracting millions of listeners with its literate scripts, stellar performances, and meticulous attention to atmosphere. "Eyewitness" exemplifies why Suspense endured so successfully—it grounds its horror not in supernatural elements, but in the everyday nightmare of circumstance, perception, and doubt. The show's ability to transform ordinary situations into extraordinary peril gave listeners something they couldn't find elsewhere: genuine, sustained terror wrought from credible human conflict.</p>
+<p>Tune in for twenty minutes that will stay with you long after the final fade-out. Experience why audiences huddled around their radios night after night, eager for the next impossible predicament. Suspense awaits—if you dare to witness what unfolds.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

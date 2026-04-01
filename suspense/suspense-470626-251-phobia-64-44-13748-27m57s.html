@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470626 251 Phobia (64 44) 13748 27m57s — Suspense | Ghost of Radio</title>
+  <title>Phobia (64 44) 13748 27m57s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470626 251 Phobia (64 44) 13748 27m57s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470626 251 Phobia (64 44) 13748 27m57s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470626 251 Phobia (64 44) 13748 27m57s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 26, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470626 251 Phobia (64 44) 13748 27m57s</h1>
+          <h1 class="episode__title">Phobia (64 44) 13748 27m57s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Phobia"</p>
-<p>As the iconic Suspense theme pierces the darkness of your living room, host Joseph Kearns draws you into a tale of creeping psychological terror—not the jump-scare variety, but something far more insidious. In "Phobia," a person's most rational fear becomes their greatest undoing, a spiraling descent into panic that transforms the ordinary into the unbearable. What begins as an innocent situation metastasizes into something nightmarish through the power of the mind alone. For nearly twenty-eight minutes, you'll sit at the edge of your seat as sound design and stellar voice acting construct an invisible prison around the protagonist. The crackling static, the ominous orchestral swells, the quaver in an actor's voice—these are the weapons that Suspense wields masterfully. By the episode's end, you'll understand that sometimes the greatest monster is the one we carry within ourselves.</p>
+          <p>As the iconic Suspense theme pierces the darkness of your living room, host Joseph Kearns draws you into a tale of creeping psychological terror—not the jump-scare variety, but something far more insidious. In "Phobia," a person's most rational fear becomes their greatest undoing, a spiraling descent into panic that transforms the ordinary into the unbearable. What begins as an innocent situation metastasizes into something nightmarish through the power of the mind alone. For nearly twenty-eight minutes, you'll sit at the edge of your seat as sound design and stellar voice acting construct an invisible prison around the protagonist. The crackling static, the ominous orchestral swells, the quaver in an actor's voice—these are the weapons that Suspense wields masterfully. By the episode's end, you'll understand that sometimes the greatest monster is the one we carry within ourselves.</p>
 <p>Suspense stands as one of radio's finest achievements, a CBS institution that ran for two decades and proved that terror needs no visual component to burrow deep into the listener's psyche. Premiering in 1942, the show became a masterclass in psychological horror, drawing from literature's greatest thriller writers and crafting original nightmares that captivated millions huddled around their radios. This particular episode exemplifies the show's golden age, when budgets allowed for polished production values and networks gave writers freedom to explore darker corners of the human condition.</p>
 <p>Turn off the lights, settle into your chair, and prepare yourself for "Phobia." This is radio drama at its most potent—a reminder that imagination, when properly guided, remains the most powerful special effect ever created.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

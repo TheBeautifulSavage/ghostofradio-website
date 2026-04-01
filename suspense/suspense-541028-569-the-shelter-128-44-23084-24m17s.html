@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 541028 569 The Shelter (128 44) 23084 24m17s — Suspense | Ghost of Radio</title>
+  <title>The Shelter (128 44) 23084 24m17s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 541028 569 The Shelter (128 44) 23084 24m17s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 541028 569 The Shelter (128 44) 23084 24m17s — Suspense">
   <meta property="og:description" content="Listen to Suspense 541028 569 The Shelter (128 44) 23084 24m17s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 28, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 541028 569 The Shelter (128 44) 23084 24m17s</h1>
+          <h1 class="episode__title">The Shelter (128 44) 23084 24m17s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Shelter</p>
-<p>As darkness falls over an ordinary American neighborhood, a family's evening is shattered by the wail of air raid sirens. In *The Shelter*, listeners will huddle with the Morrison household as they scramble into their basement sanctuary, believing a German bombardment is imminent. But as the night stretches on and the all-clear never sounds, tensions simmer and suspicions fester in that cramped concrete tomb. What began as a precaution becomes a pressure cooker of fear—fear of the enemy outside, yes, but more terrifyingly, fear of each other. Is the danger truly lurking above, or has something far more sinister taken root among them? The program builds with exquisite precision, layering psychological dread atop the physical threat, until listeners can practically taste the stale air and feel the weight of the walls closing in.</p>
-<p>Suspense pioneered the art of intimate terror during its remarkable twenty-year run on CBS, and episodes like *The Shelter* showcase why millions of Americans made it appointment listening. Crafted during the genuine anxiety of the early 1940s, when home front paranoia was not mere entertainment but lived reality, these broadcasts tapped into authentic contemporary fears while transcending them through masterful storytelling. The show's genius lay in its restraint—sound effects and voice acting did the heavy lifting that visual media would spell out, forcing listeners' imaginations to become collaborators in their own terror.</p>
-<p>*The Shelter* represents Suspense at its most unsettling: a domestic nightmare wearing the mask of emergency preparedness. Whether you're a longtime devotee of classic radio or discovering this format for the first time, this twenty-four-minute descent into basement claustrophobia and creeping paranoia demands your full attention. Dim the lights, settle in, and prepare yourself—because in the golden age of radio, the most frightening horrors were always the ones we couldn't quite see.</p>
+          <p>As darkness falls over an ordinary American neighborhood, a family's evening is shattered by the wail of air raid sirens. In The Shelter, listeners will huddle with the Morrison household as they scramble into their basement sanctuary, believing a German bombardment is imminent. But as the night stretches on and the all-clear never sounds, tensions simmer and suspicions fester in that cramped concrete tomb. What began as a precaution becomes a pressure cooker of fear—fear of the enemy outside, yes, but more terrifyingly, fear of each other. Is the danger truly lurking above, or has something far more sinister taken root among them? The program builds with exquisite precision, layering psychological dread atop the physical threat, until listeners can practically taste the stale air and feel the weight of the walls closing in.</p>
+<p>Suspense pioneered the art of intimate terror during its remarkable twenty-year run on CBS, and episodes like The Shelter showcase why millions of Americans made it appointment listening. Crafted during the genuine anxiety of the early 1940s, when home front paranoia was not mere entertainment but lived reality, these broadcasts tapped into authentic contemporary fears while transcending them through masterful storytelling. The show's genius lay in its restraint—sound effects and voice acting did the heavy lifting that visual media would spell out, forcing listeners' imaginations to become collaborators in their own terror.</p>
+<p>The Shelter represents Suspense at its most unsettling: a domestic nightmare wearing the mask of emergency preparedness. Whether you're a longtime devotee of classic radio or discovering this format for the first time, this twenty-four-minute descent into basement claustrophobia and creeping paranoia demands your full attention. Dim the lights, settle in, and prepare yourself—because in the golden age of radio, the most frightening horrors were always the ones we couldn't quite see.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

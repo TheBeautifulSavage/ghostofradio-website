@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 420902 011 The Hitch Hiker (128 44) 28018 29m32s — Suspense | Ghost of Radio</title>
+  <title>The Hitch Hiker (128 44) 28018 29m32s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 420902 011 The Hitch Hiker (128 44) 28018 29m32s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 420902 011 The Hitch Hiker (128 44) 28018 29m32s — Suspense">
   <meta property="og:description" content="Listen to Suspense 420902 011 The Hitch Hiker (128 44) 28018 29m32s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 2, 1942</span>
           </div>
-          <h1 class="episode__title">Suspense 420902 011 The Hitch Hiker (128 44) 28018 29m32s</h1>
+          <h1 class="episode__title">The Hitch Hiker (128 44) 28018 29m32s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Hitch Hiker</p>
-<p>Picture yourself behind the steering wheel on a dark, empty highway, the only sound the rhythmic hum of your engine cutting through the night. Your headlights pierce the darkness ahead, illuminating nothing but endless road. Then you see him—a figure by the roadside, thumb extended, waiting. In this chilling installment of *Suspense*, a seemingly ordinary act of kindness becomes a descent into psychological terror. A motorist picks up a mysterious hitchhiker who seems to know far too much, who appears and disappears without explanation, and whose presence grows increasingly sinister with each passing mile. What begins as a simple good deed transforms into a nightmare where the listener can never be quite certain what is real and what is imagination. The sound design—the lonely wind, the engine's growl, the weighted silence between exchanges—creates an atmosphere of mounting dread that will keep you gripping your armrest long after the final fade-out.</p>
-<p>*Suspense* earned its reputation as "radio's outstanding theater of thrills" through precisely these kinds of psychological masterpieces. Running from 1942 to 1962 on CBS, the show pioneered techniques that would influence horror and thriller narratives for decades. Each episode eschewed cheap jump-scares in favor of building tension through masterful writing, exceptional sound engineering, and performances that could convey terror through voice alone. This particular episode exemplifies why audiences made *Suspense* appointment listening—it transforms an everyday scenario into something profoundly unsettling.</p>
-<p>Tune in and discover why listeners huddled around their radios couldn't sleep after hearing this tale. *Suspense* reminds us that sometimes the most terrifying journeys are the ones we take in our minds, and that the greatest thrills come not from what we see, but from what we imagine lurking in the shadows.</p>
+          <p>Picture yourself behind the steering wheel on a dark, empty highway, the only sound the rhythmic hum of your engine cutting through the night. Your headlights pierce the darkness ahead, illuminating nothing but endless road. Then you see him—a figure by the roadside, thumb extended, waiting. In this chilling installment of Suspense, a seemingly ordinary act of kindness becomes a descent into psychological terror. A motorist picks up a mysterious hitchhiker who seems to know far too much, who appears and disappears without explanation, and whose presence grows increasingly sinister with each passing mile. What begins as a simple good deed transforms into a nightmare where the listener can never be quite certain what is real and what is imagination. The sound design—the lonely wind, the engine's growl, the weighted silence between exchanges—creates an atmosphere of mounting dread that will keep you gripping your armrest long after the final fade-out.</p>
+<p>Suspense earned its reputation as "radio's outstanding theater of thrills" through precisely these kinds of psychological masterpieces. Running from 1942 to 1962 on CBS, the show pioneered techniques that would influence horror and thriller narratives for decades. Each episode eschewed cheap jump-scares in favor of building tension through masterful writing, exceptional sound engineering, and performances that could convey terror through voice alone. This particular episode exemplifies why audiences made Suspense appointment listening—it transforms an everyday scenario into something profoundly unsettling.</p>
+<p>Tune in and discover why listeners huddled around their radios couldn't sleep after hearing this tale. Suspense reminds us that sometimes the most terrifying journeys are the ones we take in our minds, and that the greatest thrills come not from what we see, but from what we imagine lurking in the shadows.</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 580817 764 The Bridge (128 44) 23408 24m37s — Suspense | Ghost of Radio</title>
+  <title>The Bridge (128 44) 23408 24m37s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 580817 764 The Bridge (128 44) 23408 24m37s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 580817 764 The Bridge (128 44) 23408 24m37s — Suspense">
   <meta property="og:description" content="Listen to Suspense 580817 764 The Bridge (128 44) 23408 24m37s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 17, 1958</span>
           </div>
-          <h1 class="episode__title">Suspense 580817 764 The Bridge (128 44) 23408 24m37s</h1>
+          <h1 class="episode__title">The Bridge (128 44) 23408 24m37s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Bridge</p>
-<p>On a fog-shrouded evening, a weary traveler approaches an ancient stone bridge spanning a black, churning river—only to discover that crossing it may demand a price far steeper than he imagined. In "The Bridge," Suspense delivers a masterclass in psychological dread, where the supernatural and the all-too-human collide in the gathering darkness. As our protagonist finds himself trapped between the world he knows and something altogether stranger, the sound design becomes a character itself: the creak of ancient masonry, the roar of unseen rapids below, whispered warnings that seem to emanate from the very air. This is Suspense at its most atmospheric, where the true horror lies not in what jumps from the shadows, but in the mounting certainty that some crossings, once begun, cannot be abandoned.</p>
+          <p>On a fog-shrouded evening, a weary traveler approaches an ancient stone bridge spanning a black, churning river—only to discover that crossing it may demand a price far steeper than he imagined. In "The Bridge," Suspense delivers a masterclass in psychological dread, where the supernatural and the all-too-human collide in the gathering darkness. As our protagonist finds himself trapped between the world he knows and something altogether stranger, the sound design becomes a character itself: the creak of ancient masonry, the roar of unseen rapids below, whispered warnings that seem to emanate from the very air. This is Suspense at its most atmospheric, where the true horror lies not in what jumps from the shadows, but in the mounting certainty that some crossings, once begun, cannot be abandoned.</p>
 <p>From 1942 to 1962, Suspense became the gold standard of American radio thriller programming, drawing millions of listeners into its web of expertly crafted narratives. Each episode was a tightly wound spring of tension, featuring some of Hollywood's finest talent—from Joseph Cotten to Agnes Moorehead—performing live before the microphone. The show's genius lay in its understanding that radio's true canvas was the listener's imagination; by controlling sound and silence with surgical precision, the writers and directors could plant fears more vivid than any visual medium could achieve. "The Bridge" exemplifies this philosophy, using restraint and suggestion to create an indelible impression.</p>
 <p>For devotees of vintage thriller radio and newcomers alike, this episode stands as a perfect entry point into Suspense's catalog. Tune in, dim the lights, and prepare to cross a threshold from which there may be no return. Some journeys, after all, are best taken in the dark.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

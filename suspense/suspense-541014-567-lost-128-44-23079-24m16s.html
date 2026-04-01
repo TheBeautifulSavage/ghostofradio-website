@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 541014 567 Lost (128 44) 23079 24m16s — Suspense | Ghost of Radio</title>
+  <title>Lost (128 44) 23079 24m16s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 541014 567 Lost (128 44) 23079 24m16s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 541014 567 Lost (128 44) 23079 24m16s — Suspense">
   <meta property="og:description" content="Listen to Suspense 541014 567 Lost (128 44) 23079 24m16s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 14, 1954</span>
           </div>
-          <h1 class="episode__title">Suspense 541014 567 Lost (128 44) 23079 24m16s</h1>
+          <h1 class="episode__title">Lost (128 44) 23079 24m16s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Lost</p>
-<p>Picture yourself huddled near your radio set in the gathering darkness, as a soul in desperate circumstances finds themselves utterly, terrifyingly alone. In "Lost," the familiar world dissolves into shadow and uncertainty, leaving our protagonist grappling with an adversary far more formidable than any criminal or monster—the wilderness itself, indifferent and vast. The tension builds not from supernatural thrills but from the raw, primal struggle for survival and sanity when all connections to civilization have been severed. With only the crackling static between stations and the ambient sounds of an unforgiving landscape, listeners are drawn into a psychological descent where each moment stretches thin as wire, and hope becomes as precious as fresh water.</p>
-<p>For nearly two decades, *Suspense* reigned as CBS's flagship thriller program, setting the gold standard for dramatic radio that would influence generations of entertainment. The show's brilliance lay in its restraint—the most terrifying images were those conjured in listeners' minds, crafted through masterful voice acting, innovative sound design, and scripts that understood the power of the unseen. During the 1940s, when families gathered around their sets after a day's work, *Suspense* proved that storytelling at its finest needed no special effects, only the ability to tap into universal human fears: isolation, helplessness, the fragility of our place in nature.</p>
+          <p>Picture yourself huddled near your radio set in the gathering darkness, as a soul in desperate circumstances finds themselves utterly, terrifyingly alone. In "Lost," the familiar world dissolves into shadow and uncertainty, leaving our protagonist grappling with an adversary far more formidable than any criminal or monster—the wilderness itself, indifferent and vast. The tension builds not from supernatural thrills but from the raw, primal struggle for survival and sanity when all connections to civilization have been severed. With only the crackling static between stations and the ambient sounds of an unforgiving landscape, listeners are drawn into a psychological descent where each moment stretches thin as wire, and hope becomes as precious as fresh water.</p>
+<p>For nearly two decades, Suspense reigned as CBS's flagship thriller program, setting the gold standard for dramatic radio that would influence generations of entertainment. The show's brilliance lay in its restraint—the most terrifying images were those conjured in listeners' minds, crafted through masterful voice acting, innovative sound design, and scripts that understood the power of the unseen. During the 1940s, when families gathered around their sets after a day's work, Suspense proved that storytelling at its finest needed no special effects, only the ability to tap into universal human fears: isolation, helplessness, the fragility of our place in nature.</p>
 <p>If you've never experienced the masterful craft of Golden Age radio drama, "Lost" offers the perfect entry point—a visceral, human-scaled thriller that proves why millions tuned in faithfully each week. Adjust your dial, settle in, and prepare yourself. You're about to step into the dark.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

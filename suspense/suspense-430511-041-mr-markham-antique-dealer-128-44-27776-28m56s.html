@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 430511 041 Mr Markham, Antique Dealer (128 44) 27776 28m56s — Suspense | Ghost of Radio</title>
+  <title>Mr Markham, Antique Dealer (128 44) 27776 28m56s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 430511 041 Mr Markham, Antique Dealer (128 44) 27776 28m56s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 430511 041 Mr Markham, Antique Dealer (128 44) 27776 28m56s — Suspense">
   <meta property="og:description" content="Listen to Suspense 430511 041 Mr Markham, Antique Dealer (128 44) 27776 28m56s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 11, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 430511 041 Mr Markham, Antique Dealer (128 44) 27776 28m56s</h1>
+          <h1 class="episode__title">Mr Markham, Antique Dealer (128 44) 27776 28m56s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Mr. Markham, Antique Dealer</p>
-<p>Step into the shadowed interior of a cluttered antique shop where nothing is quite what it seems, and every treasured object harbors a sinister secret. In this masterwork of psychological suspense, a seemingly innocent transaction becomes a descent into nightmare as Mr. Markham, the proprietor, reveals himself to be far more than a humble dealer in forgotten relics. What begins as polite conversation among dusty shelves and forgotten artifacts transforms into a taut game of cat-and-mouse, where the true nature of the shop's inventory—and its proprietor—threatens to ensnare the unsuspecting visitor in something far darker than mere commercial enterprise. The intimate setting amplifies every creak of the floorboards, every pregnant pause, every carefully measured word, as the episode builds to a revelation that redefines everything that came before.</p>
-<p>*Suspense*, which gripped American audiences from 1942 through 1962, became the gold standard of broadcast terror through its masterful exploitation of radio's greatest strength: the listener's imagination. While competitors like *The Shadow* relied on outlandish adventure, *Suspense* anchored its horrors in the quotidian—a lonely hotel room, an antique shop, a chance encounter—lending plausibility to the extraordinary terrors that unfolded. This episode exemplifies the show's genius for transforming ordinary situations into breeding grounds for dread, capitalizing on the intimacy of the medium to whisper dangers directly into millions of living rooms across America.</p>
-<p>If you've never experienced the singular thrill of classic radio suspense, or if you're a devoted fan seeking to revisit this particular gem, "Mr. Markham, Antique Dealer" awaits in the darkness. Tune in, dim the lights, and discover why an entire nation once surrendered to *Suspense* every week—one electrifying half-hour at a time.</p>
+          <p>Step into the shadowed interior of a cluttered antique shop where nothing is quite what it seems, and every treasured object harbors a sinister secret. In this masterwork of psychological suspense, a seemingly innocent transaction becomes a descent into nightmare as Mr. Markham, the proprietor, reveals himself to be far more than a humble dealer in forgotten relics. What begins as polite conversation among dusty shelves and forgotten artifacts transforms into a taut game of cat-and-mouse, where the true nature of the shop's inventory—and its proprietor—threatens to ensnare the unsuspecting visitor in something far darker than mere commercial enterprise. The intimate setting amplifies every creak of the floorboards, every pregnant pause, every carefully measured word, as the episode builds to a revelation that redefines everything that came before.</p>
+<p>Suspense, which gripped American audiences from 1942 through 1962, became the gold standard of broadcast terror through its masterful exploitation of radio's greatest strength: the listener's imagination. While competitors like The Shadow relied on outlandish adventure, Suspense anchored its horrors in the quotidian—a lonely hotel room, an antique shop, a chance encounter—lending plausibility to the extraordinary terrors that unfolded. This episode exemplifies the show's genius for transforming ordinary situations into breeding grounds for dread, capitalizing on the intimacy of the medium to whisper dangers directly into millions of living rooms across America.</p>
+<p>If you've never experienced the singular thrill of classic radio suspense, or if you're a devoted fan seeking to revisit this particular gem, "Mr. Markham, Antique Dealer" awaits in the darkness. Tune in, dim the lights, and discover why an entire nation once surrendered to Suspense every week—one electrifying half-hour at a time.</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

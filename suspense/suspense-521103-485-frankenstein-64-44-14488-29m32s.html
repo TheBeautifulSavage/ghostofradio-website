@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 521103 485 Frankenstein (64 44) 14488 29m32s — Suspense | Ghost of Radio</title>
+  <title>Frankenstein (64 44) 14488 29m32s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 521103 485 Frankenstein (64 44) 14488 29m32s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 521103 485 Frankenstein (64 44) 14488 29m32s — Suspense">
   <meta property="og:description" content="Listen to Suspense 521103 485 Frankenstein (64 44) 14488 29m32s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 3, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 521103 485 Frankenstein (64 44) 14488 29m32s</h1>
+          <h1 class="episode__title">Frankenstein (64 44) 14488 29m32s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Frankenstein</p>
-<p>When the laboratory door creaks open on this haunting adaptation, listeners are transported into the shadow-drenched world of Mary Shelley's immortal creation. The sound design alone—crackling electrical equipment, the shuffle of dead footsteps, a creature's tortured breathing—builds an atmosphere of pure dread. This episode captures the essential terror of the original novel: not merely the horror of a monster, but the profound tragedy of a being that should never have existed, caught between worlds, neither fully alive nor mercifully dead. The performances are electric with tension, and the sparse but masterful use of silence makes every sound feel like a violation of some sacred boundary.</p>
+          <p>When the laboratory door creaks open on this haunting adaptation, listeners are transported into the shadow-drenched world of Mary Shelley's immortal creation. The sound design alone—crackling electrical equipment, the shuffle of dead footsteps, a creature's tortured breathing—builds an atmosphere of pure dread. This episode captures the essential terror of the original novel: not merely the horror of a monster, but the profound tragedy of a being that should never have existed, caught between worlds, neither fully alive nor mercifully dead. The performances are electric with tension, and the sparse but masterful use of silence makes every sound feel like a violation of some sacred boundary.</p>
 <p>Suspense was CBS radio's premier thriller program, running for two decades with a simple but brilliant mandate: to unsettle and terrify. By the 1940s, when this episode aired, the show had perfected the art of psychological horror, often eschewing cheap scares for genuine existential dread. This particular adaptation represents the show's willingness to tackle literary classics while transforming them into something distinctly suited to the radio medium—where the listener's imagination, carefully guided by sound and voice, becomes the ultimate special effect. Each episode was a masterclass in pacing and suspenseful storytelling that influenced generations of horror that followed.</p>
 <p>This is essential listening for anyone curious about how terror sounded in radio's golden age, when a story didn't need monsters on screen to make hearts race—only the power of suggestion and the skill of remarkable craftspeople. Let this episode transport you back to a time when switching on the radio meant surrendering to the unknown.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

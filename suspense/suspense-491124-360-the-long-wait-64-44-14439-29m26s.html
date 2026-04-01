@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 491124 360 The Long Wait (64 44) 14439 29m26s — Suspense | Ghost of Radio</title>
+  <title>The Long Wait (64 44) 14439 29m26s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 491124 360 The Long Wait (64 44) 14439 29m26s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 491124 360 The Long Wait (64 44) 14439 29m26s — Suspense">
   <meta property="og:description" content="Listen to Suspense 491124 360 The Long Wait (64 44) 14439 29m26s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 24, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 491124 360 The Long Wait (64 44) 14439 29m26s</h1>
+          <h1 class="episode__title">The Long Wait (64 44) 14439 29m26s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Long Wait</p>
-<p>Picture yourself huddled near the radio on a November evening in 1944, the world at war and nerves frayed thin. "The Long Wait" unfolds like a tightening noose—a masterclass in psychological tension that proves Suspense's genius for extracting maximum dread from the intimate space of your living room. A woman waits. And waits. For something she cannot name, something that grows more sinister with each passing moment. The sound design creeps under your skin: the tick of a clock, the creak of floorboards, a voice that may belong to a friend or a phantom. Your rational mind insists nothing is happening, yet every instinct screams that everything is wrong. By the episode's shocking conclusion, you'll understand that the greatest terrors aren't always the ones that announce themselves—they're the ones that arrive in silence, wearing an everyday face.</p>
+          <p>Picture yourself huddled near the radio on a November evening in 1944, the world at war and nerves frayed thin. "The Long Wait" unfolds like a tightening noose—a masterclass in psychological tension that proves Suspense's genius for extracting maximum dread from the intimate space of your living room. A woman waits. And waits. For something she cannot name, something that grows more sinister with each passing moment. The sound design creeps under your skin: the tick of a clock, the creak of floorboards, a voice that may belong to a friend or a phantom. Your rational mind insists nothing is happening, yet every instinct screams that everything is wrong. By the episode's shocking conclusion, you'll understand that the greatest terrors aren't always the ones that announce themselves—they're the ones that arrive in silence, wearing an everyday face.</p>
 <p>Suspense reigned as radio's premier thriller anthology precisely because it grasped what television would take decades to learn: that the imagination, once properly wound, becomes a more potent instrument of fear than any visual effect. Broadcast from Hollywood's prestigious CBS studios during the golden age of radio drama, the series assembled Hollywood's finest talent—writers, directors, and actors—who understood that a well-placed pause held more power than a scream. "The Long Wait" exemplifies this philosophy, relying entirely on performance, dialogue, and Foley artistry to build an atmosphere of creeping dread that lingers long after the final fade-out.</p>
 <p>Whether you're a devoted fan of classic radio or discovering this golden age for the first time, "The Long Wait" stands as essential listening. Let yourself sink into the darkness and uncertainty these artists so carefully constructed—you'll emerge with a newfound appreciation for radio's unmatched ability to colonize the mind itself.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

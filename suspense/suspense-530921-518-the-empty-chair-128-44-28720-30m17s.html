@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 530921 518 The Empty Chair (128 44) 28720 30m17s — Suspense | Ghost of Radio</title>
+  <title>The Empty Chair (128 44) 28720 30m17s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 530921 518 The Empty Chair (128 44) 28720 30m17s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 530921 518 The Empty Chair (128 44) 28720 30m17s — Suspense">
   <meta property="og:description" content="Listen to Suspense 530921 518 The Empty Chair (128 44) 28720 30m17s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 21, 1953</span>
           </div>
-          <h1 class="episode__title">Suspense 530921 518 The Empty Chair (128 44) 28720 30m17s</h1>
+          <h1 class="episode__title">The Empty Chair (128 44) 28720 30m17s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Empty Chair</p>
-<p>Picture yourself in a dimly lit study on a fog-shrouded evening, where shadows seem to possess their own sinister intelligence. In "The Empty Chair," *Suspense* presents a masterwork of psychological terror that begins innocuously enough—a man, a room, a single chair—before spiraling into an abyss of paranoia and dread. As the minutes tick away, you'll find yourself questioning what's real and what exists only in the darkest corners of the human mind. The sound design is exquisite: creaking floorboards, the whisper of fabric, the terrible silence that follows a scream. By the episode's climax, listeners are left suspended in genuine uncertainty, never quite sure whether they've witnessed a ghost story, a descent into madness, or something far more unsettling. This is *Suspense* at its finest—not relying on cheap shocks, but on the artful manipulation of sound and suggestion to reach directly into your chest and clutch at your heart.</p>
-<p>Throughout its remarkable twenty-year run, *Suspense* distinguished itself as radio's premier anthology of thrills, where each week brought a new nightmare crafted by some of broadcasting's most talented writers and directed with surgical precision. By the 1940s, when "The Empty Chair" aired, the show had perfected the delicate balance between the supernatural and the mundane, between external threat and internal torment. *Suspense* proved that the most terrifying horrors need never be seen—they need only be heard, and more importantly, imagined.</p>
+          <p>Picture yourself in a dimly lit study on a fog-shrouded evening, where shadows seem to possess their own sinister intelligence. In "The Empty Chair," Suspense presents a masterwork of psychological terror that begins innocuously enough—a man, a room, a single chair—before spiraling into an abyss of paranoia and dread. As the minutes tick away, you'll find yourself questioning what's real and what exists only in the darkest corners of the human mind. The sound design is exquisite: creaking floorboards, the whisper of fabric, the terrible silence that follows a scream. By the episode's climax, listeners are left suspended in genuine uncertainty, never quite sure whether they've witnessed a ghost story, a descent into madness, or something far more unsettling. This is Suspense at its finest—not relying on cheap shocks, but on the artful manipulation of sound and suggestion to reach directly into your chest and clutch at your heart.</p>
+<p>Throughout its remarkable twenty-year run, Suspense distinguished itself as radio's premier anthology of thrills, where each week brought a new nightmare crafted by some of broadcasting's most talented writers and directed with surgical precision. By the 1940s, when "The Empty Chair" aired, the show had perfected the delicate balance between the supernatural and the mundane, between external threat and internal torment. Suspense proved that the most terrifying horrors need never be seen—they need only be heard, and more importantly, imagined.</p>
 <p>Don't miss this haunting episode. Tune in and discover why audiences huddled around their radios for two decades, why they checked their locks twice and left lights burning long into the night. "The Empty Chair" awaits—but will you have the courage to sit in it?</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

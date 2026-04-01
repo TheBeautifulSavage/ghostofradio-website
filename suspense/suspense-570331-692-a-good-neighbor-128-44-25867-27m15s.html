@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570331 692 A Good Neighbor (128 44) 25867 27m15s — Suspense | Ghost of Radio</title>
+  <title>A Good Neighbor (128 44) 25867 27m15s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570331 692 A Good Neighbor (128 44) 25867 27m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570331 692 A Good Neighbor (128 44) 25867 27m15s — Suspense">
   <meta property="og:description" content="Listen to Suspense 570331 692 A Good Neighbor (128 44) 25867 27m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 31, 1957</span>
           </div>
-          <h1 class="episode__title">Suspense 570331 692 A Good Neighbor (128 44) 25867 27m15s</h1>
+          <h1 class="episode__title">A Good Neighbor (128 44) 25867 27m15s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># A Good Neighbor</p>
-<p>Picture this: it's a quiet evening in an ordinary American suburb, the kind of place where neighbors know each other by name and front porches serve as stages for small talk and pleasantries. But in "A Good Neighbor," that veneer of civility masks something far more sinister. When a seemingly helpful neighbor offers assistance to a family in distress, listeners will find themselves drawn into a web of mounting dread, where every knock on the door and every polite conversation carries the weight of unknown menace. The episode's sound design—creaking hinges, whispered dialogue, the ambient hum of domestic life—creates an intimate claustrophobia that makes the listener feel like an unwitting guest in a home where danger lurks behind a friendly smile.</p>
-<p>*Suspense* stands as one of radio's most enduring masterpieces, a CBS institution that redefined the thriller genre during its two-decade run. Premiering in 1942, the show became synonymous with psychological terror and unexpected twists, featuring sterling performances from Hollywood's finest talent. What made *Suspense* revolutionary was its understanding that true horror doesn't require monsters or mayhem—it emerges from the everyday, from the people we trust, from the vulnerability of ordinary life transformed into nightmare. Each episode exploited listeners' deepest anxieties about safety, betrayal, and the shadowy impulses hidden beneath polite society.</p>
-<p>"A Good Neighbor" exemplifies everything that made *Suspense* essential listening for millions of Americans huddled around their radios. With nothing but voices, sound effects, and music to guide the imagination, this episode proves that the most terrifying stories are those we complete in our own minds. Tune in and discover why neighbors were never quite so suspicious again.</p>
+          <p>Picture this: it's a quiet evening in an ordinary American suburb, the kind of place where neighbors know each other by name and front porches serve as stages for small talk and pleasantries. But in "A Good Neighbor," that veneer of civility masks something far more sinister. When a seemingly helpful neighbor offers assistance to a family in distress, listeners will find themselves drawn into a web of mounting dread, where every knock on the door and every polite conversation carries the weight of unknown menace. The episode's sound design—creaking hinges, whispered dialogue, the ambient hum of domestic life—creates an intimate claustrophobia that makes the listener feel like an unwitting guest in a home where danger lurks behind a friendly smile.</p>
+<p>Suspense stands as one of radio's most enduring masterpieces, a CBS institution that redefined the thriller genre during its two-decade run. Premiering in 1942, the show became synonymous with psychological terror and unexpected twists, featuring sterling performances from Hollywood's finest talent. What made Suspense revolutionary was its understanding that true horror doesn't require monsters or mayhem—it emerges from the everyday, from the people we trust, from the vulnerability of ordinary life transformed into nightmare. Each episode exploited listeners' deepest anxieties about safety, betrayal, and the shadowy impulses hidden beneath polite society.</p>
+<p>"A Good Neighbor" exemplifies everything that made Suspense essential listening for millions of Americans huddled around their radios. With nothing but voices, sound effects, and music to guide the imagination, this episode proves that the most terrifying stories are those we complete in our own minds. Tune in and discover why neighbors were never quite so suspicious again.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

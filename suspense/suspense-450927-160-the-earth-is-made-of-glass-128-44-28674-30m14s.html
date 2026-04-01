@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450927 160 The Earth Is Made Of Glass (128 44) 28674 30m14s — Suspense | Ghost of Radio</title>
+  <title>The Earth Is Made Of Glass (128 44) 28674 30m14s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450927 160 The Earth Is Made Of Glass (128 44) 28674 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450927 160 The Earth Is Made Of Glass (128 44) 28674 30m14s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450927 160 The Earth Is Made Of Glass (128 44) 28674 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 27, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450927 160 The Earth Is Made Of Glass (128 44) 28674 30m14s</h1>
+          <h1 class="episode__title">The Earth Is Made Of Glass (128 44) 28674 30m14s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Earth Is Made Of Glass</p>
-<p>Picture yourself in the autumn of 1947, settling into your favorite chair as the CBS orchestra swells and that unforgettable announcer intones: "Su-u-u-spense!" Tonight's tale will strip away your sense of reality itself. In *The Earth Is Made Of Glass*, a mind-bending descent into obsession and madness unfolds as our protagonist becomes consumed by a terrible, beautiful conviction: that the world around him is nothing but fragile glass, transparent and breakable at the slightest touch. What begins as a private delusion metastasizes into consuming terror, as the line between sanity and perception crumbles beneath his feet. Each footstep becomes treacherous; every interaction, fraught with dread. The sound design and voice acting craft an intoxicating atmosphere of claustrophobic dread that seeps through your radio speaker and settles cold in your chest.</p>
-<p>*Suspense* stands as one of radio's most audacious achievements—twenty years of anthology terror that refused to shy away from psychological horror at its most unsettling. During this golden age, when television had barely begun its conquest, radio remained supreme: intimate, immediate, and utterly dependent on the listener's imagination to complete the picture. This particular episode exemplifies the show's genius for exploring the interior spaces of human consciousness, where the real monsters aren't lurking in shadows, but behind eyes and inside minds. The series famously resisted cheap jump-scares, instead favoring the slow, exquisite build of genuine dread.</p>
-<p>If you've never experienced the hypnotic pull of a well-crafted radio thriller, *The Earth Is Made Of Glass* is the perfect entry point into Suspense's vaunted catalog. Dim the lights, adjust the dial, and prepare yourself. Reality is more fragile than you think, and in thirty minutes, you may never look at the world quite the same way again.</p>
+          <p>Picture yourself in the autumn of 1947, settling into your favorite chair as the CBS orchestra swells and that unforgettable announcer intones: "Su-u-u-spense!" Tonight's tale will strip away your sense of reality itself. In The Earth Is Made Of Glass, a mind-bending descent into obsession and madness unfolds as our protagonist becomes consumed by a terrible, beautiful conviction: that the world around him is nothing but fragile glass, transparent and breakable at the slightest touch. What begins as a private delusion metastasizes into consuming terror, as the line between sanity and perception crumbles beneath his feet. Each footstep becomes treacherous; every interaction, fraught with dread. The sound design and voice acting craft an intoxicating atmosphere of claustrophobic dread that seeps through your radio speaker and settles cold in your chest.</p>
+<p>Suspense stands as one of radio's most audacious achievements—twenty years of anthology terror that refused to shy away from psychological horror at its most unsettling. During this golden age, when television had barely begun its conquest, radio remained supreme: intimate, immediate, and utterly dependent on the listener's imagination to complete the picture. This particular episode exemplifies the show's genius for exploring the interior spaces of human consciousness, where the real monsters aren't lurking in shadows, but behind eyes and inside minds. The series famously resisted cheap jump-scares, instead favoring the slow, exquisite build of genuine dread.</p>
+<p>If you've never experienced the hypnotic pull of a well-crafted radio thriller, The Earth Is Made Of Glass is the perfect entry point into Suspense's vaunted catalog. Dim the lights, adjust the dial, and prepare yourself. Reality is more fragile than you think, and in thirty minutes, you may never look at the world quite the same way again.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

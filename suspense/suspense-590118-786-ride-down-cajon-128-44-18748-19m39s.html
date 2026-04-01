@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 590118 786 Ride Down Cajon (128 44) 18748 19m39s — Suspense | Ghost of Radio</title>
+  <title>Ride Down Cajon (128 44) 18748 19m39s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 590118 786 Ride Down Cajon (128 44) 18748 19m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 590118 786 Ride Down Cajon (128 44) 18748 19m39s — Suspense">
   <meta property="og:description" content="Listen to Suspense 590118 786 Ride Down Cajon (128 44) 18748 19m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 18, 1959</span>
           </div>
-          <h1 class="episode__title">Suspense 590118 786 Ride Down Cajon (128 44) 18748 19m39s</h1>
+          <h1 class="episode__title">Ride Down Cajon (128 44) 18748 19m39s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Ride Down Cajon"</p>
-<p>Picture yourself huddled near the radio on a winter evening, the dial tuned to CBS as darkness falls outside. Tonight brings "Ride Down Cajon," a tale of desperate men and treacherous mountain passages where every shadow could conceal danger. A perilous journey unfolds across desolate terrain—where the line between escape and entrapment becomes impossibly thin. You'll hear the crunch of boots on rocky ground, the howl of wind through canyon walls, and the mounting tension in every carefully measured word of dialogue. This is Suspense at its finest: a story where the landscape itself becomes a character, where trust shatters like brittle stone, and where the next turn in the road might lead to salvation or doom. The masterful sound design pulls you directly into the Cajon's unforgiving wilderness, making your living room vanish entirely.</p>
+          <p>Picture yourself huddled near the radio on a winter evening, the dial tuned to CBS as darkness falls outside. Tonight brings "Ride Down Cajon," a tale of desperate men and treacherous mountain passages where every shadow could conceal danger. A perilous journey unfolds across desolate terrain—where the line between escape and entrapment becomes impossibly thin. You'll hear the crunch of boots on rocky ground, the howl of wind through canyon walls, and the mounting tension in every carefully measured word of dialogue. This is Suspense at its finest: a story where the landscape itself becomes a character, where trust shatters like brittle stone, and where the next turn in the road might lead to salvation or doom. The masterful sound design pulls you directly into the Cajon's unforgiving wilderness, making your living room vanish entirely.</p>
 <p>For nearly two decades, Suspense commanded Thursday nights on CBS, becoming America's premier thriller program. Created by the legendary William S. Boyd, the show earned its reputation by refusing easy answers or comfortable resolutions. Each episode was meticulously crafted to exploit the unique power of radio—that intimate medium where imagination amplifies fear far beyond what any visual medium could achieve. The program attracted Hollywood's finest talent: from established stars to rising performers eager to prove their dramatic range. "Ride Down Cajon" exemplifies the show's commitment to psychological realism wrapped in gripping adventure, demonstrating why Suspense maintained its devoted audience through war, economic change, and the eventual rise of television.</p>
 <p>Don't miss this vintage thriller—tune in and let the mountains of Cajon pull you into a world where every decision could be your last. This is radio drama as it was meant to be experienced.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

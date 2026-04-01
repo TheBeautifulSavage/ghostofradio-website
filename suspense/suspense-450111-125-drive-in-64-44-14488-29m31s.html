@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450111 125 Drive In (64 44) 14488 29m31s — Suspense | Ghost of Radio</title>
+  <title>Drive In (64 44) 14488 29m31s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450111 125 Drive In (64 44) 14488 29m31s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450111 125 Drive In (64 44) 14488 29m31s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450111 125 Drive In (64 44) 14488 29m31s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 11, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450111 125 Drive In (64 44) 14488 29m31s</h1>
+          <h1 class="episode__title">Drive In (64 44) 14488 29m31s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Drive In</p>
-<p>Picture this: a deserted drive-in theater under the cover of darkness, where chrome and neon give way to shadow and isolation. In this chilling episode of *Suspense*, the glittering promise of an evening's entertainment becomes a nightmare as ordinary patrons find themselves trapped in circumstances far more sinister than any picture show could depict. The tension builds from the moment the first ominous note sounds—will a simple night at the movies become the last thing these characters ever experience? With masterful sound design and a cast of talented performers, this episode weaves together claustrophobia, paranoia, and the creeping dread that emerges when escape seems impossible. Every creak of the theater, every distant voice, every moment of silence becomes laden with menace.</p>
-<p>*Suspense* represented the golden age of American radio drama, when CBS Sunday nights meant millions tuned in to have their nerves thoroughly jangled. Running from 1942 to 1962, the show became legendary for transforming everyday situations into arenas of psychological terror—proving that the most frightening monsters were often human, and that the imagination could conjure horrors far more vivid than any visual medium. Each episode was a masterclass in tension, employing innovative sound techniques and clever writing to exploit listeners' deepest fears. The drive-in setting, quintessentially American and seemingly safe, offered the perfect venue for subverting expectations and exploring the dark undercurrents lurking beneath mid-century normalcy.</p>
+          <p>Picture this: a deserted drive-in theater under the cover of darkness, where chrome and neon give way to shadow and isolation. In this chilling episode of Suspense, the glittering promise of an evening's entertainment becomes a nightmare as ordinary patrons find themselves trapped in circumstances far more sinister than any picture show could depict. The tension builds from the moment the first ominous note sounds—will a simple night at the movies become the last thing these characters ever experience? With masterful sound design and a cast of talented performers, this episode weaves together claustrophobia, paranoia, and the creeping dread that emerges when escape seems impossible. Every creak of the theater, every distant voice, every moment of silence becomes laden with menace.</p>
+<p>Suspense represented the golden age of American radio drama, when CBS Sunday nights meant millions tuned in to have their nerves thoroughly jangled. Running from 1942 to 1962, the show became legendary for transforming everyday situations into arenas of psychological terror—proving that the most frightening monsters were often human, and that the imagination could conjure horrors far more vivid than any visual medium. Each episode was a masterclass in tension, employing innovative sound techniques and clever writing to exploit listeners' deepest fears. The drive-in setting, quintessentially American and seemingly safe, offered the perfect venue for subverting expectations and exploring the dark undercurrents lurking beneath mid-century normalcy.</p>
 <p>Don't miss this unforgettable installment. Dim the lights, settle in, and prepare yourself for twenty-nine minutes and thirty-one seconds of pure suspense. This is radio drama at its finest—where every sound carries weight, every pause matters, and nowhere is truly safe.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

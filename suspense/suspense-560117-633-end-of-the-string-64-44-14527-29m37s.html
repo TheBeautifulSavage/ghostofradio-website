@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560117 633 End Of The String (64 44) 14527 29m37s — Suspense | Ghost of Radio</title>
+  <title>End Of The String (64 44) 14527 29m37s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560117 633 End Of The String (64 44) 14527 29m37s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560117 633 End Of The String (64 44) 14527 29m37s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560117 633 End Of The String (64 44) 14527 29m37s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 17, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560117 633 End Of The String (64 44) 14527 29m37s</h1>
+          <h1 class="episode__title">End Of The String (64 44) 14527 29m37s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># End Of The String</p>
-<p>As the opening organ notes wail through your speaker, you'll find yourself ensnared in a psychological thriller where a man's past comes calling with inexorable finality. In "End Of The String," a figure stumbles through fog-shrouded streets, pursued not by footsteps but by something far more sinister—the inescapable consequences of his own choices. The script masterfully builds tension through whispered dialogue and the rhythmic sound design that CBS's engineers perfected: creaking floorboards, a ticking clock, the distant wail of a train whistle. Our protagonist discovers that some debts cannot simply be forgotten, and that those who believe themselves safe from judgment may discover the rope was always tightening around their neck. The thirty-minute runtime becomes a pressure cooker of mounting dread, with each revelation drawing our anti-hero closer to a reckoning that feels both inevitable and terrifying.</p>
+          <p>As the opening organ notes wail through your speaker, you'll find yourself ensnared in a psychological thriller where a man's past comes calling with inexorable finality. In "End Of The String," a figure stumbles through fog-shrouded streets, pursued not by footsteps but by something far more sinister—the inescapable consequences of his own choices. The script masterfully builds tension through whispered dialogue and the rhythmic sound design that CBS's engineers perfected: creaking floorboards, a ticking clock, the distant wail of a train whistle. Our protagonist discovers that some debts cannot simply be forgotten, and that those who believe themselves safe from judgment may discover the rope was always tightening around their neck. The thirty-minute runtime becomes a pressure cooker of mounting dread, with each revelation drawing our anti-hero closer to a reckoning that feels both inevitable and terrifying.</p>
 <p>"Suspense" distinguished itself during radio's golden age by refusing the comfort of moral certainty—these weren't stories of good triumphing over evil, but rather intimate portraits of ordinary people confronting extraordinary moral darkness. Broadcast live from CBS's Hollywood studios, the show became legendary for its ensemble of talented performers and directors who understood that suspense thrives in ambiguity and suggestion rather than explicit horror. This particular 1940s episode exemplifies the program's psychological sophistication, treating listeners as intelligent adults capable of imagining horrors far more potent than any sound effect.</p>
 <p>Tune in tonight and experience why "Suspense" captivated millions of Americans who huddled around their radios in living rooms across the nation. Let the darkness of "End Of The String" remind you why this show remains the gold standard of dramatic radio—where every shadow holds a secret and every string eventually comes taut.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

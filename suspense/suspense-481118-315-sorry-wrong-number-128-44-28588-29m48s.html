@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 481118 315 Sorry, Wrong Number (128 44) 28588 29m48s — Suspense | Ghost of Radio</title>
+  <title>Sorry, Wrong Number (128 44) 28588 29m48s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 481118 315 Sorry, Wrong Number (128 44) 28588 29m48s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 481118 315 Sorry, Wrong Number (128 44) 28588 29m48s — Suspense">
   <meta property="og:description" content="Listen to Suspense 481118 315 Sorry, Wrong Number (128 44) 28588 29m48s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 18, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 481118 315 Sorry, Wrong Number (128 44) 28588 29m48s</h1>
+          <h1 class="episode__title">Sorry, Wrong Number (128 44) 28588 29m48s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Sorry, Wrong Number"</p>
-<p>Picture this: a woman alone in her bedroom, confined to her sickbed, desperately clutching the telephone receiver as she stumbles upon a conversation she was never meant to hear. What begins as a simple wrong number becomes a nightmare of escalating dread when she realizes the disembodied voices plotting on the line are discussing murder—and the victim, impossibly, seems to be her. With only her telephone as a lifeline and no one believing her frantic warnings, our protagonist must race against time to prevent a crime she can only experience through the darkness of the airwaves. The taut dialogue, the suffocating intimacy of a single room setting, and the relentless mounting tension create an experience of pure psychological terror that proves you need not see a killer to feel their presence. Broadcast live to millions of listeners, this episode became the gold standard of radio suspense—a masterclass in how the human voice and the power of suggestion can terrify an entire nation.</p>
-<p>*Suspense* ran for two decades as CBS's flagship anthology series, attracting top-tier talent including Orson Welles, Agnes Moorehead, and numerous Hollywood luminaries eager to test their craft in live performance. "Sorry, Wrong Number" stands as perhaps the most celebrated episode in the show's storied run, a tale so effective in its psychological manipulation that it transcended radio to become a feature film starring Barbara Stanwyck. What made *Suspense* revolutionary was its commitment to pure audio storytelling—no visual crutches, no jump scares, only the voice, the sound effect, and the listener's own vivid imagination conjuring horrors in the dark.</p>
+          <p>Picture this: a woman alone in her bedroom, confined to her sickbed, desperately clutching the telephone receiver as she stumbles upon a conversation she was never meant to hear. What begins as a simple wrong number becomes a nightmare of escalating dread when she realizes the disembodied voices plotting on the line are discussing murder—and the victim, impossibly, seems to be her. With only her telephone as a lifeline and no one believing her frantic warnings, our protagonist must race against time to prevent a crime she can only experience through the darkness of the airwaves. The taut dialogue, the suffocating intimacy of a single room setting, and the relentless mounting tension create an experience of pure psychological terror that proves you need not see a killer to feel their presence. Broadcast live to millions of listeners, this episode became the gold standard of radio suspense—a masterclass in how the human voice and the power of suggestion can terrify an entire nation.</p>
+<p>Suspense ran for two decades as CBS's flagship anthology series, attracting top-tier talent including Orson Welles, Agnes Moorehead, and numerous Hollywood luminaries eager to test their craft in live performance. "Sorry, Wrong Number" stands as perhaps the most celebrated episode in the show's storied run, a tale so effective in its psychological manipulation that it transcended radio to become a feature film starring Barbara Stanwyck. What made Suspense revolutionary was its commitment to pure audio storytelling—no visual crutches, no jump scares, only the voice, the sound effect, and the listener's own vivid imagination conjuring horrors in the dark.</p>
 <p>Don't miss this legendary broadcast. Tune in and discover why America locked its doors and held its breath listening to this gripping tale of terror and miscommunication.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

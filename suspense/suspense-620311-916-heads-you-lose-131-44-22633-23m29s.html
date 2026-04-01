@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 620311 916 Heads You Lose (131 44) 22633 23m29s — Suspense | Ghost of Radio</title>
+  <title>Heads You Lose (131 44) 22633 23m29s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 620311 916 Heads You Lose (131 44) 22633 23m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 620311 916 Heads You Lose (131 44) 22633 23m29s — Suspense">
   <meta property="og:description" content="Listen to Suspense 620311 916 Heads You Lose (131 44) 22633 23m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 11, 1962</span>
           </div>
-          <h1 class="episode__title">Suspense 620311 916 Heads You Lose (131 44) 22633 23m29s</h1>
+          <h1 class="episode__title">Heads You Lose (131 44) 22633 23m29s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Heads You Lose</p>
-<p>Picture this: a late evening in the 1940s, the living room dimmed to shadow, your family gathered close around the radio set. As the familiar *Suspense* theme swells—that iconic theremin wail cutting through the darkness—you settle in for "Heads You Lose," a tale that will grip your throat with an icy hand and refuse to let go. This episode plunges you into a nightmare of mistaken identity and sinister consequences, where an ordinary moment spirals into something horrifyingly extraordinary. The brilliant sound design and masterful voice acting create a palpable sense of dread; you'll hear the scrape of a shoe, the catch of breath, the malevolent chuckle that suggests nothing will ever be quite right again. Without spoiling the ingenious twist that awaits, know that this is *Suspense* at its finest—a reminder that danger doesn't announce itself, and that fate can turn on the smallest misunderstanding.</p>
-<p>For twenty years, *Suspense* reigned as CBS's crown jewel of dramatic horror, pioneering the techniques that would define the medium. Unlike its competitors, the show refused to rely on cheap thrills; instead, it specialized in psychological torment, the kind that lingers long after the final commercial jingle fades. "Heads You Lose" exemplifies this philosophy, delivering not just scares but a crafted narrative that explores the fragility of our assumptions about the world around us. The golden age of radio gave us few entertainment experiences as purely immersive as *Suspense*—no visual distractions, only pure storytelling and the infinite theater of the mind.</p>
-<p>So dim the lights, tune in, and prepare yourself. *Suspense* awaits.</p>
+          <p>Picture this: a late evening in the 1940s, the living room dimmed to shadow, your family gathered close around the radio set. As the familiar Suspense theme swells—that iconic theremin wail cutting through the darkness—you settle in for "Heads You Lose," a tale that will grip your throat with an icy hand and refuse to let go. This episode plunges you into a nightmare of mistaken identity and sinister consequences, where an ordinary moment spirals into something horrifyingly extraordinary. The brilliant sound design and masterful voice acting create a palpable sense of dread; you'll hear the scrape of a shoe, the catch of breath, the malevolent chuckle that suggests nothing will ever be quite right again. Without spoiling the ingenious twist that awaits, know that this is Suspense at its finest—a reminder that danger doesn't announce itself, and that fate can turn on the smallest misunderstanding.</p>
+<p>For twenty years, Suspense reigned as CBS's crown jewel of dramatic horror, pioneering the techniques that would define the medium. Unlike its competitors, the show refused to rely on cheap thrills; instead, it specialized in psychological torment, the kind that lingers long after the final commercial jingle fades. "Heads You Lose" exemplifies this philosophy, delivering not just scares but a crafted narrative that explores the fragility of our assumptions about the world around us. The golden age of radio gave us few entertainment experiences as purely immersive as Suspense—no visual distractions, only pure storytelling and the infinite theater of the mind.</p>
+<p>So dim the lights, tune in, and prepare yourself. Suspense awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 430504 040 Death Flies Blind (128 44) 28003 29m11s — Suspense | Ghost of Radio</title>
+  <title>Death Flies Blind (128 44) 28003 29m11s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 430504 040 Death Flies Blind (128 44) 28003 29m11s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 430504 040 Death Flies Blind (128 44) 28003 29m11s — Suspense">
   <meta property="og:description" content="Listen to Suspense 430504 040 Death Flies Blind (128 44) 28003 29m11s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 4, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 430504 040 Death Flies Blind (128 44) 28003 29m11s</h1>
+          <h1 class="episode__title">Death Flies Blind (128 44) 28003 29m11s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Death Flies Blind</p>
-<p>Picture this: it's a spring evening in 1945, and you've settled into your favorite chair as the familiar *Suspense* theme punctures the darkness of your living room. Tonight's tale concerns a pilot—skilled, confident, utterly in command—until the moment his instruments fail him at ten thousand feet. What follows is a masterclass in psychological terror: a man stripped of his greatest asset, forced to fly blind through fog and uncertainty, pursued by an unseen threat that may be mechanical failure, sabotage, or something far more sinister. As the minutes tick by with agonizing slowness, the cockpit becomes a coffin suspended in clouds, and listeners are trapped alongside him in the suffocating darkness, unable to see the danger that's stalking the skies.</p>
-<p>*Suspense* had already established itself as America's premier thriller program by the time "Death Flies Blind" aired, a CBS institution that understood the raw power of radio drama—where the audience's imagination could conjure horrors far more terrifying than any visual medium could capture. The show's rotating cast of Hollywood talent, meticulous sound design, and stories that ranged from noir mysteries to supernatural nightmares made it essential listening for millions of Americans throughout the 1940s and into the 1950s. This particular episode exemplifies the show's genius for turning everyday situations—flying a plane, losing your senses—into vessels of profound dread.</p>
-<p>If you've never experienced *Suspense*, this is an ideal entry point: a taut 29-minute journey that proves why this program became a cultural touchstone. Dim your lights, silence your distractions, and prepare yourself for nearly half an hour of pure, unadulterated tension. Death is waiting at cruising altitude.</p>
+          <p>Picture this: it's a spring evening in 1945, and you've settled into your favorite chair as the familiar Suspense theme punctures the darkness of your living room. Tonight's tale concerns a pilot—skilled, confident, utterly in command—until the moment his instruments fail him at ten thousand feet. What follows is a masterclass in psychological terror: a man stripped of his greatest asset, forced to fly blind through fog and uncertainty, pursued by an unseen threat that may be mechanical failure, sabotage, or something far more sinister. As the minutes tick by with agonizing slowness, the cockpit becomes a coffin suspended in clouds, and listeners are trapped alongside him in the suffocating darkness, unable to see the danger that's stalking the skies.</p>
+<p>Suspense had already established itself as America's premier thriller program by the time "Death Flies Blind" aired, a CBS institution that understood the raw power of radio drama—where the audience's imagination could conjure horrors far more terrifying than any visual medium could capture. The show's rotating cast of Hollywood talent, meticulous sound design, and stories that ranged from noir mysteries to supernatural nightmares made it essential listening for millions of Americans throughout the 1940s and into the 1950s. This particular episode exemplifies the show's genius for turning everyday situations—flying a plane, losing your senses—into vessels of profound dread.</p>
+<p>If you've never experienced Suspense, this is an ideal entry point: a taut 29-minute journey that proves why this program became a cultural touchstone. Dim your lights, silence your distractions, and prepare yourself for nearly half an hour of pure, unadulterated tension. Death is waiting at cruising altitude.</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

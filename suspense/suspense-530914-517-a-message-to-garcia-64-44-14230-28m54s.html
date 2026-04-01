@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 530914 517 A Message To Garcia (64 44) 14230 28m54s — Suspense | Ghost of Radio</title>
+  <title>A Message To Garcia (64 44) 14230 28m54s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 530914 517 A Message To Garcia (64 44) 14230 28m54s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 530914 517 A Message To Garcia (64 44) 14230 28m54s — Suspense">
   <meta property="og:description" content="Listen to Suspense 530914 517 A Message To Garcia (64 44) 14230 28m54s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 14, 1953</span>
           </div>
-          <h1 class="episode__title">Suspense 530914 517 A Message To Garcia (64 44) 14230 28m54s</h1>
+          <h1 class="episode__title">A Message To Garcia (64 44) 14230 28m54s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># A Message to Garcia</p>
-<p>Picture this: a humble soldier stands at a crossroads between duty and conscience, holding in his hands a message that could alter the course of war itself. In this riveting adaptation of the classic Elbert Hubbard essay, *Suspense* delivers a meditation on heroism stripped of fanfare—where one man's quiet determination to see a task through becomes the very definition of valor. As the night grows thick around him and doubt whispers from every shadow, our protagonist must choose between the safety of questioning orders and the perilous honor of blind obedience. The production crackles with understated tension, building not through screams or gunfire, but through the internal battle of a conscience caught between two impossible loyalties. Listeners will find themselves holding their breath as the narrative unfolds across the Spanish landscape, where danger lurks not in what is said, but in what remains unspoken.</p>
-<p>What made *Suspense* essential listening for millions was precisely this—the show's refusal to traffic in cheap thrills. Broadcasting from 1942 to 1962, the series became an institution of American radio by trusting its audience's intelligence and imagination. Each week, host William Castle invited listeners into rooms where moral ambiguity reigned and danger came wearing a thinking man's face. Drawing from literature's finest suspense tales, *Suspense* proved that terror needs no monster, only a man faced with an impossible choice.</p>
+          <p>Picture this: a humble soldier stands at a crossroads between duty and conscience, holding in his hands a message that could alter the course of war itself. In this riveting adaptation of the classic Elbert Hubbard essay, Suspense delivers a meditation on heroism stripped of fanfare—where one man's quiet determination to see a task through becomes the very definition of valor. As the night grows thick around him and doubt whispers from every shadow, our protagonist must choose between the safety of questioning orders and the perilous honor of blind obedience. The production crackles with understated tension, building not through screams or gunfire, but through the internal battle of a conscience caught between two impossible loyalties. Listeners will find themselves holding their breath as the narrative unfolds across the Spanish landscape, where danger lurks not in what is said, but in what remains unspoken.</p>
+<p>What made Suspense essential listening for millions was precisely this—the show's refusal to traffic in cheap thrills. Broadcasting from 1942 to 1962, the series became an institution of American radio by trusting its audience's intelligence and imagination. Each week, host William Castle invited listeners into rooms where moral ambiguity reigned and danger came wearing a thinking man's face. Drawing from literature's finest suspense tales, Suspense proved that terror needs no monster, only a man faced with an impossible choice.</p>
 <p>This episode exemplifies everything that made the golden age of radio an art form: stellar writing, impeccable performances, and the understanding that sometimes the most terrifying journeys are the ones we take entirely in our minds. Tune in and discover why audiences kept their radios burning late into the night, waiting to hear what would happen next.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

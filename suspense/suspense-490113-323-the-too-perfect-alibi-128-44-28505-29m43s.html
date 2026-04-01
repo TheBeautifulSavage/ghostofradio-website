@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 490113 323 The Too Perfect Alibi (128 44) 28505 29m43s — Suspense | Ghost of Radio</title>
+  <title>The Too Perfect Alibi (128 44) 28505 29m43s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 490113 323 The Too Perfect Alibi (128 44) 28505 29m43s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 490113 323 The Too Perfect Alibi (128 44) 28505 29m43s — Suspense">
   <meta property="og:description" content="Listen to Suspense 490113 323 The Too Perfect Alibi (128 44) 28505 29m43s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 13, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 490113 323 The Too Perfect Alibi (128 44) 28505 29m43s</h1>
+          <h1 class="episode__title">The Too Perfect Alibi (128 44) 28505 29m43s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Too Perfect Alibi</p>
-<p>Picture this: a man stands accused of a crime he insists he didn't commit. His alibi is airtight—foolproof, even. Every detail checks out. Every witness confirms his story. And yet, something about it feels *too* clean, too practiced, too perfect. In "The Too Perfect Alibi," Suspense delivers a masterclass in psychological tension, peeling back layers of deception where the very perfection of innocence becomes its own damning evidence. As the investigation tightens and contradictions emerge from the most unexpected places, listeners are plunged into a world where the truth becomes increasingly elusive, and the margin between guilt and innocence narrows to a razor's edge. The sound design—sparse, methodical, punctuated by the clock's relentless ticking—transforms your living room into an interrogation room where nothing is quite as it seems.</p>
-<p>During the 1940s, Suspense was America's premier anthology of fear, drawing millions of listeners into stories where ordinary people faced extraordinary moral crossroads. At its peak, the show commanded thirty percent of the listening audience, a testament to its mastery of the form. Radio's intimate nature—requiring only your imagination—made it uniquely powerful for psychological thrillers like this one, where the killer could be anyone and the twist could upend everything you thought you knew. "The Too Perfect Alibi" exemplifies why the golden age of radio remains unmatched: superior writing, impeccable performances, and an understanding that what you *don't* hear is often more terrifying than what you do.</p>
+          <p>Picture this: a man stands accused of a crime he insists he didn't commit. His alibi is airtight—foolproof, even. Every detail checks out. Every witness confirms his story. And yet, something about it feels too clean, too practiced, too perfect. In "The Too Perfect Alibi," Suspense delivers a masterclass in psychological tension, peeling back layers of deception where the very perfection of innocence becomes its own damning evidence. As the investigation tightens and contradictions emerge from the most unexpected places, listeners are plunged into a world where the truth becomes increasingly elusive, and the margin between guilt and innocence narrows to a razor's edge. The sound design—sparse, methodical, punctuated by the clock's relentless ticking—transforms your living room into an interrogation room where nothing is quite as it seems.</p>
+<p>During the 1940s, Suspense was America's premier anthology of fear, drawing millions of listeners into stories where ordinary people faced extraordinary moral crossroads. At its peak, the show commanded thirty percent of the listening audience, a testament to its mastery of the form. Radio's intimate nature—requiring only your imagination—made it uniquely powerful for psychological thrillers like this one, where the killer could be anyone and the twist could upend everything you thought you knew. "The Too Perfect Alibi" exemplifies why the golden age of radio remains unmatched: superior writing, impeccable performances, and an understanding that what you don't hear is often more terrifying than what you do.</p>
 <p>Tune in and discover why a perfectly constructed alibi can be the deadliest confession of all. This is Suspense at its finest—a reminder that in matters of guilt and innocence, perfection itself can betray you.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470918 263 The Visitor (128 44) 28502 30m03s — Suspense | Ghost of Radio</title>
+  <title>The Visitor (128 44) 28502 30m03s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470918 263 The Visitor (128 44) 28502 30m03s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470918 263 The Visitor (128 44) 28502 30m03s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470918 263 The Visitor (128 44) 28502 30m03s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 18, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470918 263 The Visitor (128 44) 28502 30m03s</h1>
+          <h1 class="episode__title">The Visitor (128 44) 28502 30m03s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Visitor</p>
-<p>As darkness falls on an ordinary evening, a stranger arrives at the door—unexpected, unsettling, and bearing secrets that will unravel everything our protagonist believes to be true. In "The Visitor," the masterminds of *Suspense* craft a psychological thriller that transforms the safe haven of home into a prison of mounting dread. With each exchange of dialogue, the tension coils tighter. Is this mysterious caller friend or threat? Savior or executioner? The sound design—creaking floorboards, the whisper of wind, the careful orchestration of silence itself—builds an atmosphere so thick you could cut it with a knife. By the episode's climax, listeners will find themselves holding their breath, unsure whether they've witnessed redemption or damnation, trapped in that exquisite moment where terror and tragedy become indistinguishable.</p>
-<p>*Suspense* defined the golden age of radio drama during its impressive twenty-year run on CBS, becoming the network's flagship thriller program through sheer audacious storytelling and technical innovation. The show pioneered techniques that would become the vocabulary of modern suspense: the strategic use of sound effects, the manipulation of pacing, the revelation of character through dialogue alone. "The Visitor" exemplifies why the program earned its legendary status—it proves that genuine horror needs no visual crutches, only the power of suggestion and the listener's own imagination. Broadcast during the 1940s, when America huddled around radio sets for escape and entertainment, these episodes captured something primal about human fear and morality.</p>
-<p>Don't miss this masterclass in radio suspense. Tune in to "The Visitor" and discover why millions of listeners made *Suspense* an appointment with terror, night after night, for two decades.</p>
+          <p>As darkness falls on an ordinary evening, a stranger arrives at the door—unexpected, unsettling, and bearing secrets that will unravel everything our protagonist believes to be true. In "The Visitor," the masterminds of Suspense craft a psychological thriller that transforms the safe haven of home into a prison of mounting dread. With each exchange of dialogue, the tension coils tighter. Is this mysterious caller friend or threat? Savior or executioner? The sound design—creaking floorboards, the whisper of wind, the careful orchestration of silence itself—builds an atmosphere so thick you could cut it with a knife. By the episode's climax, listeners will find themselves holding their breath, unsure whether they've witnessed redemption or damnation, trapped in that exquisite moment where terror and tragedy become indistinguishable.</p>
+<p>Suspense defined the golden age of radio drama during its impressive twenty-year run on CBS, becoming the network's flagship thriller program through sheer audacious storytelling and technical innovation. The show pioneered techniques that would become the vocabulary of modern suspense: the strategic use of sound effects, the manipulation of pacing, the revelation of character through dialogue alone. "The Visitor" exemplifies why the program earned its legendary status—it proves that genuine horror needs no visual crutches, only the power of suggestion and the listener's own imagination. Broadcast during the 1940s, when America huddled around radio sets for escape and entertainment, these episodes captured something primal about human fear and morality.</p>
+<p>Don't miss this masterclass in radio suspense. Tune in to "The Visitor" and discover why millions of listeners made Suspense an appointment with terror, night after night, for two decades.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

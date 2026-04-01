@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 490324 333 Dead Ernest (128 44) 28436 29m39s — Suspense | Ghost of Radio</title>
+  <title>Dead Ernest (128 44) 28436 29m39s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 490324 333 Dead Ernest (128 44) 28436 29m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 490324 333 Dead Ernest (128 44) 28436 29m39s — Suspense">
   <meta property="og:description" content="Listen to Suspense 490324 333 Dead Ernest (128 44) 28436 29m39s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 24, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 490324 333 Dead Ernest (128 44) 28436 29m39s</h1>
+          <h1 class="episode__title">Dead Ernest (128 44) 28436 29m39s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Dead Ernest</p>
-<p>On a fog-laden evening in the 1940s, America's radio audiences settled into their favorite listening chairs for *Suspense*—and what awaited them in "Dead Ernest" was a masterclass in psychological terror. As the familiar announcer's voice crackled through the speakers, listeners found themselves trapped in a claustrophobic nightmare where nothing is quite what it seems. A man confronts the impossible: proof that someone he knew is dead—yet there they stand, alive and speaking. The mounting dread builds with each revelation, each piece of evidence that defies logic, as our protagonist's grip on reality splinters. With only twenty-nine minutes to unravel an inexplicable horror, *Suspense* delivers the kind of intimate, personal terror that only radio could conjure—no special effects, just the power of suggestion and the listener's own imagination filling in the darkest details.</p>
-<p>*Suspense* became CBS's flagship thriller series precisely because it understood this primal power. During its twenty-year run, the show pioneered techniques of sound design and narrative tension that would influence horror and thriller programming for generations. Each episode was a carefully crafted trap for the mind, featuring Hollywood's finest actors—from Orson Welles to Barbara Stanwyck—in stories that ranged from supernatural terror to cold psychological warfare. "Dead Ernest" exemplifies the show's golden-age period, when the scripts crackled with genuine menace and the production values reflected radio drama at its absolute peak.</p>
-<p>Tune in now and discover why *Suspense* remains the gold standard of old-time radio horror. Let the darkness of "Dead Ernest" wash over you—and prepare to question everything you thought you knew about a man, a ghost, and the thin line between them.</p>
+          <p>On a fog-laden evening in the 1940s, America's radio audiences settled into their favorite listening chairs for Suspense—and what awaited them in "Dead Ernest" was a masterclass in psychological terror. As the familiar announcer's voice crackled through the speakers, listeners found themselves trapped in a claustrophobic nightmare where nothing is quite what it seems. A man confronts the impossible: proof that someone he knew is dead—yet there they stand, alive and speaking. The mounting dread builds with each revelation, each piece of evidence that defies logic, as our protagonist's grip on reality splinters. With only twenty-nine minutes to unravel an inexplicable horror, Suspense delivers the kind of intimate, personal terror that only radio could conjure—no special effects, just the power of suggestion and the listener's own imagination filling in the darkest details.</p>
+<p>Suspense became CBS's flagship thriller series precisely because it understood this primal power. During its twenty-year run, the show pioneered techniques of sound design and narrative tension that would influence horror and thriller programming for generations. Each episode was a carefully crafted trap for the mind, featuring Hollywood's finest actors—from Orson Welles to Barbara Stanwyck—in stories that ranged from supernatural terror to cold psychological warfare. "Dead Ernest" exemplifies the show's golden-age period, when the scripts crackled with genuine menace and the production values reflected radio drama at its absolute peak.</p>
+<p>Tune in now and discover why Suspense remains the gold standard of old-time radio horror. Let the darkness of "Dead Ernest" wash over you—and prepare to question everything you thought you knew about a man, a ghost, and the thin line between them.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

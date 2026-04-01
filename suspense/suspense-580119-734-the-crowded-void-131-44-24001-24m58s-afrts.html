@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 580119 734 The Crowded Void (131 44) 24001 24m58s Afrts — Suspense | Ghost of Radio</title>
+  <title>The Crowded Void (131 44) 24001 24m58s Afrts — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 580119 734 The Crowded Void (131 44) 24001 24m58s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 580119 734 The Crowded Void (131 44) 24001 24m58s Afrts — Suspense">
   <meta property="og:description" content="Listen to Suspense 580119 734 The Crowded Void (131 44) 24001 24m58s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 19, 1958</span>
           </div>
-          <h1 class="episode__title">Suspense 580119 734 The Crowded Void (131 44) 24001 24m58s Afrts</h1>
+          <h1 class="episode__title">The Crowded Void (131 44) 24001 24m58s Afrts</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Crowded Void</p>
-<p>Step into the suffocating darkness of *The Crowded Void*, where the very walls seem to close in and a man's greatest terror isn't what lurks in the shadows—it's the crushing weight of human proximity itself. This episode draws listeners into a claustrophobic nightmare of urban isolation, where being surrounded by thousands of strangers becomes more terrifying than any monster could ever be. As our protagonist finds himself trapped in a metropolitan world that feels simultaneously packed and utterly empty, the psychological tension mounts with each passing moment. The sound design—crowds murmuring just out of focus, footsteps echoing unnaturally close, a heartbeat that grows louder than the city itself—creates an atmosphere of dread that settles deep in the listener's chest.</p>
-<p>*Suspense* earned its place as one of broadcasting's greatest achievements by understanding that true horror lives not in the supernatural, but in the human condition itself. From its 1942 debut through two decades of spine-tingling broadcasts, the show specialized in stories that made listeners question their own sanity, their neighbors, and the safety of their own homes. Each episode was a masterclass in psychological manipulation, using radio's intimate medium—that voice speaking directly into the darkness of your living room—to bypass rational skepticism and strike straight at primal fears. *The Crowded Void* exemplifies this approach, transforming the modern metropolis into a character as sinister as any ghost or killer.</p>
-<p>Don't miss this haunting meditation on loneliness in the age of crowds. Whether you're a devoted fan of the *Suspense* archives or discovering this legendary series for the first time, *The Crowded Void* promises the kind of lingering unease that only classic radio can deliver—the kind that stays with you long after the final fade-out.</p>
+          <p>Step into the suffocating darkness of The Crowded Void, where the very walls seem to close in and a man's greatest terror isn't what lurks in the shadows—it's the crushing weight of human proximity itself. This episode draws listeners into a claustrophobic nightmare of urban isolation, where being surrounded by thousands of strangers becomes more terrifying than any monster could ever be. As our protagonist finds himself trapped in a metropolitan world that feels simultaneously packed and utterly empty, the psychological tension mounts with each passing moment. The sound design—crowds murmuring just out of focus, footsteps echoing unnaturally close, a heartbeat that grows louder than the city itself—creates an atmosphere of dread that settles deep in the listener's chest.</p>
+<p>Suspense earned its place as one of broadcasting's greatest achievements by understanding that true horror lives not in the supernatural, but in the human condition itself. From its 1942 debut through two decades of spine-tingling broadcasts, the show specialized in stories that made listeners question their own sanity, their neighbors, and the safety of their own homes. Each episode was a masterclass in psychological manipulation, using radio's intimate medium—that voice speaking directly into the darkness of your living room—to bypass rational skepticism and strike straight at primal fears. The Crowded Void exemplifies this approach, transforming the modern metropolis into a character as sinister as any ghost or killer.</p>
+<p>Don't miss this haunting meditation on loneliness in the age of crowds. Whether you're a devoted fan of the Suspense archives or discovering this legendary series for the first time, The Crowded Void promises the kind of lingering unease that only classic radio can deliver—the kind that stays with you long after the final fade-out.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

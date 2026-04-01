@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 490519 341 Consequence (128 44) 28468 30m01s — Suspense | Ghost of Radio</title>
+  <title>Consequence (128 44) 28468 30m01s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 490519 341 Consequence (128 44) 28468 30m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 490519 341 Consequence (128 44) 28468 30m01s — Suspense">
   <meta property="og:description" content="Listen to Suspense 490519 341 Consequence (128 44) 28468 30m01s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 19, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 490519 341 Consequence (128 44) 28468 30m01s</h1>
+          <h1 class="episode__title">Consequence (128 44) 28468 30m01s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Consequence</p>
-<p>A man's moment of weakness becomes his eternal prison in this masterwork of psychological terror. When a seemingly ordinary businessman makes a split-second decision to avoid responsibility, he sets in motion a chain of consequences that spirals beyond his control. As the hours tick by with mounting dread, every knock at the door, every unexpected phone call, every shadow in the corner becomes a harbinger of doom. The brilliance of "Consequence" lies not in shock or spectacle, but in the suffocating realization that actions—no matter how small—cast long shadows. William Holden's gripping performance captures a man unraveling as his world closes in, his guilt becoming as tangible as the walls of his own making. This is Suspense at its finest: intimate, claustrophobic, and deeply unsettling.</p>
+          <p>A man's moment of weakness becomes his eternal prison in this masterwork of psychological terror. When a seemingly ordinary businessman makes a split-second decision to avoid responsibility, he sets in motion a chain of consequences that spirals beyond his control. As the hours tick by with mounting dread, every knock at the door, every unexpected phone call, every shadow in the corner becomes a harbinger of doom. The brilliance of "Consequence" lies not in shock or spectacle, but in the suffocating realization that actions—no matter how small—cast long shadows. William Holden's gripping performance captures a man unraveling as his world closes in, his guilt becoming as tangible as the walls of his own making. This is Suspense at its finest: intimate, claustrophobic, and deeply unsettling.</p>
 <p>By the late 1940s, Suspense had perfected the art of the psychological thriller, moving beyond mere jump-scares to explore the darker recesses of the human conscience. The show's legendary producers wielded sound design like a scalpel, crafting invisible landscapes of dread through careful orchestration of dialogue, music, and those pregnant silences that made listeners lean closer to their radios. Each episode was a masterclass in sustained tension, drawing audiences into moral quandaries and impossible situations. "Consequence" exemplifies everything the series accomplished during its golden age—a meditation on culpability and fate that feels as urgent today as it did when first broadcast.</p>
 <p>Tune in for a thirty-minute descent into the darkest corners of human nature. No commercial break can prepare you for where this tale leads.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

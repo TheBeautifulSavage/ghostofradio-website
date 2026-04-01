@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460117 176 The Pasteboard Box (130 44) 28437 29m45s — Suspense | Ghost of Radio</title>
+  <title>The Pasteboard Box (130 44) 28437 29m45s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460117 176 The Pasteboard Box (130 44) 28437 29m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460117 176 The Pasteboard Box (130 44) 28437 29m45s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460117 176 The Pasteboard Box (130 44) 28437 29m45s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 17, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460117 176 The Pasteboard Box (130 44) 28437 29m45s</h1>
+          <h1 class="episode__title">The Pasteboard Box (130 44) 28437 29m45s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Pasteboard Box</p>
-<p>When the mail arrives at your door on an ordinary afternoon, you expect bills, letters from distant relatives, perhaps a package from a catalog order. But what if that innocent pasteboard box contained something sinister—a mystery born from decades past, a secret that someone desperately wanted buried? In "The Pasteboard Box," listeners will experience the creeping dread that builds when the seemingly mundane becomes a harbinger of danger. As our protagonist opens that fateful package, the walls of suburban normalcy begin to crack, revealing shadowy motives and the kind of deception that lurks behind polite society. The tension mounts with each revelation, each clue pulling the listener deeper into a web of suspicion and fear that culminates in a finale that will leave you questioning what you would do if faced with such an impossible choice.</p>
-<p>CBS's *Suspense* stands as radio drama's masterpiece of psychological terror, running for two decades and perfecting the art of making listeners afraid of the dark. Premiering in 1942, the show pioneered techniques that would define suspense entertainment for generations—the strategic silence, the sudden orchestral stab, the intimate whisper that makes millions of listeners feel personally targeted. "The Pasteboard Box" exemplifies why the program earned its reputation, combining meticulous sound design with performances that transformed crackling airwaves into tangible dread. Each episode proved that the most terrifying horrors needed no special effects, only the power of suggestion and the listener's own imagination.</p>
-<p>Tonight, dim the lights and settle into your chair. Clear away distractions and surrender yourself to *Suspense*—where danger arrives not with fanfare, but with the innocent rustle of brown paper and twine. Tune in and discover what's inside "The Pasteboard Box."</p>
+          <p>When the mail arrives at your door on an ordinary afternoon, you expect bills, letters from distant relatives, perhaps a package from a catalog order. But what if that innocent pasteboard box contained something sinister—a mystery born from decades past, a secret that someone desperately wanted buried? In "The Pasteboard Box," listeners will experience the creeping dread that builds when the seemingly mundane becomes a harbinger of danger. As our protagonist opens that fateful package, the walls of suburban normalcy begin to crack, revealing shadowy motives and the kind of deception that lurks behind polite society. The tension mounts with each revelation, each clue pulling the listener deeper into a web of suspicion and fear that culminates in a finale that will leave you questioning what you would do if faced with such an impossible choice.</p>
+<p>CBS's Suspense stands as radio drama's masterpiece of psychological terror, running for two decades and perfecting the art of making listeners afraid of the dark. Premiering in 1942, the show pioneered techniques that would define suspense entertainment for generations—the strategic silence, the sudden orchestral stab, the intimate whisper that makes millions of listeners feel personally targeted. "The Pasteboard Box" exemplifies why the program earned its reputation, combining meticulous sound design with performances that transformed crackling airwaves into tangible dread. Each episode proved that the most terrifying horrors needed no special effects, only the power of suggestion and the listener's own imagination.</p>
+<p>Tonight, dim the lights and settle into your chair. Clear away distractions and surrender yourself to Suspense—where danger arrives not with fanfare, but with the innocent rustle of brown paper and twine. Tune in and discover what's inside "The Pasteboard Box."</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

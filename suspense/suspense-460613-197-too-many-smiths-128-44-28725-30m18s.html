@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460613 197 Too Many Smiths (128 44) 28725 30m18s — Suspense | Ghost of Radio</title>
+  <title>Too Many Smiths (128 44) 28725 30m18s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460613 197 Too Many Smiths (128 44) 28725 30m18s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460613 197 Too Many Smiths (128 44) 28725 30m18s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460613 197 Too Many Smiths (128 44) 28725 30m18s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 13, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460613 197 Too Many Smiths (128 44) 28725 30m18s</h1>
+          <h1 class="episode__title">Too Many Smiths (128 44) 28725 30m18s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Too Many Smiths</p>
-<p>Picture this: a crowded city street where faces blur into one another, where a name as common as Smith becomes a weapon of confusion and terror. In this chilling installment of *Suspense*, an ordinary case of mistaken identity spirals into a nightmare of murder, deception, and paranoia that will keep you riveted to your radio speaker. As our protagonist frantically searches for the real culprit among a bewildering array of Smiths—a businessman, a clerk, a vagrant, a society woman—the line between hunter and hunted dissolves in the murky shadows of urban anonymity. The sound design crackles with urgency: footsteps echoing down empty corridors, telephone receivers slamming, and voices that could belong to anyone. By the time the final twist arrives, you'll understand how the most innocent detail can become a noose around an innocent neck.</p>
-<p>For two decades, *Suspense* stood as CBS's crown jewel of dramatic programming, commanding audiences of millions with its meticulously crafted tales of ordinary people confronted by extraordinary danger. The show's genius lay in its ability to transform the mundane—a wrong number, a forgotten appointment, a casual encounter—into the scaffolding for elaborate psychological thrillers. With A-list talent both behind and before the microphone, each episode demonstrated radio drama at its most sophisticated, proving that the invisible medium could generate more genuine dread than any visual counterpart.</p>
-<p>Don't miss "Too Many Smiths"—a masterclass in tension that reminds us how fragile our identities really are, and how easily a single mistake can unravel an entire life. Tune in and discover why listeners made *Suspense* appointment listening for twenty unforgettable years.</p>
+          <p>Picture this: a crowded city street where faces blur into one another, where a name as common as Smith becomes a weapon of confusion and terror. In this chilling installment of Suspense, an ordinary case of mistaken identity spirals into a nightmare of murder, deception, and paranoia that will keep you riveted to your radio speaker. As our protagonist frantically searches for the real culprit among a bewildering array of Smiths—a businessman, a clerk, a vagrant, a society woman—the line between hunter and hunted dissolves in the murky shadows of urban anonymity. The sound design crackles with urgency: footsteps echoing down empty corridors, telephone receivers slamming, and voices that could belong to anyone. By the time the final twist arrives, you'll understand how the most innocent detail can become a noose around an innocent neck.</p>
+<p>For two decades, Suspense stood as CBS's crown jewel of dramatic programming, commanding audiences of millions with its meticulously crafted tales of ordinary people confronted by extraordinary danger. The show's genius lay in its ability to transform the mundane—a wrong number, a forgotten appointment, a casual encounter—into the scaffolding for elaborate psychological thrillers. With A-list talent both behind and before the microphone, each episode demonstrated radio drama at its most sophisticated, proving that the invisible medium could generate more genuine dread than any visual counterpart.</p>
+<p>Don't miss "Too Many Smiths"—a masterclass in tension that reminds us how fragile our identities really are, and how easily a single mistake can unravel an entire life. Tune in and discover why listeners made Suspense appointment listening for twenty unforgettable years.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

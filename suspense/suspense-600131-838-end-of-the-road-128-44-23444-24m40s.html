@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600131 838 End Of The Road (128 44) 23444 24m40s — Suspense | Ghost of Radio</title>
+  <title>End Of The Road (128 44) 23444 24m40s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600131 838 End Of The Road (128 44) 23444 24m40s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600131 838 End Of The Road (128 44) 23444 24m40s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600131 838 End Of The Road (128 44) 23444 24m40s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 31, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600131 838 End Of The Road (128 44) 23444 24m40s</h1>
+          <h1 class="episode__title">End Of The Road (128 44) 23444 24m40s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># End of the Road</p>
-<p>Picture this: a lone traveler stumbles onto a desolate stretch of highway as twilight descends, the engine of his car sputtering into silence. The radio crackles with static. Somewhere in the gathering darkness, a figure emerges from the roadside—offering help, or perhaps something far more sinister. In "End of the Road," Suspense masterfully weaves the primal dread of isolation with the distinctly American terror of the open road, where salvation and doom wear the same worn face. Over twenty-four breathless minutes, listeners are drawn into a nightmare of desperation and moral ambiguity, where every offer of assistance carries a hidden cost, and every choice made in that haunted darkness reverberates with consequence. The sound design is impeccable—the wind howling across empty pavement, the creaking of doors, the measured breathing of men locked in a psychological duel—building an atmosphere of inescapable tension.</p>
+          <p>Picture this: a lone traveler stumbles onto a desolate stretch of highway as twilight descends, the engine of his car sputtering into silence. The radio crackles with static. Somewhere in the gathering darkness, a figure emerges from the roadside—offering help, or perhaps something far more sinister. In "End of the Road," Suspense masterfully weaves the primal dread of isolation with the distinctly American terror of the open road, where salvation and doom wear the same worn face. Over twenty-four breathless minutes, listeners are drawn into a nightmare of desperation and moral ambiguity, where every offer of assistance carries a hidden cost, and every choice made in that haunted darkness reverberates with consequence. The sound design is impeccable—the wind howling across empty pavement, the creaking of doors, the measured breathing of men locked in a psychological duel—building an atmosphere of inescapable tension.</p>
 <p>For nearly two decades, Suspense commanded Tuesday nights on CBS, becoming the gold standard of dramatic radio horror. Produced with meticulous attention to craft and featuring some of the era's finest actors, the show proved that the invisible terrors conjured by imagination far exceed anything seen on screen. "End of the Road" exemplifies why the program became a cultural phenomenon—it taps into Depression-era anxieties about survival, trust, and the darkness lurking just beyond civilization's thin veneer, all while maintaining the tight dramatic structure that made Suspense unmissable radio.</p>
 <p>If you've never experienced the peculiar power of classic radio drama, this episode is the perfect introduction. Dim the lights, silence your surroundings, and prepare yourself for the kind of storytelling that lives in the mind long after the final fade-out. You won't find better company for a late night than Suspense.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 470102 226 Tree Of Life (128 44) 28698 30m16s — Suspense | Ghost of Radio</title>
+  <title>Tree Of Life (128 44) 28698 30m16s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 470102 226 Tree Of Life (128 44) 28698 30m16s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 470102 226 Tree Of Life (128 44) 28698 30m16s — Suspense">
   <meta property="og:description" content="Listen to Suspense 470102 226 Tree Of Life (128 44) 28698 30m16s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 2, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 470102 226 Tree Of Life (128 44) 28698 30m16s</h1>
+          <h1 class="episode__title">Tree Of Life (128 44) 28698 30m16s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Tree of Life</p>
-<p>Step into the shadowed corridors of a crumbling estate where greed and desperation take root like a poison ivy, choking the life from everything it touches. In "Tree of Life," a family's inheritance becomes a curse when one member discovers a dark secret buried deep within the property's history—a secret someone will kill to keep hidden. As night falls and shadows lengthen across the overgrown gardens, tension mounts with every creaking floorboard and whispered accusation. The stellar cast delivers performances thick with menace and paranoia, their voices trembling with fear as they realize that among them walks a murderer. Producer William Spier crafted this episode with masterful pacing, letting silence stretch uncomfortably before a sudden revelation shatters the quiet. Listeners will find themselves leaning closer to their radios, hearts pounding as the mystery unravels toward its shocking conclusion.</p>
-<p>From 1942 to 1962, *Suspense* reigned as American radio's premier thriller anthology, delivering two decades of meticulously crafted terror into living rooms across the nation. Each week, listeners surrendered to the unknown, trusting host and creator William Spier to guide them through narratives where ordinary people confronted extraordinary evil. This particular episode exemplifies the show's genius—taking a timeless human motivation like inheritance and transforming it into a psychological battlefield where trust becomes a liability and family bonds turn razor-sharp. The 1940s golden age of radio demanded storytelling of exceptional quality, and *Suspense* consistently delivered, becoming a cultural institution through sheer commitment to atmospheric excellence and narrative integrity.</p>
-<p>If you've never experienced *Suspense*, "Tree of Life" is an ideal entry point into a world where danger lurks in whispered conversations and the spaces between words. Tune in, dim the lights, and let the master craftsmen of radio drama remind you why an unseen threat is far more terrifying than anything the eye could witness.</p>
+          <p>Step into the shadowed corridors of a crumbling estate where greed and desperation take root like a poison ivy, choking the life from everything it touches. In "Tree of Life," a family's inheritance becomes a curse when one member discovers a dark secret buried deep within the property's history—a secret someone will kill to keep hidden. As night falls and shadows lengthen across the overgrown gardens, tension mounts with every creaking floorboard and whispered accusation. The stellar cast delivers performances thick with menace and paranoia, their voices trembling with fear as they realize that among them walks a murderer. Producer William Spier crafted this episode with masterful pacing, letting silence stretch uncomfortably before a sudden revelation shatters the quiet. Listeners will find themselves leaning closer to their radios, hearts pounding as the mystery unravels toward its shocking conclusion.</p>
+<p>From 1942 to 1962, Suspense reigned as American radio's premier thriller anthology, delivering two decades of meticulously crafted terror into living rooms across the nation. Each week, listeners surrendered to the unknown, trusting host and creator William Spier to guide them through narratives where ordinary people confronted extraordinary evil. This particular episode exemplifies the show's genius—taking a timeless human motivation like inheritance and transforming it into a psychological battlefield where trust becomes a liability and family bonds turn razor-sharp. The 1940s golden age of radio demanded storytelling of exceptional quality, and Suspense consistently delivered, becoming a cultural institution through sheer commitment to atmospheric excellence and narrative integrity.</p>
+<p>If you've never experienced Suspense, "Tree of Life" is an ideal entry point into a world where danger lurks in whispered conversations and the spaces between words. Tune in, dim the lights, and let the master craftsmen of radio drama remind you why an unseen threat is far more terrifying than anything the eye could witness.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

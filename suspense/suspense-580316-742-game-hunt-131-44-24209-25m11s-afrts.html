@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 580316 742 Game Hunt (131 44) 24209 25m11s Afrts — Suspense | Ghost of Radio</title>
+  <title>Game Hunt (131 44) 24209 25m11s Afrts — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 580316 742 Game Hunt (131 44) 24209 25m11s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 580316 742 Game Hunt (131 44) 24209 25m11s Afrts — Suspense">
   <meta property="og:description" content="Listen to Suspense 580316 742 Game Hunt (131 44) 24209 25m11s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 16, 1958</span>
           </div>
-          <h1 class="episode__title">Suspense 580316 742 Game Hunt (131 44) 24209 25m11s Afrts</h1>
+          <h1 class="episode__title">Game Hunt (131 44) 24209 25m11s Afrts</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Game Hunt</p>
-<p>Picture yourself huddled near the radio on a cold evening, the dial tuned to CBS, when an ominous orchestral sting pierces the darkness. In "Game Hunt," the hunter becomes the hunted in a tale that transforms the genteel sport of pursuit into something far more sinister and primal. Our protagonist ventures into a remote wilderness convinced he's after wild game, only to discover that he himself has become the ultimate quarry. As the episode unfolds across twenty-five breathless minutes, the soundscape shifts from the crunch of boots on forest floor to the frantic pounding of a human heart—will he escape the twisted logic of his pursuer, or will he become just another trophy mounted on an unseen wall?</p>
+          <p>Picture yourself huddled near the radio on a cold evening, the dial tuned to CBS, when an ominous orchestral sting pierces the darkness. In "Game Hunt," the hunter becomes the hunted in a tale that transforms the genteel sport of pursuit into something far more sinister and primal. Our protagonist ventures into a remote wilderness convinced he's after wild game, only to discover that he himself has become the ultimate quarry. As the episode unfolds across twenty-five breathless minutes, the soundscape shifts from the crunch of boots on forest floor to the frantic pounding of a human heart—will he escape the twisted logic of his pursuer, or will he become just another trophy mounted on an unseen wall?</p>
 <p>Suspense stood as radio's premier thriller anthology during an era when listeners depended entirely on their imaginations to conjure terror. Produced during the 1940s golden age of radio drama, this CBS series mastered the art of psychological dread, employing minimal cast, masterful sound design, and scripts that explored the darkest corners of human nature. "Game Hunt" exemplifies the show's genius: a deceptively simple premise that spirals into moral complexity and existential horror. These were stories that required no visual effects, no gore, no elaborate sets—only a powerful voice, a shadow of doubt, and the listener's own mind completing the nightmare.</p>
 <p>The episode survives today as a testament to an age when radio commanded the nation's collective imagination, when families gathered before the glowing dial and surrendered to stories told in the dark. Tune in to experience why Suspense earned its legendary status, and discover how a master class in atmospheric storytelling can still raise the hair on your neck more than seventy years later.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

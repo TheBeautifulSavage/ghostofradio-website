@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460418 189 The Night Reveals (64 44) 14736 30m44s — Suspense | Ghost of Radio</title>
+  <title>The Night Reveals (64 44) 14736 30m44s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460418 189 The Night Reveals (64 44) 14736 30m44s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460418 189 The Night Reveals (64 44) 14736 30m44s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460418 189 The Night Reveals (64 44) 14736 30m44s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 18, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460418 189 The Night Reveals (64 44) 14736 30m44s</h1>
+          <h1 class="episode__title">The Night Reveals (64 44) 14736 30m44s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Night Reveals</p>
-<p>As darkness falls and the city streets empty, a man returns to his apartment to discover something terrifying—evidence that someone has been inside, watching, waiting. The Night Reveals pulls listeners into a claustrophobic nightmare where the sanctuary of home becomes a prison of paranoia. With each creaking floorboard and shadowed corner, the tension mounts. Is it a burglar? A vengeful enemy? Or something far more sinister lurking in the spaces between shadow and moonlight? The superb sound design of Suspense transforms an ordinary apartment into a character itself, every ambient noise—a ticking clock, distant traffic, the rustle of curtains—heightening the unbearable dread that builds toward a shocking climax.</p>
+          <p>As darkness falls and the city streets empty, a man returns to his apartment to discover something terrifying—evidence that someone has been inside, watching, waiting. The Night Reveals pulls listeners into a claustrophobic nightmare where the sanctuary of home becomes a prison of paranoia. With each creaking floorboard and shadowed corner, the tension mounts. Is it a burglar? A vengeful enemy? Or something far more sinister lurking in the spaces between shadow and moonlight? The superb sound design of Suspense transforms an ordinary apartment into a character itself, every ambient noise—a ticking clock, distant traffic, the rustle of curtains—heightening the unbearable dread that builds toward a shocking climax.</p>
 <p>Suspense premiered on CBS in 1942 as radio's premier thriller anthology, and by the time this episode aired in the 1940s, it had already become legendary for its unflinching commitment to psychological horror. Unlike genteel mysteries or action-adventure serials, Suspense trafficked in the intimate terrors of ordinary life—the fear that safety is an illusion, that danger lurks closer than we dare imagine. Created by the talented team behind the medium's greatest dramas, each episode was crafted with meticulous attention to performance and production, featuring some of radio's finest actors delivering spine-tingling performances in real time. The show's reputation for quality and innovation made it essential listening for millions of Americans huddled around their sets, seeking thrills and chills.</p>
 <p>The Night Reveals represents Suspense at its most effective: a lean, devastating story told in thirty minutes with the precision of a surgeon and the soul of a poet. This is radio drama's golden age captured in amber—come experience why audiences couldn't dare miss an episode.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

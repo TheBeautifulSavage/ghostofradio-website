@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 601030 877 The City That Was (64 44) 14246 29m09s — Suspense | Ghost of Radio</title>
+  <title>The City That Was (64 44) 14246 29m09s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 601030 877 The City That Was (64 44) 14246 29m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 601030 877 The City That Was (64 44) 14246 29m09s — Suspense">
   <meta property="og:description" content="Listen to Suspense 601030 877 The City That Was (64 44) 14246 29m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 30, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 601030 877 The City That Was (64 44) 14246 29m09s</h1>
+          <h1 class="episode__title">The City That Was (64 44) 14246 29m09s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The City That Was</p>
-<p>Picture this: a sprawling metropolis, gleaming and mighty, suddenly gripped by an inexplicable silence. In "The City That Was," *Suspense* transports listeners into a nightmare of urban desolation where the familiar streets of a great city have become a tomb of unanswered questions. A lone protagonist awakens to find millions vanished without trace—no bodies, no wreckage, no explanation. As he navigates the eerie canyons of skyscrapers and deserted boulevards, searching frantically for any sign of human life, the tension mounts with each echoing footstep. The sound design becomes your companion in this hollow world: the wind whistling through empty avenues, distant creaking doors, the protagonist's own ragged breathing—all conspiring to create an almost unbearable sense of isolation and dread. This is *Suspense* at its most ambitious, crafting a science-fiction horror tale that proves the greatest fear isn't monsters or madmen, but the complete and total absence of humanity itself.</p>
-<p>CBS's legendary *Suspense* series, which ran from 1942 to 1962, earned its reputation as radio's premier thriller program by trusting the imagination of its audience. With no visual distractions, the show's talented writers and sound engineers could exploit the psychological power of suggestion, transforming ordinary scenarios into chambers of mounting terror. "The City That Was" exemplifies the program's willingness to venture into strange, unsettling territory—far beyond conventional murder mysteries into the realm of existential horror.</p>
-<p>Tune in for nearly thirty minutes of masterful storytelling that will leave you pondering the invisible terrors lurking just beyond perception. *Suspense* waits in the darkness.</p>
+          <p>Picture this: a sprawling metropolis, gleaming and mighty, suddenly gripped by an inexplicable silence. In "The City That Was," Suspense transports listeners into a nightmare of urban desolation where the familiar streets of a great city have become a tomb of unanswered questions. A lone protagonist awakens to find millions vanished without trace—no bodies, no wreckage, no explanation. As he navigates the eerie canyons of skyscrapers and deserted boulevards, searching frantically for any sign of human life, the tension mounts with each echoing footstep. The sound design becomes your companion in this hollow world: the wind whistling through empty avenues, distant creaking doors, the protagonist's own ragged breathing—all conspiring to create an almost unbearable sense of isolation and dread. This is Suspense at its most ambitious, crafting a science-fiction horror tale that proves the greatest fear isn't monsters or madmen, but the complete and total absence of humanity itself.</p>
+<p>CBS's legendary Suspense series, which ran from 1942 to 1962, earned its reputation as radio's premier thriller program by trusting the imagination of its audience. With no visual distractions, the show's talented writers and sound engineers could exploit the psychological power of suggestion, transforming ordinary scenarios into chambers of mounting terror. "The City That Was" exemplifies the program's willingness to venture into strange, unsettling territory—far beyond conventional murder mysteries into the realm of existential horror.</p>
+<p>Tune in for nearly thirty minutes of masterful storytelling that will leave you pondering the invisible terrors lurking just beyond perception. Suspense waits in the darkness.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

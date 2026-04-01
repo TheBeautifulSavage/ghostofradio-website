@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440706 099 The Search For Henri Lefevre (128 44) 28816 30m03s — Suspense | Ghost of Radio</title>
+  <title>The Search For Henri Lefevre (128 44) 28816 30m03s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440706 099 The Search For Henri Lefevre (128 44) 28816 30m03s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440706 099 The Search For Henri Lefevre (128 44) 28816 30m03s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440706 099 The Search For Henri Lefevre (128 44) 28816 30m03s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 6, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440706 099 The Search For Henri Lefevre (128 44) 28816 30m03s</h1>
+          <h1 class="episode__title">The Search For Henri Lefevre (128 44) 28816 30m03s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Search For Henri Lefevre</p>
-<p>As darkness falls over occupied France, a desperate manhunt begins for Henri Lefevre—a man whose very existence has become a question of life and death. Is he a hero or a traitor? A ghost or a fugitive? In this electrifying thirty-minute thriller, listeners will find themselves swept into a tense game of cat-and-mouse, where every shadow conceals a threat and every knock at the door could mean capture—or worse. The crackle of footsteps on cobblestone streets, the menacing whisper of pursuing agents, and the anguished pleas of those caught in Lefevre's wake create an atmosphere thick with danger and moral ambiguity. You'll experience the suffocating paranoia of a world where trust is currency and survival demands terrible choices.</p>
-<p>*Suspense*, which ran on CBS from 1942 to 1962, became the gold standard of dramatic radio—a show where each week brought sophisticated storytelling that treated audiences as intelligent partners in fear. At the height of World War II, episodes like "The Search For Henri Lefevre" resonated with listeners living through their own anxieties about occupation, resistance, and the blurred lines between heroism and self-preservation. The program's commitment to psychological realism and character-driven narrative set it apart from mere pulp entertainment; these were plays that lingered in the mind long after the final chord of the closing organ music faded.</p>
-<p>Tune in tonight and let the voice actors and haunting sound design transport you to a desperate moment in history. In an age before television's visual distractions, *Suspense* offers what cinema cannot: the raw power of imagination ignited by words, music, and the infinite possibilities of darkness.</p>
+          <p>As darkness falls over occupied France, a desperate manhunt begins for Henri Lefevre—a man whose very existence has become a question of life and death. Is he a hero or a traitor? A ghost or a fugitive? In this electrifying thirty-minute thriller, listeners will find themselves swept into a tense game of cat-and-mouse, where every shadow conceals a threat and every knock at the door could mean capture—or worse. The crackle of footsteps on cobblestone streets, the menacing whisper of pursuing agents, and the anguished pleas of those caught in Lefevre's wake create an atmosphere thick with danger and moral ambiguity. You'll experience the suffocating paranoia of a world where trust is currency and survival demands terrible choices.</p>
+<p>Suspense, which ran on CBS from 1942 to 1962, became the gold standard of dramatic radio—a show where each week brought sophisticated storytelling that treated audiences as intelligent partners in fear. At the height of World War II, episodes like "The Search For Henri Lefevre" resonated with listeners living through their own anxieties about occupation, resistance, and the blurred lines between heroism and self-preservation. The program's commitment to psychological realism and character-driven narrative set it apart from mere pulp entertainment; these were plays that lingered in the mind long after the final chord of the closing organ music faded.</p>
+<p>Tune in tonight and let the voice actors and haunting sound design transport you to a desperate moment in history. In an age before television's visual distractions, Suspense offers what cinema cannot: the raw power of imagination ignited by words, music, and the infinite possibilities of darkness.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 480819 303 Crisis (128 44) 28423 29m38s — Suspense | Ghost of Radio</title>
+  <title>Crisis (128 44) 28423 29m38s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 480819 303 Crisis (128 44) 28423 29m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 480819 303 Crisis (128 44) 28423 29m38s — Suspense">
   <meta property="og:description" content="Listen to Suspense 480819 303 Crisis (128 44) 28423 29m38s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 19, 1948</span>
           </div>
-          <h1 class="episode__title">Suspense 480819 303 Crisis (128 44) 28423 29m38s</h1>
+          <h1 class="episode__title">Crisis (128 44) 28423 29m38s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Crisis</p>
-<p>When the fog rolls in thick and suffocating on a moonless night, when a single telephone call shatters the peace of an ordinary home, when a man discovers that everything he's built could crumble in mere hours—that is when *Suspense* strikes hardest. In "Crisis," listeners are thrust into the claustrophobic world of a desperate protagonist facing an impossible choice, with the clock ticking relentlessly and unseen forces closing in from all sides. The sound design crackles with authenticity: the hum of electricity in the wires, the metallic ring of a telephone that feels like an accusation, footsteps that echo with menace. As the drama unfolds across its near thirty minutes, the noose tightens with each revelation, each lie, each frantic decision. This is suspense in its purest form—not the supernatural terrors of a haunted house, but the very real horror of a man watching his life unravel.</p>
-<p>For two decades, *Suspense* commanded the Thursday night imagination of America, earning its place as one of radio's most celebrated thriller anthologies. Produced by William S. Boyd and featuring some of the era's finest actors—many moonlighting from the silver screen—the show became legendary for its commitment to psychological realism and intimate character study. Airing during the 1940s and '50s, these episodes captured the anxieties of post-war America, exploring not monsters or madmen, but the darker impulses within ordinary people facing extraordinary circumstances. Each episode was meticulously crafted, with scripts that valued tension over shock and character over spectacle.</p>
+          <p>When the fog rolls in thick and suffocating on a moonless night, when a single telephone call shatters the peace of an ordinary home, when a man discovers that everything he's built could crumble in mere hours—that is when Suspense strikes hardest. In "Crisis," listeners are thrust into the claustrophobic world of a desperate protagonist facing an impossible choice, with the clock ticking relentlessly and unseen forces closing in from all sides. The sound design crackles with authenticity: the hum of electricity in the wires, the metallic ring of a telephone that feels like an accusation, footsteps that echo with menace. As the drama unfolds across its near thirty minutes, the noose tightens with each revelation, each lie, each frantic decision. This is suspense in its purest form—not the supernatural terrors of a haunted house, but the very real horror of a man watching his life unravel.</p>
+<p>For two decades, Suspense commanded the Thursday night imagination of America, earning its place as one of radio's most celebrated thriller anthologies. Produced by William S. Boyd and featuring some of the era's finest actors—many moonlighting from the silver screen—the show became legendary for its commitment to psychological realism and intimate character study. Airing during the 1940s and '50s, these episodes captured the anxieties of post-war America, exploring not monsters or madmen, but the darker impulses within ordinary people facing extraordinary circumstances. Each episode was meticulously crafted, with scripts that valued tension over shock and character over spectacle.</p>
 <p>Don't miss this masterwork of audio drama. Tune in to "Crisis" and discover why audiences huddled around their radios each week, held spellbound by the power of voice, sound, and imagination.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

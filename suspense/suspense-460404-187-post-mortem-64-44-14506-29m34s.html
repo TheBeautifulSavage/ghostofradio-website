@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 460404 187 Post Mortem (64 44) 14506 29m34s — Suspense | Ghost of Radio</title>
+  <title>Post Mortem (64 44) 14506 29m34s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 460404 187 Post Mortem (64 44) 14506 29m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 460404 187 Post Mortem (64 44) 14506 29m34s — Suspense">
   <meta property="og:description" content="Listen to Suspense 460404 187 Post Mortem (64 44) 14506 29m34s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 4, 1946</span>
           </div>
-          <h1 class="episode__title">Suspense 460404 187 Post Mortem (64 44) 14506 29m34s</h1>
+          <h1 class="episode__title">Post Mortem (64 44) 14506 29m34s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Post Mortem</p>
-<p>When the curtain rises on "Post Mortem," listeners are drawn into the suffocating darkness of a locked room where death itself becomes an unwilling guest. A man lies cold upon a table, pronounced dead by every medical authority—yet something stirs beneath that rigid composure. As the minutes tick by with agonizing slowness, the atmosphere grows thick with dread: Is he truly gone, or has he merely slipped into that terrifying border between life and death? The sound design becomes your only guide through this nightmare—the shallow rasp of breathing (or is it?), the nervous shuffle of feet, the taut whispers of those who fear what might happen if the corpse suddenly wakes. Director William Castle and his virtuoso cast construct a masterpiece of psychological terror, where the most horrifying possibilities emerge not from what we see, but from what we desperately hope will not occur.</p>
-<p>*Suspense* reigned supreme during the Golden Age of radio, and this episode exemplifies why the program commanded an audience of millions week after week. Airing during the 1940s, when America huddled around their sets seeking escape from wartime anxieties, *Suspense* delivered literary-quality thriller writing adapted from the finest sources—Daphne du Maurier, H.P. Lovecraft, and original scripts that became legendary. "Post Mortem" represents the show at its creative apex, wielding sound and silence as instruments of pure terror, stripping away visual distraction to burrow directly into the listener's imagination.</p>
+          <p>When the curtain rises on "Post Mortem," listeners are drawn into the suffocating darkness of a locked room where death itself becomes an unwilling guest. A man lies cold upon a table, pronounced dead by every medical authority—yet something stirs beneath that rigid composure. As the minutes tick by with agonizing slowness, the atmosphere grows thick with dread: Is he truly gone, or has he merely slipped into that terrifying border between life and death? The sound design becomes your only guide through this nightmare—the shallow rasp of breathing (or is it?), the nervous shuffle of feet, the taut whispers of those who fear what might happen if the corpse suddenly wakes. Director William Castle and his virtuoso cast construct a masterpiece of psychological terror, where the most horrifying possibilities emerge not from what we see, but from what we desperately hope will not occur.</p>
+<p>Suspense reigned supreme during the Golden Age of radio, and this episode exemplifies why the program commanded an audience of millions week after week. Airing during the 1940s, when America huddled around their sets seeking escape from wartime anxieties, Suspense delivered literary-quality thriller writing adapted from the finest sources—Daphne du Maurier, H.P. Lovecraft, and original scripts that became legendary. "Post Mortem" represents the show at its creative apex, wielding sound and silence as instruments of pure terror, stripping away visual distraction to burrow directly into the listener's imagination.</p>
 <p>Experience the electric dread of radio's golden era by tuning in to "Post Mortem." In nearly thirty minutes, you'll discover why audiences of seventy years past sat in trembling silence, utterly transfixed by invisible horrors. Turn off the lights, turn up the volume, and prepare yourself—some nights, the most terrifying broadcasts are the ones you hear but cannot see.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

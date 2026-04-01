@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560703 657 The Music Lovers (128 44) 28484 30m02s — Suspense | Ghost of Radio</title>
+  <title>The Music Lovers (128 44) 28484 30m02s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560703 657 The Music Lovers (128 44) 28484 30m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560703 657 The Music Lovers (128 44) 28484 30m02s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560703 657 The Music Lovers (128 44) 28484 30m02s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 3, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560703 657 The Music Lovers (128 44) 28484 30m02s</h1>
+          <h1 class="episode__title">The Music Lovers (128 44) 28484 30m02s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Music Lovers</p>
-<p>As the familiar Suspense theme wails through your radio speaker—that spine-tingling organ music that has become the signature of American anxiety itself—you're transported into a world where the love of music masks something far more sinister. "The Music Lovers" draws you into an intimate domestic drama where passion for the arts becomes the perfect cover for darker impulses. What begins as an innocent appreciation of fine music in a comfortable home gradually shifts into something altogether more unsettling, where the very melodies that soothe the soul may conceal murderous intent. The tension builds not through gunfire or dramatic confrontation, but through the subtle corruptions of human nature—a masterclass in psychological suspense that CBS perfected during radio's golden age.</p>
+          <p>As the familiar Suspense theme wails through your radio speaker—that spine-tingling organ music that has become the signature of American anxiety itself—you're transported into a world where the love of music masks something far more sinister. "The Music Lovers" draws you into an intimate domestic drama where passion for the arts becomes the perfect cover for darker impulses. What begins as an innocent appreciation of fine music in a comfortable home gradually shifts into something altogether more unsettling, where the very melodies that soothe the soul may conceal murderous intent. The tension builds not through gunfire or dramatic confrontation, but through the subtle corruptions of human nature—a masterclass in psychological suspense that CBS perfected during radio's golden age.</p>
 <p>Suspense pioneered a distinctly American form of psychological terror during its twenty-year run from 1942 to 1962, bringing Hollywood stars and Broadway talent into living rooms across the nation for stories that emphasized character over spectacle. The show's brilliance lay in its understanding that true fear emerges from recognizable situations spiraling toward darkness—not from monsters lurking in shadows, but from the threat that lurked within one's own neighbors, one's own loved ones. In episodes like "The Music Lovers," writers tapped into primal anxieties about trust and betrayal, using the intimate medium of radio to create psychological warfare that no visual medium could quite replicate.</p>
 <p>If you've ever found yourself unsettled by the ordinary, captivated by the moment when civility cracks to reveal something underneath, then "The Music Lovers" demands your attention. Tune in and discover why audiences huddled around their radios night after night, why Suspense became the benchmark against which all psychological thrillers are still measured. Sometimes the most terrifying stories are the ones closest to home.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

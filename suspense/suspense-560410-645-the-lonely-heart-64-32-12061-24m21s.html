@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560410 645 The Lonely Heart (64 32) 12061 24m21s — Suspense | Ghost of Radio</title>
+  <title>The Lonely Heart (64 32) 12061 24m21s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560410 645 The Lonely Heart (64 32) 12061 24m21s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560410 645 The Lonely Heart (64 32) 12061 24m21s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560410 645 The Lonely Heart (64 32) 12061 24m21s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 10, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560410 645 The Lonely Heart (64 32) 12061 24m21s</h1>
+          <h1 class="episode__title">The Lonely Heart (64 32) 12061 24m21s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lonely Heart</p>
-<p>Picture yourself in a dimly lit apartment on a rain-soaked evening, the only sound the steady patter against the windows and the ticking of a clock on the mantle. "The Lonely Heart" pulls you into the shadowed world of urban isolation and dangerous temptation, where a single moment of vulnerability can shatter a life. As our protagonist navigates the cruel machinery of loneliness, seemingly innocent encounters begin to take on sinister dimensions. The tension builds with masterful precision—each word of dialogue, each perfectly placed sound effect of a ringing telephone or creaking floorboard, drawing you deeper into a web of suspicion and dread. By the episode's climax, you'll find yourself questioning whether anyone can truly be trusted, and whether the heart's deepest yearnings might conceal the darkest intentions.</p>
-<p>Throughout its twenty-year run, *Suspense* established itself as the gold standard of radio drama, earning its legendary reputation through scripts that understood the peculiar power of audio storytelling. Unlike visual media, radio forces listeners into an intimate collaboration with the narrative—your imagination becomes the cinematographer, conjuring every shadow and threat. This 1940s episode exemplifies the show's genius for psychological horror, exploring the vulnerability of ordinary people caught in extraordinary circumstances. The writing captures post-war anxieties with surgical precision: alienation, the search for connection, and the paranoia that pervades human relationships.</p>
-<p>Whether you're a devoted *Suspense* aficionado or new to classic radio drama, "The Lonely Heart" offers a masterclass in tension and atmosphere. Settle in with headphones if you can—the intimacy is essential—and prepare to experience storytelling that time has only made more powerful. Some thrills, once heard, are never forgotten.</p>
+          <p>Picture yourself in a dimly lit apartment on a rain-soaked evening, the only sound the steady patter against the windows and the ticking of a clock on the mantle. "The Lonely Heart" pulls you into the shadowed world of urban isolation and dangerous temptation, where a single moment of vulnerability can shatter a life. As our protagonist navigates the cruel machinery of loneliness, seemingly innocent encounters begin to take on sinister dimensions. The tension builds with masterful precision—each word of dialogue, each perfectly placed sound effect of a ringing telephone or creaking floorboard, drawing you deeper into a web of suspicion and dread. By the episode's climax, you'll find yourself questioning whether anyone can truly be trusted, and whether the heart's deepest yearnings might conceal the darkest intentions.</p>
+<p>Throughout its twenty-year run, Suspense established itself as the gold standard of radio drama, earning its legendary reputation through scripts that understood the peculiar power of audio storytelling. Unlike visual media, radio forces listeners into an intimate collaboration with the narrative—your imagination becomes the cinematographer, conjuring every shadow and threat. This 1940s episode exemplifies the show's genius for psychological horror, exploring the vulnerability of ordinary people caught in extraordinary circumstances. The writing captures post-war anxieties with surgical precision: alienation, the search for connection, and the paranoia that pervades human relationships.</p>
+<p>Whether you're a devoted Suspense aficionado or new to classic radio drama, "The Lonely Heart" offers a masterclass in tension and atmosphere. Settle in with headphones if you can—the intimacy is essential—and prepare to experience storytelling that time has only made more powerful. Some thrills, once heard, are never forgotten.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

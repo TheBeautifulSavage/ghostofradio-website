@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 531005 520 Action (128 44) 28276 29m28s — Suspense | Ghost of Radio</title>
+  <title>Action (128 44) 28276 29m28s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 531005 520 Action (128 44) 28276 29m28s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 531005 520 Action (128 44) 28276 29m28s — Suspense">
   <meta property="og:description" content="Listen to Suspense 531005 520 Action (128 44) 28276 29m28s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 5, 1953</span>
           </div>
-          <h1 class="episode__title">Suspense 531005 520 Action (128 44) 28276 29m28s</h1>
+          <h1 class="episode__title">Action (128 44) 28276 29m28s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Action"</p>
-<p>When the studio lights dimmed and the iconic CBS chime faded into darkness on that October evening in 1952, listeners across America settled into their favorite chairs for a descent into pure, unbridled tension. "Action" promised exactly what its title suggested—a relentless thriller stripped of sentiment and padding, where every second crackled with the possibility of violence. Against a soundscape of racing heartbeats, screeching tires, and urgent whispers, the drama unfolds with the kinetic energy of a man caught between impossible choices. There is no safety in this half-hour. What begins in medias res—plunging listeners directly into crisis—never releases its grip, building toward a conclusion that trades the comfort of resolution for the sting of stark, brutal reality.</p>
-<p>*Suspense* had spent a full decade perfecting this formula by the time "Action" aired, becoming radio's undisputed master of psychological warfare against its audience. Produced and directed with obsessive attention to sound design, the program proved that terror needed no visual component—merely the suggestion of danger, amplified through expert voice acting and a orchestra poised to strike at a moment's notice. These weren't tales of supernatural monsters, but of ordinary people in extraordinary peril, making the horror disturbingly plausible. The show's writers understood that the human imagination, given only audio clues, would conjure horrors far more personal and devastating than any special effect could achieve.</p>
-<p>This is essential listening for anyone curious about how radio drama achieved such cultural dominance in the golden age, or for those seeking to experience suspense in its purest form—unmediated by image, dependent entirely on the listener's willingness to surrender to the dark. Tune in to "Action" and discover why *Suspense* remained America's favorite fear for two decades.</p>
+          <p>When the studio lights dimmed and the iconic CBS chime faded into darkness on that October evening in 1952, listeners across America settled into their favorite chairs for a descent into pure, unbridled tension. "Action" promised exactly what its title suggested—a relentless thriller stripped of sentiment and padding, where every second crackled with the possibility of violence. Against a soundscape of racing heartbeats, screeching tires, and urgent whispers, the drama unfolds with the kinetic energy of a man caught between impossible choices. There is no safety in this half-hour. What begins in medias res—plunging listeners directly into crisis—never releases its grip, building toward a conclusion that trades the comfort of resolution for the sting of stark, brutal reality.</p>
+<p>Suspense had spent a full decade perfecting this formula by the time "Action" aired, becoming radio's undisputed master of psychological warfare against its audience. Produced and directed with obsessive attention to sound design, the program proved that terror needed no visual component—merely the suggestion of danger, amplified through expert voice acting and a orchestra poised to strike at a moment's notice. These weren't tales of supernatural monsters, but of ordinary people in extraordinary peril, making the horror disturbingly plausible. The show's writers understood that the human imagination, given only audio clues, would conjure horrors far more personal and devastating than any special effect could achieve.</p>
+<p>This is essential listening for anyone curious about how radio drama achieved such cultural dominance in the golden age, or for those seeking to experience suspense in its purest form—unmediated by image, dependent entirely on the listener's willingness to surrender to the dark. Tune in to "Action" and discover why Suspense remained America's favorite fear for two decades.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

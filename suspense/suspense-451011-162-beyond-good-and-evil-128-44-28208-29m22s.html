@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 451011 162 Beyond Good And Evil (128 44) 28208 29m22s — Suspense | Ghost of Radio</title>
+  <title>Beyond Good And Evil (128 44) 28208 29m22s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 451011 162 Beyond Good And Evil (128 44) 28208 29m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 451011 162 Beyond Good And Evil (128 44) 28208 29m22s — Suspense">
   <meta property="og:description" content="Listen to Suspense 451011 162 Beyond Good And Evil (128 44) 28208 29m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 11, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 451011 162 Beyond Good And Evil (128 44) 28208 29m22s</h1>
+          <h1 class="episode__title">Beyond Good And Evil (128 44) 28208 29m22s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Beyond Good and Evil</p>
-<p>Picture yourself huddled near the radio on a dark evening, the blue glow of the dial your only comfort as an unsettling tale unfolds in the darkness. In "Beyond Good and Evil," Suspense delves into the shadowy recesses of human nature where morality becomes a negotiable commodity and the line between victim and villain blurs into dangerous ambiguity. Over its gripping twenty-eight minutes, listeners will find themselves trapped in a psychological labyrinth where nothing is quite as it seems, and every carefully laid plan carries the seeds of its own unraveling. The episode crackles with tension born from intimate human conflict rather than external threats—the true horror lies not in what lurks in the shadows, but in what dwells in the hearts of ordinary people.</p>
+          <p>Picture yourself huddled near the radio on a dark evening, the blue glow of the dial your only comfort as an unsettling tale unfolds in the darkness. In "Beyond Good and Evil," Suspense delves into the shadowy recesses of human nature where morality becomes a negotiable commodity and the line between victim and villain blurs into dangerous ambiguity. Over its gripping twenty-eight minutes, listeners will find themselves trapped in a psychological labyrinth where nothing is quite as it seems, and every carefully laid plan carries the seeds of its own unraveling. The episode crackles with tension born from intimate human conflict rather than external threats—the true horror lies not in what lurks in the shadows, but in what dwells in the hearts of ordinary people.</p>
 <p>Suspense arrived on CBS in 1942 as radio's premier thriller anthology, building its legendary reputation through precisely this kind of moral complexity. The show distinguished itself by refusing simple answers; instead, it presented scenarios where desperation, greed, and weakness collide with devastating consequences. "Beyond Good and Evil" exemplifies the series at its finest, when writers understood that the most chilling tales were those that forced audiences to question their own judgments. By the 1940s, with America navigating the moral complexities of wartime, these psychological explorations resonated deeply with listeners seeking entertainment that didn't shy away from uncomfortable truths about human nature.</p>
 <p>If you've never experienced a Suspense broadcast, this is an ideal entry point into a world where every creak of a floorboard carries meaning and every word of dialogue might be a lie. Tune in and let yourself be transported to an era when radio could chill the spine and haunt the mind—and discover why Suspense remained America's most trusted purveyor of terror for two decades.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

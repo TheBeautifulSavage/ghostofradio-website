@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560131 635 Arctic Rescue (64 44) 14518 29m36s — Suspense | Ghost of Radio</title>
+  <title>Arctic Rescue (64 44) 14518 29m36s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560131 635 Arctic Rescue (64 44) 14518 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560131 635 Arctic Rescue (64 44) 14518 29m36s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560131 635 Arctic Rescue (64 44) 14518 29m36s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 31, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560131 635 Arctic Rescue (64 44) 14518 29m36s</h1>
+          <h1 class="episode__title">Arctic Rescue (64 44) 14518 29m36s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Arctic Rescue</p>
-<p>Picture yourself huddled in the frozen darkness of a remote Arctic outpost, where the nearest help is hundreds of miles away across an unforgiving wilderness of ice and howling winds. In this gripping episode of Suspense, a desperate rescue mission unfolds against nature's most savage backdrop. A plane has gone down somewhere in the vast white expanse, and time is the cruelest enemy. The search party faces not only the brutal cold that can kill a man in minutes, but mounting tension as supplies dwindle, hope fades, and survival itself becomes uncertain. The writing pulls you into the claustrophobia of isolation—the crackle of radio static, the groan of wind through cracks in wooden walls, the strained voices of men pushed to their psychological breaking point. Will the rescue team find the missing plane before it's too late? Or will the Arctic claim them all?</p>
+          <p>Picture yourself huddled in the frozen darkness of a remote Arctic outpost, where the nearest help is hundreds of miles away across an unforgiving wilderness of ice and howling winds. In this gripping episode of Suspense, a desperate rescue mission unfolds against nature's most savage backdrop. A plane has gone down somewhere in the vast white expanse, and time is the cruelest enemy. The search party faces not only the brutal cold that can kill a man in minutes, but mounting tension as supplies dwindle, hope fades, and survival itself becomes uncertain. The writing pulls you into the claustrophobia of isolation—the crackle of radio static, the groan of wind through cracks in wooden walls, the strained voices of men pushed to their psychological breaking point. Will the rescue team find the missing plane before it's too late? Or will the Arctic claim them all?</p>
 <p>This 1940s episode exemplifies what made Suspense one of radio's most celebrated dramatic anthologies. From its 1942 debut on CBS through two decades of broadcasting, the show distinguished itself through relentless pacing, psychological depth, and scripts that transformed ordinary circumstances into extraordinary nightmares. The producers understood that the most terrifying threats often came not from monsters, but from human vulnerability confronting hostile environments and moral dilemmas. Arctic Rescue particularly showcases this philosophy—there are no supernatural elements here, only the elemental terror of nature and the fragile human will to survive.</p>
 <p>Whether you're a devotee of classic radio or discovering the golden age of broadcast drama for the first time, this episode deserves your attention. Nearly 30 minutes of pure tension await, performed by accomplished voice actors whose talents bring every frozen moment to vivid life. Tune in, settle in, and prepare to feel the bite of Arctic cold through your speakers.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

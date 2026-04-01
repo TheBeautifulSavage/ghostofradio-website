@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570602 701 Crossing Paris (64 44) 14090 29m22s — Suspense | Ghost of Radio</title>
+  <title>Crossing Paris (64 44) 14090 29m22s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570602 701 Crossing Paris (64 44) 14090 29m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570602 701 Crossing Paris (64 44) 14090 29m22s — Suspense">
   <meta property="og:description" content="Listen to Suspense 570602 701 Crossing Paris (64 44) 14090 29m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · June 2, 1957</span>
           </div>
-          <h1 class="episode__title">Suspense 570602 701 Crossing Paris (64 44) 14090 29m22s</h1>
+          <h1 class="episode__title">Crossing Paris (64 44) 14090 29m22s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Crossing Paris</p>
-<p>As the familiar *Suspense* theme crackles through your radio speaker—that spine-tingling orchestral prelude that has become synonymous with terror in the night—you are transported to occupied Paris during the darkest hours of World War II. In "Crossing Paris," a desperate fugitive must navigate the shadowed streets and checkpoints of a city transformed into a labyrinth of danger. Every corner holds the threat of Nazi patrols, every innocent-seeming conversation could be a trap, and every heartbeat seems to echo louder than the footsteps pursuing our protagonist. The tension builds like the rumble of distant thunder as our hero realizes that survival depends not just on speed or cunning, but on the fragile mercy of strangers. This is *Suspense* at its finest—intimate, visceral, and utterly unrelenting.</p>
-<p>For over two decades, *Suspense* has pioneered the art of psychological terror on American radio, and by the late 1940s, when this episode aired, the series had perfected the formula of transforming ordinary people into extraordinary circumstances. The writers drew inspiration from contemporary anxieties—the war had ended mere years before, and audiences were still grappling with the horrors they'd witnessed or heard about. Broadcasting from CBS's studios, the show's production team wielded sound effects, music, and stellar performances as precise instruments of dread. "Crossing Paris" exemplifies how radio drama could explore the human cost of war while delivering edge-of-your-seat entertainment to millions of listeners huddled around their sets.</p>
-<p>Step into the fog-shrouded streets of occupied France and discover why *Suspense* became the gold standard of dramatic radio. Twenty-nine minutes has never felt so perilous.</p>
+          <p>As the familiar Suspense theme crackles through your radio speaker—that spine-tingling orchestral prelude that has become synonymous with terror in the night—you are transported to occupied Paris during the darkest hours of World War II. In "Crossing Paris," a desperate fugitive must navigate the shadowed streets and checkpoints of a city transformed into a labyrinth of danger. Every corner holds the threat of Nazi patrols, every innocent-seeming conversation could be a trap, and every heartbeat seems to echo louder than the footsteps pursuing our protagonist. The tension builds like the rumble of distant thunder as our hero realizes that survival depends not just on speed or cunning, but on the fragile mercy of strangers. This is Suspense at its finest—intimate, visceral, and utterly unrelenting.</p>
+<p>For over two decades, Suspense has pioneered the art of psychological terror on American radio, and by the late 1940s, when this episode aired, the series had perfected the formula of transforming ordinary people into extraordinary circumstances. The writers drew inspiration from contemporary anxieties—the war had ended mere years before, and audiences were still grappling with the horrors they'd witnessed or heard about. Broadcasting from CBS's studios, the show's production team wielded sound effects, music, and stellar performances as precise instruments of dread. "Crossing Paris" exemplifies how radio drama could explore the human cost of war while delivering edge-of-your-seat entertainment to millions of listeners huddled around their sets.</p>
+<p>Step into the fog-shrouded streets of occupied France and discover why Suspense became the gold standard of dramatic radio. Twenty-nine minutes has never felt so perilous.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

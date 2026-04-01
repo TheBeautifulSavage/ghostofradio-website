@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 471113 271 Riabouchinska (64 44) 14416 29m23s — Suspense | Ghost of Radio</title>
+  <title>Riabouchinska (64 44) 14416 29m23s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 471113 271 Riabouchinska (64 44) 14416 29m23s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 471113 271 Riabouchinska (64 44) 14416 29m23s — Suspense">
   <meta property="og:description" content="Listen to Suspense 471113 271 Riabouchinska (64 44) 14416 29m23s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 13, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 471113 271 Riabouchinska (64 44) 14416 29m23s</h1>
+          <h1 class="episode__title">Riabouchinska (64 44) 14416 29m23s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense 471113: Riabouchinska</p>
-<p>Picture this: a fog-laden evening in 1940s America, your radio crackling to life as the familiar sound of that iconic creaking door pulls you into a world of shadow and intrigue. In "Riabouchinska," listeners are transported into the elegant, perilous orbit of a Russian prima ballerina whose every graceful movement conceals a sinister secret. With just over twenty-nine minutes to grip your imagination, this episode weaves together the glamour of the stage, the murky politics of wartime espionage, and the timeless question: what lies beneath a beautiful surface? As the tension mounts through carefully placed silences and the subtle terror of the unknown, you'll find yourself leaning closer to the speaker, every word a brushstroke painting a canvas of suspicion and danger.</p>
-<p>*Suspense* stands as one of the golden age's most enduring achievements—a show that understood the raw power of the human voice and the limitless landscape of the mind's eye. Running from 1942 through 1962, it pioneered the anthology format that would later dominate television, while its flexibility allowed writers to traverse every conceivable nightmare, from psychological horror to international intrigue. The show's brilliance lay not in jump scares or gore, but in psychological penetration—the slow-building dread of a situation spiraling beyond control. "Riabouchinska," with its Old World elegance and Cold War undertones, exemplifies this mastery, offering both intimate character study and high-stakes drama.</p>
-<p>So dim the lights, still your surroundings, and surrender yourself to the world that awaits. *Suspense* demands nothing but your attention and imagination—yet rewards both immeasurably. Tune in to "Riabouchinska" and discover why, decades later, these broadcasts still captivate, unsettle, and thrill.</p>
+          <p>Picture this: a fog-laden evening in 1940s America, your radio crackling to life as the familiar sound of that iconic creaking door pulls you into a world of shadow and intrigue. In "Riabouchinska," listeners are transported into the elegant, perilous orbit of a Russian prima ballerina whose every graceful movement conceals a sinister secret. With just over twenty-nine minutes to grip your imagination, this episode weaves together the glamour of the stage, the murky politics of wartime espionage, and the timeless question: what lies beneath a beautiful surface? As the tension mounts through carefully placed silences and the subtle terror of the unknown, you'll find yourself leaning closer to the speaker, every word a brushstroke painting a canvas of suspicion and danger.</p>
+<p>Suspense stands as one of the golden age's most enduring achievements—a show that understood the raw power of the human voice and the limitless landscape of the mind's eye. Running from 1942 through 1962, it pioneered the anthology format that would later dominate television, while its flexibility allowed writers to traverse every conceivable nightmare, from psychological horror to international intrigue. The show's brilliance lay not in jump scares or gore, but in psychological penetration—the slow-building dread of a situation spiraling beyond control. "Riabouchinska," with its Old World elegance and Cold War undertones, exemplifies this mastery, offering both intimate character study and high-stakes drama.</p>
+<p>So dim the lights, still your surroundings, and surrender yourself to the world that awaits. Suspense demands nothing but your attention and imagination—yet rewards both immeasurably. Tune in to "Riabouchinska" and discover why, decades later, these broadcasts still captivate, unsettle, and thrill.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

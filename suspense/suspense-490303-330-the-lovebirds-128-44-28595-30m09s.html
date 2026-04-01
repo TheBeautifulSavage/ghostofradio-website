@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 490303 330 The Lovebirds (128 44) 28595 30m09s — Suspense | Ghost of Radio</title>
+  <title>The Lovebirds (128 44) 28595 30m09s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 490303 330 The Lovebirds (128 44) 28595 30m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 490303 330 The Lovebirds (128 44) 28595 30m09s — Suspense">
   <meta property="og:description" content="Listen to Suspense 490303 330 The Lovebirds (128 44) 28595 30m09s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · March 3, 1949</span>
           </div>
-          <h1 class="episode__title">Suspense 490303 330 The Lovebirds (128 44) 28595 30m09s</h1>
+          <h1 class="episode__title">The Lovebirds (128 44) 28595 30m09s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lovebirds</p>
-<p>When the needle drops on this chilling installment, you'll find yourself in the intimate quarters of a marriage gone terribly, fatally wrong. *The Lovebirds* spins a tale of obsessive devotion twisted into something sinister—where whispered endearments mask darker intentions and the sanctity of the home becomes a gilded cage. As the tension mounts through carefully placed sound effects and the actors' perfectly modulated voices, you'll discover that sometimes the greatest danger lurks not from shadowy strangers, but from the person sleeping beside you. The production crackles with an almost unbearable psychological dread, drawing you deeper into a domestic nightmare where trust becomes a weapon and love mutates into something unrecognizable.</p>
-<p>*Suspense* aired during radio's golden age when millions of Americans gathered around their receivers for thirty minutes of expertly crafted terror. The show's legendary producer William S. Boyd understood that the human imagination, when properly provoked, could conjure horrors no visual medium could match. Each episode was a masterclass in psychological storytelling, relying on stellar voice acting, haunting sound design, and scripts that understood the power of suggestion and silence. From 1942 through its final broadcast in 1962, *Suspense* attracted top-tier talent—both behind the microphone and in front of it—making it the gold standard of radio drama that influenced generations of thriller writers and filmmakers.</p>
-<p>If you've never experienced the magnetic pull of classic radio drama, *The Lovebirds* is an ideal entry point into a lost art form. Dim the lights, turn up the volume, and let yourself surrender to twenty minutes of pure, unadulterated suspense. In an age of streaming and visual spectacle, there's something profoundly satisfying about letting skilled storytellers paint pictures in the theater of your mind.</p>
+          <p>When the needle drops on this chilling installment, you'll find yourself in the intimate quarters of a marriage gone terribly, fatally wrong. The Lovebirds spins a tale of obsessive devotion twisted into something sinister—where whispered endearments mask darker intentions and the sanctity of the home becomes a gilded cage. As the tension mounts through carefully placed sound effects and the actors' perfectly modulated voices, you'll discover that sometimes the greatest danger lurks not from shadowy strangers, but from the person sleeping beside you. The production crackles with an almost unbearable psychological dread, drawing you deeper into a domestic nightmare where trust becomes a weapon and love mutates into something unrecognizable.</p>
+<p>Suspense aired during radio's golden age when millions of Americans gathered around their receivers for thirty minutes of expertly crafted terror. The show's legendary producer William S. Boyd understood that the human imagination, when properly provoked, could conjure horrors no visual medium could match. Each episode was a masterclass in psychological storytelling, relying on stellar voice acting, haunting sound design, and scripts that understood the power of suggestion and silence. From 1942 through its final broadcast in 1962, Suspense attracted top-tier talent—both behind the microphone and in front of it—making it the gold standard of radio drama that influenced generations of thriller writers and filmmakers.</p>
+<p>If you've never experienced the magnetic pull of classic radio drama, The Lovebirds is an ideal entry point into a lost art form. Dim the lights, turn up the volume, and let yourself surrender to twenty minutes of pure, unadulterated suspense. In an age of streaming and visual spectacle, there's something profoundly satisfying about letting skilled storytellers paint pictures in the theater of your mind.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

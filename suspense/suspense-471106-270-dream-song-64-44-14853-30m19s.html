@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 471106 270 Dream Song (64 44) 14853 30m19s — Suspense | Ghost of Radio</title>
+  <title>Dream Song (64 44) 14853 30m19s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 471106 270 Dream Song (64 44) 14853 30m19s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 471106 270 Dream Song (64 44) 14853 30m19s — Suspense">
   <meta property="og:description" content="Listen to Suspense 471106 270 Dream Song (64 44) 14853 30m19s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 6, 1947</span>
           </div>
-          <h1 class="episode__title">Suspense 471106 270 Dream Song (64 44) 14853 30m19s</h1>
+          <h1 class="episode__title">Dream Song (64 44) 14853 30m19s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Dream Song</p>
-<p>Step into the shadowy corridors of the subconscious in "Dream Song," where the line between nightmare and reality dissolves like morning mist. Our protagonist finds himself trapped in a fevered dream—or is it something far more sinister?—where logic bends and danger lurks in every familiar face. As the plot twists through surreal landscapes and impossible situations, listeners are swept along on a current of mounting dread, never quite certain whether they're witnessing madness, murder, or something altogether more terrifying. The sound design—distorted voices, unsettling music, and those pregnant silences that make your skin crawl—transforms your living room into a theater of the mind where anything becomes possible.</p>
-<p>*Suspense* was the gold standard of American thriller radio, and this 1940s broadcast exemplifies why CBS's flagship program captivated over ten million listeners every week. Producer-director William Castle understood that the most effective horror happens in the imagination, not on a screen. By focusing on psychological terror rather than gratuitous violence, *Suspense* tapped into universal anxieties that resonated across America during an era already fraught with uncertainty. Each episode was a masterclass in tension, featuring top-tier talent and scripts that understood the unique power of radio drama—where every creak and whisper becomes real to the listener.</p>
-<p>"Dream Song" is the perfect entry point for newcomers to *Suspense*, showcasing everything that made the series legendary: tight writing, stellar performances, and an understanding that the most terrifying monster is always the one we can't quite see. Don't miss this journey into the darkest recesses of human consciousness. Tune in, dim the lights, and prepare to be thoroughly, deliciously unsettled.</p>
+          <p>Step into the shadowy corridors of the subconscious in "Dream Song," where the line between nightmare and reality dissolves like morning mist. Our protagonist finds himself trapped in a fevered dream—or is it something far more sinister?—where logic bends and danger lurks in every familiar face. As the plot twists through surreal landscapes and impossible situations, listeners are swept along on a current of mounting dread, never quite certain whether they're witnessing madness, murder, or something altogether more terrifying. The sound design—distorted voices, unsettling music, and those pregnant silences that make your skin crawl—transforms your living room into a theater of the mind where anything becomes possible.</p>
+<p>Suspense was the gold standard of American thriller radio, and this 1940s broadcast exemplifies why CBS's flagship program captivated over ten million listeners every week. Producer-director William Castle understood that the most effective horror happens in the imagination, not on a screen. By focusing on psychological terror rather than gratuitous violence, Suspense tapped into universal anxieties that resonated across America during an era already fraught with uncertainty. Each episode was a masterclass in tension, featuring top-tier talent and scripts that understood the unique power of radio drama—where every creak and whisper becomes real to the listener.</p>
+<p>"Dream Song" is the perfect entry point for newcomers to Suspense, showcasing everything that made the series legendary: tight writing, stellar performances, and an understanding that the most terrifying monster is always the one we can't quite see. Don't miss this journey into the darkest recesses of human consciousness. Tune in, dim the lights, and prepare to be thoroughly, deliciously unsettled.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

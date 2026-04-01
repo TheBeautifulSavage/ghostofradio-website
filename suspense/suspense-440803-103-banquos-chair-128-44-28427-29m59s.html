@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 440803 103 Banquo's Chair (128 44) 28427 29m59s — Suspense | Ghost of Radio</title>
+  <title>Banquo's Chair (128 44) 28427 29m59s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 440803 103 Banquo's Chair (128 44) 28427 29m59s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 440803 103 Banquo's Chair (128 44) 28427 29m59s — Suspense">
   <meta property="og:description" content="Listen to Suspense 440803 103 Banquo's Chair (128 44) 28427 29m59s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · August 3, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 440803 103 Banquo's Chair (128 44) 28427 29m59s</h1>
+          <h1 class="episode__title">Banquo's Chair (128 44) 28427 29m59s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Banquo's Chair</p>
-<p>Picture this: a dimly lit study where a grieving widow sits alone with the specter of her husband's murderer. In "Banquo's Chair," *Suspense* weaves a masterful tale of psychological terror that hinges on a devilishly simple idea—what if the guilty could be frightened into confession through supernatural suggestion? As tension mounts behind the microphone, listeners will find themselves gripping their armrests, uncertain whether they're witnessing genuine paranormal activity or the carefully orchestrated manipulation of a cunning mind. The episode's title evokes Shakespeare's tragedy, but the drama unfolding here is decidedly modern, exploring how fear and suggestion can become more lethal than any blade.</p>
-<p>Since its premiere in 1942, *Suspense* established itself as the gold standard of radio thriller programming, attracting top talent and crafting narratives that proved the medium's unparalleled power to unsettle and terrify. Each episode capitalized on what radio did best: forcing listeners' imaginations to conjure the darkness themselves. "Banquo's Chair" exemplifies this brilliance, eschewing cheap gimmicks for a story grounded in human psychology and moral ambiguity. The stellar cast delivers performances of remarkable subtlety, their voices conveying layers of emotion that visual media would struggle to capture.</p>
-<p>If you've never experienced *Suspense*, this episode is an ideal entry point into a program that captivated millions throughout its twenty-year run. Tune in now and discover why, long before television dominated the airwaves, ordinary Americans would gather around their radios, lights dimmed, to confront the delicious terror that only *Suspense* could deliver.</p>
+          <p>Picture this: a dimly lit study where a grieving widow sits alone with the specter of her husband's murderer. In "Banquo's Chair," Suspense weaves a masterful tale of psychological terror that hinges on a devilishly simple idea—what if the guilty could be frightened into confession through supernatural suggestion? As tension mounts behind the microphone, listeners will find themselves gripping their armrests, uncertain whether they're witnessing genuine paranormal activity or the carefully orchestrated manipulation of a cunning mind. The episode's title evokes Shakespeare's tragedy, but the drama unfolding here is decidedly modern, exploring how fear and suggestion can become more lethal than any blade.</p>
+<p>Since its premiere in 1942, Suspense established itself as the gold standard of radio thriller programming, attracting top talent and crafting narratives that proved the medium's unparalleled power to unsettle and terrify. Each episode capitalized on what radio did best: forcing listeners' imaginations to conjure the darkness themselves. "Banquo's Chair" exemplifies this brilliance, eschewing cheap gimmicks for a story grounded in human psychology and moral ambiguity. The stellar cast delivers performances of remarkable subtlety, their voices conveying layers of emotion that visual media would struggle to capture.</p>
+<p>If you've never experienced Suspense, this episode is an ideal entry point into a program that captivated millions throughout its twenty-year run. Tune in now and discover why, long before television dominated the airwaves, ordinary Americans would gather around their radios, lights dimmed, to confront the delicious terror that only Suspense could deliver.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

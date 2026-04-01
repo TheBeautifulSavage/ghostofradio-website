@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 520505 472 Frankie And Johnny (64 44) 14463 29m29s — Suspense | Ghost of Radio</title>
+  <title>Frankie And Johnny (64 44) 14463 29m29s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 520505 472 Frankie And Johnny (64 44) 14463 29m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 520505 472 Frankie And Johnny (64 44) 14463 29m29s — Suspense">
   <meta property="og:description" content="Listen to Suspense 520505 472 Frankie And Johnny (64 44) 14463 29m29s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 5, 1952</span>
           </div>
-          <h1 class="episode__title">Suspense 520505 472 Frankie And Johnny (64 44) 14463 29m29s</h1>
+          <h1 class="episode__title">Frankie And Johnny (64 44) 14463 29m29s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Frankie and Johnny</p>
-<p>Picture yourself settling into your chair on a warm evening in the 1940s, the glow of your radio dial the only light in the darkened room. The familiar Suspense theme builds to its spine-tingling crescendo, and you're transported into one of America's most legendary ballads—but not as you know it. This adaptation of "Frankie and Johnny" strips away the folk-song sentimentality to expose the raw, desperate crime of passion at its heart. As the story unfolds, you'll hear the jealous rage, the loaded revolver, and the fateful shots that echo through the decades. What unfolds across these twenty-nine minutes is a masterclass in dramatic tension: the slow-burn deterioration of a relationship, the mounting desperation, and finally, the irreversible moment when love turns to violence. The sound design pulls you into smoky saloons and cramped rooms thick with betrayal and heartbreak.</p>
+          <p>Picture yourself settling into your chair on a warm evening in the 1940s, the glow of your radio dial the only light in the darkened room. The familiar Suspense theme builds to its spine-tingling crescendo, and you're transported into one of America's most legendary ballads—but not as you know it. This adaptation of "Frankie and Johnny" strips away the folk-song sentimentality to expose the raw, desperate crime of passion at its heart. As the story unfolds, you'll hear the jealous rage, the loaded revolver, and the fateful shots that echo through the decades. What unfolds across these twenty-nine minutes is a masterclass in dramatic tension: the slow-burn deterioration of a relationship, the mounting desperation, and finally, the irreversible moment when love turns to violence. The sound design pulls you into smoky saloons and cramped rooms thick with betrayal and heartbreak.</p>
 <p>Suspense, which graced CBS airwaves from 1942 to 1962, became the gold standard of American radio drama by refusing easy answers and sanitized narratives. Rather than offering escapism, the program dug into the psychological depths of ordinary people in extraordinary circumstances. "Frankie and Johnny" exemplifies this approach—transforming a piece of American folklore into an intimate exploration of obsession and murder. The show's producers understood that true suspense lives not in jump-scares, but in the human drama that precedes the breaking point.</p>
 <p>This is radio at its finest: where sound becomes sight, where talented voice actors create entire universes of emotion, and where a simple story of love gone wrong becomes unforgettable. Tune in and discover why millions of listeners made Suspense an appointment with their radios—where every episode promised to keep you awake long after the final notes faded into the night.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

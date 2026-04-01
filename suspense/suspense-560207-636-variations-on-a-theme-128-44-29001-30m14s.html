@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 560207 636 Variations On A Theme (128 44) 29001 30m14s — Suspense | Ghost of Radio</title>
+  <title>Variations On A Theme (128 44) 29001 30m14s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 560207 636 Variations On A Theme (128 44) 29001 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 560207 636 Variations On A Theme (128 44) 29001 30m14s — Suspense">
   <meta property="og:description" content="Listen to Suspense 560207 636 Variations On A Theme (128 44) 29001 30m14s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 7, 1956</span>
           </div>
-          <h1 class="episode__title">Suspense 560207 636 Variations On A Theme (128 44) 29001 30m14s</h1>
+          <h1 class="episode__title">Variations On A Theme (128 44) 29001 30m14s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Variations On A Theme</p>
-<p>Step into a world where a simple melody becomes an instrument of madness. In "Variations On a Theme," the seemingly innocent notes of a piano composition unravel into something far more sinister—a psychological thriller that preys upon the listener's own sense of sanity. As the familiar refrain plays and replays, subtly shifting with each iteration, you'll find yourself descending into the fractured mind of someone for whom music has become an obsession bordering on delusion. The CBS sound effects team masterfully layers discordant notes over intimate dialogue, creating an atmosphere of creeping dread that builds with unbearable tension. By the episode's climax, you won't be sure whether what you're hearing is real or merely echoing in the spaces between reason and madness.</p>
+          <p>Step into a world where a simple melody becomes an instrument of madness. In "Variations On a Theme," the seemingly innocent notes of a piano composition unravel into something far more sinister—a psychological thriller that preys upon the listener's own sense of sanity. As the familiar refrain plays and replays, subtly shifting with each iteration, you'll find yourself descending into the fractured mind of someone for whom music has become an obsession bordering on delusion. The CBS sound effects team masterfully layers discordant notes over intimate dialogue, creating an atmosphere of creeping dread that builds with unbearable tension. By the episode's climax, you won't be sure whether what you're hearing is real or merely echoing in the spaces between reason and madness.</p>
 <p>This broadcast exemplifies why "Suspense" earned its reputation as radio's premier thriller series during its two-decade run. Rather than relying solely on monster-of-the-week plotting, the show's writers understood that true suspense dwells in the psychology of ordinary people confronted with extraordinary circumstances. "Variations On a Theme" showcases this sophistication—no supernatural creatures or elaborate murder schemes, just the dangerous power of an idea to consume a human mind. The 1940s audience who tuned in found in "Suspense" a escape into carefully crafted nightmares, where talented actors and innovative sound design created entire worlds of tension in merely thirty minutes.</p>
 <p>Whether you're a longtime devotee of classic radio or discovering this golden age for the first time, this episode demands your attention. Turn off the lights, settle into your chair, and let that haunting melody work its way into your consciousness. "Variations On a Theme" reminds us why our parents and grandparents gathered around the radio each week—for stories that lodge themselves in memory long after the final note fades.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

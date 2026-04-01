@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450524 142 My Own Murderer (128 44) 28095 29m17s — Suspense | Ghost of Radio</title>
+  <title>My Own Murderer (128 44) 28095 29m17s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450524 142 My Own Murderer (128 44) 28095 29m17s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450524 142 My Own Murderer (128 44) 28095 29m17s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450524 142 My Own Murderer (128 44) 28095 29m17s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · May 24, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450524 142 My Own Murderer (128 44) 28095 29m17s</h1>
+          <h1 class="episode__title">My Own Murderer (128 44) 28095 29m17s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># My Own Murderer</p>
-<p>Picture yourself huddled near the radio dial on a fog-thick evening, the static crackling like distant thunder, when a voice cuts through the darkness with a confession that chills the blood: "I am my own murderer." Thus begins a labyrinthine journey into the fractured mind of a man caught between reality and delusion, where every shadow might conceal guilt, and every truth is suspect. In this masterwork of psychological terror, the line between victim and perpetrator dissolves like morning mist. A meticulously constructed plot spirals inward, drawing listeners deeper into paranoia and desperation as our protagonist races against an invisible clock, pursued by a killer who may wear his own face. The sound design—whispered accusations, the relentless tick of a clock, footsteps that echo from within—transforms your living room into a suffocating maze of suspicion.</p>
-<p>*Suspense* built its legendary reputation on precisely this brand of intellectual horror, trading jump-scares for the slow erosion of certainty. Broadcasting continuously from 1942 to 1962, the series became the gold standard of American radio drama, attracting Hollywood's finest talent and pushing the medium to its artistic limits. This particular episode exemplifies why critics and audiences alike considered *Suspense* the thinking listener's thriller—it demands engagement, rewards attention, and lingers in the mind long after the final fade-out. Where competitors relied on monsters and mayhem, *Suspense* weaponized doubt itself.</p>
-<p>Don't miss your chance to experience radio drama at its most refined and unsettling. "My Own Murderer" awaits in our archives, ready to prove why millions once abandoned their evening plans to hear what fresh nightmare *Suspense* would deliver. Tune in—if you dare.</p>
+          <p>Picture yourself huddled near the radio dial on a fog-thick evening, the static crackling like distant thunder, when a voice cuts through the darkness with a confession that chills the blood: "I am my own murderer." Thus begins a labyrinthine journey into the fractured mind of a man caught between reality and delusion, where every shadow might conceal guilt, and every truth is suspect. In this masterwork of psychological terror, the line between victim and perpetrator dissolves like morning mist. A meticulously constructed plot spirals inward, drawing listeners deeper into paranoia and desperation as our protagonist races against an invisible clock, pursued by a killer who may wear his own face. The sound design—whispered accusations, the relentless tick of a clock, footsteps that echo from within—transforms your living room into a suffocating maze of suspicion.</p>
+<p>Suspense built its legendary reputation on precisely this brand of intellectual horror, trading jump-scares for the slow erosion of certainty. Broadcasting continuously from 1942 to 1962, the series became the gold standard of American radio drama, attracting Hollywood's finest talent and pushing the medium to its artistic limits. This particular episode exemplifies why critics and audiences alike considered Suspense the thinking listener's thriller—it demands engagement, rewards attention, and lingers in the mind long after the final fade-out. Where competitors relied on monsters and mayhem, Suspense weaponized doubt itself.</p>
+<p>Don't miss your chance to experience radio drama at its most refined and unsettling. "My Own Murderer" awaits in our archives, ready to prove why millions once abandoned their evening plans to hear what fresh nightmare Suspense would deliver. Tune in—if you dare.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

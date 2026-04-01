@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 431109 065 Cabin B 13 (128 44) 28377 29m35s — Suspense | Ghost of Radio</title>
+  <title>Cabin B 13 (128 44) 28377 29m35s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 431109 065 Cabin B 13 (128 44) 28377 29m35s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 431109 065 Cabin B 13 (128 44) 28377 29m35s — Suspense">
   <meta property="og:description" content="Listen to Suspense 431109 065 Cabin B 13 (128 44) 28377 29m35s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · November 9, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 431109 065 Cabin B 13 (128 44) 28377 29m35s</h1>
+          <h1 class="episode__title">Cabin B 13 (128 44) 28377 29m35s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,8 +87,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Cabin B-13</p>
-<p>Picture yourself settling into your favorite chair as the autumn wind rattles the windows, the crackling fireplace casting dancing shadows across the room. You dial in to CBS and there it is—that unforgettable *screeeech* of the Suspense theme cutting through the static. Tonight's tale transports you to the claustrophobic confines of Cabin B-13, where fate has trapped unsuspecting travelers in circumstances far more sinister than a simple seaside getaway. As the minutes tick forward, tensions mount between the passengers, trust erodes, and the listener is left to wonder: who among them poses the real danger? Is it the stranger who boarded at the last moment, or the threat lurking in the very walls themselves? Every creak of the cabin's wooden frame becomes menacing; every pause in dialogue drips with malice. The sound design envelops you completely—you're no longer safely at home, but locked away in that damned cabin, counting the minutes until dawn.</p>
+          <p>Picture yourself settling into your favorite chair as the autumn wind rattles the windows, the crackling fireplace casting dancing shadows across the room. You dial in to CBS and there it is—that unforgettable screeeech of the Suspense theme cutting through the static. Tonight's tale transports you to the claustrophobic confines of Cabin B-13, where fate has trapped unsuspecting travelers in circumstances far more sinister than a simple seaside getaway. As the minutes tick forward, tensions mount between the passengers, trust erodes, and the listener is left to wonder: who among them poses the real danger? Is it the stranger who boarded at the last moment, or the threat lurking in the very walls themselves? Every creak of the cabin's wooden frame becomes menacing; every pause in dialogue drips with malice. The sound design envelops you completely—you're no longer safely at home, but locked away in that damned cabin, counting the minutes until dawn.</p>
 <p>Suspense stands as one of radio's most enduring achievements, and episodes like Cabin B-13 showcase why CBS's thriller anthology captivated America for two decades. Premiering in 1942, the show became legendary for its sophisticated scripts, stellar ensemble casts, and innovative audio techniques that made invisible dangers feel devastatingly real. In an era before television, radio dramas were the ultimate escape, and Suspense delivered premium entertainment that kept listeners on the edge of their seats week after week.</p>
 <p>Don't miss your chance to experience the golden age of radio drama. Tune in to Cabin B-13 and discover why millions of Americans huddled around their sets, holding their breath as Suspense unfolded its darkest tales. Some stories, once heard, are never forgotten.</p>
         </div>
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

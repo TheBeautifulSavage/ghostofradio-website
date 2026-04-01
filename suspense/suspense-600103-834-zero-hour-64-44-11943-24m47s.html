@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600103 834 Zero Hour (64 44) 11943 24m47s — Suspense | Ghost of Radio</title>
+  <title>Zero Hour (64 44) 11943 24m47s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600103 834 Zero Hour (64 44) 11943 24m47s — Suspense (CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600103 834 Zero Hour (64 44) 11943 24m47s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600103 834 Zero Hour (64 44) 11943 24m47s — Suspense (CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 3, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600103 834 Zero Hour (64 44) 11943 24m47s</h1>
+          <h1 class="episode__title">Zero Hour (64 44) 11943 24m47s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Zero Hour</p>
-<p>As the familiar Suspense theme pierces through the static and fades into the darkness of your living room, you find yourself aboard a military transport plane somewhere over the Pacific, the year 1943. The engines drone with an ominous, rhythmic pulse while tension crackles in every whispered conversation. Something is terribly wrong—a saboteur walks among the crew, and with each passing moment, the aircraft descends lower toward the black ocean below. Will the crew discover the traitor's identity before it's too late, or will "Zero Hour" arrive with catastrophic finality? This masterfully crafted episode grips you with the claustrophobia of wartime peril and the paranoia of an enemy within, building toward a climax that will leave you breathless.</p>
+          <p>As the familiar Suspense theme pierces through the static and fades into the darkness of your living room, you find yourself aboard a military transport plane somewhere over the Pacific, the year 1943. The engines drone with an ominous, rhythmic pulse while tension crackles in every whispered conversation. Something is terribly wrong—a saboteur walks among the crew, and with each passing moment, the aircraft descends lower toward the black ocean below. Will the crew discover the traitor's identity before it's too late, or will "Zero Hour" arrive with catastrophic finality? This masterfully crafted episode grips you with the claustrophobia of wartime peril and the paranoia of an enemy within, building toward a climax that will leave you breathless.</p>
 <p>During America's darkest wartime hours, Suspense became the nation's premier purveyor of psychological terror, and this January 1943 broadcast showcases why the program commanded millions of listeners each week. CBS's flagship thriller series—which would run for two magnificent decades—thrived on contemporary anxieties, transforming the very real fears of wartime sabotage and espionage into gripping radio drama. With superb writing, sound design that transported audiences into impossible situations, and performances by some of Hollywood's finest talent, Suspense proved that radio could deliver genuine thrills without resorting to gore or cheap scares.</p>
 <p>Don't miss this enduring classic from Suspense's golden era, when America huddled around the wireless set seeking both entertainment and reassurance during uncertain times. "Zero Hour" is a perfect example of why this program remained essential listening for nearly two decades—where every twist of the dial brought you face-to-face with your deepest fears.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

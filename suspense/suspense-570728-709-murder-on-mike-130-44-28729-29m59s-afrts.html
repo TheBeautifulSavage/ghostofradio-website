@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 570728 709 Murder On Mike (130 44) 28729 29m59s Afrts — Suspense | Ghost of Radio</title>
+  <title>Murder On Mike (130 44) 28729 29m59s Afrts — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 570728 709 Murder On Mike (130 44) 28729 29m59s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 570728 709 Murder On Mike (130 44) 28729 29m59s Afrts — Suspense">
   <meta property="og:description" content="Listen to Suspense 570728 709 Murder On Mike (130 44) 28729 29m59s Afrts — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · 1940s</span>
           </div>
-          <h1 class="episode__title">Suspense 570728 709 Murder On Mike (130 44) 28729 29m59s Afrts</h1>
+          <h1 class="episode__title">Murder On Mike (130 44) 28729 29m59s Afrts</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,10 +71,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Murder on Mike</p>
-<p>When the studio lights dim and the CBS orchestra swells with discordant strings, you'll find yourself in the cramped control room of a late-night radio station, where the night engineer Mike discovers something far more sinister than dead air: a corpse. What begins as an ordinary graveyard shift transforms into a claustrophobic nightmare of suspicion and danger, as the handful of people trapped in the building become suspects in a murder that demands solving before dawn breaks. The killer walks among them, hidden behind professional courtesy and the casual intimacy of broadcasters working in close quarters. As accusations fly and secrets unravel between commercial breaks, you'll find yourself breathlessly trying to piece together the truth—a truth that seems to shift with every revelation.</p>
-<p>*Suspense*, which ruled the airwaves from 1942 to 1962, became America's premier thriller program by refusing easy answers and comfortable resolutions. Each episode was meticulously crafted to exploit the unique power of radio: the listener's imagination. Without visual cues, writers and sound engineers conjured pure psychological tension through dialogue, ambient noise, and strategic silence. "Murder on Mike" exemplifies the show's brilliance, taking the familiar world of broadcasting itself—the very medium delivering the story—and transforming it into a pressure cooker of paranoia and peril. The episode showcases the golden age of radio at its creative peak, when talented writers understood that the most terrifying threats are those we cannot see.</p>
-<p>Step into the shadows of that radio station and discover why *Suspense* enthralled millions during radio's golden era. There's a killer on the other side of that microphone—are you ready to unmask them?</p>
+          <p>When the studio lights dim and the CBS orchestra swells with discordant strings, you'll find yourself in the cramped control room of a late-night radio station, where the night engineer Mike discovers something far more sinister than dead air: a corpse. What begins as an ordinary graveyard shift transforms into a claustrophobic nightmare of suspicion and danger, as the handful of people trapped in the building become suspects in a murder that demands solving before dawn breaks. The killer walks among them, hidden behind professional courtesy and the casual intimacy of broadcasters working in close quarters. As accusations fly and secrets unravel between commercial breaks, you'll find yourself breathlessly trying to piece together the truth—a truth that seems to shift with every revelation.</p>
+<p>Suspense, which ruled the airwaves from 1942 to 1962, became America's premier thriller program by refusing easy answers and comfortable resolutions. Each episode was meticulously crafted to exploit the unique power of radio: the listener's imagination. Without visual cues, writers and sound engineers conjured pure psychological tension through dialogue, ambient noise, and strategic silence. "Murder on Mike" exemplifies the show's brilliance, taking the familiar world of broadcasting itself—the very medium delivering the story—and transforming it into a pressure cooker of paranoia and peril. The episode showcases the golden age of radio at its creative peak, when talented writers understood that the most terrifying threats are those we cannot see.</p>
+<p>Step into the shadows of that radio station and discover why Suspense enthralled millions during radio's golden era. There's a killer on the other side of that microphone—are you ready to unmask them?</p>
         </div>
 
         <footer class="episode__footer">
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

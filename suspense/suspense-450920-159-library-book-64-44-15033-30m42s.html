@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450920 159 Library Book (64 44) 15033 30m42s — Suspense | Ghost of Radio</title>
+  <title>Library Book (64 44) 15033 30m42s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450920 159 Library Book (64 44) 15033 30m42s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450920 159 Library Book (64 44) 15033 30m42s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450920 159 Library Book (64 44) 15033 30m42s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 20, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450920 159 Library Book (64 44) 15033 30m42s</h1>
+          <h1 class="episode__title">Library Book (64 44) 15033 30m42s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: "Library Book"</p>
-<p>Picture yourself in a quiet reading room as evening shadows lengthen across the shelves. An ordinary library book—dog-eared, worn from countless hands—arrives on your desk with an ominous secret tucked between its pages. In this chilling episode of Suspense, a seemingly innocent tome becomes the vessel for something far more sinister, drawing an unsuspecting reader into a web of mystery that grows darker with each page turned. The radio crackles with tension as our protagonist discovers that not all stories end where the binding closes—some continue in the spaces between words, in the margins of reality itself. With every sound effect meticulously crafted to unsettle, from the rustle of brittle pages to the creeping dread of an approaching revelation, this episode exemplifies why listeners would abandon their evening plans to huddle near their sets, breath held.</p>
+          <p>Picture yourself in a quiet reading room as evening shadows lengthen across the shelves. An ordinary library book—dog-eared, worn from countless hands—arrives on your desk with an ominous secret tucked between its pages. In this chilling episode of Suspense, a seemingly innocent tome becomes the vessel for something far more sinister, drawing an unsuspecting reader into a web of mystery that grows darker with each page turned. The radio crackles with tension as our protagonist discovers that not all stories end where the binding closes—some continue in the spaces between words, in the margins of reality itself. With every sound effect meticulously crafted to unsettle, from the rustle of brittle pages to the creeping dread of an approaching revelation, this episode exemplifies why listeners would abandon their evening plans to huddle near their sets, breath held.</p>
 <p>Suspense reigned as CBS radio's premier thrill program throughout the 1940s, commanding attention from millions of Americans who trusted the network to deliver genuine terror wrapped in twenty-eight minutes of carefully constructed narrative. The show's brilliance lay in its ability to transform the mundane—a library book, a telephone call, a knock on the door—into sources of genuine dread. Master craftsmen behind the microphone understood that suggestion and silence could terrify more effectively than any explicit violence, a philosophy that would later influence the greatest thriller writers and filmmakers of the century. This particular episode captures that golden age of radio when imagination was the most powerful special effect available.</p>
 <p>If you've never experienced the unique thrill of old-time radio drama, or if you're a devoted Suspense fan seeking to complete your collection, "Library Book" awaits. Dim the lights, turn up the volume, and prepare yourself for a reminder of why an entire nation once sat transfixed by the spoken word. Some stories deserve to be heard, not read.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

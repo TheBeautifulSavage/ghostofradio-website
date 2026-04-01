@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 530413 508 The Great Train Robbery (64 44) 14601 29m47s — Suspense | Ghost of Radio</title>
+  <title>The Great Train Robbery (64 44) 14601 29m47s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 530413 508 The Great Train Robbery (64 44) 14601 29m47s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 530413 508 The Great Train Robbery (64 44) 14601 29m47s — Suspense">
   <meta property="og:description" content="Listen to Suspense 530413 508 The Great Train Robbery (64 44) 14601 29m47s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · April 13, 1953</span>
           </div>
-          <h1 class="episode__title">Suspense 530413 508 The Great Train Robbery (64 44) 14601 29m47s</h1>
+          <h1 class="episode__title">The Great Train Robbery (64 44) 14601 29m47s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Great Train Robbery</p>
-<p>As the CBS orchestra strikes its iconic, bone-chilling opening chord, you're transported to the rhythmic thunder of steel wheels on moonlit tracks. In this gripping installment of *Suspense*, the legendary radio program that made millions sleep with their lights on, a seemingly straightforward heist spirals into a nightmare of desperation and moral decay. When criminal masterminds hatch their audacious plan to rob a speeding train carrying a fortune in gold, they find themselves trapped between the relentless forward momentum of their getaway and the cold calculation of betrayal lurking in their midst. The sound design is exquisite—the hiss of steam, the cacophony of struggle in cramped compartments, and the ever-present ticking clock of discovery create an almost suffocating atmosphere of dread. What begins as a tale of criminal ambition transforms into something far darker, where every decision cascades toward an inevitable reckoning.</p>
-<p>*Suspense* earned its legendary status during broadcasting's golden age by refusing easy answers and comfortable resolutions. From 1942 to 1962, the show pioneered the art of psychological terror through sound alone, proving that what listeners *imagined* was infinitely more terrifying than what they could see. With a roster of Hollywood's finest talent—including Orson Welles, Cary Grant, and Humphrey Bogart—lending their voices to increasingly twisted scenarios, each episode became an event. "The Great Train Robbery" exemplifies the show's mastery of claustrophobic tension and the exploration of how desperation transforms ordinary people into something monstrous.</p>
+          <p>As the CBS orchestra strikes its iconic, bone-chilling opening chord, you're transported to the rhythmic thunder of steel wheels on moonlit tracks. In this gripping installment of Suspense, the legendary radio program that made millions sleep with their lights on, a seemingly straightforward heist spirals into a nightmare of desperation and moral decay. When criminal masterminds hatch their audacious plan to rob a speeding train carrying a fortune in gold, they find themselves trapped between the relentless forward momentum of their getaway and the cold calculation of betrayal lurking in their midst. The sound design is exquisite—the hiss of steam, the cacophony of struggle in cramped compartments, and the ever-present ticking clock of discovery create an almost suffocating atmosphere of dread. What begins as a tale of criminal ambition transforms into something far darker, where every decision cascades toward an inevitable reckoning.</p>
+<p>Suspense earned its legendary status during broadcasting's golden age by refusing easy answers and comfortable resolutions. From 1942 to 1962, the show pioneered the art of psychological terror through sound alone, proving that what listeners imagined was infinitely more terrifying than what they could see. With a roster of Hollywood's finest talent—including Orson Welles, Cary Grant, and Humphrey Bogart—lending their voices to increasingly twisted scenarios, each episode became an event. "The Great Train Robbery" exemplifies the show's mastery of claustrophobic tension and the exploration of how desperation transforms ordinary people into something monstrous.</p>
 <p>Settle into your favorite chair, dim the lights, and prepare yourself for twenty-eight minutes of pure suspense. This is vintage radio at its finest—a masterclass in tension that proves some of the most terrifying stories are the ones you hear, not the ones you see.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

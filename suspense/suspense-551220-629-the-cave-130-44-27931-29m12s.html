@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 551220 629 The Cave (130 44) 27931 29m12s — Suspense | Ghost of Radio</title>
+  <title>The Cave (130 44) 27931 29m12s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 551220 629 The Cave (130 44) 27931 29m12s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 551220 629 The Cave (130 44) 27931 29m12s — Suspense">
   <meta property="og:description" content="Listen to Suspense 551220 629 The Cave (130 44) 27931 29m12s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 20, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 551220 629 The Cave (130 44) 27931 29m12s</h1>
+          <h1 class="episode__title">The Cave (130 44) 27931 29m12s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Cave</p>
-<p>Deep in the bowels of the earth, where sunlight has never penetrated and the darkness is absolute, a man faces his greatest terror—not of monsters or madmen, but of the suffocating walls closing in around him. In "The Cave," a Suspense episode that exemplifies the show's mastery of psychological horror, listeners are drawn into a nightmare of claustrophobia and isolation that builds with relentless intensity. What begins as a routine spelunking expedition transforms into a descent into primal fear, as our protagonist discovers that the greatest dangers often lurk not in the shadows, but in the mind's own capacity for panic. The sound design is masterful: dripping water echoes through caverns, footsteps become lost in vast spaces, and the protagonist's increasingly ragged breathing becomes the heartbeat of the drama itself. Every noise in that impenetrable darkness carries weight, every silence feels suffocating.</p>
+          <p>Deep in the bowels of the earth, where sunlight has never penetrated and the darkness is absolute, a man faces his greatest terror—not of monsters or madmen, but of the suffocating walls closing in around him. In "The Cave," a Suspense episode that exemplifies the show's mastery of psychological horror, listeners are drawn into a nightmare of claustrophobia and isolation that builds with relentless intensity. What begins as a routine spelunking expedition transforms into a descent into primal fear, as our protagonist discovers that the greatest dangers often lurk not in the shadows, but in the mind's own capacity for panic. The sound design is masterful: dripping water echoes through caverns, footsteps become lost in vast spaces, and the protagonist's increasingly ragged breathing becomes the heartbeat of the drama itself. Every noise in that impenetrable darkness carries weight, every silence feels suffocating.</p>
 <p>Suspense aired during radio's golden age, a period when the medium's intimate connection with listeners' imaginations made it the perfect vehicle for terror. CBS's legendary anthology series, which ran from 1942 to 1962, pioneered techniques that would later influence television and cinema—the power of suggestion, the manipulation of silence, the use of sound to create invisible horrors. "The Cave" represents the show's formula at its finest: a straightforward premise, relatable characters, and an escalating sense of dread that no visual medium could quite capture. In an era before television dominated home entertainment, Suspense offered Americans a weekly escape into carefully crafted nightmares, broadcast directly into their living rooms.</p>
 <p>For those seeking to experience radio drama at its peak, "The Cave" awaits in the archives. Dim the lights, close your eyes, and let the darkness of those underground passages become your own. Some thrills are best experienced in the mind's eye.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

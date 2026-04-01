@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 430916 058 The Cross Eyed Bear (128 44) 28680 30m15s — Suspense | Ghost of Radio</title>
+  <title>The Cross Eyed Bear (128 44) 28680 30m15s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 430916 058 The Cross Eyed Bear (128 44) 28680 30m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 430916 058 The Cross Eyed Bear (128 44) 28680 30m15s — Suspense">
   <meta property="og:description" content="Listen to Suspense 430916 058 The Cross Eyed Bear (128 44) 28680 30m15s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · September 16, 1943</span>
           </div>
-          <h1 class="episode__title">Suspense 430916 058 The Cross Eyed Bear (128 44) 28680 30m15s</h1>
+          <h1 class="episode__title">The Cross Eyed Bear (128 44) 28680 30m15s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Cross Eyed Bear</p>
-<p>Step into the shadowed parlor of a country inn on a moonless night, where a seemingly innocent child's toy becomes the focal point of mounting dread and psychological torment. "The Cross Eyed Bear" pulls listeners into a claustrophobic world of suspicion and creeping madness, where nothing is quite as it seems and the ordinary becomes unbearably sinister. As the tension mounts, our protagonist finds himself trapped in a nightmare of his own making—or is it? The ticking clock of thirty minutes builds to a crescendo of terror that lingers long after the final sound effect fades to black.</p>
-<p>*Suspense* arrived on CBS airwaves at the precise moment America needed it most: September 1942, as the nation grappled with wartime anxiety and an uncertain future. What made the anthology series revolutionary was its refusal to rely solely on monsters and jump-scares; instead, creator-producer Antony Ellis crafted stories that turned everyday life inside-out, exploiting the psychological vulnerabilities of ordinary people. From renowned authors to original teleplays, each episode stripped away the comfort of the familiar, proving that true horror lives not in distant castles but in the human mind. Episodes like "The Cross Eyed Bear" exemplified this approach—taking something as innocent as a child's toy and transforming it into an instrument of psychological unease that no visual medium could quite capture with the same potency.</p>
-<p>Join countless listeners who discovered that the most terrifying stories are those whispered through a speaker in the dark. *Suspense* awaits—turn off the lights, settle in, and prepare yourself for a masterclass in audio terror. You'll never look at ordinary objects quite the same way again.</p>
+          <p>Step into the shadowed parlor of a country inn on a moonless night, where a seemingly innocent child's toy becomes the focal point of mounting dread and psychological torment. "The Cross Eyed Bear" pulls listeners into a claustrophobic world of suspicion and creeping madness, where nothing is quite as it seems and the ordinary becomes unbearably sinister. As the tension mounts, our protagonist finds himself trapped in a nightmare of his own making—or is it? The ticking clock of thirty minutes builds to a crescendo of terror that lingers long after the final sound effect fades to black.</p>
+<p>Suspense arrived on CBS airwaves at the precise moment America needed it most: September 1942, as the nation grappled with wartime anxiety and an uncertain future. What made the anthology series revolutionary was its refusal to rely solely on monsters and jump-scares; instead, creator-producer Antony Ellis crafted stories that turned everyday life inside-out, exploiting the psychological vulnerabilities of ordinary people. From renowned authors to original teleplays, each episode stripped away the comfort of the familiar, proving that true horror lives not in distant castles but in the human mind. Episodes like "The Cross Eyed Bear" exemplified this approach—taking something as innocent as a child's toy and transforming it into an instrument of psychological unease that no visual medium could quite capture with the same potency.</p>
+<p>Join countless listeners who discovered that the most terrifying stories are those whispered through a speaker in the dark. Suspense awaits—turn off the lights, settle in, and prepare yourself for a masterclass in audio terror. You'll never look at ordinary objects quite the same way again.</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

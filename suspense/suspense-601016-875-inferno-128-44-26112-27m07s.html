@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 601016 875 Inferno (128 44) 26112 27m07s — Suspense | Ghost of Radio</title>
+  <title>Inferno (128 44) 26112 27m07s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 601016 875 Inferno (128 44) 26112 27m07s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 601016 875 Inferno (128 44) 26112 27m07s — Suspense">
   <meta property="og:description" content="Listen to Suspense 601016 875 Inferno (128 44) 26112 27m07s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 16, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 601016 875 Inferno (128 44) 26112 27m07s</h1>
+          <h1 class="episode__title">Inferno (128 44) 26112 27m07s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Suspense: Inferno</p>
-<p>Picture this: a sweltering night, the kind that makes a man's skin crawl even before the horror begins. In "Inferno," our protagonist finds himself trapped in an impossible situation where the walls themselves seem to conspire against him, and escape becomes a nightmare of mounting dread. As flames creep ever closer and desperation claws at his throat, listeners will experience the masterful sound design that made *Suspense* legendary—crackling fires, manic heartbeats, and dialogue that drips with pure panic. This isn't a story about external monsters; it's about the primal terror of being utterly, completely alone when survival hangs by a thread.</p>
-<p>*Suspense* dominated American radio for two decades as the gold standard of psychological thriller programming, and "Inferno" exemplifies why the show commanded such devoted audiences throughout the 1940s. CBS's commitment to cinematic storytelling—hiring top talent, investing in elaborate sound effects, and refusing to talk down to listeners—meant that each week brought professional-grade drama into living rooms across the nation. The show's writers understood something fundamental: the human imagination, when properly guided by voice and sound, is far more terrifying than anything visible on screen. This episode, with its claustrophobic premise and relentless tension, showcases that golden-age mastery perfectly.</p>
+          <p>Picture this: a sweltering night, the kind that makes a man's skin crawl even before the horror begins. In "Inferno," our protagonist finds himself trapped in an impossible situation where the walls themselves seem to conspire against him, and escape becomes a nightmare of mounting dread. As flames creep ever closer and desperation claws at his throat, listeners will experience the masterful sound design that made Suspense legendary—crackling fires, manic heartbeats, and dialogue that drips with pure panic. This isn't a story about external monsters; it's about the primal terror of being utterly, completely alone when survival hangs by a thread.</p>
+<p>Suspense dominated American radio for two decades as the gold standard of psychological thriller programming, and "Inferno" exemplifies why the show commanded such devoted audiences throughout the 1940s. CBS's commitment to cinematic storytelling—hiring top talent, investing in elaborate sound effects, and refusing to talk down to listeners—meant that each week brought professional-grade drama into living rooms across the nation. The show's writers understood something fundamental: the human imagination, when properly guided by voice and sound, is far more terrifying than anything visible on screen. This episode, with its claustrophobic premise and relentless tension, showcases that golden-age mastery perfectly.</p>
 <p>Whether you're a devotee of classic radio or simply seeking an evening of genuine, edge-of-your-seat entertainment, "Inferno" beckons. Dim the lights, silence your surroundings, and let the crackling flames and desperate struggle pull you into a world where danger is absolutely, inescapably real. This is radio drama at its finest—proof that some of the most harrowing experiences can arrive through nothing but a speaker and a story told by masters of suspense.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

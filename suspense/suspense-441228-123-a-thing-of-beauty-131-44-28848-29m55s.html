@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 441228 123 A Thing Of Beauty (131 44) 28848 29m55s — Suspense | Ghost of Radio</title>
+  <title>A Thing Of Beauty (131 44) 28848 29m55s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 441228 123 A Thing Of Beauty (131 44) 28848 29m55s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 441228 123 A Thing Of Beauty (131 44) 28848 29m55s — Suspense">
   <meta property="og:description" content="Listen to Suspense 441228 123 A Thing Of Beauty (131 44) 28848 29m55s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · December 28, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 441228 123 A Thing Of Beauty (131 44) 28848 29m55s</h1>
+          <h1 class="episode__title">A Thing Of Beauty (131 44) 28848 29m55s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># A Thing of Beauty</p>
-<p>As the opening theme rises with its signature string crescendo and that bone-chilling sound effect—that scrape of suspense itself—listeners are transported to a world where beauty masks something far more sinister. "A Thing of Beauty" pulls you into a story where aesthetic perfection becomes the very instrument of terror. In nearly thirty minutes, you'll experience the mounting dread of discovering that the most elegant, the most refined, the most admired among us may harbor the darkest secrets. Every compliment becomes a threat; every admiring glance, a potential death sentence. The performances are pitch-perfect, capturing that uniquely American anxiety of the 1940s—the fear that danger lurks not in dark alleys, but in the drawing rooms of the respectable and wealthy.</p>
-<p>During its twenty-year run, *Suspense* became the gold standard of dramatic radio, commanding millions of listeners every week with its meticulous sound design and brilliant writing. By the late 1940s, when this episode aired, the show had perfected the art of psychological terror, favoring the unseen threat and the corrupted soul over simple melodrama. *Suspense* proved that the most frightening stories are those grounded in recognizable reality—tales of ordinary people confronting extraordinary evil, of trust betrayed and innocence shattered. This episode exemplifies that formula, crafted by writers who understood that true horror whispers rather than shouts.</p>
-<p>Turn off the lights, settle into your chair, and prepare yourself for "A Thing of Beauty." This is *Suspense* at its finest—a masterclass in building dread through suggestion and implication, where the listener's own imagination becomes the most powerful tool in the storyteller's arsenal. Press play and discover why, even in our modern age of visual media, these words from nearly eighty years ago still have the power to unsettle us.</p>
+          <p>As the opening theme rises with its signature string crescendo and that bone-chilling sound effect—that scrape of suspense itself—listeners are transported to a world where beauty masks something far more sinister. "A Thing of Beauty" pulls you into a story where aesthetic perfection becomes the very instrument of terror. In nearly thirty minutes, you'll experience the mounting dread of discovering that the most elegant, the most refined, the most admired among us may harbor the darkest secrets. Every compliment becomes a threat; every admiring glance, a potential death sentence. The performances are pitch-perfect, capturing that uniquely American anxiety of the 1940s—the fear that danger lurks not in dark alleys, but in the drawing rooms of the respectable and wealthy.</p>
+<p>During its twenty-year run, Suspense became the gold standard of dramatic radio, commanding millions of listeners every week with its meticulous sound design and brilliant writing. By the late 1940s, when this episode aired, the show had perfected the art of psychological terror, favoring the unseen threat and the corrupted soul over simple melodrama. Suspense proved that the most frightening stories are those grounded in recognizable reality—tales of ordinary people confronting extraordinary evil, of trust betrayed and innocence shattered. This episode exemplifies that formula, crafted by writers who understood that true horror whispers rather than shouts.</p>
+<p>Turn off the lights, settle into your chair, and prepare yourself for "A Thing of Beauty." This is Suspense at its finest—a masterclass in building dread through suggestion and implication, where the listener's own imagination becomes the most powerful tool in the storyteller's arsenal. Press play and discover why, even in our modern age of visual media, these words from nearly eighty years ago still have the power to unsettle us.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

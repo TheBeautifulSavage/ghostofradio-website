@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 550127 582 The Operation (128 44) 23119 24m19s — Suspense | Ghost of Radio</title>
+  <title>The Operation (128 44) 23119 24m19s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 550127 582 The Operation (128 44) 23119 24m19s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 550127 582 The Operation (128 44) 23119 24m19s — Suspense">
   <meta property="og:description" content="Listen to Suspense 550127 582 The Operation (128 44) 23119 24m19s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 27, 1955</span>
           </div>
-          <h1 class="episode__title">Suspense 550127 582 The Operation (128 44) 23119 24m19s</h1>
+          <h1 class="episode__title">The Operation (128 44) 23119 24m19s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Operation</p>
-<p>Picture this: a sterile hospital room at midnight, where the line between salvation and catastrophe grows razor-thin. In "The Operation," a brilliant surgeon faces an impossible choice when a mysterious patient arrives with a diagnosis that will test not only his medical expertise, but his very conscience. As the clock ticks and instruments gleam under harsh surgical lights, listeners are drawn into a claustrophobic world of medical uncertainty where every decision carries weight, and where the promise to "do no harm" becomes torturously complicated. The episode crackles with the authentic sounds of 1940s operating theaters—the beeping monitors, the hushed voices of the surgical team, the metallic clink of instruments—creating an atmosphere so immersive you can almost smell the antiseptic.</p>
-<p>*Suspense* commanded the airwaves during radio's golden age, establishing itself as CBS's crown jewel of dramatic thriller programming from 1942 to 1962. What made the show legendary wasn't merely its sensational plots, but its profound psychological insight and willingness to explore the moral ambiguities lurking beneath everyday life. This particular episode exemplifies that commitment perfectly, transforming a medical scenario into a meditation on responsibility, doubt, and the hidden darkness that can exist within institutions we trust. The show's legacy rests on this formula: take a recognizable setting, introduce ordinary people, and unravel the tension until listeners are gripping their radio dials in the dark.</p>
-<p>If you've never experienced the raw power of vintage radio drama, this is the perfect entry point. "The Operation" delivers genuine suspense without relying on monsters or villains—just human beings wrestling with impossible situations. Tune in and discover why millions of listeners made *Suspense* an appointment with terror every week. Your living room is about to become that hospital operating room.</p>
+          <p>Picture this: a sterile hospital room at midnight, where the line between salvation and catastrophe grows razor-thin. In "The Operation," a brilliant surgeon faces an impossible choice when a mysterious patient arrives with a diagnosis that will test not only his medical expertise, but his very conscience. As the clock ticks and instruments gleam under harsh surgical lights, listeners are drawn into a claustrophobic world of medical uncertainty where every decision carries weight, and where the promise to "do no harm" becomes torturously complicated. The episode crackles with the authentic sounds of 1940s operating theaters—the beeping monitors, the hushed voices of the surgical team, the metallic clink of instruments—creating an atmosphere so immersive you can almost smell the antiseptic.</p>
+<p>Suspense commanded the airwaves during radio's golden age, establishing itself as CBS's crown jewel of dramatic thriller programming from 1942 to 1962. What made the show legendary wasn't merely its sensational plots, but its profound psychological insight and willingness to explore the moral ambiguities lurking beneath everyday life. This particular episode exemplifies that commitment perfectly, transforming a medical scenario into a meditation on responsibility, doubt, and the hidden darkness that can exist within institutions we trust. The show's legacy rests on this formula: take a recognizable setting, introduce ordinary people, and unravel the tension until listeners are gripping their radio dials in the dark.</p>
+<p>If you've never experienced the raw power of vintage radio drama, this is the perfect entry point. "The Operation" delivers genuine suspense without relying on monsters or villains—just human beings wrestling with impossible situations. Tune in and discover why millions of listeners made Suspense an appointment with terror every week. Your living room is about to become that hospital operating room.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

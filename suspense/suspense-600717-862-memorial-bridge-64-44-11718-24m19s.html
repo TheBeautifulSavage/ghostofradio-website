@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 600717 862 Memorial Bridge (64 44) 11718 24m19s — Suspense | Ghost of Radio</title>
+  <title>Memorial Bridge (64 44) 11718 24m19s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 600717 862 Memorial Bridge (64 44) 11718 24m19s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 600717 862 Memorial Bridge (64 44) 11718 24m19s — Suspense">
   <meta property="og:description" content="Listen to Suspense 600717 862 Memorial Bridge (64 44) 11718 24m19s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 17, 1960</span>
           </div>
-          <h1 class="episode__title">Suspense 600717 862 Memorial Bridge (64 44) 11718 24m19s</h1>
+          <h1 class="episode__title">Memorial Bridge (64 44) 11718 24m19s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Memorial Bridge</p>
-<p>The fog rolls thick over the river on this sultry summer night, and with it comes a secret that someone would kill to keep buried. In "Memorial Bridge," a chance encounter on a darkened span becomes a descent into blackmail, desperation, and murder most cunningly concealed. Our protagonist stumbles upon something he shouldn't have—a moment of vulnerability in another man's life—and suddenly finds himself trapped in a web of threats and counter-threats. As the clock ticks toward midnight and shadows lengthen across the water below, the tension mounts with each footstep, each whispered accusation. Who will live to see dawn break over Memorial Bridge? The answer lies in the twisted psychology of cornered men with everything to lose.</p>
-<p>By 1947, when this episode aired, *Suspense* had already become the gold standard of thriller programming, a show that understood that the most terrifying monsters wore human faces and harbored human secrets. CBS's commitment to sterling writing and impeccable sound design created an intimate theater of the mind where listeners leaned closer to their radios, hearts pounding. The show's genius lay in its ability to transform ordinary situations—a bridge, a chance meeting, a moment of weakness—into vehicles for exploring the darkest impulses of the human soul. Each episode reminded listeners that danger didn't announce itself; it crept in quietly, wrapped in plausibility.</p>
-<p>Whether you're a devoted fan of classic radio or discovering *Suspense* for the first time, "Memorial Bridge" exemplifies everything that made the golden age of radio unforgettable. Settle into your favorite chair, dim the lights, and prepare yourself for a masterclass in suspenseful storytelling. Some secrets are too dangerous to know—but once you do, there's no turning back.</p>
+          <p>The fog rolls thick over the river on this sultry summer night, and with it comes a secret that someone would kill to keep buried. In "Memorial Bridge," a chance encounter on a darkened span becomes a descent into blackmail, desperation, and murder most cunningly concealed. Our protagonist stumbles upon something he shouldn't have—a moment of vulnerability in another man's life—and suddenly finds himself trapped in a web of threats and counter-threats. As the clock ticks toward midnight and shadows lengthen across the water below, the tension mounts with each footstep, each whispered accusation. Who will live to see dawn break over Memorial Bridge? The answer lies in the twisted psychology of cornered men with everything to lose.</p>
+<p>By 1947, when this episode aired, Suspense had already become the gold standard of thriller programming, a show that understood that the most terrifying monsters wore human faces and harbored human secrets. CBS's commitment to sterling writing and impeccable sound design created an intimate theater of the mind where listeners leaned closer to their radios, hearts pounding. The show's genius lay in its ability to transform ordinary situations—a bridge, a chance meeting, a moment of weakness—into vehicles for exploring the darkest impulses of the human soul. Each episode reminded listeners that danger didn't announce itself; it crept in quietly, wrapped in plausibility.</p>
+<p>Whether you're a devoted fan of classic radio or discovering Suspense for the first time, "Memorial Bridge" exemplifies everything that made the golden age of radio unforgettable. Settle into your favorite chair, dim the lights, and prepare yourself for a masterclass in suspenseful storytelling. Some secrets are too dangerous to know—but once you do, there's no turning back.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

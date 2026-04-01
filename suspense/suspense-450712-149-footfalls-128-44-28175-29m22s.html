@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 450712 149 Footfalls (128 44) 28175 29m22s — Suspense | Ghost of Radio</title>
+  <title>Footfalls (128 44) 28175 29m22s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 450712 149 Footfalls (128 44) 28175 29m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 450712 149 Footfalls (128 44) 28175 29m22s — Suspense">
   <meta property="og:description" content="Listen to Suspense 450712 149 Footfalls (128 44) 28175 29m22s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · July 12, 1945</span>
           </div>
-          <h1 class="episode__title">Suspense 450712 149 Footfalls (128 44) 28175 29m22s</h1>
+          <h1 class="episode__title">Footfalls (128 44) 28175 29m22s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Footfalls</p>
-<p>When the lights dim and that familiar thunderclap of the Suspense theme crackles through your speaker, you're about to enter a world where the ordinary becomes terrifying. In "Footfalls," listeners will find themselves trapped in an escalating nightmare of psychological dread—the sound of footsteps echoing through an empty house, drawing closer with each passing moment, yet no intruder can be found. Is it a burglar? A ghost? Or something far more sinister lurking in the darkness of the protagonist's own mind? This episode masterfully weaponizes the power of radio's greatest asset: your imagination. With nothing but ambient sound, measured dialogue, and that relentless rhythm of approaching feet, CBS's production team creates an atmosphere of mounting terror that surpasses anything a visual medium could achieve.</p>
+          <p>When the lights dim and that familiar thunderclap of the Suspense theme crackles through your speaker, you're about to enter a world where the ordinary becomes terrifying. In "Footfalls," listeners will find themselves trapped in an escalating nightmare of psychological dread—the sound of footsteps echoing through an empty house, drawing closer with each passing moment, yet no intruder can be found. Is it a burglar? A ghost? Or something far more sinister lurking in the darkness of the protagonist's own mind? This episode masterfully weaponizes the power of radio's greatest asset: your imagination. With nothing but ambient sound, measured dialogue, and that relentless rhythm of approaching feet, CBS's production team creates an atmosphere of mounting terror that surpasses anything a visual medium could achieve.</p>
 <p>Suspense stands as one of radio's most enduring achievements, a show that understood the raw power of suggestion and sound design during American broadcasting's golden age. Premiering in 1942, the series became a proving ground for some of Hollywood's finest talent—both established stars and rising names seeking to showcase their dramatic chops. Each week's standalone story was crafted to exploit listeners' deepest anxieties: home invasion, paranoia, guilt made manifest. The show's brilliance lay in its restraint; the most terrifying moments happened entirely in listeners' minds, making each episode's horror intensely personal and impossible to forget.</p>
 <p>"Footfalls" exemplifies why Suspense remained appointment listening for millions throughout the 1940s and beyond. In our modern age of visual spectacle, there's something profoundly unnerving about surrendering to pure sound and imagination. Tune in and discover why this episode continues to unsettle listeners nearly eighty years later—because the footsteps you hear might just be your own heartbeat, quickening in fear.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

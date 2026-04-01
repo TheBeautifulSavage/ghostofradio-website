@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 510208 415 The Windy City Six (140 44) 30799 29m53s — Suspense | Ghost of Radio</title>
+  <title>The Windy City Six (140 44) 30799 29m53s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 510208 415 The Windy City Six (140 44) 30799 29m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 510208 415 The Windy City Six (140 44) 30799 29m53s — Suspense">
   <meta property="og:description" content="Listen to Suspense 510208 415 The Windy City Six (140 44) 30799 29m53s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · February 8, 1951</span>
           </div>
-          <h1 class="episode__title">Suspense 510208 415 The Windy City Six (140 44) 30799 29m53s</h1>
+          <h1 class="episode__title">The Windy City Six (140 44) 30799 29m53s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Windy City Six</p>
-<p>Picture this: it's a cold Chicago night, the kind where wind howls through the streets and shadows seem to hold their own sinister secrets. In this chilling installment of *Suspense*, the infamous "Windy City Six"—a ruthless gang operating in the heart of Depression-era Chicago—has left a trail of bodies and broken lives in their wake. Our protagonist finds himself caught in their web of violence and corruption, desperately racing against time to expose their operation before becoming their next victim. With nothing but his wits and the help of a few unlikely allies, he must navigate a dangerous underworld where trust is currency and betrayal costs everything. The sound design crackles with authenticity—screeching car tires, gunshots echoing in alleyways, and the menacing whisper of organized crime that gripped America's imagination during these dark years.</p>
-<p>*Suspense* commanded CBS airwaves for two decades as America's premier anthology of terror and tension, and this 1940s episode exemplifies exactly why. While countless shows promised thrills, *Suspense* delivered genuine unease through masterful writing, stellar performances, and innovative radio techniques that made listeners pull their chairs closer to the speakers. The show's unflinching portrayal of urban crime and moral ambiguity reflected the real anxieties of wartime and postwar America, transforming pulp entertainment into something that felt genuinely consequential. Each episode was a carefully constructed puzzle of suspense, building dread through dialogue and atmosphere rather than relying on cheap scares.</p>
-<p>Don't miss this gripping tale of crime and desperation that captured the dangerous allure of gangland Chicago. Tune in now and experience *Suspense* the way millions did—in the dark, hanging on every word, never quite knowing where the next twist will take you.</p>
+          <p>Picture this: it's a cold Chicago night, the kind where wind howls through the streets and shadows seem to hold their own sinister secrets. In this chilling installment of Suspense, the infamous "Windy City Six"—a ruthless gang operating in the heart of Depression-era Chicago—has left a trail of bodies and broken lives in their wake. Our protagonist finds himself caught in their web of violence and corruption, desperately racing against time to expose their operation before becoming their next victim. With nothing but his wits and the help of a few unlikely allies, he must navigate a dangerous underworld where trust is currency and betrayal costs everything. The sound design crackles with authenticity—screeching car tires, gunshots echoing in alleyways, and the menacing whisper of organized crime that gripped America's imagination during these dark years.</p>
+<p>Suspense commanded CBS airwaves for two decades as America's premier anthology of terror and tension, and this 1940s episode exemplifies exactly why. While countless shows promised thrills, Suspense delivered genuine unease through masterful writing, stellar performances, and innovative radio techniques that made listeners pull their chairs closer to the speakers. The show's unflinching portrayal of urban crime and moral ambiguity reflected the real anxieties of wartime and postwar America, transforming pulp entertainment into something that felt genuinely consequential. Each episode was a carefully constructed puzzle of suspense, building dread through dialogue and atmosphere rather than relying on cheap scares.</p>
+<p>Don't miss this gripping tale of crime and desperation that captured the dangerous allure of gangland Chicago. Tune in now and experience Suspense the way millions did—in the dark, hanging on every word, never quite knowing where the next twist will take you.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 441019 114 Eve (128 48) 29169 30m46s Afrs — Suspense | Ghost of Radio</title>
+  <title>Eve (128 48) 29169 30m46s Afrs — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 441019 114 Eve (128 48) 29169 30m46s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 441019 114 Eve (128 48) 29169 30m46s Afrs — Suspense">
   <meta property="og:description" content="Listen to Suspense 441019 114 Eve (128 48) 29169 30m46s Afrs — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · October 19, 1944</span>
           </div>
-          <h1 class="episode__title">Suspense 441019 114 Eve (128 48) 29169 30m46s Afrs</h1>
+          <h1 class="episode__title">Eve (128 48) 29169 30m46s Afrs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Eve</p>
-<p>Picture this: a moonlit evening in 1940s suburbia, where the comfortable rhythms of domestic life mask something far more sinister lurking just beneath the surface. In "Eve," listeners are drawn into a tale of psychological tension and creeping dread as ordinary circumstances spiral into nightmare. The episode unfolds with masterful pacing, each sound effect—the creak of a door, the rustle of fabric, a whispered confession—building an almost unbearable sense of anticipation. You'll find yourself leaning closer to the radio, heart quickening, as the protagonist discovers that the person closest to them may harbor dark secrets. This is Suspense at its finest: not relying on cheap scares, but on the quiet horror of human nature itself.</p>
-<p>For nearly two decades, CBS's *Suspense* ruled the airwaves as America's premier thriller program, and episodes like "Eve" showcase exactly why. Premiering in 1942, the series became legendary for its sophisticated scripts, stellar casts of Hollywood's finest, and an uncanny ability to transform the familiar into the frightening. Each episode was a self-contained nightmare, crafted to exploit the unique power of radio—where imagination supplies the most terrifying images of all. In an era before television, when families gathered around the radio in dimly lit living rooms, *Suspense* became the cultural touchstone for thrills and chills, influencing countless horror and thriller traditions that followed.</p>
-<p>Don't miss "Eve"—a haunting reminder of radio's golden age, when great storytelling and atmospheric production could freeze the blood with nothing but voices, music, and sound. Tune in and discover why millions of listeners made *Suspense* appointment radio, night after night.</p>
+          <p>Picture this: a moonlit evening in 1940s suburbia, where the comfortable rhythms of domestic life mask something far more sinister lurking just beneath the surface. In "Eve," listeners are drawn into a tale of psychological tension and creeping dread as ordinary circumstances spiral into nightmare. The episode unfolds with masterful pacing, each sound effect—the creak of a door, the rustle of fabric, a whispered confession—building an almost unbearable sense of anticipation. You'll find yourself leaning closer to the radio, heart quickening, as the protagonist discovers that the person closest to them may harbor dark secrets. This is Suspense at its finest: not relying on cheap scares, but on the quiet horror of human nature itself.</p>
+<p>For nearly two decades, CBS's Suspense ruled the airwaves as America's premier thriller program, and episodes like "Eve" showcase exactly why. Premiering in 1942, the series became legendary for its sophisticated scripts, stellar casts of Hollywood's finest, and an uncanny ability to transform the familiar into the frightening. Each episode was a self-contained nightmare, crafted to exploit the unique power of radio—where imagination supplies the most terrifying images of all. In an era before television, when families gathered around the radio in dimly lit living rooms, Suspense became the cultural touchstone for thrills and chills, influencing countless horror and thriller traditions that followed.</p>
+<p>Don't miss "Eve"—a haunting reminder of radio's golden age, when great storytelling and atmospheric production could freeze the blood with nothing but voices, music, and sound. Tune in and discover why millions of listeners made Suspense appointment radio, night after night.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

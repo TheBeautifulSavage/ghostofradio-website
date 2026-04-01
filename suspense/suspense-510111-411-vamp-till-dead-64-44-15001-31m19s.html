@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspense 510111 411 Vamp Till Dead (64 44) 15001 31m19s — Suspense | Ghost of Radio</title>
+  <title>Vamp Till Dead (64 44) 15001 31m19s — Suspense | Ghost of Radio</title>
   <meta name="description" content="Listen to Suspense 510111 411 Vamp Till Dead (64 44) 15001 31m19s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Suspense 510111 411 Vamp Till Dead (64 44) 15001 31m19s — Suspense">
   <meta property="og:description" content="Listen to Suspense 510111 411 Vamp Till Dead (64 44) 15001 31m19s — Suspense (CBS, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Suspense</span>
             <span class="episode__network">CBS · January 11, 1951</span>
           </div>
-          <h1 class="episode__title">Suspense 510111 411 Vamp Till Dead (64 44) 15001 31m19s</h1>
+          <h1 class="episode__title">Vamp Till Dead (64 44) 15001 31m19s</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Vamp Till Dead</p>
-<p>Step into the shadowy world of post-war paranoia with "Vamp Till Dead," where the femme fatale isn't merely dangerous—she's something far more sinister. Picture yourself huddled near your radio dial on a late evening, the familiar CBS announcer's voice raising the curtain on a tale of seduction and supernatural dread. A man finds himself ensnared by a mysterious woman whose beauty masks something altogether unholy. As the plot unravels across thirty-one mesmerizing minutes, you'll discover that some appetites transcend mortal understanding, and some women were never quite human to begin with. The production's haunting sound design—the creak of floorboards, the whisper of evening wind, the woman's chilling laughter—builds an atmosphere of mounting dread that will leave you questioning what's real and what's impossibly, terrifyingly, supernatural.</p>
+          <p>Step into the shadowy world of post-war paranoia with "Vamp Till Dead," where the femme fatale isn't merely dangerous—she's something far more sinister. Picture yourself huddled near your radio dial on a late evening, the familiar CBS announcer's voice raising the curtain on a tale of seduction and supernatural dread. A man finds himself ensnared by a mysterious woman whose beauty masks something altogether unholy. As the plot unravels across thirty-one mesmerizing minutes, you'll discover that some appetites transcend mortal understanding, and some women were never quite human to begin with. The production's haunting sound design—the creak of floorboards, the whisper of evening wind, the woman's chilling laughter—builds an atmosphere of mounting dread that will leave you questioning what's real and what's impossibly, terrifyingly, supernatural.</p>
 <p>"Suspense" stands as one of radio's greatest achievements, a CBS powerhouse that dominated Thursday nights for two decades with its uncompromising commitment to psychological terror. Born in 1942, the series pioneered the art of audio horror, proving that the invisible threat heard through a speaker could be far more effective than anything seen on screen. "Vamp Till Dead" exemplifies the show's golden period in the 1940s, when writers crafted stories that exploited radio's unique power to invade the listener's imagination. Each episode, whether rooted in crime, the supernatural, or everyday menace, demonstrated that true horror wasn't about gore or spectacle—it was about the terror lurking in uncertainty, the dread of the unknown voice in the darkness.</p>
 <p>Don't miss this classic tale of fatal attraction and otherworldly danger. Tune in to "Vamp Till Dead" and remember: sometimes the most beautiful monsters are those we invite willingly into our homes.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
