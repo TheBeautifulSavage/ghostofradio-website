@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Captain Midnight: "The Phantom Menace"</p>
-<p>**Original Broadcast: October 27, 1939**</p>
+          <p>Original Broadcast: October 27, 1939</p>
 <p>Picture this: it's a crisp autumn evening in 1939, and across America, children and their parents gather around glowing radio sets as the heroic aviation ace Captain Midnight finds himself ensnared in the most diabolical trap yet devised by his arch-nemesis, the sinister Ivan Shark. Our hero's magnificent flying fortress, the Sky Raider, has been mysteriously grounded, its engines sabotaged by foreign agents working in the shadows of American airfields. With war clouds gathering over Europe and tensions mounting at home, this episode crackles with urgency and danger—will Captain Midnight uncover the spy ring before they steal the revolutionary new aircraft designs locked in the Pentagon's vaults? The steady voice of announcer Pierre André guides us through a maze of coded messages, midnight rendezvous, and hairpin turns above cloud-covered mountains, while authentic sound effects of roaring engines and crackling radio static transport listeners directly into the cockpit of adventure.</p>
 <p>Captain Midnight arrived on NBC in 1938 just as Americans were becoming obsessed with aviation and increasingly anxious about global threats. The show brilliantly capitalized on this moment, blending state-of-the-art (if imaginative) aeronautical detail with spy thriller plotting that mirrored real-world anxieties about foreign interference and industrial espionage. Broadcast serially across four days a week, episodes like this one kept listeners perpetually on the edge of their seats, desperate to tune in the next day and discover Captain Midnight's fate.</p>
 <p>Don't miss this masterpiece of wartime radio drama. Tune in now and discover why a nation held its breath every evening at 5:15, waiting to see if Captain Midnight would triumph once again against the forces of darkness and tyranny.</p>
@@ -97,9 +96,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
