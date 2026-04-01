@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Let George Do It: "The Voice of the Giant"</p>
-<p>**July 31, 1950**</p>
+          <p>July 31, 1950</p>
 <p>Picture this: it's a sweltering summer night, and private investigator George Valentine finds himself tangled in a case that begins with a disembodied voice—deep, commanding, impossibly resonant—that seems to control the underworld from the shadows. As George stalks through fog-laden streets and into smoky jazz clubs, he discovers that this mysterious figure known only as "The Giant" has his hooks in every shady enterprise from the docks to the diamond district. What unfolds is a taut, atmospheric mystery where danger lurks behind every dimly lit doorway, and George must use his quick wits and quicker reflexes to separate truth from deception. With sound effects that transport you into a noir-soaked metropolis—the click of a revolver, the screech of tires, the haunting melody of a lounge singer—this episode crackles with the tension that made the show a national phenomenon.</p>
-<p>*Let George Do It* aired during radio's golden twilight, when the detective serial still commanded rapt audiences despite television's creeping encroachment. Bob Bailey's portrayal of George Valentine became iconic—the everyman gumshoe with a conscience, solving cases for modest fees while navigating a morally ambiguous world. By 1950, the show had perfected its formula: fast-paced storytelling, clever dialogue, and production values that rivaled the best dramas on air. "The Voice of the Giant" exemplifies why listeners tuned in faithfully for nearly a decade, offering escapism and entertainment that felt both thrilling and somehow authentic.</p>
+<p>Let George Do It aired during radio's golden twilight, when the detective serial still commanded rapt audiences despite television's creeping encroachment. Bob Bailey's portrayal of George Valentine became iconic—the everyman gumshoe with a conscience, solving cases for modest fees while navigating a morally ambiguous world. By 1950, the show had perfected its formula: fast-paced storytelling, clever dialogue, and production values that rivaled the best dramas on air. "The Voice of the Giant" exemplifies why listeners tuned in faithfully for nearly a decade, offering escapism and entertainment that felt both thrilling and somehow authentic.</p>
 <p>Don't miss this classic adventure in crime and mystery. Tune in and let George do what he does best—uncover the truth, no matter how dangerous the path. From the first sinister broadcast of that strange, giant voice, you'll be hooked until the final, satisfying resolution.</p>
         </div>
 
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

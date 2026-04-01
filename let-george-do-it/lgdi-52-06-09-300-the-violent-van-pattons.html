@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Violent Van Pattons</p>
-<p>Picture this: midnight in the city, and private investigator George Valentine stumbles into a case that reeks of old money, older secrets, and the kind of violence that doesn't advertise itself. The Van Patton family—pillars of society, they call themselves—are hiding something behind their mansion walls, and when George starts asking questions, the answers come wrapped in threats and brass knuckles. This June 1952 episode crackles with the kind of tension that made *Let George Do It* essential listening for noir fans: a puzzle wrapped in shadow, dialogue sharp as broken glass, and the steady pulse of danger that keeps you glued to your radio speaker, wondering if George will uncover the truth or become just another corpse the cops file under "unsolved."</p>
+          <p>Picture this: midnight in the city, and private investigator George Valentine stumbles into a case that reeks of old money, older secrets, and the kind of violence that doesn't advertise itself. The Van Patton family—pillars of society, they call themselves—are hiding something behind their mansion walls, and when George starts asking questions, the answers come wrapped in threats and brass knuckles. This June 1952 episode crackles with the kind of tension that made Let George Do It essential listening for noir fans: a puzzle wrapped in shadow, dialogue sharp as broken glass, and the steady pulse of danger that keeps you glued to your radio speaker, wondering if George will uncover the truth or become just another corpse the cops file under "unsolved."</p>
 <p>What made this Mutual Network series a fixture in American homes for eight years was its perfect alchemy of hard-boiled detective work and the everyman appeal of George Valentine himself—no superhero, just a quick-witted operative who took the cases nobody else wanted. These weren't stories of masked avengers; they were tales of corruption seeping through respectable façades, of ordinary people driven to extraordinary crimes. By the early 1950s, as television loomed on the horizon, radio dramas like this one reminded audiences why they'd gathered around the receiver for two decades: for stories that demanded imagination, that built entire worlds in sound alone.</p>
-<p>If you've never experienced George's particular brand of trouble-finding, *The Violent Van Pattons* is the perfect entry point. Let the scratchy fidelity transport you back to an era when mystery meant something, when a good story and a commanding voice were all you needed. Tune in.</p>
+<p>If you've never experienced George's particular brand of trouble-finding, The Violent Van Pattons is the perfect entry point. Let the scratchy fidelity transport you back to an era when mystery meant something, when a good story and a commanding voice were all you needed. Tune in.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
