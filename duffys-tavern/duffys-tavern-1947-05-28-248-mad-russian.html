@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Duffy's Tavern — "Mad Russian" (May 28, 1947)</p>
-<p>Step behind the mahogany bar of that most beloved Manhattan watering hole and prepare yourself for mayhem of the highest order. On this fine spring evening in 1947, Archie the manager finds himself caught between the sharp wit of his ever-scheming regulars and the unpredictable chaos introduced by a volatile Russian character determined to turn the tavern upside down. The intimate studio audience roars with laughter as Archie's characteristic nasal voice cracks under pressure, desperately trying to maintain control as the situation spirals into absurdity. You'll hear the unmistakable clink of glasses, the murmur of background patrons, and the perfectly timed musical cues that punctuate each comedic beat—all the hallmarks of a show firing on all cylinders during its golden age.</p>
+          <p>Step behind the mahogany bar of that most beloved Manhattan watering hole and prepare yourself for mayhem of the highest order. On this fine spring evening in 1947, Archie the manager finds himself caught between the sharp wit of his ever-scheming regulars and the unpredictable chaos introduced by a volatile Russian character determined to turn the tavern upside down. The intimate studio audience roars with laughter as Archie's characteristic nasal voice cracks under pressure, desperately trying to maintain control as the situation spirals into absurdity. You'll hear the unmistakable clink of glasses, the murmur of background patrons, and the perfectly timed musical cues that punctuate each comedic beat—all the hallmarks of a show firing on all cylinders during its golden age.</p>
 <p>By 1947, Duffy's Tavern had become an institution in American radio comedy, a place where listeners from coast to coast gathered vicariously each week to escape postwar anxieties. The show's genius lay in its perfect balance of physical comedy translated to audio, sharp-tongued banter, and the chemistry between Ed Gardner's Archie and a rotating cast of celebrity guests who seemed genuinely delighted to play themselves in ridiculous scenarios. The tavern setting provided the ideal framework for controlled chaos—anything could walk through that door, and usually did.</p>
-<p>Settle in with a stiff drink of your own and surrender to nearly thirty minutes of pure comedic relief. In an era before television conquered the airwaves, this is where Americans went to laugh, and this particular episode captures that golden moment perfectly. *Duffy's Tavern: "Mad Russian"* awaits you in our archives.</p>
+<p>Settle in with a stiff drink of your own and surrender to nearly thirty minutes of pure comedic relief. In an era before television conquered the airwaves, this is where Americans went to laugh, and this particular episode captures that golden moment perfectly. Duffy's Tavern: "Mad Russian" awaits you in our archives.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
