@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 08 09 (38) Finn Alley — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(38) Finn Alley — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 08 09 (38) Finn Alley — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 08 09 (38) Finn Alley — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 08 09 (38) Finn Alley — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · August 9, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 08 09 (38) Finn Alley</h1>
+          <h1 class="episode__title">(38) Finn Alley</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: Finn Alley</p>
-<p>When Paladin rides into the squalid tenements of San Francisco's notorious Finn Alley, he discovers a world far removed from the dusty frontier towns that usually test his quick draw and quicker wit. This August 1959 episode plunges listeners into the cramped, fog-shrouded streets where Irish immigrants scratch out meager livings, and where a seemingly simple case of justice becomes entangled with poverty, pride, and the unwritten codes of a desperate community. As violin strings swell and the city sounds crackle through your receiver, you'll find yourself in dimly lit saloons and narrow alleys where Paladin must navigate not with bullets alone, but with the intelligence and moral compass that made him the West's most sought-after man of conscience. The tension builds as he uncovers a crime that strikes at the heart of Finn Alley's tight-knit world—and discovers that sometimes the greatest threats come not from outlaws, but from the grinding machinery of poverty itself.</p>
-<p>*Have Gun Will Travel* occupied a unique place in the golden age of radio drama, bridging the gap between traditional western adventure and sophisticated urban storytelling. Richard Boone's portrayal of Paladin elevated the show beyond simple gunslinger tales, presenting a protagonist who quoted Shakespeare as readily as he drew his Colt .45. The series, which aired on CBS from 1958 to 1960, proved that radio audiences craved complexity—heroes who used their minds as much as their firearms, and stories that acknowledged the moral ambiguities lurking beneath the surface of American life.</p>
+          <p>When Paladin rides into the squalid tenements of San Francisco's notorious Finn Alley, he discovers a world far removed from the dusty frontier towns that usually test his quick draw and quicker wit. This August 1959 episode plunges listeners into the cramped, fog-shrouded streets where Irish immigrants scratch out meager livings, and where a seemingly simple case of justice becomes entangled with poverty, pride, and the unwritten codes of a desperate community. As violin strings swell and the city sounds crackle through your receiver, you'll find yourself in dimly lit saloons and narrow alleys where Paladin must navigate not with bullets alone, but with the intelligence and moral compass that made him the West's most sought-after man of conscience. The tension builds as he uncovers a crime that strikes at the heart of Finn Alley's tight-knit world—and discovers that sometimes the greatest threats come not from outlaws, but from the grinding machinery of poverty itself.</p>
+<p>Have Gun Will Travel occupied a unique place in the golden age of radio drama, bridging the gap between traditional western adventure and sophisticated urban storytelling. Richard Boone's portrayal of Paladin elevated the show beyond simple gunslinger tales, presenting a protagonist who quoted Shakespeare as readily as he drew his Colt .45. The series, which aired on CBS from 1958 to 1960, proved that radio audiences craved complexity—heroes who used their minds as much as their firearms, and stories that acknowledged the moral ambiguities lurking beneath the surface of American life.</p>
 <p>Step back into 1959 and experience the artistry of classic radio drama at its finest. Close your eyes and let the sound effects, the superb supporting cast, and Boone's commanding voice transport you to Finn Alley. This is storytelling the way it was meant to be heard.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1960 02 07 (64) The Boss — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(64) The Boss — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1960 02 07 (64) The Boss — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1960 02 07 (64) The Boss — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1960 02 07 (64) The Boss — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · February 7, 1960</span>
           </div>
-          <h1 class="episode__title">Hgwt 1960 02 07 (64) The Boss</h1>
+          <h1 class="episode__title">(64) The Boss</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: "The Boss"</p>
-<p>When Paladin rides into a sprawling cattle empire where a ruthless matriarch rules with an iron fist, he discovers that some battles can't be won with gunplay alone. In this February 1960 episode, the man with the silver knight chess piece emblem finds himself caught between a tyrannical boss lady and the desperate hands who labor under her iron-fisted control. As tensions simmer and old grievances threaten to boil over into bloodshed, Paladin must navigate the treacherous politics of the ranch—where challenging authority could mean facing not just the wrath of a formidable woman, but the fractured loyalties of men pushed to their breaking point. The episode crackles with the kind of psychological tension that made the series legendary, trading gunfights for the sharper drama of competing wills and moral complexity.</p>
-<p>*Have Gun Will Travel* was never just another shoot-em-up, and this episode exemplifies why the show became a cornerstone of 1950s radio drama. Paladin—that urbane, lethal problem-solver who quoted poetry and philosophy while settling disputes with his Colt .45—represented a new breed of western hero: intelligent, contemplative, and deeply human. The show's willingness to explore character and ethics over simple heroics earned it a devoted following and helped elevate radio drama in its final golden years. By 1960, as television began stealing radio's audience, episodes like "The Boss" proved the medium still had stories worth hearing.</p>
-<p>Step back into an era when voices could conjure entire worlds, when a skilled actor's delivery and a masterful score could grip an audience with invisible hands. Tune in to experience *Have Gun Will Travel* at its finest—a western that reminds us that true adventure lies not in the quickest draw, but in the struggle between conscience and consequence.</p>
+          <p>When Paladin rides into a sprawling cattle empire where a ruthless matriarch rules with an iron fist, he discovers that some battles can't be won with gunplay alone. In this February 1960 episode, the man with the silver knight chess piece emblem finds himself caught between a tyrannical boss lady and the desperate hands who labor under her iron-fisted control. As tensions simmer and old grievances threaten to boil over into bloodshed, Paladin must navigate the treacherous politics of the ranch—where challenging authority could mean facing not just the wrath of a formidable woman, but the fractured loyalties of men pushed to their breaking point. The episode crackles with the kind of psychological tension that made the series legendary, trading gunfights for the sharper drama of competing wills and moral complexity.</p>
+<p>Have Gun Will Travel was never just another shoot-em-up, and this episode exemplifies why the show became a cornerstone of 1950s radio drama. Paladin—that urbane, lethal problem-solver who quoted poetry and philosophy while settling disputes with his Colt .45—represented a new breed of western hero: intelligent, contemplative, and deeply human. The show's willingness to explore character and ethics over simple heroics earned it a devoted following and helped elevate radio drama in its final golden years. By 1960, as television began stealing radio's audience, episodes like "The Boss" proved the medium still had stories worth hearing.</p>
+<p>Step back into an era when voices could conjure entire worlds, when a skilled actor's delivery and a masterful score could grip an audience with invisible hands. Tune in to experience Have Gun Will Travel at its finest—a western that reminds us that true adventure lies not in the quickest draw, but in the struggle between conscience and consequence.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

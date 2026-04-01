@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 10 04 (46) The Contessa — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(46) The Contessa — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 10 04 (46) The Contessa — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 10 04 (46) The Contessa — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 10 04 (46) The Contessa — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · October 4, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 10 04 (46) The Contessa</h1>
+          <h1 class="episode__title">(46) The Contessa</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Contessa</p>
-<p>Picture yourself in a smoky saloon on a cool October evening in 1959, settling in to your radio with a drink in hand, when suddenly the familiar strains of that unforgettable theme—*Paladin, Paladin, where do you go?*—crackle through your speaker. This week, our immaculately dressed gunslinger finds himself ensnared in a tale of Old World elegance colliding with Wild West violence. "The Contessa" presents Paladin with a mystery wrapped in European nobility: a titled woman with secrets as dangerous as her charm, hidden motivations that run deeper than the Nevada desert, and a test of whether even a man of principle can navigate the treacherous waters of passion and honor. The episode crackles with tension as our hero must use not just his quick draw, but his considerable wit and moral compass to uncover the truth lurking beneath silk gloves and aristocratic smiles.</p>
-<p>*Have Gun Will Travel* represented something revolutionary in 1959—a western that dared suggest intelligence, sophistication, and moral complexity could exist alongside frontier justice. Where many contemporaries offered simple tales of good versus evil, Paladin's world was painted in shades of gray, populated by fascinating characters whose struggles reflected the anxieties of a rapidly changing America. Richard Boone's masterful portrayal made the character an icon, and episodes like "The Contessa" showcased why the show commanded millions of listeners each week across CBS's golden network.</p>
+          <p>Picture yourself in a smoky saloon on a cool October evening in 1959, settling in to your radio with a drink in hand, when suddenly the familiar strains of that unforgettable theme—Paladin, Paladin, where do you go?—crackle through your speaker. This week, our immaculately dressed gunslinger finds himself ensnared in a tale of Old World elegance colliding with Wild West violence. "The Contessa" presents Paladin with a mystery wrapped in European nobility: a titled woman with secrets as dangerous as her charm, hidden motivations that run deeper than the Nevada desert, and a test of whether even a man of principle can navigate the treacherous waters of passion and honor. The episode crackles with tension as our hero must use not just his quick draw, but his considerable wit and moral compass to uncover the truth lurking beneath silk gloves and aristocratic smiles.</p>
+<p>Have Gun Will Travel represented something revolutionary in 1959—a western that dared suggest intelligence, sophistication, and moral complexity could exist alongside frontier justice. Where many contemporaries offered simple tales of good versus evil, Paladin's world was painted in shades of gray, populated by fascinating characters whose struggles reflected the anxieties of a rapidly changing America. Richard Boone's masterful portrayal made the character an icon, and episodes like "The Contessa" showcased why the show commanded millions of listeners each week across CBS's golden network.</p>
 <p>Don't miss this captivating journey into Paladin's world where a business card reading "Have Gun Will Travel" opens doors—and trouble—in the most unexpected places. Tune in now and experience the sophisticated storytelling that made 1959 radio a golden age.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

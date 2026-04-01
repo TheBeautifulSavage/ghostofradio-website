@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1958 12 07 (3) Ella West — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(3) Ella West — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1958 12 07 (3) Ella West — Have Gun Will Travel (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1958 12 07 (3) Ella West — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1958 12 07 (3) Ella West — Have Gun Will Travel (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · December 7, 1958</span>
           </div>
-          <h1 class="episode__title">Hgwt 1958 12 07 (3) Ella West</h1>
+          <h1 class="episode__title">(3) Ella West</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel — Ella West</p>
-<p>Picture yourself settling into your favorite chair on a crisp December evening in 1958, the glow of your radio set casting dancing shadows across the room as that familiar theme strikes up—*a lonely man, a mystery to unravel, a gun at his side.* Tonight's tale, "Ella West," draws you into the fractured world of a woman whose secrets run as deep as the frontier itself. What begins as a straightforward case of protection becomes something far more complicated, a moral labyrinth where right and wrong blur like dust on a desert trail. Richard Boone's measured voice guides you through tense confrontations and revelations that will leave you questioning the very nature of justice and redemption. This is the kind of episode that keeps you on the edge of your seat, wondering what Paladin will uncover next—and whether he'll live to see the sunrise.</p>
+          <p>Picture yourself settling into your favorite chair on a crisp December evening in 1958, the glow of your radio set casting dancing shadows across the room as that familiar theme strikes up—a lonely man, a mystery to unravel, a gun at his side. Tonight's tale, "Ella West," draws you into the fractured world of a woman whose secrets run as deep as the frontier itself. What begins as a straightforward case of protection becomes something far more complicated, a moral labyrinth where right and wrong blur like dust on a desert trail. Richard Boone's measured voice guides you through tense confrontations and revelations that will leave you questioning the very nature of justice and redemption. This is the kind of episode that keeps you on the edge of your seat, wondering what Paladin will uncover next—and whether he'll live to see the sunrise.</p>
 <p>"Have Gun Will Travel" stands as one of radio's most sophisticated Westerns, eschewing simple good-versus-evil narratives for psychological depth and moral complexity that presaged the adult Westerns that would transform television in the 1960s. This 1958 episode exemplifies the show's greatest strength: taking seemingly simple frontier conflicts and peeling back layers to reveal the humanity beneath the dust and gunpowder. The writing crackles with intelligence, and Boone's performance as the cultured, lethal Paladin creates a character far removed from the typical two-fisted cowboy—he's a man of paradoxes who reads Shakespeare and lives by his wits as much as his draw.</p>
 <p>Don't miss "Ella West"—tune in and discover why thousands of listeners made this show an essential part of their weekly routine. Available now for you to experience the golden age of radio drama in all its compelling glory.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

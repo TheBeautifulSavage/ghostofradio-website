@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1960 11 20 (105) Martha Neil — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(105) Martha Neil — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1960 11 20 (105) Martha Neil — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1960 11 20 (105) Martha Neil — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1960 11 20 (105) Martha Neil — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · November 20, 1960</span>
           </div>
-          <h1 class="episode__title">Hgwt 1960 11 20 (105) Martha Neil</h1>
+          <h1 class="episode__title">(105) Martha Neil</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun—Will Travel: Martha Neil</p>
-<p>As autumn leaves scatter across the Nevada desert in this November 1960 broadcast, Paladin rides into a town gripped by an intimate tragedy that defies the usual shoot-outs and showdowns. A woman named Martha Neil carries a burden of secrets and sorrow, and the hired gun with the calling card must navigate the treacherous terrain of human emotion rather than gunplay. This episode trades the bang of six-shooters for the quiet ache of difficult choices, testing whether a man of Paladin's skill can truly solve problems that lie deeper than any villain's schemes. Listeners will find themselves drawn into a character study wrapped in Western trappings, where the real conflict lives not in the dusty streets but in the hearts of desperate people seeking redemption.</p>
-<p>*Have Gun—Will Travel* arrived on CBS in 1958 as something of a revelation: a Western that refused to be simple. While other programs of the era relied on quick justice and clear villains, this series—starring Richard Boone as the erudite, philosophical Paladin—explored moral ambiguity and the complexity of frontier justice. By 1960, the show had established itself as a thinking man's Western, attracting sophisticated writers and increasingly tackling stories about conscience, sacrifice, and the limits of violence. "Martha Neil" exemplifies this evolution, showcasing the show's willingness to slow down, to listen, and to suggest that sometimes a gun cannot solve what the human heart has broken.</p>
-<p>Don't miss this gem from *Have Gun—Will Travel's* golden season. Tune in and discover why millions of Americans tuned their dials to CBS each week to hear Paladin's measured voice cut through the darkness—not always with answers, but always with understanding.</p>
+          <p>As autumn leaves scatter across the Nevada desert in this November 1960 broadcast, Paladin rides into a town gripped by an intimate tragedy that defies the usual shoot-outs and showdowns. A woman named Martha Neil carries a burden of secrets and sorrow, and the hired gun with the calling card must navigate the treacherous terrain of human emotion rather than gunplay. This episode trades the bang of six-shooters for the quiet ache of difficult choices, testing whether a man of Paladin's skill can truly solve problems that lie deeper than any villain's schemes. Listeners will find themselves drawn into a character study wrapped in Western trappings, where the real conflict lives not in the dusty streets but in the hearts of desperate people seeking redemption.</p>
+<p>Have Gun—Will Travel arrived on CBS in 1958 as something of a revelation: a Western that refused to be simple. While other programs of the era relied on quick justice and clear villains, this series—starring Richard Boone as the erudite, philosophical Paladin—explored moral ambiguity and the complexity of frontier justice. By 1960, the show had established itself as a thinking man's Western, attracting sophisticated writers and increasingly tackling stories about conscience, sacrifice, and the limits of violence. "Martha Neil" exemplifies this evolution, showcasing the show's willingness to slow down, to listen, and to suggest that sometimes a gun cannot solve what the human heart has broken.</p>
+<p>Don't miss this gem from Have Gun—Will Travel's golden season. Tune in and discover why millions of Americans tuned their dials to CBS each week to hear Paladin's measured voice cut through the darkness—not always with answers, but always with understanding.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

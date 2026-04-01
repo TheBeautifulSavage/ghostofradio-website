@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 02 08 (12) Killer's Widow — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(12) Killer's Widow — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 02 08 (12) Killer's Widow — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 02 08 (12) Killer's Widow — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 02 08 (12) Killer's Widow — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · February 8, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 02 08 (12) Killer's Widow</h1>
+          <h1 class="episode__title">(12) Killer's Widow</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Killer's Widow</p>
-<p>When a desperate woman arrives at Paladin's door with blood on her hands and vengeance in her heart, the mysterious gunslinger must navigate the shadowy intersection between justice and mercy that defines the American West. In "Killer's Widow," the carefully composed gentleman from San Francisco confronts a moral quandary that resists his usual silver-tongued solutions—a widow's son has been murdered, and she believes she knows who pulled the trigger, but the proof is as elusive as smoke. As the tension builds through darkened saloons and tense confrontations, listeners will find themselves suspended between sympathy and suspicion, wondering whether Paladin will use his legendary quick draw to settle a score or to uncover the truth that lies beneath layers of grief and deception.</p>
-<p>*Have Gun Will Travel* arrived on CBS radio in 1958 at a pivotal moment for the Western genre, when television was beginning to reshape American entertainment. Yet the radio version proved that the medium still possessed unmatched power—the lack of visual spectacle forced writers to craft psychological depth and moral complexity that distinguished Paladin from simpler gunslinger archetypes. Richard Boone's refined baritone delivery and the show's reliance on dialogue over action created a thinking person's Western, one where intelligence and wit could be as valuable as a steady hand. Episodes like "Killer's Widow" exemplify why devoted audiences tuned in faithfully, eager to hear how a man of principle would untangle the knotted problems that fate delivered to his door.</p>
-<p>Settle in with your radio dial tuned to CBS and experience the atmospheric storytelling that captivated millions. *Have Gun Will Travel* awaits—where a man with a gun and a conscience takes on cases that demand both.</p>
+          <p>When a desperate woman arrives at Paladin's door with blood on her hands and vengeance in her heart, the mysterious gunslinger must navigate the shadowy intersection between justice and mercy that defines the American West. In "Killer's Widow," the carefully composed gentleman from San Francisco confronts a moral quandary that resists his usual silver-tongued solutions—a widow's son has been murdered, and she believes she knows who pulled the trigger, but the proof is as elusive as smoke. As the tension builds through darkened saloons and tense confrontations, listeners will find themselves suspended between sympathy and suspicion, wondering whether Paladin will use his legendary quick draw to settle a score or to uncover the truth that lies beneath layers of grief and deception.</p>
+<p>Have Gun Will Travel arrived on CBS radio in 1958 at a pivotal moment for the Western genre, when television was beginning to reshape American entertainment. Yet the radio version proved that the medium still possessed unmatched power—the lack of visual spectacle forced writers to craft psychological depth and moral complexity that distinguished Paladin from simpler gunslinger archetypes. Richard Boone's refined baritone delivery and the show's reliance on dialogue over action created a thinking person's Western, one where intelligence and wit could be as valuable as a steady hand. Episodes like "Killer's Widow" exemplify why devoted audiences tuned in faithfully, eager to hear how a man of principle would untangle the knotted problems that fate delivered to his door.</p>
+<p>Settle in with your radio dial tuned to CBS and experience the atmospheric storytelling that captivated millions. Have Gun Will Travel awaits—where a man with a gun and a conscience takes on cases that demand both.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

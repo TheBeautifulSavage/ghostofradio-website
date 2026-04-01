@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1960 05 22 (79) Lucky Penny (the Lucky Penny Mine) — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(79) Lucky Penny (the Lucky Penny Mine) — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1960 05 22 (79) Lucky Penny (the Lucky Penny Mine) — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1960 05 22 (79) Lucky Penny (the Lucky Penny Mine) — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1960 05 22 (79) Lucky Penny (the Lucky Penny Mine) — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · May 22, 1960</span>
           </div>
-          <h1 class="episode__title">Hgwt 1960 05 22 (79) Lucky Penny (the Lucky Penny Mine)</h1>
+          <h1 class="episode__title">(79) Lucky Penny (the Lucky Penny Mine)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: Lucky Penny</p>
-<p>Picture yourself settling into your easy chair on a May evening in 1960, the warm glow of your radio set casting familiar shadows across the living room. As Paladin's distinctive theme swells through your speaker, you're transported to the dusty frontier where a seemingly worthless mining claim becomes the center of a desperate struggle. In "Lucky Penny," a prospector's modest dream collides with greed and violence when word spreads that his small claim might hold unexpected riches. What begins as a simple request for protection evolves into a tense cat-and-mouse game where trust becomes as scarce as gold ore, and Paladin must navigate the fine line between justice and survival. Richard Boone's measured voice carries you through shadowy saloons and moonlit mountainsides, each sound effect—the creak of mine timbers, the sharp crack of gunfire—drawing you deeper into the mystery. The tension builds masterfully as schemes unravel and allegiances shift, leaving you uncertain until the final dramatic moments who will walk away from the Lucky Penny Mine alive.</p>
-<p>*Have Gun Will Travel* thrived during these final seasons of radio's golden age by combining the intellectual appeal of morally complex storytelling with the visceral excitement of the western genre. Each episode showcased Paladin not as a simple gunslinger, but as a sophisticated problem-solver navigating the grey areas between right and wrong. By 1960, the show had perfected its formula—intelligent scripts, superb supporting players, and Boone's commanding presence made every episode feel like authentic frontier drama rather than mere entertainment.</p>
-<p>Don't miss this gripping tale of ambition and desperation. Tune in to "Lucky Penny" and rediscover why audiences across America made *Have Gun Will Travel* appointment listening, night after night.</p>
+          <p>Picture yourself settling into your easy chair on a May evening in 1960, the warm glow of your radio set casting familiar shadows across the living room. As Paladin's distinctive theme swells through your speaker, you're transported to the dusty frontier where a seemingly worthless mining claim becomes the center of a desperate struggle. In "Lucky Penny," a prospector's modest dream collides with greed and violence when word spreads that his small claim might hold unexpected riches. What begins as a simple request for protection evolves into a tense cat-and-mouse game where trust becomes as scarce as gold ore, and Paladin must navigate the fine line between justice and survival. Richard Boone's measured voice carries you through shadowy saloons and moonlit mountainsides, each sound effect—the creak of mine timbers, the sharp crack of gunfire—drawing you deeper into the mystery. The tension builds masterfully as schemes unravel and allegiances shift, leaving you uncertain until the final dramatic moments who will walk away from the Lucky Penny Mine alive.</p>
+<p>Have Gun Will Travel thrived during these final seasons of radio's golden age by combining the intellectual appeal of morally complex storytelling with the visceral excitement of the western genre. Each episode showcased Paladin not as a simple gunslinger, but as a sophisticated problem-solver navigating the grey areas between right and wrong. By 1960, the show had perfected its formula—intelligent scripts, superb supporting players, and Boone's commanding presence made every episode feel like authentic frontier drama rather than mere entertainment.</p>
+<p>Don't miss this gripping tale of ambition and desperation. Tune in to "Lucky Penny" and rediscover why audiences across America made Have Gun Will Travel appointment listening, night after night.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

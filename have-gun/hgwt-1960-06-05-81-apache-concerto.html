@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1960 06 05 (81) Apache Concerto — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(81) Apache Concerto — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1960 06 05 (81) Apache Concerto — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1960 06 05 (81) Apache Concerto — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1960 06 05 (81) Apache Concerto — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · June 5, 1960</span>
           </div>
-          <h1 class="episode__title">Hgwt 1960 06 05 (81) Apache Concerto</h1>
+          <h1 class="episode__title">(81) Apache Concerto</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Apache Concerto</p>
-<p>As twilight settles over the desert in this June 1960 broadcast, Paladin finds himself caught between two worlds when a classical musician's life intersects with the harsh realities of frontier justice. The episode opens with the incongruous sound of a piano echoing across the Arizona badlands—a symbol of civilization that becomes both salvation and curse. When Apache raiders threaten to destroy everything this gifted artist has built, Paladin must navigate treacherous negotiations and moral complexities that defy simple solutions. The tension builds masterfully as Richard Boone's measured voice guides listeners through a landscape where culture and violence collide, where a concerto might matter as much as a six-shooter, and where a gunslinger must become something more than a hired gun.</p>
-<p>*Have Gun Will Travel* stood apart from typical westerns of its era by exploring the psychological and moral dimensions of frontier life. Rather than glorifying violence, creator Sam Rolfe crafted stories where Paladin's considerable talents were deployed to prevent bloodshed or forge peace between adversaries. By 1960, the show had become CBS's crown jewel, proving that intelligent, character-driven drama could thrive in the western genre. This episode exemplifies the show's signature approach: placing refined sensibilities and human dignity at the center of rough terrain, challenging the assumption that the Old West was purely a stage for gunplay and brutish conquest.</p>
+          <p>As twilight settles over the desert in this June 1960 broadcast, Paladin finds himself caught between two worlds when a classical musician's life intersects with the harsh realities of frontier justice. The episode opens with the incongruous sound of a piano echoing across the Arizona badlands—a symbol of civilization that becomes both salvation and curse. When Apache raiders threaten to destroy everything this gifted artist has built, Paladin must navigate treacherous negotiations and moral complexities that defy simple solutions. The tension builds masterfully as Richard Boone's measured voice guides listeners through a landscape where culture and violence collide, where a concerto might matter as much as a six-shooter, and where a gunslinger must become something more than a hired gun.</p>
+<p>Have Gun Will Travel stood apart from typical westerns of its era by exploring the psychological and moral dimensions of frontier life. Rather than glorifying violence, creator Sam Rolfe crafted stories where Paladin's considerable talents were deployed to prevent bloodshed or forge peace between adversaries. By 1960, the show had become CBS's crown jewel, proving that intelligent, character-driven drama could thrive in the western genre. This episode exemplifies the show's signature approach: placing refined sensibilities and human dignity at the center of rough terrain, challenging the assumption that the Old West was purely a stage for gunplay and brutish conquest.</p>
 <p>For those seeking golden age radio at its finest, "Apache Concerto" delivers everything the medium promised—vivid storytelling, compelling performances, and the satisfying knowledge that you're experiencing the same entertainment that captivated millions of Americans in that thriving final era of network radio drama.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

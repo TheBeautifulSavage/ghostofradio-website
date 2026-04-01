@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 03 15 (17) Death Of A Young Gunfighter — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(17) Death Of A Young Gunfighter — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 03 15 (17) Death Of A Young Gunfighter — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 03 15 (17) Death Of A Young Gunfighter — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 03 15 (17) Death Of A Young Gunfighter — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · March 15, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 03 15 (17) Death Of A Young Gunfighter</h1>
+          <h1 class="episode__title">(17) Death Of A Young Gunfighter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Death of a Young Gunfighter</p>
-<p>In this taut March 1959 episode, Paladin confronts a moral reckoning that cuts deeper than any quick-draw showdown. A brash young killer arrives in town with blood on his hands and a price on his head, but what begins as a straightforward manhunt evolves into something far more complicated—a meditation on pride, redemption, and the terrible machinery of frontier justice. As the tension mounts and the noose of fate tightens around the youngster, listeners will find themselves caught between sympathy for a misguided youth and the cold logic of consequence that the Old West showed no mercy in dispensing. Richard Boone's measured, world-weary narration guides us through the shadows, where every decision carries weight and there are no easy answers.</p>
-<p>*Have Gun—Will Travel* distinguished itself among western programs by refusing the simplistic good-versus-evil framework that dominated the genre. Rather than casting Paladin as a two-fisted action hero, the show positioned him as a man of principle navigating moral complexity, a hired gun with a conscience who understood that justice and righteousness were not always the same thing. This 1959 episode exemplifies why the program earned critical acclaim and a devoted following during its run on CBS—it trusted its audience to wrestle with uncomfortable truths about violence, youth, and the inexorable consequences of our choices. The writing here is particularly sharp, mining dramatic irony from Paladin's knowledge that he cannot save everyone, no matter how much his code might demand it.</p>
-<p>Don't miss this compelling chapter in the saga of the Man with the Card, where the fastest gun in the West discovers that some battles cannot be won with a draw. Tune in and experience the sophisticated storytelling that made *Have Gun—Will Travel* essential listening for the American radio audience.</p>
+          <p>In this taut March 1959 episode, Paladin confronts a moral reckoning that cuts deeper than any quick-draw showdown. A brash young killer arrives in town with blood on his hands and a price on his head, but what begins as a straightforward manhunt evolves into something far more complicated—a meditation on pride, redemption, and the terrible machinery of frontier justice. As the tension mounts and the noose of fate tightens around the youngster, listeners will find themselves caught between sympathy for a misguided youth and the cold logic of consequence that the Old West showed no mercy in dispensing. Richard Boone's measured, world-weary narration guides us through the shadows, where every decision carries weight and there are no easy answers.</p>
+<p>Have Gun—Will Travel distinguished itself among western programs by refusing the simplistic good-versus-evil framework that dominated the genre. Rather than casting Paladin as a two-fisted action hero, the show positioned him as a man of principle navigating moral complexity, a hired gun with a conscience who understood that justice and righteousness were not always the same thing. This 1959 episode exemplifies why the program earned critical acclaim and a devoted following during its run on CBS—it trusted its audience to wrestle with uncomfortable truths about violence, youth, and the inexorable consequences of our choices. The writing here is particularly sharp, mining dramatic irony from Paladin's knowledge that he cannot save everyone, no matter how much his code might demand it.</p>
+<p>Don't miss this compelling chapter in the saga of the Man with the Card, where the fastest gun in the West discovers that some battles cannot be won with a draw. Tune in and experience the sophisticated storytelling that made Have Gun—Will Travel essential listening for the American radio audience.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

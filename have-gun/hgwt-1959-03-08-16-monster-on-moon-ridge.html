@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 03 08 (16) Monster On Moon Ridge — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(16) Monster On Moon Ridge — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 03 08 (16) Monster On Moon Ridge — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 03 08 (16) Monster On Moon Ridge — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 03 08 (16) Monster On Moon Ridge — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · March 8, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 03 08 (16) Monster On Moon Ridge</h1>
+          <h1 class="episode__title">(16) Monster On Moon Ridge</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: Monster on Moon Ridge</p>
-<p>Deep in the moonlit wilderness of Moon Ridge, something unspeakable stalks the night—and Paladin rides toward danger with nothing but his wits and his Colt .45. When superstitious locals speak in hushed whispers of a creature prowling the rocky crags, the legendary gunslinger must separate frontier folklore from sinister truth. Is it genuine evil that lurks in those shadowed canyons, or something far more human and calculably dangerous? As tension mounts through the darkness and fear grips a community on the edge of panic, listeners will find themselves suspended between the rational and the inexplicable, wondering what horrors await our hero when he finally confronts the mystery of Moon Ridge.</p>
-<p>*Have Gun Will Travel* arrived on CBS in 1958 as a masterwork of adult westerns—a departure from the simple good-versus-evil shootouts that had flooded radio and television. Richard Boone's portrayal of Paladin, the aristocratic gunslinger with a business card and a philosophy to match, elevated the entire genre. The show thrived on moral complexity and psychological depth, trading in gunplay for genuine storytelling. This 1959 episode exemplifies that sophistication, blending horror and western tropes in a way that feels both authentic to the era and startlingly modern. The series' willingness to explore the supernatural and the psychological gave it legs at a time when audiences craved substance alongside adventure.</p>
-<p>Tune your dial to this gripping chapter in Paladin's legend and discover why *Have Gun Will Travel* remains a benchmark of classic radio drama. Whether you're a devoted fan or discovering the show for the first time, "Monster on Moon Ridge" promises an unforgettable evening of suspense, atmosphere, and the kind of storytelling that could only happen in radio's golden age.</p>
+          <p>Deep in the moonlit wilderness of Moon Ridge, something unspeakable stalks the night—and Paladin rides toward danger with nothing but his wits and his Colt .45. When superstitious locals speak in hushed whispers of a creature prowling the rocky crags, the legendary gunslinger must separate frontier folklore from sinister truth. Is it genuine evil that lurks in those shadowed canyons, or something far more human and calculably dangerous? As tension mounts through the darkness and fear grips a community on the edge of panic, listeners will find themselves suspended between the rational and the inexplicable, wondering what horrors await our hero when he finally confronts the mystery of Moon Ridge.</p>
+<p>Have Gun Will Travel arrived on CBS in 1958 as a masterwork of adult westerns—a departure from the simple good-versus-evil shootouts that had flooded radio and television. Richard Boone's portrayal of Paladin, the aristocratic gunslinger with a business card and a philosophy to match, elevated the entire genre. The show thrived on moral complexity and psychological depth, trading in gunplay for genuine storytelling. This 1959 episode exemplifies that sophistication, blending horror and western tropes in a way that feels both authentic to the era and startlingly modern. The series' willingness to explore the supernatural and the psychological gave it legs at a time when audiences craved substance alongside adventure.</p>
+<p>Tune your dial to this gripping chapter in Paladin's legend and discover why Have Gun Will Travel remains a benchmark of classic radio drama. Whether you're a devoted fan or discovering the show for the first time, "Monster on Moon Ridge" promises an unforgettable evening of suspense, atmosphere, and the kind of storytelling that could only happen in radio's golden age.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

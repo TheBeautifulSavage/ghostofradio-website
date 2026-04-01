@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1960 06 19 (83) Too, Too Solid Town — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(83) Too, Too Solid Town — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1960 06 19 (83) Too, Too Solid Town — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1960 06 19 (83) Too, Too Solid Town — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1960 06 19 (83) Too, Too Solid Town — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · June 19, 1960</span>
           </div>
-          <h1 class="episode__title">Hgwt 1960 06 19 (83) Too, Too Solid Town</h1>
+          <h1 class="episode__title">(83) Too, Too Solid Town</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: Too, Too Solid Town</p>
-<p>When Paladin arrives in a remote Colorado settlement seemingly untouched by time itself, he discovers a town frozen in peculiar stasis—where the citizens have grown so complacent in their isolation that they've abandoned the very virtues that built the West. A mysterious plague of inertia has settled over the community, and when a young idealist threatens to disturb their comfortable slumber, Paladin finds himself caught between respecting a people's right to their chosen obscurity and the moral imperative to awaken conscience. The tension crackles through this June 1960 episode like desert lightning, exploring themes that resonated deeply with Americans grappling with conformity and complacency in an age of unprecedented material comfort.</p>
-<p>*Have Gun Will Travel*, which aired its final season on CBS during this period, represented the thinking man's Western—a show that elevated the genre beyond simple shootouts to examine philosophy, ethics, and human nature. Unlike the action-driven competitors flooding television, Richard Boone's Paladin was a mercenary with a conscience, a man of letters and principle who carried his calling card to those in need. The program's writers crafted episodes that treated frontier morality as seriously as Dostoevsky, and "Too, Too Solid Town" exemplifies this ambition, questioning whether safety without struggle amounts to genuine living.</p>
-<p>The program's five-year run established a template for intelligent drama that would influence television storytelling for decades. Step into the world of Paladin and experience why audiences gathered around their radio and television sets in rapt attention—where a Western wasn't just about good versus evil, but about the harder questions of what it means to be human. Tune in to *Have Gun Will Travel* and discover radio drama at its most thoughtful and compelling.</p>
+          <p>When Paladin arrives in a remote Colorado settlement seemingly untouched by time itself, he discovers a town frozen in peculiar stasis—where the citizens have grown so complacent in their isolation that they've abandoned the very virtues that built the West. A mysterious plague of inertia has settled over the community, and when a young idealist threatens to disturb their comfortable slumber, Paladin finds himself caught between respecting a people's right to their chosen obscurity and the moral imperative to awaken conscience. The tension crackles through this June 1960 episode like desert lightning, exploring themes that resonated deeply with Americans grappling with conformity and complacency in an age of unprecedented material comfort.</p>
+<p>Have Gun Will Travel, which aired its final season on CBS during this period, represented the thinking man's Western—a show that elevated the genre beyond simple shootouts to examine philosophy, ethics, and human nature. Unlike the action-driven competitors flooding television, Richard Boone's Paladin was a mercenary with a conscience, a man of letters and principle who carried his calling card to those in need. The program's writers crafted episodes that treated frontier morality as seriously as Dostoevsky, and "Too, Too Solid Town" exemplifies this ambition, questioning whether safety without struggle amounts to genuine living.</p>
+<p>The program's five-year run established a template for intelligent drama that would influence television storytelling for decades. Step into the world of Paladin and experience why audiences gathered around their radio and television sets in rapt attention—where a Western wasn't just about good versus evil, but about the harder questions of what it means to be human. Tune in to Have Gun Will Travel and discover radio drama at its most thoughtful and compelling.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

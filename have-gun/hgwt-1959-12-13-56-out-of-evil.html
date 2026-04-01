@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 12 13 (56) Out Of Evil — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(56) Out Of Evil — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 12 13 (56) Out Of Evil — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 12 13 (56) Out Of Evil — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 12 13 (56) Out Of Evil — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · December 13, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 12 13 (56) Out Of Evil</h1>
+          <h1 class="episode__title">(56) Out Of Evil</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: Out Of Evil</p>
-<p>Picture this: a fog-shrouded evening in 1959, your radio crackling to life as Paladin's calling card—that distinctive guitar riff—cuts through the static. "Out Of Evil" plunges listeners into one of the year's most morally ambiguous tales, where the line between justice and vengeance blurs like desert heat rising off hardpan. A desperate man with blood on his hands seeks Paladin's legendary skills, but as the gunslinger unravels the truth, he discovers that evil wears many faces—some of them wearing badges. With Richard Boone's measured baritone guiding us through shadow and deception, this December episode builds to a confrontation where pulling a trigger might be easier than living with the consequences.</p>
+          <p>Picture this: a fog-shrouded evening in 1959, your radio crackling to life as Paladin's calling card—that distinctive guitar riff—cuts through the static. "Out Of Evil" plunges listeners into one of the year's most morally ambiguous tales, where the line between justice and vengeance blurs like desert heat rising off hardpan. A desperate man with blood on his hands seeks Paladin's legendary skills, but as the gunslinger unravels the truth, he discovers that evil wears many faces—some of them wearing badges. With Richard Boone's measured baritone guiding us through shadow and deception, this December episode builds to a confrontation where pulling a trigger might be easier than living with the consequences.</p>
 <p>By 1959, "Have Gun Will Travel" had become CBS's most sophisticated western, appealing as much to suburban intellectuals as to traditional radio cowboys. Unlike the two-fisted gunplay of competitors, the show's real drama lived in Paladin's internal struggle—a man of violence who sought peaceful solutions, a mercenary guided by an unshakeable moral code. Producer Sam Rolfe crafted stories that wrestled with genuine ethical quandaries, transforming the western formula into something closer to psychological drama. "Out Of Evil" exemplifies this approach perfectly, offering no easy heroes or villains, just the messy reality of human nature and the weight of choices made in desperation.</p>
 <p>Tune in to this remarkable episode and experience why "Have Gun Will Travel" remains essential listening for anyone who believes radio drama reached its artistic peak in the late 1950s. It's a masterclass in tension-building, character depth, and the kind of storytelling that demands your complete attention—no commercial interruption can diminish its power.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

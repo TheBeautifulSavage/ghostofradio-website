@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 08 23 (40) Bonanza — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(40) Bonanza — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 08 23 (40) Bonanza — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 08 23 (40) Bonanza — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 08 23 (40) Bonanza — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · August 23, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 08 23 (40) Bonanza</h1>
+          <h1 class="episode__title">(40) Bonanza</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: Bonanza (August 23, 1959)</p>
-<p>Picture this: the Arizona desert at sundown, heat shimmering off the red rock as Paladin rides into a town where greed has poisoned everything it touches. A rich strike of gold has transformed a sleepy settlement into a powder keg of ambition, and innocent blood will stain the dust before justice is served. In this week's episode, Pala­din must navigate the treacherous moral landscape of a gold rush fever, where every handshake conceals a knife and loyalty is measured in nuggets. The stakes couldn't be higher, and neither could the tension as our man with the gun faces down men whose hunger for wealth has erased their humanity.</p>
+          <p>Picture this: the Arizona desert at sundown, heat shimmering off the red rock as Paladin rides into a town where greed has poisoned everything it touches. A rich strike of gold has transformed a sleepy settlement into a powder keg of ambition, and innocent blood will stain the dust before justice is served. In this week's episode, Pala­din must navigate the treacherous moral landscape of a gold rush fever, where every handshake conceals a knife and loyalty is measured in nuggets. The stakes couldn't be higher, and neither could the tension as our man with the gun faces down men whose hunger for wealth has erased their humanity.</p>
 <p>What made "Have Gun Will Travel" stand apart from the dozens of westerns flooding American airwaves in the late 1950s was its thoughtful, often philosophical approach to frontier justice. Unlike the black-and-white morality tales that dominated television and radio, this CBS series—which had already proven itself as a top-rated television program—brought literary depth to its radio adaptation. Richard Boone's Paladin wasn't just a hired gun; he was a Renaissance man, cultured and introspective, who grappled with the consequences of violence even as he employed it. In 1959, as the decade neared its end, such nuance felt remarkably modern, offering adult listeners something beyond shoot-outs and simple heroics.</p>
 <p>Don't miss "Bonanza"—one of the season's most compelling offerings. Settle in with your radio dial set to CBS, and let yourself be transported to a world where principle matters more than gold, and a man's word is his bond. This is classic radio drama at its finest.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

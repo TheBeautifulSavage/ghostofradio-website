@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 06 14 (30) Bitter Wine — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(30) Bitter Wine — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 06 14 (30) Bitter Wine — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 06 14 (30) Bitter Wine — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 06 14 (30) Bitter Wine — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · June 14, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 06 14 (30) Bitter Wine</h1>
+          <h1 class="episode__title">(30) Bitter Wine</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Bitter Wine</p>
-<p>When Paladin rides into a California wine country town ostensibly to settle a property dispute, he discovers something far more intoxicating than grapes fermenting in oak barrels—a mystery of betrayal, ambition, and the corrosive effects of greed on family bonds. As June 1959 listeners tuned in to CBS, they were treated to one of the show's most sophisticated explorations of human weakness, where the gunslinger finds that the most dangerous weapon isn't a revolver, but resentment aged to a toxic vintage. Richard Boone's measured voice guides us through dusty vineyards and candlelit haciendas where old grudges simmer beneath courteous Spanish hospitality, and by the episode's end, you'll understand why this show elevated the western genre beyond simple shootouts and heroics.</p>
+          <p>When Paladin rides into a California wine country town ostensibly to settle a property dispute, he discovers something far more intoxicating than grapes fermenting in oak barrels—a mystery of betrayal, ambition, and the corrosive effects of greed on family bonds. As June 1959 listeners tuned in to CBS, they were treated to one of the show's most sophisticated explorations of human weakness, where the gunslinger finds that the most dangerous weapon isn't a revolver, but resentment aged to a toxic vintage. Richard Boone's measured voice guides us through dusty vineyards and candlelit haciendas where old grudges simmer beneath courteous Spanish hospitality, and by the episode's end, you'll understand why this show elevated the western genre beyond simple shootouts and heroics.</p>
 <p>Have Gun Will Travel had already established itself as the thinking person's western during its 1958 debut, and by this second season, it was proving there was an audience hungry for psychological depth alongside frontier adventure. These weren't morality plays of good versus evil, but nuanced examinations of compromise, honor, and the price of civilization itself. The show's success lay partly in Boone's aristocratic bearing—this was no rough-hewn cowpoke but a man of education and philosophy who could navigate both drawing rooms and dusty trails with equal grace, making even a dispute over wine production feel like a matter of profound consequence.</p>
 <p>Don't miss "Bitter Wine," a gem from Have Gun Will Travel's golden run, where the real conflict ferments not in the vineyard but in the human heart. This is the kind of storytelling that kept millions gathered around their radio sets, proving that westerns could be as psychologically compelling as they were dramatically thrilling. Check your local listings and prepare for an hour of first-rate entertainment.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 07 05 (33) Comanche — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(33) Comanche — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 07 05 (33) Comanche — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 07 05 (33) Comanche — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 07 05 (33) Comanche — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · July 5, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 07 05 (33) Comanche</h1>
+          <h1 class="episode__title">(33) Comanche</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: Comanche</p>
-<p>Picture yourself in a dusty trading post on the edge of civilization as the sun bleeds crimson across the western horizon. When Paladin receives word that a frontier settlement is caught between two warring forces—settlers and Comanche warriors locked in a deadly standoff—he must navigate the treacherous moral terrain where violence begets only more violence. In this July 1959 episode, the intellectual gunslinger confronts a conflict that no amount of cleverness or quick draw can cleanly resolve. The tension crackles through every scene as Paladin discovers that the truth behind the violence is far more complicated than either side's narrative, and that his reputation as a man of action may matter far less than his ability to understand the human desperation driving men toward bloodshed. Expect sharp dialogue, mounting suspense, and that signature Paladin touch—a man who would rather talk his way through a crisis, but carries a gun in case the world demands otherwise.</p>
-<p>*Have Gun Will Travel* arrived on CBS in 1958 at a pivotal moment in television and radio broadcasting, capturing an America wrestling with its own frontier mythology. Richard Boone's portrayal of Paladin—a educated, cultured gunslinger who quotes Shakespeare and plays chess—offered something radically different from the typical western hero. Rather than glorifying the gun, the show used Paladin's reluctant violence to explore moral ambiguity and the human cost of the Old West. Episodes like "Comanche" exemplify why the show became a critical darling, earning multiple Emmy nominations for its thoughtful writing and nuanced approach to western storytelling.</p>
+          <p>Picture yourself in a dusty trading post on the edge of civilization as the sun bleeds crimson across the western horizon. When Paladin receives word that a frontier settlement is caught between two warring forces—settlers and Comanche warriors locked in a deadly standoff—he must navigate the treacherous moral terrain where violence begets only more violence. In this July 1959 episode, the intellectual gunslinger confronts a conflict that no amount of cleverness or quick draw can cleanly resolve. The tension crackles through every scene as Paladin discovers that the truth behind the violence is far more complicated than either side's narrative, and that his reputation as a man of action may matter far less than his ability to understand the human desperation driving men toward bloodshed. Expect sharp dialogue, mounting suspense, and that signature Paladin touch—a man who would rather talk his way through a crisis, but carries a gun in case the world demands otherwise.</p>
+<p>Have Gun Will Travel arrived on CBS in 1958 at a pivotal moment in television and radio broadcasting, capturing an America wrestling with its own frontier mythology. Richard Boone's portrayal of Paladin—a educated, cultured gunslinger who quotes Shakespeare and plays chess—offered something radically different from the typical western hero. Rather than glorifying the gun, the show used Paladin's reluctant violence to explore moral ambiguity and the human cost of the Old West. Episodes like "Comanche" exemplify why the show became a critical darling, earning multiple Emmy nominations for its thoughtful writing and nuanced approach to western storytelling.</p>
 <p>Tune in to experience Paladin facing down one of the frontier's most enduring conflicts with intelligence, integrity, and just a touch of gunpowder smoke.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

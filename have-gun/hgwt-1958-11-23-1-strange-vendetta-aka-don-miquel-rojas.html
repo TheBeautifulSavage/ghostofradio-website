@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1958 11 23 (1) Strange Vendetta (aka Don Miquel Rojas) — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(1) Strange Vendetta (aka Don Miquel Rojas) — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1958 11 23 (1) Strange Vendetta (aka Don Miquel Rojas) — Have Gun Will Travel (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1958 11 23 (1) Strange Vendetta (aka Don Miquel Rojas) — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1958 11 23 (1) Strange Vendetta (aka Don Miquel Rojas) — Have Gun Will Travel (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · November 23, 1958</span>
           </div>
-          <h1 class="episode__title">Hgwt 1958 11 23 (1) Strange Vendetta (aka Don Miquel Rojas)</h1>
+          <h1 class="episode__title">(1) Strange Vendetta (aka Don Miquel Rojas)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel - Strange Vendetta</p>
-<p>In this November 1958 broadcast, Paladin rides into a dusty New Mexico town where honor and revenge collide in ways far more complex than a simple gunfight. When a mysterious visitor approaches the gunslinger seeking his services, Paladin discovers himself caught between a Mexican aristocrat and a vendetta rooted in blood, betrayal, and questions of justice that no six-shooter can neatly resolve. As shadows lengthen across the adobe streets and old wounds threaten to reopen, listeners will find themselves gripped by the kind of morally ambiguous Western tale that elevated *Have Gun Will Travel* above the standard shoot-'em-up fare of the era—where the fastest draw matters far less than understanding the human heart.</p>
+          <p>In this November 1958 broadcast, Paladin rides into a dusty New Mexico town where honor and revenge collide in ways far more complex than a simple gunfight. When a mysterious visitor approaches the gunslinger seeking his services, Paladin discovers himself caught between a Mexican aristocrat and a vendetta rooted in blood, betrayal, and questions of justice that no six-shooter can neatly resolve. As shadows lengthen across the adobe streets and old wounds threaten to reopen, listeners will find themselves gripped by the kind of morally ambiguous Western tale that elevated Have Gun Will Travel above the standard shoot-'em-up fare of the era—where the fastest draw matters far less than understanding the human heart.</p>
 <p>The show's brilliance lay in its refusal to treat the West as simple mythology. Starring Richard Boone as the cultured, philosophical Paladin—a gunfighter who quotes Shakespeare and prefers negotiation to violence—the series struck a nerve with Cold War audiences hungry for complexity beneath the frontier veneer. CBS's 1958-1960 run represented the show at its creative peak, before later seasons would occasionally soften its edges. This episode, with its Spanish colonial setting and examination of old-world family honor transplanted to the American frontier, exemplifies the show's sophisticated approach to storytelling, drawing on classical themes of fate and redemption while remaining firmly grounded in the authentic texture of the Old West.</p>
-<p>Nearly seventy years after it first crackled through American living rooms, *Have Gun Will Travel* remains a masterwork of radio drama. If you've never experienced Paladin's deliberate wisdom or the atmospheric sound design that makes the Southwest come alive, this episode offers the perfect entry point. Tune in and discover why this show earned its place as one of the finest Westerns ever broadcast.</p>
+<p>Nearly seventy years after it first crackled through American living rooms, Have Gun Will Travel remains a masterwork of radio drama. If you've never experienced Paladin's deliberate wisdom or the atmospheric sound design that makes the Southwest come alive, this episode offers the perfect entry point. Tune in and discover why this show earned its place as one of the finest Westerns ever broadcast.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

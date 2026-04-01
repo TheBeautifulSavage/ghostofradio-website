@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1958 12 14 (4) The Outlaw (manfred Holt) — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(4) The Outlaw (manfred Holt) — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1958 12 14 (4) The Outlaw (manfred Holt) — Have Gun Will Travel (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1958 12 14 (4) The Outlaw (manfred Holt) — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1958 12 14 (4) The Outlaw (manfred Holt) — Have Gun Will Travel (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · December 14, 1958</span>
           </div>
-          <h1 class="episode__title">Hgwt 1958 12 14 (4) The Outlaw (manfred Holt)</h1>
+          <h1 class="episode__title">(4) The Outlaw (manfred Holt)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Outlaw</p>
-<p>Picture yourself settling into your favorite chair on a December evening in 1958, the blue glow of your radio warming the darkening room as Paladin's business card appears on screen—a calling card for justice in the untamed West. In "The Outlaw," listeners encounter Manfred Holt, a man whose very name carries the weight of frontier desperation. This episode weaves a taut tale of pursuit and moral reckoning, where the line between law and lawlessness blurs beneath desert stars. With every crackle of static and expertly timed sound effect—the hoofbeats of a desperate ride, the tension-laden silences between characters—you'll find yourself caught in Paladin's web of investigation. The gunslinger's calm, measured voice cuts through the chaos as he unravels a mystery that challenges everything we thought we knew about right and wrong in the Old West.</p>
-<p>*Have Gun—Will Travel* represented something revolutionary for CBS radio in the late 1950s: a sophisticated western for grown-up ears, featuring Richard Boone's iconic Paladin, a man of culture and lethal skill who solved problems with brains as often as bullets. The show's success lay in its refusal to traffic in simple heroes and villains; instead, Holt's story invites listeners into moral complexity that radio drama handled with remarkable nuance. These episodes, captured in vivid detail by meticulous sound design and stellar writing, became the gold standard for adventure drama just as television was stealing radio's thunder.</p>
-<p>Don't miss this forgotten gem from radio's golden age—a masterclass in suspense and character that proves why millions of listeners made *Have Gun—Will Travel* appointment radio. Tune in and discover why Paladin's legend endures.</p>
+          <p>Picture yourself settling into your favorite chair on a December evening in 1958, the blue glow of your radio warming the darkening room as Paladin's business card appears on screen—a calling card for justice in the untamed West. In "The Outlaw," listeners encounter Manfred Holt, a man whose very name carries the weight of frontier desperation. This episode weaves a taut tale of pursuit and moral reckoning, where the line between law and lawlessness blurs beneath desert stars. With every crackle of static and expertly timed sound effect—the hoofbeats of a desperate ride, the tension-laden silences between characters—you'll find yourself caught in Paladin's web of investigation. The gunslinger's calm, measured voice cuts through the chaos as he unravels a mystery that challenges everything we thought we knew about right and wrong in the Old West.</p>
+<p>Have Gun—Will Travel represented something revolutionary for CBS radio in the late 1950s: a sophisticated western for grown-up ears, featuring Richard Boone's iconic Paladin, a man of culture and lethal skill who solved problems with brains as often as bullets. The show's success lay in its refusal to traffic in simple heroes and villains; instead, Holt's story invites listeners into moral complexity that radio drama handled with remarkable nuance. These episodes, captured in vivid detail by meticulous sound design and stellar writing, became the gold standard for adventure drama just as television was stealing radio's thunder.</p>
+<p>Don't miss this forgotten gem from radio's golden age—a masterclass in suspense and character that proves why millions of listeners made Have Gun—Will Travel appointment radio. Tune in and discover why Paladin's legend endures.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 09 20 (44) Stardust — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(44) Stardust — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 09 20 (44) Stardust — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 09 20 (44) Stardust — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 09 20 (44) Stardust — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · September 20, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 09 20 (44) Stardust</h1>
+          <h1 class="episode__title">(44) Stardust</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: Stardust</p>
-<p>Picture this: a dusty saloon where dreams turn to ashes and a woman's past comes calling in the dead of night. In "Stardust," broadcast September 20th, 1959, Paladin rides into a town where a faded showgirl's secret threatens to unravel the fragile respectability she's built in her new life. As our gentleman gunslinger uncovers the truth behind her mysterious visitor, tensions mount with every crackling word of dialogue. The episode crackles with that distinctly late-1950s sophistication—cocktail-hour wisdom mixed with frontier justice—as Paladin navigates the murky space between a woman's right to reinvent herself and the relentless pull of the past. Richard Boone's measured, world-weary narration sets the perfect tone for this tale of redemption and reckoning.</p>
-<p>By 1959, *Have Gun Will Travel* had become CBS radio's crown jewel of adult westerns, a show that proved the genre could speak to sophisticated listeners who craved moral complexity alongside six-gun action. Unlike the simplistic shoot-'em-ups that dominated earlier decades, this series presented Paladin as a Renaissance man—educated, cultured, troubled by the very violence his skills commanded. The show's success hinged on this tension: a man of refined tastes forced to live by brutish rules. "Stardust" exemplifies this formula, using the worn setting of a former entertainer to explore themes of identity and second chances that resonated deeply with postwar audiences navigating their own transformations.</p>
-<p>Don't miss this gem from one of radio's final golden seasons. Tune in to *Have Gun Will Travel: Stardust* and hear why this show remains essential listening for anyone who loves the western genre done right—with intelligence, atmosphere, and that unmistakable snap of period authenticity. Wire Paladin, care of the Hotel del Mar, and settle in for fifty minutes of unforgettable radio drama.</p>
+          <p>Picture this: a dusty saloon where dreams turn to ashes and a woman's past comes calling in the dead of night. In "Stardust," broadcast September 20th, 1959, Paladin rides into a town where a faded showgirl's secret threatens to unravel the fragile respectability she's built in her new life. As our gentleman gunslinger uncovers the truth behind her mysterious visitor, tensions mount with every crackling word of dialogue. The episode crackles with that distinctly late-1950s sophistication—cocktail-hour wisdom mixed with frontier justice—as Paladin navigates the murky space between a woman's right to reinvent herself and the relentless pull of the past. Richard Boone's measured, world-weary narration sets the perfect tone for this tale of redemption and reckoning.</p>
+<p>By 1959, Have Gun Will Travel had become CBS radio's crown jewel of adult westerns, a show that proved the genre could speak to sophisticated listeners who craved moral complexity alongside six-gun action. Unlike the simplistic shoot-'em-ups that dominated earlier decades, this series presented Paladin as a Renaissance man—educated, cultured, troubled by the very violence his skills commanded. The show's success hinged on this tension: a man of refined tastes forced to live by brutish rules. "Stardust" exemplifies this formula, using the worn setting of a former entertainer to explore themes of identity and second chances that resonated deeply with postwar audiences navigating their own transformations.</p>
+<p>Don't miss this gem from one of radio's final golden seasons. Tune in to Have Gun Will Travel: Stardust and hear why this show remains essential listening for anyone who loves the western genre done right—with intelligence, atmosphere, and that unmistakable snap of period authenticity. Wire Paladin, care of the Hotel del Mar, and settle in for fifty minutes of unforgettable radio drama.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

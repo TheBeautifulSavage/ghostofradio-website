@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 08 02 (37) High Wire — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(37) High Wire — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 08 02 (37) High Wire — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 08 02 (37) High Wire — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 08 02 (37) High Wire — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · August 2, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 08 02 (37) High Wire</h1>
+          <h1 class="episode__title">(37) High Wire</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun—Will Travel: High Wire</p>
-<p>Picture yourself in a dusty frontier town where a simple telegraph wire becomes a death trap, and honor demands a man risk everything on a thin strand of steel stretched between two buildings. In "High Wire," the mysterious gunslinger Paladin finds himself embroiled in a desperate situation where violence won't solve the problem—only nerve, quick thinking, and an iron will can save an innocent life hanging in the balance. This episode exemplifies the show's sophisticated approach to western drama, trading quick-draw gunfights for the kind of psychological tension that keeps listeners riveted to their sets, hearts pounding as a man walks a literal and moral tightrope with death waiting below.</p>
-<p>*Have Gun—Will Travel* arrived on CBS in 1958 during a golden age of adult westerns, offering something richer than the typical frontier fare flooding American airwaves. With Richard Boone's distinctive gravelly voice lending world-weary wisdom to Paladin's every word, and writer Sam Rolfe crafting narratives that examined character over carnage, the show earned both critical praise and a devoted following. "High Wire," from the program's second year, represents the show at its creative peak—when audiences were hungry for stories that challenged them, that suggested the West was as much about human nature as horseback riding. The episode showcases why CBS kept the show alive for three seasons and why it spawned a successful television adaptation; this was radio drama with ambition, treating its listeners as intelligent adults.</p>
-<p>If you've never experienced *Have Gun—Will Travel*, this is the perfect entry point into a masterwork of golden-age radio. Tune in for "High Wire" and discover why devoted listeners tuned in week after week: authentic drama, compelling moral dilemmas, and a protagonist as unforgettable as they come. Paladin awaits.</p>
+          <p>Picture yourself in a dusty frontier town where a simple telegraph wire becomes a death trap, and honor demands a man risk everything on a thin strand of steel stretched between two buildings. In "High Wire," the mysterious gunslinger Paladin finds himself embroiled in a desperate situation where violence won't solve the problem—only nerve, quick thinking, and an iron will can save an innocent life hanging in the balance. This episode exemplifies the show's sophisticated approach to western drama, trading quick-draw gunfights for the kind of psychological tension that keeps listeners riveted to their sets, hearts pounding as a man walks a literal and moral tightrope with death waiting below.</p>
+<p>Have Gun—Will Travel arrived on CBS in 1958 during a golden age of adult westerns, offering something richer than the typical frontier fare flooding American airwaves. With Richard Boone's distinctive gravelly voice lending world-weary wisdom to Paladin's every word, and writer Sam Rolfe crafting narratives that examined character over carnage, the show earned both critical praise and a devoted following. "High Wire," from the program's second year, represents the show at its creative peak—when audiences were hungry for stories that challenged them, that suggested the West was as much about human nature as horseback riding. The episode showcases why CBS kept the show alive for three seasons and why it spawned a successful television adaptation; this was radio drama with ambition, treating its listeners as intelligent adults.</p>
+<p>If you've never experienced Have Gun—Will Travel, this is the perfect entry point into a masterwork of golden-age radio. Tune in for "High Wire" and discover why devoted listeners tuned in week after week: authentic drama, compelling moral dilemmas, and a protagonist as unforgettable as they come. Paladin awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

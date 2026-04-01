@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 07 26 (36) The Wager — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(36) The Wager — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 07 26 (36) The Wager — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 07 26 (36) The Wager — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 07 26 (36) The Wager — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · July 26, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 07 26 (36) The Wager</h1>
+          <h1 class="episode__title">(36) The Wager</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: The Wager</p>
-<p>Picture this: a smoky saloon where fortunes hang in the balance and a man's word is worth more than gold. In "The Wager," listeners are transported to a high-stakes poker game where Paladin finds himself not merely playing cards, but navigating the treacherous waters of honor, deception, and redemption. As the tension mounts around the green felt table, our hero must determine who's cheating, who's lying, and who's worth saving—all while his own reputation dangles precariously in the smoke-filled air. This July 1959 episode captures everything that made *Have Gun Will Travel* essential listening: intelligent dialogue, moral complexity, and the kind of suspenseful pacing that kept millions of Americans glued to their radio sets every Sunday night.</p>
-<p>*Have Gun Will Travel* occupied a unique space in the golden age of radio drama. Unlike the shoot-first westerns that dominated the airwaves, this CBS program—which premiered in 1958 and ran through 1960—presented Paladin as a cultured mercenary with a conscience, a man who solved problems with wit and principle as often as with his gun. The show reflected a shift in American entertainment toward more sophisticated storytelling, featuring scripts by writers who understood that moral ambiguity was far more compelling than simple good versus evil. "The Wager" exemplifies this approach, using a game of cards as the crucible for exploring character and consequence.</p>
-<p>Don't miss this masterclass in dramatic tension. Tune in to experience Richard Boone's masterful performance as Paladin—a man caught between principle and pragmatism, searching for truth at a poker table where nothing is quite what it seems. *Have Gun Will Travel*: where every decision carries weight, and every hand dealt raises the stakes.</p>
+          <p>Picture this: a smoky saloon where fortunes hang in the balance and a man's word is worth more than gold. In "The Wager," listeners are transported to a high-stakes poker game where Paladin finds himself not merely playing cards, but navigating the treacherous waters of honor, deception, and redemption. As the tension mounts around the green felt table, our hero must determine who's cheating, who's lying, and who's worth saving—all while his own reputation dangles precariously in the smoke-filled air. This July 1959 episode captures everything that made Have Gun Will Travel essential listening: intelligent dialogue, moral complexity, and the kind of suspenseful pacing that kept millions of Americans glued to their radio sets every Sunday night.</p>
+<p>Have Gun Will Travel occupied a unique space in the golden age of radio drama. Unlike the shoot-first westerns that dominated the airwaves, this CBS program—which premiered in 1958 and ran through 1960—presented Paladin as a cultured mercenary with a conscience, a man who solved problems with wit and principle as often as with his gun. The show reflected a shift in American entertainment toward more sophisticated storytelling, featuring scripts by writers who understood that moral ambiguity was far more compelling than simple good versus evil. "The Wager" exemplifies this approach, using a game of cards as the crucible for exploring character and consequence.</p>
+<p>Don't miss this masterclass in dramatic tension. Tune in to experience Richard Boone's masterful performance as Paladin—a man caught between principle and pragmatism, searching for truth at a poker table where nothing is quite what it seems. Have Gun Will Travel: where every decision carries weight, and every hand dealt raises the stakes.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1958 11 30 (2) Road To Wickenberg — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(2) Road To Wickenberg — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1958 11 30 (2) Road To Wickenberg — Have Gun Will Travel (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1958 11 30 (2) Road To Wickenberg — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1958 11 30 (2) Road To Wickenberg — Have Gun Will Travel (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · November 30, 1958</span>
           </div>
-          <h1 class="episode__title">Hgwt 1958 11 30 (2) Road To Wickenberg</h1>
+          <h1 class="episode__title">(2) Road To Wickenberg</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel - "Road to Wickenburg"</p>
-<p>Travel the dusty Arizona territory with Paladin as he embarks on a perilous journey toward the frontier town of Wickenburg, where danger lurks around every bend in the road. In this November 1958 episode, the famous hired gun finds himself entangled in a web of deception and moral complexity that tests not just his quick draw, but his conscience. With only the desert heat and the sound of hoofbeats for company, Paladin must navigate treacherous terrain and even more treacherous human nature. Listeners will find themselves gripped by the tension that unfolds in real time—no visual distractions, just masterful storytelling and the authentic sound design that brings the Old West to vivid life. What appears to be a straightforward job becomes something far more intricate, revealing why Paladin's reputation precedes him throughout the territories.</p>
-<p>*Have Gun Will Travel* emerged during television's explosive growth, yet CBS wisely recognized that radio still held a powerful grip on American audiences who craved intelligent westerns for the whole family. Starring John Dehner as the articulate, principled gunslinger, the show distinguished itself from typical shoot-'em-up fare by emphasizing character development and ethical dilemmas. This 1958-1960 series represented radio's final golden age, when top-tier production values and serious actors still committed to the medium, proving that radio drama could be as sophisticated and compelling as anything on the small screen.</p>
+          <p>Travel the dusty Arizona territory with Paladin as he embarks on a perilous journey toward the frontier town of Wickenburg, where danger lurks around every bend in the road. In this November 1958 episode, the famous hired gun finds himself entangled in a web of deception and moral complexity that tests not just his quick draw, but his conscience. With only the desert heat and the sound of hoofbeats for company, Paladin must navigate treacherous terrain and even more treacherous human nature. Listeners will find themselves gripped by the tension that unfolds in real time—no visual distractions, just masterful storytelling and the authentic sound design that brings the Old West to vivid life. What appears to be a straightforward job becomes something far more intricate, revealing why Paladin's reputation precedes him throughout the territories.</p>
+<p>Have Gun Will Travel emerged during television's explosive growth, yet CBS wisely recognized that radio still held a powerful grip on American audiences who craved intelligent westerns for the whole family. Starring John Dehner as the articulate, principled gunslinger, the show distinguished itself from typical shoot-'em-up fare by emphasizing character development and ethical dilemmas. This 1958-1960 series represented radio's final golden age, when top-tier production values and serious actors still committed to the medium, proving that radio drama could be as sophisticated and compelling as anything on the small screen.</p>
 <p>Don't miss this classic tale of honor and survival on the road to Wickenburg. Settle in with the warmth of your radio and experience storytelling from an era when imagination was the only special effect you needed.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

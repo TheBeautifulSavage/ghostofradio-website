@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1958 12 21 (5) Hanging Cross — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(5) Hanging Cross — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1958 12 21 (5) Hanging Cross — Have Gun Will Travel (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1958 12 21 (5) Hanging Cross — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1958 12 21 (5) Hanging Cross — Have Gun Will Travel (CBS, 1958). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · December 21, 1958</span>
           </div>
-          <h1 class="episode__title">Hgwt 1958 12 21 (5) Hanging Cross</h1>
+          <h1 class="episode__title">(5) Hanging Cross</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Hanging Cross</p>
-<p>When Paladin steps off the stage in a dusty frontier town gripped by hysteria, he discovers a community balanced on a knife's edge between justice and mob vengeance. A mysterious cross has appeared in the night—a chilling symbol that has sparked fear and accusation among the townspeople, each suspecting their neighbors of dark deeds. As midnight approaches and tempers flare, our gunslinger must unravel the truth before an innocent person hangs for a crime born of rumor and shadow. This December episode crackles with the kind of psychological tension that makes Have Gun Will Travel so compelling: the real enemy isn't always the one with the fastest draw, but the fear that corrupts good people into becoming executioners.</p>
+          <p>When Paladin steps off the stage in a dusty frontier town gripped by hysteria, he discovers a community balanced on a knife's edge between justice and mob vengeance. A mysterious cross has appeared in the night—a chilling symbol that has sparked fear and accusation among the townspeople, each suspecting their neighbors of dark deeds. As midnight approaches and tempers flare, our gunslinger must unravel the truth before an innocent person hangs for a crime born of rumor and shadow. This December episode crackles with the kind of psychological tension that makes Have Gun Will Travel so compelling: the real enemy isn't always the one with the fastest draw, but the fear that corrupts good people into becoming executioners.</p>
 <p>The show's success rested on Richard Boone's masterful portrayal of Paladin—a man of contradictions who carried a gun but wielded reason as his true weapon. In an era when television was beginning to challenge radio's dominance, CBS kept this series alive precisely because it offered something deeper than standard shoot-'em-up fare. Each episode explored the moral complexities lurking beneath the Old West's romantic veneer. By 1958, as America grappled with its own social tensions, listeners found profound relevance in stories about prejudice, truth, and the rule of law. Paladin became an intellectual hero for the atomic age, proving that intelligence and integrity could triumph in a violent world.</p>
 <p>Don't miss this haunting tale of superstition and salvation. As Paladin faces down the darkness consuming an entire town, you'll discover why Have Gun Will Travel remained radio's most sophisticated western adventure. Tune in and experience the program that proved the Old West's greatest conflicts weren't always won with bullets.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

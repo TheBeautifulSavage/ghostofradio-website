@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1960 05 15 (78) Lena Countryman — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(78) Lena Countryman — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1960 05 15 (78) Lena Countryman — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1960 05 15 (78) Lena Countryman — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1960 05 15 (78) Lena Countryman — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · May 15, 1960</span>
           </div>
-          <h1 class="episode__title">Hgwt 1960 05 15 (78) Lena Countryman</h1>
+          <h1 class="episode__title">(78) Lena Countryman</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: Lena Countryman</p>
-<p>The dusty trails of the American West come alive once more as Paladin, the gentleman gunslinger with a code of honor, accepts a case that will test his moral fiber to its very core. In "Lena Countryman," listeners will find themselves drawn into a tense drama where the line between justice and mercy becomes dangerously blurred. A woman's desperation, a stranger's secrets, and the ever-present threat of frontier violence converge in this compelling May 1960 broadcast. You can practically hear the creak of saddle leather and the tension crackling through the airwaves as Paladin navigates a situation where his quick draw may matter far less than his wisdom and conscience.</p>
-<p>By the final seasons of *Have Gun Will Travel*, the show had perfected its formula of combining hard-boiled Western action with genuinely sophisticated storytelling. Unlike the shoot-first, ask-questions-later fare that dominated radio Westerns, this CBS series treated its audience as intelligent adults capable of appreciating moral complexity. Richard Boone's portrayal of Paladin—cultured, literate, and deeply principled—set the show apart from its contemporaries. Each episode balanced thrilling adventure with thought-provoking dilemmas, and "Lena Countryman" exemplifies this signature approach, offering far more than simple gunplay and heroics.</p>
-<p>Settle into your favorite chair, dim the lights as listeners did in living rooms across America sixty years ago, and prepare yourself for an hour of classic radio drama. *Have Gun Will Travel* remains a masterwork of the medium, and this episode stands as testament to the show's enduring appeal. Press play and discover why this series remains essential listening for anyone who appreciates fine storytelling and the golden age of American radio.</p>
+          <p>The dusty trails of the American West come alive once more as Paladin, the gentleman gunslinger with a code of honor, accepts a case that will test his moral fiber to its very core. In "Lena Countryman," listeners will find themselves drawn into a tense drama where the line between justice and mercy becomes dangerously blurred. A woman's desperation, a stranger's secrets, and the ever-present threat of frontier violence converge in this compelling May 1960 broadcast. You can practically hear the creak of saddle leather and the tension crackling through the airwaves as Paladin navigates a situation where his quick draw may matter far less than his wisdom and conscience.</p>
+<p>By the final seasons of Have Gun Will Travel, the show had perfected its formula of combining hard-boiled Western action with genuinely sophisticated storytelling. Unlike the shoot-first, ask-questions-later fare that dominated radio Westerns, this CBS series treated its audience as intelligent adults capable of appreciating moral complexity. Richard Boone's portrayal of Paladin—cultured, literate, and deeply principled—set the show apart from its contemporaries. Each episode balanced thrilling adventure with thought-provoking dilemmas, and "Lena Countryman" exemplifies this signature approach, offering far more than simple gunplay and heroics.</p>
+<p>Settle into your favorite chair, dim the lights as listeners did in living rooms across America sixty years ago, and prepare yourself for an hour of classic radio drama. Have Gun Will Travel remains a masterwork of the medium, and this episode stands as testament to the show's enduring appeal. Press play and discover why this series remains essential listening for anyone who appreciates fine storytelling and the golden age of American radio.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1960 01 10 (60) The Lonely One — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(60) The Lonely One — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1960 01 10 (60) The Lonely One — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1960 01 10 (60) The Lonely One — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1960 01 10 (60) The Lonely One — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · January 10, 1960</span>
           </div>
-          <h1 class="episode__title">Hgwt 1960 01 10 (60) The Lonely One</h1>
+          <h1 class="episode__title">(60) The Lonely One</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lonely One</p>
-<p>When Paladin rides into a remote mountain town seeking refuge from a winter storm, he discovers something far more dangerous than the howling wind outside: a man consumed by isolation so complete it has twisted him into something unrecognizable. This January evening broadcast draws listeners into a claustrophobic drama where the frontier's vastness becomes a prison, and one man's desperate loneliness threatens to destroy everything in its path. As the snow piles higher and tempers fray in the cramped cabin, Paladin must use his considerable intellect and moral compass to navigate a situation where violence may not be the answer—and where the true enemy lies not in the wilderness, but in the human heart grown cold from too many years alone.</p>
-<p>*Have Gun Will Travel* had reached a creative peak by 1960, as writer Sam Rolfe and star Richard Boone refined the formula that made their knight-errant gunslinger so compelling to millions of Americans. Unlike the shoot-first westerns dominating television, Paladin's cases were mysteries of character and conscience, drawing from pulp fiction traditions while exploring the psychological frontier. The show's success proved radio audiences craved intelligent drama with moral complexity, and episodes like "The Lonely One" showcase why Boone's sardonic, intelligent protagonist became iconic—a man who understood that the most dangerous conflicts happen not on dusty streets, but in the shadowed corners of the human soul.</p>
-<p>Don't miss this gripping winter's tale from *Have Gun Will Travel*. Settle in by your radio, dim the lights, and let the sound design transport you to that snowbound cabin where isolation breeds desperation. This is storytelling at its finest—where every word carries weight, every pause holds meaning, and Paladin's calm voice becomes your only guide through the darkness.</p>
+          <p>When Paladin rides into a remote mountain town seeking refuge from a winter storm, he discovers something far more dangerous than the howling wind outside: a man consumed by isolation so complete it has twisted him into something unrecognizable. This January evening broadcast draws listeners into a claustrophobic drama where the frontier's vastness becomes a prison, and one man's desperate loneliness threatens to destroy everything in its path. As the snow piles higher and tempers fray in the cramped cabin, Paladin must use his considerable intellect and moral compass to navigate a situation where violence may not be the answer—and where the true enemy lies not in the wilderness, but in the human heart grown cold from too many years alone.</p>
+<p>Have Gun Will Travel had reached a creative peak by 1960, as writer Sam Rolfe and star Richard Boone refined the formula that made their knight-errant gunslinger so compelling to millions of Americans. Unlike the shoot-first westerns dominating television, Paladin's cases were mysteries of character and conscience, drawing from pulp fiction traditions while exploring the psychological frontier. The show's success proved radio audiences craved intelligent drama with moral complexity, and episodes like "The Lonely One" showcase why Boone's sardonic, intelligent protagonist became iconic—a man who understood that the most dangerous conflicts happen not on dusty streets, but in the shadowed corners of the human soul.</p>
+<p>Don't miss this gripping winter's tale from Have Gun Will Travel. Settle in by your radio, dim the lights, and let the sound design transport you to that snowbound cabin where isolation breeds desperation. This is storytelling at its finest—where every word carries weight, every pause holds meaning, and Paladin's calm voice becomes your only guide through the darkness.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

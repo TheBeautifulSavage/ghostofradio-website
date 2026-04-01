@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 07 12 (34) Young Gun — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(34) Young Gun — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 07 12 (34) Young Gun — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 07 12 (34) Young Gun — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 07 12 (34) Young Gun — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · July 12, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 07 12 (34) Young Gun</h1>
+          <h1 class="episode__title">(34) Young Gun</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: Young Gun</p>
-<p>The Nevada desert stretches endlessly under a merciless sun as Paladin rides into a town teetering on the edge of lawlessness. A young man with quick hands and quicker anger has claimed the title of fastest gun in the territory, leaving a trail of challenges and broken dreams in his wake. When Paladin arrives, he discovers that this cocky youngster isn't just looking for glory—he's searching for something far more dangerous: redemption through gunfire. What unfolds is a tense game of cat and mouse where the lines between mentor and adversary blur, and every word spoken carries the weight of a bullet. Listeners will find themselves gripped by the moral quandary that defines this 1959 episode: can a man destined for violence ever choose a different path, or does the gun always have the final say?</p>
-<p>*Have Gun Will Travel* captured something essential about post-war American consciousness during its three-year run on CBS. Richard Boone's portrayal of Paladin—the knight-errant gunslinger who travels the West with business card in hand—offered audiences a sophisticated take on the Western genre at a time when television westerns were exploding across the airwaves. Unlike the simple good-versus-evil narratives of contemporaries, Paladin's world was morally complex, filled with characters facing impossible choices. "Young Gun" exemplifies the show's trademark depth, exploring themes of ambition, mortality, and the corrupting power of violence with a nuance rarely heard in radio drama of any era.</p>
+          <p>The Nevada desert stretches endlessly under a merciless sun as Paladin rides into a town teetering on the edge of lawlessness. A young man with quick hands and quicker anger has claimed the title of fastest gun in the territory, leaving a trail of challenges and broken dreams in his wake. When Paladin arrives, he discovers that this cocky youngster isn't just looking for glory—he's searching for something far more dangerous: redemption through gunfire. What unfolds is a tense game of cat and mouse where the lines between mentor and adversary blur, and every word spoken carries the weight of a bullet. Listeners will find themselves gripped by the moral quandary that defines this 1959 episode: can a man destined for violence ever choose a different path, or does the gun always have the final say?</p>
+<p>Have Gun Will Travel captured something essential about post-war American consciousness during its three-year run on CBS. Richard Boone's portrayal of Paladin—the knight-errant gunslinger who travels the West with business card in hand—offered audiences a sophisticated take on the Western genre at a time when television westerns were exploding across the airwaves. Unlike the simple good-versus-evil narratives of contemporaries, Paladin's world was morally complex, filled with characters facing impossible choices. "Young Gun" exemplifies the show's trademark depth, exploring themes of ambition, mortality, and the corrupting power of violence with a nuance rarely heard in radio drama of any era.</p>
 <p>For fans of classic Westerns and vintage radio storytelling, this July 1959 broadcast stands as a masterclass in suspenseful drama. Step into Paladin's boots and experience the moment when one man's code of honor collides with another's hunger for infamy.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

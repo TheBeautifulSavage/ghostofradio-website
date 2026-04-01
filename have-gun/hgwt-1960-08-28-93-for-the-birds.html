@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1960 08 28 (93) For The Birds — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(93) For The Birds — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1960 08 28 (93) For The Birds — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1960 08 28 (93) For The Birds — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1960 08 28 (93) For The Birds — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · August 28, 1960</span>
           </div>
-          <h1 class="episode__title">Hgwt 1960 08 28 (93) For The Birds</h1>
+          <h1 class="episode__title">(93) For The Birds</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun—Will Travel: For the Birds</p>
-<p>Step into the dusty streets of a forgotten frontier town as Paladin, the lethal gunslinger-for-hire with a gentleman's wit, faces a mystery that cuts deeper than bullets and betrayal. In "For the Birds," our sophisticated hero must navigate a web of moral ambiguity when a seemingly simple case becomes a meditation on justice, greed, and the value of an honest man's word. The crackling static of the CBS airwaves carries you into a tense standoff where Paladin's legendary quick draw may prove worthless against an enemy far more insidious than any hired gun. With the subtle orchestration of a harmonica and the measured cadence of Richard Boone's iconic voice, this August 1960 broadcast builds an atmosphere thick with tension and philosophical weight—a far cry from the shoot-'em-up fare that dominated lesser westerns of the era.</p>
-<p>*Have Gun—Will Travel* represented something revolutionary in television's golden age: a western with brains, soul, and genuine literary ambition. Premiering in 1958, the show distinguished itself through intelligent scripts that treated its audience as thinking adults, exploring the moral contradictions of frontier justice with surprising depth. As the series entered its final season in 1960, episodes like "For the Birds" showcased the show's mature storytelling at its peak, proving that the western could be a vehicle for genuine drama rather than mere spectacle. Paladin himself—the Card-carrying problem-solver with a code of honor—became an archetype that influenced television for decades to come.</p>
-<p>Don't miss this sterling example of radio drama craftsmanship. Tune in to *Have Gun—Will Travel* and discover why audiences across America huddled around their speakers, completely transfixed by Paladin's latest case.</p>
+          <p>Step into the dusty streets of a forgotten frontier town as Paladin, the lethal gunslinger-for-hire with a gentleman's wit, faces a mystery that cuts deeper than bullets and betrayal. In "For the Birds," our sophisticated hero must navigate a web of moral ambiguity when a seemingly simple case becomes a meditation on justice, greed, and the value of an honest man's word. The crackling static of the CBS airwaves carries you into a tense standoff where Paladin's legendary quick draw may prove worthless against an enemy far more insidious than any hired gun. With the subtle orchestration of a harmonica and the measured cadence of Richard Boone's iconic voice, this August 1960 broadcast builds an atmosphere thick with tension and philosophical weight—a far cry from the shoot-'em-up fare that dominated lesser westerns of the era.</p>
+<p>Have Gun—Will Travel represented something revolutionary in television's golden age: a western with brains, soul, and genuine literary ambition. Premiering in 1958, the show distinguished itself through intelligent scripts that treated its audience as thinking adults, exploring the moral contradictions of frontier justice with surprising depth. As the series entered its final season in 1960, episodes like "For the Birds" showcased the show's mature storytelling at its peak, proving that the western could be a vehicle for genuine drama rather than mere spectacle. Paladin himself—the Card-carrying problem-solver with a code of honor—became an archetype that influenced television for decades to come.</p>
+<p>Don't miss this sterling example of radio drama craftsmanship. Tune in to Have Gun—Will Travel and discover why audiences across America huddled around their speakers, completely transfixed by Paladin's latest case.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

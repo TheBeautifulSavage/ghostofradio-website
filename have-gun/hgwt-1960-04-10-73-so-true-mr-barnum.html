@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1960 04 10 (73) So True, Mr Barnum — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(73) So True, Mr Barnum — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1960 04 10 (73) So True, Mr Barnum — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1960 04 10 (73) So True, Mr Barnum — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1960 04 10 (73) So True, Mr Barnum — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · April 10, 1960</span>
           </div>
-          <h1 class="episode__title">Hgwt 1960 04 10 (73) So True, Mr Barnum</h1>
+          <h1 class="episode__title">(73) So True, Mr Barnum</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: "So True, Mr Barnum"</p>
-<p>When Paladin rides into a dusty frontier town gripped by fever and suspicion, he discovers that the greatest deceptions aren't always the work of criminals—sometimes they're born from desperation and the hunger for belief itself. In this April 1960 episode, the man with the calling card finds himself navigating a web of showmanship and manipulation worthy of P.T. Barnum himself, where a charlatan's tricks may hold more truth than the honest men around him realize. As tension mounts and the townspeople teeter between hope and hysteria, listeners will be drawn into Paladin's most unsettling case yet—one where the line between helpful delusion and dangerous fraud becomes dangerously thin. Richard Boone's measured narration and the episode's measured pace create an atmosphere of mounting unease, punctuated by the series' signature guitar cues and the stark realities of frontier life.</p>
-<p>*Have Gun Will Travel* flourished during television's golden age of radio, when CBS's prestige western commanded loyal audiences nationwide. The show's genius lay in its philosophical depth—Paladin was no mere gunslinger but a cultured man of letters, a wanderer-for-hire who pondered morality as much as he drew his pistol. By 1960, the series had perfected its formula of intimate psychological drama wrapped in western trappings. Episodes like "So True, Mr Barnum" showcase the program's willingness to complicate its protagonist's moral universe, refusing easy answers about right and wrong in a lawless land.</p>
+          <p>When Paladin rides into a dusty frontier town gripped by fever and suspicion, he discovers that the greatest deceptions aren't always the work of criminals—sometimes they're born from desperation and the hunger for belief itself. In this April 1960 episode, the man with the calling card finds himself navigating a web of showmanship and manipulation worthy of P.T. Barnum himself, where a charlatan's tricks may hold more truth than the honest men around him realize. As tension mounts and the townspeople teeter between hope and hysteria, listeners will be drawn into Paladin's most unsettling case yet—one where the line between helpful delusion and dangerous fraud becomes dangerously thin. Richard Boone's measured narration and the episode's measured pace create an atmosphere of mounting unease, punctuated by the series' signature guitar cues and the stark realities of frontier life.</p>
+<p>Have Gun Will Travel flourished during television's golden age of radio, when CBS's prestige western commanded loyal audiences nationwide. The show's genius lay in its philosophical depth—Paladin was no mere gunslinger but a cultured man of letters, a wanderer-for-hire who pondered morality as much as he drew his pistol. By 1960, the series had perfected its formula of intimate psychological drama wrapped in western trappings. Episodes like "So True, Mr Barnum" showcase the program's willingness to complicate its protagonist's moral universe, refusing easy answers about right and wrong in a lawless land.</p>
 <p>Don't miss this remarkable window into classic radio storytelling. Settle in with the crackling authenticity of a show that understood the power of suggestion, the resonance of a single guitar note, and the eternal human hunger for salvation—in whatever form it takes.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 08 16 (39) The Lady — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(39) The Lady — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 08 16 (39) The Lady — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 08 16 (39) The Lady — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 08 16 (39) The Lady — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · August 16, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 08 16 (39) The Lady</h1>
+          <h1 class="episode__title">(39) The Lady</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel: "The Lady"</p>
-<p>Picture this: a dusty Nevada town where a mysterious woman arrives with a proposition that will test everything Paladin believes about justice and mercy. In "The Lady," our wandering gunslinger encounters a widow whose past has caught up with her in the most dangerous way imaginable—and what begins as a straightforward case of protection becomes a haunting meditation on redemption and the price of second chances. Richard Boone's measured voice carries us through each tense scene as the episode builds toward a climax that refuses easy answers, where every choice carries weight and consequences linger long after the final gunshot fades. The steady pulse of the show's iconic theme gives way to intimate dialogue in shadowed saloons and desperate conversations under starlit skies, creating an atmosphere of moral ambiguity that separates the finest episodes of this series from mere shoot-'em-up fare.</p>
+          <p>Picture this: a dusty Nevada town where a mysterious woman arrives with a proposition that will test everything Paladin believes about justice and mercy. In "The Lady," our wandering gunslinger encounters a widow whose past has caught up with her in the most dangerous way imaginable—and what begins as a straightforward case of protection becomes a haunting meditation on redemption and the price of second chances. Richard Boone's measured voice carries us through each tense scene as the episode builds toward a climax that refuses easy answers, where every choice carries weight and consequences linger long after the final gunshot fades. The steady pulse of the show's iconic theme gives way to intimate dialogue in shadowed saloons and desperate conversations under starlit skies, creating an atmosphere of moral ambiguity that separates the finest episodes of this series from mere shoot-'em-up fare.</p>
 <p>Have Gun Will Travel distinguished itself throughout its network run by treating its audience as intelligent adults capable of grappling with complex ethical dilemmas wrapped in Western trappings. By 1959, the show had become CBS's answer to the growing appetite for adult-oriented drama during prime time, proving that the radio Western need not rely solely on action and gunplay. The writers crafted stories where Paladin's mercenary nature—he accepts pay for his gun work—clashed beautifully with his underlying code of honor. "The Lady" exemplifies this tension, presenting a scenario where commercial interest and personal conscience collide. It's the kind of episode that made listeners tune in weekly, never quite knowing whether they'd encounter a thrilling adventure or a quiet character study that would occupy their thoughts long after the broadcast ended.</p>
 <p>Don't miss this remarkable installment of Have Gun Will Travel. Settle in with the same sense of anticipation audiences felt on that August evening in 1959, and discover why this show remains an essential chapter in radio drama's golden age.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

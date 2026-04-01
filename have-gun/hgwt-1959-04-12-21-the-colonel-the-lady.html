@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 04 12 (21) The Colonel & The Lady — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(21) The Colonel & The Lady — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 04 12 (21) The Colonel & The Lady — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 04 12 (21) The Colonel & The Lady — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 04 12 (21) The Colonel & The Lady — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · April 12, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 04 12 (21) The Colonel & The Lady</h1>
+          <h1 class="episode__title">(21) The Colonel & The Lady</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Colonel & The Lady</p>
-<p>Picture this: the smoke-filled saloon of a dusty frontier town, a woman's desperate plea cutting through the twang of a worn-out piano, and Paladin—that silver-tongued gunslinger with a conscience—caught between honor and justice. In "The Colonel & The Lady," our sophisticated mercenary encounters a mystery wrapped in Southern pride and wrapped tighter still in the complications of the past. A distinguished military man and an enigmatic woman from his former life collide in Paladin's world, and what begins as a simple matter of business becomes a tense examination of loyalty, duty, and the secrets we carry across decades. The tension builds like heat lightning on the prairie—you'll find yourself leaning closer to your radio, waiting to discover what binds these two figures together and whether Paladin's quick draw will be matched by his quick wit.</p>
+          <p>Picture this: the smoke-filled saloon of a dusty frontier town, a woman's desperate plea cutting through the twang of a worn-out piano, and Paladin—that silver-tongued gunslinger with a conscience—caught between honor and justice. In "The Colonel & The Lady," our sophisticated mercenary encounters a mystery wrapped in Southern pride and wrapped tighter still in the complications of the past. A distinguished military man and an enigmatic woman from his former life collide in Paladin's world, and what begins as a simple matter of business becomes a tense examination of loyalty, duty, and the secrets we carry across decades. The tension builds like heat lightning on the prairie—you'll find yourself leaning closer to your radio, waiting to discover what binds these two figures together and whether Paladin's quick draw will be matched by his quick wit.</p>
 <p>"Have Gun Will Travel" stands apart from the typical shoot-'em-up westerns flooding the airwaves because it refuses to reduce its world to simple good versus evil. Paladin is no white-hat hero riding off into the sunset—he's a thinking man's gunslinger, a former soldier himself who understands the weight of codes and consequences. Each episode, broadcast from CBS between 1958 and 1960, peels back another layer of the American frontier, revealing the moral ambiguities that made the West neither romantic nor wholly lawless, but deeply, troublingly human. Richard Boone's masterful narration and the show's jazz-inflected score create an atmosphere of sophisticated danger that elevated radio drama during its twilight years.</p>
 <p>For fans of intelligent westerns and character-driven drama, this April 1959 broadcast is essential listening. Clear your evening, settle into your favorite chair, and let Paladin remind you why radio drama at its finest could captivate millions across a darkening nation.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

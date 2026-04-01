@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 08 30 (41) Love Birds — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(41) Love Birds — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 08 30 (41) Love Birds — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 08 30 (41) Love Birds — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 08 30 (41) Love Birds — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · August 30, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 08 30 (41) Love Birds</h1>
+          <h1 class="episode__title">(41) Love Birds</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun—Will Travel: Love Birds</p>
-<p>Picture this: a warm August evening in 1959, and across America, listeners settle into their favorite chairs as the familiar strains of that haunting guitar riff—Bernardo's "Theme from Have Gun Will Travel"—crackles through the static. Tonight's installment, "Love Birds," finds Paladin entangled in a delicate case where matters of the heart prove far more dangerous than any trigger-happy outlaw. A seemingly innocent romance becomes the thread that unravels a web of deception, and our dapper gunslinger must navigate the treacherous territory between love and justice. Will his pistol or his wits prove more valuable? The episode's title itself carries an ironic edge—these are no ordinary love birds. Expect tension that builds like desert heat, conversations that sting with subtext, and the kind of moral ambiguity that made this series legendary among serious radio drama enthusiasts.</p>
+          <p>Picture this: a warm August evening in 1959, and across America, listeners settle into their favorite chairs as the familiar strains of that haunting guitar riff—Bernardo's "Theme from Have Gun Will Travel"—crackles through the static. Tonight's installment, "Love Birds," finds Paladin entangled in a delicate case where matters of the heart prove far more dangerous than any trigger-happy outlaw. A seemingly innocent romance becomes the thread that unravels a web of deception, and our dapper gunslinger must navigate the treacherous territory between love and justice. Will his pistol or his wits prove more valuable? The episode's title itself carries an ironic edge—these are no ordinary love birds. Expect tension that builds like desert heat, conversations that sting with subtext, and the kind of moral ambiguity that made this series legendary among serious radio drama enthusiasts.</p>
 <p>"Have Gun Will Travel" represents something remarkable in American broadcasting: a western that refused to be mere shoot-'em-up escapism. Airing on CBS during the height of radio's twilight years, the show featured intelligent scripts, sophisticated adult themes, and Richard Boone's commanding performance as the educated, cultured Paladin—a gunslinger who quoted Shakespeare and solved problems as often with his mind as his .45. By 1959, the show had already established itself as essential listening for those who craved smart drama in an era when television was rapidly eclipsing radio's dominance.</p>
 <p>In an age where streaming and instant replay have made patience obsolete, there's something irreplaceable about experiencing drama the way millions once did: through pure voice and sound, forced to conjure the visual landscape in your imagination. Tune in to "Love Birds" and discover why these broadcasts remain unforgettable.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

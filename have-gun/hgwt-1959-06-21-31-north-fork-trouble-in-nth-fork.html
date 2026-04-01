@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 06 21 (31) North Fork (trouble In Nth Fork) — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(31) North Fork (trouble In Nth Fork) — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 06 21 (31) North Fork (trouble In Nth Fork) — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 06 21 (31) North Fork (trouble In Nth Fork) — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 06 21 (31) North Fork (trouble In Nth Fork) — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · June 21, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 06 21 (31) North Fork (trouble In Nth Fork)</h1>
+          <h1 class="episode__title">(31) North Fork (trouble In Nth Fork)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel - "North Fork" (June 21, 1959)</p>
-<p>As the familiar strains of Bernardo Herrera's iconic guitar theme fade into the static of a summer evening in 1959, Paladin arrives in the dusty town of North Fork carrying nothing but his wits and his conscience. This week's episode plunges listeners into a simmering cauldron of frontier justice gone wrong, where a seemingly straightforward case of cattle rustling masks something far more sinister—a web of corruption that reaches into the very heart of the town's leadership. With only the crackling telegraph office and whispered saloon conversations to guide him, Paladin must navigate the treacherous politics of a community where old friendships and hidden debts threaten to derail any hope of truth. The tension builds masterfully as our hero discovers that in North Fork, the real criminals may be wearing badges, and that sometimes the greatest danger comes not from outlaws, but from respectable men protecting their secrets.</p>
-<p>By 1959, *Have Gun Will Travel* had cemented itself as CBS's crown jewel—a thinking man's western that elevated the genre far beyond simple shoot-outs and good-versus-evil simplicity. Richard Boone's portrayal of Paladin brought Shakespearean depth to the gunslinger-for-hire, a character defined as much by his intelligence and moral flexibility as by his ivory-handled revolver. The show's willingness to explore the gray areas of frontier morality set it apart from its competitors, offering post-war audiences a more nuanced reflection on justice, honor, and the cost of civilization encroaching upon wild lands.</p>
+          <p>As the familiar strains of Bernardo Herrera's iconic guitar theme fade into the static of a summer evening in 1959, Paladin arrives in the dusty town of North Fork carrying nothing but his wits and his conscience. This week's episode plunges listeners into a simmering cauldron of frontier justice gone wrong, where a seemingly straightforward case of cattle rustling masks something far more sinister—a web of corruption that reaches into the very heart of the town's leadership. With only the crackling telegraph office and whispered saloon conversations to guide him, Paladin must navigate the treacherous politics of a community where old friendships and hidden debts threaten to derail any hope of truth. The tension builds masterfully as our hero discovers that in North Fork, the real criminals may be wearing badges, and that sometimes the greatest danger comes not from outlaws, but from respectable men protecting their secrets.</p>
+<p>By 1959, Have Gun Will Travel had cemented itself as CBS's crown jewel—a thinking man's western that elevated the genre far beyond simple shoot-outs and good-versus-evil simplicity. Richard Boone's portrayal of Paladin brought Shakespearean depth to the gunslinger-for-hire, a character defined as much by his intelligence and moral flexibility as by his ivory-handled revolver. The show's willingness to explore the gray areas of frontier morality set it apart from its competitors, offering post-war audiences a more nuanced reflection on justice, honor, and the cost of civilization encroaching upon wild lands.</p>
 <p>Don't miss this compelling chapter in Paladin's wanderings. Tune in tonight at 9 o'clock to discover what troubles await in North Fork, and why even a man with a gun discovers that some conflicts cannot be solved with bullets alone.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

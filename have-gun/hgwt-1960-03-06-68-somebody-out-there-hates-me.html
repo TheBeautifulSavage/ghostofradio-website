@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1960 03 06 (68) Somebody Out There Hates Me — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(68) Somebody Out There Hates Me — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1960 03 06 (68) Somebody Out There Hates Me — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1960 03 06 (68) Somebody Out There Hates Me — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1960 03 06 (68) Somebody Out There Hates Me — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · March 6, 1960</span>
           </div>
-          <h1 class="episode__title">Hgwt 1960 03 06 (68) Somebody Out There Hates Me</h1>
+          <h1 class="episode__title">(68) Somebody Out There Hates Me</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Somebody Out There Hates Me</p>
-<p>When Paladin accepts a seemingly routine job in a dusty frontier town, he walks straight into a nightmare of paranoia and violence. A wealthy businessman is being hunted—but by whom? As threats multiply and danger closes in from every shadow, our hero must unravel a twisted conspiracy where trust becomes as scarce as water in the desert. The tension crackles through your radio speaker as Paladin races against time to identify a killer who strikes from the darkness, leaving our protagonist to wonder if he's become the hunted instead of the hunter. This is the kind of psychological Western that *Have Gun Will Travel* perfected: equal parts mystery and gunplay, with Richard Boone's measured, intelligent performance anchoring every moment.</p>
-<p>By 1960, *Have Gun Will Travel* had become one of radio's most sophisticated Westerns, and CBS knew it. The show's success lay not in mindless shoot-outs but in Paladin's code of honor and his intelligence—he was a gunslinger who could quote Shakespeare and solve problems with his wits as readily as his Colt .45. This episode, broadcast in early March 1960, represents the show at its peak, when listeners tuned in expecting not just adventure, but genuine mystery and moral complexity. The radio Western was already becoming a relic as television rose to dominance, making these final seasons of the show especially precious documents of a golden age.</p>
-<p>Don't miss this gripping tale of suspicion and survival. Settle in tonight and let the crackling broadcast transport you back to 1960, when a man with a gun and a code of honor was your best defense against the unknown darkness. *Have Gun Will Travel*—where Paladin always answers when duty calls.</p>
+          <p>When Paladin accepts a seemingly routine job in a dusty frontier town, he walks straight into a nightmare of paranoia and violence. A wealthy businessman is being hunted—but by whom? As threats multiply and danger closes in from every shadow, our hero must unravel a twisted conspiracy where trust becomes as scarce as water in the desert. The tension crackles through your radio speaker as Paladin races against time to identify a killer who strikes from the darkness, leaving our protagonist to wonder if he's become the hunted instead of the hunter. This is the kind of psychological Western that Have Gun Will Travel perfected: equal parts mystery and gunplay, with Richard Boone's measured, intelligent performance anchoring every moment.</p>
+<p>By 1960, Have Gun Will Travel had become one of radio's most sophisticated Westerns, and CBS knew it. The show's success lay not in mindless shoot-outs but in Paladin's code of honor and his intelligence—he was a gunslinger who could quote Shakespeare and solve problems with his wits as readily as his Colt .45. This episode, broadcast in early March 1960, represents the show at its peak, when listeners tuned in expecting not just adventure, but genuine mystery and moral complexity. The radio Western was already becoming a relic as television rose to dominance, making these final seasons of the show especially precious documents of a golden age.</p>
+<p>Don't miss this gripping tale of suspicion and survival. Settle in tonight and let the crackling broadcast transport you back to 1960, when a man with a gun and a code of honor was your best defense against the unknown darkness. Have Gun Will Travel—where Paladin always answers when duty calls.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

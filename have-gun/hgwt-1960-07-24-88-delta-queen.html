@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1960 07 24 (88) Delta Queen — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(88) Delta Queen — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1960 07 24 (88) Delta Queen — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1960 07 24 (88) Delta Queen — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1960 07 24 (88) Delta Queen — Have Gun Will Travel (CBS, 1960). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · July 24, 1960</span>
           </div>
-          <h1 class="episode__title">Hgwt 1960 07 24 (88) Delta Queen</h1>
+          <h1 class="episode__title">(88) Delta Queen</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Delta Queen</p>
-<p>Picture yourself aboard the mighty Delta Queen as she cuts through the murky waters of the Mississippi, her twin stacks belching smoke into the humid summer night of 1960. Paladin finds himself entangled in a web of riverboat intrigue where the stakes are measured in gold and human lives. This episode crackles with the tension of a man trapped between honor and survival, where every shadowed corridor of the steamboat could conceal a threat, and the relentless paddle wheel's rhythm becomes the heartbeat of mounting danger. As the fog rolls thick across the water, our protagonist must navigate not just the treacherous river, but the treacherous hearts of those who would stop at nothing to claim fortune. Richard Boone's measured voice cuts through the atmospheric tension like a knife, delivering a masterclass in noir-tinged western storytelling transported to America's most romantic waterway.</p>
+          <p>Picture yourself aboard the mighty Delta Queen as she cuts through the murky waters of the Mississippi, her twin stacks belching smoke into the humid summer night of 1960. Paladin finds himself entangled in a web of riverboat intrigue where the stakes are measured in gold and human lives. This episode crackles with the tension of a man trapped between honor and survival, where every shadowed corridor of the steamboat could conceal a threat, and the relentless paddle wheel's rhythm becomes the heartbeat of mounting danger. As the fog rolls thick across the water, our protagonist must navigate not just the treacherous river, but the treacherous hearts of those who would stop at nothing to claim fortune. Richard Boone's measured voice cuts through the atmospheric tension like a knife, delivering a masterclass in noir-tinged western storytelling transported to America's most romantic waterway.</p>
 <p>"Have Gun Will Travel" represented something revolutionary in 1960—a thinking man's western that rejected simple morality plays in favor of complex ethical dilemmas. The show's protagonist, the mysterious gunfighter Paladin, was no simple hero but a cultured, chess-playing intellectual who wielded his gun only as a last resort. During the height of the television western boom, CBS's radio drama stood apart by offering listeners substantive narratives that treated them as intelligent adults. The Delta Queen episode exemplifies this sophistication, transplanting the western archetype onto unfamiliar terrain where Paladin's usual code of honor becomes decidedly more complicated.</p>
 <p>Settle into your chair, adjust the dial to the frequency of classic storytelling, and prepare yourself for an evening where the old west meets the old south, where danger lurks behind every cabin door, and where one man's integrity is tested by the unforgiving current of human greed. Let the whistle of the Delta Queen call you back to radio's golden age.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

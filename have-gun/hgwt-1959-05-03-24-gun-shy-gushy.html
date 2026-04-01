@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 05 03 (24) Gun Shy (gushy) — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(24) Gun Shy (gushy) — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 05 03 (24) Gun Shy (gushy) — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 05 03 (24) Gun Shy (gushy) — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 05 03 (24) Gun Shy (gushy) — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · May 3, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 05 03 (24) Gun Shy (gushy)</h1>
+          <h1 class="episode__title">(24) Gun Shy (gushy)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel - "Gun Shy" (May 3, 1959)</p>
-<p>Picture this: a dusty Western town where a young gunslinger's confidence has been shattered by a single moment of hesitation. When Paladin arrives in this powder-keg community, he discovers a man caught between his pride and his paralysis—a once-quick draw now trembling with doubt, facing the very showdown that could restore his honor or seal his fate. In this gripping episode, our wandering gunfighter must navigate the dangerous intersection of courage and cowardice, where a few words of wisdom might prove more valuable than any .45 caliber bullet. The tension builds masterfully as Paladin peels back the layers of this troubled soul, revealing how fear can corrode even the strongest of men, and how redemption sometimes requires looking inward before facing an enemy.</p>
-<p>*Have Gun Will Travel* struck a nerve with 1950s America that no other Western quite managed. While the genre exploded across television screens, this CBS radio program—which had already established itself as a sophisticated alternative to shoot-'em-up fare—offered something different: a mercenary with a code of honor, a man who quoted poetry as readily as he drew his gun. Paladin, portrayed with world-weary elegance by Richard Boone, represented an intellectual's answer to the frontier myth. The show's success hinged on character-driven drama that elevated it beyond typical gunslinger tales, exploring themes of morality, human weakness, and redemption that resonated deeply with postwar audiences seeking substance beneath the six-gun swagger.</p>
+          <p>Picture this: a dusty Western town where a young gunslinger's confidence has been shattered by a single moment of hesitation. When Paladin arrives in this powder-keg community, he discovers a man caught between his pride and his paralysis—a once-quick draw now trembling with doubt, facing the very showdown that could restore his honor or seal his fate. In this gripping episode, our wandering gunfighter must navigate the dangerous intersection of courage and cowardice, where a few words of wisdom might prove more valuable than any .45 caliber bullet. The tension builds masterfully as Paladin peels back the layers of this troubled soul, revealing how fear can corrode even the strongest of men, and how redemption sometimes requires looking inward before facing an enemy.</p>
+<p>Have Gun Will Travel struck a nerve with 1950s America that no other Western quite managed. While the genre exploded across television screens, this CBS radio program—which had already established itself as a sophisticated alternative to shoot-'em-up fare—offered something different: a mercenary with a code of honor, a man who quoted poetry as readily as he drew his gun. Paladin, portrayed with world-weary elegance by Richard Boone, represented an intellectual's answer to the frontier myth. The show's success hinged on character-driven drama that elevated it beyond typical gunslinger tales, exploring themes of morality, human weakness, and redemption that resonated deeply with postwar audiences seeking substance beneath the six-gun swagger.</p>
 <p>If you've never experienced Paladin's quiet wisdom and quick wit, "Gun Shy" is an exceptional entry point—a masterclass in psychological Western drama that proves old-time radio's greatest strength: the power to illuminate the human condition through words alone. Tune in and discover why this show remains unforgettable.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

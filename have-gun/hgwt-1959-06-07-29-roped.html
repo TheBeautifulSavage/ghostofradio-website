@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hgwt 1959 06 07 (29) Roped — Have Gun Will Travel | Ghost of Radio</title>
+  <title>(29) Roped — Have Gun Will Travel | Ghost of Radio</title>
   <meta name="description" content="Listen to Hgwt 1959 06 07 (29) Roped — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Hgwt 1959 06 07 (29) Roped — Have Gun Will Travel">
   <meta property="og:description" content="Listen to Hgwt 1959 06 07 (29) Roped — Have Gun Will Travel (CBS, 1959). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Have Gun Will Travel</span>
             <span class="episode__network">CBS · June 7, 1959</span>
           </div>
-          <h1 class="episode__title">Hgwt 1959 06 07 (29) Roped</h1>
+          <h1 class="episode__title">(29) Roped</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Have Gun Will Travel - "Roped"</p>
-<p>When a desperate rancher's daughter finds herself entangled in a web of blackmail and frontier justice, Paladin receives a summons that will test not just his gun hand, but his moral compass. In this taut June 1959 episode, "Roped" delivers the kind of intimate, character-driven drama that made Have Gun Will Travel essential listening for millions of Americans. As Paladin rides into a dusty cattle country where secrets run deeper than the wells and a family's honor hangs by a thread, listeners will find themselves caught between sympathetic desperation and cold-blooded revenge. The tension crackles through the airwaves—you can almost feel the Texas heat and the weight of impossible choices pressing down on every character. Richard Boone's measured, deliberate voice cuts through the ambient sounds of the frontier as he navigates a situation where his quick draw may matter far less than his wisdom.</p>
+          <p>When a desperate rancher's daughter finds herself entangled in a web of blackmail and frontier justice, Paladin receives a summons that will test not just his gun hand, but his moral compass. In this taut June 1959 episode, "Roped" delivers the kind of intimate, character-driven drama that made Have Gun Will Travel essential listening for millions of Americans. As Paladin rides into a dusty cattle country where secrets run deeper than the wells and a family's honor hangs by a thread, listeners will find themselves caught between sympathetic desperation and cold-blooded revenge. The tension crackles through the airwaves—you can almost feel the Texas heat and the weight of impossible choices pressing down on every character. Richard Boone's measured, deliberate voice cuts through the ambient sounds of the frontier as he navigates a situation where his quick draw may matter far less than his wisdom.</p>
 <p>Have Gun Will Travel, which ran on CBS from 1958 to 1960, represented a new kind of Western for the Golden Age of radio. Rather than simple tales of good versus evil, the show—adapted from the popular television series—explored moral gray areas through Paladin's code of honor. The program's sophisticated writing and Boone's intelligent portrayal elevated the genre beyond six-shooters and saloon brawls, offering post-war audiences something more intellectually engaging. Episodes like "Roped" showcase why the series maintained a devoted following despite radio's declining popularity in the television era.</p>
 <p>Don't miss your chance to experience this compelling drama of duty, family, and frontier justice. Tune in to "Roped" and discover why Have Gun Will Travel remains one of radio's most respected Westerns.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
