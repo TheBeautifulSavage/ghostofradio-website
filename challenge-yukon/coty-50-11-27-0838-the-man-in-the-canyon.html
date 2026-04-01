@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 11 27 (0838) The Man In The Canyon — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0838) The Man In The Canyon — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 11 27 (0838) The Man In The Canyon — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 11 27 (0838) The Man In The Canyon — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 11 27 (0838) The Man In The Canyon — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 27, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 11 27 (0838) The Man In The Canyon</h1>
+          <h1 class="episode__title">(0838) The Man In The Canyon</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Man In The Canyon</p>
-<p>Picture yourself huddled around the radio dial on a November evening, the crackle of distant broadcasts fading as you find that familiar frequency. Sergeant Preston's authoritative voice cuts through the static, and suddenly you're transported to the frozen wilderness of the Yukon, where danger lurks around every snow-laden ridge. In "The Man In The Canyon," our stalwart Mountie and his loyal sled dog King must unravel a mystery that has left a prospector dead and a dangerous fugitive vanishing into the unforgiving terrain. The tension builds as Preston picks up the trail, following cryptic clues through treacherous canyon passages where an ambush could come from any shadow. Will he apprehend the culprit before winter's deadly grip claims another victim? The atmospheric sound design—the howling wind, the crack of frozen branches, the barking of sled dogs—transports listeners to that remote, perilous frontier with remarkable immediacy.</p>
-<p>*Challenge of the Yukon*, which ran for seventeen thrilling seasons across multiple networks, became America's quintessential adventure serial precisely because it grounded its stories in the real historical landscape of the Gold Rush era. Sergeant Preston embodied a particular American mythology: the incorruptible lawman bringing civilization to the wilderness, supported by canine companionship that transcended mere sentiment. These episodes from the early 1940s represent the show at its creative peak, when writers balanced genuine suspense with character-driven storytelling, making the Yukon feel as vivid and dangerous as any listener's imagination could conjure.</p>
+          <p>Picture yourself huddled around the radio dial on a November evening, the crackle of distant broadcasts fading as you find that familiar frequency. Sergeant Preston's authoritative voice cuts through the static, and suddenly you're transported to the frozen wilderness of the Yukon, where danger lurks around every snow-laden ridge. In "The Man In The Canyon," our stalwart Mountie and his loyal sled dog King must unravel a mystery that has left a prospector dead and a dangerous fugitive vanishing into the unforgiving terrain. The tension builds as Preston picks up the trail, following cryptic clues through treacherous canyon passages where an ambush could come from any shadow. Will he apprehend the culprit before winter's deadly grip claims another victim? The atmospheric sound design—the howling wind, the crack of frozen branches, the barking of sled dogs—transports listeners to that remote, perilous frontier with remarkable immediacy.</p>
+<p>Challenge of the Yukon, which ran for seventeen thrilling seasons across multiple networks, became America's quintessential adventure serial precisely because it grounded its stories in the real historical landscape of the Gold Rush era. Sergeant Preston embodied a particular American mythology: the incorruptible lawman bringing civilization to the wilderness, supported by canine companionship that transcended mere sentiment. These episodes from the early 1940s represent the show at its creative peak, when writers balanced genuine suspense with character-driven storytelling, making the Yukon feel as vivid and dangerous as any listener's imagination could conjure.</p>
 <p>Tune in now to experience radio adventure as audiences once did—when a skilled narrator, expert sound effects, and your own imagination could transform an ordinary evening into an expedition through one of Earth's most formidable landscapes. The mystery of the man in the canyon awaits.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

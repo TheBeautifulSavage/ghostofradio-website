@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 05 15 (0380) God Of The Mountain — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0380) God Of The Mountain — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 05 15 (0380) God Of The Mountain — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 05 15 (0380) God Of The Mountain — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 05 15 (0380) God Of The Mountain — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 15, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 05 15 (0380) God Of The Mountain</h1>
+          <h1 class="episode__title">(0380) God Of The Mountain</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: God of the Mountain</p>
-<p>Deep in the frozen heart of the Canadian wilderness, where towering peaks pierce the Arctic sky and ancient mysteries linger in the shadow of glaciers, Sergeant Preston and King—his stalwart Royal Canadian Mounted Police dog—encounter something far stranger than the usual claim jumpers and frontier criminals. In "God of the Mountain," our heroes find themselves investigating whispered legends among the trappers and prospectors: tales of a massive, godlike creature dwelling in the high passes, demanding tribute and striking down those who dare venture into its domain. Is it mere superstition born of isolation and hardship, or does something genuinely terrifying prowl these desolate heights? As Preston and King pursue the truth through blizzards and treacherous terrain, the line between rational investigation and primal dread grows dangerously thin. The tension crackles with each barked command and each eerie sound echoing across the snow—listeners will grip their radio sets as danger closes in from both natural and unknown sources.</p>
-<p>Since its 1938 debut, *Challenge of the Yukon* (rebranded as *Sergeant Preston of the Yukon* in later years) captivated millions with its perfect blend of frontier authenticity and escapist adventure. The show's meticulous attention to Arctic geography and RCMP procedure lent credibility to wild plots, while the distinctive howl of King's sled dog team became an iconic sound of the Golden Age of Radio. By the 1940s, when "God of the Mountain" aired, the series had refined its formula to perfection: mystery, action, and that unmistakable sense of lawman versus wilderness itself.</p>
+          <p>Deep in the frozen heart of the Canadian wilderness, where towering peaks pierce the Arctic sky and ancient mysteries linger in the shadow of glaciers, Sergeant Preston and King—his stalwart Royal Canadian Mounted Police dog—encounter something far stranger than the usual claim jumpers and frontier criminals. In "God of the Mountain," our heroes find themselves investigating whispered legends among the trappers and prospectors: tales of a massive, godlike creature dwelling in the high passes, demanding tribute and striking down those who dare venture into its domain. Is it mere superstition born of isolation and hardship, or does something genuinely terrifying prowl these desolate heights? As Preston and King pursue the truth through blizzards and treacherous terrain, the line between rational investigation and primal dread grows dangerously thin. The tension crackles with each barked command and each eerie sound echoing across the snow—listeners will grip their radio sets as danger closes in from both natural and unknown sources.</p>
+<p>Since its 1938 debut, Challenge of the Yukon (rebranded as Sergeant Preston of the Yukon in later years) captivated millions with its perfect blend of frontier authenticity and escapist adventure. The show's meticulous attention to Arctic geography and RCMP procedure lent credibility to wild plots, while the distinctive howl of King's sled dog team became an iconic sound of the Golden Age of Radio. By the 1940s, when "God of the Mountain" aired, the series had refined its formula to perfection: mystery, action, and that unmistakable sense of lawman versus wilderness itself.</p>
 <p>Don your fur-lined parka and mush through the Yukon tonight. Will Preston uncover the truth behind the mountain's curse, or will he and King become part of its legend?</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 12 04 (0841) Wild Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0841) Wild Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 12 04 (0841) Wild Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 12 04 (0841) Wild Dog — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 12 04 (0841) Wild Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 4, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 12 04 (0841) Wild Dog</h1>
+          <h1 class="episode__title">(0841) Wild Dog</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Wild Dog</p>
-<p>Deep in the frozen vastness of Canada's Yukon Territory, Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that threatens the isolated settlement of Fort Yukon. A savage, wild dog has been terrorizing the northern outpost, attacking livestock and evading every trap set by desperate townspeople. But Preston suspects there's more to this creature's rampage than simple animal hunger—and his faithful companion King, a magnificent sled dog of unwavering loyalty, may be the only key to uncovering the truth. As blizzard winds howl across the tundra and danger closes in from the darkness, listeners will find themselves gripped by a tale of man versus nature, where courage, quick thinking, and the bond between dog and master become humanity's only refuge against the savage wilderness.</p>
-<p>*Challenge of the Yukon* captured the imaginations of millions during radio's golden age by delivering authentic adventure wrapped in the romantic mythology of the Canadian North. Sergeant Preston, played with steady heroism by actors like Bert Lahr in the show's early years, embodied the virtues of the RCMP: justice, perseverance, and unshakeable moral authority. This 1940s broadcast represents the show at its peak popularity, when listeners tuned in religiously for tales of wilderness survival, frontier justice, and the extraordinary partnership between man and dog. King became as beloved as Preston himself, making the show a rare adventure serial that spoke to both children and adults.</p>
-<p>If you've never experienced the crackling authenticity of this classic program, *Wild Dog* offers the perfect entry point—a taut, exciting episode that captures everything that made *Challenge of the Yukon* a cornerstone of radio entertainment. Settle in by the fire, turn up the volume, and let yourself be transported to those frozen, perilous days when a Mountie's word was law and adventure awaited around every snowdrift.</p>
+          <p>Deep in the frozen vastness of Canada's Yukon Territory, Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that threatens the isolated settlement of Fort Yukon. A savage, wild dog has been terrorizing the northern outpost, attacking livestock and evading every trap set by desperate townspeople. But Preston suspects there's more to this creature's rampage than simple animal hunger—and his faithful companion King, a magnificent sled dog of unwavering loyalty, may be the only key to uncovering the truth. As blizzard winds howl across the tundra and danger closes in from the darkness, listeners will find themselves gripped by a tale of man versus nature, where courage, quick thinking, and the bond between dog and master become humanity's only refuge against the savage wilderness.</p>
+<p>Challenge of the Yukon captured the imaginations of millions during radio's golden age by delivering authentic adventure wrapped in the romantic mythology of the Canadian North. Sergeant Preston, played with steady heroism by actors like Bert Lahr in the show's early years, embodied the virtues of the RCMP: justice, perseverance, and unshakeable moral authority. This 1940s broadcast represents the show at its peak popularity, when listeners tuned in religiously for tales of wilderness survival, frontier justice, and the extraordinary partnership between man and dog. King became as beloved as Preston himself, making the show a rare adventure serial that spoke to both children and adults.</p>
+<p>If you've never experienced the crackling authenticity of this classic program, Wild Dog offers the perfect entry point—a taut, exciting episode that captures everything that made Challenge of the Yukon a cornerstone of radio entertainment. Settle in by the fire, turn up the volume, and let yourself be transported to those frozen, perilous days when a Mountie's word was law and adventure awaited around every snowdrift.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

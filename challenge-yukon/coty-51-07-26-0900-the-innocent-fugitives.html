@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 07 26 (0900) The Innocent Fugitives — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0900) The Innocent Fugitives — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 07 26 (0900) The Innocent Fugitives — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 07 26 (0900) The Innocent Fugitives — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 07 26 (0900) The Innocent Fugitives — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 07 26 (0900) The Innocent Fugitives</h1>
+          <h1 class="episode__title">(0900) The Innocent Fugitives</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Innocent Fugitives</p>
-<p>Picture this: the howling wind cuts across the frozen tundra as Sergeant Preston of the Yukon Royal Mounted Police receives an urgent dispatch. A young couple has fled into the wilderness, accused of a crime they swear they didn't commit, and the temperature is dropping fast. With only his faithful husky King at his side, Preston must navigate treacherous mountain passes and unforgiving snow to find them before the Arctic claims their lives—or before the real culprit strikes again. This installment crackles with genuine suspense: Will Preston distinguish truth from deception? Can he reach the fugitives in time? The episode masterfully weaves together the show's signature elements—thrilling action, moral complexity, and the raw majesty of Canada's frozen frontier—into a 15-minute narrative that grips from the first haunting theme music.</p>
+          <p>Picture this: the howling wind cuts across the frozen tundra as Sergeant Preston of the Yukon Royal Mounted Police receives an urgent dispatch. A young couple has fled into the wilderness, accused of a crime they swear they didn't commit, and the temperature is dropping fast. With only his faithful husky King at his side, Preston must navigate treacherous mountain passes and unforgiving snow to find them before the Arctic claims their lives—or before the real culprit strikes again. This installment crackles with genuine suspense: Will Preston distinguish truth from deception? Can he reach the fugitives in time? The episode masterfully weaves together the show's signature elements—thrilling action, moral complexity, and the raw majesty of Canada's frozen frontier—into a 15-minute narrative that grips from the first haunting theme music.</p>
 <p>"Challenge of the Yukon" became a phenomenon throughout the 1940s precisely because it offered listeners something beyond mere entertainment: a window into distant adventure that felt authentic and earned. Based loosely on true Mountie experiences and crafted by veteran writers who researched the terrain meticulously, each episode balanced derring-do with genuine human stakes. The show's popularity spawned comic strips, films, and a cultural icon in Sergeant Preston himself—a hero defined not by invincibility but by integrity and determination. These early 1940s episodes represent the program at its creative peak, when the formula of danger, justice, and the unforgiving wilderness had been refined into compelling radio drama.</p>
 <p>Tune in now to experience what captivated millions during radio's golden age. Hear the crack of the whip, the bark of King, and the determined voice of the Mountie who never gives up—even when the odds and the elements conspire against him. "The Innocent Fugitives" awaits.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

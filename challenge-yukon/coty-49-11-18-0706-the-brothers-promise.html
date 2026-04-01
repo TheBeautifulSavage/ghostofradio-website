@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 11 18 (0706) The Brothers' Promise — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0706) The Brothers' Promise — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 11 18 (0706) The Brothers' Promise — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 11 18 (0706) The Brothers' Promise — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 11 18 (0706) The Brothers' Promise — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 18, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 11 18 (0706) The Brothers' Promise</h1>
+          <h1 class="episode__title">(0706) The Brothers' Promise</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Brothers' Promise</p>
-<p>The frozen wastelands of the Canadian Yukon have never seemed more treacherous than in this gripping tale of loyalty tested by circumstance and conscience. As our story opens, Sergeant Preston of the Royal Canadian Mounted Police finds himself entangled in the desperate plight of two brothers separated by years and choices—one sworn to uphold the law, the other hunted by it. When a promise made in innocence years ago threatens to unravel everything, Preston must navigate the moral complexities of frontier justice, where the letter of the law and the spirit of brotherhood collide beneath the northern lights. With King, his intrepid husky companion, never far from his side, Preston pursues a case that demands not just his wits and courage, but his compassion as well.</p>
-<p>*Challenge of the Yukon* captured the imaginations of millions during radio's golden age by blending the adventure serial format with genuine character depth and surprising moral nuance. Debuting in 1938 and running strong through the 1950s, the show became a cultural phenomenon, spawning films and later a television series with Sergeant Preston becoming an iconic figure of law and order on the frontier. What set the program apart was its refusal to paint conflicts in simple black-and-white terms—Preston's adventures were consistently enriched by stories exploring redemption, sacrifice, and the complicated human choices that lie beneath dramatic circumstances.</p>
-<p>Don't miss this classic episode that exemplifies everything that made *Sergeant Preston of the Yukon* essential listening for adventure seekers and thoughtful drama fans alike. Settle in by the fire, and let the crackling sound effects and stirring orchestral swells transport you to a bygone era of radio magic.</p>
+          <p>The frozen wastelands of the Canadian Yukon have never seemed more treacherous than in this gripping tale of loyalty tested by circumstance and conscience. As our story opens, Sergeant Preston of the Royal Canadian Mounted Police finds himself entangled in the desperate plight of two brothers separated by years and choices—one sworn to uphold the law, the other hunted by it. When a promise made in innocence years ago threatens to unravel everything, Preston must navigate the moral complexities of frontier justice, where the letter of the law and the spirit of brotherhood collide beneath the northern lights. With King, his intrepid husky companion, never far from his side, Preston pursues a case that demands not just his wits and courage, but his compassion as well.</p>
+<p>Challenge of the Yukon captured the imaginations of millions during radio's golden age by blending the adventure serial format with genuine character depth and surprising moral nuance. Debuting in 1938 and running strong through the 1950s, the show became a cultural phenomenon, spawning films and later a television series with Sergeant Preston becoming an iconic figure of law and order on the frontier. What set the program apart was its refusal to paint conflicts in simple black-and-white terms—Preston's adventures were consistently enriched by stories exploring redemption, sacrifice, and the complicated human choices that lie beneath dramatic circumstances.</p>
+<p>Don't miss this classic episode that exemplifies everything that made Sergeant Preston of the Yukon essential listening for adventure seekers and thoughtful drama fans alike. Settle in by the fire, and let the crackling sound effects and stirring orchestral swells transport you to a bygone era of radio magic.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

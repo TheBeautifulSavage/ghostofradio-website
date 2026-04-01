@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 04 13 (0638) The Trail Of The Werewolf — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0638) The Trail Of The Werewolf — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 04 13 (0638) The Trail Of The Werewolf — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 04 13 (0638) The Trail Of The Werewolf — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 04 13 (0638) The Trail Of The Werewolf — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 13, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 04 13 (0638) The Trail Of The Werewolf</h1>
+          <h1 class="episode__title">(0638) The Trail Of The Werewolf</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Trail Of The Werewolf</p>
-<p>Picture yourself huddled around the radio on a crisp evening as Sergeant Preston's dog team cuts through the frozen darkness of the Yukon wilderness, their breath crystallizing in air so cold it seems to crack. Tonight's mystery is no ordinary criminal case—whispers of a werewolf stalking the remote mining camps have sent men fleeing in terror, and only Preston and his faithful King stand between civilization and what may be either savage superstition or something far more sinister. As eerie organ music swells and the sound of howling wolves mingles with the crunch of snow beneath runners and paws, listeners are drawn into a tale where folklore collides with frontier justice, where rational skepticism battles primal fear, and where a Mountie's courage becomes the only light against the darkness.</p>
-<p>*Challenge of the Yukon* captivated millions during radio's golden age by transplanting the adventure serial to Canadian soil, transforming the frozen north into a realm of mystery and danger that felt both exotic and perilously real. Sergeant Preston's unwavering sense of duty and his profound bond with King made each episode a meditation on loyalty and character, while the show's atmospheric sound design—those magnificent orchestrations, the authentic effects of sled dogs and wind—became the listener's window into a harsh, beautiful, and often terrifying landscape. Episodes like "The Trail Of The Werewolf" showcase why the series endured for over fifteen years, blending genuine frontier peril with the supernatural possibilities that kept audiences returning week after week.</p>
+          <p>Picture yourself huddled around the radio on a crisp evening as Sergeant Preston's dog team cuts through the frozen darkness of the Yukon wilderness, their breath crystallizing in air so cold it seems to crack. Tonight's mystery is no ordinary criminal case—whispers of a werewolf stalking the remote mining camps have sent men fleeing in terror, and only Preston and his faithful King stand between civilization and what may be either savage superstition or something far more sinister. As eerie organ music swells and the sound of howling wolves mingles with the crunch of snow beneath runners and paws, listeners are drawn into a tale where folklore collides with frontier justice, where rational skepticism battles primal fear, and where a Mountie's courage becomes the only light against the darkness.</p>
+<p>Challenge of the Yukon captivated millions during radio's golden age by transplanting the adventure serial to Canadian soil, transforming the frozen north into a realm of mystery and danger that felt both exotic and perilously real. Sergeant Preston's unwavering sense of duty and his profound bond with King made each episode a meditation on loyalty and character, while the show's atmospheric sound design—those magnificent orchestrations, the authentic effects of sled dogs and wind—became the listener's window into a harsh, beautiful, and often terrifying landscape. Episodes like "The Trail Of The Werewolf" showcase why the series endured for over fifteen years, blending genuine frontier peril with the supernatural possibilities that kept audiences returning week after week.</p>
 <p>Don your parka and harness your imagination. Tune in to experience one of radio's most thrilling adventures, where the Yukon's vast loneliness becomes a character itself, and where Sergeant Preston proves that duty and courage remain humanity's greatest defense against the unknown.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

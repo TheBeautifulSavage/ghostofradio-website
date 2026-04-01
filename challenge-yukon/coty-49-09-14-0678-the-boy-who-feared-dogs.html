@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 09 14 (0678) The Boy Who Feared Dogs — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0678) The Boy Who Feared Dogs — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 09 14 (0678) The Boy Who Feared Dogs — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 09 14 (0678) The Boy Who Feared Dogs — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 09 14 (0678) The Boy Who Feared Dogs — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 14, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 09 14 (0678) The Boy Who Feared Dogs</h1>
+          <h1 class="episode__title">(0678) The Boy Who Feared Dogs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Boy Who Feared Dogs</p>
-<p>Deep in the frozen Yukon wilderness, where pine forests crack under the weight of winter and the northern lights dance above snow-laden peaks, a young boy trembles in terror—not of the howling wolves or the merciless cold, but of the one creature who might save his life. When Sergeant Preston of the Royal Canadian Mounted Police arrives at a remote trading post, he discovers a lad whose paralyzing fear of dogs threatens to keep him trapped in an impossible situation. With King, his steadfast husky companion, Preston must earn the boy's trust while racing against time and the unforgiving elements. This episode crackles with the kind of intimate human drama that made *Sergeant Preston* more than just another adventure serial—it's a story about courage taking unexpected forms, about how fear can be more dangerous than any blizzard.</p>
-<p>*Challenge of the Yukon* captured the American imagination throughout the Depression and war years with its perfect blend of action, moral clarity, and the romantic frontier spirit. Unlike the pulp excess of some radio adventures, the show grounded itself in real geography and authentic Mountie procedures, creating a believable world where justice and decency always prevailed. Sergeant Preston became an icon of dependable heroism—a man of few words and absolute principle, whose partnership with King represented the deep bonds between man and nature. The show's 1940s episodes, like "The Boy Who Feared Dogs," showcased the program's maturity, moving beyond simple good-versus-evil narratives to explore the psychological and emotional dimensions of survival and redemption.</p>
+          <p>Deep in the frozen Yukon wilderness, where pine forests crack under the weight of winter and the northern lights dance above snow-laden peaks, a young boy trembles in terror—not of the howling wolves or the merciless cold, but of the one creature who might save his life. When Sergeant Preston of the Royal Canadian Mounted Police arrives at a remote trading post, he discovers a lad whose paralyzing fear of dogs threatens to keep him trapped in an impossible situation. With King, his steadfast husky companion, Preston must earn the boy's trust while racing against time and the unforgiving elements. This episode crackles with the kind of intimate human drama that made Sergeant Preston more than just another adventure serial—it's a story about courage taking unexpected forms, about how fear can be more dangerous than any blizzard.</p>
+<p>Challenge of the Yukon captured the American imagination throughout the Depression and war years with its perfect blend of action, moral clarity, and the romantic frontier spirit. Unlike the pulp excess of some radio adventures, the show grounded itself in real geography and authentic Mountie procedures, creating a believable world where justice and decency always prevailed. Sergeant Preston became an icon of dependable heroism—a man of few words and absolute principle, whose partnership with King represented the deep bonds between man and nature. The show's 1940s episodes, like "The Boy Who Feared Dogs," showcased the program's maturity, moving beyond simple good-versus-evil narratives to explore the psychological and emotional dimensions of survival and redemption.</p>
 <p>Tune in now to experience what made this classic adventure resonate with millions of listeners huddled around their radios. Hear the crack of the dog sled runners, the call of "On, King, on!"—and discover why the Yukon's greatest mysteries were always ultimately about the human heart.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

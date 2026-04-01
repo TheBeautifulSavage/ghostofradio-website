@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 11 01 (0942) Trail To Trouble — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0942) Trail To Trouble — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 11 01 (0942) Trail To Trouble — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 11 01 (0942) Trail To Trouble — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 11 01 (0942) Trail To Trouble — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 11 01 (0942) Trail To Trouble</h1>
+          <h1 class="episode__title">(0942) Trail To Trouble</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Trail to Trouble</p>
-<p>The frozen silence of the Yukon breaks with a gunshot that echoes across the pine-thick wilderness. Sergeant Preston of the Royal Canadian Mounted Police finds himself facing a mystery as cold and unforgiving as the northern landscape itself—a trapper lies dying in the snow, and the only clue is a bootprint leading deeper into the trackless forest. With his faithful husky King at his side, Preston must navigate treacherous terrain and treacherous men to uncover the truth before the killer vanishes into the white expanse. This episode captures everything that made *Challenge of the Yukon* essential listening: danger lurking beneath every snow-laden branch, Preston's steady voice cutting through static like a beacon of justice, and the authentic crackle of adventure that transported listeners thousands of miles north to a lawless frontier.</p>
+          <p>The frozen silence of the Yukon breaks with a gunshot that echoes across the pine-thick wilderness. Sergeant Preston of the Royal Canadian Mounted Police finds himself facing a mystery as cold and unforgiving as the northern landscape itself—a trapper lies dying in the snow, and the only clue is a bootprint leading deeper into the trackless forest. With his faithful husky King at his side, Preston must navigate treacherous terrain and treacherous men to uncover the truth before the killer vanishes into the white expanse. This episode captures everything that made Challenge of the Yukon essential listening: danger lurking beneath every snow-laden branch, Preston's steady voice cutting through static like a beacon of justice, and the authentic crackle of adventure that transported listeners thousands of miles north to a lawless frontier.</p>
 <p>From 1938 through the 1950s, this program became the gold standard of adventure radio, perfecting the formula of the lone lawman bringing order to chaos. Sergeant Preston—portrayed with quiet authority by Paul Sutherland and later Dick Wesson—embodied the Canadian Mountie mystique that captured American imaginations. Each episode was painstakingly researched for geographical and historical accuracy, grounding the wild plots in the real struggles of remote justice. The show's commercial success spawned comic strips, serials, and later television adaptations, yet the radio episodes remain definitive, where sound design and voice work created an entire world of danger and determination.</p>
-<p>Settle in by the fire this evening and let the howl of wind and the baying of huskies transport you northward. *Trail to Trouble* promises the kind of storytelling that kept millions of Americans glued to their sets—where courage meets cunning and the law always prevails, even at the edge of the world.</p>
+<p>Settle in by the fire this evening and let the howl of wind and the baying of huskies transport you northward. Trail to Trouble promises the kind of storytelling that kept millions of Americans glued to their sets—where courage meets cunning and the law always prevails, even at the edge of the world.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 04 07 (0865) Trapper's Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0865) Trapper's Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 04 07 (0865) Trapper's Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 04 07 (0865) Trapper's Trail — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 04 07 (0865) Trapper's Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 04 07 (0865) Trapper's Trail</h1>
+          <h1 class="episode__title">(0865) Trapper's Trail</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Trapper's Trail</p>
-<p>As the iconic theme swells across the frozen wastes—*da da da da, da da da*—listeners are transported once again to the Yukon's unforgiving frontier, where Sergeant Preston of the Royal Canadian Mounted Police and his magnificent dog King face a mystery that threatens the lives of trappers deep in the wilderness. In this gripping installment, a dangerous criminal has gone to ground somewhere along the treacherous trapper's trail, and Preston must navigate not only the brutal northern landscape but also the code of honor among rough-hewn men who trust no one. The tension crackles with every creaking snowshoe and distant wolf howl as our hero closes in, racing against time and the merciless elements that claim the unprepared.</p>
-<p>*Challenge of the Yukon* captured America's imagination during the Depression and wartime years by offering something precious: escape and moral clarity. This show, which ran from 1938 to 1955, was more than mere adventure—it was a weekly affirmation that justice and courage could prevail even in the harshest corners of the world. Sergeant Preston became the everyman's ideal: dignified, competent, and unwavering in his duty, with King serving as both loyal companion and symbol of nature's nobility. The Yukon itself became a character, neither villainous nor forgiving, but honest in its indifference—a place where a man's true nature was revealed.</p>
+          <p>As the iconic theme swells across the frozen wastes—da da da da, da da da—listeners are transported once again to the Yukon's unforgiving frontier, where Sergeant Preston of the Royal Canadian Mounted Police and his magnificent dog King face a mystery that threatens the lives of trappers deep in the wilderness. In this gripping installment, a dangerous criminal has gone to ground somewhere along the treacherous trapper's trail, and Preston must navigate not only the brutal northern landscape but also the code of honor among rough-hewn men who trust no one. The tension crackles with every creaking snowshoe and distant wolf howl as our hero closes in, racing against time and the merciless elements that claim the unprepared.</p>
+<p>Challenge of the Yukon captured America's imagination during the Depression and wartime years by offering something precious: escape and moral clarity. This show, which ran from 1938 to 1955, was more than mere adventure—it was a weekly affirmation that justice and courage could prevail even in the harshest corners of the world. Sergeant Preston became the everyman's ideal: dignified, competent, and unwavering in his duty, with King serving as both loyal companion and symbol of nature's nobility. The Yukon itself became a character, neither villainous nor forgiving, but honest in its indifference—a place where a man's true nature was revealed.</p>
 <p>Don't miss "Trapper's Trail" as Preston follows the cold trail through pristine snow and forbidding mountains. Tune in and discover why millions of listeners faithfully gathered around their radios each week to follow the adventures of radio's most beloved Mountie. The North calls—will you answer?</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

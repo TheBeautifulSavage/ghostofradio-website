@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 05 29 (0788) Notorious Chet Craig — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0788) Notorious Chet Craig — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 05 29 (0788) Notorious Chet Craig — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 05 29 (0788) Notorious Chet Craig — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 05 29 (0788) Notorious Chet Craig — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 29, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 05 29 (0788) Notorious Chet Craig</h1>
+          <h1 class="episode__title">(0788) Notorious Chet Craig</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Notorious Chet Craig</p>
-<p>The frozen wastes of the Canadian Yukon hold no mercy for outlaws—and notorious rustler Chet Craig is about to learn this harsh truth when Sergeant Preston of the Royal Canadian Mounted Police picks up his trail. As spring thaw begins to crack the ice and transform the barren landscape, Preston and his legendary sled dog King must navigate treacherous terrain, suspicious townsfolk, and the cunning schemes of a desperate criminal who'll stop at nothing to evade justice. This gripping installment crackles with tension as the Sergeant pursues his quarry through a wilderness where civilization seems impossibly distant and danger lurks behind every snow-laden pine. Listeners will find themselves transported to a world of howling winds, the crack of dog whips, and the relentless determination of a lawman who serves the Crown with unwavering honor.</p>
-<p>*Challenge of the Yukon* captured American imaginations during the late 1930s and '40s by delivering authentic frontier adventure wrapped in the exotic appeal of Canada's untamed north. The program became a phenomenon, spawning comic strips, feature films, and a devoted national audience hungry for tales of justice prevailing in Earth's most forbidding corners. Sergeant Preston's character—incorruptible, intelligent, and genuinely respectful of the indigenous peoples and settlers he encountered—offered a refreshing counterpoint to the often-brutal westerns dominating radio waves. The show's meticulous attention to Yukon geography and RCMP protocol lent credibility that elevated it beyond mere melodrama into compelling historical fiction.</p>
-<p>Settle into your favorite chair, tune in your radio dial, and prepare yourself for an adventure that defined a generation's understanding of the North. "Notorious Chet Craig" exemplifies why *Challenge of the Yukon* remained a beloved staple of the golden age of radio—where heroes were stalwart, villains were cunning, and King's faithful bark signaled justice was coming to the frozen frontier.</p>
+          <p>The frozen wastes of the Canadian Yukon hold no mercy for outlaws—and notorious rustler Chet Craig is about to learn this harsh truth when Sergeant Preston of the Royal Canadian Mounted Police picks up his trail. As spring thaw begins to crack the ice and transform the barren landscape, Preston and his legendary sled dog King must navigate treacherous terrain, suspicious townsfolk, and the cunning schemes of a desperate criminal who'll stop at nothing to evade justice. This gripping installment crackles with tension as the Sergeant pursues his quarry through a wilderness where civilization seems impossibly distant and danger lurks behind every snow-laden pine. Listeners will find themselves transported to a world of howling winds, the crack of dog whips, and the relentless determination of a lawman who serves the Crown with unwavering honor.</p>
+<p>Challenge of the Yukon captured American imaginations during the late 1930s and '40s by delivering authentic frontier adventure wrapped in the exotic appeal of Canada's untamed north. The program became a phenomenon, spawning comic strips, feature films, and a devoted national audience hungry for tales of justice prevailing in Earth's most forbidding corners. Sergeant Preston's character—incorruptible, intelligent, and genuinely respectful of the indigenous peoples and settlers he encountered—offered a refreshing counterpoint to the often-brutal westerns dominating radio waves. The show's meticulous attention to Yukon geography and RCMP protocol lent credibility that elevated it beyond mere melodrama into compelling historical fiction.</p>
+<p>Settle into your favorite chair, tune in your radio dial, and prepare yourself for an adventure that defined a generation's understanding of the North. "Notorious Chet Craig" exemplifies why Challenge of the Yukon remained a beloved staple of the golden age of radio—where heroes were stalwart, villains were cunning, and King's faithful bark signaled justice was coming to the frozen frontier.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

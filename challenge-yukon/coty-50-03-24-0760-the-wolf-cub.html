@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 03 24 (0760) The Wolf Cub — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0760) The Wolf Cub — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 03 24 (0760) The Wolf Cub — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 03 24 (0760) The Wolf Cub — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 03 24 (0760) The Wolf Cub — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 24, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 03 24 (0760) The Wolf Cub</h1>
+          <h1 class="episode__title">(0760) The Wolf Cub</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Wolf Cub</p>
-<p>Picture yourself huddled close to your radio set on a winter's night, the wind howling outside your window, when suddenly the familiar bugle call of the Royal Canadian Mounted Police pierces through the static. In "The Wolf Cub," listeners are transported deep into the frozen Yukon wilderness where Sergeant Preston of the Mounted Police encounters a young wolf separated from its pack—a creature caught between the wild and an unexpected human bond. As Preston investigates a series of suspicious incidents in a remote settlement, he discovers that the wolf cub may hold the key to uncovering a dangerous plot. The tension mounts as our steadfast hero must navigate treacherous snow-covered terrain, outwit cunning adversaries, and decide whether to return the animal to nature or risk everything to protect it. Paul Sutherland's commanding voice carries you through every harrowing moment, while the expertly crafted sound design—crackling fires, howling winds, and the padding of paws on packed snow—makes you feel as though you're standing at Preston's side in that unforgiving landscape.</p>
+          <p>Picture yourself huddled close to your radio set on a winter's night, the wind howling outside your window, when suddenly the familiar bugle call of the Royal Canadian Mounted Police pierces through the static. In "The Wolf Cub," listeners are transported deep into the frozen Yukon wilderness where Sergeant Preston of the Mounted Police encounters a young wolf separated from its pack—a creature caught between the wild and an unexpected human bond. As Preston investigates a series of suspicious incidents in a remote settlement, he discovers that the wolf cub may hold the key to uncovering a dangerous plot. The tension mounts as our steadfast hero must navigate treacherous snow-covered terrain, outwit cunning adversaries, and decide whether to return the animal to nature or risk everything to protect it. Paul Sutherland's commanding voice carries you through every harrowing moment, while the expertly crafted sound design—crackling fires, howling winds, and the padding of paws on packed snow—makes you feel as though you're standing at Preston's side in that unforgiving landscape.</p>
 <p>"Challenge of the Yukon" captivated millions during radio's golden age by offering audiences an escape to exotic frontiers where morality remained clear and justice always triumphed. Airing throughout the late 1930s and into the 1950s, the series struck a perfect balance between authentic adventure and family-friendly storytelling, making it essential listening for Americans hungry for tales of courage and duty. The show's meticulous attention to detail and commitment to compelling character-driven narratives set it apart from mere pulp entertainment.</p>
 <p>Don't miss this thrilling tale of wilderness mystery and unexpected compassion. Tune in to experience why "Challenge of the Yukon" remains a treasured cornerstone of radio's adventurous golden era.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

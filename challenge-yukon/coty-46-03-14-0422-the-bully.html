@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 03 14 (0422) The Bully — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0422) The Bully — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 03 14 (0422) The Bully — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 03 14 (0422) The Bully — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 03 14 (0422) The Bully — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 14, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 03 14 (0422) The Bully</h1>
+          <h1 class="episode__title">(0422) The Bully</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Bully</p>
-<p>Picture yourself huddled near the radio on a crisp evening, the crackle of the static giving way to the thundering hoofbeats of King—that magnificent horse whose hooves have trampled across a thousand frozen trails. This is "The Bully," an episode that strips away the glamour of the Yukon to expose something far more human and troubling: the poison of unchecked cruelty. Sergeant Preston arrives at a remote settlement where a tyrannical brute has terrorized the community with his fists and his threats, reducing proud prospectors and honest workers to trembling shadows. What begins as a routine patrol becomes a reckoning, as Preston must navigate not just the frozen wilderness and his duty to the law, but the far more complex terrain of a community broken by fear. The tension simmers throughout—will justice prevail, or has this bully's reign become too entrenched in the very fabric of this frozen outpost?</p>
-<p>For nearly two decades, *Challenge of the Yukon* captured the imaginations of millions by transforming the lawless frontier into a realm where integrity, courage, and the Rule of Law triumphed against impossible odds. Created during an era when radio was the dominant entertainment medium, the show became a cornerstone of adventure programming, with Sergeant Preston becoming as iconic as any Hollywood hero. Episodes like "The Bully" showcased why the program endured: beneath the adventure and excitement lay genuine moral complexity. The writers understood that true heroism wasn't just about catching villains—it was about restoring dignity to those who'd been beaten down by them.</p>
+          <p>Picture yourself huddled near the radio on a crisp evening, the crackle of the static giving way to the thundering hoofbeats of King—that magnificent horse whose hooves have trampled across a thousand frozen trails. This is "The Bully," an episode that strips away the glamour of the Yukon to expose something far more human and troubling: the poison of unchecked cruelty. Sergeant Preston arrives at a remote settlement where a tyrannical brute has terrorized the community with his fists and his threats, reducing proud prospectors and honest workers to trembling shadows. What begins as a routine patrol becomes a reckoning, as Preston must navigate not just the frozen wilderness and his duty to the law, but the far more complex terrain of a community broken by fear. The tension simmers throughout—will justice prevail, or has this bully's reign become too entrenched in the very fabric of this frozen outpost?</p>
+<p>For nearly two decades, Challenge of the Yukon captured the imaginations of millions by transforming the lawless frontier into a realm where integrity, courage, and the Rule of Law triumphed against impossible odds. Created during an era when radio was the dominant entertainment medium, the show became a cornerstone of adventure programming, with Sergeant Preston becoming as iconic as any Hollywood hero. Episodes like "The Bully" showcased why the program endured: beneath the adventure and excitement lay genuine moral complexity. The writers understood that true heroism wasn't just about catching villains—it was about restoring dignity to those who'd been beaten down by them.</p>
 <p>This is radio drama at its finest: vivid, urgent, and speaking directly to something primal in the human spirit. Tune in and discover why listeners across North America made this appointment listening unmissable. Yukon King is waiting.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

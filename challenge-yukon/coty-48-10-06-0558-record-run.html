@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 10 06 (0558) Record Run — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0558) Record Run — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 10 06 (0558) Record Run — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 10 06 (0558) Record Run — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 10 06 (0558) Record Run — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 6, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 10 06 (0558) Record Run</h1>
+          <h1 class="episode__title">(0558) Record Run</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Record Run</p>
-<p>Picture this: the howling Arctic wind cuts across the frozen Yukon wilderness as Sergeant Preston of the Royal Canadian Mounted Police faces his most harrowing challenge yet. A desperate criminal has seized control of the mail route, and with winter closing in with merciless speed, Preston must push his legendary dog team to their absolute limits in a breathless race against time, terrain, and human treachery. In "Record Run," listeners will experience the bone-chilling tension of a pursuit across endless snowfields, the crack of the whip and the thunder of paws on ice, and the unbreakable bond between man and animal that defines the North. Every moment crackles with danger—will Preston and his magnificent sled dogs reach their destination before the criminal vanishes into the frozen wilderness, or will the unforgiving Yukon claim another victim?</p>
-<p>This episode exemplifies why *Challenge of the Yukon* captivated millions during the golden age of radio. Premiering in 1938 and running for nearly two decades across ABC and Mutual networks, the show captured American imaginations with its vivid portrayal of Canadian frontier justice, rugged individualism, and the primal struggle between civilization and wilderness. Sergeant Preston became an icon of adventure radio, and his faithful husky King became as beloved as any human character in broadcasting. The series was groundbreaking in its use of sound effects—those authentic dog yelps, sled runners on ice, and wind howling across tundra transported listeners directly into the story.</p>
+          <p>Picture this: the howling Arctic wind cuts across the frozen Yukon wilderness as Sergeant Preston of the Royal Canadian Mounted Police faces his most harrowing challenge yet. A desperate criminal has seized control of the mail route, and with winter closing in with merciless speed, Preston must push his legendary dog team to their absolute limits in a breathless race against time, terrain, and human treachery. In "Record Run," listeners will experience the bone-chilling tension of a pursuit across endless snowfields, the crack of the whip and the thunder of paws on ice, and the unbreakable bond between man and animal that defines the North. Every moment crackles with danger—will Preston and his magnificent sled dogs reach their destination before the criminal vanishes into the frozen wilderness, or will the unforgiving Yukon claim another victim?</p>
+<p>This episode exemplifies why Challenge of the Yukon captivated millions during the golden age of radio. Premiering in 1938 and running for nearly two decades across ABC and Mutual networks, the show captured American imaginations with its vivid portrayal of Canadian frontier justice, rugged individualism, and the primal struggle between civilization and wilderness. Sergeant Preston became an icon of adventure radio, and his faithful husky King became as beloved as any human character in broadcasting. The series was groundbreaking in its use of sound effects—those authentic dog yelps, sled runners on ice, and wind howling across tundra transported listeners directly into the story.</p>
 <p>For devotees of classic radio adventure and newcomers seeking authentic escape into a thrilling, meticulously crafted world, "Record Run" is essential listening. Tune in and discover why this show earned its place in broadcasting immortality.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

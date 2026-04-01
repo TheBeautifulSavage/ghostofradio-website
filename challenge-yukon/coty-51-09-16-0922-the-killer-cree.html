@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 09 16 (0922) The Killer Cree — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0922) The Killer Cree — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 09 16 (0922) The Killer Cree — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 09 16 (0922) The Killer Cree — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 09 16 (0922) The Killer Cree — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 09 16 (0922) The Killer Cree</h1>
+          <h1 class="episode__title">(0922) The Killer Cree</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Killer Cree</p>
-<p>Into the vast and unforgiving wilderness of the Yukon Territory comes a mystery as dark as the arctic night itself. *The Killer Cree* finds Sergeant Preston and his magnificent dog King faced with a murderer prowling the frozen wastes—a killer whose identity remains shrouded in shadow until the very final moments. As winter's grip tightens around the remote trading posts and isolated cabins of the North, Preston must navigate treacherous terrain and even more treacherous human nature to bring a dangerous criminal to justice. The crackle of the fire, the howl of wind across snow-covered peaks, and the urgent barking of King punctuate this tale of suspense, where every stranger encountered might be the culprit, and trust itself becomes a luxury the Mountie cannot afford.</p>
-<p>Since its debut in 1938, *Challenge of the Yukon* had captivated millions of listeners with its authentic portrayal of Canadian frontier law enforcement, earning it a devoted following that would sustain the program through nearly two decades on the air. The show's genius lay in its perfect marriage of action-adventure storytelling with genuine historical atmosphere—each episode transported audiences to a world where civilization's reach was tenuous at best, where a Mountie's courage and integrity stood as the only bulwark against lawlessness. Sergeant Preston, played with steadfast conviction, embodied an ideal of duty that resonated deeply with wartime and post-war audiences seeking heroes of unshakeable moral clarity. The partnership between man and dog became iconic, with King earning his own devoted fan mail.</p>
-<p>Tune in now and experience why listeners kept their radios tuned to this timeless adventure. *The Killer Cree* awaits—where the Yukon's frozen silence harbors deadly secrets.</p>
+          <p>Into the vast and unforgiving wilderness of the Yukon Territory comes a mystery as dark as the arctic night itself. The Killer Cree finds Sergeant Preston and his magnificent dog King faced with a murderer prowling the frozen wastes—a killer whose identity remains shrouded in shadow until the very final moments. As winter's grip tightens around the remote trading posts and isolated cabins of the North, Preston must navigate treacherous terrain and even more treacherous human nature to bring a dangerous criminal to justice. The crackle of the fire, the howl of wind across snow-covered peaks, and the urgent barking of King punctuate this tale of suspense, where every stranger encountered might be the culprit, and trust itself becomes a luxury the Mountie cannot afford.</p>
+<p>Since its debut in 1938, Challenge of the Yukon had captivated millions of listeners with its authentic portrayal of Canadian frontier law enforcement, earning it a devoted following that would sustain the program through nearly two decades on the air. The show's genius lay in its perfect marriage of action-adventure storytelling with genuine historical atmosphere—each episode transported audiences to a world where civilization's reach was tenuous at best, where a Mountie's courage and integrity stood as the only bulwark against lawlessness. Sergeant Preston, played with steadfast conviction, embodied an ideal of duty that resonated deeply with wartime and post-war audiences seeking heroes of unshakeable moral clarity. The partnership between man and dog became iconic, with King earning his own devoted fan mail.</p>
+<p>Tune in now and experience why listeners kept their radios tuned to this timeless adventure. The Killer Cree awaits—where the Yukon's frozen silence harbors deadly secrets.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

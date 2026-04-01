@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 02 25 (0854) Vanished Loot — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0854) Vanished Loot — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 02 25 (0854) Vanished Loot — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 02 25 (0854) Vanished Loot — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 02 25 (0854) Vanished Loot — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 02 25 (0854) Vanished Loot</h1>
+          <h1 class="episode__title">(0854) Vanished Loot</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Vanished Loot</p>
-<p>When the crackle of static fades and that magnificent theme swells—the thundering hoofbeats of King, the gallant Husky sled dog, racing across frozen wastes—listeners are transported to the unforgiving wilderness of Canada's northernmost territories. In this gripping 1940s adventure, "Vanished Loot," a shipment of gold intended for remote settlements has mysteriously disappeared somewhere along the treacherous mountain passes, and Sergeant Preston must navigate not only the brutal landscape but also a web of suspicious characters and dangerous deceptions. With nothing but his wits, his faithful canine companion, and the distant crackle of his radio, Preston races against time and the elements. Will he uncover the culprits before the gold vanishes into legend? The tension builds episode by episode, each broadcast delivering exactly what audiences craved: danger, heroism, and the promise that justice would prevail, even at the frozen edge of civilization.</p>
-<p>*Challenge of the Yukon* became one of radio's most beloved adventures precisely because it captured something essential about the American imagination—the frontier as a place where character is tested and morality remains absolute. Broadcasting during an era when listeners huddled around their sets in living rooms across the nation, the show offered escape and reassurance in equal measure. Sergeant Preston embodied the ideal of the incorruptible lawman, and King represented loyalty beyond question. The scripts, though crafted in Hollywood studios, rang with authentic details about sled dog operations, mining camps, and the genuine hazards of Arctic survival, lending credibility to every peril.</p>
+          <p>When the crackle of static fades and that magnificent theme swells—the thundering hoofbeats of King, the gallant Husky sled dog, racing across frozen wastes—listeners are transported to the unforgiving wilderness of Canada's northernmost territories. In this gripping 1940s adventure, "Vanished Loot," a shipment of gold intended for remote settlements has mysteriously disappeared somewhere along the treacherous mountain passes, and Sergeant Preston must navigate not only the brutal landscape but also a web of suspicious characters and dangerous deceptions. With nothing but his wits, his faithful canine companion, and the distant crackle of his radio, Preston races against time and the elements. Will he uncover the culprits before the gold vanishes into legend? The tension builds episode by episode, each broadcast delivering exactly what audiences craved: danger, heroism, and the promise that justice would prevail, even at the frozen edge of civilization.</p>
+<p>Challenge of the Yukon became one of radio's most beloved adventures precisely because it captured something essential about the American imagination—the frontier as a place where character is tested and morality remains absolute. Broadcasting during an era when listeners huddled around their sets in living rooms across the nation, the show offered escape and reassurance in equal measure. Sergeant Preston embodied the ideal of the incorruptible lawman, and King represented loyalty beyond question. The scripts, though crafted in Hollywood studios, rang with authentic details about sled dog operations, mining camps, and the genuine hazards of Arctic survival, lending credibility to every peril.</p>
 <p>This is radio drama at its finest: a story told through voices, sound effects, and imagination. No special effects budget could enhance what your mind conjures when you hear the snarl of wolves, the crack of ice, and Sergeant Preston's steady determination cutting through the darkness. Tune in now and discover why this series captivated millions.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

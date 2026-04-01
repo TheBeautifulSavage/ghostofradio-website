@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 04 24 (0527) Rusty — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0527) Rusty — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 04 24 (0527) Rusty — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 04 24 (0527) Rusty — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 04 24 (0527) Rusty — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 24, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 04 24 (0527) Rusty</h1>
+          <h1 class="episode__title">(0527) Rusty</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon: "Rusty"</p>
-<p>As the iconic William Tell Overture swells and the great husky King barks his approval, listeners are transported once more to the frozen frontier of Canada's Yukon Territory. In this particular adventure, Sergeant Preston faces one of his most poignant challenges yet—not against outlaws or natural disasters, but through the loyal eyes of his aging sled dog, Rusty. When a young prospector's claim is threatened by a cunning land grabber, Preston must rely on his faithful companion's instincts to uncover evidence hidden somewhere in the vast white wilderness. But time is running out, and Rusty isn't getting any younger. What unfolds is a masterclass in the show's signature blend of rugged action, moral clarity, and genuine emotional stakes that kept millions of Americans huddled around their radio sets during the long winter nights of the 1940s.</p>
-<p>*Challenge of the Yukon* represented something uniquely American in its golden age—a celebration of honor, courage, and the unbreakable bond between man and beast in an untamed land. Sergeant Preston, played with understated authority by various actors throughout the show's remarkable 17-year run, embodied the Canadian Mountie ideal: fair, incorruptible, and always on the side of justice. The program's success lay in its authentic attention to Yukon detail and its creator's understanding that children and adults alike craved heroes who solved problems through wit and determination rather than mere gunplay. Episodes like "Rusty" demonstrated why the show became a cultural touchstone, spawning comic strips, movies, and enduring merchandise that collectors still treasure today.</p>
-<p>Don't miss this stirring episode that reminds us why *Sergeant Preston of the Yukon* remains unmatched in the annals of adventure radio. Tune in as Preston and his loyal pack face their greatest test yet, where every bark and every gesture through the northern silence carries the weight of friendship and duty.</p>
+          <p>As the iconic William Tell Overture swells and the great husky King barks his approval, listeners are transported once more to the frozen frontier of Canada's Yukon Territory. In this particular adventure, Sergeant Preston faces one of his most poignant challenges yet—not against outlaws or natural disasters, but through the loyal eyes of his aging sled dog, Rusty. When a young prospector's claim is threatened by a cunning land grabber, Preston must rely on his faithful companion's instincts to uncover evidence hidden somewhere in the vast white wilderness. But time is running out, and Rusty isn't getting any younger. What unfolds is a masterclass in the show's signature blend of rugged action, moral clarity, and genuine emotional stakes that kept millions of Americans huddled around their radio sets during the long winter nights of the 1940s.</p>
+<p>Challenge of the Yukon represented something uniquely American in its golden age—a celebration of honor, courage, and the unbreakable bond between man and beast in an untamed land. Sergeant Preston, played with understated authority by various actors throughout the show's remarkable 17-year run, embodied the Canadian Mountie ideal: fair, incorruptible, and always on the side of justice. The program's success lay in its authentic attention to Yukon detail and its creator's understanding that children and adults alike craved heroes who solved problems through wit and determination rather than mere gunplay. Episodes like "Rusty" demonstrated why the show became a cultural touchstone, spawning comic strips, movies, and enduring merchandise that collectors still treasure today.</p>
+<p>Don't miss this stirring episode that reminds us why Sergeant Preston of the Yukon remains unmatched in the annals of adventure radio. Tune in as Preston and his loyal pack face their greatest test yet, where every bark and every gesture through the northern silence carries the weight of friendship and duty.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

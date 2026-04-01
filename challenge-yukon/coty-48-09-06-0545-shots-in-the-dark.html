@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 09 06 (0545) Shots In The Dark — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0545) Shots In The Dark — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 09 06 (0545) Shots In The Dark — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 09 06 (0545) Shots In The Dark — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 09 06 (0545) Shots In The Dark — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 6, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 09 06 (0545) Shots In The Dark</h1>
+          <h1 class="episode__title">(0545) Shots In The Dark</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Shots In The Dark</p>
-<p>As the winter wind howls across the frozen reaches of the Canadian wilderness, Sergeant Preston and his faithful King face their darkest challenge yet. When gunfire erupts in the dead of night, shattering the silence of a remote outpost, suspicion falls on an innocent man—and Preston must uncover the truth before justice miscarries in the frozen darkness. With only the loyal malamute's keen senses and his own unwavering determination, Preston navigates a treacherous landscape of hidden motives and desperate men, where every shadow could conceal a killer and every revelation brings him closer to danger. The crackling tension of this 1940s adventure will grip you from the opening shot: *In the frozen North, there is no mercy, no escape, and no place to hide.*</p>
-<p>For nearly two decades, *Challenge of the Yukon* captivated millions of Americans huddled around their radio sets, offering thrilling escape into a romanticized frontier where law and order were maintained by a single steadfast Canadian Mountie and his extraordinary dog. The show's enduring appeal lay in its perfect marriage of authentic Yukon atmosphere—meticulously researched details about the landscape and frontier life—with classic radio drama: a mix of personal stakes, moral clarity, and action-packed storytelling. These episodes, recorded during radio's golden age, represent a vanished world of entertainment where sound effects and voice acting had to do what television could show, creating vivid mental images that often surpassed the visual medium's limitations.</p>
-<p>Tune in now to experience one of broadcasting's greatest adventure series, where the bond between man and dog transcends the frozen tundra, and justice prevails against impossible odds. *Coty 48 09 06: Shots In The Dark* awaits—your radio adventure begins tonight.</p>
+          <p>As the winter wind howls across the frozen reaches of the Canadian wilderness, Sergeant Preston and his faithful King face their darkest challenge yet. When gunfire erupts in the dead of night, shattering the silence of a remote outpost, suspicion falls on an innocent man—and Preston must uncover the truth before justice miscarries in the frozen darkness. With only the loyal malamute's keen senses and his own unwavering determination, Preston navigates a treacherous landscape of hidden motives and desperate men, where every shadow could conceal a killer and every revelation brings him closer to danger. The crackling tension of this 1940s adventure will grip you from the opening shot: In the frozen North, there is no mercy, no escape, and no place to hide.</p>
+<p>For nearly two decades, Challenge of the Yukon captivated millions of Americans huddled around their radio sets, offering thrilling escape into a romanticized frontier where law and order were maintained by a single steadfast Canadian Mountie and his extraordinary dog. The show's enduring appeal lay in its perfect marriage of authentic Yukon atmosphere—meticulously researched details about the landscape and frontier life—with classic radio drama: a mix of personal stakes, moral clarity, and action-packed storytelling. These episodes, recorded during radio's golden age, represent a vanished world of entertainment where sound effects and voice acting had to do what television could show, creating vivid mental images that often surpassed the visual medium's limitations.</p>
+<p>Tune in now to experience one of broadcasting's greatest adventure series, where the bond between man and dog transcends the frozen tundra, and justice prevails against impossible odds. Coty 48 09 06: Shots In The Dark awaits—your radio adventure begins tonight.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

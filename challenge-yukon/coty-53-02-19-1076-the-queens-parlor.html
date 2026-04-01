@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 53 02 19 (1076) The Queen's Parlor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(1076) The Queen's Parlor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 53 02 19 (1076) The Queen's Parlor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 53 02 19 (1076) The Queen's Parlor — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 53 02 19 (1076) The Queen's Parlor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 53 02 19 (1076) The Queen's Parlor</h1>
+          <h1 class="episode__title">(1076) The Queen's Parlor</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Queen's Parlor</p>
-<p>Deep in the frozen Northland, where the wind cuts like a knife and civilization feels like a distant memory, Sergeant Preston of the Yukon faces his most peculiar case yet. When word reaches the remote trading post that a mysterious woman claiming royal connections has arrived with a fortune in jewels, Preston must navigate treacherous social waters as dangerous as any arctic blizzard. Is she truly nobility in distress, or a cunning swindler preying on the isolation and loneliness of frontier dwellers? As the sergeant investigates "The Queen's Parlor"—a ramshackle cabin that becomes the unlikely center of intrigue—listeners will discover that the greatest perils aren't always found in the wilderness, but in the hearts of desperate men and women far from the judgment of civilized law.</p>
-<p>*Challenge of the Yukon* thrived on this exact formula during its golden age in the 1940s: combining the robust appeal of frontier adventure with intimate character drama that resonated with Americans huddled around their radios during wartime. Sergeant Preston, played with steady determination by the original cast, became an icon of frontier justice—a man of principle in a lawless land, always accompanied by his loyal husky, King. The show's meticulous sound design transported listeners thousands of miles north, with crackling fires, howling winds, and the jingle of dog sleds creating an atmosphere of authenticity that few programs could match. Each episode balanced action with genuine mystery, making the audience partners in Preston's investigations rather than passive observers.</p>
+          <p>Deep in the frozen Northland, where the wind cuts like a knife and civilization feels like a distant memory, Sergeant Preston of the Yukon faces his most peculiar case yet. When word reaches the remote trading post that a mysterious woman claiming royal connections has arrived with a fortune in jewels, Preston must navigate treacherous social waters as dangerous as any arctic blizzard. Is she truly nobility in distress, or a cunning swindler preying on the isolation and loneliness of frontier dwellers? As the sergeant investigates "The Queen's Parlor"—a ramshackle cabin that becomes the unlikely center of intrigue—listeners will discover that the greatest perils aren't always found in the wilderness, but in the hearts of desperate men and women far from the judgment of civilized law.</p>
+<p>Challenge of the Yukon thrived on this exact formula during its golden age in the 1940s: combining the robust appeal of frontier adventure with intimate character drama that resonated with Americans huddled around their radios during wartime. Sergeant Preston, played with steady determination by the original cast, became an icon of frontier justice—a man of principle in a lawless land, always accompanied by his loyal husky, King. The show's meticulous sound design transported listeners thousands of miles north, with crackling fires, howling winds, and the jingle of dog sleds creating an atmosphere of authenticity that few programs could match. Each episode balanced action with genuine mystery, making the audience partners in Preston's investigations rather than passive observers.</p>
 <p>Dust off your imagination and prepare for adventure. Whether you're discovering Sergeant Preston for the first time or revisiting this beloved classic, "The Queen's Parlor" promises the perfect blend of mystery, suspense, and the raw frontier spirit that made this program a staple of American radio entertainment. Tune in—King is waiting.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

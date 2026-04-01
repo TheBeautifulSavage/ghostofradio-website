@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 11 26 (0580) Lost River Roundup — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0580) Lost River Roundup — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 11 26 (0580) Lost River Roundup — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 11 26 (0580) Lost River Roundup — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 11 26 (0580) Lost River Roundup — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 26, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 11 26 (0580) Lost River Roundup</h1>
+          <h1 class="episode__title">(0580) Lost River Roundup</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Lost River Roundup</p>
-<p>As winter's icy grip tightens around the Canadian frontier, Sergeant Preston of the Royal Canadian Mounted Police faces his most baffling case yet. A notorious gang of cattle rustlers has vanished without a trace into the vast, snow-buried wilderness near Lost River, their stolen herd seemingly swallowed by the unforgiving landscape. With his faithful husky King at his side and only the faintest trail of hoofprints disappearing into swirling snowdrifts, Preston must navigate treacherous terrain and outwit cunning criminals who know the backcountry as well as any man alive. Listen as suspense builds with each crackle of the fire, each distant howl echoing across frozen valleys, and each crucial clue that brings our Mountie closer to justice—or deeper into danger.</p>
-<p>*Challenge of the Yukon* captivated millions of listeners throughout the 1940s by delivering authentic adventure steeped in the rugged romance of Canada's north. The show's meticulous attention to period detail, compelling sound design, and Sergeant Preston's unwavering moral code made it more than mere escapism—it was a weekly pilgrimage to a frontier where law, honor, and man's determination could still triumph over wilderness and villainy. This particular episode exemplifies the show's mastery, blending genuine RCMP lore with storytelling that kept listeners gripping their radio dials late into the evening.</p>
-<p>Don your parka and prepare your ears for an adventure that transported a generation to a time when the Yukon's mysteries remained unsolved and a Mountie's word meant everything. Tune in now to *Lost River Roundup* and discover why this classic remains an essential artifact of radio's golden age—where danger lurked around every frozen bend and justice rode with an honest man and a loyal dog.</p>
+          <p>As winter's icy grip tightens around the Canadian frontier, Sergeant Preston of the Royal Canadian Mounted Police faces his most baffling case yet. A notorious gang of cattle rustlers has vanished without a trace into the vast, snow-buried wilderness near Lost River, their stolen herd seemingly swallowed by the unforgiving landscape. With his faithful husky King at his side and only the faintest trail of hoofprints disappearing into swirling snowdrifts, Preston must navigate treacherous terrain and outwit cunning criminals who know the backcountry as well as any man alive. Listen as suspense builds with each crackle of the fire, each distant howl echoing across frozen valleys, and each crucial clue that brings our Mountie closer to justice—or deeper into danger.</p>
+<p>Challenge of the Yukon captivated millions of listeners throughout the 1940s by delivering authentic adventure steeped in the rugged romance of Canada's north. The show's meticulous attention to period detail, compelling sound design, and Sergeant Preston's unwavering moral code made it more than mere escapism—it was a weekly pilgrimage to a frontier where law, honor, and man's determination could still triumph over wilderness and villainy. This particular episode exemplifies the show's mastery, blending genuine RCMP lore with storytelling that kept listeners gripping their radio dials late into the evening.</p>
+<p>Don your parka and prepare your ears for an adventure that transported a generation to a time when the Yukon's mysteries remained unsolved and a Mountie's word meant everything. Tune in now to Lost River Roundup and discover why this classic remains an essential artifact of radio's golden age—where danger lurked around every frozen bend and justice rode with an honest man and a loyal dog.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

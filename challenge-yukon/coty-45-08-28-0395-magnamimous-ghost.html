@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 08 28 (0395) Magnamimous Ghost — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0395) Magnamimous Ghost — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 08 28 (0395) Magnamimous Ghost — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 08 28 (0395) Magnamimous Ghost — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 08 28 (0395) Magnamimous Ghost — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 28, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 08 28 (0395) Magnamimous Ghost</h1>
+          <h1 class="episode__title">(0395) Magnamimous Ghost</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Magnanimous Ghost</p>
-<p>As the organ swells and the thunder of hoofbeats echoes across the frozen Northland, Sergeant Preston and his magnificent King Dog venture into one of their most haunting cases yet. "Magnanimous Ghost" finds our intrepid Mountie investigating a mystery that straddles the line between the natural and the supernatural—a phantom figure terrorizing the isolated settlements of the Yukon, leaving listeners on the edge of their seats as Preston and King pursue spectral tracks through blizzard and shadow. Will the legendary law enforcer uncover the human hand behind the apparition, or has the vast wilderness finally conjured something beyond even his considerable courage to face? Every crackle of the radio static becomes part of the atmosphere, drawing you deeper into the Canadian frontier's darkest secrets.</p>
-<p>For fifteen years, *Challenge of the Yukon* captivated millions of Americans with tales of duty and adventure set in the remote Canadian north. By the early 1940s, when this episode aired, the show had become a cultural phenomenon, rivaling even the most popular dramatic programs of the era. Sergeant Preston—portrayed with steadfast authority by Paul Sutherland—embodied an idealized American virtue: unwavering justice tempered with compassion. The show's meticulous attention to authentic Yukon detail, combined with its commitment to complex mysteries that rewarded careful listening, made it essential radio listening for families gathered around their sets on Tuesday and Friday evenings.</p>
-<p>Step back into that golden age and experience the particular thrill that made *Challenge of the Yukon* unforgettable. Tune in to "Magnanimous Ghost" and let the Canadian wilderness reclaim your imagination for thirty minutes—no screens, no distractions, just pure storytelling the way it was meant to be heard.</p>
+          <p>As the organ swells and the thunder of hoofbeats echoes across the frozen Northland, Sergeant Preston and his magnificent King Dog venture into one of their most haunting cases yet. "Magnanimous Ghost" finds our intrepid Mountie investigating a mystery that straddles the line between the natural and the supernatural—a phantom figure terrorizing the isolated settlements of the Yukon, leaving listeners on the edge of their seats as Preston and King pursue spectral tracks through blizzard and shadow. Will the legendary law enforcer uncover the human hand behind the apparition, or has the vast wilderness finally conjured something beyond even his considerable courage to face? Every crackle of the radio static becomes part of the atmosphere, drawing you deeper into the Canadian frontier's darkest secrets.</p>
+<p>For fifteen years, Challenge of the Yukon captivated millions of Americans with tales of duty and adventure set in the remote Canadian north. By the early 1940s, when this episode aired, the show had become a cultural phenomenon, rivaling even the most popular dramatic programs of the era. Sergeant Preston—portrayed with steadfast authority by Paul Sutherland—embodied an idealized American virtue: unwavering justice tempered with compassion. The show's meticulous attention to authentic Yukon detail, combined with its commitment to complex mysteries that rewarded careful listening, made it essential radio listening for families gathered around their sets on Tuesday and Friday evenings.</p>
+<p>Step back into that golden age and experience the particular thrill that made Challenge of the Yukon unforgettable. Tune in to "Magnanimous Ghost" and let the Canadian wilderness reclaim your imagination for thirty minutes—no screens, no distractions, just pure storytelling the way it was meant to be heard.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

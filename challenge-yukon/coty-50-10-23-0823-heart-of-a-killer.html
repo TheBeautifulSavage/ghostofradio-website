@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 10 23 (0823) Heart Of A Killer — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0823) Heart Of A Killer — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 10 23 (0823) Heart Of A Killer — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 10 23 (0823) Heart Of A Killer — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 10 23 (0823) Heart Of A Killer — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 23, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 10 23 (0823) Heart Of A Killer</h1>
+          <h1 class="episode__title">(0823) Heart Of A Killer</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Heart of a Killer</p>
-<p>Picture yourself huddled near the radio on a frigid autumn evening, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, as our hero races across the frozen Yukon wilderness. In "Heart of a Killer," Preston finds himself tracking a fugitive whose crimes run deeper than any conventional lawbreaker's—this is a man consumed by a darkness that no amount of Arctic solitude can cleanse. As the Mountie closes in through blizzard and shadow, listeners will discover that the most dangerous criminal isn't always the one wanted by the law, but the one haunted by his own conscience. The episode crackles with tension as Preston navigates treacherous terrain and moral complexity, proving once again why this show captivated millions during the Golden Age of Radio.</p>
-<p>*Challenge of the Yukon* stands as one of broadcasting's greatest achievements, running strong from 1938 through the 1950s and capturing the imaginations of listeners young and old. With writer George Lowther at the helm, the series transcended typical adventure fare by grounding its stories in authentic Canadian geography and the genuine psychological struggles of frontier justice. Sergeant Preston—played with steady conviction by Paul Sutherland—became an American icon of integrity, representing the promise of law and order even at the ends of the earth. The show's longevity spoke to post-Depression and wartime audiences hungry for tales of honor and competence during uncertain times.</p>
+          <p>Picture yourself huddled near the radio on a frigid autumn evening, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, as our hero races across the frozen Yukon wilderness. In "Heart of a Killer," Preston finds himself tracking a fugitive whose crimes run deeper than any conventional lawbreaker's—this is a man consumed by a darkness that no amount of Arctic solitude can cleanse. As the Mountie closes in through blizzard and shadow, listeners will discover that the most dangerous criminal isn't always the one wanted by the law, but the one haunted by his own conscience. The episode crackles with tension as Preston navigates treacherous terrain and moral complexity, proving once again why this show captivated millions during the Golden Age of Radio.</p>
+<p>Challenge of the Yukon stands as one of broadcasting's greatest achievements, running strong from 1938 through the 1950s and capturing the imaginations of listeners young and old. With writer George Lowther at the helm, the series transcended typical adventure fare by grounding its stories in authentic Canadian geography and the genuine psychological struggles of frontier justice. Sergeant Preston—played with steady conviction by Paul Sutherland—became an American icon of integrity, representing the promise of law and order even at the ends of the earth. The show's longevity spoke to post-Depression and wartime audiences hungry for tales of honor and competence during uncertain times.</p>
 <p>Tune in now to experience "Heart of a Killer" exactly as audiences did in the 1940s, when a man's moral reckoning could unfold across the Yukon's unforgiving landscape, and a Canadian Mountie's determination was all that stood between civilization and the abyss.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

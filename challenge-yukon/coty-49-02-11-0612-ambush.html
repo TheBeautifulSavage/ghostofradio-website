@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 02 11 (0612) Ambush — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0612) Ambush — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 02 11 (0612) Ambush — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 02 11 (0612) Ambush — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 02 11 (0612) Ambush — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 11, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 02 11 (0612) Ambush</h1>
+          <h1 class="episode__title">(0612) Ambush</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Ambush</p>
-<p>When the frozen silence of the Yukon breaks with the crack of rifle fire, Sergeant Preston and his faithful dog King must think fast—or die in the snow. In this heart-pounding installment, our Mounted Police hero finds himself caught between rival fur traders with murder on their minds and no law but their own in the vast Canadian wilderness. As darkness falls and the temperature plummets, Preston must untangle a web of deception and greed to prevent an innocent man from taking the fall for a crime he didn't commit. Every shadow could conceal a killer, and every moment brings danger closer through the howling wind.</p>
-<p>*Challenge of the Yukon* captured the imagination of millions during radio's golden age, transforming the exploits of the legendary Sergeant Preston into one of the medium's most beloved adventures. Premiering in 1938, the show perfected a formula that audiences craved: a stalwart lawman, exotic frontier settings, and moral clarity in an increasingly complex world. By the 1940s, when this episode aired, Preston had become an American institution, his exploits a thrilling escape from wartime anxieties. The show's meticulous sound design—crackling fires, howling winds, and the padding of King's paws on ice—transported listeners thousands of miles away, while Preston's unwavering integrity offered reassurance that good would triumph over the lawless schemes of con men and villains.</p>
+          <p>When the frozen silence of the Yukon breaks with the crack of rifle fire, Sergeant Preston and his faithful dog King must think fast—or die in the snow. In this heart-pounding installment, our Mounted Police hero finds himself caught between rival fur traders with murder on their minds and no law but their own in the vast Canadian wilderness. As darkness falls and the temperature plummets, Preston must untangle a web of deception and greed to prevent an innocent man from taking the fall for a crime he didn't commit. Every shadow could conceal a killer, and every moment brings danger closer through the howling wind.</p>
+<p>Challenge of the Yukon captured the imagination of millions during radio's golden age, transforming the exploits of the legendary Sergeant Preston into one of the medium's most beloved adventures. Premiering in 1938, the show perfected a formula that audiences craved: a stalwart lawman, exotic frontier settings, and moral clarity in an increasingly complex world. By the 1940s, when this episode aired, Preston had become an American institution, his exploits a thrilling escape from wartime anxieties. The show's meticulous sound design—crackling fires, howling winds, and the padding of King's paws on ice—transported listeners thousands of miles away, while Preston's unwavering integrity offered reassurance that good would triumph over the lawless schemes of con men and villains.</p>
 <p>Don't miss "Ambush," where the Yukon's unforgiving wilderness becomes both refuge and trap. Tune in to hear how Sergeant Preston's quick thinking and King's keen instincts uncover the truth before injustice takes root in the frozen north.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

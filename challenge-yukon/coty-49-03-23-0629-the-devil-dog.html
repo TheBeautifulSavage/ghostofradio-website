@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 03 23 (0629) The Devil Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0629) The Devil Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 03 23 (0629) The Devil Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 03 23 (0629) The Devil Dog — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 03 23 (0629) The Devil Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 23, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 03 23 (0629) The Devil Dog</h1>
+          <h1 class="episode__title">(0629) The Devil Dog</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Devil Dog</p>
-<p>Picture yourself huddled near the radio on a cold evening as Sergeant Preston's unmistakable voice crackles through the static, cutting through the darkness of the Yukon wilderness. In "The Devil Dog," our stalwart Canadian Mountie faces one of his most bone-chilling cases yet—a massive, mysterious beast terrorizing remote settlements and leaving the local trappers convinced they're under siege from something far worse than any ordinary predator. As Preston and his faithful sled dog King venture into the frozen badlands to investigate, the episode masterfully weaves together the show's trademark blend of suspenseful mystery and authentic frontier danger. Will the Mountie's keen detective work uncover the truth behind the legend, or has he finally met his match in the unforgiving northern wilderness?</p>
+          <p>Picture yourself huddled near the radio on a cold evening as Sergeant Preston's unmistakable voice crackles through the static, cutting through the darkness of the Yukon wilderness. In "The Devil Dog," our stalwart Canadian Mountie faces one of his most bone-chilling cases yet—a massive, mysterious beast terrorizing remote settlements and leaving the local trappers convinced they're under siege from something far worse than any ordinary predator. As Preston and his faithful sled dog King venture into the frozen badlands to investigate, the episode masterfully weaves together the show's trademark blend of suspenseful mystery and authentic frontier danger. Will the Mountie's keen detective work uncover the truth behind the legend, or has he finally met his match in the unforgiving northern wilderness?</p>
 <p>What made "Challenge of the Yukon" a phenomenon during radio's golden age was its perfect balance of action-adventure storytelling and meticulous historical detail. Premiering in 1938, the series became a cultural touchstone for American listeners hungry for tales of law, order, and rugged individualism set against a backdrop of genuine Yukon geography and climate. Sergeant Preston became an icon—a character whose steady moral compass and quick thinking could be relied upon week after week, making him as familiar to listeners as a trusted friend. The show's careful attention to atmosphere, combined with sound design that brought the howling winds and cracking ice to vivid life, elevated it beyond mere escapism into something approaching art.</p>
 <p>Don your warmest coat and join Sergeant Preston as he confronts "The Devil Dog." Whether you're a longtime devotee of the Yukon's greatest lawman or discovering this classic adventure serial for the first time, this episode captures everything that made radio's golden age truly golden. Tune in and let the crackling voices and sound effects transport you north to a world of mystery, danger, and unflinching justice.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

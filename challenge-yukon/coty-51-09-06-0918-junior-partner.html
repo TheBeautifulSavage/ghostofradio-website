@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 09 06 (0918) Junior Partner — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0918) Junior Partner — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 09 06 (0918) Junior Partner — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 09 06 (0918) Junior Partner — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 09 06 (0918) Junior Partner — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 09 06 (0918) Junior Partner</h1>
+          <h1 class="episode__title">(0918) Junior Partner</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Junior Partner</p>
-<p>Picture yourself huddled around the radio on a crisp autumn evening as Sergeant Preston and his faithful dog King thunder across the frozen tundra in pursuit of justice. In "Junior Partner," a young newcomer to the Yukon finds himself caught between ambition and integrity when he's offered a chance to strike it rich—but only if he turns a blind eye to criminal activity. As Preston closes in on a dangerous smuggling operation, the boy must decide whether to become the Sergeant's trusted ally or remain entangled in a web of greed and deception. The episode crackles with the tension of a moral crossroads, set against a backdrop of howling winds, creaking dog sleds, and the ever-present danger lurking in Canada's vast wilderness.</p>
-<p>*Challenge of the Yukon* captivated millions throughout the 1940s precisely because it balanced thrilling adventure with genuine character development and frontier ethics. Sergeant Preston became an American institution—the ideal lawman whose unwavering moral compass never wavered, even when facing criminals far more ruthless than himself. This particular episode exemplifies what made the series resonate with audiences seeking escape from Depression-era hardship and later wartime anxieties. The show's authentic Yukon setting, combined with tales of ordinary people tested by extraordinary circumstances, offered listeners both excitement and reassurance that integrity could triumph even in the harshest conditions.</p>
-<p>Don't miss this chance to experience radio drama at its finest. Tune in for "Junior Partner" and discover why *Challenge of the Yukon* remains a beloved classic—where the call of the wild meets the call of conscience, and a boy learns what it truly means to wear the badge of honor.</p>
+          <p>Picture yourself huddled around the radio on a crisp autumn evening as Sergeant Preston and his faithful dog King thunder across the frozen tundra in pursuit of justice. In "Junior Partner," a young newcomer to the Yukon finds himself caught between ambition and integrity when he's offered a chance to strike it rich—but only if he turns a blind eye to criminal activity. As Preston closes in on a dangerous smuggling operation, the boy must decide whether to become the Sergeant's trusted ally or remain entangled in a web of greed and deception. The episode crackles with the tension of a moral crossroads, set against a backdrop of howling winds, creaking dog sleds, and the ever-present danger lurking in Canada's vast wilderness.</p>
+<p>Challenge of the Yukon captivated millions throughout the 1940s precisely because it balanced thrilling adventure with genuine character development and frontier ethics. Sergeant Preston became an American institution—the ideal lawman whose unwavering moral compass never wavered, even when facing criminals far more ruthless than himself. This particular episode exemplifies what made the series resonate with audiences seeking escape from Depression-era hardship and later wartime anxieties. The show's authentic Yukon setting, combined with tales of ordinary people tested by extraordinary circumstances, offered listeners both excitement and reassurance that integrity could triumph even in the harshest conditions.</p>
+<p>Don't miss this chance to experience radio drama at its finest. Tune in for "Junior Partner" and discover why Challenge of the Yukon remains a beloved classic—where the call of the wild meets the call of conscience, and a boy learns what it truly means to wear the badge of honor.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

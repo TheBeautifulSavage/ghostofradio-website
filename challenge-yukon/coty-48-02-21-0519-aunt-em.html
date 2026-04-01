@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 02 21 (0519) Aunt Em — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0519) Aunt Em — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 02 21 (0519) Aunt Em — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 02 21 (0519) Aunt Em — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 02 21 (0519) Aunt Em — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 21, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 02 21 (0519) Aunt Em</h1>
+          <h1 class="episode__title">(0519) Aunt Em</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Aunt Em"</p>
-<p>Picture yourself huddled close to the radio on a winter's evening as Sergeant Preston and his magnificent dog King thunder across the frozen Yukon wasteland. In this gripping episode, the stalwart Mountie faces a mystery that strikes at the heart of human nature itself when a woman from his past—his own Aunt Em—arrives in the territory under troubling circumstances. Is she fleeing danger, or has she brought it with her? As the northern winds howl through the valleys of Dawson, Preston must uncover the truth while protecting the woman who once cared for him as a boy. The tension builds with every dog-sled chase and every cryptic clue, as listeners are transported to a world where loyalty, duty, and family bonds are tested against the unforgiving landscape of the Canadian frontier.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon precisely because it balanced authentic adventure with deeply personal stories. Rather than mere action-for-action's-sake, creator George W. Trendle crafted tales that explored the moral complexities faced by a lawman who must be both compassionate and unbending. The show's decade-long run on ABC and Mutual networks made Sergeant Preston a household name, while the character's grounded decency—his quiet courage, his respect for the land and its people—offered listeners a rare heroic figure untouched by cynicism. Each episode was a masterclass in radio storytelling, using sound effects and voice acting to create vivid scenes that required nothing but imagination.</p>
-<p>Don't miss this compelling episode that reminds us why *Challenge of the Yukon* remains beloved by radio enthusiasts today. Tune in and discover why Preston's name became synonymous with integrity in an era hungry for genuine heroes.</p>
+          <p>Picture yourself huddled close to the radio on a winter's evening as Sergeant Preston and his magnificent dog King thunder across the frozen Yukon wasteland. In this gripping episode, the stalwart Mountie faces a mystery that strikes at the heart of human nature itself when a woman from his past—his own Aunt Em—arrives in the territory under troubling circumstances. Is she fleeing danger, or has she brought it with her? As the northern winds howl through the valleys of Dawson, Preston must uncover the truth while protecting the woman who once cared for him as a boy. The tension builds with every dog-sled chase and every cryptic clue, as listeners are transported to a world where loyalty, duty, and family bonds are tested against the unforgiving landscape of the Canadian frontier.</p>
+<p>Challenge of the Yukon became a cultural phenomenon precisely because it balanced authentic adventure with deeply personal stories. Rather than mere action-for-action's-sake, creator George W. Trendle crafted tales that explored the moral complexities faced by a lawman who must be both compassionate and unbending. The show's decade-long run on ABC and Mutual networks made Sergeant Preston a household name, while the character's grounded decency—his quiet courage, his respect for the land and its people—offered listeners a rare heroic figure untouched by cynicism. Each episode was a masterclass in radio storytelling, using sound effects and voice acting to create vivid scenes that required nothing but imagination.</p>
+<p>Don't miss this compelling episode that reminds us why Challenge of the Yukon remains beloved by radio enthusiasts today. Tune in and discover why Preston's name became synonymous with integrity in an era hungry for genuine heroes.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 11 24 (0579) Old Moby's Cairn — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0579) Old Moby's Cairn — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 11 24 (0579) Old Moby's Cairn — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 11 24 (0579) Old Moby's Cairn — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 11 24 (0579) Old Moby's Cairn — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 24, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 11 24 (0579) Old Moby's Cairn</h1>
+          <h1 class="episode__title">(0579) Old Moby's Cairn</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Old Moby's Cairn</p>
-<p>Picture yourself huddled close to your radio on a bitter November evening, the wind howling outside your window like the wolves of the Canadian frontier. In this gripping episode, Sergeant Preston of the Royal Canadian Mounted Police finds himself drawn into the mysterious case of Old Moby's Cairn—a lonely stone monument standing sentinel over the frozen Yukon wilderness. When a desperate prospector stumbles into Fort Constantine with a cryptic map and a tale of hidden gold, Preston must navigate treacherous mountain passes and confront both the brutal landscape and the darker impulses of men consumed by gold fever. The clock is ticking, and danger lurks at every turn as our intrepid Mountie races against time, his loyal sled dog King at his side, to uncover the truth buried beneath the stones.</p>
-<p>*Challenge of the Yukon* captured the imagination of millions throughout the 1940s, transporting listeners far from their everyday concerns into a realm of adventure, justice, and frontier heroism. As America faced the uncertainties of wartime, Sergeant Preston's unwavering moral code and triumph against impossible odds provided reassurance and escapism. The show's authentic atmosphere—crafted through masterful sound design, evocative voice performances, and stories rooted in genuine Yukon lore—made listeners feel they were truly on the frozen frontier alongside Preston. By 1940, the program had become a cultural phenomenon, spawning merchandise, comic strips, and a devoted audience that tuned in religiously.</p>
-<p>Don your parka and prepare your ears for adventure. Tune in now to hear how Sergeant Preston solves the mystery of Old Moby's Cairn—where greed collides with justice, and one man's determination proves mightier than the wilderness itself. *On, King, on!*</p>
+          <p>Picture yourself huddled close to your radio on a bitter November evening, the wind howling outside your window like the wolves of the Canadian frontier. In this gripping episode, Sergeant Preston of the Royal Canadian Mounted Police finds himself drawn into the mysterious case of Old Moby's Cairn—a lonely stone monument standing sentinel over the frozen Yukon wilderness. When a desperate prospector stumbles into Fort Constantine with a cryptic map and a tale of hidden gold, Preston must navigate treacherous mountain passes and confront both the brutal landscape and the darker impulses of men consumed by gold fever. The clock is ticking, and danger lurks at every turn as our intrepid Mountie races against time, his loyal sled dog King at his side, to uncover the truth buried beneath the stones.</p>
+<p>Challenge of the Yukon captured the imagination of millions throughout the 1940s, transporting listeners far from their everyday concerns into a realm of adventure, justice, and frontier heroism. As America faced the uncertainties of wartime, Sergeant Preston's unwavering moral code and triumph against impossible odds provided reassurance and escapism. The show's authentic atmosphere—crafted through masterful sound design, evocative voice performances, and stories rooted in genuine Yukon lore—made listeners feel they were truly on the frozen frontier alongside Preston. By 1940, the program had become a cultural phenomenon, spawning merchandise, comic strips, and a devoted audience that tuned in religiously.</p>
+<p>Don your parka and prepare your ears for adventure. Tune in now to hear how Sergeant Preston solves the mystery of Old Moby's Cairn—where greed collides with justice, and one man's determination proves mightier than the wilderness itself. On, King, on!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

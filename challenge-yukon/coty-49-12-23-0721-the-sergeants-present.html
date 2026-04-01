@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 12 23 (0721) The Sergeant's Present — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0721) The Sergeant's Present — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 12 23 (0721) The Sergeant's Present — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 12 23 (0721) The Sergeant's Present — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 12 23 (0721) The Sergeant's Present — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 23, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 12 23 (0721) The Sergeant's Present</h1>
+          <h1 class="episode__title">(0721) The Sergeant's Present</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Sergeant's Present</p>
-<p>As Christmas approaches in the frozen wilds of Canada's remote Yukon Territory, Sergeant Preston of the Royal Canadian Mounted Police faces an unexpected crisis that threatens to shatter the holiday spirit of Fort Yukon. When a mysterious package arrives at the trading post addressed to the Sergeant himself, Preston and his faithful dog King must unravel a web of deception that could expose a dangerous criminal hiding in plain sight among the settlement's most beloved citizens. Will the Sergeant discover what truly lies beneath the wrapping before midnight strikes on Christmas Eve? Listeners will find themselves transported into a world of swirling snow, crackling radio static, and mounting tension as Preston navigates treacherous mountain passes and interrogates suspects whose motives are as murky as the arctic fog that surrounds them.</p>
-<p>*Challenge of the Yukon* became a cornerstone of American radio entertainment during the Depression and war years, capturing listeners' imaginations with tales of justice, loyalty, and survival in an untamed frontier. The show's enduring appeal lay in its perfect marriage of authenticity and adventure—while the narrative thrills were undeniably fictional, the show's creators grounded their stories in genuine Yukon geography and the real traditions of the Mounted Police. The character of Sergeant Preston, brought to life with gravitas by actor Paul Sutherland, embodied an idealized but deeply resonant vision of frontier heroism that appealed equally to children and adults. King, his noble sled dog, became as iconic as Preston himself, a four-legged symbol of courage and unwavering loyalty.</p>
+          <p>As Christmas approaches in the frozen wilds of Canada's remote Yukon Territory, Sergeant Preston of the Royal Canadian Mounted Police faces an unexpected crisis that threatens to shatter the holiday spirit of Fort Yukon. When a mysterious package arrives at the trading post addressed to the Sergeant himself, Preston and his faithful dog King must unravel a web of deception that could expose a dangerous criminal hiding in plain sight among the settlement's most beloved citizens. Will the Sergeant discover what truly lies beneath the wrapping before midnight strikes on Christmas Eve? Listeners will find themselves transported into a world of swirling snow, crackling radio static, and mounting tension as Preston navigates treacherous mountain passes and interrogates suspects whose motives are as murky as the arctic fog that surrounds them.</p>
+<p>Challenge of the Yukon became a cornerstone of American radio entertainment during the Depression and war years, capturing listeners' imaginations with tales of justice, loyalty, and survival in an untamed frontier. The show's enduring appeal lay in its perfect marriage of authenticity and adventure—while the narrative thrills were undeniably fictional, the show's creators grounded their stories in genuine Yukon geography and the real traditions of the Mounted Police. The character of Sergeant Preston, brought to life with gravitas by actor Paul Sutherland, embodied an idealized but deeply resonant vision of frontier heroism that appealed equally to children and adults. King, his noble sled dog, became as iconic as Preston himself, a four-legged symbol of courage and unwavering loyalty.</p>
 <p>Don't miss this festive episode from the golden age of radio drama. Tune in to experience the adventure, the mystery, and the timeless appeal that kept millions gathered around their radio sets night after night.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

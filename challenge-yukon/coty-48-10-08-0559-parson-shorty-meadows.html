@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 10 08 (0559) Parson Shorty Meadows — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0559) Parson Shorty Meadows — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 10 08 (0559) Parson Shorty Meadows — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 10 08 (0559) Parson Shorty Meadows — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 10 08 (0559) Parson Shorty Meadows — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 8, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 10 08 (0559) Parson Shorty Meadows</h1>
+          <h1 class="episode__title">(0559) Parson Shorty Meadows</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Parson Shorty Meadows</p>
-<p>As autumn winds howl across the frozen Yukon, Sergeant Preston and his magnificent dog King face their most unusual mystery yet. When the gentle Parson Shorty Meadows—a man of cloth and conscience—vanishes from his remote mission chapel, the good sergeant must navigate a treacherous landscape of conflicting loyalties, frontier justice, and the question of whether redemption is possible in the harsh north. Listeners will find themselves gripped by the tension as Preston uncovers a web of secrets that threatens to destroy the fragile community that Parson Meadows has worked so faithfully to build. The crackling of the fire, the yelp of sled dogs, and the whispered confessions of desperate men create an atmosphere thick with moral complexity—far removed from simple heroics.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon precisely because it refused to paint its frontier world in simple blacks and whites. Broadcasting during the golden age of radio when families huddled around their sets, the show captured something essential about the Canadian north while exploring the deeper human struggles that transcend geography. Sergeant Preston himself—a Mountie bound by duty and law—embodied the tension between rigid authority and individual compassion, making him endlessly fascinating to audiences. Episodes like "Parson Shorty Meadows" showcase the writers' skill at blending adventure with genuine character drama, proving that adventure stories could possess real emotional depth.</p>
-<p>Don your parka and prepare yourself for the wilds of the Yukon. This episode of *Challenge of the Yukon* awaits—a masterclass in old-time radio storytelling that captures both the romance and the moral complexity of the North. Tune in and discover why generations of listeners made Sergeant Preston and King their trusted companions through countless winter evenings.</p>
+          <p>As autumn winds howl across the frozen Yukon, Sergeant Preston and his magnificent dog King face their most unusual mystery yet. When the gentle Parson Shorty Meadows—a man of cloth and conscience—vanishes from his remote mission chapel, the good sergeant must navigate a treacherous landscape of conflicting loyalties, frontier justice, and the question of whether redemption is possible in the harsh north. Listeners will find themselves gripped by the tension as Preston uncovers a web of secrets that threatens to destroy the fragile community that Parson Meadows has worked so faithfully to build. The crackling of the fire, the yelp of sled dogs, and the whispered confessions of desperate men create an atmosphere thick with moral complexity—far removed from simple heroics.</p>
+<p>Challenge of the Yukon became a cultural phenomenon precisely because it refused to paint its frontier world in simple blacks and whites. Broadcasting during the golden age of radio when families huddled around their sets, the show captured something essential about the Canadian north while exploring the deeper human struggles that transcend geography. Sergeant Preston himself—a Mountie bound by duty and law—embodied the tension between rigid authority and individual compassion, making him endlessly fascinating to audiences. Episodes like "Parson Shorty Meadows" showcase the writers' skill at blending adventure with genuine character drama, proving that adventure stories could possess real emotional depth.</p>
+<p>Don your parka and prepare yourself for the wilds of the Yukon. This episode of Challenge of the Yukon awaits—a masterclass in old-time radio storytelling that captures both the romance and the moral complexity of the North. Tune in and discover why generations of listeners made Sergeant Preston and King their trusted companions through countless winter evenings.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

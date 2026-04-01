@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 10 12 (0350) King Saves The Day — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0350) King Saves The Day — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 10 12 (0350) King Saves The Day — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 10 12 (0350) King Saves The Day — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 10 12 (0350) King Saves The Day — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 12, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 10 12 (0350) King Saves The Day</h1>
+          <h1 class="episode__title">(0350) King Saves The Day</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: King Saves The Day</p>
-<p>Picture yourself huddled close to your radio on a crisp autumn evening as Sergeant Preston of the Royal Canadian Mounted Police faces his most desperate hour yet. In "King Saves The Day," our intrepid lawman finds himself trapped in the unforgiving Yukon wilderness with danger closing in from all sides—and only his loyal sled dog King stands between him and certain doom. As the tension mounts and the howling wind cuts through the frozen landscape, listeners will experience the full measure of Preston's courage and resourcefulness. With each passing moment, King's instincts prove invaluable, demonstrating the profound bond between man and beast that defines survival in the Canadian north. This episode masterfully captures the show's signature blend of genuine peril, outdoor adventure, and the unshakeable partnership that made Sergeant Preston an American institution.</p>
-<p>What made *Challenge of the Yukon* so captivating to millions of listeners was its grounding in real adventure—the show drew inspiration from actual Canadian geography and RCMP traditions, lending authenticity to even the most thrilling escapades. Produced during radio's golden age when sound effects and voice acting reigned supreme, each episode transported audiences to a world of glacial peaks, dog sledding, and frontier justice. The program's longevity from 1938 through the 1950s speaks to its enduring appeal, combining elements that audiences craved: heroic protagonists, exotic settings, and animals that listeners came to love almost as much as the human characters.</p>
+          <p>Picture yourself huddled close to your radio on a crisp autumn evening as Sergeant Preston of the Royal Canadian Mounted Police faces his most desperate hour yet. In "King Saves The Day," our intrepid lawman finds himself trapped in the unforgiving Yukon wilderness with danger closing in from all sides—and only his loyal sled dog King stands between him and certain doom. As the tension mounts and the howling wind cuts through the frozen landscape, listeners will experience the full measure of Preston's courage and resourcefulness. With each passing moment, King's instincts prove invaluable, demonstrating the profound bond between man and beast that defines survival in the Canadian north. This episode masterfully captures the show's signature blend of genuine peril, outdoor adventure, and the unshakeable partnership that made Sergeant Preston an American institution.</p>
+<p>What made Challenge of the Yukon so captivating to millions of listeners was its grounding in real adventure—the show drew inspiration from actual Canadian geography and RCMP traditions, lending authenticity to even the most thrilling escapades. Produced during radio's golden age when sound effects and voice acting reigned supreme, each episode transported audiences to a world of glacial peaks, dog sledding, and frontier justice. The program's longevity from 1938 through the 1950s speaks to its enduring appeal, combining elements that audiences craved: heroic protagonists, exotic settings, and animals that listeners came to love almost as much as the human characters.</p>
 <p>Don't miss this gripping tale of man and dog against the elements. Tune in to "King Saves The Day" and discover why Sergeant Preston became a beloved fixture in American radio history, a testament to the power of storytelling when the only limits were imagination itself.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

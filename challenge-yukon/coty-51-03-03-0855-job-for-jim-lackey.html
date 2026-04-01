@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 03 03 (0855) Job For Jim Lackey — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0855) Job For Jim Lackey — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 03 03 (0855) Job For Jim Lackey — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 03 03 (0855) Job For Jim Lackey — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 03 03 (0855) Job For Jim Lackey — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 03 03 (0855) Job For Jim Lackey</h1>
+          <h1 class="episode__title">(0855) Job For Jim Lackey</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Job For Jim Lackey"</p>
-<p>As the familiar bugle call pierces the crackling static of your radio speaker, Sergeant Preston of the Royal Canadian Mounted Police rides into the frozen heart of the Klondike, his faithful sled dog King at his side. In this gripping 1940s episode, listeners are thrust into a tense tale of frontier justice where nothing is quite as it seems. A mysterious job offer brings Jim Lackey into the remote wilderness—but is the work legitimate, or does danger lurk beneath the surface? With every howling wind effect and ominous musical sting, the tension mounts as Preston must uncover the truth before an innocent man falls victim to a carefully laid trap. The chemistry between the Sergeant's steady determination and King's instinctive wisdom creates those magical moments that made this series essential listening for millions of Americans huddled around their radios.</p>
-<p>*Challenge of the Yukon* dominated adventure programming during the Golden Age of Radio, running from 1938 to 1955 with unflagging popularity across ABC and Mutual networks. The series brilliantly captured post-Depression America's hunger for tales of honor, danger, and frontier morality—where a lone lawman and his dog represented order in a vast, untamed landscape. Preston became an iconic figure in radio history, embodying the virtues audiences desperately wanted to believe in: courage, loyalty, and unwavering justice. These episodes remain pristine recordings of a vanished era, preserving not just entertainment but a window into what captivated the American imagination during the tumultuous 1940s.</p>
+          <p>As the familiar bugle call pierces the crackling static of your radio speaker, Sergeant Preston of the Royal Canadian Mounted Police rides into the frozen heart of the Klondike, his faithful sled dog King at his side. In this gripping 1940s episode, listeners are thrust into a tense tale of frontier justice where nothing is quite as it seems. A mysterious job offer brings Jim Lackey into the remote wilderness—but is the work legitimate, or does danger lurk beneath the surface? With every howling wind effect and ominous musical sting, the tension mounts as Preston must uncover the truth before an innocent man falls victim to a carefully laid trap. The chemistry between the Sergeant's steady determination and King's instinctive wisdom creates those magical moments that made this series essential listening for millions of Americans huddled around their radios.</p>
+<p>Challenge of the Yukon dominated adventure programming during the Golden Age of Radio, running from 1938 to 1955 with unflagging popularity across ABC and Mutual networks. The series brilliantly captured post-Depression America's hunger for tales of honor, danger, and frontier morality—where a lone lawman and his dog represented order in a vast, untamed landscape. Preston became an iconic figure in radio history, embodying the virtues audiences desperately wanted to believe in: courage, loyalty, and unwavering justice. These episodes remain pristine recordings of a vanished era, preserving not just entertainment but a window into what captivated the American imagination during the tumultuous 1940s.</p>
 <p>So settle into your chair, switch off the lights, and let this timeless adventure transport you northward to where danger and duty converge. "Job For Jim Lackey" awaits—another unforgettable chapter in Sergeant Preston's legendary service to the Yukon.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

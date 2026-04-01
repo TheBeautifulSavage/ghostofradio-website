@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 10 04 (0930) Open And Shut — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0930) Open And Shut — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 10 04 (0930) Open And Shut — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 10 04 (0930) Open And Shut — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 10 04 (0930) Open And Shut — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 10 04 (0930) Open And Shut</h1>
+          <h1 class="episode__title">(0930) Open And Shut</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Open and Shut"</p>
-<p>Picture yourself huddled near the radio on a crisp autumn evening, the crackle of the speaker giving way to the thundering hoofbeats of a galloping horse and the distant howl of sled dogs cutting through the frozen silence of Canada's vast northern wilderness. In "Open and Shut," Sergeant Preston of the Royal Canadian Mounted Police faces a case that seems straightforward on its surface—until the Yukon's treacherous landscape and the cunning of desperate men transform it into something far more sinister. With King, his loyal husky companion, at his side, Preston must navigate avalanche-prone mountain passes, uncover lies buried deeper than permafrost, and confront criminals who exploit the North's isolation to hide their schemes. The episode builds tension masterfully, as listeners follow Preston's investigation through dialogue crackling with authenticity and sound effects that transport you directly into the wilderness.</p>
-<p>What made *Challenge of the Yukon* extraordinary was its meticulous attention to authentic detail—the writers consulted actual RCMP records and Arctic survival manuals, grounding each adventure in plausible danger. Airing throughout the golden age of radio, the series captivated millions of listeners with its blend of hard-boiled detective work and frontier adventure, embodying the 1940s fascination with untamed wilderness and law and order's triumph over chaos. Sergeant Preston became an iconic figure in radio history, as memorable as any character broadcast across the airwaves.</p>
+          <p>Picture yourself huddled near the radio on a crisp autumn evening, the crackle of the speaker giving way to the thundering hoofbeats of a galloping horse and the distant howl of sled dogs cutting through the frozen silence of Canada's vast northern wilderness. In "Open and Shut," Sergeant Preston of the Royal Canadian Mounted Police faces a case that seems straightforward on its surface—until the Yukon's treacherous landscape and the cunning of desperate men transform it into something far more sinister. With King, his loyal husky companion, at his side, Preston must navigate avalanche-prone mountain passes, uncover lies buried deeper than permafrost, and confront criminals who exploit the North's isolation to hide their schemes. The episode builds tension masterfully, as listeners follow Preston's investigation through dialogue crackling with authenticity and sound effects that transport you directly into the wilderness.</p>
+<p>What made Challenge of the Yukon extraordinary was its meticulous attention to authentic detail—the writers consulted actual RCMP records and Arctic survival manuals, grounding each adventure in plausible danger. Airing throughout the golden age of radio, the series captivated millions of listeners with its blend of hard-boiled detective work and frontier adventure, embodying the 1940s fascination with untamed wilderness and law and order's triumph over chaos. Sergeant Preston became an iconic figure in radio history, as memorable as any character broadcast across the airwaves.</p>
 <p>Tune in now to experience "Open and Shut"—a masterclass in radio drama where every sound effect, every pause, and every inflection of the actors' voices weaves a spell that brings the Yukon vividly to life, proving why this show remained a beloved staple of American homes for nearly two decades.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

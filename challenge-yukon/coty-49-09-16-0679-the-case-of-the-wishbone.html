@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 09 16 (0679) The Case Of The Wishbone — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0679) The Case Of The Wishbone — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 09 16 (0679) The Case Of The Wishbone — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 09 16 (0679) The Case Of The Wishbone — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 09 16 (0679) The Case Of The Wishbone — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 16, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 09 16 (0679) The Case Of The Wishbone</h1>
+          <h1 class="episode__title">(0679) The Case Of The Wishbone</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Case of the Wishbone</p>
-<p>Picture yourself huddled near the radio on a crisp autumn evening, the faithful King straining against his harness as Sergeant Preston pushes deeper into the frozen Yukon wilderness. In "The Case of the Wishbone," our intrepid Mountie finds himself tangled in a mystery as twisted as the frontier itself—a simple bone becomes the centerpiece of a desperate hunt involving claim-jumpers, hidden gold, and the kind of treachery that only the frozen north can breed. With cracking ice underfoot and danger closing in from all sides, Preston must unravel the truth before greed and desperation claim another victim in this unforgiving landscape.</p>
-<p>What made *Challenge of the Yukon* an enduring favorite from 1938 through the 1950s was precisely this formula: the marriage of historical adventure with intimate, character-driven storytelling. The show brilliantly captured the goldfields era's romance and brutality, drawing listeners into a world where justice was personal and the wilderness itself became a character. Sergeant Preston, voiced by Paul Sutherland's commanding presence, embodied the Canadian Mountie archetype—incorruptible, resourceful, and backed by King, one of radio's most beloved canine sidekicks. Each episode reflected authentic period detail alongside the kind of serialized mystery-solving that kept families gathering around the radio week after week.</p>
+          <p>Picture yourself huddled near the radio on a crisp autumn evening, the faithful King straining against his harness as Sergeant Preston pushes deeper into the frozen Yukon wilderness. In "The Case of the Wishbone," our intrepid Mountie finds himself tangled in a mystery as twisted as the frontier itself—a simple bone becomes the centerpiece of a desperate hunt involving claim-jumpers, hidden gold, and the kind of treachery that only the frozen north can breed. With cracking ice underfoot and danger closing in from all sides, Preston must unravel the truth before greed and desperation claim another victim in this unforgiving landscape.</p>
+<p>What made Challenge of the Yukon an enduring favorite from 1938 through the 1950s was precisely this formula: the marriage of historical adventure with intimate, character-driven storytelling. The show brilliantly captured the goldfields era's romance and brutality, drawing listeners into a world where justice was personal and the wilderness itself became a character. Sergeant Preston, voiced by Paul Sutherland's commanding presence, embodied the Canadian Mountie archetype—incorruptible, resourceful, and backed by King, one of radio's most beloved canine sidekicks. Each episode reflected authentic period detail alongside the kind of serialized mystery-solving that kept families gathering around the radio week after week.</p>
 <p>For fans of classic adventure radio, "The Case of the Wishbone" stands as a perfect entry point—or a treasured rediscovery—into a golden age when storytelling meant transporting listeners across time and geography through nothing but voice, sound effects, and imagination. Tune in to experience radio drama at its finest, where every creak of the dog sled and every whispered threat carries the weight of genuine adventure.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

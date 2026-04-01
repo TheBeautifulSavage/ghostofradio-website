@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 06 13 (0435) The Great Dane — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0435) The Great Dane — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 06 13 (0435) The Great Dane — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 06 13 (0435) The Great Dane — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 06 13 (0435) The Great Dane — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · June 13, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 06 13 (0435) The Great Dane</h1>
+          <h1 class="episode__title">(0435) The Great Dane</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Great Dane</p>
-<p>The howl of sled dogs cuts through the frozen Yukon silence as Sergeant Preston of the Royal Canadian Mounted Police finds himself entangled in a mystery that begins with an unlikely arrival: a massive Great Dane, far from home and far too valuable to be abandoned in the wilderness. When the magnificent beast is discovered half-starved near a remote trading post, Preston must unravel the threads connecting a stolen dog, desperate criminals, and a fortune in missing jewels. As the relentless northern cold closes in and suspects multiply, listeners will experience the trademark blend of outdoor adventure and detective work that made this series an institution—tension mounting with each clue, danger lurking around every snow-covered corner, and Preston's steadfast moral compass guiding him toward justice. The episode crackles with the authenticity of the far north: the snap of bitter wind, the jingle of dog harnesses, and always, the urgent bark of his faithful companion King.</p>
-<p>*Challenge of the Yukon* captivated millions throughout the Golden Age of Radio by grounding its adventure stories in the real history of Canada's frozen frontier, where the RCMP maintained law and order across impossible distances. By the 1940s, when this episode aired, the show had become beloved for its perfect marriage of action-packed storytelling and genuine geographical detail—listeners could almost feel the frost bite through their radio speakers. Sergeant Preston became an American icon while celebrating Canadian heritage, a rare achievement in broadcasting that resonated across both nations.</p>
+          <p>The howl of sled dogs cuts through the frozen Yukon silence as Sergeant Preston of the Royal Canadian Mounted Police finds himself entangled in a mystery that begins with an unlikely arrival: a massive Great Dane, far from home and far too valuable to be abandoned in the wilderness. When the magnificent beast is discovered half-starved near a remote trading post, Preston must unravel the threads connecting a stolen dog, desperate criminals, and a fortune in missing jewels. As the relentless northern cold closes in and suspects multiply, listeners will experience the trademark blend of outdoor adventure and detective work that made this series an institution—tension mounting with each clue, danger lurking around every snow-covered corner, and Preston's steadfast moral compass guiding him toward justice. The episode crackles with the authenticity of the far north: the snap of bitter wind, the jingle of dog harnesses, and always, the urgent bark of his faithful companion King.</p>
+<p>Challenge of the Yukon captivated millions throughout the Golden Age of Radio by grounding its adventure stories in the real history of Canada's frozen frontier, where the RCMP maintained law and order across impossible distances. By the 1940s, when this episode aired, the show had become beloved for its perfect marriage of action-packed storytelling and genuine geographical detail—listeners could almost feel the frost bite through their radio speakers. Sergeant Preston became an American icon while celebrating Canadian heritage, a rare achievement in broadcasting that resonated across both nations.</p>
 <p>Join Sergeant Preston and King as they brave the unforgiving wilderness in pursuit of the truth. Tune in now and experience radio's finest hour—when adventure meant something real, and a lawman's word was as solid as the Yukon bedrock beneath his boots.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

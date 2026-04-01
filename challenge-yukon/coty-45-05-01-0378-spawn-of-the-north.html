@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 05 01 (0378) Spawn Of The North — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0378) Spawn Of The North — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 05 01 (0378) Spawn Of The North — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 05 01 (0378) Spawn Of The North — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 05 01 (0378) Spawn Of The North — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 1, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 05 01 (0378) Spawn Of The North</h1>
+          <h1 class="episode__title">(0378) Spawn Of The North</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Spawn Of The North</p>
-<p>As the familiar strains of "Donna Diana" swell through your speaker, you're transported once more to the frozen vastness of Canada's untamed frontier. In "Spawn of the North," Sergeant Preston of the Yukon faces a mystery that cuts to the heart of the northern wilderness—a case where the line between man and beast blurs dangerously in the sub-zero darkness. When a series of brutal attacks terrorizes a remote trading post, Preston must uncover whether a rogue animal or something far more sinister stalks the snow-covered landscape. With only his faithful dog King and his wits to guide him through the howling wind and treacherous terrain, Preston pursues a trail that leads deeper into the unforgiving North, where survival itself becomes the ultimate challenge.</p>
+          <p>As the familiar strains of "Donna Diana" swell through your speaker, you're transported once more to the frozen vastness of Canada's untamed frontier. In "Spawn of the North," Sergeant Preston of the Yukon faces a mystery that cuts to the heart of the northern wilderness—a case where the line between man and beast blurs dangerously in the sub-zero darkness. When a series of brutal attacks terrorizes a remote trading post, Preston must uncover whether a rogue animal or something far more sinister stalks the snow-covered landscape. With only his faithful dog King and his wits to guide him through the howling wind and treacherous terrain, Preston pursues a trail that leads deeper into the unforgiving North, where survival itself becomes the ultimate challenge.</p>
 <p>"Challenge of the Yukon" captured the imagination of millions throughout the 1940s by blending genuine frontier adventure with the intimate immediacy of radio drama. Each episode crackled with authentic atmosphere—the howl of sled dogs, the crack of ice beneath boots, the whispered urgency of men facing nature's cruelest tests. The show became a touchstone of American adventure programming, spawning a devoted following that tuned in faithfully to hear Sergeant Preston's exploits. These weren't merely tales of danger; they were windows into a Canada still wild and mysterious, a place where a single man with courage and determination could face down the elements and evildoers alike.</p>
 <p>Don't miss your chance to experience the gripping suspense that kept listeners glued to their radios. "Spawn of the North" exemplifies everything that made this classic series an enduring favorite—vivid storytelling, memorable characters, and the indomitable spirit of adventure that defined the golden age of radio. Tune in and discover why Preston's legend still resonates today.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

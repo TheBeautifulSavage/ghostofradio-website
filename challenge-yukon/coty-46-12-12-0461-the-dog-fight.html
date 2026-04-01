@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 12 12 (0461) The Dog Fight — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0461) The Dog Fight — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 12 12 (0461) The Dog Fight — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 12 12 (0461) The Dog Fight — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 12 12 (0461) The Dog Fight — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 12, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 12 12 (0461) The Dog Fight</h1>
+          <h1 class="episode__title">(0461) The Dog Fight</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Dog Fight</p>
-<p>As the familiar strains of Rossini's William Tell Overture crackle through your speaker, you're transported to the frozen wilderness of Canada's northernmost frontier, where Sergeant Preston faces his most harrowing trial yet. In "The Dog Fight," our stalwart Mountie finds himself caught in a desperate struggle that threatens the very bond between man and beast. When a vicious wolf pack threatens not only Preston's life but the safety of King, his noble sled dog, the tension mounts with every howl echoing across the tundra. The drama unfolds in that signature blend of outdoor peril and moral clarity that made listeners of 1940s America and Canada lean closer to their radios, hearts pounding, as Preston must make an impossible choice between survival and loyalty.</p>
-<p>*Challenge of the Yukon* captivated millions throughout the Depression and war years, offering escapism through authentic tales of law and order in an untamed land. The show's meticulous attention to detail—from the geography of the Klondike to the protocols of the Royal Canadian Mounted Police—lent credibility that transported listeners beyond their living rooms into genuine adventure. Sergeant Preston became an American icon precisely because he represented enduring values: courage, justice, and an unwavering commitment to those who depend upon him. King himself became one of radio's most beloved animal characters, embodying the loyalty that defined the series' emotional core.</p>
+          <p>As the familiar strains of Rossini's William Tell Overture crackle through your speaker, you're transported to the frozen wilderness of Canada's northernmost frontier, where Sergeant Preston faces his most harrowing trial yet. In "The Dog Fight," our stalwart Mountie finds himself caught in a desperate struggle that threatens the very bond between man and beast. When a vicious wolf pack threatens not only Preston's life but the safety of King, his noble sled dog, the tension mounts with every howl echoing across the tundra. The drama unfolds in that signature blend of outdoor peril and moral clarity that made listeners of 1940s America and Canada lean closer to their radios, hearts pounding, as Preston must make an impossible choice between survival and loyalty.</p>
+<p>Challenge of the Yukon captivated millions throughout the Depression and war years, offering escapism through authentic tales of law and order in an untamed land. The show's meticulous attention to detail—from the geography of the Klondike to the protocols of the Royal Canadian Mounted Police—lent credibility that transported listeners beyond their living rooms into genuine adventure. Sergeant Preston became an American icon precisely because he represented enduring values: courage, justice, and an unwavering commitment to those who depend upon him. King himself became one of radio's most beloved animal characters, embodying the loyalty that defined the series' emotional core.</p>
 <p>Don your parka and hitch up the dogs for a thrilling journey into the Canadian wilderness. Whether you're a longtime devotee of Sergeant Preston or discovering this classic adventure for the first time, "The Dog Fight" delivers the pulse-pounding excitement and heart that made this program a cornerstone of golden age radio. Tune in and discover why generations found refuge and inspiration in Preston's frozen realm.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

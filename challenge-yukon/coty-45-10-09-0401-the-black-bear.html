@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 10 09 (0401) The Black Bear — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0401) The Black Bear — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 10 09 (0401) The Black Bear — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 10 09 (0401) The Black Bear — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 10 09 (0401) The Black Bear — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 9, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 10 09 (0401) The Black Bear</h1>
+          <h1 class="episode__title">(0401) The Black Bear</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Black Bear</p>
-<p>Picture yourself huddled around the radio on a crisp autumn evening as Sergeant Preston and his legendary dog King face their most formidable adversary yet—a massive black bear terrorizing the remote settlements of Canada's frozen frontier. In "The Black Bear," listeners are plunged into the treacherous wilderness where survival depends on quick thinking, steady nerves, and an unshakeable bond between man and beast. As Preston tracks the creature through dense forests and across icy terrain, the threat escalates from property damage to genuine peril. Will the Mountie's legendary courage and King's extraordinary hunting instincts be enough to stop a creature driven by primal hunger and wounded rage? The tension mounts with every footfall, every howl echoing through the darkness, every moment bringing Preston closer to a confrontation that could end in triumph—or tragedy.</p>
-<p>What made *Challenge of the Yukon* (known in later years as *Sergeant Preston of the Yukon*) such a beloved staple of American radio was its perfect blend of authentic adventure and timeless heroism. Premiering in 1938 and running for nearly two decades, the show captured listeners' imaginations by grounding fantastical tales in the real geography and genuine hardships of the Canadian north. Sergeant Preston embodied the ideal of the unflinching lawman, while King—based on real sled dogs of the era—became as iconic as his master. Episodes like "The Black Bear" reminded audiences that civilization remained fragile, that nature's power was absolute, and that courage meant facing the unknown with integrity intact.</p>
-<p>Tune in now and discover why millions of listeners made this show an essential part of their evenings. Let the crackling static and thundering orchestral theme transport you to a world where duty, loyalty, and adventure reign supreme. *Challenge of the Yukon* awaits.</p>
+          <p>Picture yourself huddled around the radio on a crisp autumn evening as Sergeant Preston and his legendary dog King face their most formidable adversary yet—a massive black bear terrorizing the remote settlements of Canada's frozen frontier. In "The Black Bear," listeners are plunged into the treacherous wilderness where survival depends on quick thinking, steady nerves, and an unshakeable bond between man and beast. As Preston tracks the creature through dense forests and across icy terrain, the threat escalates from property damage to genuine peril. Will the Mountie's legendary courage and King's extraordinary hunting instincts be enough to stop a creature driven by primal hunger and wounded rage? The tension mounts with every footfall, every howl echoing through the darkness, every moment bringing Preston closer to a confrontation that could end in triumph—or tragedy.</p>
+<p>What made Challenge of the Yukon (known in later years as Sergeant Preston of the Yukon) such a beloved staple of American radio was its perfect blend of authentic adventure and timeless heroism. Premiering in 1938 and running for nearly two decades, the show captured listeners' imaginations by grounding fantastical tales in the real geography and genuine hardships of the Canadian north. Sergeant Preston embodied the ideal of the unflinching lawman, while King—based on real sled dogs of the era—became as iconic as his master. Episodes like "The Black Bear" reminded audiences that civilization remained fragile, that nature's power was absolute, and that courage meant facing the unknown with integrity intact.</p>
+<p>Tune in now and discover why millions of listeners made this show an essential part of their evenings. Let the crackling static and thundering orchestral theme transport you to a world where duty, loyalty, and adventure reign supreme. Challenge of the Yukon awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

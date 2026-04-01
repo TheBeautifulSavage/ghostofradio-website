@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 07 19 (0897) Tom Barry's Return — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0897) Tom Barry's Return — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 07 19 (0897) Tom Barry's Return — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 07 19 (0897) Tom Barry's Return — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 07 19 (0897) Tom Barry's Return — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 07 19 (0897) Tom Barry's Return</h1>
+          <h1 class="episode__title">(0897) Tom Barry's Return</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Tom Barry's Return</p>
-<p>As the familiar strains of the "Donna Diana Overture" fade into the frozen darkness of the Yukon wilderness, listeners are transported once again to the remote outposts where Sergeant Preston of the Royal Canadian Mounted Police must confront an old adversary—the cunning Tom Barry. In this gripping episode, Preston faces a moral reckoning as his past catches up with him in the unforgiving northern territories. With the faithful King—his magnificent sled dog—at his side, Preston must navigate the treacherous landscape of both the frozen tundra and the human heart, where redemption and justice hang in the balance. The tension crackles through every moment as Barry's mysterious return threatens to unravel everything Preston has built in his pursuit of law and order across the frontier.</p>
-<p>*Challenge of the Yukon* dominated American radio throughout the 1940s and 1950s, captivating millions of listeners with its potent blend of genuine adventure and moral complexity. The show's genius lay in its refusal to paint the North as simply a backdrop for heroics; instead, it treated the Yukon as a character itself—harsh, unforgiving, and capable of transforming men. Sergeant Preston, portrayed with understated integrity, embodied the best of the RCMP mythology while remaining authentically human. Episodes like "Tom Barry's Return" demonstrated the show's sophisticated understanding that true heroism often meant confronting one's own failures and the failures of those around us.</p>
-<p>For radio enthusiasts and devotees of classic adventure programming, this episode represents *Challenge of the Yukon* at its finest—a perfect marriage of atmospheric storytelling, compelling character drama, and the romantic allure of Canada's untamed North. Tune in and discover why millions huddled around their radios, eager to follow Sergeant Preston into the wilderness.</p>
+          <p>As the familiar strains of the "Donna Diana Overture" fade into the frozen darkness of the Yukon wilderness, listeners are transported once again to the remote outposts where Sergeant Preston of the Royal Canadian Mounted Police must confront an old adversary—the cunning Tom Barry. In this gripping episode, Preston faces a moral reckoning as his past catches up with him in the unforgiving northern territories. With the faithful King—his magnificent sled dog—at his side, Preston must navigate the treacherous landscape of both the frozen tundra and the human heart, where redemption and justice hang in the balance. The tension crackles through every moment as Barry's mysterious return threatens to unravel everything Preston has built in his pursuit of law and order across the frontier.</p>
+<p>Challenge of the Yukon dominated American radio throughout the 1940s and 1950s, captivating millions of listeners with its potent blend of genuine adventure and moral complexity. The show's genius lay in its refusal to paint the North as simply a backdrop for heroics; instead, it treated the Yukon as a character itself—harsh, unforgiving, and capable of transforming men. Sergeant Preston, portrayed with understated integrity, embodied the best of the RCMP mythology while remaining authentically human. Episodes like "Tom Barry's Return" demonstrated the show's sophisticated understanding that true heroism often meant confronting one's own failures and the failures of those around us.</p>
+<p>For radio enthusiasts and devotees of classic adventure programming, this episode represents Challenge of the Yukon at its finest—a perfect marriage of atmospheric storytelling, compelling character drama, and the romantic allure of Canada's untamed North. Tune in and discover why millions huddled around their radios, eager to follow Sergeant Preston into the wilderness.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 06 01 (0331) A Joke Led To The Gallows — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0331) A Joke Led To The Gallows — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 06 01 (0331) A Joke Led To The Gallows — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 06 01 (0331) A Joke Led To The Gallows — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 06 01 (0331) A Joke Led To The Gallows — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · June 1, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 06 01 (0331) A Joke Led To The Gallows</h1>
+          <h1 class="episode__title">(0331) A Joke Led To The Gallows</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># A Joke Led To The Gallows</p>
-<p>Deep in the frozen vastness of Canada's Yukon Territory, a careless jest spoken in jest becomes a death sentence. When a prospector's offhand remark at a remote trading post is misunderstood by a desperate man, Sergeant Preston of the Royal Canadian Mounted Police finds himself racing against time through blizzard and tundra to prevent a terrible tragedy. As the snow falls thick and the temperature plummets below freezing, our hero and his loyal sled dog King must navigate the treacherous landscape and untangle a web of misunderstanding, mistaken identity, and frontier justice before an innocent man swings from the gallows. This episode crackles with the tension of a race against both nature and the law itself—a gripping reminder that in the harsh North, words can kill as surely as any bullet.</p>
-<p>*Challenge of the Yukon* captured American imaginations during the radio's golden age by blending authentic Mountie procedure with high-stakes frontier drama. Created during the late 1930s and flourishing throughout the 1940s, the show offered listeners a thrilling escape to a wild, lawless frontier where good triumphed through grit and moral clarity. Sergeant Preston became a cultural icon—noble, resourceful, and always just—embodying values that resonated with audiences navigating their own uncertain times. The program's commitment to authentic Canadian geography and RCMP protocol lent it credibility that kept listeners invested in Preston's adventures, episode after gripping episode.</p>
+          <p>Deep in the frozen vastness of Canada's Yukon Territory, a careless jest spoken in jest becomes a death sentence. When a prospector's offhand remark at a remote trading post is misunderstood by a desperate man, Sergeant Preston of the Royal Canadian Mounted Police finds himself racing against time through blizzard and tundra to prevent a terrible tragedy. As the snow falls thick and the temperature plummets below freezing, our hero and his loyal sled dog King must navigate the treacherous landscape and untangle a web of misunderstanding, mistaken identity, and frontier justice before an innocent man swings from the gallows. This episode crackles with the tension of a race against both nature and the law itself—a gripping reminder that in the harsh North, words can kill as surely as any bullet.</p>
+<p>Challenge of the Yukon captured American imaginations during the radio's golden age by blending authentic Mountie procedure with high-stakes frontier drama. Created during the late 1930s and flourishing throughout the 1940s, the show offered listeners a thrilling escape to a wild, lawless frontier where good triumphed through grit and moral clarity. Sergeant Preston became a cultural icon—noble, resourceful, and always just—embodying values that resonated with audiences navigating their own uncertain times. The program's commitment to authentic Canadian geography and RCMP protocol lent it credibility that kept listeners invested in Preston's adventures, episode after gripping episode.</p>
 <p>Don your parka and harness up King for a journey into one of radio's most beloved adventure series. This episode stands as a perfect entry point into the world of Sergeant Preston—atmospheric, suspenseful, and fundamentally human despite its exotic setting. Tune in and discover why millions gathered around their radio sets to follow this Mountie's quest for justice.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

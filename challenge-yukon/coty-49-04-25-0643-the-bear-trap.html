@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 04 25 (0643) The Bear Trap — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0643) The Bear Trap — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 04 25 (0643) The Bear Trap — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 04 25 (0643) The Bear Trap — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 04 25 (0643) The Bear Trap — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 25, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 04 25 (0643) The Bear Trap</h1>
+          <h1 class="episode__title">(0643) The Bear Trap</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Bear Trap</p>
-<p>Picture yourself huddled around the radio on a crisp evening as Sergeant Preston of the Yukon faces his most treacherous assignment yet. In "The Bear Trap," our stalwart Mountie must navigate the frozen wilderness where a massive grizzly has claimed the lives of three fur trappers, and local prospectors are convinced the beast is supernatural—a vengeful spirit that cannot be killed by ordinary means. With only his faithful husky King at his side and the howling wind cutting through the Yukon's unforgiving landscape, Preston must separate superstition from deadly reality. Will the sergeant's unwavering courage and detective's mind prove sufficient against both the savage animal and the panic-stricken frontier town that threatens to take matters into its own hands? The tension builds as traps are set, tracks are followed, and the mystery of the bear's true nature unravels in the dark northern night.</p>
+          <p>Picture yourself huddled around the radio on a crisp evening as Sergeant Preston of the Yukon faces his most treacherous assignment yet. In "The Bear Trap," our stalwart Mountie must navigate the frozen wilderness where a massive grizzly has claimed the lives of three fur trappers, and local prospectors are convinced the beast is supernatural—a vengeful spirit that cannot be killed by ordinary means. With only his faithful husky King at his side and the howling wind cutting through the Yukon's unforgiving landscape, Preston must separate superstition from deadly reality. Will the sergeant's unwavering courage and detective's mind prove sufficient against both the savage animal and the panic-stricken frontier town that threatens to take matters into its own hands? The tension builds as traps are set, tracks are followed, and the mystery of the bear's true nature unravels in the dark northern night.</p>
 <p>"Challenge of the Yukon" captured the imagination of millions during radio's golden age, blending authentic frontier adventure with genuine RCMP protocol and Yukon lore. Sergeant Preston became an American icon despite his Canadian setting, embodying the virtues listeners craved during the 1940s—integrity, courage, and dogged determination against impossible odds. The show's writers masterfully wove real historical elements and actual Mountie cases into thrilling narratives, creating a universe that felt genuinely lived-in. Each episode opened with the thundering hoofbeats of Preston's trusty mount and the iconic call, "On King, on!" — a phrase that became synonymous with adventure itself.</p>
 <p>Step into the Yukon with us and experience the raw, gripping storytelling that kept families glued to their radios for nearly two decades. "The Bear Trap" awaits—where danger lurks beneath every snowdrift.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

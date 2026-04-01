@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 11 15 (0833) Passport To Death — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0833) Passport To Death — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 11 15 (0833) Passport To Death — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 11 15 (0833) Passport To Death — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 11 15 (0833) Passport To Death — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 15, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 11 15 (0833) Passport To Death</h1>
+          <h1 class="episode__title">(0833) Passport To Death</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Passport To Death</p>
-<p>As the familiar strains of the "Yukon" theme fade into the howling Arctic wind, listeners are transported to a frozen frontier where danger lurks beneath every snowdrift. In this gripping installment, Sergeant Preston faces his most cunning adversary yet—not a common criminal, but a sophisticated forger whose deadly documents have already claimed lives across the Canadian wilderness. With King, his faithful husky, at his side, Preston must race against time to intercept a shipment of fraudulent passports that could allow a dangerous fugitive to slip through the border and vanish into legend. The tension crackles through the radio as our hero navigates treacherous avalanche country, suspicious traders, and the ever-present threat of exposure to the elements—where a wrong move means not just failure, but death.</p>
-<p>*Challenge of the Yukon* represented the golden age of adventure radio, a show that captured post-Depression America's yearning for heroic tales of justice and wilderness mastery. Running for nearly two decades across multiple networks, the series built its reputation on authentic Canadian geography, genuine RCMP procedure, and scripts that balanced action with genuine character development. The show's success spawned a film serial and comic books, but it was the intimate immediacy of radio that made Preston's adventures feel real—every bark from King, every gunshot, every breath of cold air placed listeners directly in the frozen North.</p>
-<p>If you've never experienced the raw, unvarnished thrill of classic radio adventure, *Passport To Death* is the perfect gateway into this vanished world. Settle in by your receiver, dim the lights, and let your imagination do what no television could—transport you to a place where honor, loyalty, and courage still meant everything.</p>
+          <p>As the familiar strains of the "Yukon" theme fade into the howling Arctic wind, listeners are transported to a frozen frontier where danger lurks beneath every snowdrift. In this gripping installment, Sergeant Preston faces his most cunning adversary yet—not a common criminal, but a sophisticated forger whose deadly documents have already claimed lives across the Canadian wilderness. With King, his faithful husky, at his side, Preston must race against time to intercept a shipment of fraudulent passports that could allow a dangerous fugitive to slip through the border and vanish into legend. The tension crackles through the radio as our hero navigates treacherous avalanche country, suspicious traders, and the ever-present threat of exposure to the elements—where a wrong move means not just failure, but death.</p>
+<p>Challenge of the Yukon represented the golden age of adventure radio, a show that captured post-Depression America's yearning for heroic tales of justice and wilderness mastery. Running for nearly two decades across multiple networks, the series built its reputation on authentic Canadian geography, genuine RCMP procedure, and scripts that balanced action with genuine character development. The show's success spawned a film serial and comic books, but it was the intimate immediacy of radio that made Preston's adventures feel real—every bark from King, every gunshot, every breath of cold air placed listeners directly in the frozen North.</p>
+<p>If you've never experienced the raw, unvarnished thrill of classic radio adventure, Passport To Death is the perfect gateway into this vanished world. Settle in by your receiver, dim the lights, and let your imagination do what no television could—transport you to a place where honor, loyalty, and courage still meant everything.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

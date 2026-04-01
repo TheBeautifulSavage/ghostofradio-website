@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 11 14 (0457) The Choice — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0457) The Choice — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 11 14 (0457) The Choice — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 11 14 (0457) The Choice — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 11 14 (0457) The Choice — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 14, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 11 14 (0457) The Choice</h1>
+          <h1 class="episode__title">(0457) The Choice</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Choice</p>
-<p>As twilight descends over the frozen Yukon wilderness and the northern lights dance across an endless expanse of white, Sergeant Preston of the Royal Canadian Mounted Police faces an impossible decision that will test the very code of justice he has sworn to uphold. In this gripping episode, a fugitive from civilization—a man whose crime may have been born of desperation rather than malice—seeks refuge in the frozen borderlands, and Preston must choose between the letter of the law and the mercy his heart demands. With his faithful husky King at his side and the relentless cold closing in like a living adversary, Preston tracks his quarry through blizzards and across treacherous ice fields, all while wrestling with doubts that threaten to shake his conviction. The tension mounts as the two men meet face to face, and what unfolds is not simply a capture, but a profound human drama played out against the unforgiving backdrop of the North.</p>
-<p>*Challenge of the Yukon* captured the imagination of millions throughout the Golden Age of Radio by presenting the Yukon Territory not merely as a setting, but as a character itself—a moral testing ground where civilization's rules collided with frontier realities. Sergeant Preston, portrayed with quiet authority and surprising depth, became an American icon precisely because he never simply conquered the wilderness; he negotiated with it, learned from it, and sometimes found himself humbled by it. These episodes, meticulously crafted by skilled writers and brought to vivid life by stellar sound design, transported listeners to a world of genuine stakes and authentic heroism.</p>
-<p>Don your warmest coat and settle in by the radio as Sergeant Preston faces *The Choice*—a reminder that true lawmen are defined not by their badges, but by their conscience.</p>
+          <p>As twilight descends over the frozen Yukon wilderness and the northern lights dance across an endless expanse of white, Sergeant Preston of the Royal Canadian Mounted Police faces an impossible decision that will test the very code of justice he has sworn to uphold. In this gripping episode, a fugitive from civilization—a man whose crime may have been born of desperation rather than malice—seeks refuge in the frozen borderlands, and Preston must choose between the letter of the law and the mercy his heart demands. With his faithful husky King at his side and the relentless cold closing in like a living adversary, Preston tracks his quarry through blizzards and across treacherous ice fields, all while wrestling with doubts that threaten to shake his conviction. The tension mounts as the two men meet face to face, and what unfolds is not simply a capture, but a profound human drama played out against the unforgiving backdrop of the North.</p>
+<p>Challenge of the Yukon captured the imagination of millions throughout the Golden Age of Radio by presenting the Yukon Territory not merely as a setting, but as a character itself—a moral testing ground where civilization's rules collided with frontier realities. Sergeant Preston, portrayed with quiet authority and surprising depth, became an American icon precisely because he never simply conquered the wilderness; he negotiated with it, learned from it, and sometimes found himself humbled by it. These episodes, meticulously crafted by skilled writers and brought to vivid life by stellar sound design, transported listeners to a world of genuine stakes and authentic heroism.</p>
+<p>Don your warmest coat and settle in by the radio as Sergeant Preston faces The Choice—a reminder that true lawmen are defined not by their badges, but by their conscience.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

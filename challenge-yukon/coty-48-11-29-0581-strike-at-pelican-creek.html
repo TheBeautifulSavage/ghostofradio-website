@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 11 29 (0581) Strike At Pelican Creek — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0581) Strike At Pelican Creek — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 11 29 (0581) Strike At Pelican Creek — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 11 29 (0581) Strike At Pelican Creek — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 11 29 (0581) Strike At Pelican Creek — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 29, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 11 29 (0581) Strike At Pelican Creek</h1>
+          <h1 class="episode__title">(0581) Strike At Pelican Creek</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Strike At Pelican Creek</p>
-<p>Deep in the frozen Yukon wilderness, where ice-laden pines groan under the weight of winter's grip, Sergeant Preston faces his most treacherous challenge yet. A criminal enterprise has taken root at remote Pelican Creek, and the mounted lawman must navigate through blizzard conditions and deadly terrain to bring the perpetrators to justice. With King, his loyal husky companion, at his side, Preston races against time as the conspirators prepare to strike—but at what? Gold shipment? Innocent settlers? Only Preston's wits, courage, and intimate knowledge of the unforgiving North stand between order and chaos. This episode crackles with genuine peril, the crackling of fires and howling winds transporting listeners directly into the heart of danger.</p>
-<p>*Challenge of the Yukon* became a phenomenon that defined adventure radio for over fifteen years, captivating audiences who hungered for tales of frontier justice and survival against impossible odds. Sergeant Preston—the Royal Canadian Mounted Police officer who never failed his duty—embodied the ideals of the late 1930s and 1940s: honor, determination, and unwavering moral conviction. The show's success lay in its ability to make the desolate Yukon feel intimately real through masterful sound design and tight, propulsive storytelling. Each episode was a self-contained morality play, yet the character's consistency and the authentic details of northern life created a world listeners eagerly returned to week after week.</p>
+          <p>Deep in the frozen Yukon wilderness, where ice-laden pines groan under the weight of winter's grip, Sergeant Preston faces his most treacherous challenge yet. A criminal enterprise has taken root at remote Pelican Creek, and the mounted lawman must navigate through blizzard conditions and deadly terrain to bring the perpetrators to justice. With King, his loyal husky companion, at his side, Preston races against time as the conspirators prepare to strike—but at what? Gold shipment? Innocent settlers? Only Preston's wits, courage, and intimate knowledge of the unforgiving North stand between order and chaos. This episode crackles with genuine peril, the crackling of fires and howling winds transporting listeners directly into the heart of danger.</p>
+<p>Challenge of the Yukon became a phenomenon that defined adventure radio for over fifteen years, captivating audiences who hungered for tales of frontier justice and survival against impossible odds. Sergeant Preston—the Royal Canadian Mounted Police officer who never failed his duty—embodied the ideals of the late 1930s and 1940s: honor, determination, and unwavering moral conviction. The show's success lay in its ability to make the desolate Yukon feel intimately real through masterful sound design and tight, propulsive storytelling. Each episode was a self-contained morality play, yet the character's consistency and the authentic details of northern life created a world listeners eagerly returned to week after week.</p>
 <p>Tune in now to experience "Strike At Pelican Creek," where danger lurks beneath the snow and only a Mountie's courage can prevail. This is radio adventure in its purest form—no special effects required, only imagination.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

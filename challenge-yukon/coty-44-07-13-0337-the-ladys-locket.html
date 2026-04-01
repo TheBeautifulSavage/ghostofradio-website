@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 07 13 (0337) The Lady's Locket — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0337) The Lady's Locket — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 07 13 (0337) The Lady's Locket — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 07 13 (0337) The Lady's Locket — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 07 13 (0337) The Lady's Locket — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · July 13, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 07 13 (0337) The Lady's Locket</h1>
+          <h1 class="episode__title">(0337) The Lady's Locket</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lady's Locket</p>
-<p>Picture yourself huddled close to the radio on a crisp northern evening, the crackle of static giving way to the thundering hoofbeats of King and the familiar call: "In the frozen North, the Royal Canadian Mounted Police maintain law and order." In this gripping 1940 episode, Sergeant Preston confronts a mystery far more delicate than the typical claim-jumping or smuggling operation—a woman's desperate search for a precious locket has drawn her into the treacherous Yukon wilderness, and Preston must uncover whether she's a victim of circumstance or a fugitive from justice. The tension builds as our scarlet-coated hero rides through blinding snow and navigates the conflicting testimonies of frontier dwellers, each with their own secrets to protect. You'll hear the authentic crack of the whip, the sled dogs' eager barking, and the plaintive notes of the theme song that somehow perfectly captures both the beauty and menace of the Arctic landscape.</p>
-<p>What made *Challenge of the Yukon* endure for nearly two decades was its perfect formula: adventure without gratuitous violence, moral clarity without preachiness, and a hero whose steady competence provided comfort during uncertain times. Preston, portrayed with quiet authority, embodied Depression-era and wartime ideals of duty and fair play. The show's creators conducted meticulous research into Yukon geography and RCMP procedures, grounding their fantastical plots in plausible detail—a detail that distinguished it from lesser adventure serials.</p>
+          <p>Picture yourself huddled close to the radio on a crisp northern evening, the crackle of static giving way to the thundering hoofbeats of King and the familiar call: "In the frozen North, the Royal Canadian Mounted Police maintain law and order." In this gripping 1940 episode, Sergeant Preston confronts a mystery far more delicate than the typical claim-jumping or smuggling operation—a woman's desperate search for a precious locket has drawn her into the treacherous Yukon wilderness, and Preston must uncover whether she's a victim of circumstance or a fugitive from justice. The tension builds as our scarlet-coated hero rides through blinding snow and navigates the conflicting testimonies of frontier dwellers, each with their own secrets to protect. You'll hear the authentic crack of the whip, the sled dogs' eager barking, and the plaintive notes of the theme song that somehow perfectly captures both the beauty and menace of the Arctic landscape.</p>
+<p>What made Challenge of the Yukon endure for nearly two decades was its perfect formula: adventure without gratuitous violence, moral clarity without preachiness, and a hero whose steady competence provided comfort during uncertain times. Preston, portrayed with quiet authority, embodied Depression-era and wartime ideals of duty and fair play. The show's creators conducted meticulous research into Yukon geography and RCMP procedures, grounding their fantastical plots in plausible detail—a detail that distinguished it from lesser adventure serials.</p>
 <p>This episode exemplifies why listeners across North America couldn't wait for their weekly appointment with Preston and King. Whether you're a longtime devotee or discovering this treasure for the first time, "The Lady's Locket" delivers everything the show promised: mystery, action, and the indomitable spirit of the frozen frontier. Adjust your dial and settle in—justice is riding toward you across the Yukon.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

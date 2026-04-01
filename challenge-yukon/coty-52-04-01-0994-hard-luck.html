@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 04 01 (0994) Hard Luck — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0994) Hard Luck — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 04 01 (0994) Hard Luck — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 04 01 (0994) Hard Luck — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 04 01 (0994) Hard Luck — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 04 01 (0994) Hard Luck</h1>
+          <h1 class="episode__title">(0994) Hard Luck</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Hard Luck</p>
-<p>As the haunting strains of the Donna Diana Overture fade into the frozen wasteland, Sergeant Preston of the Yukon Mounted Police faces his most treacherous case yet in "Hard Luck." A prospector's claim has gone mysteriously silent in the unforgiving wilderness, and whispers of sabotage and murder hang thick as Yukon ice. With nothing but his faithful husky King, his wits, and an unshakeable sense of justice, Preston must navigate a labyrinth of deception where fortune hunters scheme and survival itself becomes uncertain. Will cunning or conscience prevail in this remote corner of the Canadian north? The tension crackles through the airwaves as our hero rides deeper into danger.</p>
-<p>This 1940s episode captures everything that made *Challenge of the Yukon* a radio institution from 1938 through the 1950s—a show that transported millions of listeners to a distant, romanticized frontier where morality remained simple even when circumstances grew complex. Sergeant Preston became the gold standard of adventure radio, combining authentic Yukon geography with compelling character work and genuine suspense. The show's influence extended far beyond the airwaves, eventually spawning a beloved television series and cementing the character as an American pop culture icon. "Hard Luck" exemplifies the formula that kept families huddled around their radios: a compelling mystery, vivid sound design of barking dogs and howling winds, and a hero whose virtue never wavers.</p>
+          <p>As the haunting strains of the Donna Diana Overture fade into the frozen wasteland, Sergeant Preston of the Yukon Mounted Police faces his most treacherous case yet in "Hard Luck." A prospector's claim has gone mysteriously silent in the unforgiving wilderness, and whispers of sabotage and murder hang thick as Yukon ice. With nothing but his faithful husky King, his wits, and an unshakeable sense of justice, Preston must navigate a labyrinth of deception where fortune hunters scheme and survival itself becomes uncertain. Will cunning or conscience prevail in this remote corner of the Canadian north? The tension crackles through the airwaves as our hero rides deeper into danger.</p>
+<p>This 1940s episode captures everything that made Challenge of the Yukon a radio institution from 1938 through the 1950s—a show that transported millions of listeners to a distant, romanticized frontier where morality remained simple even when circumstances grew complex. Sergeant Preston became the gold standard of adventure radio, combining authentic Yukon geography with compelling character work and genuine suspense. The show's influence extended far beyond the airwaves, eventually spawning a beloved television series and cementing the character as an American pop culture icon. "Hard Luck" exemplifies the formula that kept families huddled around their radios: a compelling mystery, vivid sound design of barking dogs and howling winds, and a hero whose virtue never wavers.</p>
 <p>Now you can experience this thrilling chapter of broadcasting history yourself. Tune in to "Hard Luck" and discover why Sergeant Preston commanded such fierce listener loyalty. Whether you're a longtime devotee or discovering this classic for the first time, this episode delivers everything adventure radio promised: excitement, honor, and the untamed Yukon calling across the decades.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

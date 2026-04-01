@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 09 20 (0809) The Malemute Express — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0809) The Malemute Express — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 09 20 (0809) The Malemute Express — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 09 20 (0809) The Malemute Express — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 09 20 (0809) The Malemute Express — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 20, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 09 20 (0809) The Malemute Express</h1>
+          <h1 class="episode__title">(0809) The Malemute Express</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Malemute Express</p>
-<p>Picture yourself huddled by the radio on a winter's evening as Sergeant Preston of the Yukon crackles to life through the static. In "The Malemute Express," our stalwart Canadian Mountie faces his most treacherous case yet: a gang of clever thieves has hijacked a dog sled mail run carrying payroll for the remote mining camps of the frozen north. With temperatures plummeting and supplies dwindling, Preston must navigate treacherous mountain passes and outthink cunning criminals who know the wilderness as well as he does. King, his magnificent King dog, strains at the traces as danger closes in from all sides. You'll hear the crack of whips, the howl of wind across endless snowfields, and the thundering percussion of sled runners against packed ice—all building toward a climactic confrontation that will test Preston's courage and his unshakeable sense of justice.</p>
-<p>*Challenge of the Yukon* became one of radio's most enduring adventures precisely because it captured something essential about the North American frontier myth. Airing from 1938 through the 1950s, the show tapped into listeners' fascination with the last great wilderness at a time when such places were disappearing. Sergeant Preston embodied the ideal of law and order bringing civilization to untamed lands—a romantic notion that resonated deeply during Depression and wartime radio's golden age. The episode you're about to hear represents the show at its peak, combining expertly paced action with the distinctive sonic landscape that made the Yukon come alive in listeners' imaginations.</p>
-<p>So adjust your dial, settle in, and let yourself be transported north to a world of ice and honor. *The Malemute Express* awaits—a thrilling reminder of why millions of listeners made this show a fixture in their homes. In the King's name, justice prevails!</p>
+          <p>Picture yourself huddled by the radio on a winter's evening as Sergeant Preston of the Yukon crackles to life through the static. In "The Malemute Express," our stalwart Canadian Mountie faces his most treacherous case yet: a gang of clever thieves has hijacked a dog sled mail run carrying payroll for the remote mining camps of the frozen north. With temperatures plummeting and supplies dwindling, Preston must navigate treacherous mountain passes and outthink cunning criminals who know the wilderness as well as he does. King, his magnificent King dog, strains at the traces as danger closes in from all sides. You'll hear the crack of whips, the howl of wind across endless snowfields, and the thundering percussion of sled runners against packed ice—all building toward a climactic confrontation that will test Preston's courage and his unshakeable sense of justice.</p>
+<p>Challenge of the Yukon became one of radio's most enduring adventures precisely because it captured something essential about the North American frontier myth. Airing from 1938 through the 1950s, the show tapped into listeners' fascination with the last great wilderness at a time when such places were disappearing. Sergeant Preston embodied the ideal of law and order bringing civilization to untamed lands—a romantic notion that resonated deeply during Depression and wartime radio's golden age. The episode you're about to hear represents the show at its peak, combining expertly paced action with the distinctive sonic landscape that made the Yukon come alive in listeners' imaginations.</p>
+<p>So adjust your dial, settle in, and let yourself be transported north to a world of ice and honor. The Malemute Express awaits—a thrilling reminder of why millions of listeners made this show a fixture in their homes. In the King's name, justice prevails!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

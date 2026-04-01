@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 02 06 (0367) An Unlucky Gambler — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0367) An Unlucky Gambler — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 02 06 (0367) An Unlucky Gambler — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 02 06 (0367) An Unlucky Gambler — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 02 06 (0367) An Unlucky Gambler — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 6, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 02 06 (0367) An Unlucky Gambler</h1>
+          <h1 class="episode__title">(0367) An Unlucky Gambler</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon - "An Unlucky Gambler"</p>
-<p>Picture the frozen wastes of Canada's Yukon Territory, where fortune seekers and desperate men gather in smoke-filled saloons, their eyes gleaming with the promise of gold. In this episode, a drifter's run of bad luck at the card tables sets off a chain of events that will test Sergeant Preston's legendary detective skills—and challenge his sense of justice itself. When a man accuses another of cheating and demands violent retribution, Preston must navigate the blurred lines between frontier justice and the rule of law, all while King, his magnificent husky, proves once again why he's the most loyal companion a lawman could ask for. As the stakes rise and tempers flare, listeners will find themselves drawn into a world of suspicion and deception where a single hand of cards could mean the difference between freedom and ruin.</p>
-<p>The enduring appeal of *Challenge of the Yukon* lies in its perfect marriage of action and atmosphere. Premiering in 1938 and captivating audiences for nearly two decades, the show transported millions of listeners into the rugged, romantic North during America's Golden Age of Radio. Created in an era when adventure serials dominated the airwaves, Preston's adventures stood apart through their careful attention to detail, authentic Yukon lore, and the dynamic between man and dog that predated later canine heroes by years. The show's commitment to grounded storytelling—mixing genuine frontier challenges with moral complexity—gave it staying power that outlasted many competitors.</p>
+          <p>Picture the frozen wastes of Canada's Yukon Territory, where fortune seekers and desperate men gather in smoke-filled saloons, their eyes gleaming with the promise of gold. In this episode, a drifter's run of bad luck at the card tables sets off a chain of events that will test Sergeant Preston's legendary detective skills—and challenge his sense of justice itself. When a man accuses another of cheating and demands violent retribution, Preston must navigate the blurred lines between frontier justice and the rule of law, all while King, his magnificent husky, proves once again why he's the most loyal companion a lawman could ask for. As the stakes rise and tempers flare, listeners will find themselves drawn into a world of suspicion and deception where a single hand of cards could mean the difference between freedom and ruin.</p>
+<p>The enduring appeal of Challenge of the Yukon lies in its perfect marriage of action and atmosphere. Premiering in 1938 and captivating audiences for nearly two decades, the show transported millions of listeners into the rugged, romantic North during America's Golden Age of Radio. Created in an era when adventure serials dominated the airwaves, Preston's adventures stood apart through their careful attention to detail, authentic Yukon lore, and the dynamic between man and dog that predated later canine heroes by years. The show's commitment to grounded storytelling—mixing genuine frontier challenges with moral complexity—gave it staying power that outlasted many competitors.</p>
 <p>Whether you're a devoted fan or discovering this classic for the first time, "An Unlucky Gambler" delivers everything the series promised: danger, intrigue, and the reassuring presence of a lawman who always got his man. Tune in to experience radio drama at its finest.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

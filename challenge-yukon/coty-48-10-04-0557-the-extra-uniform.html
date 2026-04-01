@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 10 04 (0557) The Extra Uniform — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0557) The Extra Uniform — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 10 04 (0557) The Extra Uniform — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 10 04 (0557) The Extra Uniform — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 10 04 (0557) The Extra Uniform — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 4, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 10 04 (0557) The Extra Uniform</h1>
+          <h1 class="episode__title">(0557) The Extra Uniform</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Extra Uniform</p>
-<p>As the haunting strains of the "Étendue Morceau de Concert" swell across the northern wastes, Sergeant Preston of the Yukon RCMP faces a mystery that threatens to unravel the very fabric of law and order in the frozen territories. When an imposter dons the scarlet uniform of the Mounted Police, Preston must navigate treacherous snow-packed trails and darker human betrayals to expose the deception before it spreads across the Yukon like wildfire. With only his faithful husky, Kipling, and his wits to guide him, our hero discovers that sometimes the greatest danger wears the most trusted face. This October 1940s episode crackles with tension as Preston races against time to distinguish truth from falsehood in a land where a uniform commands absolute authority—and absolute respect.</p>
-<p>*Challenge of the Yukon* endured as one of radio's most beloved adventure series precisely because it captured something essential about the Canadian frontier and the romance of rugged individualism. Sergeant Preston embodied the idealized Mountie: incorruptible, resourceful, and devoted to justice in humanity's harshest corner. The show's writers understood that in the vast northern wilderness, where civilization hangs by a thread, the integrity of its representatives becomes paramount. Broadcasting during an era when radio drama dominated American and Canadian living rooms, these episodes transported millions of listeners to a world of genuine danger and genuine heroes—a welcome escape during the uncertain 1940s.</p>
-<p>Whether you're a devoted fan of classic adventure serials or discovering this iconic show for the first time, "The Extra Uniform" delivers everything that made *Sergeant Preston of the Yukon* unmissable radio. Settle in by your set as Preston faces his most cunning challenge yet—one that proves that a uniform is only as noble as the man who wears it.</p>
+          <p>As the haunting strains of the "Étendue Morceau de Concert" swell across the northern wastes, Sergeant Preston of the Yukon RCMP faces a mystery that threatens to unravel the very fabric of law and order in the frozen territories. When an imposter dons the scarlet uniform of the Mounted Police, Preston must navigate treacherous snow-packed trails and darker human betrayals to expose the deception before it spreads across the Yukon like wildfire. With only his faithful husky, Kipling, and his wits to guide him, our hero discovers that sometimes the greatest danger wears the most trusted face. This October 1940s episode crackles with tension as Preston races against time to distinguish truth from falsehood in a land where a uniform commands absolute authority—and absolute respect.</p>
+<p>Challenge of the Yukon endured as one of radio's most beloved adventure series precisely because it captured something essential about the Canadian frontier and the romance of rugged individualism. Sergeant Preston embodied the idealized Mountie: incorruptible, resourceful, and devoted to justice in humanity's harshest corner. The show's writers understood that in the vast northern wilderness, where civilization hangs by a thread, the integrity of its representatives becomes paramount. Broadcasting during an era when radio drama dominated American and Canadian living rooms, these episodes transported millions of listeners to a world of genuine danger and genuine heroes—a welcome escape during the uncertain 1940s.</p>
+<p>Whether you're a devoted fan of classic adventure serials or discovering this iconic show for the first time, "The Extra Uniform" delivers everything that made Sergeant Preston of the Yukon unmissable radio. Settle in by your set as Preston faces his most cunning challenge yet—one that proves that a uniform is only as noble as the man who wears it.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 10 13 (0819) A Dog Called Sparky — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0819) A Dog Called Sparky — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 10 13 (0819) A Dog Called Sparky — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 10 13 (0819) A Dog Called Sparky — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 10 13 (0819) A Dog Called Sparky — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 13, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 10 13 (0819) A Dog Called Sparky</h1>
+          <h1 class="episode__title">(0819) A Dog Called Sparky</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># A Dog Called Sparky</p>
-<p>As the familiar strains of the Étude in E Major swell from your radio speaker and that commanding voice announces "Sergeant Preston of the Yukon," you're transported once more to the frozen wilderness of Canada's northernmost reaches. In this gripping episode, "A Dog Called Sparky," our steadfast Mountie faces a mystery that cuts to the heart of man's bond with beast. When a prospector's prized sled dog vanishes from a locked cabin deep in the snow-laden frontier, Preston and his own faithful King must unravel a tale of theft, deception, and desperate survival. The Yukon's unforgiving landscape becomes both the setting and the antagonist as our hero pursues leads through howling blizzards and shadowed trading posts, where every suspect harbors secrets and the truth lies as buried as gold beneath the permafrost. Will Sparky be found before it's too late?</p>
-<p>What made *Challenge of the Yukon* endure for nearly two decades was its perfect synthesis of authentic frontier detail and timeless human drama. Created during radio's golden age, the show drew inspiration from real RCMP cases and actual Yukon geography, lending credibility to Preston's investigations. Sergeant Preston became an American icon—a paragon of justice and compassion who solved crimes not through brutality but through keen observation and moral fortitude. The show's popularity spawned comic books, a television series, and merchandise, yet it remained rooted in the values listeners craved during the Great Depression and war years: honor, duty, and the triumph of good over circumstance.</p>
-<p>Turn your dial to the North, where duty calls and adventure awaits. Experience the crackling authenticity of *Sergeant Preston of the Yukon*—where every episode delivers genuine thrills and the promise that justice, like the North Star, endures eternal.</p>
+          <p>As the familiar strains of the Étude in E Major swell from your radio speaker and that commanding voice announces "Sergeant Preston of the Yukon," you're transported once more to the frozen wilderness of Canada's northernmost reaches. In this gripping episode, "A Dog Called Sparky," our steadfast Mountie faces a mystery that cuts to the heart of man's bond with beast. When a prospector's prized sled dog vanishes from a locked cabin deep in the snow-laden frontier, Preston and his own faithful King must unravel a tale of theft, deception, and desperate survival. The Yukon's unforgiving landscape becomes both the setting and the antagonist as our hero pursues leads through howling blizzards and shadowed trading posts, where every suspect harbors secrets and the truth lies as buried as gold beneath the permafrost. Will Sparky be found before it's too late?</p>
+<p>What made Challenge of the Yukon endure for nearly two decades was its perfect synthesis of authentic frontier detail and timeless human drama. Created during radio's golden age, the show drew inspiration from real RCMP cases and actual Yukon geography, lending credibility to Preston's investigations. Sergeant Preston became an American icon—a paragon of justice and compassion who solved crimes not through brutality but through keen observation and moral fortitude. The show's popularity spawned comic books, a television series, and merchandise, yet it remained rooted in the values listeners craved during the Great Depression and war years: honor, duty, and the triumph of good over circumstance.</p>
+<p>Turn your dial to the North, where duty calls and adventure awaits. Experience the crackling authenticity of Sergeant Preston of the Yukon—where every episode delivers genuine thrills and the promise that justice, like the North Star, endures eternal.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

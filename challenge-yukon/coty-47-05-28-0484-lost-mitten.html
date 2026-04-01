@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 05 28 (0484) Lost Mitten — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0484) Lost Mitten — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 05 28 (0484) Lost Mitten — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 05 28 (0484) Lost Mitten — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 05 28 (0484) Lost Mitten — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 28, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 05 28 (0484) Lost Mitten</h1>
+          <h1 class="episode__title">(0484) Lost Mitten</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Lost Mitten</p>
-<p>Picture this: the howling Arctic wind cuts across the frozen Yukon wasteland as Sergeant Preston of the Royal Canadian Mounted Police embarks on a desperate rescue mission triggered by the discovery of a single, solitary mitten in the snow. What begins as a mysterious clue unravels into a tangled web of deception, survival, and the unforgiving power of nature itself. With his trusty sled dog King at his side, Preston must navigate treacherous mountain passes and interrogate suspicious characters scattered across remote trading posts, piecing together the fate of a missing person before the merciless cold claims another victim. The tension builds episode by episode as listeners are drawn deeper into the mystery—is this a case of accident, abandonment, or something far more sinister? The sparse, crackling sound design of the frozen wilderness creates an immersive atmosphere that makes you shiver alongside our hero as he races against time and temperature.</p>
-<p>*Challenge of the Yukon* became a beloved staple of American radio precisely because it offered listeners an escape to a frontier that felt both exotic and authentic. Premiering in 1938, the show benefited from meticulous research into actual RCMP procedures and Yukon geography, grounding its adventure narratives in a palpable sense of realism. Unlike purely fantastical serials, Preston's cases often hinged on careful detective work and moral clarity—hallmarks of the RCMP itself. The show's success spawned a film and later a television series, but the radio episodes remain the gold standard, where imagination fills in the vast northern landscape more powerfully than any camera ever could.</p>
+          <p>Picture this: the howling Arctic wind cuts across the frozen Yukon wasteland as Sergeant Preston of the Royal Canadian Mounted Police embarks on a desperate rescue mission triggered by the discovery of a single, solitary mitten in the snow. What begins as a mysterious clue unravels into a tangled web of deception, survival, and the unforgiving power of nature itself. With his trusty sled dog King at his side, Preston must navigate treacherous mountain passes and interrogate suspicious characters scattered across remote trading posts, piecing together the fate of a missing person before the merciless cold claims another victim. The tension builds episode by episode as listeners are drawn deeper into the mystery—is this a case of accident, abandonment, or something far more sinister? The sparse, crackling sound design of the frozen wilderness creates an immersive atmosphere that makes you shiver alongside our hero as he races against time and temperature.</p>
+<p>Challenge of the Yukon became a beloved staple of American radio precisely because it offered listeners an escape to a frontier that felt both exotic and authentic. Premiering in 1938, the show benefited from meticulous research into actual RCMP procedures and Yukon geography, grounding its adventure narratives in a palpable sense of realism. Unlike purely fantastical serials, Preston's cases often hinged on careful detective work and moral clarity—hallmarks of the RCMP itself. The show's success spawned a film and later a television series, but the radio episodes remain the gold standard, where imagination fills in the vast northern landscape more powerfully than any camera ever could.</p>
 <p>Don your parka and settle in by the fire—you won't want to miss this gripping tale of mystery and survival. Tune in now to discover what secrets that lost mitten holds.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

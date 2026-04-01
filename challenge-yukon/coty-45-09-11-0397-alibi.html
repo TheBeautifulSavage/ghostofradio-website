@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 09 11 (0397) Alibi — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0397) Alibi — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 09 11 (0397) Alibi — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 09 11 (0397) Alibi — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 09 11 (0397) Alibi — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 11, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 09 11 (0397) Alibi</h1>
+          <h1 class="episode__title">(0397) Alibi</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Alibi"</p>
-<p>As the howling Arctic wind cuts across frozen tundra, Sergeant Preston of the Royal Canadian Mounted Police finds himself ensnared in a web of deception where the most dangerous weapon isn't a gun—it's a lie. In this gripping installment, a desperate man's carefully constructed alibi threatens to let a killer walk free, forcing our stalwart hero to navigate the treacherous intersection of circumstantial evidence and cold calculation. With the fate of an innocent hanging in the balance and King, his magnificent husky, sensing danger at every turn, Preston must uncover the truth before justice becomes another casualty of the northern wilderness.</p>
-<p>*Challenge of the Yukon* captured American imaginations during an era when radio was the supreme medium of entertainment and escape. Airing during the golden age from 1938 to 1955, the show brought listeners the authentic grit of Canadian frontier justice, grounded in real RCMP procedures and Yukon geography. Sergeant Preston—played with unflinching dedication by various actors throughout the show's run—became an icon of moral clarity and resourcefulness, embodying the values many craved during uncertain times. The program's popularity spawned a television series and films, yet the radio version remains the truest expression of the character's character, where listeners' imaginations completed what sound effects and dialogue could only suggest.</p>
+          <p>As the howling Arctic wind cuts across frozen tundra, Sergeant Preston of the Royal Canadian Mounted Police finds himself ensnared in a web of deception where the most dangerous weapon isn't a gun—it's a lie. In this gripping installment, a desperate man's carefully constructed alibi threatens to let a killer walk free, forcing our stalwart hero to navigate the treacherous intersection of circumstantial evidence and cold calculation. With the fate of an innocent hanging in the balance and King, his magnificent husky, sensing danger at every turn, Preston must uncover the truth before justice becomes another casualty of the northern wilderness.</p>
+<p>Challenge of the Yukon captured American imaginations during an era when radio was the supreme medium of entertainment and escape. Airing during the golden age from 1938 to 1955, the show brought listeners the authentic grit of Canadian frontier justice, grounded in real RCMP procedures and Yukon geography. Sergeant Preston—played with unflinching dedication by various actors throughout the show's run—became an icon of moral clarity and resourcefulness, embodying the values many craved during uncertain times. The program's popularity spawned a television series and films, yet the radio version remains the truest expression of the character's character, where listeners' imaginations completed what sound effects and dialogue could only suggest.</p>
 <p>The beauty of "Alibi" lies in what classic radio does best: it forces you to think, to picture the snow-laden landscape, to feel the mounting tension as Preston peels back layers of deception. Tune in and experience the golden age of adventure radio, where a Mountie's integrity and a faithful dog's instinct are civilization's only defense against the lawless unknown.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

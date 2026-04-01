@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 08 31 (0344) Smokey — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0344) Smokey — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 08 31 (0344) Smokey — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 08 31 (0344) Smokey — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 08 31 (0344) Smokey — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 31, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 08 31 (0344) Smokey</h1>
+          <h1 class="episode__title">(0344) Smokey</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Smokey"</p>
-<p>As the familiar strains of "Donna Diana" overture crackle through your speaker, you're transported to the frozen vastness of Canada's Yukon Territory, where Sergeant Preston and his magnificent dog King await their next perilous case. In this 1940s episode, a forest fire rages across the tundra with terrifying speed, and Preston must race against the advancing flames to rescue a trapper lost in the inferno. The crackling sound effects—real wood burning, recorded live in the studio—create an immediate sense of danger and urgency. Will King's keen nose lead them through the blinding smoke to find the missing man before it's too late? The tension builds with every footfall and bark, every shouted warning echoing across the desolate landscape.</p>
-<p>*Challenge of the Yukon* endured for seventeen thrilling years because it captured something essential about the North American imagination: the frontier as both crucible and redemption. Sergeant Preston embodied the ideals of the Royal Canadian Mounted Police—duty, honor, and an unshakeable commitment to justice—while King the husky represented humanity's bond with nature itself. These episodes, broadcast to millions of families during the Depression and war years, offered escape and reassurance that courage and determination could overcome any wilderness trial. The show's meticulous attention to authentic detail, from Yukon geography to proper police procedure, grounded the adventure in reality, making Preston's victories feel earned rather than miraculous.</p>
+          <p>As the familiar strains of "Donna Diana" overture crackle through your speaker, you're transported to the frozen vastness of Canada's Yukon Territory, where Sergeant Preston and his magnificent dog King await their next perilous case. In this 1940s episode, a forest fire rages across the tundra with terrifying speed, and Preston must race against the advancing flames to rescue a trapper lost in the inferno. The crackling sound effects—real wood burning, recorded live in the studio—create an immediate sense of danger and urgency. Will King's keen nose lead them through the blinding smoke to find the missing man before it's too late? The tension builds with every footfall and bark, every shouted warning echoing across the desolate landscape.</p>
+<p>Challenge of the Yukon endured for seventeen thrilling years because it captured something essential about the North American imagination: the frontier as both crucible and redemption. Sergeant Preston embodied the ideals of the Royal Canadian Mounted Police—duty, honor, and an unshakeable commitment to justice—while King the husky represented humanity's bond with nature itself. These episodes, broadcast to millions of families during the Depression and war years, offered escape and reassurance that courage and determination could overcome any wilderness trial. The show's meticulous attention to authentic detail, from Yukon geography to proper police procedure, grounded the adventure in reality, making Preston's victories feel earned rather than miraculous.</p>
 <p>If you've never experienced the serial thrill of vintage radio adventure, "Smokey" is the perfect entry point—a masterclass in tension, sound design, and storytelling that reminds us why families huddled around the receiver night after night, hanging on every word.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

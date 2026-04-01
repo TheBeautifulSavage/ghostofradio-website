@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 43 12 16 (0307) The Eleventh Hour — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0307) The Eleventh Hour — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 43 12 16 (0307) The Eleventh Hour — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 43 12 16 (0307) The Eleventh Hour — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 43 12 16 (0307) The Eleventh Hour — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 16, 1943</span>
           </div>
-          <h1 class="episode__title">Coty 43 12 16 (0307) The Eleventh Hour</h1>
+          <h1 class="episode__title">(0307) The Eleventh Hour</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Eleventh Hour</p>
-<p>Picture yourself huddled near your radio on a crisp evening as the iconic bugle call of the Royal Canadian Mounted Police pierces the static, and Sergeant Preston's voice cuts through with urgent authority. In "The Eleventh Hour," our stalwart Mountie faces a desperate race against time in the frozen wilderness—a criminal has mere hours before the noose, and Preston must navigate treacherous snow drifts and bitter cold to uncover the truth that could save an innocent life or condemn a guilty man. The tension mounts with each passing scene as clues accumulate, suspects emerge from the shadows of trading posts and remote cabins, and King, Preston's faithful husky, becomes an unexpected ally in the investigation. With the clock ticking and justice hanging in the balance, listeners will find themselves on the edge of their seats, wondering if Preston's legendary cunning and unwavering moral compass can triumph before the final bell tolls.</p>
+          <p>Picture yourself huddled near your radio on a crisp evening as the iconic bugle call of the Royal Canadian Mounted Police pierces the static, and Sergeant Preston's voice cuts through with urgent authority. In "The Eleventh Hour," our stalwart Mountie faces a desperate race against time in the frozen wilderness—a criminal has mere hours before the noose, and Preston must navigate treacherous snow drifts and bitter cold to uncover the truth that could save an innocent life or condemn a guilty man. The tension mounts with each passing scene as clues accumulate, suspects emerge from the shadows of trading posts and remote cabins, and King, Preston's faithful husky, becomes an unexpected ally in the investigation. With the clock ticking and justice hanging in the balance, listeners will find themselves on the edge of their seats, wondering if Preston's legendary cunning and unwavering moral compass can triumph before the final bell tolls.</p>
 <p>"Challenge of the Yukon" captured America's imagination throughout the 1930s and 1940s as radio's premier adventure serial, bringing the untamed Northland into living rooms across the continent. This particular episode exemplifies what made the show extraordinary: its ability to weave genuine suspense with authentic Yukon atmosphere, combining frontier justice with character-driven storytelling. The writers crafted Preston not merely as a hero, but as a principled lawman bound by duty and conscience—a refreshing alternative to simpler pulp heroes of the era. The show's popularity endured for nearly two decades, spawning a beloved 1950s television adaptation and countless devoted fans who still recall Preston's name with nostalgia.</p>
 <p>Tune in now to experience why generations of listeners remained devoted to Sergeant Preston and his remarkable adventures. Whether you're discovering this classic for the first time or revisiting a cherished memory, "The Eleventh Hour" offers everything that made old-time radio unforgettable: authentic drama, compelling characters, and the magic of storytelling that only radio could deliver. Your Mountie awaits!</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

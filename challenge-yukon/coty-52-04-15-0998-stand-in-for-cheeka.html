@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 04 15 (0998) Stand In For Cheeka — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0998) Stand In For Cheeka — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 04 15 (0998) Stand In For Cheeka — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 04 15 (0998) Stand In For Cheeka — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 04 15 (0998) Stand In For Cheeka — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 04 15 (0998) Stand In For Cheeka</h1>
+          <h1 class="episode__title">(0998) Stand In For Cheeka</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Stand In For Cheeka</p>
-<p>When the thermometer plummets and the northern lights dance across frozen tundra, Sergeant Preston and his magnificent dog Cheeka face their most vexing challenge yet—not from outlaws or desperadoes, but from an unexpected circumstance that forces the legendary lawman to make an impossible choice. In "Stand In For Cheeka," a crisis strikes at the very heart of Preston's partnership with his faithful husky, the steadfast companion who has traced countless trails through the Canadian wilderness. As danger mounts and time slips away like glacial melt, Preston must decide whether to push forward with a substitute or risk abandoning his duty when the Yukon needs him most. The crackling tension of this dilemma, underscored by the howling Arctic wind and the urgency of the Royal Canadian Mounted Police code, will keep listeners riveted to their loudspeakers.</p>
-<p>This episode exemplifies why *Challenge of the Yukon* became the beloved staple it remained throughout the 1940s and early 1950s. Rather than relying solely on gunplay and conventional Western heroics, the show masterfully wove the wilderness itself into its narratives, where nature proved as formidable an adversary as any criminal. Sergeant Preston and Cheeka became more than a man and his dog—they represented the indomitable human spirit and the unbreakable bonds of loyalty, themes that resonated powerfully during wartime radio's golden age when listeners craved both escapism and moral anchoring.</p>
+          <p>When the thermometer plummets and the northern lights dance across frozen tundra, Sergeant Preston and his magnificent dog Cheeka face their most vexing challenge yet—not from outlaws or desperadoes, but from an unexpected circumstance that forces the legendary lawman to make an impossible choice. In "Stand In For Cheeka," a crisis strikes at the very heart of Preston's partnership with his faithful husky, the steadfast companion who has traced countless trails through the Canadian wilderness. As danger mounts and time slips away like glacial melt, Preston must decide whether to push forward with a substitute or risk abandoning his duty when the Yukon needs him most. The crackling tension of this dilemma, underscored by the howling Arctic wind and the urgency of the Royal Canadian Mounted Police code, will keep listeners riveted to their loudspeakers.</p>
+<p>This episode exemplifies why Challenge of the Yukon became the beloved staple it remained throughout the 1940s and early 1950s. Rather than relying solely on gunplay and conventional Western heroics, the show masterfully wove the wilderness itself into its narratives, where nature proved as formidable an adversary as any criminal. Sergeant Preston and Cheeka became more than a man and his dog—they represented the indomitable human spirit and the unbreakable bonds of loyalty, themes that resonated powerfully during wartime radio's golden age when listeners craved both escapism and moral anchoring.</p>
 <p>Tune in now to experience this captivating slice of radio adventure, where the frozen north calls and a hero must answer, whatever the cost.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

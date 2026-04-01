@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 10 25 (0939) Claim 22 — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0939) Claim 22 — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 10 25 (0939) Claim 22 — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 10 25 (0939) Claim 22 — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 10 25 (0939) Claim 22 — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 10 25 (0939) Claim 22</h1>
+          <h1 class="episode__title">(0939) Claim 22</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Claim 22 - Challenge of the Yukon</p>
-<p>The frozen wilderness of the Yukon calls once more as Sergeant Preston of the Royal Canadian Mounted Police faces a desperate race against time in "Claim 22." When a prospector's claim mysteriously vanishes from the recording office and its rightful owner disappears into the unforgiving northern territories, Preston must traverse treacherous snowfields and navigate the lawless frontier to uncover a web of deception that threatens to destroy a man's life work. With his faithful husky King at his side, the Sergeant pursues the truth through howling blizzards and shadowy saloons, where greed runs as deep as the permafrost beneath their feet. This October 1940 installment crackles with tension—listeners will find themselves holding their breath as Preston closes in on those who would exploit the gold rush's promise for personal gain.</p>
-<p>What made *Challenge of the Yukon* a beloved staple of American radio was its perfect marriage of action and authenticity. Unlike the romanticized Wild West tales that dominated airwaves, this series grounded itself in the genuine hardships of the Canadian frontier, where justice came not from quick draws but from steady determination and moral conviction. Sergeant Preston embodied the ideals of authority tempered with compassion—a lawman who understood that the Yukon's greatest dangers were often human nature itself. The show's meticulous sound design—crackling campfires, howling wolves, and the crunch of boots on packed snow—transported listeners thousands of miles north, making them feel the bite of Arctic winds from their living room armchairs.</p>
+          <p>The frozen wilderness of the Yukon calls once more as Sergeant Preston of the Royal Canadian Mounted Police faces a desperate race against time in "Claim 22." When a prospector's claim mysteriously vanishes from the recording office and its rightful owner disappears into the unforgiving northern territories, Preston must traverse treacherous snowfields and navigate the lawless frontier to uncover a web of deception that threatens to destroy a man's life work. With his faithful husky King at his side, the Sergeant pursues the truth through howling blizzards and shadowy saloons, where greed runs as deep as the permafrost beneath their feet. This October 1940 installment crackles with tension—listeners will find themselves holding their breath as Preston closes in on those who would exploit the gold rush's promise for personal gain.</p>
+<p>What made Challenge of the Yukon a beloved staple of American radio was its perfect marriage of action and authenticity. Unlike the romanticized Wild West tales that dominated airwaves, this series grounded itself in the genuine hardships of the Canadian frontier, where justice came not from quick draws but from steady determination and moral conviction. Sergeant Preston embodied the ideals of authority tempered with compassion—a lawman who understood that the Yukon's greatest dangers were often human nature itself. The show's meticulous sound design—crackling campfires, howling wolves, and the crunch of boots on packed snow—transported listeners thousands of miles north, making them feel the bite of Arctic winds from their living room armchairs.</p>
 <p>For aficionados of classic radio adventure, "Claim 22" exemplifies the series at its finest: compelling mystery, rich atmosphere, and the enduring appeal of frontier justice. Tune in and discover why generations of listeners made this their appointment with danger.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

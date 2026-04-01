@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 08 07 (0392) The Map — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0392) The Map — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 08 07 (0392) The Map — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 08 07 (0392) The Map — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 08 07 (0392) The Map — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 7, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 08 07 (0392) The Map</h1>
+          <h1 class="episode__title">(0392) The Map</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Map</p>
-<p>Picture this: the howling winds of the Yukon wilderness, the lonely call of wolves echoing across frozen tundra, and Sergeant Preston of the Royal Canadian Mounted Police racing toward an uncertain destiny. In "The Map," our stalwart hero finds himself in possession of a mysterious document—a hand-drawn map that promises untold riches, but may instead lead him straight into the hands of a ruthless gang of claim jumpers. As Preston and his faithful husky King pore over the cryptic markings and coded references, every shadow seems to harbor danger, every stranger on the trail becomes a suspect, and trust itself becomes the most valuable commodity in the frozen north. Will Preston's legendary instincts and ironclad sense of justice prevail, or will greed and violence claim another victim in the unforgiving wilderness?</p>
+          <p>Picture this: the howling winds of the Yukon wilderness, the lonely call of wolves echoing across frozen tundra, and Sergeant Preston of the Royal Canadian Mounted Police racing toward an uncertain destiny. In "The Map," our stalwart hero finds himself in possession of a mysterious document—a hand-drawn map that promises untold riches, but may instead lead him straight into the hands of a ruthless gang of claim jumpers. As Preston and his faithful husky King pore over the cryptic markings and coded references, every shadow seems to harbor danger, every stranger on the trail becomes a suspect, and trust itself becomes the most valuable commodity in the frozen north. Will Preston's legendary instincts and ironclad sense of justice prevail, or will greed and violence claim another victim in the unforgiving wilderness?</p>
 <p>"Challenge of the Yukon" became a cultural phenomenon during radio's golden age, a thrilling escape for Depression and wartime listeners who craved adventure, moral clarity, and the romance of frontier justice. Sergeant Preston embodied the idealized Mountie—unfailingly honest, fearless, and devoted to bringing order to lawless lands. The show's formula proved irresistible: each episode balanced genuine danger with the unshakeable confidence that right would triumph, all while transporting audiences to a mythologized Canada where nature's challenges were matched only by human villainy. The writers crafted stories that felt authentic to the Yukon's real history while maintaining the melodramatic flair that kept listeners on the edge of their seats week after week.</p>
 <p>Tune in now to experience "The Map" as audiences did nearly eighty years ago—a masterclass in radio storytelling where a simple piece of paper becomes the catalyst for adventure, betrayal, and heroism in the frozen frontier.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

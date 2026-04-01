@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 02 20 (0746) The Murdered Witness — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0746) The Murdered Witness — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 02 20 (0746) The Murdered Witness — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 02 20 (0746) The Murdered Witness — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 02 20 (0746) The Murdered Witness — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 20, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 02 20 (0746) The Murdered Witness</h1>
+          <h1 class="episode__title">(0746) The Murdered Witness</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Murdered Witness</p>
-<p>Picture this: the howling wind cuts across the frozen Yukon wilderness as Sergeant Preston of the Royal Canadian Mounted Police discovers a body frozen solid in the snow—a crucial witness to a crime, now silenced forever. Who wanted this man dead badly enough to brave the unforgiving Arctic cold? As Preston and his faithful husky King trek through the bitter darkness, the mystery deepens: was it greed, revenge, or something far more sinister? In "The Murdered Witness," listeners will experience the trademark tension that made this program unmissable—the crackle of the radio bringing the vast, lonely frontier to life, where danger lurks around every corner and justice must prevail against impossible odds.</p>
-<p>*Challenge of the Yukon* emerged during radio's golden age as one of the medium's most durable adventure series, captivating audiences for nearly two decades with tales of law and order in Canada's frozen north. Sergeant Preston became an icon of straightforward heroism—a man of principle upholding civilization in the wilderness, accompanied by King, his German Shepherd companion whose bark became as recognizable as the opening theme. The show's success spawned a television series and demonstrated how effectively radio could transport listeners to remote, exotic locales through sound design alone: the crack of ice, the yelp of sled dogs, the crunch of boots in snow. These 1940s episodes particularly shine, representing the series at its creative peak, blending detective work with frontier adventure.</p>
+          <p>Picture this: the howling wind cuts across the frozen Yukon wilderness as Sergeant Preston of the Royal Canadian Mounted Police discovers a body frozen solid in the snow—a crucial witness to a crime, now silenced forever. Who wanted this man dead badly enough to brave the unforgiving Arctic cold? As Preston and his faithful husky King trek through the bitter darkness, the mystery deepens: was it greed, revenge, or something far more sinister? In "The Murdered Witness," listeners will experience the trademark tension that made this program unmissable—the crackle of the radio bringing the vast, lonely frontier to life, where danger lurks around every corner and justice must prevail against impossible odds.</p>
+<p>Challenge of the Yukon emerged during radio's golden age as one of the medium's most durable adventure series, captivating audiences for nearly two decades with tales of law and order in Canada's frozen north. Sergeant Preston became an icon of straightforward heroism—a man of principle upholding civilization in the wilderness, accompanied by King, his German Shepherd companion whose bark became as recognizable as the opening theme. The show's success spawned a television series and demonstrated how effectively radio could transport listeners to remote, exotic locales through sound design alone: the crack of ice, the yelp of sled dogs, the crunch of boots in snow. These 1940s episodes particularly shine, representing the series at its creative peak, blending detective work with frontier adventure.</p>
 <p>Don't miss "The Murdered Witness"—tune in to hear Sergeant Preston unravel a chilling crime in the unforgiving Yukon. Will justice triumph in the frozen north? Some mysteries demand answers, and Preston never fails to deliver them.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

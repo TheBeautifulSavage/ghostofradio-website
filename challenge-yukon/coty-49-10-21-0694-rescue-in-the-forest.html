@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 10 21 (0694) Rescue In The Forest — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0694) Rescue In The Forest — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 10 21 (0694) Rescue In The Forest — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 10 21 (0694) Rescue In The Forest — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 10 21 (0694) Rescue In The Forest — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 21, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 10 21 (0694) Rescue In The Forest</h1>
+          <h1 class="episode__title">(0694) Rescue In The Forest</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Rescue In The Forest</p>
-<p>The howling wind cuts through the northern wilderness as Sergeant Preston of the Yukon Mounted Police races against darkness and bitter cold. A lost prospector, injured and delirious, stumbles through dense forest while wolves circle closer with each passing hour. King, Preston's magnificent husky, picks up a scent on the frozen air—but is it friend or foe? In this tense episode from 1940, listeners are transported to the unforgiving Yukon territory where survival itself becomes the greatest adversary. Every crackle of the radio speaker intensifies the drama: hoofbeats through snow, urgent dialogue, and the ever-present danger lurking beyond the next pine tree. This is radio adventure at its finest—where imagination and sound design create a world more vivid than any motion picture.</p>
-<p>*Challenge of the Yukon* seized the imagination of American audiences for nearly two decades, beginning in 1938 as one of radio's most durably popular adventure serials. The show captured a nation's fascination with the Canadian frontier, transforming a remote landscape into a character as compelling as Sergeant Preston himself. By the 1940s, the program had become a cultural phenomenon, spawning comic strips, toys, and the iconic theme song "Donna Donna" that millions of listeners could hum by heart. What set Preston apart from other adventure heroes was his moral authority—he was less a shoot-first cowboy and more a thoughtful lawman, solving problems with intelligence and compassion alongside his heroic dog.</p>
+          <p>The howling wind cuts through the northern wilderness as Sergeant Preston of the Yukon Mounted Police races against darkness and bitter cold. A lost prospector, injured and delirious, stumbles through dense forest while wolves circle closer with each passing hour. King, Preston's magnificent husky, picks up a scent on the frozen air—but is it friend or foe? In this tense episode from 1940, listeners are transported to the unforgiving Yukon territory where survival itself becomes the greatest adversary. Every crackle of the radio speaker intensifies the drama: hoofbeats through snow, urgent dialogue, and the ever-present danger lurking beyond the next pine tree. This is radio adventure at its finest—where imagination and sound design create a world more vivid than any motion picture.</p>
+<p>Challenge of the Yukon seized the imagination of American audiences for nearly two decades, beginning in 1938 as one of radio's most durably popular adventure serials. The show captured a nation's fascination with the Canadian frontier, transforming a remote landscape into a character as compelling as Sergeant Preston himself. By the 1940s, the program had become a cultural phenomenon, spawning comic strips, toys, and the iconic theme song "Donna Donna" that millions of listeners could hum by heart. What set Preston apart from other adventure heroes was his moral authority—he was less a shoot-first cowboy and more a thoughtful lawman, solving problems with intelligence and compassion alongside his heroic dog.</p>
 <p>Whether you're a devoted fan of vintage radio or discovering Preston's adventures for the first time, "Rescue In The Forest" exemplifies why this program endured for so long. Tune in and experience the golden age of radio storytelling, where a simple microphone and human voices could conjure an entire frozen world of danger, loyalty, and redemption.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

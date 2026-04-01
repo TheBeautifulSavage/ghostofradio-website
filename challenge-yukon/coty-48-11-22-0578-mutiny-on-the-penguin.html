@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 11 22 (0578) Mutiny On The Penguin — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0578) Mutiny On The Penguin — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 11 22 (0578) Mutiny On The Penguin — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 11 22 (0578) Mutiny On The Penguin — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 11 22 (0578) Mutiny On The Penguin — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 22, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 11 22 (0578) Mutiny On The Penguin</h1>
+          <h1 class="episode__title">(0578) Mutiny On The Penguin</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Mutiny On The Penguin</p>
-<p>As the winter wind howls across the frozen Yukon, Sergeant Preston and his faithful sled dog King face their most perilous challenge yet—betrayal from within. When a crew member aboard the trading ship *Penguin* stages a mutiny to seize control of a valuable cargo of fur pelts, Preston finds himself trapped between the lawless ambitions of desperate men and his sworn duty to maintain order in the untamed North. With the ship locked in pack ice and supplies running dangerously low, tensions boil over into violence. Can Preston restore order before the mutineers claim dominion over both ship and cargo, or will the frozen Arctic claim them all?</p>
-<p>*Challenge of the Yukon*, later retitled *Sergeant Preston of the Yukon*, became a defining adventure serial of radio's golden age, capturing the imaginations of American listeners throughout the late 1930s and 1940s. The show's formula proved irresistible—combining the romance of the Canadian frontier with taut plots of crime, survival, and moral justice. Sergeant Preston, portrayed by Paul Sutherland and later Jay Michael, became an iconic figure in broadcasting, embodying the virtues of courage and integrity that audiences craved during an era of uncertainty. The show's meticulous attention to Yukon geography and authentic frontier details lent credibility to even the most dramatic storylines, while the famous theme—extracted from *La Marche des Soldats de Bois*—became instantly recognizable to millions of listeners.</p>
+          <p>As the winter wind howls across the frozen Yukon, Sergeant Preston and his faithful sled dog King face their most perilous challenge yet—betrayal from within. When a crew member aboard the trading ship Penguin stages a mutiny to seize control of a valuable cargo of fur pelts, Preston finds himself trapped between the lawless ambitions of desperate men and his sworn duty to maintain order in the untamed North. With the ship locked in pack ice and supplies running dangerously low, tensions boil over into violence. Can Preston restore order before the mutineers claim dominion over both ship and cargo, or will the frozen Arctic claim them all?</p>
+<p>Challenge of the Yukon, later retitled Sergeant Preston of the Yukon, became a defining adventure serial of radio's golden age, capturing the imaginations of American listeners throughout the late 1930s and 1940s. The show's formula proved irresistible—combining the romance of the Canadian frontier with taut plots of crime, survival, and moral justice. Sergeant Preston, portrayed by Paul Sutherland and later Jay Michael, became an iconic figure in broadcasting, embodying the virtues of courage and integrity that audiences craved during an era of uncertainty. The show's meticulous attention to Yukon geography and authentic frontier details lent credibility to even the most dramatic storylines, while the famous theme—extracted from La Marche des Soldats de Bois—became instantly recognizable to millions of listeners.</p>
 <p>Don't miss this gripping tale of mutiny and frozen justice. Tune in as Sergeant Preston navigates the treacherous waters of human desperation and confronts the question of whether law can survive in the harshest corners of civilization. King's keen instincts may be the only thing standing between order and chaos.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

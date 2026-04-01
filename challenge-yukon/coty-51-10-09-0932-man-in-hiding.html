@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 10 09 (0932) Man In Hiding — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0932) Man In Hiding — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 10 09 (0932) Man In Hiding — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 10 09 (0932) Man In Hiding — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 10 09 (0932) Man In Hiding — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 10 09 (0932) Man In Hiding</h1>
+          <h1 class="episode__title">(0932) Man In Hiding</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Man In Hiding</p>
-<p>Picture this: the frozen wastes of the Canadian Yukon stretch endlessly under a star-pierced sky, and somewhere in that unforgiving wilderness, a desperate man is running for his life. When "Man In Hiding" crackles through your radio speaker, you'll be transported into a world of howling winds, crackling campfires, and the relentless pursuit of justice. Sergeant Preston of the Royal Canadian Mounted Police faces one of his most challenging cases yet—a fugitive with secrets darker than the Arctic night itself. As the drama unfolds, you'll find yourself on the edge of your seat, wondering whether the mysterious stranger hiding in a remote cabin is a victim of circumstance or a criminal evading rightful punishment. The tension builds masterfully, with Preston's trusted sled dog King playing an unexpected role in uncovering the truth that will reshape everything the Sergeant believes about his quarry.</p>
-<p>*Challenge of the Yukon* became a phenomenon during radio's golden age precisely because it captured something uniquely compelling: the frontier as a place where civilization's rules could be questioned, where survival demanded more than badges and regulations. In this 1940s episode, that tension reaches its peak. The show's creators understood that listeners craved stories where morality wasn't always black and white, where the vast, untamed landscape could hide truths as complex as the human heart. Sergeant Preston represented order and duty, yet the Yukon itself represented freedom from judgment—and this episode milks that conflict brilliantly.</p>
+          <p>Picture this: the frozen wastes of the Canadian Yukon stretch endlessly under a star-pierced sky, and somewhere in that unforgiving wilderness, a desperate man is running for his life. When "Man In Hiding" crackles through your radio speaker, you'll be transported into a world of howling winds, crackling campfires, and the relentless pursuit of justice. Sergeant Preston of the Royal Canadian Mounted Police faces one of his most challenging cases yet—a fugitive with secrets darker than the Arctic night itself. As the drama unfolds, you'll find yourself on the edge of your seat, wondering whether the mysterious stranger hiding in a remote cabin is a victim of circumstance or a criminal evading rightful punishment. The tension builds masterfully, with Preston's trusted sled dog King playing an unexpected role in uncovering the truth that will reshape everything the Sergeant believes about his quarry.</p>
+<p>Challenge of the Yukon became a phenomenon during radio's golden age precisely because it captured something uniquely compelling: the frontier as a place where civilization's rules could be questioned, where survival demanded more than badges and regulations. In this 1940s episode, that tension reaches its peak. The show's creators understood that listeners craved stories where morality wasn't always black and white, where the vast, untamed landscape could hide truths as complex as the human heart. Sergeant Preston represented order and duty, yet the Yukon itself represented freedom from judgment—and this episode milks that conflict brilliantly.</p>
 <p>Don't miss this gripping chapter in one of radio's greatest adventure series. Tune in for a masterclass in suspense, where the frozen north becomes not just a setting, but a character in its own right—beautiful, merciless, and full of secrets waiting to be discovered.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

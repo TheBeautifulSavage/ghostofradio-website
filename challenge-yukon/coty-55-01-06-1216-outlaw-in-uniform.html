@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 55 01 06 (1216) Outlaw In Uniform — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(1216) Outlaw In Uniform — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 55 01 06 (1216) Outlaw In Uniform — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 55 01 06 (1216) Outlaw In Uniform — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 55 01 06 (1216) Outlaw In Uniform — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 55 01 06 (1216) Outlaw In Uniform</h1>
+          <h1 class="episode__title">(1216) Outlaw In Uniform</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Outlaw In Uniform</p>
-<p>Step into the frozen wilderness of the Canadian Yukon as Sergeant Preston of the Royal Canadian Mounted Police faces his most dangerous adversary yet—a fellow Mountie gone rogue. When a decorated officer begins using his badge to commit unspeakable crimes across the frozen territories, Preston must navigate the icy moral landscape between duty to the force and justice for the innocent victims scattered across the frozen tundra. With only his faithful malamute King at his side, Preston pursues a man whose very uniform has become a weapon of deception. Listeners will hear the crack of pistol fire echoing across frozen ravines, the urgent barking of King as danger draws near, and the tension crackling through every scene as Preston closes in on a quarry who knows every trick in a Mountie's playbook.</p>
-<p>*Challenge of the Yukon* captured the American imagination during the Depression and war years by offering thrilling escapism grounded in real geography and authentic police procedure. Premiering in 1938, the show ran for seventeen years and became one of radio's most beloved adventures, celebrated for its crisp writing, stellar sound design, and the chemistry between actor Paul Sutherland's Preston and the real dog playing King. This 1940s episode represents the show at its creative peak, when writers had perfected the formula of outdoor adventure, moral complexity, and genuine mystery.</p>
-<p>Tune in to *Outlaw In Uniform* and discover why generations of radio listeners huddled around their sets for this enduring classic. Hear the legendary theme song punctuate the Northern wilderness, feel the tension of a manhunt where trust itself becomes dangerous, and witness Sergeant Preston face the terrible knowledge that evil sometimes wears the same scarlet coat as justice.</p>
+          <p>Step into the frozen wilderness of the Canadian Yukon as Sergeant Preston of the Royal Canadian Mounted Police faces his most dangerous adversary yet—a fellow Mountie gone rogue. When a decorated officer begins using his badge to commit unspeakable crimes across the frozen territories, Preston must navigate the icy moral landscape between duty to the force and justice for the innocent victims scattered across the frozen tundra. With only his faithful malamute King at his side, Preston pursues a man whose very uniform has become a weapon of deception. Listeners will hear the crack of pistol fire echoing across frozen ravines, the urgent barking of King as danger draws near, and the tension crackling through every scene as Preston closes in on a quarry who knows every trick in a Mountie's playbook.</p>
+<p>Challenge of the Yukon captured the American imagination during the Depression and war years by offering thrilling escapism grounded in real geography and authentic police procedure. Premiering in 1938, the show ran for seventeen years and became one of radio's most beloved adventures, celebrated for its crisp writing, stellar sound design, and the chemistry between actor Paul Sutherland's Preston and the real dog playing King. This 1940s episode represents the show at its creative peak, when writers had perfected the formula of outdoor adventure, moral complexity, and genuine mystery.</p>
+<p>Tune in to Outlaw In Uniform and discover why generations of radio listeners huddled around their sets for this enduring classic. Hear the legendary theme song punctuate the Northern wilderness, feel the tension of a manhunt where trust itself becomes dangerous, and witness Sergeant Preston face the terrible knowledge that evil sometimes wears the same scarlet coat as justice.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

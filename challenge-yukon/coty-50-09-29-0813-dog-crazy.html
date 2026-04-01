@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 09 29 (0813) Dog Crazy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0813) Dog Crazy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 09 29 (0813) Dog Crazy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 09 29 (0813) Dog Crazy — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 09 29 (0813) Dog Crazy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 29, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 09 29 (0813) Dog Crazy</h1>
+          <h1 class="episode__title">(0813) Dog Crazy</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Dog Crazy</p>
-<p>Picture this: the howling Arctic wind cuts across frozen tundra as Sergeant Preston of the Yukon RCMP stands face to face with a mystery that threatens the very lifeline of the northern frontier—his sled dog team. When a mysterious illness begins spreading through the pack, leaving even the mighty King listless and fevered, Preston must race against time and the unforgiving wilderness to uncover whether this is nature's cruel work or something far more sinister. "Dog Crazy" plunges listeners into an urgent crisis where every bark, every whimper carries weight, where the bond between man and beast becomes literally a matter of survival in the savage north.</p>
-<p>What made *Challenge of the Yukon* such an enduring fixture on radio from 1938 through the mid-1950s was precisely this: the show understood that adventure wasn't merely about external dangers, but about the intimate relationships that sustain us in the harshest environments. Sergeant Preston, played with earnest conviction, embodied the Canadian spirit of duty and compassion, while King the dog became as much a character as any human, earning genuine affection from millions of listeners. The program's meticulous attention to arctic detail and wildlife lore gave it credibility beyond typical adventure fare—this was education wrapped in thrilling storytelling, week after week broadcasting from Montreal's studios into American living rooms. By the 1940s, when this episode aired, the show had perfected its formula: genuine peril, moral clarity, and the suggestion that civilization's finest values persist even at the world's frozen edges.</p>
+          <p>Picture this: the howling Arctic wind cuts across frozen tundra as Sergeant Preston of the Yukon RCMP stands face to face with a mystery that threatens the very lifeline of the northern frontier—his sled dog team. When a mysterious illness begins spreading through the pack, leaving even the mighty King listless and fevered, Preston must race against time and the unforgiving wilderness to uncover whether this is nature's cruel work or something far more sinister. "Dog Crazy" plunges listeners into an urgent crisis where every bark, every whimper carries weight, where the bond between man and beast becomes literally a matter of survival in the savage north.</p>
+<p>What made Challenge of the Yukon such an enduring fixture on radio from 1938 through the mid-1950s was precisely this: the show understood that adventure wasn't merely about external dangers, but about the intimate relationships that sustain us in the harshest environments. Sergeant Preston, played with earnest conviction, embodied the Canadian spirit of duty and compassion, while King the dog became as much a character as any human, earning genuine affection from millions of listeners. The program's meticulous attention to arctic detail and wildlife lore gave it credibility beyond typical adventure fare—this was education wrapped in thrilling storytelling, week after week broadcasting from Montreal's studios into American living rooms. By the 1940s, when this episode aired, the show had perfected its formula: genuine peril, moral clarity, and the suggestion that civilization's finest values persist even at the world's frozen edges.</p>
 <p>Tune in now to experience why families huddled around their radios for nearly two decades made this appointment listening—where the crack of a whip, the bark of sled dogs, and one man's unwavering commitment to justice continue to resonate across time itself.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

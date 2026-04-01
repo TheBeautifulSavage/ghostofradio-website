@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 08 05 (0904) The Widow's Son — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0904) The Widow's Son — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 08 05 (0904) The Widow's Son — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 08 05 (0904) The Widow's Son — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 08 05 (0904) The Widow's Son — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 08 05 (0904) The Widow's Son</h1>
+          <h1 class="episode__title">(0904) The Widow's Son</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Widow's Son</p>
-<p>As thunder cracks across the frozen wasteland and King barks his urgent warning, Sergeant Preston races through a blizzard to answer a desperate call for justice. A widow's only son has vanished into the merciless Yukon wilderness, and whispers in the trading posts suggest foul play—perhaps murder. With nothing but a cryptic clue and his legendary dog team, Preston must navigate treacherous ice fields and darker human passions to uncover the truth before the guilty party vanishes into the frozen north forever. This is a tale of maternal anguish and frontier courage, where a mother's tears may prove more revealing than any confession, and where the law must work as swiftly as the sled dogs to catch a killer.</p>
-<p>*Challenge of the Yukon* captured America's imagination during the darkest days of the 1940s by offering listeners an escape to a land where good and evil remained clearly defined, where determination and loyalty conquered impossible odds, and where a noble lawman and his faithful companion always pursued justice against the unforgiving landscape. Sergeant Preston—the "Mountie" of the north—embodied an idealized vision of authority and heroism that resonated profoundly during wartime, when audiences craved stories of unwavering virtue triumphing over moral ambiguity. The show's stellar production values, including the roar of sled runners on snow and the authentic howling of Yukon nights, made each episode a fully realized world.</p>
+          <p>As thunder cracks across the frozen wasteland and King barks his urgent warning, Sergeant Preston races through a blizzard to answer a desperate call for justice. A widow's only son has vanished into the merciless Yukon wilderness, and whispers in the trading posts suggest foul play—perhaps murder. With nothing but a cryptic clue and his legendary dog team, Preston must navigate treacherous ice fields and darker human passions to uncover the truth before the guilty party vanishes into the frozen north forever. This is a tale of maternal anguish and frontier courage, where a mother's tears may prove more revealing than any confession, and where the law must work as swiftly as the sled dogs to catch a killer.</p>
+<p>Challenge of the Yukon captured America's imagination during the darkest days of the 1940s by offering listeners an escape to a land where good and evil remained clearly defined, where determination and loyalty conquered impossible odds, and where a noble lawman and his faithful companion always pursued justice against the unforgiving landscape. Sergeant Preston—the "Mountie" of the north—embodied an idealized vision of authority and heroism that resonated profoundly during wartime, when audiences craved stories of unwavering virtue triumphing over moral ambiguity. The show's stellar production values, including the roar of sled runners on snow and the authentic howling of Yukon nights, made each episode a fully realized world.</p>
 <p>Don your parka and gather around the radio for this gripping frontier mystery. In "The Widow's Son," you'll discover that in the Yukon, there is nowhere to hide—not from justice, not from King, and not from Sergeant Preston himself. Tune in and experience broadcasting's golden age at its finest.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

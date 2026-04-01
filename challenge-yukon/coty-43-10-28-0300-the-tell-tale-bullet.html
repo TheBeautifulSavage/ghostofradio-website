@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 43 10 28 (0300) The Tell Tale Bullet — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0300) The Tell Tale Bullet — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 43 10 28 (0300) The Tell Tale Bullet — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 43 10 28 (0300) The Tell Tale Bullet — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 43 10 28 (0300) The Tell Tale Bullet — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 28, 1943</span>
           </div>
-          <h1 class="episode__title">Coty 43 10 28 (0300) The Tell Tale Bullet</h1>
+          <h1 class="episode__title">(0300) The Tell Tale Bullet</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Tell Tale Bullet</p>
-<p>Picture yourself huddled close to the radio on a crisp autumn evening, the crackling static giving way to the distinctive call of a dog sled team cutting through the frozen Yukon wilderness. In "The Tell Tale Bullet," Sergeant Preston faces one of his most perplexing cases yet: a murder weapon that tells a story no witness can explain. A prospector lies dead in his remote cabin, a single bullet the only evidence, and Preston must use his legendary detective skills and intimate knowledge of the harsh northern frontier to uncover a killer who thought themselves beyond the reach of the law. As tension mounts and suspects emerge from the shadows of the settlement, listeners will find themselves on the edge of their seats, wondering if even the legendary Mountie can solve this mystery before the killer strikes again.</p>
-<p>*Challenge of the Yukon* captivated American audiences throughout the 1940s and into the 1950s as the definitive adventure serial of its era. With Sergeant Preston—a character who embodied the ideals of the Royal Canadian Mounted Police—listeners found a hero of unwavering integrity venturing into one of the world's last wild frontiers. The show's genius lay in its blend of authentic Yukon atmosphere with compelling mystery and moral clarity; each episode reminded listeners that justice and human decency could prevail even in the harshest corners of civilization. The thundering hoofbeats of King, Preston's famous horse, became synonymous with adventure itself.</p>
-<p>Tune in now and experience the golden age of radio drama—when a man, his dog team, and his sense of duty were enough to bring order to chaos. *Challenge of the Yukon* awaits.</p>
+          <p>Picture yourself huddled close to the radio on a crisp autumn evening, the crackling static giving way to the distinctive call of a dog sled team cutting through the frozen Yukon wilderness. In "The Tell Tale Bullet," Sergeant Preston faces one of his most perplexing cases yet: a murder weapon that tells a story no witness can explain. A prospector lies dead in his remote cabin, a single bullet the only evidence, and Preston must use his legendary detective skills and intimate knowledge of the harsh northern frontier to uncover a killer who thought themselves beyond the reach of the law. As tension mounts and suspects emerge from the shadows of the settlement, listeners will find themselves on the edge of their seats, wondering if even the legendary Mountie can solve this mystery before the killer strikes again.</p>
+<p>Challenge of the Yukon captivated American audiences throughout the 1940s and into the 1950s as the definitive adventure serial of its era. With Sergeant Preston—a character who embodied the ideals of the Royal Canadian Mounted Police—listeners found a hero of unwavering integrity venturing into one of the world's last wild frontiers. The show's genius lay in its blend of authentic Yukon atmosphere with compelling mystery and moral clarity; each episode reminded listeners that justice and human decency could prevail even in the harshest corners of civilization. The thundering hoofbeats of King, Preston's famous horse, became synonymous with adventure itself.</p>
+<p>Tune in now and experience the golden age of radio drama—when a man, his dog team, and his sense of duty were enough to bring order to chaos. Challenge of the Yukon awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

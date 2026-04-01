@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 11 19 (0577) The St Bernard Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0577) The St Bernard Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 11 19 (0577) The St Bernard Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 11 19 (0577) The St Bernard Dog — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 11 19 (0577) The St Bernard Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 19, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 11 19 (0577) The St Bernard Dog</h1>
+          <h1 class="episode__title">(0577) The St Bernard Dog</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The St. Bernard Dog</p>
-<p>Picture yourself huddled close to the radio on a crisp northern evening as Sergeant Preston and his legendary dog King venture into the frozen wilderness where a life hangs in the balance. In this gripping installment, a lost St. Bernard—itself a rescue dog—becomes the unlikely key to solving a mystery that could mean the difference between salvation and tragedy in the unforgiving Yukon. As Preston guides King through blinding snow and treacherous terrain, listeners will experience the crack of ice beneath sled runners, the howl of wind through mountain passes, and the mounting tension as clues emerge from the most unexpected sources. The question that drives this episode is deceptively simple: why has a noble rescue dog abandoned its post? The answer, as only Preston can uncover it, lies somewhere in the vast, frozen frontier where danger lurks in every shadow.</p>
-<p>*Challenge of the Yukon* captivated millions of listeners throughout the 1940s with its perfect blend of adventure, animal companionship, and moral authority—Sergeant Preston represented the best of Canadian law enforcement at the world's edge. The show's genius lay in its authentic portrayal of the North, combined with stories that spoke to wartime audiences seeking heroes of integrity and purpose. Preston's relationship with King, a real Alaskan Malamute who appeared at promotional events, elevated the program beyond typical adventure fare into something approaching modern animal-centered drama. Each episode showcased not just thrilling action, but the profound bond between man and dog in humanity's harshest environment.</p>
-<p>Don't miss this opportunity to experience broadcasting's golden age at its finest. Tune in to hear Sergeant Preston navigate another treacherous case, where loyalty, courage, and the indomitable spirit of the North prevail. *King, bring in the St. Bernard!*</p>
+          <p>Picture yourself huddled close to the radio on a crisp northern evening as Sergeant Preston and his legendary dog King venture into the frozen wilderness where a life hangs in the balance. In this gripping installment, a lost St. Bernard—itself a rescue dog—becomes the unlikely key to solving a mystery that could mean the difference between salvation and tragedy in the unforgiving Yukon. As Preston guides King through blinding snow and treacherous terrain, listeners will experience the crack of ice beneath sled runners, the howl of wind through mountain passes, and the mounting tension as clues emerge from the most unexpected sources. The question that drives this episode is deceptively simple: why has a noble rescue dog abandoned its post? The answer, as only Preston can uncover it, lies somewhere in the vast, frozen frontier where danger lurks in every shadow.</p>
+<p>Challenge of the Yukon captivated millions of listeners throughout the 1940s with its perfect blend of adventure, animal companionship, and moral authority—Sergeant Preston represented the best of Canadian law enforcement at the world's edge. The show's genius lay in its authentic portrayal of the North, combined with stories that spoke to wartime audiences seeking heroes of integrity and purpose. Preston's relationship with King, a real Alaskan Malamute who appeared at promotional events, elevated the program beyond typical adventure fare into something approaching modern animal-centered drama. Each episode showcased not just thrilling action, but the profound bond between man and dog in humanity's harshest environment.</p>
+<p>Don't miss this opportunity to experience broadcasting's golden age at its finest. Tune in to hear Sergeant Preston navigate another treacherous case, where loyalty, courage, and the indomitable spirit of the North prevail. King, bring in the St. Bernard!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

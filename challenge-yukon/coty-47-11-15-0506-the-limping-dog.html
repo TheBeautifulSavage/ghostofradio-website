@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 11 15 (0506) The Limping Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0506) The Limping Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 11 15 (0506) The Limping Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 11 15 (0506) The Limping Dog — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 11 15 (0506) The Limping Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 15, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 11 15 (0506) The Limping Dog</h1>
+          <h1 class="episode__title">(0506) The Limping Dog</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Limping Dog</p>
-<p>As winter grips the frozen Yukon territory, Sergeant Preston and his steadfast dog King encounter a mysterious limping canine wandering the snowbound wilderness—its injury a cipher to a desperate mystery unfolding in the remote northern settlements. This episode crackles with the particular tension that made *Challenge of the Yukon* essential listening: the stark isolation of the frontier, where a single clue might unravel a criminal conspiracy or save an innocent life. With only King's instincts and Preston's unflinching courage to guide them through blizzard and adversity, listeners are drawn into a tale where compassion for a wounded animal becomes the thread connecting crime, justice, and redemption in Canada's unforgiving north.</p>
-<p>*Challenge of the Yukon*, which became *Sergeant Preston of the Yukon* during its phenomenal run from 1938 to 1955, represented the golden age of adventure radio—serialized storytelling that captivated millions of listeners with its marriage of authentic frontier detail and genuine human drama. The show's genius lay in its hero: a Canadian Mountie of unwavering integrity who solved crimes not through brute force but through deduction, persistence, and an almost supernatural connection with King, his magnificent Siberian husky. Each episode was meticulously crafted to balance action with character, the howling wilderness with intimate moments of peril and revelation. "The Limping Dog" exemplifies this balance, offering both the pulse-pounding adventure audiences craved and the emotional depth that made Preston more than a mere crime-solver—he was a symbol of justice tempered with mercy.</p>
-<p>Tune in now to experience why *Challenge of the Yukon* remains one of radio's most beloved classics. Hear the snow crunch beneath running feet, feel the bite of arctic wind, and discover how one injured dog becomes the key to solving a crime that threatens an entire settlement. This is adventure radio at its finest.</p>
+          <p>As winter grips the frozen Yukon territory, Sergeant Preston and his steadfast dog King encounter a mysterious limping canine wandering the snowbound wilderness—its injury a cipher to a desperate mystery unfolding in the remote northern settlements. This episode crackles with the particular tension that made Challenge of the Yukon essential listening: the stark isolation of the frontier, where a single clue might unravel a criminal conspiracy or save an innocent life. With only King's instincts and Preston's unflinching courage to guide them through blizzard and adversity, listeners are drawn into a tale where compassion for a wounded animal becomes the thread connecting crime, justice, and redemption in Canada's unforgiving north.</p>
+<p>Challenge of the Yukon, which became Sergeant Preston of the Yukon during its phenomenal run from 1938 to 1955, represented the golden age of adventure radio—serialized storytelling that captivated millions of listeners with its marriage of authentic frontier detail and genuine human drama. The show's genius lay in its hero: a Canadian Mountie of unwavering integrity who solved crimes not through brute force but through deduction, persistence, and an almost supernatural connection with King, his magnificent Siberian husky. Each episode was meticulously crafted to balance action with character, the howling wilderness with intimate moments of peril and revelation. "The Limping Dog" exemplifies this balance, offering both the pulse-pounding adventure audiences craved and the emotional depth that made Preston more than a mere crime-solver—he was a symbol of justice tempered with mercy.</p>
+<p>Tune in now to experience why Challenge of the Yukon remains one of radio's most beloved classics. Hear the snow crunch beneath running feet, feel the bite of arctic wind, and discover how one injured dog becomes the key to solving a crime that threatens an entire settlement. This is adventure radio at its finest.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 01 28 (0846) Escape By Night — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0846) Escape By Night — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 01 28 (0846) Escape By Night — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 01 28 (0846) Escape By Night — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 01 28 (0846) Escape By Night — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 01 28 (0846) Escape By Night</h1>
+          <h1 class="episode__title">(0846) Escape By Night</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Escape By Night</p>
-<p>As the arctic wind howls across the frozen Yukon wilderness and King barks his loyal warning, Sergeant Preston faces his most desperate predicament yet. A fugitive has fled into the unforgiving darkness of a northern night, and Preston must pursue through treacherous terrain where a single misstep means death by exposure or the mercy of wild animals. But this is no ordinary manhunt—hidden secrets bind pursuer and pursued in ways neither anticipated, and as the hours of darkness stretch endlessly, Preston must decide whether duty to the law outweighs the moral complexities of justice in a land where civilization seems impossibly distant. The tension builds as shadowed figures move through the snow, trust becomes a luxury no one can afford, and the very question of who truly deserves capture hangs suspended in the bitter cold.</p>
-<p>*Challenge of the Yukon*, known affectionately as *Sergeant Preston of the Yukon*, was a phenomenon that captured the imaginations of millions during radio's golden age. Premiering in 1938, the show became a masterclass in adventure storytelling, bringing the rugged authenticity of the Canadian northwest into living rooms across North America. With authentic sound design—from dog sled runners cutting through snow to the genuine crack of ice breaking beneath frozen feet—listeners weren't merely hearing a story; they were transported bodily into Preston's world. The show's success lay in its perfect balance of action-packed drama with nuanced character development, making Preston not just a lawman but a thoughtful representative of frontier justice.</p>
-<p>Don't miss this gripping episode where Preston's legendary courage is tested against the indifference of nature itself and the gray moral landscape of survival. Tune in to *Challenge of the Yukon* and discover why audiences kept their dials locked to this unforgettable series for nearly two decades.</p>
+          <p>As the arctic wind howls across the frozen Yukon wilderness and King barks his loyal warning, Sergeant Preston faces his most desperate predicament yet. A fugitive has fled into the unforgiving darkness of a northern night, and Preston must pursue through treacherous terrain where a single misstep means death by exposure or the mercy of wild animals. But this is no ordinary manhunt—hidden secrets bind pursuer and pursued in ways neither anticipated, and as the hours of darkness stretch endlessly, Preston must decide whether duty to the law outweighs the moral complexities of justice in a land where civilization seems impossibly distant. The tension builds as shadowed figures move through the snow, trust becomes a luxury no one can afford, and the very question of who truly deserves capture hangs suspended in the bitter cold.</p>
+<p>Challenge of the Yukon, known affectionately as Sergeant Preston of the Yukon, was a phenomenon that captured the imaginations of millions during radio's golden age. Premiering in 1938, the show became a masterclass in adventure storytelling, bringing the rugged authenticity of the Canadian northwest into living rooms across North America. With authentic sound design—from dog sled runners cutting through snow to the genuine crack of ice breaking beneath frozen feet—listeners weren't merely hearing a story; they were transported bodily into Preston's world. The show's success lay in its perfect balance of action-packed drama with nuanced character development, making Preston not just a lawman but a thoughtful representative of frontier justice.</p>
+<p>Don't miss this gripping episode where Preston's legendary courage is tested against the indifference of nature itself and the gray moral landscape of survival. Tune in to Challenge of the Yukon and discover why audiences kept their dials locked to this unforgettable series for nearly two decades.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

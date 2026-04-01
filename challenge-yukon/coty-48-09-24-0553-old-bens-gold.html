@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 09 24 (0553) Old Ben's Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0553) Old Ben's Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 09 24 (0553) Old Ben's Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 09 24 (0553) Old Ben's Gold — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 09 24 (0553) Old Ben's Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 24, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 09 24 (0553) Old Ben's Gold</h1>
+          <h1 class="episode__title">(0553) Old Ben's Gold</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Old Ben's Gold</p>
-<p>Picture yourself huddled close to your radio on a frost-bitten evening, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, as he tears across the frozen wilderness. In "Old Ben's Gold," a prospector's fortune becomes the flashpoint for deception, greed, and moral reckoning in the brutal Yukon Territory. When the legendary Old Ben claims to have struck it rich deep in the mountains, every fortune hunter from the frozen frontier descends upon his claim—but Preston and King sense that something sinister lurks beneath the surface. As winter tightens its grip and tempers flare, the Sergeant must navigate a maze of lies and desperation to uncover the truth before tragedy claims another victim in this unforgiving land.</p>
-<p>*Challenge of the Yukon* endured as one of radio's most beloved adventure serials precisely because it balanced thrilling action with authentic frontier atmosphere. Drawing inspiration from real Royal Canadian Mounted Police exploits and the Klondike Gold Rush, the show transported Depression-era audiences to a world where justice wasn't just an ideal but a calling—a place where one man and his loyal dog could make a difference. Throughout its remarkable fifteen-year run, Sergeant Preston's adventures captured listeners' imaginations with vivid sound design: the howling wind, the crack of ice, the isolation of the wilderness itself became characters in these stories. Each episode reminded listeners that civilization's thin veneer could vanish in moments, but courage and integrity never could.</p>
+          <p>Picture yourself huddled close to your radio on a frost-bitten evening, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, as he tears across the frozen wilderness. In "Old Ben's Gold," a prospector's fortune becomes the flashpoint for deception, greed, and moral reckoning in the brutal Yukon Territory. When the legendary Old Ben claims to have struck it rich deep in the mountains, every fortune hunter from the frozen frontier descends upon his claim—but Preston and King sense that something sinister lurks beneath the surface. As winter tightens its grip and tempers flare, the Sergeant must navigate a maze of lies and desperation to uncover the truth before tragedy claims another victim in this unforgiving land.</p>
+<p>Challenge of the Yukon endured as one of radio's most beloved adventure serials precisely because it balanced thrilling action with authentic frontier atmosphere. Drawing inspiration from real Royal Canadian Mounted Police exploits and the Klondike Gold Rush, the show transported Depression-era audiences to a world where justice wasn't just an ideal but a calling—a place where one man and his loyal dog could make a difference. Throughout its remarkable fifteen-year run, Sergeant Preston's adventures captured listeners' imaginations with vivid sound design: the howling wind, the crack of ice, the isolation of the wilderness itself became characters in these stories. Each episode reminded listeners that civilization's thin veneer could vanish in moments, but courage and integrity never could.</p>
 <p>Tune in now and discover why millions of listeners made this appointment radio essential. Let the Yukon's call echo through your speakers as you experience the classic adventure that defined a golden age of broadcasting.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

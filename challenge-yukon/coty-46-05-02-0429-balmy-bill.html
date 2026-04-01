@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 05 02 (0429) Balmy Bill — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0429) Balmy Bill — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 05 02 (0429) Balmy Bill — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 05 02 (0429) Balmy Bill — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 05 02 (0429) Balmy Bill — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 2, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 05 02 (0429) Balmy Bill</h1>
+          <h1 class="episode__title">(0429) Balmy Bill</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Balmy Bill"</p>
-<p>Picture yourself hunched close to your radio set on a winter's evening, the crackle of static giving way to the thunder of hoofbeats and the howl of sled dogs cutting through the frozen Yukon wilderness. In "Balmy Bill," Sergeant Preston faces a cunning con artist who's arrived in the frozen north with nothing but a smooth tongue and dangerous ambitions. When a seemingly harmless prospector begins swindling desperate miners out of their claims with promises of a secret gold strike, Preston and his legendary dog King must unravel a web of lies before tragedy strikes. The tension builds as each scene peels back another layer of deception—listeners will find themselves gripping their armchairs as Preston closes in on his quarry across treacherous, snow-buried terrain.</p>
-<p>What makes *Challenge of the Yukon* endure as a golden age classic is its perfect marriage of action, morality, and atmosphere. Broadcasting throughout the 1940s, the show captured America's fascination with the last frontiers while crafting lean, expertly-paced adventures that taught lessons without preaching. Sergeant Preston became an icon of square-jawed justice, while King the horse earned a devoted following rivaling any canine radio star. The writers understood that the Yukon itself was the true character—a character that could turn fortune into folly in seconds, that tested both criminal and lawman alike. "Balmy Bill" exemplifies this perfectly, mixing the procedural satisfaction of a con being exposed with the genuine danger of survival in the north.</p>
+          <p>Picture yourself hunched close to your radio set on a winter's evening, the crackle of static giving way to the thunder of hoofbeats and the howl of sled dogs cutting through the frozen Yukon wilderness. In "Balmy Bill," Sergeant Preston faces a cunning con artist who's arrived in the frozen north with nothing but a smooth tongue and dangerous ambitions. When a seemingly harmless prospector begins swindling desperate miners out of their claims with promises of a secret gold strike, Preston and his legendary dog King must unravel a web of lies before tragedy strikes. The tension builds as each scene peels back another layer of deception—listeners will find themselves gripping their armchairs as Preston closes in on his quarry across treacherous, snow-buried terrain.</p>
+<p>What makes Challenge of the Yukon endure as a golden age classic is its perfect marriage of action, morality, and atmosphere. Broadcasting throughout the 1940s, the show captured America's fascination with the last frontiers while crafting lean, expertly-paced adventures that taught lessons without preaching. Sergeant Preston became an icon of square-jawed justice, while King the horse earned a devoted following rivaling any canine radio star. The writers understood that the Yukon itself was the true character—a character that could turn fortune into folly in seconds, that tested both criminal and lawman alike. "Balmy Bill" exemplifies this perfectly, mixing the procedural satisfaction of a con being exposed with the genuine danger of survival in the north.</p>
 <p>Settle in with a warm drink and surrender yourself to the adventure. The mystery of Balmy Bill awaits, along with Sergeant Preston's unwavering sense of justice and the wild, untamed beauty of the Yukon calling across the decades.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

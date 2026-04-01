@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 09 25 (0399) The Red Mitten — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0399) The Red Mitten — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 09 25 (0399) The Red Mitten — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 09 25 (0399) The Red Mitten — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 09 25 (0399) The Red Mitten — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 25, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 09 25 (0399) The Red Mitten</h1>
+          <h1 class="episode__title">(0399) The Red Mitten</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Red Mitten</p>
-<p>As the opening notes of "Donna Diana" crackle through your speaker, you're transported to the frozen vastness of the Yukon Territory, where Sergeant Preston of the Royal Canadian Mounted Police faces a mystery as crimson as fresh blood on snow. When a valuable red mitten goes missing from a remote trading post, nothing is quite as it seems—and the investigation will lead Preston and his loyal sled dog King through treacherous mountain passes and into the hearts of desperate men. This episode captures everything that made the series a national obsession: the authentic danger of the frontier, the moral clarity of a man devoted to justice, and the kind of suspenseful storytelling that had families huddled around their radios, breathless until the final resolution.</p>
-<p>*Challenge of the Yukon* (later retitled *Sergeant Preston of the Yukon*) became a phenomenon during radio's golden age precisely because it blended historical authenticity with pure adventure fantasy. Produced during the late 1930s and 1940s, the show tapped into America's enduring romance with the frontier—even as the nation faced the realities of industrialization and global conflict. The RCMP setting provided a veneer of international legitimacy, while the Yukon offered a landscape that felt genuinely exotic to American listeners. Each episode balanced mystery, action, and character-driven drama in a formula that proved irresistible, running for seventeen years and spawning a television series, comic strips, and merchandise.</p>
+          <p>As the opening notes of "Donna Diana" crackle through your speaker, you're transported to the frozen vastness of the Yukon Territory, where Sergeant Preston of the Royal Canadian Mounted Police faces a mystery as crimson as fresh blood on snow. When a valuable red mitten goes missing from a remote trading post, nothing is quite as it seems—and the investigation will lead Preston and his loyal sled dog King through treacherous mountain passes and into the hearts of desperate men. This episode captures everything that made the series a national obsession: the authentic danger of the frontier, the moral clarity of a man devoted to justice, and the kind of suspenseful storytelling that had families huddled around their radios, breathless until the final resolution.</p>
+<p>Challenge of the Yukon (later retitled Sergeant Preston of the Yukon) became a phenomenon during radio's golden age precisely because it blended historical authenticity with pure adventure fantasy. Produced during the late 1930s and 1940s, the show tapped into America's enduring romance with the frontier—even as the nation faced the realities of industrialization and global conflict. The RCMP setting provided a veneer of international legitimacy, while the Yukon offered a landscape that felt genuinely exotic to American listeners. Each episode balanced mystery, action, and character-driven drama in a formula that proved irresistible, running for seventeen years and spawning a television series, comic strips, and merchandise.</p>
 <p>Tune in to "The Red Mitten" and discover why millions of listeners made Sergeant Preston their appointment listening. In an era before television, this was cinematic entertainment delivered through pure storytelling—let your imagination do the heavy lifting as Preston and King race toward justice across an unforgiving wilderness.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

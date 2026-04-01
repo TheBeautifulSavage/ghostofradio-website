@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 06 27 (0437) The Sharp Shooter — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0437) The Sharp Shooter — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 06 27 (0437) The Sharp Shooter — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 06 27 (0437) The Sharp Shooter — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 06 27 (0437) The Sharp Shooter — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · June 27, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 06 27 (0437) The Sharp Shooter</h1>
+          <h1 class="episode__title">(0437) The Sharp Shooter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Sharp Shooter</p>
-<p>Crackle through the static into the frozen Yukon wilderness as Sergeant Preston and his trusty dog King face their most cunning adversary yet in "The Sharp Shooter." When a mysterious marksman begins terrorizing the frontier settlements with impossible shots—bullets finding their targets from distances that defy explanation—Preston must track a criminal mastermind across treacherous snowfields and through dense pine forests. Is this sharpshooter a ghost from Preston's past, or a new threat lurking in the shadows? The tension builds as each clue leads deeper into danger, each night darker and colder than the last, until Preston realizes he may have stumbled upon a conspiracy far larger and more sinister than anyone imagined. Will his wits and King's keen instincts be enough to stop a killer who can strike from anywhere, unseen and unstoppable?</p>
+          <p>Crackle through the static into the frozen Yukon wilderness as Sergeant Preston and his trusty dog King face their most cunning adversary yet in "The Sharp Shooter." When a mysterious marksman begins terrorizing the frontier settlements with impossible shots—bullets finding their targets from distances that defy explanation—Preston must track a criminal mastermind across treacherous snowfields and through dense pine forests. Is this sharpshooter a ghost from Preston's past, or a new threat lurking in the shadows? The tension builds as each clue leads deeper into danger, each night darker and colder than the last, until Preston realizes he may have stumbled upon a conspiracy far larger and more sinister than anyone imagined. Will his wits and King's keen instincts be enough to stop a killer who can strike from anywhere, unseen and unstoppable?</p>
 <p>"Challenge of the Yukon" captured the imaginations of millions throughout the Golden Age of Radio, transforming listeners' living rooms into the vast, unforgiving Canadian frontier through the power of sound design and storytelling. This 1940s episode exemplifies why the show became a cultural phenomenon—combining authentic adventure with the moral authority of Sergeant Preston, the ideal lawman of the era, always upholding justice with unflinching determination. The series' popularity led to comic strips, films, and television adaptations, but nothing quite replaces the intimate magic of hearing Preston's crisp voice and the distinctive theme song that announced his arrival. The show's meticulous attention to period detail and character development created a fully realized world that listeners returned to faithfully, week after week.</p>
 <p>Settle in with "The Sharp Shooter" and discover why radio audiences of the 1940s couldn't wait to follow Sergeant Preston and King into the Yukon's greatest mysteries. This is adventure radio at its finest.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

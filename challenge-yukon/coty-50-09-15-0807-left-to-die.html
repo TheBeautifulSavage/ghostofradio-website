@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 09 15 (0807) Left To Die — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0807) Left To Die — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 09 15 (0807) Left To Die — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 09 15 (0807) Left To Die — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 09 15 (0807) Left To Die — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 15, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 09 15 (0807) Left To Die</h1>
+          <h1 class="episode__title">(0807) Left To Die</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Left To Die</p>
-<p>Picture this: a howling Arctic wind cuts across the frozen wastes as Sergeant Preston of the Royal Canadian Mounted Police discovers an abandoned prospector's cabin, its door hanging open to the merciless cold. Inside, signs of a desperate struggle—overturned furniture, scattered supplies, and most chilling of all, a trail of blood leading out into the snowstorm. This episode plunges listeners into the heart of danger as Preston must piece together what happened to the missing man before time and the unforgiving elements erase all evidence. With only King, his loyal husky, at his side, Preston races against the clock to find the prospector alive, following cryptic clues across treacherous terrain where survival itself seems impossible. Will he reach his quarry before the Yukon claims another victim? The tension mounts with every crackle of static and every bark of the faithful dog.</p>
-<p>*Challenge of the Yukon* became a cornerstone of adventure radio precisely because it grounded its stories in the real hazards of Canada's northern frontier. Sergeant Preston—based on the actual Royal Canadian Mounted Police—embodied the rugged competence and unflinching courage that captured post-Depression America's imagination. Episodes like "Left To Die" showcase the program's genius: combining detective-work pacing with genuine peril, where the landscape itself becomes a formidable antagonist. The show's meticulous attention to survival details and authentic frontier problems made Preston feel like a neighbor rather than a superhero.</p>
-<p>Tune in now to experience why millions huddled around their radio sets each week, transported to the frozen north where justice and humanity persevere against impossible odds. *Challenge of the Yukon* awaits—where danger is as real as the frost beneath your feet.</p>
+          <p>Picture this: a howling Arctic wind cuts across the frozen wastes as Sergeant Preston of the Royal Canadian Mounted Police discovers an abandoned prospector's cabin, its door hanging open to the merciless cold. Inside, signs of a desperate struggle—overturned furniture, scattered supplies, and most chilling of all, a trail of blood leading out into the snowstorm. This episode plunges listeners into the heart of danger as Preston must piece together what happened to the missing man before time and the unforgiving elements erase all evidence. With only King, his loyal husky, at his side, Preston races against the clock to find the prospector alive, following cryptic clues across treacherous terrain where survival itself seems impossible. Will he reach his quarry before the Yukon claims another victim? The tension mounts with every crackle of static and every bark of the faithful dog.</p>
+<p>Challenge of the Yukon became a cornerstone of adventure radio precisely because it grounded its stories in the real hazards of Canada's northern frontier. Sergeant Preston—based on the actual Royal Canadian Mounted Police—embodied the rugged competence and unflinching courage that captured post-Depression America's imagination. Episodes like "Left To Die" showcase the program's genius: combining detective-work pacing with genuine peril, where the landscape itself becomes a formidable antagonist. The show's meticulous attention to survival details and authentic frontier problems made Preston feel like a neighbor rather than a superhero.</p>
+<p>Tune in now to experience why millions huddled around their radio sets each week, transported to the frozen north where justice and humanity persevere against impossible odds. Challenge of the Yukon awaits—where danger is as real as the frost beneath your feet.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

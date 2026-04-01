@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 11 02 (0353) Seahorse City's Editor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0353) Seahorse City's Editor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 11 02 (0353) Seahorse City's Editor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 11 02 (0353) Seahorse City's Editor — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 11 02 (0353) Seahorse City's Editor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 2, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 11 02 (0353) Seahorse City's Editor</h1>
+          <h1 class="episode__title">(0353) Seahorse City's Editor</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon: Seahorse City's Editor</p>
-<p>Picture yourself huddled around the radio dial on a crisp evening, the crackle of static giving way to the thunderous hoofbeats of King, the wonder dog, as Sergeant Preston charges into the frozen frontier. In "Seahorse City's Editor," our intrepid Mountie must navigate the treacherous world of frontier journalism when a crusading newspaper editor uncovers corruption that reaches into the highest circles of a remote northern settlement. As accusations fly and tempers flare, Preston finds himself caught between his duty to the Crown and the dangerous pursuit of truth. Will the editor's investigation expose a criminal conspiracy, or will the forces working in the shadows silence this voice crying out for justice? The tension builds as Preston must determine who can be trusted and what price one man is willing to pay for principle in a land where the law is often written by the strongest hand.</p>
-<p>For nearly two decades, *Challenge of the Yukon* (later retitled *Sergeant Preston of the Yukon*) captured the imaginations of millions of American listeners, bringing the romance of the Canadian wilderness directly into their living rooms. The show's unique blend of authentic Mountie procedure, genuine frontier hardship, and the unshakeable moral compass of Sergeant Preston created something truly special—adventure that felt both fantastical and grounded in real history. This 1940s episode exemplifies the program's golden age, when writers crafted intricate mysteries that kept audiences guessing week after week.</p>
+          <p>Picture yourself huddled around the radio dial on a crisp evening, the crackle of static giving way to the thunderous hoofbeats of King, the wonder dog, as Sergeant Preston charges into the frozen frontier. In "Seahorse City's Editor," our intrepid Mountie must navigate the treacherous world of frontier journalism when a crusading newspaper editor uncovers corruption that reaches into the highest circles of a remote northern settlement. As accusations fly and tempers flare, Preston finds himself caught between his duty to the Crown and the dangerous pursuit of truth. Will the editor's investigation expose a criminal conspiracy, or will the forces working in the shadows silence this voice crying out for justice? The tension builds as Preston must determine who can be trusted and what price one man is willing to pay for principle in a land where the law is often written by the strongest hand.</p>
+<p>For nearly two decades, Challenge of the Yukon (later retitled Sergeant Preston of the Yukon) captured the imaginations of millions of American listeners, bringing the romance of the Canadian wilderness directly into their living rooms. The show's unique blend of authentic Mountie procedure, genuine frontier hardship, and the unshakeable moral compass of Sergeant Preston created something truly special—adventure that felt both fantastical and grounded in real history. This 1940s episode exemplifies the program's golden age, when writers crafted intricate mysteries that kept audiences guessing week after week.</p>
 <p>Don't miss this classic tale of duty, honor, and the frontier press. Tune in to discover what secrets Seahorse City harbors and whether one editor's courage can triumph over corruption in the wild north. This is radio drama at its finest—the kind that reminds us why families gathered around the set night after night.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

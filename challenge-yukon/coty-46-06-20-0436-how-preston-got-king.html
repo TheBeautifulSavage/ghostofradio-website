@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 06 20 (0436) How Preston Got King — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0436) How Preston Got King — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 06 20 (0436) How Preston Got King — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 06 20 (0436) How Preston Got King — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 06 20 (0436) How Preston Got King — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · June 20, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 06 20 (0436) How Preston Got King</h1>
+          <h1 class="episode__title">(0436) How Preston Got King</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: How Preston Got King</p>
-<p>Picture yourself huddled close to the radio on a cold evening, the crackling static giving way to that unmistakable theme—the thundering hoofbeats of a magnificent King, the baying of sled dogs, and the commanding voice of Sergeant Preston himself. In "How Preston Got King," listeners are transported to the frozen wilderness where the Mountie's most famous companion enters his life, a dramatic moment that fundamentally changes the heroic arc of our fearless lawman. This episode pulses with the raw energy of the frontier: desperate men, life-or-death pursuits across treacherous ice fields, and the fateful encounter that bonds man and beast in an unbreakable partnership. The sound effects—crackling campfires, howling winds, the rhythmic crunch of snow beneath running feet—create an immersive tableau of danger and destiny that gripped millions of North American listeners throughout the 1940s.</p>
-<p>*Challenge of the Yukon* represented the golden age of adventure radio, blending Western frontier mythology with the exotic appeal of Canada's untamed North. Sergeant Preston became a cultural phenomenon, spawning merchandise, comic books, and later television and film adaptations. The show's success lay in its perfect alchemy: thrilling action-adventure narratives grounded in authentic Yukon geography, paired with Preston's unwavering moral authority and the genuine affection audiences developed for King, his wonder-dog companion. These weren't cartoonish tales—they carried an almost documentary realism that made the dangers feel visceral and the hero's victories feel earned.</p>
+          <p>Picture yourself huddled close to the radio on a cold evening, the crackling static giving way to that unmistakable theme—the thundering hoofbeats of a magnificent King, the baying of sled dogs, and the commanding voice of Sergeant Preston himself. In "How Preston Got King," listeners are transported to the frozen wilderness where the Mountie's most famous companion enters his life, a dramatic moment that fundamentally changes the heroic arc of our fearless lawman. This episode pulses with the raw energy of the frontier: desperate men, life-or-death pursuits across treacherous ice fields, and the fateful encounter that bonds man and beast in an unbreakable partnership. The sound effects—crackling campfires, howling winds, the rhythmic crunch of snow beneath running feet—create an immersive tableau of danger and destiny that gripped millions of North American listeners throughout the 1940s.</p>
+<p>Challenge of the Yukon represented the golden age of adventure radio, blending Western frontier mythology with the exotic appeal of Canada's untamed North. Sergeant Preston became a cultural phenomenon, spawning merchandise, comic books, and later television and film adaptations. The show's success lay in its perfect alchemy: thrilling action-adventure narratives grounded in authentic Yukon geography, paired with Preston's unwavering moral authority and the genuine affection audiences developed for King, his wonder-dog companion. These weren't cartoonish tales—they carried an almost documentary realism that made the dangers feel visceral and the hero's victories feel earned.</p>
 <p>Don your heavy furs and prepare for adventure. Tune in to discover how one fateful encounter in the Canadian wilderness created one of radio's most beloved partnerships. This is storytelling at its finest—where heroism, loyalty, and the indomitable spirit of the North converge in unforgettable drama.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

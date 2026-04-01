@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 08 23 (0494) The Revenge Of Steve Carlton — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0494) The Revenge Of Steve Carlton — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 08 23 (0494) The Revenge Of Steve Carlton — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 08 23 (0494) The Revenge Of Steve Carlton — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 08 23 (0494) The Revenge Of Steve Carlton — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 23, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 08 23 (0494) The Revenge Of Steve Carlton</h1>
+          <h1 class="episode__title">(0494) The Revenge Of Steve Carlton</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Revenge of Steve Carlton</p>
-<p>Picture yourself huddled near your radio on a crisp evening, the crackle of the speaker cutting through the darkness as Sergeant Preston's commanding voice pierces the frozen Canadian wilderness. "In the frozen North, where the Mounties always get their man, danger lurks around every snow-covered corner..." In this gripping installment, a desperate outlaw named Steve Carlton has escaped from the authorities with vengeance burning in his heart—and Sergeant Preston squarely in his crosshairs. As Carlton wages a cunning campaign of sabotage and ambush across the treacherous Yukon landscape, Preston must use every ounce of his legendary grit and detective skill to stay one step ahead of a man who has nothing left to lose. King, his loyal husky companion, becomes an indispensable ally in the hunt, his keen senses alert to danger lurking beneath the drifts and shadows of the northern frontier.</p>
-<p>*Challenge of the Yukon* captured the American imagination like few programs could during the Golden Age of Radio, transforming the distant Yukon Territory into a place as familiar to listeners as their own neighborhoods. Premiering in 1938 and running for nearly two decades, the show pioneered the adventure-serial format while grounding itself in authentic tales of the Canadian Royal Northwest Mounted Police. Sergeant Preston—played with steadfast authority by actors including Paul Sutherland—became an iconic hero whose combination of rugged competence, moral certainty, and deep respect for the land and its indigenous peoples resonated powerfully with audiences seeking escape and inspiration during the Depression and war years.</p>
-<p>Don't miss this tense chapter in Preston's ongoing battle against frontier lawlessness. Tune in for *The Revenge of Steve Carlton* and discover why this show remained a listener favorite for seventeen thrilling years.</p>
+          <p>Picture yourself huddled near your radio on a crisp evening, the crackle of the speaker cutting through the darkness as Sergeant Preston's commanding voice pierces the frozen Canadian wilderness. "In the frozen North, where the Mounties always get their man, danger lurks around every snow-covered corner..." In this gripping installment, a desperate outlaw named Steve Carlton has escaped from the authorities with vengeance burning in his heart—and Sergeant Preston squarely in his crosshairs. As Carlton wages a cunning campaign of sabotage and ambush across the treacherous Yukon landscape, Preston must use every ounce of his legendary grit and detective skill to stay one step ahead of a man who has nothing left to lose. King, his loyal husky companion, becomes an indispensable ally in the hunt, his keen senses alert to danger lurking beneath the drifts and shadows of the northern frontier.</p>
+<p>Challenge of the Yukon captured the American imagination like few programs could during the Golden Age of Radio, transforming the distant Yukon Territory into a place as familiar to listeners as their own neighborhoods. Premiering in 1938 and running for nearly two decades, the show pioneered the adventure-serial format while grounding itself in authentic tales of the Canadian Royal Northwest Mounted Police. Sergeant Preston—played with steadfast authority by actors including Paul Sutherland—became an iconic hero whose combination of rugged competence, moral certainty, and deep respect for the land and its indigenous peoples resonated powerfully with audiences seeking escape and inspiration during the Depression and war years.</p>
+<p>Don't miss this tense chapter in Preston's ongoing battle against frontier lawlessness. Tune in for The Revenge of Steve Carlton and discover why this show remained a listener favorite for seventeen thrilling years.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

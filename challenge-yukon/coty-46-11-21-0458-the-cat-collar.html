@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 11 21 (0458) The Cat Collar — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0458) The Cat Collar — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 11 21 (0458) The Cat Collar — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 11 21 (0458) The Cat Collar — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 11 21 (0458) The Cat Collar — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 21, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 11 21 (0458) The Cat Collar</h1>
+          <h1 class="episode__title">(0458) The Cat Collar</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Cat Collar</p>
-<p>Crack the whip! King barks and the snow swirls as Sergeant Preston of the Yukon faces a mystery most unusual in this gripping 1940s adventure. When a prospector's cat arrives at the trading post wearing a curious collar—one bearing a cryptic message—Preston must follow a trail of clues across frozen wilderness to uncover a desperate tale of betrayal, survival, and lost fortune. The tension mounts as our stalwart Mountie and his faithful husky navigate treacherous terrain and suspicious characters, each layer of the mystery pulling listeners deeper into the Northland's unforgiving landscape. Will Preston decode the collar's secrets before a criminal mastermind covers his tracks forever?</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon precisely because it captured something essential about the American frontier spirit while grounding every episode in the authentic details of Royal Canadian Mounted Police procedure and Yukon geography. Created during radio's golden age, the show's formula—mixing genuine detective work with outdoor adventure and moral clarity—resonated with audiences during the Depression and war years, when listeners craved both escape and reassurance. Sergeant Preston himself became an icon of honest authority, a hero who relied on brains and character rather than mere gunplay. The show's influence extended beyond radio; it later inspired television adaptations and comic books, cementing its place in popular culture. Episodes like "The Cat Collar" showcase why: they blend compelling human drama with the authentic mystique of Canada's frozen north.</p>
-<p>Don't miss this chance to experience radio adventure as audiences heard it seventy years ago. Tune in to *Challenge of the Yukon* and rediscover why Sergeant Preston and King became beloved companions to millions of listeners huddled around their radio dials.</p>
+          <p>Crack the whip! King barks and the snow swirls as Sergeant Preston of the Yukon faces a mystery most unusual in this gripping 1940s adventure. When a prospector's cat arrives at the trading post wearing a curious collar—one bearing a cryptic message—Preston must follow a trail of clues across frozen wilderness to uncover a desperate tale of betrayal, survival, and lost fortune. The tension mounts as our stalwart Mountie and his faithful husky navigate treacherous terrain and suspicious characters, each layer of the mystery pulling listeners deeper into the Northland's unforgiving landscape. Will Preston decode the collar's secrets before a criminal mastermind covers his tracks forever?</p>
+<p>Challenge of the Yukon became a cultural phenomenon precisely because it captured something essential about the American frontier spirit while grounding every episode in the authentic details of Royal Canadian Mounted Police procedure and Yukon geography. Created during radio's golden age, the show's formula—mixing genuine detective work with outdoor adventure and moral clarity—resonated with audiences during the Depression and war years, when listeners craved both escape and reassurance. Sergeant Preston himself became an icon of honest authority, a hero who relied on brains and character rather than mere gunplay. The show's influence extended beyond radio; it later inspired television adaptations and comic books, cementing its place in popular culture. Episodes like "The Cat Collar" showcase why: they blend compelling human drama with the authentic mystique of Canada's frozen north.</p>
+<p>Don't miss this chance to experience radio adventure as audiences heard it seventy years ago. Tune in to Challenge of the Yukon and rediscover why Sergeant Preston and King became beloved companions to millions of listeners huddled around their radio dials.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

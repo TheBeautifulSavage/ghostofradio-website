@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 05 15 (1007) The Young Camper — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(1007) The Young Camper — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 05 15 (1007) The Young Camper — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 05 15 (1007) The Young Camper — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 05 15 (1007) The Young Camper — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 05 15 (1007) The Young Camper</h1>
+          <h1 class="episode__title">(1007) The Young Camper</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Young Camper</p>
-<p>Picture yourself huddled close to your radio on a frosty evening, the static crackling with northern mystery as Sergeant Preston and his magnificent dog King venture deep into the Canadian wilderness. In "The Young Camper," a seemingly innocent tale of a boy lost in the unforgiving Yukon quickly transforms into a gripping race against time and nature itself. As Preston picks up the trail, listeners are pulled into dense forests where every shadow could conceal danger—starvation, exposure, or worse. The boy's desperate cries echo through the darkness while the Sergeant and his loyal companion navigate treacherous terrain, their breath visible in the bitter cold. What unfolds is far more than a simple rescue mission; it's a test of courage, survival instinct, and the unbreakable bond between man and beast that defined the very heart of this beloved program.</p>
+          <p>Picture yourself huddled close to your radio on a frosty evening, the static crackling with northern mystery as Sergeant Preston and his magnificent dog King venture deep into the Canadian wilderness. In "The Young Camper," a seemingly innocent tale of a boy lost in the unforgiving Yukon quickly transforms into a gripping race against time and nature itself. As Preston picks up the trail, listeners are pulled into dense forests where every shadow could conceal danger—starvation, exposure, or worse. The boy's desperate cries echo through the darkness while the Sergeant and his loyal companion navigate treacherous terrain, their breath visible in the bitter cold. What unfolds is far more than a simple rescue mission; it's a test of courage, survival instinct, and the unbreakable bond between man and beast that defined the very heart of this beloved program.</p>
 <p>"Challenge of the Yukon" captured American imaginations throughout the Golden Age of Radio by delivering genuine adventure with authentic Northwest atmosphere and moral clarity. Sergeant Preston—always just, always brave—represented the triumph of civilization and duty over lawlessness and chaos, while King embodied the noble animal companion that countless listeners desperately wanted of their own. During the 1940s, when this episode aired, such programs offered escape from wartime anxieties while reinforcing American values of heroism and perseverance. The show's meticulous attention to period detail and genuine Yukon settings lent credibility that kept audiences returning week after week.</p>
 <p>Don't miss this thrilling episode where Preston's legendary tracking skills are tested against the clock itself. Tune in now and experience the adventure that made "Challenge of the Yukon" a radio sensation—where danger lurks around every frozen bend and only courage and determination can bring a lost child home.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

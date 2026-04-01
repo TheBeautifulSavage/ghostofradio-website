@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 05 18 (0653) The Bad Penny — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0653) The Bad Penny — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 05 18 (0653) The Bad Penny — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 05 18 (0653) The Bad Penny — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 05 18 (0653) The Bad Penny — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 18, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 05 18 (0653) The Bad Penny</h1>
+          <h1 class="episode__title">(0653) The Bad Penny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Bad Penny</p>
-<p>As winter's iron grip tightens across the frozen Yukon, Sergeant Preston and his magnificent dog King face their most treacherous case yet. When a seemingly worthless prospector stumbles into Fort Yukon with claims of a murder most foul, Preston must navigate a web of deception, desperation, and greed that threatens to unravel the fragile order of the North. Who is the mysterious "Bad Penny"—a wanted criminal said to drift through the territory like a ghost, always arriving just before disaster strikes? With only King's instincts and his own keen investigative mind, Preston pursues the truth through whiteout blizzards and into the darkest corners of frontier society, where a man's word is often his only currency and betrayal can mean death.</p>
-<p>*Challenge of the Yukon* captured the imaginations of millions throughout the 1940s by offering listeners an authentic escape into one of North America's last great frontiers. The show's meticulous attention to period detail and Sergeant Preston's unwavering moral compass provided a comforting counterpoint to an anxious world at war. Broadcast live from Hollywood, the program became famous for its thundering hoofbeats, howling wolves, and the iconic theme—that stirring trumpet call that signaled adventure was afoot. This episode exemplifies the show's signature blend of police procedural intrigue and wilderness survival, showcasing why Preston remained one of radio's most enduring heroes.</p>
+          <p>As winter's iron grip tightens across the frozen Yukon, Sergeant Preston and his magnificent dog King face their most treacherous case yet. When a seemingly worthless prospector stumbles into Fort Yukon with claims of a murder most foul, Preston must navigate a web of deception, desperation, and greed that threatens to unravel the fragile order of the North. Who is the mysterious "Bad Penny"—a wanted criminal said to drift through the territory like a ghost, always arriving just before disaster strikes? With only King's instincts and his own keen investigative mind, Preston pursues the truth through whiteout blizzards and into the darkest corners of frontier society, where a man's word is often his only currency and betrayal can mean death.</p>
+<p>Challenge of the Yukon captured the imaginations of millions throughout the 1940s by offering listeners an authentic escape into one of North America's last great frontiers. The show's meticulous attention to period detail and Sergeant Preston's unwavering moral compass provided a comforting counterpoint to an anxious world at war. Broadcast live from Hollywood, the program became famous for its thundering hoofbeats, howling wolves, and the iconic theme—that stirring trumpet call that signaled adventure was afoot. This episode exemplifies the show's signature blend of police procedural intrigue and wilderness survival, showcasing why Preston remained one of radio's most enduring heroes.</p>
 <p>Don't miss "The Bad Penny"—tune in and discover why audiences huddled around their radios couldn't wait to hear what fresh danger awaited the Sergeant and his loyal companion in the unforgiving North. A mystery awaits.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 03 18 (0860) Never Be Missed — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0860) Never Be Missed — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 03 18 (0860) Never Be Missed — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 03 18 (0860) Never Be Missed — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 03 18 (0860) Never Be Missed — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 03 18 (0860) Never Be Missed</h1>
+          <h1 class="episode__title">(0860) Never Be Missed</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Never Be Missed</p>
-<p>Picture yourself huddled close to your radio set on a winter's evening, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, and the stirring strains of "Donna Diana" swelling through your speaker. In "Never Be Missed," our stalwart Mountie faces one of his most perplexing cases yet—a disappearance so complete, so utterly without trace, that it challenges even Preston's legendary detective skills. As he mushs across the frozen wastes of the Canadian North, interrogating suspicious trappers and searching desolate cabins, the mystery deepens: who vanishes without leaving a single clue, and why? The tension mounts with each commercial break, each coded radio transmission crackling through the vast, unforgiving wilderness.</p>
-<p>*Challenge of the Yukon* became a beloved institution during radio's golden age precisely because it tapped into something primal in the American imagination—the untamed frontier, the triumph of justice over the lawless wilderness, and one man's unflinching courage. Running for nearly two decades, the series established the template for adventure radio that countless shows would follow. Set against the authentic backdrop of the Klondike Gold Rush and the Northwest Mounted Police, the program balanced genuine historical detail with wildly imaginative storytelling, creating a world both real and gloriously larger than life.</p>
+          <p>Picture yourself huddled close to your radio set on a winter's evening, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, and the stirring strains of "Donna Diana" swelling through your speaker. In "Never Be Missed," our stalwart Mountie faces one of his most perplexing cases yet—a disappearance so complete, so utterly without trace, that it challenges even Preston's legendary detective skills. As he mushs across the frozen wastes of the Canadian North, interrogating suspicious trappers and searching desolate cabins, the mystery deepens: who vanishes without leaving a single clue, and why? The tension mounts with each commercial break, each coded radio transmission crackling through the vast, unforgiving wilderness.</p>
+<p>Challenge of the Yukon became a beloved institution during radio's golden age precisely because it tapped into something primal in the American imagination—the untamed frontier, the triumph of justice over the lawless wilderness, and one man's unflinching courage. Running for nearly two decades, the series established the template for adventure radio that countless shows would follow. Set against the authentic backdrop of the Klondike Gold Rush and the Northwest Mounted Police, the program balanced genuine historical detail with wildly imaginative storytelling, creating a world both real and gloriously larger than life.</p>
 <p>Don your virtual parka and join Sergeant Preston, King, and Constable Mackinley as they unravel "Never Be Missed"—a case that will keep you guessing right up until that final, satisfying resolution. This is radio adventure at its finest: smart, suspenseful, and utterly captivating.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

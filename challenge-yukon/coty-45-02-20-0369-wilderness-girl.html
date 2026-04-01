@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 02 20 (0369) Wilderness Girl — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0369) Wilderness Girl — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 02 20 (0369) Wilderness Girl — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 02 20 (0369) Wilderness Girl — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 02 20 (0369) Wilderness Girl — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 20, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 02 20 (0369) Wilderness Girl</h1>
+          <h1 class="episode__title">(0369) Wilderness Girl</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Wilderness Girl</p>
-<p>As the lonely wail of a dog sled cuts through the frozen silence of the Canadian north, Sergeant Preston and his faithful husky King face their most perplexing case yet: a young woman, alone and resourceful, has vanished into the unforgiving Yukon wilderness. Is she lost, or has she deliberately fled into the snow-covered isolation? With temperatures plummeting and supplies dwindling, Preston must track her across treacherous terrain while uncovering the mystery of who—or what—she's running from. The crackle of a distant campfire, the growl of wild wolves, and the tension of a manhunt through endless white silence create an atmosphere thick with danger and intrigue in this gripping 1940s episode.</p>
-<p>*Challenge of the Yukon*, which became the beloved *Sergeant Preston of the Yukon* in later seasons, was a triumph of serialized adventure radio, running for nearly two decades and captivating millions of listeners with its authentic northern frontier setting and the iconic command "On, King, on!" The show's brilliance lay in its meticulous attention to detail—creators drew from actual Yukon history, RCMP procedures, and frontier survival lore, lending credibility to every thrilling case. By the early 1940s when "Wilderness Girl" aired, the show had perfected the formula of combining genuine adventure with compelling character study, making it essential listening for families across North America seeking escape and excitement during wartime anxieties.</p>
-<p>This episode exemplifies everything that made *Sergeant Preston* a radio institution: superior sound design, compelling mystery, and the eternal tension between civilization and wild nature. Tune in and discover why audiences huddled around their sets week after week, eager to follow Sergeant Preston and King into Canada's frozen heart.</p>
+          <p>As the lonely wail of a dog sled cuts through the frozen silence of the Canadian north, Sergeant Preston and his faithful husky King face their most perplexing case yet: a young woman, alone and resourceful, has vanished into the unforgiving Yukon wilderness. Is she lost, or has she deliberately fled into the snow-covered isolation? With temperatures plummeting and supplies dwindling, Preston must track her across treacherous terrain while uncovering the mystery of who—or what—she's running from. The crackle of a distant campfire, the growl of wild wolves, and the tension of a manhunt through endless white silence create an atmosphere thick with danger and intrigue in this gripping 1940s episode.</p>
+<p>Challenge of the Yukon, which became the beloved Sergeant Preston of the Yukon in later seasons, was a triumph of serialized adventure radio, running for nearly two decades and captivating millions of listeners with its authentic northern frontier setting and the iconic command "On, King, on!" The show's brilliance lay in its meticulous attention to detail—creators drew from actual Yukon history, RCMP procedures, and frontier survival lore, lending credibility to every thrilling case. By the early 1940s when "Wilderness Girl" aired, the show had perfected the formula of combining genuine adventure with compelling character study, making it essential listening for families across North America seeking escape and excitement during wartime anxieties.</p>
+<p>This episode exemplifies everything that made Sergeant Preston a radio institution: superior sound design, compelling mystery, and the eternal tension between civilization and wild nature. Tune in and discover why audiences huddled around their sets week after week, eager to follow Sergeant Preston and King into Canada's frozen heart.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

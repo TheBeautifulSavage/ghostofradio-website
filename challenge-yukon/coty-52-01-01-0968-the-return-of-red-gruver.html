@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 01 01 (0968) The Return Of Red Gruver — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0968) The Return Of Red Gruver — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 01 01 (0968) The Return Of Red Gruver — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 01 01 (0968) The Return Of Red Gruver — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 01 01 (0968) The Return Of Red Gruver — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 01 01 (0968) The Return Of Red Gruver</h1>
+          <h1 class="episode__title">(0968) The Return Of Red Gruver</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Return of Red Gruver</p>
-<p>The frozen wastes of the Yukon have seen their share of desperate men, but few have inspired as much dread as the notorious Red Gruver—a name whispered around campfires and trading posts with equal parts fear and fascination. In this gripping episode, Sergeant Preston and his loyal husky King must confront the ghost of their past when word reaches the post that Gruver, believed dead these many years, has resurfaced in the remote northern wilderness. As the Mountie and his faithful companion venture into blinding snow and treacherous terrain, listeners will find themselves caught in a web of mystery and danger, where trust becomes currency and survival hangs by a thread. The atmospheric sound design—crackling fires, howling winds, and the crunch of boots on ice—transports you directly into the unforgiving landscape, while the escalating tension builds toward a confrontation that promises to test everything Preston holds dear.</p>
-<p>What made *Challenge of the Yukon* such an enduring favorite was its authentic blend of adventure storytelling rooted in the real history of Canada's northland. The show premiered in 1938 and quickly became a phenomenon, riding the golden age of radio drama when millions of listeners tuned in weekly to follow Preston's exploits. The writers drew inspiration from actual Mounted Police operations, genuine Yukon lore, and the very real perils of frontier life, lending credibility to even the most dramatic episodes. By the 1940s, when this episode aired, the show had perfected its formula: a compelling antagonist, high stakes, and the unshakeable moral code of a lawman who always got his man.</p>
+          <p>The frozen wastes of the Yukon have seen their share of desperate men, but few have inspired as much dread as the notorious Red Gruver—a name whispered around campfires and trading posts with equal parts fear and fascination. In this gripping episode, Sergeant Preston and his loyal husky King must confront the ghost of their past when word reaches the post that Gruver, believed dead these many years, has resurfaced in the remote northern wilderness. As the Mountie and his faithful companion venture into blinding snow and treacherous terrain, listeners will find themselves caught in a web of mystery and danger, where trust becomes currency and survival hangs by a thread. The atmospheric sound design—crackling fires, howling winds, and the crunch of boots on ice—transports you directly into the unforgiving landscape, while the escalating tension builds toward a confrontation that promises to test everything Preston holds dear.</p>
+<p>What made Challenge of the Yukon such an enduring favorite was its authentic blend of adventure storytelling rooted in the real history of Canada's northland. The show premiered in 1938 and quickly became a phenomenon, riding the golden age of radio drama when millions of listeners tuned in weekly to follow Preston's exploits. The writers drew inspiration from actual Mounted Police operations, genuine Yukon lore, and the very real perils of frontier life, lending credibility to even the most dramatic episodes. By the 1940s, when this episode aired, the show had perfected its formula: a compelling antagonist, high stakes, and the unshakeable moral code of a lawman who always got his man.</p>
 <p>Don your parka and settle in by the radio—Red Gruver awaits, and Sergeant Preston will not rest until justice is served in the frozen north.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 12 07 (0358) Trial By Fire — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0358) Trial By Fire — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 12 07 (0358) Trial By Fire — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 12 07 (0358) Trial By Fire — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 12 07 (0358) Trial By Fire — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 7, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 12 07 (0358) Trial By Fire</h1>
+          <h1 class="episode__title">(0358) Trial By Fire</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Trial By Fire</p>
-<p>When the crackling static clears and that immortal bugle call pierces through your radio speaker, you're transported to the frozen wilderness of Canada's Yukon Territory, where danger lurks in every snowdrift and moral ambiguity freezes as solid as the tundra itself. In this gripping episode, Sergeant Preston of the Royal Canadian Mounted Police faces his greatest test yet—not against desperate criminals or nature's fury, but against the very institution he's sworn to serve. Accused of a crime he didn't commit, Preston must prove his innocence while deep in the backcountry with only King, his magnificent husky, and his unwavering sense of justice to sustain him. The trial isn't conducted in any courtroom; it unfolds on the savage frontier where reputation means everything and the truth must be fought for with both cunning and courage.</p>
-<p>*Challenge of the Yukon* arrived at radio's golden age when American audiences craved adventure that felt authentic yet heroic—a show grounded in the real history of the Canadian wilderness and the legendary Mounted Police, yet elevated by scripts that explored genuine moral complexity. From 1938 through the 1950s, the program became a staple of afternoon and evening broadcasts, introducing millions of listeners to a hero whose code of honor mirrored the nation's idealized self-image. This particular episode exemplifies why the show endured: it strips away the simple good-versus-evil narrative to examine what happens when an institution fails one of its own, forcing Preston to navigate between duty and survival.</p>
-<p>Don't miss this unforgettable chapter in Sergeant Preston's saga. Tune in to *Trial By Fire* and discover why listeners kept returning week after week to the frozen north, where one man's integrity becomes his most valuable resource.</p>
+          <p>When the crackling static clears and that immortal bugle call pierces through your radio speaker, you're transported to the frozen wilderness of Canada's Yukon Territory, where danger lurks in every snowdrift and moral ambiguity freezes as solid as the tundra itself. In this gripping episode, Sergeant Preston of the Royal Canadian Mounted Police faces his greatest test yet—not against desperate criminals or nature's fury, but against the very institution he's sworn to serve. Accused of a crime he didn't commit, Preston must prove his innocence while deep in the backcountry with only King, his magnificent husky, and his unwavering sense of justice to sustain him. The trial isn't conducted in any courtroom; it unfolds on the savage frontier where reputation means everything and the truth must be fought for with both cunning and courage.</p>
+<p>Challenge of the Yukon arrived at radio's golden age when American audiences craved adventure that felt authentic yet heroic—a show grounded in the real history of the Canadian wilderness and the legendary Mounted Police, yet elevated by scripts that explored genuine moral complexity. From 1938 through the 1950s, the program became a staple of afternoon and evening broadcasts, introducing millions of listeners to a hero whose code of honor mirrored the nation's idealized self-image. This particular episode exemplifies why the show endured: it strips away the simple good-versus-evil narrative to examine what happens when an institution fails one of its own, forcing Preston to navigate between duty and survival.</p>
+<p>Don't miss this unforgettable chapter in Sergeant Preston's saga. Tune in to Trial By Fire and discover why listeners kept returning week after week to the frozen north, where one man's integrity becomes his most valuable resource.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

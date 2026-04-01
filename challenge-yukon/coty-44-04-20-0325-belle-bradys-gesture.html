@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 04 20 (0325) Belle Brady's Gesture — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0325) Belle Brady's Gesture — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 04 20 (0325) Belle Brady's Gesture — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 04 20 (0325) Belle Brady's Gesture — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 04 20 (0325) Belle Brady's Gesture — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 20, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 04 20 (0325) Belle Brady's Gesture</h1>
+          <h1 class="episode__title">(0325) Belle Brady's Gesture</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Belle Brady's Gesture</p>
-<p>When the snow lies thick across the frozen Yukon and a woman's heart hangs heavy with impossible choices, Sergeant Preston of the Royal Canadian Mounted Police finds himself caught between duty and mercy in this gripping 1940s adventure. Belle Brady stands at a crossroads—her gesture of kindness to a wanted fugitive threatens to entangle her in a web of deception that could destroy everything she's built in this harsh, unforgiving frontier. As Preston investigates, listeners will find themselves caught in the tension between the law's cold certainty and the warmth of human compassion, while the howling winds and distant dog sleds underscore a moral dilemma that proves far more complex than any criminal case.</p>
-<p>*Challenge of the Yukon* arrived on American airwaves during radio's golden age, when the appetite for adventure seemed insatiable and the Canadian North represented ultimate romance and danger. Running from 1938 through the 1950s on ABC and Mutual networks, the show became a cornerstone of juvenile programming—yet it possessed a sophistication that appealed equally to adult listeners. Paul Sutherland's Sergeant Preston embodied an ideal of principled authority tempered with understanding, while episodes like "Belle Brady's Gesture" revealed that the show's true genius lay not in gunfights or chases, but in exploring how ordinary people navigate extraordinary moral landscapes. The crackling sound design and evocative descriptions transported millions of listeners northward each week.</p>
+          <p>When the snow lies thick across the frozen Yukon and a woman's heart hangs heavy with impossible choices, Sergeant Preston of the Royal Canadian Mounted Police finds himself caught between duty and mercy in this gripping 1940s adventure. Belle Brady stands at a crossroads—her gesture of kindness to a wanted fugitive threatens to entangle her in a web of deception that could destroy everything she's built in this harsh, unforgiving frontier. As Preston investigates, listeners will find themselves caught in the tension between the law's cold certainty and the warmth of human compassion, while the howling winds and distant dog sleds underscore a moral dilemma that proves far more complex than any criminal case.</p>
+<p>Challenge of the Yukon arrived on American airwaves during radio's golden age, when the appetite for adventure seemed insatiable and the Canadian North represented ultimate romance and danger. Running from 1938 through the 1950s on ABC and Mutual networks, the show became a cornerstone of juvenile programming—yet it possessed a sophistication that appealed equally to adult listeners. Paul Sutherland's Sergeant Preston embodied an ideal of principled authority tempered with understanding, while episodes like "Belle Brady's Gesture" revealed that the show's true genius lay not in gunfights or chases, but in exploring how ordinary people navigate extraordinary moral landscapes. The crackling sound design and evocative descriptions transported millions of listeners northward each week.</p>
 <p>Dust off those old frequencies and join Sergeant Preston as he navigates the treacherous heart of human nature—where loyalty clashes with law and a single gesture might change everything. This is frontier justice at its most compelling, when doing the right thing means understanding what "right" truly means.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

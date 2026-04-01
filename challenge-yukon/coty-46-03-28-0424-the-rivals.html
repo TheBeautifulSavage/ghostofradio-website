@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 03 28 (0424) The Rivals — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0424) The Rivals — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 03 28 (0424) The Rivals — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 03 28 (0424) The Rivals — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 03 28 (0424) The Rivals — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 28, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 03 28 (0424) The Rivals</h1>
+          <h1 class="episode__title">(0424) The Rivals</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Rivals</p>
-<p>Picture yourself huddled close to the radio on a winter's evening in the 1940s, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, and that immortal cry: "On King! On, you huskies!" In "The Rivals," Preston finds himself caught between two men vying for control of a remote Yukon trading post, each with a claim that seems legitimate, each with secrets that could prove deadly. The frozen wilderness becomes a crucible of deception as our stalwart Mountie must navigate treacherous alliances and hidden motives to uncover the truth. Danger lurks in every shadowed cabin and snowdrift, and Preston's unflinching sense of justice will be tested as he discovers that the real crime may be far more complex than anyone suspected.</p>
-<p>For nearly two decades, *Challenge of the Yukon* captivated millions of listeners with its perfect blend of frontier adventure and moral clarity—a show that understood that the Canadian North was less a mere setting and more a character unto itself. Sergeant Preston, played with steady-voiced authority, embodied the romantic ideal of the Mountie: incorruptible, resourceful, and always equal to any challenge. The series' meticulous attention to period detail and authentic wilderness atmosphere set it apart from other adventure serials, while episodes like "The Rivals" showcased the show's sophisticated understanding of human nature beneath the adventure trappings.</p>
+          <p>Picture yourself huddled close to the radio on a winter's evening in the 1940s, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, and that immortal cry: "On King! On, you huskies!" In "The Rivals," Preston finds himself caught between two men vying for control of a remote Yukon trading post, each with a claim that seems legitimate, each with secrets that could prove deadly. The frozen wilderness becomes a crucible of deception as our stalwart Mountie must navigate treacherous alliances and hidden motives to uncover the truth. Danger lurks in every shadowed cabin and snowdrift, and Preston's unflinching sense of justice will be tested as he discovers that the real crime may be far more complex than anyone suspected.</p>
+<p>For nearly two decades, Challenge of the Yukon captivated millions of listeners with its perfect blend of frontier adventure and moral clarity—a show that understood that the Canadian North was less a mere setting and more a character unto itself. Sergeant Preston, played with steady-voiced authority, embodied the romantic ideal of the Mountie: incorruptible, resourceful, and always equal to any challenge. The series' meticulous attention to period detail and authentic wilderness atmosphere set it apart from other adventure serials, while episodes like "The Rivals" showcased the show's sophisticated understanding of human nature beneath the adventure trappings.</p>
 <p>So tune in now and experience the golden age of radio drama, when imagination was limitless and a dog's howl could transport you thousands of miles north to a world of snow, silence, and salvation through justice.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

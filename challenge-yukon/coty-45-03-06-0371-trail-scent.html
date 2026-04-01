@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 03 06 (0371) Trail Scent — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0371) Trail Scent — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 03 06 (0371) Trail Scent — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 03 06 (0371) Trail Scent — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 03 06 (0371) Trail Scent — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 6, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 03 06 (0371) Trail Scent</h1>
+          <h1 class="episode__title">(0371) Trail Scent</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Trail Scent</p>
-<p>Picture yourself huddled close to your radio on a winter's night, the crackling static giving way to the sharp bark of a sled dog and the crunch of snow beneath boots. In this gripping installment, Sergeant Preston of the Yukon faces his most cunning adversary yet—not a man, but nature itself. When a desperate criminal flees into the frozen wilderness, Preston and his loyal husky King must rely on something more primal than law and order: the dog's extraordinary sense of smell. As blizzards rage and visibility drops to mere feet, listeners will experience the mounting tension as Preston realizes his quarry has vanished without a trace. The scent becomes everything—a lifeline through whiteout conditions, a thread of justice in an unforgiving landscape where one wrong turn means death. The episode masterfully balances the intimate partnership between man and beast with the raw, elemental struggle against the Arctic's pitiless indifference.</p>
-<p>*Challenge of the Yukon* captivated audiences throughout the 1940s precisely because it grounded adventure in authentic frontier experience. Created during an era when radio drama demanded nothing less than complete immersion, the show's creators invested in technical sound design that transported listeners directly into the snow-packed territories of Canada. Preston, portrayed with quiet determination, embodied the ideals of justice and perseverance that resonated deeply during wartime America. The show's emphasis on the human-animal bond struck a chord with audiences who understood loyalty and teamwork as survival necessities.</p>
+          <p>Picture yourself huddled close to your radio on a winter's night, the crackling static giving way to the sharp bark of a sled dog and the crunch of snow beneath boots. In this gripping installment, Sergeant Preston of the Yukon faces his most cunning adversary yet—not a man, but nature itself. When a desperate criminal flees into the frozen wilderness, Preston and his loyal husky King must rely on something more primal than law and order: the dog's extraordinary sense of smell. As blizzards rage and visibility drops to mere feet, listeners will experience the mounting tension as Preston realizes his quarry has vanished without a trace. The scent becomes everything—a lifeline through whiteout conditions, a thread of justice in an unforgiving landscape where one wrong turn means death. The episode masterfully balances the intimate partnership between man and beast with the raw, elemental struggle against the Arctic's pitiless indifference.</p>
+<p>Challenge of the Yukon captivated audiences throughout the 1940s precisely because it grounded adventure in authentic frontier experience. Created during an era when radio drama demanded nothing less than complete immersion, the show's creators invested in technical sound design that transported listeners directly into the snow-packed territories of Canada. Preston, portrayed with quiet determination, embodied the ideals of justice and perseverance that resonated deeply during wartime America. The show's emphasis on the human-animal bond struck a chord with audiences who understood loyalty and teamwork as survival necessities.</p>
 <p>Whether you're a longtime devotee of Preston's adventures or discovering the Yukon for the first time, "Trail Scent" offers everything that made this series unforgettable: genuine peril, the unmistakable voice of authority, and King's faithful presence cutting through the darkness. Tune in and discover why millions gathered around their sets to follow Sergeant Preston into the frozen north.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

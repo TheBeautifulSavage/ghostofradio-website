@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 03 21 (0423) Hold Up — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0423) Hold Up — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 03 21 (0423) Hold Up — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 03 21 (0423) Hold Up — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 03 21 (0423) Hold Up — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 21, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 03 21 (0423) Hold Up</h1>
+          <h1 class="episode__title">(0423) Hold Up</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Hold Up"</p>
-<p>The frozen wilderness of the Yukon calls once more as Sergeant Preston and his magnificent dog King prepare to face a desperate band of desperate men in this edge-of-your-seat adventure. When word reaches the remote outpost that a payroll shipment has been ambushed along the treacherous mountain pass, Preston must race against time and the brutal elements to track down the thieves before they disappear into the vast, unforgiving frontier. With temperatures plummeting and the killers desperate and dangerous, listeners will find themselves huddled in the tense atmosphere of a Yukon trading post, hearing the crack of rifle fire echo across snow-laden peaks and feeling the desperation of men pushed to their breaking point by greed and cold circumstance. King's keen senses and Preston's unwavering sense of duty prove humanity's greatest assets against the lawlessness that threatens the northern territories.</p>
-<p>*Challenge of the Yukon* captured the American imagination for nearly two decades by transforming the Canadian frontier into a stage for timeless moral drama. Broadcasting during the 1940s, when the nation sought adventure and reassurance in equal measure, the series featured Sergeant Preston as an avatar of civilization's triumph over wilderness—a lawman whose integrity was as reliable as a compass needle. The show's writers crafted stories that balanced thrilling action with genuine character development, while the sound effects department created an immersive soundscape of howling winds, dog team commands, and crackling campfires that transported millions to that distant, gleaming landscape.</p>
+          <p>The frozen wilderness of the Yukon calls once more as Sergeant Preston and his magnificent dog King prepare to face a desperate band of desperate men in this edge-of-your-seat adventure. When word reaches the remote outpost that a payroll shipment has been ambushed along the treacherous mountain pass, Preston must race against time and the brutal elements to track down the thieves before they disappear into the vast, unforgiving frontier. With temperatures plummeting and the killers desperate and dangerous, listeners will find themselves huddled in the tense atmosphere of a Yukon trading post, hearing the crack of rifle fire echo across snow-laden peaks and feeling the desperation of men pushed to their breaking point by greed and cold circumstance. King's keen senses and Preston's unwavering sense of duty prove humanity's greatest assets against the lawlessness that threatens the northern territories.</p>
+<p>Challenge of the Yukon captured the American imagination for nearly two decades by transforming the Canadian frontier into a stage for timeless moral drama. Broadcasting during the 1940s, when the nation sought adventure and reassurance in equal measure, the series featured Sergeant Preston as an avatar of civilization's triumph over wilderness—a lawman whose integrity was as reliable as a compass needle. The show's writers crafted stories that balanced thrilling action with genuine character development, while the sound effects department created an immersive soundscape of howling winds, dog team commands, and crackling campfires that transported millions to that distant, gleaming landscape.</p>
 <p>Tune in now and discover why families gathered around their radios week after week to follow Preston's adventures. Will justice prevail in the frozen north? Let the crackle of your speaker set the scene.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

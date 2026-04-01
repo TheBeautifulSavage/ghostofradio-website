@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 05 14 (0482) The Usurpers — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0482) The Usurpers — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 05 14 (0482) The Usurpers — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 05 14 (0482) The Usurpers — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 05 14 (0482) The Usurpers — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 14, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 05 14 (0482) The Usurpers</h1>
+          <h1 class="episode__title">(0482) The Usurpers</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Usurpers</p>
-<p>When Sergeant Preston and King, his loyal husky companion, arrive at an isolated trading post deep in the frozen Yukon wilderness, they discover far more than a routine patrol should uncover. A ruthless band of claim jumpers has seized control of the settlement, terrorizing honest prospectors and mining families with threats and violence. As Preston listens to the terrified accounts of displaced miners—their voices trembling over the crackling airwaves—he realizes this is no ordinary case of frontier lawlessness. The usurpers have systematically destroyed claim documents, forged deeds, and intimidated witnesses into silence. With winter closing in and the nearest reinforcements days away, Preston must rely on his wits, his courage, and the uncanny intelligence of King to gather evidence and restore order before an innocent family loses everything to these cunning criminals.</p>
-<p>*Challenge of the Yukon* captivated millions throughout the 1930s and 1940s by transporting listeners to a realm where Canadian justice remained swift and absolute, yet fundamentally humane. Sergeant Preston represented the idealized lawman of pulp adventure—physically capable, morally incorruptible, and genuinely protective of the frontier communities he served. The show's popularity spawned not merely radio devotion but comic strips, motion pictures, and television adaptations that endured for decades. Episodes like "The Usurpers" showcase the program's remarkable ability to blend genuine dramatic tension with thoughtful character development, transforming stock adventure tropes into genuinely compelling narratives about integrity under pressure.</p>
+          <p>When Sergeant Preston and King, his loyal husky companion, arrive at an isolated trading post deep in the frozen Yukon wilderness, they discover far more than a routine patrol should uncover. A ruthless band of claim jumpers has seized control of the settlement, terrorizing honest prospectors and mining families with threats and violence. As Preston listens to the terrified accounts of displaced miners—their voices trembling over the crackling airwaves—he realizes this is no ordinary case of frontier lawlessness. The usurpers have systematically destroyed claim documents, forged deeds, and intimidated witnesses into silence. With winter closing in and the nearest reinforcements days away, Preston must rely on his wits, his courage, and the uncanny intelligence of King to gather evidence and restore order before an innocent family loses everything to these cunning criminals.</p>
+<p>Challenge of the Yukon captivated millions throughout the 1930s and 1940s by transporting listeners to a realm where Canadian justice remained swift and absolute, yet fundamentally humane. Sergeant Preston represented the idealized lawman of pulp adventure—physically capable, morally incorruptible, and genuinely protective of the frontier communities he served. The show's popularity spawned not merely radio devotion but comic strips, motion pictures, and television adaptations that endured for decades. Episodes like "The Usurpers" showcase the program's remarkable ability to blend genuine dramatic tension with thoughtful character development, transforming stock adventure tropes into genuinely compelling narratives about integrity under pressure.</p>
 <p>Settle in by your receiver as King's distinctive howl signals the beginning of another thrilling patrol. Will Preston uncover the conspiracy before the usurpers flee into the wilderness? Tune in now to discover how justice prevails in the frozen north.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

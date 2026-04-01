@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 12 18 (0962) Sins Of The Father — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0962) Sins Of The Father — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 12 18 (0962) Sins Of The Father — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 12 18 (0962) Sins Of The Father — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 12 18 (0962) Sins Of The Father — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 12 18 (0962) Sins Of The Father</h1>
+          <h1 class="episode__title">(0962) Sins Of The Father</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Sins of the Father"</p>
-<p>As the familiar strains of "Sergeant Preston of the Yukon" theme echo across the frozen wastes, our intrepid Mountie finds himself entangled in a mystery that strikes at the very heart of a man's honor. When a prospector's past transgressions come calling in the snow-buried settlements of the Yukon Territory, Preston must navigate the treacherous moral landscape between justice and redemption. A son bears the weight of his father's crimes, and the sergeant discovers that sometimes the most dangerous criminal is guilt itself. With King, his trusty husky, at his side and danger lurking in every snow-laden shadow, Preston races against time to uncover the truth before vengeance claims another victim in this desolate, unforgiving land.</p>
-<p>"Sins of the Father" exemplifies what made *Challenge of the Yukon* a beloved staple of American radio for nearly two decades. Premiering in 1938, the show masterfully blended adventure, moral complexity, and frontier authenticity in a way that captivated audiences hungry for escapism yet craving substance. The 1940s marked the program's golden age, when writing had reached its peak and the cast—including Paul Sutherland's unforgettable portrayal of Preston—delivered performances of remarkable depth. These episodes transcended mere action serials; they explored the human condition against a backdrop of pristine wilderness, asking profound questions about inheritance, responsibility, and the possibility of atonement.</p>
+          <p>As the familiar strains of "Sergeant Preston of the Yukon" theme echo across the frozen wastes, our intrepid Mountie finds himself entangled in a mystery that strikes at the very heart of a man's honor. When a prospector's past transgressions come calling in the snow-buried settlements of the Yukon Territory, Preston must navigate the treacherous moral landscape between justice and redemption. A son bears the weight of his father's crimes, and the sergeant discovers that sometimes the most dangerous criminal is guilt itself. With King, his trusty husky, at his side and danger lurking in every snow-laden shadow, Preston races against time to uncover the truth before vengeance claims another victim in this desolate, unforgiving land.</p>
+<p>"Sins of the Father" exemplifies what made Challenge of the Yukon a beloved staple of American radio for nearly two decades. Premiering in 1938, the show masterfully blended adventure, moral complexity, and frontier authenticity in a way that captivated audiences hungry for escapism yet craving substance. The 1940s marked the program's golden age, when writing had reached its peak and the cast—including Paul Sutherland's unforgettable portrayal of Preston—delivered performances of remarkable depth. These episodes transcended mere action serials; they explored the human condition against a backdrop of pristine wilderness, asking profound questions about inheritance, responsibility, and the possibility of atonement.</p>
 <p>Don your snowshoes and venture into the Yukon with Sergeant Preston. This classic episode, preserved from the archives, awaits your discovery. Whether you're a devoted fan of vintage radio or a newcomer curious about the golden age of sound broadcasting, "Sins of the Father" promises an evening of authentic adventure that only radio's most immersive medium can deliver.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

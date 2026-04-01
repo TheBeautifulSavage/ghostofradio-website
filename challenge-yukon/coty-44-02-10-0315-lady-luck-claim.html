@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 02 10 (0315) Lady Luck Claim — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0315) Lady Luck Claim — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 02 10 (0315) Lady Luck Claim — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 02 10 (0315) Lady Luck Claim — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 02 10 (0315) Lady Luck Claim — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 10, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 02 10 (0315) Lady Luck Claim</h1>
+          <h1 class="episode__title">(0315) Lady Luck Claim</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Lady Luck Claim</p>
-<p>Picture yourself huddled near a crackling radio on a frigid evening, the wind howling outside like the very wolves that prowl the Yukon wilderness. In "Lady Luck Claim," Sergeant Preston and his loyal husky King must navigate treacherous frozen terrain to uncover the truth behind a mysterious mining dispute that threatens to tear apart a small frontier settlement. When a claim jumper's body is discovered near an abandoned mine shaft, suspicion falls upon an unlikely suspect—a young woman whose late father's fortune hangs in the balance. As Preston gathers evidence across snow-blanketed claims and frozen prospectors' camps, the tension mounts: someone in this remote corner of the Canadian north is willing to kill to keep their secrets buried. The episode crackles with danger, moral ambiguity, and the kind of atmospheric storytelling that made listeners forget the Depression-era hardships of their own lives.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon precisely because it married authentic frontier adventurism with the procedural rigor of law enforcement drama. Sergeant Preston wasn't a two-fisted hero solving crimes through violence alone; he was a thoughtful lawman who understood that the Yukon's harsh landscape bred complex human motivations. Broadcast throughout the 1940s and '50s, each episode transported millions of American listeners to an exotic, ice-bound realm where civilization was just barely maintained against nature's indifference and human greed. The show's meticulous attention to Canadian geography and RCMP protocol lent it credibility that made every tale feel urgent and real.</p>
+          <p>Picture yourself huddled near a crackling radio on a frigid evening, the wind howling outside like the very wolves that prowl the Yukon wilderness. In "Lady Luck Claim," Sergeant Preston and his loyal husky King must navigate treacherous frozen terrain to uncover the truth behind a mysterious mining dispute that threatens to tear apart a small frontier settlement. When a claim jumper's body is discovered near an abandoned mine shaft, suspicion falls upon an unlikely suspect—a young woman whose late father's fortune hangs in the balance. As Preston gathers evidence across snow-blanketed claims and frozen prospectors' camps, the tension mounts: someone in this remote corner of the Canadian north is willing to kill to keep their secrets buried. The episode crackles with danger, moral ambiguity, and the kind of atmospheric storytelling that made listeners forget the Depression-era hardships of their own lives.</p>
+<p>Challenge of the Yukon became a cultural phenomenon precisely because it married authentic frontier adventurism with the procedural rigor of law enforcement drama. Sergeant Preston wasn't a two-fisted hero solving crimes through violence alone; he was a thoughtful lawman who understood that the Yukon's harsh landscape bred complex human motivations. Broadcast throughout the 1940s and '50s, each episode transported millions of American listeners to an exotic, ice-bound realm where civilization was just barely maintained against nature's indifference and human greed. The show's meticulous attention to Canadian geography and RCMP protocol lent it credibility that made every tale feel urgent and real.</p>
 <p>Don your parka and settle in with King as Sergeant Preston brings justice to the frozen frontier. Tune in now to discover whether Lady Luck smiles on the innocent or the guilty in this masterpiece of radio drama.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

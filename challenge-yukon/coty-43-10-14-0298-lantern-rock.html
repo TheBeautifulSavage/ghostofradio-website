@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 43 10 14 (0298) Lantern Rock — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0298) Lantern Rock — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 43 10 14 (0298) Lantern Rock — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 43 10 14 (0298) Lantern Rock — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 43 10 14 (0298) Lantern Rock — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 14, 1943</span>
           </div>
-          <h1 class="episode__title">Coty 43 10 14 (0298) Lantern Rock</h1>
+          <h1 class="episode__title">(0298) Lantern Rock</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Lantern Rock</p>
-<p>Picture yourself huddled close to your radio on a winter's evening, the wind howling outside as Sergeant Preston's iconic bugle call pierces through the static—*dun-dun-dun-DUN!* You're about to be transported to the frozen wastes of the Yukon, where a mysterious beacon gleams through the Arctic night. In "Lantern Rock," our stalwart Mountie and his trusty dog King face one of their most perplexing cases yet: a phantom light that lures unsuspecting prospectors to their doom. Is it the work of criminal desperados using deception to rob the gold claims, or something far more sinister? As Preston navigates treacherous ice fields and tracks cunning fugitives through blinding snowstorms, the tension builds with each crackle of the shortwave radio and each mournful howl of sled dogs straining against their harnesses. By episode's end, the truth behind Lantern Rock will have been uncovered, justice served, and order restored to Canada's vast northern frontier.</p>
-<p>*Challenge of the Yukon* became the gold standard of adventure radio precisely because it captured the imagination of millions who would never see the North themselves. Premiering in 1938, the show's vivid sound design—authentic dog sled effects, crackling fires, authentic Canadian wilderness ambiance—created an immersive world that transported listeners far beyond their living rooms. Sergeant Preston, played with steady competence and moral fortitude, embodied the idealized Mountie: never corrupt, always courageous, forever pursuing duty over personal gain. These weren't mere entertainment escapades; they were modern morality tales wrapped in Yukon adventure.</p>
+          <p>Picture yourself huddled close to your radio on a winter's evening, the wind howling outside as Sergeant Preston's iconic bugle call pierces through the static—dun-dun-dun-DUN! You're about to be transported to the frozen wastes of the Yukon, where a mysterious beacon gleams through the Arctic night. In "Lantern Rock," our stalwart Mountie and his trusty dog King face one of their most perplexing cases yet: a phantom light that lures unsuspecting prospectors to their doom. Is it the work of criminal desperados using deception to rob the gold claims, or something far more sinister? As Preston navigates treacherous ice fields and tracks cunning fugitives through blinding snowstorms, the tension builds with each crackle of the shortwave radio and each mournful howl of sled dogs straining against their harnesses. By episode's end, the truth behind Lantern Rock will have been uncovered, justice served, and order restored to Canada's vast northern frontier.</p>
+<p>Challenge of the Yukon became the gold standard of adventure radio precisely because it captured the imagination of millions who would never see the North themselves. Premiering in 1938, the show's vivid sound design—authentic dog sled effects, crackling fires, authentic Canadian wilderness ambiance—created an immersive world that transported listeners far beyond their living rooms. Sergeant Preston, played with steady competence and moral fortitude, embodied the idealized Mountie: never corrupt, always courageous, forever pursuing duty over personal gain. These weren't mere entertainment escapades; they were modern morality tales wrapped in Yukon adventure.</p>
 <p>Don't miss "Lantern Rock"—tune in to experience why this series captivated listeners for seventeen thrilling years. King and Sergeant Preston await your company on the frozen edge of civilization.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 11 01 (0827) Contention — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0827) Contention — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 11 01 (0827) Contention — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 11 01 (0827) Contention — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 11 01 (0827) Contention — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 1, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 11 01 (0827) Contention</h1>
+          <h1 class="episode__title">(0827) Contention</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Contention"</p>
-<p>The frozen Yukon stretches endlessly beneath a moonless Arctic sky as Sergeant Preston and his magnificent sled dog King face their most perplexing case yet. When rival claim-jumpers clash over a disputed gold strike in the remote reaches of Canada's frozen frontier, Preston must navigate not just treacherous mountain passes and blizzard conditions, but the murky moral landscape where greed transforms civilized men into desperate criminals. Accusations fly as thick as snow, allegiances crumble, and Preston discovers that the truth may be buried far deeper than the gold itself. With his faithful King at his side and his unwavering sense of justice burning bright against the darkness of the northern night, Preston races against time to prevent a deadly confrontation—and perhaps to save a man's soul from the corrupting influence of frontier ambition.</p>
-<p>*Challenge of the Yukon* became a phenomenon precisely because it captured something essential about the North American imagination: the promise and peril of the untamed wilderness, where civilization's rules seem distant and survival becomes everything. Airing during radio's golden age, the show's combination of action-packed adventure, authentic atmosphere, and Preston's steady moral compass made it appointment listening for millions. Each episode transported listeners thousands of miles north, where danger lurked in every shadow and honor meant something tangible. The program's success spawned film serials, comic books, and an iconic television series, but it was these crackling radio broadcasts that first brought Preston's legend to life.</p>
+          <p>The frozen Yukon stretches endlessly beneath a moonless Arctic sky as Sergeant Preston and his magnificent sled dog King face their most perplexing case yet. When rival claim-jumpers clash over a disputed gold strike in the remote reaches of Canada's frozen frontier, Preston must navigate not just treacherous mountain passes and blizzard conditions, but the murky moral landscape where greed transforms civilized men into desperate criminals. Accusations fly as thick as snow, allegiances crumble, and Preston discovers that the truth may be buried far deeper than the gold itself. With his faithful King at his side and his unwavering sense of justice burning bright against the darkness of the northern night, Preston races against time to prevent a deadly confrontation—and perhaps to save a man's soul from the corrupting influence of frontier ambition.</p>
+<p>Challenge of the Yukon became a phenomenon precisely because it captured something essential about the North American imagination: the promise and peril of the untamed wilderness, where civilization's rules seem distant and survival becomes everything. Airing during radio's golden age, the show's combination of action-packed adventure, authentic atmosphere, and Preston's steady moral compass made it appointment listening for millions. Each episode transported listeners thousands of miles north, where danger lurked in every shadow and honor meant something tangible. The program's success spawned film serials, comic books, and an iconic television series, but it was these crackling radio broadcasts that first brought Preston's legend to life.</p>
 <p>Settle in as night falls and hear the crack of the whip, the howl of the sled dogs, and the measured voice of justice itself—Sergeant Preston of the Yukon—as he tackles one of his most complex cases yet.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 02 25 (0618) Danger Signal — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0618) Danger Signal — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 02 25 (0618) Danger Signal — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 02 25 (0618) Danger Signal — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 02 25 (0618) Danger Signal — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 25, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 02 25 (0618) Danger Signal</h1>
+          <h1 class="episode__title">(0618) Danger Signal</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Danger Signal</p>
-<p>As the familiar strains of the "Yukon March" fade into the vast, frozen silence of the Canadian north, Sergeant Preston of the Royal Canadian Mounted Police and his magnificent dog King face a mystery that threatens the very heartbeat of civilization in the remote frontier. A strange signal—repeated, ominous, unexplained—echoes across the snow-covered wilderness, and Preston must decipher its meaning before catastrophe strikes an isolated settlement. With the mercury plummeting and darkness closing in, our hero must rely on his keen intellect, his unwavering dedication to duty, and the uncanny instincts of his four-legged partner to navigate treacherous terrain and uncover a danger that lurks just beyond the rim of lantern light.</p>
-<p>*Challenge of the Yukon* captured American imaginations during the golden age of radio by transporting listeners to a realm of untamed beauty and moral clarity—a place where justice wasn't merely an ideal but a necessity for survival. Running from 1938 through the 1950s, this beloved program became a cornerstone of adventure radio, immortalizing the Canadian north in the collective memory of millions. The show's enduring appeal lay in its perfect balance of authenticity and drama: scripts grounded in genuine Yukon lore and geography, yet crafted to maximize suspense and deliver the heroic resolution audiences craved. Sergeant Preston embodied the virtuous lawman archetype, but never as a one-dimensional caricature; he was resourceful, compassionate, and genuinely challenged by the harsh realities of frontier law enforcement.</p>
-<p>Settle in beside your radio dial and join the Mountie and his loyal companion as they confront *Danger Signal*. This thrilling chapter in the Yukon saga reminds us why generations tuned in faithfully: for adventure, for heroism, and for the timeless comfort of good prevailing against the odds. Don't miss it.</p>
+          <p>As the familiar strains of the "Yukon March" fade into the vast, frozen silence of the Canadian north, Sergeant Preston of the Royal Canadian Mounted Police and his magnificent dog King face a mystery that threatens the very heartbeat of civilization in the remote frontier. A strange signal—repeated, ominous, unexplained—echoes across the snow-covered wilderness, and Preston must decipher its meaning before catastrophe strikes an isolated settlement. With the mercury plummeting and darkness closing in, our hero must rely on his keen intellect, his unwavering dedication to duty, and the uncanny instincts of his four-legged partner to navigate treacherous terrain and uncover a danger that lurks just beyond the rim of lantern light.</p>
+<p>Challenge of the Yukon captured American imaginations during the golden age of radio by transporting listeners to a realm of untamed beauty and moral clarity—a place where justice wasn't merely an ideal but a necessity for survival. Running from 1938 through the 1950s, this beloved program became a cornerstone of adventure radio, immortalizing the Canadian north in the collective memory of millions. The show's enduring appeal lay in its perfect balance of authenticity and drama: scripts grounded in genuine Yukon lore and geography, yet crafted to maximize suspense and deliver the heroic resolution audiences craved. Sergeant Preston embodied the virtuous lawman archetype, but never as a one-dimensional caricature; he was resourceful, compassionate, and genuinely challenged by the harsh realities of frontier law enforcement.</p>
+<p>Settle in beside your radio dial and join the Mountie and his loyal companion as they confront Danger Signal. This thrilling chapter in the Yukon saga reminds us why generations tuned in faithfully: for adventure, for heroism, and for the timeless comfort of good prevailing against the odds. Don't miss it.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

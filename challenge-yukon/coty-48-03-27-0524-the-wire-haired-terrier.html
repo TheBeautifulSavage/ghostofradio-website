@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 03 27 (0524) The Wire Haired Terrier — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0524) The Wire Haired Terrier — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 03 27 (0524) The Wire Haired Terrier — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 03 27 (0524) The Wire Haired Terrier — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 03 27 (0524) The Wire Haired Terrier — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 27, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 03 27 (0524) The Wire Haired Terrier</h1>
+          <h1 class="episode__title">(0524) The Wire Haired Terrier</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Wire Haired Terrier</p>
-<p>As darkness falls across the frozen Yukon wilderness, Sergeant Preston and his faithful malamute King face their most unexpected case yet—a wire-haired terrier, lost and alone in the merciless Canadian frontier. What begins as a simple rescue mission spirals into a tense mystery of theft and deception in a remote trading post, where every character harbors secrets and survival itself hangs in the balance. Listeners will be transported to snow-laden cabins and windswept mountain passes as Preston follows a trail of clues that leads deeper into danger, the howling wind and cracking ice serving as unsettling companions to danger lurking in every shadow. This episode captures the show's perfect alchemy of action and character—mixing genuine peril with the unexpected tenderness of a man and his dog confronting both nature's cruelty and human treachery.</p>
-<p>*Challenge of the Yukon* became a national institution during radio's golden age, captivating audiences with its thrilling blend of Canadian frontier adventure and unwavering moral certitude. Sergeant Preston, portrayed with quiet authority by Paul Sutherland (and later others), embodied the ideals of Canadian authority and frontier justice that resonated with Depression and wartime audiences hungry for stories of order triumphing over chaos. The show's meticulous sound design—those iconic sled dog barks, the crack of whips, the crunch of snow—created an immersive world that transformed living rooms into the untamed North. Each episode reinforced Preston's code: duty, compassion, and the unshakeable bond between man and animal.</p>
-<p>Don't miss this gripping installment from the show's early 1940s run, when *Challenge of the Yukon* was hitting its creative stride. Tune in now and discover why millions of listeners made this their appointment with adventure—where the law of the Yukon was always just, and King was always loyal.</p>
+          <p>As darkness falls across the frozen Yukon wilderness, Sergeant Preston and his faithful malamute King face their most unexpected case yet—a wire-haired terrier, lost and alone in the merciless Canadian frontier. What begins as a simple rescue mission spirals into a tense mystery of theft and deception in a remote trading post, where every character harbors secrets and survival itself hangs in the balance. Listeners will be transported to snow-laden cabins and windswept mountain passes as Preston follows a trail of clues that leads deeper into danger, the howling wind and cracking ice serving as unsettling companions to danger lurking in every shadow. This episode captures the show's perfect alchemy of action and character—mixing genuine peril with the unexpected tenderness of a man and his dog confronting both nature's cruelty and human treachery.</p>
+<p>Challenge of the Yukon became a national institution during radio's golden age, captivating audiences with its thrilling blend of Canadian frontier adventure and unwavering moral certitude. Sergeant Preston, portrayed with quiet authority by Paul Sutherland (and later others), embodied the ideals of Canadian authority and frontier justice that resonated with Depression and wartime audiences hungry for stories of order triumphing over chaos. The show's meticulous sound design—those iconic sled dog barks, the crack of whips, the crunch of snow—created an immersive world that transformed living rooms into the untamed North. Each episode reinforced Preston's code: duty, compassion, and the unshakeable bond between man and animal.</p>
+<p>Don't miss this gripping installment from the show's early 1940s run, when Challenge of the Yukon was hitting its creative stride. Tune in now and discover why millions of listeners made this their appointment with adventure—where the law of the Yukon was always just, and King was always loyal.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

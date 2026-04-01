@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 04 15 (0868) Team Mates — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0868) Team Mates — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 04 15 (0868) Team Mates — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 04 15 (0868) Team Mates — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 04 15 (0868) Team Mates — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 04 15 (0868) Team Mates</h1>
+          <h1 class="episode__title">(0868) Team Mates</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Team Mates</p>
-<p>Picture yourself huddled around the radio on a cold evening as Sergeant Preston and his magnificent sled dog King venture into the frozen wilderness of the Yukon Territory. In "Team Mates," the bond between man and beast is tested when a dangerous criminal seeks to exploit the very loyalty that makes Preston's canine companion so invaluable. As blizzards rage and danger closes in from all sides, listeners will find themselves gripping their armrests, wondering whether even the partnership between a dedicated Mountie and his devoted dog can overcome the treachery that awaits them in the unforgiving north. The crackle of the dog sled runners cutting through ice, the howl of wind across frozen tundra, and the tense dialogue paint a world where survival depends on trust—and where one act of betrayal could prove fatal.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon throughout the 1940s precisely because it captured something authentic about the Canadian frontier while delivering the thrilling adventure audiences craved during wartime. Sergeant Preston, with his steadfast morality and respect for King, embodied the virtues listeners desperately needed to believe in: courage, fairness, and unwavering loyalty. The show's meticulous attention to authentic details—from Yukon geography to law enforcement procedures—lent credibility that elevated it far above mere escapism. King, the dog, wasn't simply a sidekick but a full character whose intelligence and instincts proved crucial to solving crimes and surviving ordeals.</p>
-<p>Tune in to "Team Mates" and discover why millions gathered around their radios each week to follow Preston's adventures. This is radio drama at its finest—where imagination transforms a humble broadcast into an epic journey through Canada's frozen frontier. *On King, on!*</p>
+          <p>Picture yourself huddled around the radio on a cold evening as Sergeant Preston and his magnificent sled dog King venture into the frozen wilderness of the Yukon Territory. In "Team Mates," the bond between man and beast is tested when a dangerous criminal seeks to exploit the very loyalty that makes Preston's canine companion so invaluable. As blizzards rage and danger closes in from all sides, listeners will find themselves gripping their armrests, wondering whether even the partnership between a dedicated Mountie and his devoted dog can overcome the treachery that awaits them in the unforgiving north. The crackle of the dog sled runners cutting through ice, the howl of wind across frozen tundra, and the tense dialogue paint a world where survival depends on trust—and where one act of betrayal could prove fatal.</p>
+<p>Challenge of the Yukon became a cultural phenomenon throughout the 1940s precisely because it captured something authentic about the Canadian frontier while delivering the thrilling adventure audiences craved during wartime. Sergeant Preston, with his steadfast morality and respect for King, embodied the virtues listeners desperately needed to believe in: courage, fairness, and unwavering loyalty. The show's meticulous attention to authentic details—from Yukon geography to law enforcement procedures—lent credibility that elevated it far above mere escapism. King, the dog, wasn't simply a sidekick but a full character whose intelligence and instincts proved crucial to solving crimes and surviving ordeals.</p>
+<p>Tune in to "Team Mates" and discover why millions gathered around their radios each week to follow Preston's adventures. This is radio drama at its finest—where imagination transforms a humble broadcast into an epic journey through Canada's frozen frontier. On King, on!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

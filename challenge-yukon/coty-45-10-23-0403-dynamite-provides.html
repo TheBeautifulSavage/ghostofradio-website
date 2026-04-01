@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 10 23 (0403) Dynamite Provides — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0403) Dynamite Provides — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 10 23 (0403) Dynamite Provides — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 10 23 (0403) Dynamite Provides — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 10 23 (0403) Dynamite Provides — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 23, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 10 23 (0403) Dynamite Provides</h1>
+          <h1 class="episode__title">(0403) Dynamite Provides</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon: Dynamite Provides</p>
-<p>As winter grips the frozen Canadian wilderness with an iron fist, Sergeant Preston and his magnificent sled dog King venture into the remote backcountry on a mission that will test their courage against both man and nature. When a shipment of dynamite destined for a mining operation goes missing in the treacherous mountain passes, Preston must navigate a labyrinth of suspects and dangerous terrain to recover the explosives before they fall into criminal hands. With each crackling report of King's paws across the ice and every tense confrontation in a snow-buried cabin, the tension mounts. The episode crackles with authentic period detail—the whine of the wind, the distant howl of wolves, and the sharp snap of frost in the air—transporting listeners directly into Preston's world where justice is as cold and unyielding as the landscape itself.</p>
-<p>*Challenge of the Yukon* became a beloved institution precisely because it grounded its adventure in the real history of the Canadian North. Sergeant Preston himself was inspired by actual Royal Canadian Mounted Police officers who patrolled these isolated regions, enforcing law where civilization seemed impossibly distant. Throughout the show's remarkable seventeen-year run, episodes like "Dynamite Provides" captured the imagination of millions who thrilled to tales of frontier justice and survival against overwhelming odds. The program's meticulous sound design and compelling scripts made it a masterclass in radio drama, proving that the most effective adventures unfold not on screen, but in the theater of the mind.</p>
+          <p>As winter grips the frozen Canadian wilderness with an iron fist, Sergeant Preston and his magnificent sled dog King venture into the remote backcountry on a mission that will test their courage against both man and nature. When a shipment of dynamite destined for a mining operation goes missing in the treacherous mountain passes, Preston must navigate a labyrinth of suspects and dangerous terrain to recover the explosives before they fall into criminal hands. With each crackling report of King's paws across the ice and every tense confrontation in a snow-buried cabin, the tension mounts. The episode crackles with authentic period detail—the whine of the wind, the distant howl of wolves, and the sharp snap of frost in the air—transporting listeners directly into Preston's world where justice is as cold and unyielding as the landscape itself.</p>
+<p>Challenge of the Yukon became a beloved institution precisely because it grounded its adventure in the real history of the Canadian North. Sergeant Preston himself was inspired by actual Royal Canadian Mounted Police officers who patrolled these isolated regions, enforcing law where civilization seemed impossibly distant. Throughout the show's remarkable seventeen-year run, episodes like "Dynamite Provides" captured the imagination of millions who thrilled to tales of frontier justice and survival against overwhelming odds. The program's meticulous sound design and compelling scripts made it a masterclass in radio drama, proving that the most effective adventures unfold not on screen, but in the theater of the mind.</p>
 <p>Don't miss this gripping episode featuring Sergeant Preston and the noble King as they race against time and treachery. Tune in now and experience the golden age of radio drama at its finest.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

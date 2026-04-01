@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 01 10 (0513) Tago, The Half Breed — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0513) Tago, The Half Breed — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 01 10 (0513) Tago, The Half Breed — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 01 10 (0513) Tago, The Half Breed — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 01 10 (0513) Tago, The Half Breed — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 10, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 01 10 (0513) Tago, The Half Breed</h1>
+          <h1 class="episode__title">(0513) Tago, The Half Breed</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Tago, the Half Breed</p>
-<p>Deep in the frozen heart of the Yukon Territory, where howling winds cut through endless white expanses and civilization seems a distant dream, Sergeant Preston of the Royal Canadian Mounted Police faces his most morally complex case yet. When a man of mixed heritage named Tago becomes the prime suspect in a brutal crime, Preston must navigate treacherous wilderness, dangerous criminals, and his own prejudices to uncover the truth. Is Tago a cold-blooded murderer, or merely a convenient scapegoat in a land where the color of one's blood can seal one's fate? This gripping episode unfolds with all the atmospheric tension that made the series legendary—the crack of ice beneath boots, the distant baying of Preston's faithful husky King, and the relentless ticking clock of northern justice.</p>
-<p>*Challenge of the Yukon* emerged during radio's golden age as one of the medium's most thrilling adventure serials, captivating millions of listeners with tales of frontier lawmen battling the untamed north. Sergeant Preston—immortalized by actor Paul Sutherland's commanding voice—represented the heroic ideal of Canadian law and order, but episodes like "Tago, the Half Breed" revealed unexpected nuance beneath the adventure-serial formula. The show's writers crafted stories that, while thoroughly entertaining, occasionally grappled with the complex social realities of colonial Canada, offering listeners both pulse-pounding drama and subtle examinations of bias and justice.</p>
+          <p>Deep in the frozen heart of the Yukon Territory, where howling winds cut through endless white expanses and civilization seems a distant dream, Sergeant Preston of the Royal Canadian Mounted Police faces his most morally complex case yet. When a man of mixed heritage named Tago becomes the prime suspect in a brutal crime, Preston must navigate treacherous wilderness, dangerous criminals, and his own prejudices to uncover the truth. Is Tago a cold-blooded murderer, or merely a convenient scapegoat in a land where the color of one's blood can seal one's fate? This gripping episode unfolds with all the atmospheric tension that made the series legendary—the crack of ice beneath boots, the distant baying of Preston's faithful husky King, and the relentless ticking clock of northern justice.</p>
+<p>Challenge of the Yukon emerged during radio's golden age as one of the medium's most thrilling adventure serials, captivating millions of listeners with tales of frontier lawmen battling the untamed north. Sergeant Preston—immortalized by actor Paul Sutherland's commanding voice—represented the heroic ideal of Canadian law and order, but episodes like "Tago, the Half Breed" revealed unexpected nuance beneath the adventure-serial formula. The show's writers crafted stories that, while thoroughly entertaining, occasionally grappled with the complex social realities of colonial Canada, offering listeners both pulse-pounding drama and subtle examinations of bias and justice.</p>
 <p>Tune in now and discover why audiences sat transfixed beside their radio sets night after night, following Preston and King through blizzards and betrayals. This is golden-age radio at its finest—adventure, mystery, and the indomitable spirit of the north, all waiting for you in the static and crackle of history.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

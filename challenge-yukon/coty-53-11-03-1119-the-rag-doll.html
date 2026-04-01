@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 53 11 03 (1119) The Rag Doll — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(1119) The Rag Doll — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 53 11 03 (1119) The Rag Doll — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 53 11 03 (1119) The Rag Doll — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 53 11 03 (1119) The Rag Doll — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 53 11 03 (1119) The Rag Doll</h1>
+          <h1 class="episode__title">(1119) The Rag Doll</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Rag Doll</p>
-<p>Deep in the frozen Yukon wilderness, as the wind howls across endless snowfields and the very darkness itself seems to close in, Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that challenges both his investigative instincts and his conscience. When a worn rag doll surfaces in a remote settlement—a child's precious possession left behind under the most troubling of circumstances—Preston must navigate a tangle of desperation, poverty, and human desperation that proves far more complex than any criminal case. With his faithful dog King at his side, Preston uncovers a tale of hardship and hard choices that reveals how the unforgiving northern frontier strips away civilization and tests the very bonds of family. This episode delivers the show's trademark blend of rugged action and surprisingly poignant character study, reminding listeners that in the frozen north, the greatest dangers aren't always found in lawlessness—sometimes they hide in the human heart itself.</p>
-<p>*Challenge of the Yukon* became a phenomenon throughout the 1940s because it offered audiences something rare: authentic adventure grounded in real geography and genuine RCMP procedures, combined with scripts that respected the complexity of frontier life. The show's creator, George W. Trendle, crafted a world where Sergeant Preston wasn't just a hero catching villains, but a reasonable man applying justice to impossible situations. During the golden age of radio, when families gathered around their sets each evening, Preston's steady voice represented order and moral clarity—yet episodes like "The Rag Doll" showed audiences that law and order sometimes meant understanding why people broke the rules.</p>
+          <p>Deep in the frozen Yukon wilderness, as the wind howls across endless snowfields and the very darkness itself seems to close in, Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that challenges both his investigative instincts and his conscience. When a worn rag doll surfaces in a remote settlement—a child's precious possession left behind under the most troubling of circumstances—Preston must navigate a tangle of desperation, poverty, and human desperation that proves far more complex than any criminal case. With his faithful dog King at his side, Preston uncovers a tale of hardship and hard choices that reveals how the unforgiving northern frontier strips away civilization and tests the very bonds of family. This episode delivers the show's trademark blend of rugged action and surprisingly poignant character study, reminding listeners that in the frozen north, the greatest dangers aren't always found in lawlessness—sometimes they hide in the human heart itself.</p>
+<p>Challenge of the Yukon became a phenomenon throughout the 1940s because it offered audiences something rare: authentic adventure grounded in real geography and genuine RCMP procedures, combined with scripts that respected the complexity of frontier life. The show's creator, George W. Trendle, crafted a world where Sergeant Preston wasn't just a hero catching villains, but a reasonable man applying justice to impossible situations. During the golden age of radio, when families gathered around their sets each evening, Preston's steady voice represented order and moral clarity—yet episodes like "The Rag Doll" showed audiences that law and order sometimes meant understanding why people broke the rules.</p>
 <p>Tune in to experience radio drama at its finest—where the frozen tundra becomes a character itself, and a child's toy becomes the key to understanding the human cost of survival. This is classic adventure radio that still resonates today.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 04 18 (0640) The Luck Of The Newtons — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0640) The Luck Of The Newtons — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 04 18 (0640) The Luck Of The Newtons — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 04 18 (0640) The Luck Of The Newtons — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 04 18 (0640) The Luck Of The Newtons — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 18, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 04 18 (0640) The Luck Of The Newtons</h1>
+          <h1 class="episode__title">(0640) The Luck Of The Newtons</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Luck of the Newtons</p>
-<p>As the haunting strains of "Charge of the Light Brigade" fade into the frozen wilderness, Sergeant Preston and his magnificent dog King face their most perplexing case yet in the Canadian Yukon. The Newton family has struck what they believe to be the mother lode—a glittering vein of gold that could transform their fortunes from rags to riches. But fortune, it seems, comes with a sinister price. When tragedy threatens to tear the family apart and a mysterious rival emerges from the shadows to claim the discovery, Preston must untangle a web of greed, deception, and desperation high in the snow-covered mountains. Will the Sergeant's keen investigative mind and King's uncanny instincts be enough to restore justice before the Newtons' dreams become their doom?</p>
-<p>For nearly two decades, *Challenge of the Yukon* captivated millions of American listeners with tales of frontier justice and adventure in Canada's remote north country. Premiering in 1938 and reaching its peak popularity throughout the 1940s, the show exemplified the golden age of radio drama—a time when sound effects, evocative narration, and stellar voice acting could transport an entire nation to windswept valleys and isolated mining camps. Sergeant Preston became an American folk hero, a symbol of law and order in untamed lands, while King the dog won the hearts of children and adults alike. Episodes like "The Luck of the Newtons" showcase the program's masterful blend of moral complexity and thrilling action.</p>
+          <p>As the haunting strains of "Charge of the Light Brigade" fade into the frozen wilderness, Sergeant Preston and his magnificent dog King face their most perplexing case yet in the Canadian Yukon. The Newton family has struck what they believe to be the mother lode—a glittering vein of gold that could transform their fortunes from rags to riches. But fortune, it seems, comes with a sinister price. When tragedy threatens to tear the family apart and a mysterious rival emerges from the shadows to claim the discovery, Preston must untangle a web of greed, deception, and desperation high in the snow-covered mountains. Will the Sergeant's keen investigative mind and King's uncanny instincts be enough to restore justice before the Newtons' dreams become their doom?</p>
+<p>For nearly two decades, Challenge of the Yukon captivated millions of American listeners with tales of frontier justice and adventure in Canada's remote north country. Premiering in 1938 and reaching its peak popularity throughout the 1940s, the show exemplified the golden age of radio drama—a time when sound effects, evocative narration, and stellar voice acting could transport an entire nation to windswept valleys and isolated mining camps. Sergeant Preston became an American folk hero, a symbol of law and order in untamed lands, while King the dog won the hearts of children and adults alike. Episodes like "The Luck of the Newtons" showcase the program's masterful blend of moral complexity and thrilling action.</p>
 <p>Tune in now and discover why audiences huddled around their radio sets night after night, eager to follow Preston and King into danger. In an era before television claimed our imaginations, this is where adventure lived.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

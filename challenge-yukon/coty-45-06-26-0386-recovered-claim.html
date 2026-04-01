@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 06 26 (0386) Recovered Claim — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0386) Recovered Claim — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 06 26 (0386) Recovered Claim — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 06 26 (0386) Recovered Claim — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 06 26 (0386) Recovered Claim — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · June 26, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 06 26 (0386) Recovered Claim</h1>
+          <h1 class="episode__title">(0386) Recovered Claim</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Recovered Claim</p>
-<p>Deep in the frozen silence of the Yukon wilderness, Sergeant Preston and his magnificent dog King face a mystery that cuts to the heart of human greed and survival. When a prospector's long-lost claim suddenly resurfaces—complete with a map and a dead man's secrets—Preston must navigate treacherous mountain passes and the even more dangerous currents of claim-jumping thugs to recover what was rightfully buried in snow and time. As temperatures plummet and tension mounts, listeners will discover that in this unforgiving land, the greatest treasure isn't always gold. The crackle of campfires, the howl of sled dogs, and the stark beauty of the northern frontier create an atmosphere thick with suspense and the promise of justice delivered by one man and his faithful companion.</p>
-<p>*Challenge of the Yukon* captured America's imagination during the Depression and war years, transforming Sergeant Preston into a folk hero who represented order and decency in a chaotic world. The show's meticulous attention to authentic Yukon geography and frontier customs grounded its adventures in reality, even as they pushed the boundaries of dramatic possibility. Running from 1938 to 1955, the series became a touchstone of quality radio drama, blending western sensibilities with the exotic allure of Canada's frozen north. This particular 1940s episode exemplifies the show's formula at its finest—a moral dilemma wrapped in genuine peril, with Preston's unwavering integrity serving as the true north star guiding the narrative.</p>
+          <p>Deep in the frozen silence of the Yukon wilderness, Sergeant Preston and his magnificent dog King face a mystery that cuts to the heart of human greed and survival. When a prospector's long-lost claim suddenly resurfaces—complete with a map and a dead man's secrets—Preston must navigate treacherous mountain passes and the even more dangerous currents of claim-jumping thugs to recover what was rightfully buried in snow and time. As temperatures plummet and tension mounts, listeners will discover that in this unforgiving land, the greatest treasure isn't always gold. The crackle of campfires, the howl of sled dogs, and the stark beauty of the northern frontier create an atmosphere thick with suspense and the promise of justice delivered by one man and his faithful companion.</p>
+<p>Challenge of the Yukon captured America's imagination during the Depression and war years, transforming Sergeant Preston into a folk hero who represented order and decency in a chaotic world. The show's meticulous attention to authentic Yukon geography and frontier customs grounded its adventures in reality, even as they pushed the boundaries of dramatic possibility. Running from 1938 to 1955, the series became a touchstone of quality radio drama, blending western sensibilities with the exotic allure of Canada's frozen north. This particular 1940s episode exemplifies the show's formula at its finest—a moral dilemma wrapped in genuine peril, with Preston's unwavering integrity serving as the true north star guiding the narrative.</p>
 <p>Don't miss "Recovered Claim," where the wilderness reveals its secrets and Sergeant Preston proves once again why he remains the law of the land. Tune in and experience radio drama at its most authentic and compelling.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

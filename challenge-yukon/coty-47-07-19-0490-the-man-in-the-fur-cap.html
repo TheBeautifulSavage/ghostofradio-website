@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 07 19 (0490) The Man In The Fur Cap — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0490) The Man In The Fur Cap — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 07 19 (0490) The Man In The Fur Cap — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 07 19 (0490) The Man In The Fur Cap — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 07 19 (0490) The Man In The Fur Cap — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · July 19, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 07 19 (0490) The Man In The Fur Cap</h1>
+          <h1 class="episode__title">(0490) The Man In The Fur Cap</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Man In The Fur Cap</p>
-<p>When our story opens, King barks a warning that cuts through the howling Arctic wind, and Sergeant Preston knows trouble is afoot on the frozen frontier. A mysterious stranger has stumbled into Fort Yukon wearing nothing but a tattered fur cap and a wild tale of sabotage at a remote mining claim—but is he a desperate prospector, a confidence man, or something far more sinister? As Preston saddles his trusty steed and sets out across endless snowfields with his loyal malamute at his side, listeners are drawn into a web of deception where every shadow could conceal danger and every passing stranger might hold the key to unraveling a deadly plot. The crackle of the radio fire, the crunch of boots on frozen ground, and the eerie silence of the northern wilderness create an atmosphere of mounting suspense that only the Canadian Mounted Police can penetrate.</p>
-<p>*Challenge of the Yukon* captured American imaginations during the golden age of radio by transporting audiences to an untamed land where lawlessness met justice and civilization barely held its grip on the landscape. These episodes, broadcast throughout the 1940s, offered listeners an escape from their own world into one of genuine peril and heroic virtue—where a man's word, his dog, and his duty were all that mattered. The show became a cultural touchstone, spawning films and merchandise, because it tapped into our deepest yearnings for adventure and moral clarity in an increasingly complex world.</p>
+          <p>When our story opens, King barks a warning that cuts through the howling Arctic wind, and Sergeant Preston knows trouble is afoot on the frozen frontier. A mysterious stranger has stumbled into Fort Yukon wearing nothing but a tattered fur cap and a wild tale of sabotage at a remote mining claim—but is he a desperate prospector, a confidence man, or something far more sinister? As Preston saddles his trusty steed and sets out across endless snowfields with his loyal malamute at his side, listeners are drawn into a web of deception where every shadow could conceal danger and every passing stranger might hold the key to unraveling a deadly plot. The crackle of the radio fire, the crunch of boots on frozen ground, and the eerie silence of the northern wilderness create an atmosphere of mounting suspense that only the Canadian Mounted Police can penetrate.</p>
+<p>Challenge of the Yukon captured American imaginations during the golden age of radio by transporting audiences to an untamed land where lawlessness met justice and civilization barely held its grip on the landscape. These episodes, broadcast throughout the 1940s, offered listeners an escape from their own world into one of genuine peril and heroic virtue—where a man's word, his dog, and his duty were all that mattered. The show became a cultural touchstone, spawning films and merchandise, because it tapped into our deepest yearnings for adventure and moral clarity in an increasingly complex world.</p>
 <p>Tune in now to discover whether Sergeant Preston can uncover the truth before the fur-capped stranger vanishes into the Yukon's merciless expanse. Will King's keen senses crack the case, or will another mystery be buried beneath the eternal snow?</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

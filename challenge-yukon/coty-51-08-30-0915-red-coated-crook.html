@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 08 30 (0915) Red Coated Crook — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0915) Red Coated Crook — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 08 30 (0915) Red Coated Crook — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 08 30 (0915) Red Coated Crook — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 08 30 (0915) Red Coated Crook — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 08 30 (0915) Red Coated Crook</h1>
+          <h1 class="episode__title">(0915) Red Coated Crook</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Red Coated Crook"</p>
-<p>Picture yourself huddled near the radio on a cold evening, the dial set to the familiar frequency where Sergeant Preston's adventures await. In "Red Coated Crook," our steadfast Mountie finds himself ensnared in a web of deception where the very symbol of Canadian law enforcement—the scarlet uniform itself—becomes a tool for villainy. When an imposter in Mountie dress begins terrorizing the Yukon settlements, Preston must track down the cunning criminal before trust in the Royal Canadian Mounted Police crumbles entirely. The barking of King, his trusty sled dog, punctuates scenes of mounting tension as Preston races across frozen landscapes, following whispered clues and piecing together a puzzle that threatens to destroy his reputation and the safety of everyone he's sworn to protect. This episode delivers the show's signature blend of frontier peril and moral reckoning—a reminder that the wilderness tests not just physical endurance, but character itself.</p>
-<p>*Challenge of the Yukon* captured the imaginations of millions during radio's golden age, transporting listeners to Canada's frozen frontier during an era when adventure serials dominated the airwaves. The show's meticulous attention to authentic Mountie procedure, combined with creator George W. Trendle's commitment to actual Canadian geography and culture, elevated it beyond mere entertainment into a beloved institution. With its stirring theme song and Preston's unflinching dedication to justice—"In the Northland quest for the truth, there's a man who rides the Yukon"—the series became synonymous with honor, courage, and the romantic ideal of frontier law and order.</p>
+          <p>Picture yourself huddled near the radio on a cold evening, the dial set to the familiar frequency where Sergeant Preston's adventures await. In "Red Coated Crook," our steadfast Mountie finds himself ensnared in a web of deception where the very symbol of Canadian law enforcement—the scarlet uniform itself—becomes a tool for villainy. When an imposter in Mountie dress begins terrorizing the Yukon settlements, Preston must track down the cunning criminal before trust in the Royal Canadian Mounted Police crumbles entirely. The barking of King, his trusty sled dog, punctuates scenes of mounting tension as Preston races across frozen landscapes, following whispered clues and piecing together a puzzle that threatens to destroy his reputation and the safety of everyone he's sworn to protect. This episode delivers the show's signature blend of frontier peril and moral reckoning—a reminder that the wilderness tests not just physical endurance, but character itself.</p>
+<p>Challenge of the Yukon captured the imaginations of millions during radio's golden age, transporting listeners to Canada's frozen frontier during an era when adventure serials dominated the airwaves. The show's meticulous attention to authentic Mountie procedure, combined with creator George W. Trendle's commitment to actual Canadian geography and culture, elevated it beyond mere entertainment into a beloved institution. With its stirring theme song and Preston's unflinching dedication to justice—"In the Northland quest for the truth, there's a man who rides the Yukon"—the series became synonymous with honor, courage, and the romantic ideal of frontier law and order.</p>
 <p>Don't miss this thrilling 1940s episode, newly restored for modern listeners. Experience the magic of old-time radio adventure as it was meant to be heard.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

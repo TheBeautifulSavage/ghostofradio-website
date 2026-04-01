@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 12 30 (0967) The Little Mountie — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0967) The Little Mountie — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 12 30 (0967) The Little Mountie — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 12 30 (0967) The Little Mountie — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 12 30 (0967) The Little Mountie — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 12 30 (0967) The Little Mountie</h1>
+          <h1 class="episode__title">(0967) The Little Mountie</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Little Mountie</p>
-<p>Picture yourself huddled close to your radio on a winter's evening, the crackle of static giving way to the unmistakable howl of sled dogs and the crisp command of Sergeant Preston: "King! Away!" In "The Little Mountie," our stalwart Mounted Policeman encounters a case that cuts straight to the heart—a young boy, barely old enough to walk the frozen wastes, has gone missing in the Yukon wilderness. What begins as a routine search becomes something far more poignant as Preston discovers the child's desperate attempt to prove himself worthy of the red serge, nursing dreams of joining the Force just like his hero. As blizzards rage and hope dims, Preston must use every ounce of his wilderness skills and the uncanny tracking abilities of his magnificent husky, King, to bring the boy home before the unforgiving Canadian north claims another victim.</p>
-<p>Since its debut in 1938, *Challenge of the Yukon* captivated America's listeners with stories of honor, duty, and man against nature, capturing the golden age of adventure radio when sound effects and voice acting could transport millions to the frozen frontier. Sergeant Preston—that gentlemanly lawman played with quiet authority by Paul Sutherland—became an icon of principled heroism during an era when listeners desperately needed such steadying exemplars. The show's meticulous attention to authentic frontier detail, combined with its genuine moral weight, set it apart from mere pulp entertainment; these were stories that mattered, that spoke to virtue and sacrifice.</p>
-<p>Don't miss this compelling episode of *Challenge of the Yukon*. Tune in and let the frozen world of the Yukon pull you into a timeless tale of courage, compassion, and the unbreakable bond between man and dog.</p>
+          <p>Picture yourself huddled close to your radio on a winter's evening, the crackle of static giving way to the unmistakable howl of sled dogs and the crisp command of Sergeant Preston: "King! Away!" In "The Little Mountie," our stalwart Mounted Policeman encounters a case that cuts straight to the heart—a young boy, barely old enough to walk the frozen wastes, has gone missing in the Yukon wilderness. What begins as a routine search becomes something far more poignant as Preston discovers the child's desperate attempt to prove himself worthy of the red serge, nursing dreams of joining the Force just like his hero. As blizzards rage and hope dims, Preston must use every ounce of his wilderness skills and the uncanny tracking abilities of his magnificent husky, King, to bring the boy home before the unforgiving Canadian north claims another victim.</p>
+<p>Since its debut in 1938, Challenge of the Yukon captivated America's listeners with stories of honor, duty, and man against nature, capturing the golden age of adventure radio when sound effects and voice acting could transport millions to the frozen frontier. Sergeant Preston—that gentlemanly lawman played with quiet authority by Paul Sutherland—became an icon of principled heroism during an era when listeners desperately needed such steadying exemplars. The show's meticulous attention to authentic frontier detail, combined with its genuine moral weight, set it apart from mere pulp entertainment; these were stories that mattered, that spoke to virtue and sacrifice.</p>
+<p>Don't miss this compelling episode of Challenge of the Yukon. Tune in and let the frozen world of the Yukon pull you into a timeless tale of courage, compassion, and the unbreakable bond between man and dog.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

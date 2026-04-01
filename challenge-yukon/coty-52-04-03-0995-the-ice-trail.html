@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 04 03 (0995) The Ice Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0995) The Ice Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 04 03 (0995) The Ice Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 04 03 (0995) The Ice Trail — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 04 03 (0995) The Ice Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 04 03 (0995) The Ice Trail</h1>
+          <h1 class="episode__title">(0995) The Ice Trail</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Ice Trail</p>
-<p>As the familiar strains of "Reverie" fade into the crackling static of the far north, Sergeant Preston of the Yukon faces his most brutal test yet: a desperate race across treacherous ice floes where one misstep means plunging into the black depths below. When a fugitive fleeing justice vanishes into a blizzard, Preston and his loyal wolfdog King must navigate an unforgiving landscape of shifting ice, subzero temperatures, and moral ambiguity. This episode captures the show's finest hour—not merely a pursuit, but a meditation on survival itself, where the hunter and hunted become equally vulnerable to nature's indifferent fury. Listeners will find themselves gripping their radios as the sound effects team conjures the groaning ice, the howling wind, and the desperate barking of King, all while Preston's steady voice cuts through the chaos with trademark resolve.</p>
-<p>*Challenge of the Yukon* occupied a unique place in American radio throughout the 1940s, offering adventure without the urban cynicism creeping into detective noir. Instead, it presented a mythology of the Canadian frontier—a world where duty, loyalty, and the bond between man and animal could still triumph over greed and lawlessness. Sergeant Preston embodied an idealized lawman untainted by bureaucracy, enforcing an almost frontier justice across vast, untamed territories. The show's longevity proved audiences hungered for this escapist vision of honorable adventure, particularly during wartime when such certainties felt desperately needed.</p>
+          <p>As the familiar strains of "Reverie" fade into the crackling static of the far north, Sergeant Preston of the Yukon faces his most brutal test yet: a desperate race across treacherous ice floes where one misstep means plunging into the black depths below. When a fugitive fleeing justice vanishes into a blizzard, Preston and his loyal wolfdog King must navigate an unforgiving landscape of shifting ice, subzero temperatures, and moral ambiguity. This episode captures the show's finest hour—not merely a pursuit, but a meditation on survival itself, where the hunter and hunted become equally vulnerable to nature's indifferent fury. Listeners will find themselves gripping their radios as the sound effects team conjures the groaning ice, the howling wind, and the desperate barking of King, all while Preston's steady voice cuts through the chaos with trademark resolve.</p>
+<p>Challenge of the Yukon occupied a unique place in American radio throughout the 1940s, offering adventure without the urban cynicism creeping into detective noir. Instead, it presented a mythology of the Canadian frontier—a world where duty, loyalty, and the bond between man and animal could still triumph over greed and lawlessness. Sergeant Preston embodied an idealized lawman untainted by bureaucracy, enforcing an almost frontier justice across vast, untamed territories. The show's longevity proved audiences hungered for this escapist vision of honorable adventure, particularly during wartime when such certainties felt desperately needed.</p>
 <p>If you haven't yet discovered the enduring appeal of Sergeant Preston, "The Ice Trail" provides a perfect entry point—a masterclass in radio drama that demonstrates why millions tuned in faithfully each week. Adjust your dials and prepare yourself: the frozen north awaits, and danger lurks on every icy ridge.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

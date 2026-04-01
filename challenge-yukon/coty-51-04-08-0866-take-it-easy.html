@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 04 08 (0866) Take It Easy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0866) Take It Easy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 04 08 (0866) Take It Easy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 04 08 (0866) Take It Easy — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 04 08 (0866) Take It Easy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 04 08 (0866) Take It Easy</h1>
+          <h1 class="episode__title">(0866) Take It Easy</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Take It Easy"</p>
-<p>As winter's iron grip tightens around the frozen reaches of Canada's north country, Sergeant Preston of the Royal Canadian Mounted Police faces a crisis born not of lawlessness, but of human nature itself. In "Take It Easy," a seemingly simple matter of frontier justice becomes a test of conscience when a desperate man's plea for mercy collides with Preston's unwavering dedication to duty. King, his magnificent husky companion, senses the moral turbulence as the Mountie navigates treacherous snow-covered terrain and even more treacherous ethical terrain. Listeners will find themselves gripped by the intimate tension of a one-man force of law wrestling with the weight of authority, as remote trading posts and isolated cabins transform into stages for very human drama. The howling wind and crackle of the radio fire become almost tangible as Preston confronts a situation where the letter of the law and the spirit of justice diverge dangerously.</p>
-<p>First broadcast in the prosperous 1940s, *Challenge of the Yukon* captured American imaginations during an era when the frontier—though officially closed—still represented boundless possibility and moral clarity. Yet episodes like "Take It Easy" reveal the show's sophistication; beneath the adventure-serial surface lay nuanced explorations of power, responsibility, and compassion. The series' longevity and devoted audience spoke to something deeper than mere escapism: listeners craved tales where honor meant something, where one incorruptible man stood against a vast, indifferent wilderness.</p>
+          <p>As winter's iron grip tightens around the frozen reaches of Canada's north country, Sergeant Preston of the Royal Canadian Mounted Police faces a crisis born not of lawlessness, but of human nature itself. In "Take It Easy," a seemingly simple matter of frontier justice becomes a test of conscience when a desperate man's plea for mercy collides with Preston's unwavering dedication to duty. King, his magnificent husky companion, senses the moral turbulence as the Mountie navigates treacherous snow-covered terrain and even more treacherous ethical terrain. Listeners will find themselves gripped by the intimate tension of a one-man force of law wrestling with the weight of authority, as remote trading posts and isolated cabins transform into stages for very human drama. The howling wind and crackle of the radio fire become almost tangible as Preston confronts a situation where the letter of the law and the spirit of justice diverge dangerously.</p>
+<p>First broadcast in the prosperous 1940s, Challenge of the Yukon captured American imaginations during an era when the frontier—though officially closed—still represented boundless possibility and moral clarity. Yet episodes like "Take It Easy" reveal the show's sophistication; beneath the adventure-serial surface lay nuanced explorations of power, responsibility, and compassion. The series' longevity and devoted audience spoke to something deeper than mere escapism: listeners craved tales where honor meant something, where one incorruptible man stood against a vast, indifferent wilderness.</p>
 <p>Tune in now to experience why Sergeant Preston became an enduring icon of American radio. Let King's loyal bark and Preston's measured voice transport you to a world where right and wrong seemed clearer—even when the snow fell thick and the moral path grew obscure. This is radio drama at its most compelling.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

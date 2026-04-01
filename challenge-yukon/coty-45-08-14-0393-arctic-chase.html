@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 08 14 (0393) Arctic Chase — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0393) Arctic Chase — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 08 14 (0393) Arctic Chase — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 08 14 (0393) Arctic Chase — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 08 14 (0393) Arctic Chase — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 14, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 08 14 (0393) Arctic Chase</h1>
+          <h1 class="episode__title">(0393) Arctic Chase</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon: Arctic Chase</p>
-<p>Picture yourself huddled close to the radio on a winter's evening as the immortal strains of the "Ride of the Valkyries" crackle through your speaker, and you're transported instantly to the frozen vastness of Canada's far north. In "Arctic Chase," Sergeant Preston and his magnificent dog King find themselves locked in a desperate pursuit across treacherous ice fields and whiteout conditions, pursuing a fugitive whose crimes have left a trail of suffering in remote trading posts. The howling wind, the crack of ice beneath sled runners, and King's urgent barks create an atmosphere of mounting tension—you can almost feel the bitter cold seeping into your bones as our hero races against both the elements and a cunning criminal who knows the territory as well as any man alive. Will Preston's legendary determination and King's uncanny tracking abilities prevail before darkness and blizzard conspire to swallow them forever?</p>
-<p>What made this series a phenomenon during radio's golden age was its perfect marriage of action, character, and authentic frontier authenticity. Created during the 1930s and flourishing through the 1940s, *Sergeant Preston of the Yukon* captured American imaginations with its vision of justice and civilization imposed upon the raw Northland. Each episode brought listeners tales of genuine danger and moral clarity—the kind of storytelling that made families gather around their sets and children dream of adventure. The show's popularity would eventually extend far beyond radio into comic books, television, and cultural memory.</p>
+          <p>Picture yourself huddled close to the radio on a winter's evening as the immortal strains of the "Ride of the Valkyries" crackle through your speaker, and you're transported instantly to the frozen vastness of Canada's far north. In "Arctic Chase," Sergeant Preston and his magnificent dog King find themselves locked in a desperate pursuit across treacherous ice fields and whiteout conditions, pursuing a fugitive whose crimes have left a trail of suffering in remote trading posts. The howling wind, the crack of ice beneath sled runners, and King's urgent barks create an atmosphere of mounting tension—you can almost feel the bitter cold seeping into your bones as our hero races against both the elements and a cunning criminal who knows the territory as well as any man alive. Will Preston's legendary determination and King's uncanny tracking abilities prevail before darkness and blizzard conspire to swallow them forever?</p>
+<p>What made this series a phenomenon during radio's golden age was its perfect marriage of action, character, and authentic frontier authenticity. Created during the 1930s and flourishing through the 1940s, Sergeant Preston of the Yukon captured American imaginations with its vision of justice and civilization imposed upon the raw Northland. Each episode brought listeners tales of genuine danger and moral clarity—the kind of storytelling that made families gather around their sets and children dream of adventure. The show's popularity would eventually extend far beyond radio into comic books, television, and cultural memory.</p>
 <p>Don't miss "Arctic Chase," a masterclass in suspenseful radio drama that reminds us why a generation hung on every word from the North. Tune in and join Sergeant Preston on patrol!</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

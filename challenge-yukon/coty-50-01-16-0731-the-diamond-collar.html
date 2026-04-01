@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 01 16 (0731) The Diamond Collar — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0731) The Diamond Collar — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 01 16 (0731) The Diamond Collar — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 01 16 (0731) The Diamond Collar — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 01 16 (0731) The Diamond Collar — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 16, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 01 16 (0731) The Diamond Collar</h1>
+          <h1 class="episode__title">(0731) The Diamond Collar</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Diamond Collar</p>
-<p>Picture yourself huddled around the radio on a winter's night as Sergeant Preston's sled dogs howl through the frozen Yukon wilderness. In "The Diamond Collar," a priceless gem vanishes from a remote trading post, and Preston must navigate treacherous ice fields and suspicious characters to recover it before the trail grows cold. What begins as a simple theft investigation spirals into a tale of desperation, greed, and the unforgiving North—where every man's word is tested and loyalty becomes the rarest commodity of all. As Preston closes in on the truth, listeners will find themselves caught between competing claims and shadowy motives, wondering whether the diamond's rightful owner is hero or villain.</p>
-<p>*Challenge of the Yukon* was radio's definitive adventure series, capturing American imaginations during the 1940s with tales of law and order at the edge of civilization. Sergeant Preston—mounted on his horse King, accompanied by his loyal dog King—became an archetype of the stalwart lawman, representing justice in a lawless land. The show's authentic Yukon setting, detailed sound design (from crackling campfires to the crunch of snow underfoot), and taut 15-minute episodes made it essential listening. Unlike many adventure serials that relied on melodrama, *Challenge of the Yukon* grounded its stories in real frontier challenges and moral complexity, attracting both children and adults who craved intelligent storytelling.</p>
+          <p>Picture yourself huddled around the radio on a winter's night as Sergeant Preston's sled dogs howl through the frozen Yukon wilderness. In "The Diamond Collar," a priceless gem vanishes from a remote trading post, and Preston must navigate treacherous ice fields and suspicious characters to recover it before the trail grows cold. What begins as a simple theft investigation spirals into a tale of desperation, greed, and the unforgiving North—where every man's word is tested and loyalty becomes the rarest commodity of all. As Preston closes in on the truth, listeners will find themselves caught between competing claims and shadowy motives, wondering whether the diamond's rightful owner is hero or villain.</p>
+<p>Challenge of the Yukon was radio's definitive adventure series, capturing American imaginations during the 1940s with tales of law and order at the edge of civilization. Sergeant Preston—mounted on his horse King, accompanied by his loyal dog King—became an archetype of the stalwart lawman, representing justice in a lawless land. The show's authentic Yukon setting, detailed sound design (from crackling campfires to the crunch of snow underfoot), and taut 15-minute episodes made it essential listening. Unlike many adventure serials that relied on melodrama, Challenge of the Yukon grounded its stories in real frontier challenges and moral complexity, attracting both children and adults who craved intelligent storytelling.</p>
 <p>Tune in to "The Diamond Collar" and experience radio at its finest—where adventure isn't just about action, but about the choices men make when tested by fortune and circumstance. This is classic entertainment from an era when a story, a voice, and your imagination were all you needed.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

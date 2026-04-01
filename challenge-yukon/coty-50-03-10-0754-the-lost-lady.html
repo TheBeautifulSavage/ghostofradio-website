@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 03 10 (0754) The Lost Lady — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0754) The Lost Lady — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 03 10 (0754) The Lost Lady — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 03 10 (0754) The Lost Lady — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 03 10 (0754) The Lost Lady — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 10, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 03 10 (0754) The Lost Lady</h1>
+          <h1 class="episode__title">(0754) The Lost Lady</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Lost Lady</p>
-<p>As the haunting strains of "Yours is My Heart Alone" fade into the crackling wilderness, Sergeant Preston of the Royal Canadian Mounted Police and his magnificent dog King stand at the threshold of mystery in the frozen Yukon. "The Lost Lady" plunges listeners into a perilous rescue mission where survival hinges on courage, quick thinking, and the unshakeable bond between man and beast. When a desperate woman vanishes into the unforgiving snow-laden landscape, Preston must navigate treacherous terrain, confront dangerous adversaries, and race against the brutal Arctic elements. The episode crackles with authentic tension—you'll hear the bite of wind through mountain passes, the urgent bark of King sensing danger, and the measured, authoritative voice of Preston cutting through the chaos with the quiet resolve of a lawman who has faced the wilderness itself and refused to blink.</p>
-<p>*Challenge of the Yukon* became a beloved institution during its remarkable seventeen-year run, captivating millions of listeners with its vivid portrayal of Canadian frontier justice and adventure. The show arrived at radio's golden age when listeners craved escapism and heroism, offering weekly doses of authentic danger paired with moral clarity. Sergeant Preston embodied the RCMP's legendary reputation for "always getting their man," while King—inspired by real sled dogs of the North—elevated the program beyond typical adventure fare into something more mythic. Each episode was meticulously crafted to transport the audience thousands of miles from their living rooms into a world where civilization's rules barely held sway and honor meant everything.</p>
-<p>Whether you're a devoted fan of vintage adventure radio or a curious newcomer seeking to understand why this program captured the imagination of an entire nation, "The Lost Lady" offers everything that made *Challenge of the Yukon* essential listening: danger, heroism, and the thrilling promise that justice—and mercy—can survive even in the harshest corners of the earth.</p>
+          <p>As the haunting strains of "Yours is My Heart Alone" fade into the crackling wilderness, Sergeant Preston of the Royal Canadian Mounted Police and his magnificent dog King stand at the threshold of mystery in the frozen Yukon. "The Lost Lady" plunges listeners into a perilous rescue mission where survival hinges on courage, quick thinking, and the unshakeable bond between man and beast. When a desperate woman vanishes into the unforgiving snow-laden landscape, Preston must navigate treacherous terrain, confront dangerous adversaries, and race against the brutal Arctic elements. The episode crackles with authentic tension—you'll hear the bite of wind through mountain passes, the urgent bark of King sensing danger, and the measured, authoritative voice of Preston cutting through the chaos with the quiet resolve of a lawman who has faced the wilderness itself and refused to blink.</p>
+<p>Challenge of the Yukon became a beloved institution during its remarkable seventeen-year run, captivating millions of listeners with its vivid portrayal of Canadian frontier justice and adventure. The show arrived at radio's golden age when listeners craved escapism and heroism, offering weekly doses of authentic danger paired with moral clarity. Sergeant Preston embodied the RCMP's legendary reputation for "always getting their man," while King—inspired by real sled dogs of the North—elevated the program beyond typical adventure fare into something more mythic. Each episode was meticulously crafted to transport the audience thousands of miles from their living rooms into a world where civilization's rules barely held sway and honor meant everything.</p>
+<p>Whether you're a devoted fan of vintage adventure radio or a curious newcomer seeking to understand why this program captured the imagination of an entire nation, "The Lost Lady" offers everything that made Challenge of the Yukon essential listening: danger, heroism, and the thrilling promise that justice—and mercy—can survive even in the harshest corners of the earth.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

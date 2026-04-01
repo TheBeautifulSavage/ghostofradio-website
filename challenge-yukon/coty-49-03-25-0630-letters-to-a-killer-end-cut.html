@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 03 25 (0630) Letters To A Killer (end Cut) — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0630) Letters To A Killer (end Cut) — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 03 25 (0630) Letters To A Killer (end Cut) — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 03 25 (0630) Letters To A Killer (end Cut) — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 03 25 (0630) Letters To A Killer (end Cut) — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 25, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 03 25 (0630) Letters To A Killer (end Cut)</h1>
+          <h1 class="episode__title">(0630) Letters To A Killer (end Cut)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Letters to a Killer</p>
-<p>As the familiar strains of the "Charge of the Royal Canadians" fade into the Yukon wilderness, listeners are thrust into a desperate manhunt that plays out through the most innocent of mediums—the written word. In this gripping episode, Sergeant Preston and his faithful husky King must track down a cunning killer who communicates his next moves through letters mailed across the frozen frontier. What begins as a puzzle of cryptic messages becomes a race against time, as Preston pieces together clues hidden in postmarks, handwriting, and veiled threats. The tension builds masterfully as our hero realizes he's not simply chasing a criminal—he's locked in a battle of wits with someone determined to prove his superiority. By the episode's climax, the Northern landscape itself becomes both refuge and trap, and King's keen instincts may be the only advantage Preston possesses.</p>
-<p>*Challenge of the Yukon* captured America's imagination during the late 1930s and 1940s precisely because it married the romance of frontier justice with the intimate immediacy of radio drama. Sergeant Preston, Royal Canadian Mounted Police, embodied the virtues audiences craved during uncertain times: unwavering moral clarity, loyalty, and the triumph of civilization over wilderness chaos. This particular episode showcases the show's mastery of psychological suspense—proving that danger in the Yukon wasn't always lurking in snowstorms or wild animals, but often in the darkest corners of human nature. The writing elevates what could be a simple chase narrative into something far more cerebral and unsettling.</p>
+          <p>As the familiar strains of the "Charge of the Royal Canadians" fade into the Yukon wilderness, listeners are thrust into a desperate manhunt that plays out through the most innocent of mediums—the written word. In this gripping episode, Sergeant Preston and his faithful husky King must track down a cunning killer who communicates his next moves through letters mailed across the frozen frontier. What begins as a puzzle of cryptic messages becomes a race against time, as Preston pieces together clues hidden in postmarks, handwriting, and veiled threats. The tension builds masterfully as our hero realizes he's not simply chasing a criminal—he's locked in a battle of wits with someone determined to prove his superiority. By the episode's climax, the Northern landscape itself becomes both refuge and trap, and King's keen instincts may be the only advantage Preston possesses.</p>
+<p>Challenge of the Yukon captured America's imagination during the late 1930s and 1940s precisely because it married the romance of frontier justice with the intimate immediacy of radio drama. Sergeant Preston, Royal Canadian Mounted Police, embodied the virtues audiences craved during uncertain times: unwavering moral clarity, loyalty, and the triumph of civilization over wilderness chaos. This particular episode showcases the show's mastery of psychological suspense—proving that danger in the Yukon wasn't always lurking in snowstorms or wild animals, but often in the darkest corners of human nature. The writing elevates what could be a simple chase narrative into something far more cerebral and unsettling.</p>
 <p>Tune in now and experience radio drama at its finest, when sound effects and voice acting transported millions into the untamed North, where one man and his dog stood guard against evil.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

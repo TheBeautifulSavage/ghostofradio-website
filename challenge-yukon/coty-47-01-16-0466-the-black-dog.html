@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 01 16 (0466) The Black Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0466) The Black Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 01 16 (0466) The Black Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 01 16 (0466) The Black Dog — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 01 16 (0466) The Black Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 16, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 01 16 (0466) The Black Dog</h1>
+          <h1 class="episode__title">(0466) The Black Dog</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Black Dog</p>
-<p>When a mysterious black dog appears on the frozen trails of the Yukon, it heralds something far more sinister than a mere stray. Sergeant Preston and his faithful King must unravel the dark secret surrounding this ominous creature—one that draws them deeper into a treacherous conspiracy involving smugglers, a desperate man with a price on his head, and a legend whispered in hushed tones throughout the remote northern settlements. As blizzard winds howl across the ice and the thermometer plummets to deadly degrees, Preston must separate superstition from sabotage while the clock ticks toward a confrontation that will test both his courage and his conviction. The tension builds through every crackling broadcast moment as our stalwart Mountie tracks not just a criminal, but the truth hidden beneath layers of fear and deception.</p>
-<p>*Challenge of the Yukon* captured listeners' imaginations throughout the Golden Age of radio precisely because it offered adventure rooted in genuine North American frontier history. Sergeant Preston of the Royal Canadian Mounted Police became an iconic figure—embodying law, order, and unwavering justice in a lawless wilderness. This 1940s episode typifies the show's mastery of atmosphere and moral clarity; the Yukon becomes more than mere backdrop, it's a character itself, indifferent and merciless. The program's commitment to authentic detail, from the geography to police procedure, gave audiences a window into a world most would never experience firsthand, yet one that felt urgently real through expert sound design and Preston's steady narration.</p>
-<p>Tune in now to *The Black Dog* and discover why millions of listeners made this their appointment radio each week. Experience the crackle of a dying campfire, the bite of Arctic wind, and the indomitable spirit of justice pursued across frozen wasteland. King barks. Preston advances. Justice awaits.</p>
+          <p>When a mysterious black dog appears on the frozen trails of the Yukon, it heralds something far more sinister than a mere stray. Sergeant Preston and his faithful King must unravel the dark secret surrounding this ominous creature—one that draws them deeper into a treacherous conspiracy involving smugglers, a desperate man with a price on his head, and a legend whispered in hushed tones throughout the remote northern settlements. As blizzard winds howl across the ice and the thermometer plummets to deadly degrees, Preston must separate superstition from sabotage while the clock ticks toward a confrontation that will test both his courage and his conviction. The tension builds through every crackling broadcast moment as our stalwart Mountie tracks not just a criminal, but the truth hidden beneath layers of fear and deception.</p>
+<p>Challenge of the Yukon captured listeners' imaginations throughout the Golden Age of radio precisely because it offered adventure rooted in genuine North American frontier history. Sergeant Preston of the Royal Canadian Mounted Police became an iconic figure—embodying law, order, and unwavering justice in a lawless wilderness. This 1940s episode typifies the show's mastery of atmosphere and moral clarity; the Yukon becomes more than mere backdrop, it's a character itself, indifferent and merciless. The program's commitment to authentic detail, from the geography to police procedure, gave audiences a window into a world most would never experience firsthand, yet one that felt urgently real through expert sound design and Preston's steady narration.</p>
+<p>Tune in now to The Black Dog and discover why millions of listeners made this their appointment radio each week. Experience the crackle of a dying campfire, the bite of Arctic wind, and the indomitable spirit of justice pursued across frozen wasteland. King barks. Preston advances. Justice awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

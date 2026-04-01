@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 12 06 (0842) The Indian Sign — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0842) The Indian Sign — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 12 06 (0842) The Indian Sign — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 12 06 (0842) The Indian Sign — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 12 06 (0842) The Indian Sign — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 6, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 12 06 (0842) The Indian Sign</h1>
+          <h1 class="episode__title">(0842) The Indian Sign</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Indian Sign</p>
-<p>As the familiar strains of the "Yukon March" fade into the crisp northern silence, Sergeant Preston of the Royal Canadian Mounted Police faces his most cryptic challenge yet. In *The Indian Sign*, a mysterious curse threatens to tear apart the delicate bonds of trust between the Mounties and the indigenous peoples of the Yukon. When a series of inexplicable misfortunes befalls a remote trading post—supplies vanishing, animals spooked, and one man dead under impossible circumstances—suspicion falls on an ancient tribal warning. Preston must navigate the treacherous intersection of superstition and science, separating genuine danger from fear-mongering hysteria, all while King, his loyal husky companion, proves invaluable in ways both practical and mysterious. The tension crackles through every scene as the sergeant uncovers a plot far more sinister than spirits or curses, racing against time through the unforgiving Yukon wilderness to prevent bloodshed between settlers and the First Nations people.</p>
-<p>*Challenge of the Yukon*, which aired throughout the 1940s and into the 1950s, represented radio's most enduring adventure series, captivating millions of listeners with its authentic frontier atmosphere and nuanced portrayal of northern life. Paul Sutherland's portrayal of Sergeant Preston became iconic, embodying the ideals of Canadian law and justice with quiet competence and moral conviction. What distinguished the series from typical westerns was its willingness to explore complex social dynamics—the show treated indigenous characters with surprising dignity for its era, and episodes like *The Indian Sign* confronted prejudice head-on rather than reinforcing it.</p>
+          <p>As the familiar strains of the "Yukon March" fade into the crisp northern silence, Sergeant Preston of the Royal Canadian Mounted Police faces his most cryptic challenge yet. In The Indian Sign, a mysterious curse threatens to tear apart the delicate bonds of trust between the Mounties and the indigenous peoples of the Yukon. When a series of inexplicable misfortunes befalls a remote trading post—supplies vanishing, animals spooked, and one man dead under impossible circumstances—suspicion falls on an ancient tribal warning. Preston must navigate the treacherous intersection of superstition and science, separating genuine danger from fear-mongering hysteria, all while King, his loyal husky companion, proves invaluable in ways both practical and mysterious. The tension crackles through every scene as the sergeant uncovers a plot far more sinister than spirits or curses, racing against time through the unforgiving Yukon wilderness to prevent bloodshed between settlers and the First Nations people.</p>
+<p>Challenge of the Yukon, which aired throughout the 1940s and into the 1950s, represented radio's most enduring adventure series, captivating millions of listeners with its authentic frontier atmosphere and nuanced portrayal of northern life. Paul Sutherland's portrayal of Sergeant Preston became iconic, embodying the ideals of Canadian law and justice with quiet competence and moral conviction. What distinguished the series from typical westerns was its willingness to explore complex social dynamics—the show treated indigenous characters with surprising dignity for its era, and episodes like The Indian Sign confronted prejudice head-on rather than reinforcing it.</p>
 <p>Don't miss this thrilling adventure that combines detective mystery with genuine human drama. Tune in as Sergeant Preston and King brave the frozen frontier to uncover the truth behind the Indian Sign.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

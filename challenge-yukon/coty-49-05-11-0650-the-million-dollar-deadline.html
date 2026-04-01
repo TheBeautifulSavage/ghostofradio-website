@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 05 11 (0650) The Million Dollar Deadline — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0650) The Million Dollar Deadline — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 05 11 (0650) The Million Dollar Deadline — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 05 11 (0650) The Million Dollar Deadline — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 05 11 (0650) The Million Dollar Deadline — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 11, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 05 11 (0650) The Million Dollar Deadline</h1>
+          <h1 class="episode__title">(0650) The Million Dollar Deadline</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Million Dollar Deadline</p>
-<p>Picture yourself huddled close to your radio on a crisp northern evening as Sergeant Preston and his loyal dog King venture into the frozen wilderness where greed and desperation collide. "The Million Dollar Deadline" presents a thrilling scenario that taps into every listener's sense of urgency—when a vast fortune hangs in the balance and unscrupulous men will stop at nothing to claim it, honest Sergeant Preston must race against time and the treacherous Yukon landscape itself. As the tension mounts across this episode, you'll hear the crunch of snow beneath boots, the howl of the wind across the tundra, and the mounting stakes as our hero navigates both the physical dangers of the North and the moral corruption of fortune hunters willing to commit any crime. The race is on, and only Preston's quick thinking and King's unwavering loyalty stand between justice and a criminal windfall.</p>
-<p>*Challenge of the Yukon* became an American institution during radio's golden age, capturing audiences' imaginations with tales of law, order, and adventure in the Canadian frontier. The show's appeal lay in its perfect formula: a steadfast hero, exotic locale, and morality tales wrapped in genuine suspense. By the 1940s, when this episode aired, Sergeant Preston had become as iconic as the RCMP itself, embodying an idealized version of frontier justice that resonated deeply during wartime America. The program's longevity and popularity across multiple networks spoke to listeners' hunger for straightforward heroism and adventure.</p>
+          <p>Picture yourself huddled close to your radio on a crisp northern evening as Sergeant Preston and his loyal dog King venture into the frozen wilderness where greed and desperation collide. "The Million Dollar Deadline" presents a thrilling scenario that taps into every listener's sense of urgency—when a vast fortune hangs in the balance and unscrupulous men will stop at nothing to claim it, honest Sergeant Preston must race against time and the treacherous Yukon landscape itself. As the tension mounts across this episode, you'll hear the crunch of snow beneath boots, the howl of the wind across the tundra, and the mounting stakes as our hero navigates both the physical dangers of the North and the moral corruption of fortune hunters willing to commit any crime. The race is on, and only Preston's quick thinking and King's unwavering loyalty stand between justice and a criminal windfall.</p>
+<p>Challenge of the Yukon became an American institution during radio's golden age, capturing audiences' imaginations with tales of law, order, and adventure in the Canadian frontier. The show's appeal lay in its perfect formula: a steadfast hero, exotic locale, and morality tales wrapped in genuine suspense. By the 1940s, when this episode aired, Sergeant Preston had become as iconic as the RCMP itself, embodying an idealized version of frontier justice that resonated deeply during wartime America. The program's longevity and popularity across multiple networks spoke to listeners' hunger for straightforward heroism and adventure.</p>
 <p>Tune in now to experience the crackling authenticity of classic radio drama, where sound effects and vocal performances transport you north of the 55th parallel. "The Million Dollar Deadline" reminds us why families gathered around their radios—for stories that thrilled, inspired, and proved that honor always triumphs over greed.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

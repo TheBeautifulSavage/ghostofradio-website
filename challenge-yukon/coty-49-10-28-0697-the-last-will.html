@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 10 28 (0697) The Last Will — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0697) The Last Will — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 10 28 (0697) The Last Will — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 10 28 (0697) The Last Will — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 10 28 (0697) The Last Will — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 28, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 10 28 (0697) The Last Will</h1>
+          <h1 class="episode__title">(0697) The Last Will</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Last Will</p>
-<p>As the howling wind cuts across the frozen Yukon wasteland and King—that magnificent husky—picks up an urgent scent, Sergeant Preston faces one of his most perplexing cases yet. A prospector lies dead in his cabin, his final will mysteriously altered just hours before his death, and half the territory seems to have a claim on his substantial gold fortune. Was it murder, accident, or something far more sinister? With only fragmentary clues and a landscape that guards its secrets jealously, Preston must navigate a treacherous web of greed, desperation, and hidden motives before the killer vanishes into the endless white expanse. Every moment counts in this taut drama of justice versus the brutal indifference of nature itself.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon precisely because it captured something authentically thrilling about the Canadian frontier while maintaining the integrity of real RCMP procedures and the wilderness's genuine dangers. Beginning in 1938, the show—later renamed *Sergeant Preston of the Yukon*—became the gold standard of adventure radio, with its stirring bugle call fanfare and Preston's iconic catch phrase becoming instantly recognizable across millions of American and Canadian households. The early 1940s episodes like "The Last Will" showcase the show at its peak, balancing police procedural mystery with genuine wilderness peril, all while celebrating the Mounted Police as symbols of law and order in lawless lands. Writer Paul Huston and the talented cast transformed each episode into miniature dramas of remarkable sophistication.</p>
+          <p>As the howling wind cuts across the frozen Yukon wasteland and King—that magnificent husky—picks up an urgent scent, Sergeant Preston faces one of his most perplexing cases yet. A prospector lies dead in his cabin, his final will mysteriously altered just hours before his death, and half the territory seems to have a claim on his substantial gold fortune. Was it murder, accident, or something far more sinister? With only fragmentary clues and a landscape that guards its secrets jealously, Preston must navigate a treacherous web of greed, desperation, and hidden motives before the killer vanishes into the endless white expanse. Every moment counts in this taut drama of justice versus the brutal indifference of nature itself.</p>
+<p>Challenge of the Yukon became a cultural phenomenon precisely because it captured something authentically thrilling about the Canadian frontier while maintaining the integrity of real RCMP procedures and the wilderness's genuine dangers. Beginning in 1938, the show—later renamed Sergeant Preston of the Yukon—became the gold standard of adventure radio, with its stirring bugle call fanfare and Preston's iconic catch phrase becoming instantly recognizable across millions of American and Canadian households. The early 1940s episodes like "The Last Will" showcase the show at its peak, balancing police procedural mystery with genuine wilderness peril, all while celebrating the Mounted Police as symbols of law and order in lawless lands. Writer Paul Huston and the talented cast transformed each episode into miniature dramas of remarkable sophistication.</p>
 <p>Don't miss this classic demonstration of why radio's golden age truly was golden. Tune in now and rediscover what captivated an entire generation—the sound of adventure, the crack of a whip, and King's loyal bark echoing across the frozen North.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

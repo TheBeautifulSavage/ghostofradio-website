@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 10 17 (0692) The Doctor Disappears — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0692) The Doctor Disappears — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 10 17 (0692) The Doctor Disappears — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 10 17 (0692) The Doctor Disappears — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 10 17 (0692) The Doctor Disappears — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 17, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 10 17 (0692) The Doctor Disappears</h1>
+          <h1 class="episode__title">(0692) The Doctor Disappears</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Doctor Disappears</p>
-<p>Picture yourself huddled close to your radio on a crisp autumn evening, the crackle of the speaker filling your parlor as Sergeant Preston of the Yukon Mounted Police faces his most perplexing case yet. A respected physician has vanished without a trace from a remote trading post, leaving behind only questions and suspicion. As Preston and his faithful husky, King, begin their investigation into the frozen wilderness, the mystery deepens—was it foul play, a desperate escape, or something far more sinister lurking in the shadows of the northern frontier? With winter's grip tightening around the Yukon, time is running out, and Preston must uncover the truth before the harsh landscape claims another victim.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon throughout the late 1930s and 1940s, captivating millions of listeners with tales of justice, loyalty, and survival at the edge of civilization. The show's genius lay in its perfect blend of authentic Canadian wilderness adventure with the moral certainty of a by-the-book lawman who always got his man. Sergeant Preston, played memorably by various actors throughout the series' seventeen-year run, embodied the noble tradition of the Mounties while the dynamic between Preston and his intelligent dog partner created an emotional core that kept audiences returning week after week. These episodes represent a golden age of radio storytelling when sound effects—crackling fires, howling winds, and sled dogs barking—transported listeners thousands of miles from their living rooms.</p>
+          <p>Picture yourself huddled close to your radio on a crisp autumn evening, the crackle of the speaker filling your parlor as Sergeant Preston of the Yukon Mounted Police faces his most perplexing case yet. A respected physician has vanished without a trace from a remote trading post, leaving behind only questions and suspicion. As Preston and his faithful husky, King, begin their investigation into the frozen wilderness, the mystery deepens—was it foul play, a desperate escape, or something far more sinister lurking in the shadows of the northern frontier? With winter's grip tightening around the Yukon, time is running out, and Preston must uncover the truth before the harsh landscape claims another victim.</p>
+<p>Challenge of the Yukon became a cultural phenomenon throughout the late 1930s and 1940s, captivating millions of listeners with tales of justice, loyalty, and survival at the edge of civilization. The show's genius lay in its perfect blend of authentic Canadian wilderness adventure with the moral certainty of a by-the-book lawman who always got his man. Sergeant Preston, played memorably by various actors throughout the series' seventeen-year run, embodied the noble tradition of the Mounties while the dynamic between Preston and his intelligent dog partner created an emotional core that kept audiences returning week after week. These episodes represent a golden age of radio storytelling when sound effects—crackling fires, howling winds, and sled dogs barking—transported listeners thousands of miles from their living rooms.</p>
 <p>Don't miss "The Doctor Disappears," a gripping tale that showcases why this beloved adventure series endured across generations. Tune in and discover why Sergeant Preston and King remain icons of radio's greatest era.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

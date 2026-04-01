@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 12 28 (0361) Preston's Dilemma — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0361) Preston's Dilemma — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 12 28 (0361) Preston's Dilemma — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 12 28 (0361) Preston's Dilemma — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 12 28 (0361) Preston's Dilemma — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 28, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 12 28 (0361) Preston's Dilemma</h1>
+          <h1 class="episode__title">(0361) Preston's Dilemma</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Preston's Dilemma</p>
-<p>Picture yourself huddled close to a wooden radio console on a crisp winter evening, the crackling static giving way to the thundering hoofbeats of a galloping horse—King, the mighty malamute's namesake in spirit—as Sergeant Preston of the Yukon faces his most agonizing choice yet. In "Preston's Dilemma," our stalwart Mountie discovers that the culprit behind a series of northern robberies is someone from his own past, a man whose life Preston once saved. As snowdrifts pile high and temperatures plummet across the frozen wilderness, Preston must reconcile duty with debt, justice with mercy. The episode crackles with genuine moral tension; this isn't merely a matter of pursuing bandits through treacherous mountain passes, but of wrestling with the very principles that define the Canadian north and the men who uphold its law.</p>
-<p>For nearly two decades, *Challenge of the Yukon* gripped the imaginations of millions of listeners, transporting them from living rooms across America to the remote, romanticized frontier of Canada's gold rush territory. The show's genius lay in its combination of action-packed adventure, vivid sound design—those authentic dog-sled teams, gunshots echoing across frozen lakes—and surprisingly nuanced character exploration. Sergeant Preston, played with steadfast conviction, became an American icon of noble authority and honest resolve. Episodes like "Preston's Dilemma" showcase why the series transcended typical adventure radio, offering listeners genuine drama alongside the escapism they craved during uncertain times.</p>
-<p>Tune in now and experience the moment when one man's honor hangs in the balance against the frozen Yukon wilderness. *Sergeant Preston of the Yukon* awaits—where justice is swift, the cold is merciless, and every choice carries the weight of a nation.</p>
+          <p>Picture yourself huddled close to a wooden radio console on a crisp winter evening, the crackling static giving way to the thundering hoofbeats of a galloping horse—King, the mighty malamute's namesake in spirit—as Sergeant Preston of the Yukon faces his most agonizing choice yet. In "Preston's Dilemma," our stalwart Mountie discovers that the culprit behind a series of northern robberies is someone from his own past, a man whose life Preston once saved. As snowdrifts pile high and temperatures plummet across the frozen wilderness, Preston must reconcile duty with debt, justice with mercy. The episode crackles with genuine moral tension; this isn't merely a matter of pursuing bandits through treacherous mountain passes, but of wrestling with the very principles that define the Canadian north and the men who uphold its law.</p>
+<p>For nearly two decades, Challenge of the Yukon gripped the imaginations of millions of listeners, transporting them from living rooms across America to the remote, romanticized frontier of Canada's gold rush territory. The show's genius lay in its combination of action-packed adventure, vivid sound design—those authentic dog-sled teams, gunshots echoing across frozen lakes—and surprisingly nuanced character exploration. Sergeant Preston, played with steadfast conviction, became an American icon of noble authority and honest resolve. Episodes like "Preston's Dilemma" showcase why the series transcended typical adventure radio, offering listeners genuine drama alongside the escapism they craved during uncertain times.</p>
+<p>Tune in now and experience the moment when one man's honor hangs in the balance against the frozen Yukon wilderness. Sergeant Preston of the Yukon awaits—where justice is swift, the cold is merciless, and every choice carries the weight of a nation.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

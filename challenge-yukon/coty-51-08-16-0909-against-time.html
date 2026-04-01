@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 08 16 (0909) Against Time — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0909) Against Time — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 08 16 (0909) Against Time — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 08 16 (0909) Against Time — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 08 16 (0909) Against Time — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 08 16 (0909) Against Time</h1>
+          <h1 class="episode__title">(0909) Against Time</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Against Time</p>
-<p>Picture this: a blizzard howls across the frozen Yukon wilderness as Sergeant Preston of the Royal Canadian Mounted Police races against the clock in a desperate gamble of life and death. In "Against Time," our intrepid Mountie finds himself pitted not against a cunning criminal or desperate outlaw, but against nature itself—the most formidable adversary of all. With his faithful husky King at his side, Preston must navigate treacherous snowdrifts and sub-zero temperatures to reach a remote trading post where a man's life hangs by a thread. Every moment counts; every decision could mean the difference between salvation and a frozen grave. The tension builds masterfully as Preston faces impossible choices, mechanical failures that could prove fatal, and the relentless indifference of the arctic landscape. You'll hear the crack of the whip, the howling wind, and Preston's steady voice cutting through the chaos—a beacon of Canadian determination in humanity's struggle against the elements.</p>
-<p>*Challenge of the Yukon*, which premiered in 1938 and captivated audiences for nearly two decades, represented radio's golden age at its finest. The show's enduring appeal lay in its perfect balance of frontier adventure and moral clarity; Sergeant Preston embodied the stoic, unflinching heroism that audiences craved during the turbulent 1940s. Produced with meticulous attention to sound design—the authentic barking of real sled dogs, the crackling of distant radio equipment, the eerie howl of wind—the series transported listeners directly into the Canadian North. Each episode reinforced the triumph of law, order, and human decency over chaos and desperation.</p>
+          <p>Picture this: a blizzard howls across the frozen Yukon wilderness as Sergeant Preston of the Royal Canadian Mounted Police races against the clock in a desperate gamble of life and death. In "Against Time," our intrepid Mountie finds himself pitted not against a cunning criminal or desperate outlaw, but against nature itself—the most formidable adversary of all. With his faithful husky King at his side, Preston must navigate treacherous snowdrifts and sub-zero temperatures to reach a remote trading post where a man's life hangs by a thread. Every moment counts; every decision could mean the difference between salvation and a frozen grave. The tension builds masterfully as Preston faces impossible choices, mechanical failures that could prove fatal, and the relentless indifference of the arctic landscape. You'll hear the crack of the whip, the howling wind, and Preston's steady voice cutting through the chaos—a beacon of Canadian determination in humanity's struggle against the elements.</p>
+<p>Challenge of the Yukon, which premiered in 1938 and captivated audiences for nearly two decades, represented radio's golden age at its finest. The show's enduring appeal lay in its perfect balance of frontier adventure and moral clarity; Sergeant Preston embodied the stoic, unflinching heroism that audiences craved during the turbulent 1940s. Produced with meticulous attention to sound design—the authentic barking of real sled dogs, the crackling of distant radio equipment, the eerie howl of wind—the series transported listeners directly into the Canadian North. Each episode reinforced the triumph of law, order, and human decency over chaos and desperation.</p>
 <p>Tune in now and experience why millions of listeners huddled around their radios each week to follow Sergeant Preston's adventures. "Against Time" reminds us that some struggles are timeless, and some heroes never fade.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

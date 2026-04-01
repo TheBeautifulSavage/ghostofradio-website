@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 01 10 (0971) White Doctor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0971) White Doctor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 01 10 (0971) White Doctor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 01 10 (0971) White Doctor — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 01 10 (0971) White Doctor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 01 10 (0971) White Doctor</h1>
+          <h1 class="episode__title">(0971) White Doctor</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># White Doctor</p>
-<p>As the familiar thunder of galloping hooves and strains of the "Canadian Capers" theme fade into the frozen vastness of the Yukon, listeners are transported once more into a world of danger, duty, and moral complexity. In "White Doctor," Sergeant Preston of the Royal Canadian Mounted Police and his faithful husky King must navigate the treacherous intersection of frontier justice and frontier medicine, where a mysterious healer's methods—whether miraculous or murderous—have captured the desperate hope of an isolated settlement. When illness strikes without warning and conventional help lies weeks away across impassable terrain, the line between savior and charlatan blurs dangerously. Preston must uncover the truth before trust in a "white doctor" transforms into tragedy, all while King's keen instincts and his own unwavering sense of duty light the way through moral fog as thick as any Yukon blizzard.</p>
+          <p>As the familiar thunder of galloping hooves and strains of the "Canadian Capers" theme fade into the frozen vastness of the Yukon, listeners are transported once more into a world of danger, duty, and moral complexity. In "White Doctor," Sergeant Preston of the Royal Canadian Mounted Police and his faithful husky King must navigate the treacherous intersection of frontier justice and frontier medicine, where a mysterious healer's methods—whether miraculous or murderous—have captured the desperate hope of an isolated settlement. When illness strikes without warning and conventional help lies weeks away across impassable terrain, the line between savior and charlatan blurs dangerously. Preston must uncover the truth before trust in a "white doctor" transforms into tragedy, all while King's keen instincts and his own unwavering sense of duty light the way through moral fog as thick as any Yukon blizzard.</p>
 <p>"Challenge of the Yukon" thrived on this very tension—the clash between civilization's rules and wilderness survival's necessities—making it far more than a simple adventure serial. Running from 1938 through the 1950s, the show captured Americans' fascination with Canada's remote north during an era when that frontier still felt genuinely untamed. Each episode leveraged authentic RCMP protocols and real geographical detail, lending credibility that kept millions of listeners enthralled. Sergeant Preston became the embodiment of principled authority in an lawless landscape, his character resonating particularly during wartime when listeners craved stories of order, competence, and unwavering morality.</p>
 <p>Tune in now to experience the atmospheric storytelling that defined Golden Age radio—where every shadow in the snow might hide salvation or ruin, and where one man's conscience becomes the only compass worth following.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 08 09 (0493) Derelict Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0493) Derelict Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 08 09 (0493) Derelict Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 08 09 (0493) Derelict Dog — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 08 09 (0493) Derelict Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 9, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 08 09 (0493) Derelict Dog</h1>
+          <h1 class="episode__title">(0493) Derelict Dog</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Derelict Dog</p>
-<p>As the howling Arctic wind cuts across the frozen Yukon wilderness, Sergeant Preston of the Royal Canadian Mounted Police discovers an emaciated husky abandoned near an icy ravine—barely clinging to life, its ribs visible beneath matted fur. But this is no ordinary rescue mission. The dog bears mysterious markings that suggest it escaped from a criminal operation hidden somewhere in the frozen north, and its survival may be the only clue Preston and King have to uncover a sinister plot threatening the remote settlements of the Yukon. With time running out and a blizzard approaching, Preston must race against the elements and a shadowy adversary who will stop at nothing to keep their secret buried in ice and snow.</p>
-<p>*Challenge of the Yukon* captivated audiences throughout the 1940s by combining the authentic lawman heroics of the RCMP with thrilling pulp adventure, all set against the genuinely harsh and exotic backdrop of Canada's last frontier. The show's genius lay in its faithful depiction of real Arctic conditions while maintaining breathless dramatic tension—listeners could almost feel the bite of the sub-zero temperatures. "Derelict Dog" exemplifies what made the series beloved: an animal mystery interwoven with human villainy, the kind of story that kept families huddled around their radio sets, utterly transfixed. King, the magnificent sled dog at Preston's side, was never merely a sidekick but a fully realized character whose instincts and loyalty drove the narrative forward.</p>
-<p>Don't miss this gripping episode of *Sergeant Preston of the Yukon*. Tune in and join Preston as he tracks danger through the unforgiving north—where every frozen shadow could hide a criminal, and where one abandoned dog's survival becomes the key to justice.</p>
+          <p>As the howling Arctic wind cuts across the frozen Yukon wilderness, Sergeant Preston of the Royal Canadian Mounted Police discovers an emaciated husky abandoned near an icy ravine—barely clinging to life, its ribs visible beneath matted fur. But this is no ordinary rescue mission. The dog bears mysterious markings that suggest it escaped from a criminal operation hidden somewhere in the frozen north, and its survival may be the only clue Preston and King have to uncover a sinister plot threatening the remote settlements of the Yukon. With time running out and a blizzard approaching, Preston must race against the elements and a shadowy adversary who will stop at nothing to keep their secret buried in ice and snow.</p>
+<p>Challenge of the Yukon captivated audiences throughout the 1940s by combining the authentic lawman heroics of the RCMP with thrilling pulp adventure, all set against the genuinely harsh and exotic backdrop of Canada's last frontier. The show's genius lay in its faithful depiction of real Arctic conditions while maintaining breathless dramatic tension—listeners could almost feel the bite of the sub-zero temperatures. "Derelict Dog" exemplifies what made the series beloved: an animal mystery interwoven with human villainy, the kind of story that kept families huddled around their radio sets, utterly transfixed. King, the magnificent sled dog at Preston's side, was never merely a sidekick but a fully realized character whose instincts and loyalty drove the narrative forward.</p>
+<p>Don't miss this gripping episode of Sergeant Preston of the Yukon. Tune in and join Preston as he tracks danger through the unforgiving north—where every frozen shadow could hide a criminal, and where one abandoned dog's survival becomes the key to justice.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

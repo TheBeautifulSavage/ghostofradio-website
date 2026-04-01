@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 04 11 (0637) The Lucky Shirt — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0637) The Lucky Shirt — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 04 11 (0637) The Lucky Shirt — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 04 11 (0637) The Lucky Shirt — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 04 11 (0637) The Lucky Shirt — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 11, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 04 11 (0637) The Lucky Shirt</h1>
+          <h1 class="episode__title">(0637) The Lucky Shirt</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: The Lucky Shirt</p>
-<p>Picture yourself huddled around the radio on a winter's night, the crackle of static giving way to the distant howl of wolves and the thundering hoofbeats of King, the magnificent husky, as Sergeant Preston charges across the frozen Yukon frontier. In "The Lucky Shirt," a deceptively simple garment becomes the linchpin of a gripping tale of fortune, superstition, and frontier justice. A prospector's worn flannel shirt, said to carry the luck of the Klondike itself, becomes the object of desperate desire when a band of claim jumpers will stop at nothing to possess it. As Preston investigates the theft and the violence that follows, listeners will be drawn into a web of conflicting loyalties, hidden identities, and the question of whether fortune truly favors the bold—or merely the ruthless.</p>
-<p>*Challenge of the Yukon* stood apart from typical adventure serials of the Golden Age by grounding its stories in the authentic atmosphere of turn-of-the-century Canada. Sergeant Preston, portrayed with steadfast authority, represented law and order in lawless territory, while the show's writers crafted narratives that reflected genuine frontier anxieties: claim disputes, frontier con artists, and the thin line between civilization and wilderness. This 1940s episode exemplifies the show's mastery of suspense and character, demonstrating why it remained a staple of American radio for nearly two decades.</p>
+          <p>Picture yourself huddled around the radio on a winter's night, the crackle of static giving way to the distant howl of wolves and the thundering hoofbeats of King, the magnificent husky, as Sergeant Preston charges across the frozen Yukon frontier. In "The Lucky Shirt," a deceptively simple garment becomes the linchpin of a gripping tale of fortune, superstition, and frontier justice. A prospector's worn flannel shirt, said to carry the luck of the Klondike itself, becomes the object of desperate desire when a band of claim jumpers will stop at nothing to possess it. As Preston investigates the theft and the violence that follows, listeners will be drawn into a web of conflicting loyalties, hidden identities, and the question of whether fortune truly favors the bold—or merely the ruthless.</p>
+<p>Challenge of the Yukon stood apart from typical adventure serials of the Golden Age by grounding its stories in the authentic atmosphere of turn-of-the-century Canada. Sergeant Preston, portrayed with steadfast authority, represented law and order in lawless territory, while the show's writers crafted narratives that reflected genuine frontier anxieties: claim disputes, frontier con artists, and the thin line between civilization and wilderness. This 1940s episode exemplifies the show's mastery of suspense and character, demonstrating why it remained a staple of American radio for nearly two decades.</p>
 <p>"The Lucky Shirt" showcases the program at its finest—combining genuine thrills with a moral compass that never wavers. Whether you're a devoted fan of vintage adventure radio or discovering Preston for the first time, this episode delivers everything that made the Yukon a destination for listeners seeking escape and excitement. Adjust your dial, settle in, and let Sergeant Preston guide you into the Canadian north.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

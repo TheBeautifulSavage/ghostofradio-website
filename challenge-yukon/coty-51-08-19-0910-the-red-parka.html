@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 08 19 (0910) The Red Parka — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0910) The Red Parka — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 08 19 (0910) The Red Parka — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 08 19 (0910) The Red Parka — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 08 19 (0910) The Red Parka — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 08 19 (0910) The Red Parka</h1>
+          <h1 class="episode__title">(0910) The Red Parka</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Red Parka</p>
-<p>Picture yourself huddled close to your radio on a frost-bitten evening in the Yukon wilderness. The crackle of static gives way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, as our stalwart Mountie pursues a mysterious figure fleeing through the snow-laden pines. A red parka—vivid against the white landscape—belongs to someone with secrets worth killing for. As Preston closes in, drawing upon years of experience reading the treacherous northern terrain, a murder comes to light that will test not only his detective skills but his very conscience. Will justice prevail in a land where civilization feels a thousand miles away, or will the guilty find refuge in the frozen darkness? The tension builds with each footfall, each barked command, each dangerous revelation.</p>
-<p>For over fifteen years, *Sergeant Preston of the Yukon* captivated millions of Americans with tales of law and order at the edge of the known world. Beginning in 1938 and running through the golden age of radio, the show tapped into a deep American hunger for adventure and frontier justice—even as the actual frontier had long since vanished. Preston became as iconic as any Hollywood cowboy, his partnership with the incomparable King creating a bond that resonated with listeners young and old. These weren't sanitized fairy tales; they were gritty stories of moral complexity, set against the unforgiving landscape of the Canadian north, where a Mountie's word was law and nature was the ultimate adversary.</p>
-<p>Tune in now to *The Red Parka* and lose yourself in the mystery, the danger, and the distinctive world that kept families gathered around their sets week after week. Sergeant Preston awaits.</p>
+          <p>Picture yourself huddled close to your radio on a frost-bitten evening in the Yukon wilderness. The crackle of static gives way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, as our stalwart Mountie pursues a mysterious figure fleeing through the snow-laden pines. A red parka—vivid against the white landscape—belongs to someone with secrets worth killing for. As Preston closes in, drawing upon years of experience reading the treacherous northern terrain, a murder comes to light that will test not only his detective skills but his very conscience. Will justice prevail in a land where civilization feels a thousand miles away, or will the guilty find refuge in the frozen darkness? The tension builds with each footfall, each barked command, each dangerous revelation.</p>
+<p>For over fifteen years, Sergeant Preston of the Yukon captivated millions of Americans with tales of law and order at the edge of the known world. Beginning in 1938 and running through the golden age of radio, the show tapped into a deep American hunger for adventure and frontier justice—even as the actual frontier had long since vanished. Preston became as iconic as any Hollywood cowboy, his partnership with the incomparable King creating a bond that resonated with listeners young and old. These weren't sanitized fairy tales; they were gritty stories of moral complexity, set against the unforgiving landscape of the Canadian north, where a Mountie's word was law and nature was the ultimate adversary.</p>
+<p>Tune in now to The Red Parka and lose yourself in the mystery, the danger, and the distinctive world that kept families gathered around their sets week after week. Sergeant Preston awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

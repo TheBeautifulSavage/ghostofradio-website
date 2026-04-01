@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 07 11 (0439) Flash — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0439) Flash — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 07 11 (0439) Flash — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 07 11 (0439) Flash — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 07 11 (0439) Flash — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · July 11, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 07 11 (0439) Flash</h1>
+          <h1 class="episode__title">(0439) Flash</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Flash"</p>
-<p>As the sun dips below the frozen horizon and the howling wind cuts across the Yukon wilderness, Sergeant Preston of the Royal Canadian Mounted Police faces his most personal challenge yet in this gripping episode. When a mysterious prospector stumbles into Fort Yukon with tales of a hidden gold strike guarded by treacherous terrain and ruthless claim jumpers, Preston must decide whether to trust a stranger's word—or risk losing everything, including his beloved sled dog King, to the unforgiving frontier. The episode crackles with the tension of moral ambiguity; Preston's famous dedication to duty clashes against his sense of fair play as rival claimants descend upon the remote location like vultures. Listeners will find themselves on the edge of their seats as Preston and King navigate avalanche-prone mountain passes and confront a dangerous gang determined to seize the prize by any means necessary.</p>
-<p>This 1940s episode exemplifies why *Challenge of the Yukon* captivated millions of North American listeners throughout its seventeen-year run. The show's genius lay in its blend of authentic frontier adventure with genuine character development—Preston wasn't just a cardboard lawman, but a complex figure navigating the moral gray zones of frontier justice. Created during an era when radio dominated American entertainment, the series brought the Canadian north into living rooms across the continent, and episodes like "Flash" showcased the writers' skill at balancing action, atmosphere, and emotional stakes. King, Preston's German Shepherd, became as iconic as the Mountie himself, embodying loyalty and instinct in a harsh land.</p>
+          <p>As the sun dips below the frozen horizon and the howling wind cuts across the Yukon wilderness, Sergeant Preston of the Royal Canadian Mounted Police faces his most personal challenge yet in this gripping episode. When a mysterious prospector stumbles into Fort Yukon with tales of a hidden gold strike guarded by treacherous terrain and ruthless claim jumpers, Preston must decide whether to trust a stranger's word—or risk losing everything, including his beloved sled dog King, to the unforgiving frontier. The episode crackles with the tension of moral ambiguity; Preston's famous dedication to duty clashes against his sense of fair play as rival claimants descend upon the remote location like vultures. Listeners will find themselves on the edge of their seats as Preston and King navigate avalanche-prone mountain passes and confront a dangerous gang determined to seize the prize by any means necessary.</p>
+<p>This 1940s episode exemplifies why Challenge of the Yukon captivated millions of North American listeners throughout its seventeen-year run. The show's genius lay in its blend of authentic frontier adventure with genuine character development—Preston wasn't just a cardboard lawman, but a complex figure navigating the moral gray zones of frontier justice. Created during an era when radio dominated American entertainment, the series brought the Canadian north into living rooms across the continent, and episodes like "Flash" showcased the writers' skill at balancing action, atmosphere, and emotional stakes. King, Preston's German Shepherd, became as iconic as the Mountie himself, embodying loyalty and instinct in a harsh land.</p>
 <p>Don your heaviest coat and settle in by the hearth—the Yukon awaits. Tune in to hear how Sergeant Preston's unwavering code of honor will be tested against the siren song of fortune and the savage beauty of the untamed north.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

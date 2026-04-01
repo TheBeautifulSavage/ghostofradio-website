@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 09 20 (0551) Lost Indian Mine — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0551) Lost Indian Mine — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 09 20 (0551) Lost Indian Mine — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 09 20 (0551) Lost Indian Mine — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 09 20 (0551) Lost Indian Mine — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 20, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 09 20 (0551) Lost Indian Mine</h1>
+          <h1 class="episode__title">(0551) Lost Indian Mine</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Lost Indian Mine</p>
-<p>Deep in the frozen heart of the Yukon Territory, where towering pines pierce an endless grey sky and the wind cuts like a knife through the silence, Sergeant Preston faces his most treacherous case yet. When a desperate prospector stumbles into Fort Yukon with a cryptic map and a fever-bright tale of a lost Indian mine filled with untold riches, Preston knows trouble follows close behind. Criminal syndicates, ruthless claim-jumpers, and the unforgiving wilderness itself conspire against him in this pulse-pounding adventure. With only his faithful husky King at his side and the code of the Royal Canadian Mounted Police burning in his chest, Preston must navigate not only the brutal landscape but also the dangerous intersection of greed, mystery, and cultural secrets. The mine's location remains shrouded in legend—whispered about in trading posts, guarded by those who know its true history—and those who've sought it before have vanished without a trace.</p>
-<p>*Challenge of the Yukon* captured the American imagination during the Depression and war years by embodying the frontier spirit and moral certainty audiences desperately craved. Sergeant Preston's unwavering integrity and his bond with King the dog represented the triumph of goodness and determination over lawlessness and despair. The show's meticulous attention to Yukon geography and indigenous lore lent it authenticity that kept listeners returning night after night, eager for another dose of adventure in Canada's wild north.</p>
+          <p>Deep in the frozen heart of the Yukon Territory, where towering pines pierce an endless grey sky and the wind cuts like a knife through the silence, Sergeant Preston faces his most treacherous case yet. When a desperate prospector stumbles into Fort Yukon with a cryptic map and a fever-bright tale of a lost Indian mine filled with untold riches, Preston knows trouble follows close behind. Criminal syndicates, ruthless claim-jumpers, and the unforgiving wilderness itself conspire against him in this pulse-pounding adventure. With only his faithful husky King at his side and the code of the Royal Canadian Mounted Police burning in his chest, Preston must navigate not only the brutal landscape but also the dangerous intersection of greed, mystery, and cultural secrets. The mine's location remains shrouded in legend—whispered about in trading posts, guarded by those who know its true history—and those who've sought it before have vanished without a trace.</p>
+<p>Challenge of the Yukon captured the American imagination during the Depression and war years by embodying the frontier spirit and moral certainty audiences desperately craved. Sergeant Preston's unwavering integrity and his bond with King the dog represented the triumph of goodness and determination over lawlessness and despair. The show's meticulous attention to Yukon geography and indigenous lore lent it authenticity that kept listeners returning night after night, eager for another dose of adventure in Canada's wild north.</p>
 <p>Settle into your chair as the wind howls across the tundra and Sergeant Preston's voice crackles through your radio speaker. Is the mine merely folklore, or does it truly exist? Who can be trusted in this remote land where civilization is a distant memory? Tune in to discover what waits in the shadows of the Yukon.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

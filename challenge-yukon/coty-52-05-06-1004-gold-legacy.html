@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 05 06 (1004) Gold Legacy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(1004) Gold Legacy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 05 06 (1004) Gold Legacy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 05 06 (1004) Gold Legacy — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 05 06 (1004) Gold Legacy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 05 06 (1004) Gold Legacy</h1>
+          <h1 class="episode__title">(1004) Gold Legacy</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Gold Legacy</p>
-<p>Picture yourself huddled around the radio on a frigid evening, the crackle of the speaker carrying you thousands of miles north to the frozen wilderness of the Canadian Yukon. In "Gold Legacy," Sergeant Preston of the Royal Canadian Mounted Police faces one of his most intriguing cases yet—a fortune in gold bullion has vanished without a trace, and whispers of a decades-old claim and family secrets begin to surface from beneath the snow. With his faithful husky King at his side, Preston must navigate treacherous terrain, interview tight-lipped prospectors, and untangle a mystery where greed, loyalty, and the harsh law of the North collide in unexpected ways. The tension builds masterfully as clues point in contradictory directions, and listeners will find themselves drawn into Preston's meticulous detective work, wondering alongside him who among the cast of suspects harbors the truth.</p>
-<p>*Challenge of the Yukon* stood apart in the golden age of radio adventure programming through its authentic attention to Canadian geography, RCMP procedure, and the genuine dangers of frontier life. The show ran for nearly two decades precisely because it offered something different from the shoot-'em-up westerns dominating American airwaves—here was intelligent storytelling grounded in real history, where problems were solved through cunning and duty rather than quick draw reflexes. Each episode felt like a dispatch from a distant, exotic land, bringing listeners the thrill of discovery without sensationalism. By the 1940s, when "Gold Legacy" aired, the show had perfected its formula: compelling mysteries wrapped in atmospheric descriptions of the North, delivered by narrators who understood how to build suspense through restraint.</p>
+          <p>Picture yourself huddled around the radio on a frigid evening, the crackle of the speaker carrying you thousands of miles north to the frozen wilderness of the Canadian Yukon. In "Gold Legacy," Sergeant Preston of the Royal Canadian Mounted Police faces one of his most intriguing cases yet—a fortune in gold bullion has vanished without a trace, and whispers of a decades-old claim and family secrets begin to surface from beneath the snow. With his faithful husky King at his side, Preston must navigate treacherous terrain, interview tight-lipped prospectors, and untangle a mystery where greed, loyalty, and the harsh law of the North collide in unexpected ways. The tension builds masterfully as clues point in contradictory directions, and listeners will find themselves drawn into Preston's meticulous detective work, wondering alongside him who among the cast of suspects harbors the truth.</p>
+<p>Challenge of the Yukon stood apart in the golden age of radio adventure programming through its authentic attention to Canadian geography, RCMP procedure, and the genuine dangers of frontier life. The show ran for nearly two decades precisely because it offered something different from the shoot-'em-up westerns dominating American airwaves—here was intelligent storytelling grounded in real history, where problems were solved through cunning and duty rather than quick draw reflexes. Each episode felt like a dispatch from a distant, exotic land, bringing listeners the thrill of discovery without sensationalism. By the 1940s, when "Gold Legacy" aired, the show had perfected its formula: compelling mysteries wrapped in atmospheric descriptions of the North, delivered by narrators who understood how to build suspense through restraint.</p>
 <p>Tune in now to experience why millions of listeners made this their must-hear program, and discover why Preston's adventures in the frozen North remain unforgettable radio drama.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 10 07 (0688) The Generous Hobo — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0688) The Generous Hobo — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 10 07 (0688) The Generous Hobo — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 10 07 (0688) The Generous Hobo — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 10 07 (0688) The Generous Hobo — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 7, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 10 07 (0688) The Generous Hobo</h1>
+          <h1 class="episode__title">(0688) The Generous Hobo</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Generous Hobo</p>
-<p>Picture yourself huddled around the radio on a crisp autumn evening in 1949, the crackle and hum of the broadcast filling your living room as Sergeant Preston's authoritative voice cuts through the static: "In the frozen vastness of the North, a man's character is tested not by his wealth, but by his choices." Tonight's tale finds our stalwart Mountie investigating a mysterious drifter who's been leaving gold nuggets—real gold—in the hands of struggling settlers across the Yukon frontier. Is this vagrant a saint, a fugitive, or something more sinister? As the episode unfolds, Preston and his faithful husky King must uncover the hobo's true identity while racing against time and treacherous mountain passes, all before a dangerous misunderstanding leads to tragedy.</p>
-<p>For over a decade, *Challenge of the Yukon* captivated millions of listeners with its perfect blend of outdoor adventure, moral complexity, and expert sound design—the howling wolves, the creaking dogsled runners, the percussion of frozen earth beneath boot heels. Unlike simpler shoot-em-up westerns, Preston's world demanded that heroes grapple with questions of justice, mercy, and human dignity. This 1949 episode exemplifies the show's hallmark: a deceptively simple mystery that reveals profound truths about community, redemption, and the unexpected nobility found in society's forgotten margins. The production values were exceptional for radio, with director James Jewell orchestrating performances that felt utterly authentic to the remote, unforgiving landscape.</p>
-<p>This is radio storytelling at its finest—when a single voice, some sound effects, and your own imagination could transport you thousands of miles north. Whether you're a longtime devotee of Preston's adventures or discovering the majesty of the Yukon for the first time, *The Generous Hobo* promises the perfect evening of suspenseful, wholesome entertainment. Settle in, dim the lights, and let the North call to you once more.</p>
+          <p>Picture yourself huddled around the radio on a crisp autumn evening in 1949, the crackle and hum of the broadcast filling your living room as Sergeant Preston's authoritative voice cuts through the static: "In the frozen vastness of the North, a man's character is tested not by his wealth, but by his choices." Tonight's tale finds our stalwart Mountie investigating a mysterious drifter who's been leaving gold nuggets—real gold—in the hands of struggling settlers across the Yukon frontier. Is this vagrant a saint, a fugitive, or something more sinister? As the episode unfolds, Preston and his faithful husky King must uncover the hobo's true identity while racing against time and treacherous mountain passes, all before a dangerous misunderstanding leads to tragedy.</p>
+<p>For over a decade, Challenge of the Yukon captivated millions of listeners with its perfect blend of outdoor adventure, moral complexity, and expert sound design—the howling wolves, the creaking dogsled runners, the percussion of frozen earth beneath boot heels. Unlike simpler shoot-em-up westerns, Preston's world demanded that heroes grapple with questions of justice, mercy, and human dignity. This 1949 episode exemplifies the show's hallmark: a deceptively simple mystery that reveals profound truths about community, redemption, and the unexpected nobility found in society's forgotten margins. The production values were exceptional for radio, with director James Jewell orchestrating performances that felt utterly authentic to the remote, unforgiving landscape.</p>
+<p>This is radio storytelling at its finest—when a single voice, some sound effects, and your own imagination could transport you thousands of miles north. Whether you're a longtime devotee of Preston's adventures or discovering the majesty of the Yukon for the first time, The Generous Hobo promises the perfect evening of suspenseful, wholesome entertainment. Settle in, dim the lights, and let the North call to you once more.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

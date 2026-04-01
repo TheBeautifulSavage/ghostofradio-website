@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 10 27 (0825) A Call To Action — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0825) A Call To Action — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 10 27 (0825) A Call To Action — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 10 27 (0825) A Call To Action — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 10 27 (0825) A Call To Action — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 27, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 10 27 (0825) A Call To Action</h1>
+          <h1 class="episode__title">(0825) A Call To Action</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># A Call to Action</p>
-<p>As the haunting theme of the Royal Canadian Mounted Police swells through your radio speaker, you're transported to the frozen vastness of Canada's northernmost territories. In this 1940s broadcast, Sergeant Preston faces his greatest test yet when a desperate distress call crackles across the wireless—a trapper's family stranded in an unforgiving blizzard with supplies dwindling and hope fading fast. With only his loyal Yukon King at his side, Preston must navigate treacherous mountain passes and bitter cold to reach them in time. The clock is ticking. The stakes are survival itself. Every decision could mean the difference between a rescue and a tragedy that will haunt the frozen frontier forever.</p>
-<p>*Challenge of the Yukon* stood as one of radio's most enduring adventures, capturing America's imagination during the Depression and war years with its blend of authentic Canadian wilderness danger and steadfast heroism. Sergeant Preston—that noble lawman with his magnificent dog and his code of justice—became a symbol of duty and perseverance for millions of listeners huddled around their sets. The show's meticulous attention to detail, from the genuine perils of Arctic survival to the authentic RCMP procedures, lent credibility that elevated it far beyond mere melodrama. This particular episode exemplifies everything the show did best: intimate character moments, mounting tension, and a protagonist whose moral compass never wavers, even when nature itself seems determined to defeat him.</p>
-<p>Whether you're a longtime devotee of the North or discovering Sergeant Preston for the first time, this episode captures the very essence of what made *Challenge of the Yukon* an essential listen for generations. Tune in and experience the raw drama, the peril, and the triumph of the Canadian wilderness.</p>
+          <p>As the haunting theme of the Royal Canadian Mounted Police swells through your radio speaker, you're transported to the frozen vastness of Canada's northernmost territories. In this 1940s broadcast, Sergeant Preston faces his greatest test yet when a desperate distress call crackles across the wireless—a trapper's family stranded in an unforgiving blizzard with supplies dwindling and hope fading fast. With only his loyal Yukon King at his side, Preston must navigate treacherous mountain passes and bitter cold to reach them in time. The clock is ticking. The stakes are survival itself. Every decision could mean the difference between a rescue and a tragedy that will haunt the frozen frontier forever.</p>
+<p>Challenge of the Yukon stood as one of radio's most enduring adventures, capturing America's imagination during the Depression and war years with its blend of authentic Canadian wilderness danger and steadfast heroism. Sergeant Preston—that noble lawman with his magnificent dog and his code of justice—became a symbol of duty and perseverance for millions of listeners huddled around their sets. The show's meticulous attention to detail, from the genuine perils of Arctic survival to the authentic RCMP procedures, lent credibility that elevated it far beyond mere melodrama. This particular episode exemplifies everything the show did best: intimate character moments, mounting tension, and a protagonist whose moral compass never wavers, even when nature itself seems determined to defeat him.</p>
+<p>Whether you're a longtime devotee of the North or discovering Sergeant Preston for the first time, this episode captures the very essence of what made Challenge of the Yukon an essential listen for generations. Tune in and experience the raw drama, the peril, and the triumph of the Canadian wilderness.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

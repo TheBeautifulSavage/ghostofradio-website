@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 11 20 (0835) The Wrong Map — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0835) The Wrong Map — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 11 20 (0835) The Wrong Map — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 11 20 (0835) The Wrong Map — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 11 20 (0835) The Wrong Map — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 20, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 11 20 (0835) The Wrong Map</h1>
+          <h1 class="episode__title">(0835) The Wrong Map</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Wrong Map</p>
-<p>Picture yourself huddled close to the radio on a crisp autumn evening, the static crackling with anticipation as Sergeant Preston's distinctive voice cuts through the northern darkness. In "The Wrong Map," our Mountie hero faces a devilishly clever adversary who has deliberately planted false coordinates leading deep into the treacherous Yukon wilderness. With King, his faithful sled dog, at his side, Preston must navigate not only the brutal terrain but also his own doubts—is he chasing a desperate criminal or walking straight into an elaborate trap? The tension mounts with each dog bark and wind howl as Preston realizes he's been outsmarted, his map now a liability rather than a guide. Every decision could mean the difference between justice served and a lonely grave in the frozen north.</p>
-<p>*Challenge of the Yukon* became a phenomenon precisely because it captured what listeners craved during the late 1930s and early 1940s: clean-cut heroism, exotic adventure, and the reassuring presence of law and order in an uncertain world. Sergeant Preston embodied the Canadian Mounted Police's reputation for always getting their man, and the show's tight writing and Paulson's authoritative performance made each episode feel urgent and authentic. Radio sponsors knew they had gold in this formula—the show's popularity spawned comic books, a television series, and merchandising that made Preston and King household names. "The Wrong Map" exemplifies the show's mastery of misdirection and moral complexity, reminding audiences that even heroes must confront their fallibility.</p>
-<p>Tune in now and experience the golden age of adventure radio, where the only limits were imagination and the boundless expanse of the frozen frontier. *Challenge of the Yukon* awaits.</p>
+          <p>Picture yourself huddled close to the radio on a crisp autumn evening, the static crackling with anticipation as Sergeant Preston's distinctive voice cuts through the northern darkness. In "The Wrong Map," our Mountie hero faces a devilishly clever adversary who has deliberately planted false coordinates leading deep into the treacherous Yukon wilderness. With King, his faithful sled dog, at his side, Preston must navigate not only the brutal terrain but also his own doubts—is he chasing a desperate criminal or walking straight into an elaborate trap? The tension mounts with each dog bark and wind howl as Preston realizes he's been outsmarted, his map now a liability rather than a guide. Every decision could mean the difference between justice served and a lonely grave in the frozen north.</p>
+<p>Challenge of the Yukon became a phenomenon precisely because it captured what listeners craved during the late 1930s and early 1940s: clean-cut heroism, exotic adventure, and the reassuring presence of law and order in an uncertain world. Sergeant Preston embodied the Canadian Mounted Police's reputation for always getting their man, and the show's tight writing and Paulson's authoritative performance made each episode feel urgent and authentic. Radio sponsors knew they had gold in this formula—the show's popularity spawned comic books, a television series, and merchandising that made Preston and King household names. "The Wrong Map" exemplifies the show's mastery of misdirection and moral complexity, reminding audiences that even heroes must confront their fallibility.</p>
+<p>Tune in now and experience the golden age of adventure radio, where the only limits were imagination and the boundless expanse of the frozen frontier. Challenge of the Yukon awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

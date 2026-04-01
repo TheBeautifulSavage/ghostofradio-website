@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 10 14 (0691) The Great Charlotta — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0691) The Great Charlotta — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 10 14 (0691) The Great Charlotta — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 10 14 (0691) The Great Charlotta — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 10 14 (0691) The Great Charlotta — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 14, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 10 14 (0691) The Great Charlotta</h1>
+          <h1 class="episode__title">(0691) The Great Charlotta</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Great Charlotta</p>
-<p>As the familiar thunder of galloping hoofbeats echoes across the frozen Canadian wilderness and Sergeant Preston's voice cuts through the crackling static, listeners are plunged into a tale of deception and danger that prowls the snow-laden passes of the Yukon. "The Great Charlotta" presents a mystery wrapped in feminine intrigue—a con artist of legendary cunning has infiltrated the remote mining camps, and only the Royal Canadian Mounted Police's most dogged officer and his loyal dog King stand between justice and a fortune in stolen gold. With nothing but sled dogs, instinct, and the stark beauty of the northern frontier as his allies, Preston must untangle a web of false identities and treachery before the mysterious Charlotta vanishes into the howling white expanse forever.</p>
-<p>*Challenge of the Yukon* captured the American imagination during the Depression and war years by offering listeners a weekly escape to a land of moral certainty—where the law was absolute, nature was both beauteous and merciless, and a man's word and courage meant everything. The show's meticulous attention to authentic detail, from the rhythmic dog-sled sequences to the nuances of RCMP protocol, gave weight to Preston's adventures and made the Yukon itself a character as vital as any villain. Throughout the 1940s, this program became the gold standard of adventure radio, spawning a film and later a beloved television series, all centered on this archetype of quiet, unwavering heroism.</p>
+          <p>As the familiar thunder of galloping hoofbeats echoes across the frozen Canadian wilderness and Sergeant Preston's voice cuts through the crackling static, listeners are plunged into a tale of deception and danger that prowls the snow-laden passes of the Yukon. "The Great Charlotta" presents a mystery wrapped in feminine intrigue—a con artist of legendary cunning has infiltrated the remote mining camps, and only the Royal Canadian Mounted Police's most dogged officer and his loyal dog King stand between justice and a fortune in stolen gold. With nothing but sled dogs, instinct, and the stark beauty of the northern frontier as his allies, Preston must untangle a web of false identities and treachery before the mysterious Charlotta vanishes into the howling white expanse forever.</p>
+<p>Challenge of the Yukon captured the American imagination during the Depression and war years by offering listeners a weekly escape to a land of moral certainty—where the law was absolute, nature was both beauteous and merciless, and a man's word and courage meant everything. The show's meticulous attention to authentic detail, from the rhythmic dog-sled sequences to the nuances of RCMP protocol, gave weight to Preston's adventures and made the Yukon itself a character as vital as any villain. Throughout the 1940s, this program became the gold standard of adventure radio, spawning a film and later a beloved television series, all centered on this archetype of quiet, unwavering heroism.</p>
 <p>This episode stands as a perfect entry point into Preston's world—a compact thriller featuring the show's signature blend of suspense, landscape, and unshakeable virtue. Whether you're a longtime devotee or a curious newcomer to vintage radio, "The Great Charlotta" reminds us why audiences huddled around their receivers, breathless and entranced, waiting to hear what fresh danger awaited in the Yukon.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

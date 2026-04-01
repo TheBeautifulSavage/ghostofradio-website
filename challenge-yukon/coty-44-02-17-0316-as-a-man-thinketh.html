@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 02 17 (0316) As A Man Thinketh — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0316) As A Man Thinketh — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 02 17 (0316) As A Man Thinketh — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 02 17 (0316) As A Man Thinketh — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 02 17 (0316) As A Man Thinketh — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 17, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 02 17 (0316) As A Man Thinketh</h1>
+          <h1 class="episode__title">(0316) As A Man Thinketh</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "As A Man Thinketh"</p>
-<p>The frozen wastes of the Yukon Territory have never been more treacherous than on this bitter evening broadcast, as Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that cuts to the very heart of human nature. When a prospector stumbles into Fort Pierre claiming he's been cursed—that his own dark thoughts have somehow manifested as genuine danger—Preston must separate superstition from crime, reason from madness. The howl of King, his faithful husky companion, echoes across the dialogue as our hero ventures into an isolated cabin shrouded in Arctic fog, where the line between a man's guilty conscience and a tangible threat becomes dangerously blurred. This tale of psychological suspense proves that sometimes the greatest peril lies not in the wilderness itself, but in the mind of a man convinced of his own damnation.</p>
-<p>*Challenge of the Yukon* captivated American audiences for seventeen years by transforming the rugged northern frontier into a moral battleground where law, duty, and human weakness clashed beneath the northern lights. Sergeant Preston, portrayed with steadfast dignity by various actors throughout the series' run, became the voice of civilized order against the anarchic wild. The show's writers masterfully wove together adventure, detection, and moral philosophy—evident in episodes like "As A Man Thinketh"—creating something richer than simple pulp entertainment. In the 1940s, as Americans faced their own internal conflicts during wartime, these stories about a lawman confronting the demons within offered compelling allegory wrapped in the excitement of the north country.</p>
+          <p>The frozen wastes of the Yukon Territory have never been more treacherous than on this bitter evening broadcast, as Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that cuts to the very heart of human nature. When a prospector stumbles into Fort Pierre claiming he's been cursed—that his own dark thoughts have somehow manifested as genuine danger—Preston must separate superstition from crime, reason from madness. The howl of King, his faithful husky companion, echoes across the dialogue as our hero ventures into an isolated cabin shrouded in Arctic fog, where the line between a man's guilty conscience and a tangible threat becomes dangerously blurred. This tale of psychological suspense proves that sometimes the greatest peril lies not in the wilderness itself, but in the mind of a man convinced of his own damnation.</p>
+<p>Challenge of the Yukon captivated American audiences for seventeen years by transforming the rugged northern frontier into a moral battleground where law, duty, and human weakness clashed beneath the northern lights. Sergeant Preston, portrayed with steadfast dignity by various actors throughout the series' run, became the voice of civilized order against the anarchic wild. The show's writers masterfully wove together adventure, detection, and moral philosophy—evident in episodes like "As A Man Thinketh"—creating something richer than simple pulp entertainment. In the 1940s, as Americans faced their own internal conflicts during wartime, these stories about a lawman confronting the demons within offered compelling allegory wrapped in the excitement of the north country.</p>
 <p>Tune in tonight and hear how Sergeant Preston unravels the truth, with only King's instinct and his own unwavering moral compass to guide him through the shadowed mysteries of the Yukon.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

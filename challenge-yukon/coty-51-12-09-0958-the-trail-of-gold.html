@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 12 09 (0958) The Trail Of Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0958) The Trail Of Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 12 09 (0958) The Trail Of Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 12 09 (0958) The Trail Of Gold — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 12 09 (0958) The Trail Of Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 12 09 (0958) The Trail Of Gold</h1>
+          <h1 class="episode__title">(0958) The Trail Of Gold</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Trail Of Gold</p>
-<p>As the haunting howl of sled dogs pierces the frozen darkness of the Canadian wilderness, Sergeant Preston and his loyal team face their most perilous challenge yet. In "The Trail of Gold," our stalwart Mountie must navigate a treacherous path where greed transforms honest prospectors into desperate criminals and every snow-laden ravine conceals new danger. A fortune in placer gold has vanished somewhere in the unforgiving Yukon, and both lawman and outlaw are determined to claim it first. Listen as Preston's keen mind unravels a mystery buried beneath layers of deception and desperation—where the line between ambition and survival blurs in the bitter cold, and a single misstep could mean death in the wilderness.</p>
+          <p>As the haunting howl of sled dogs pierces the frozen darkness of the Canadian wilderness, Sergeant Preston and his loyal team face their most perilous challenge yet. In "The Trail of Gold," our stalwart Mountie must navigate a treacherous path where greed transforms honest prospectors into desperate criminals and every snow-laden ravine conceals new danger. A fortune in placer gold has vanished somewhere in the unforgiving Yukon, and both lawman and outlaw are determined to claim it first. Listen as Preston's keen mind unravels a mystery buried beneath layers of deception and desperation—where the line between ambition and survival blurs in the bitter cold, and a single misstep could mean death in the wilderness.</p>
 <p>"Challenge of the Yukon" became a beloved institution during radio's golden age, offering listeners an escape into adventure that felt both exotic and genuine. Created by George W. Trendle and James Jewell, the show drew inspiration from real historical events of the Klondike Gold Rush and the actual exploits of Canadian Mounties. Preston's character—complete with his faithful husky King—became the model for countless adventure heroes, while the show's meticulous attention to authentic Yukon geography and frontier culture gave it remarkable credibility. By the 1940s, when this episode aired, the series had captivated millions across North America with its blend of thrilling action, moral clarity, and deeply atmospheric sound design that transported listeners thousands of miles north.</p>
 <p>Whether you're a longtime devotee of the North or discovering Preston's adventures for the first time, "The Trail of Gold" showcases everything that made this series a cornerstone of American radio entertainment. Settle in, dim the lights, and let yourself be carried away by the call of the Yukon—where duty, honor, and justice reign supreme.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 12 07 (0714) The Return Of Tom Becket — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0714) The Return Of Tom Becket — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 12 07 (0714) The Return Of Tom Becket — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 12 07 (0714) The Return Of Tom Becket — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 12 07 (0714) The Return Of Tom Becket — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 7, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 12 07 (0714) The Return Of Tom Becket</h1>
+          <h1 class="episode__title">(0714) The Return Of Tom Becket</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Return of Tom Becket</p>
-<p>As the familiar strains of "Sergeant Preston of the Yukon" theme music fade into the crackle of the Canadian wilderness, listeners are drawn into a tale of vengeance and redemption that cuts deep into the frozen heart of the north. Tom Becket—a name whispered in the saloons and trading posts from Dawson to Whitehorse—has returned from the dead, or so the rumors claim. Sergeant Preston, mounted astride his faithful dog King, must navigate treacherous mountain passes and bitter accusations to uncover the truth. Is this truly the man everyone believed lost to an avalanche five winters past, or is something far more sinister at work in the Yukon? The tension builds as Preston interrogates witnesses in the flickering glow of cabin fires, each revelation pulling him deeper into a conspiracy that threatens the fragile order of justice in this untamed frontier.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon precisely because it grounded fantastic adventure in the meticulous details of frontier life. Produced with authentic sound design—the crack of ice, the howl of sled dogs, the whistle of wind through mountain gorges—each episode transported Depression-era Americans to a world where morality still meant something and one man with courage could make a difference. The show's success lay in this perfect marriage of escapism and earnestness, offering listeners not merely thrilling diversions but parables about justice, perseverance, and the triumph of character over circumstance.</p>
+          <p>As the familiar strains of "Sergeant Preston of the Yukon" theme music fade into the crackle of the Canadian wilderness, listeners are drawn into a tale of vengeance and redemption that cuts deep into the frozen heart of the north. Tom Becket—a name whispered in the saloons and trading posts from Dawson to Whitehorse—has returned from the dead, or so the rumors claim. Sergeant Preston, mounted astride his faithful dog King, must navigate treacherous mountain passes and bitter accusations to uncover the truth. Is this truly the man everyone believed lost to an avalanche five winters past, or is something far more sinister at work in the Yukon? The tension builds as Preston interrogates witnesses in the flickering glow of cabin fires, each revelation pulling him deeper into a conspiracy that threatens the fragile order of justice in this untamed frontier.</p>
+<p>Challenge of the Yukon became a cultural phenomenon precisely because it grounded fantastic adventure in the meticulous details of frontier life. Produced with authentic sound design—the crack of ice, the howl of sled dogs, the whistle of wind through mountain gorges—each episode transported Depression-era Americans to a world where morality still meant something and one man with courage could make a difference. The show's success lay in this perfect marriage of escapism and earnestness, offering listeners not merely thrilling diversions but parables about justice, perseverance, and the triumph of character over circumstance.</p>
 <p>Don't miss "The Return of Tom Becket," an exemplary episode that captures everything that made this series resonate across America's living rooms for nearly two decades. Tune in and experience the Yukon as radio audiences first did—with bated breath and unwavering faith in Sergeant Preston's steadfast devotion to the truth.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

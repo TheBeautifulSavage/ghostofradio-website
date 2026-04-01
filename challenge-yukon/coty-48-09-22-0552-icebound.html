@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 09 22 (0552) Icebound — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0552) Icebound — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 09 22 (0552) Icebound — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 09 22 (0552) Icebound — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 09 22 (0552) Icebound — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 22, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 09 22 (0552) Icebound</h1>
+          <h1 class="episode__title">(0552) Icebound</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Icebound"</p>
-<p>Picture yourself huddled by the radio on a winter's evening, the wind howling outside your window, as Sergeant Preston and his mighty dog King navigate treacherous Arctic waters in their desperate race against nature itself. In this gripping installment, our intrepid Mountie finds himself trapped aboard a vessel caught in the grip of an expanding ice field, with supplies dwindling and the thermometer plummeting toward lethal depths. The tension crackles through your speaker as Preston must outwit both the unforgiving landscape and a crew of desperate men—some honest, some with secrets darker than the polar night. Will King's uncanny instincts and the Sergeant's unwavering courage prove enough to break free from nature's icy prison before it becomes their frozen tomb?</p>
-<p>*Challenge of the Yukon* captured the imaginations of millions throughout the late 1930s and 1940s, transporting listeners from their living rooms to the untamed Canadian frontier with remarkable authenticity. Created by George W. Trendle, the same visionary behind *The Lone Ranger*, this series distinguished itself through meticulous attention to Yukon geography, Indigenous cultures, and frontier survival—all delivered with genuinely thrilling storytelling. The show's theme, based on Schubert's "Marche Militaire," became iconic, while the relationship between Preston and his noble German Shepherd became a template for partnership that would echo through entertainment for decades.</p>
+          <p>Picture yourself huddled by the radio on a winter's evening, the wind howling outside your window, as Sergeant Preston and his mighty dog King navigate treacherous Arctic waters in their desperate race against nature itself. In this gripping installment, our intrepid Mountie finds himself trapped aboard a vessel caught in the grip of an expanding ice field, with supplies dwindling and the thermometer plummeting toward lethal depths. The tension crackles through your speaker as Preston must outwit both the unforgiving landscape and a crew of desperate men—some honest, some with secrets darker than the polar night. Will King's uncanny instincts and the Sergeant's unwavering courage prove enough to break free from nature's icy prison before it becomes their frozen tomb?</p>
+<p>Challenge of the Yukon captured the imaginations of millions throughout the late 1930s and 1940s, transporting listeners from their living rooms to the untamed Canadian frontier with remarkable authenticity. Created by George W. Trendle, the same visionary behind The Lone Ranger, this series distinguished itself through meticulous attention to Yukon geography, Indigenous cultures, and frontier survival—all delivered with genuinely thrilling storytelling. The show's theme, based on Schubert's "Marche Militaire," became iconic, while the relationship between Preston and his noble German Shepherd became a template for partnership that would echo through entertainment for decades.</p>
 <p>Don't miss "Icebound"—a masterclass in atmospheric suspense that proves why this program remained a staple of American radio throughout two dynamic decades. Settle in, turn down the lights, and let the crackling voices and sound effects transport you northward to where danger lurks at every frozen turn.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

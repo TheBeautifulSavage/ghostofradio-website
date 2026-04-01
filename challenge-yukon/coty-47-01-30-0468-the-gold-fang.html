@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 01 30 (0468) The Gold Fang — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0468) The Gold Fang — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 01 30 (0468) The Gold Fang — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 01 30 (0468) The Gold Fang — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 01 30 (0468) The Gold Fang — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 30, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 01 30 (0468) The Gold Fang</h1>
+          <h1 class="episode__title">(0468) The Gold Fang</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Gold Fang</p>
-<p>Picture yourself huddled close to the radio on a winter evening, the crackle and hum of the speaker cutting through the cold darkness as Sergeant Preston and his magnificent dog King thunder across the frozen Yukon in pursuit of a ruthless criminal mastermind. In "The Gold Fang," the intrepid Mountie faces one of his most cunning adversaries yet—a mysterious figure whose greed for Yukon gold knows no bounds, and whose connection to a legendary wolf pack adds an air of supernatural menace to this thrilling tale. As the investigation unfolds through dense forests and ice-bound settlements, listeners will find themselves breathless with anticipation, never quite certain whether Preston will survive his encounter with a foe as dangerous and unpredictable as the wilderness itself.</p>
-<p>What made *Challenge of the Yukon* such an enduring favorite during radio's golden age was its masterful blend of authentic frontier adventure with the timeless appeal of law and order triumphing against impossible odds. The show, which premiered in 1938 and would captivate audiences for nearly two decades, captured something essential about the Canadian north—its wild beauty, its moral simplicity, and its capacity to test the mettle of even the most stalwart heroes. Each episode was meticulously crafted with sound effects that transported listeners thousands of miles away: the crack of whips, the baying of sled dogs, the howl of wolves, and the crunch of boots on packed snow.</p>
+          <p>Picture yourself huddled close to the radio on a winter evening, the crackle and hum of the speaker cutting through the cold darkness as Sergeant Preston and his magnificent dog King thunder across the frozen Yukon in pursuit of a ruthless criminal mastermind. In "The Gold Fang," the intrepid Mountie faces one of his most cunning adversaries yet—a mysterious figure whose greed for Yukon gold knows no bounds, and whose connection to a legendary wolf pack adds an air of supernatural menace to this thrilling tale. As the investigation unfolds through dense forests and ice-bound settlements, listeners will find themselves breathless with anticipation, never quite certain whether Preston will survive his encounter with a foe as dangerous and unpredictable as the wilderness itself.</p>
+<p>What made Challenge of the Yukon such an enduring favorite during radio's golden age was its masterful blend of authentic frontier adventure with the timeless appeal of law and order triumphing against impossible odds. The show, which premiered in 1938 and would captivate audiences for nearly two decades, captured something essential about the Canadian north—its wild beauty, its moral simplicity, and its capacity to test the mettle of even the most stalwart heroes. Each episode was meticulously crafted with sound effects that transported listeners thousands of miles away: the crack of whips, the baying of sled dogs, the howl of wolves, and the crunch of boots on packed snow.</p>
 <p>If you've never experienced the particular thrill of vintage adventure radio, "The Gold Fang" offers the perfect entry point—a masterclass in suspenseful storytelling that reminds us why families gathered around their sets night after night. Tune in and let Sergeant Preston and King whisk you away to a world of heroism, danger, and untamed frontier justice.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

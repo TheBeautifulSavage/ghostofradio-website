@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 09 23 (0925) Trapper's Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0925) Trapper's Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 09 23 (0925) Trapper's Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 09 23 (0925) Trapper's Gold — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 09 23 (0925) Trapper's Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 09 23 (0925) Trapper's Gold</h1>
+          <h1 class="episode__title">(0925) Trapper's Gold</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Trapper's Gold</p>
-<p>The northern winds howl across the frozen Yukon as Sergeant Preston and his faithful husky King face their most treacherous case yet. A fortune in gold—hidden somewhere in the vast, unforgiving wilderness—has set off a desperate chain of events that will test the Mountie's wits and courage to their limits. When a reclusive trapper stumbles into Fort Nelson with a cryptic map and a bullet wound, Preston must navigate a web of greed, desperation, and danger before ruthless claim jumpers beat him to the prize. Listen as the crackling campfire scenes give way to intense confrontations in remote cabins, each moment drawing our hero deeper into a mystery where trust is as scarce as water in the frozen tundra.</p>
-<p>*Challenge of the Yukon* represents the golden age of adventure radio—a time when sound effects masters created entire frontiers through the art of audio storytelling. Premiering in 1938 and running strong through the 1950s, the show captured post-Depression audiences yearning for tales of justice, honor, and survival in untamed lands. Sergeant Preston became an iconic figure in American popular culture, embodying the rugged, incorruptible lawman who relied on intelligence and integrity rather than quick-draw reflexes. The program's meticulous attention to atmospheric detail—the sled dogs' panting, the crunch of boots on packed snow, the distant howl of wolves—transported listeners miles away from their everyday lives into a world of genuine peril and heroism.</p>
-<p>Step back in time and experience the thrilling world that captivated millions of radio enthusiasts. *Trapper's Gold* awaits—a perfect example of why this classic series endured for nearly two decades. Settle in, tune in, and let the adventure begin.</p>
+          <p>The northern winds howl across the frozen Yukon as Sergeant Preston and his faithful husky King face their most treacherous case yet. A fortune in gold—hidden somewhere in the vast, unforgiving wilderness—has set off a desperate chain of events that will test the Mountie's wits and courage to their limits. When a reclusive trapper stumbles into Fort Nelson with a cryptic map and a bullet wound, Preston must navigate a web of greed, desperation, and danger before ruthless claim jumpers beat him to the prize. Listen as the crackling campfire scenes give way to intense confrontations in remote cabins, each moment drawing our hero deeper into a mystery where trust is as scarce as water in the frozen tundra.</p>
+<p>Challenge of the Yukon represents the golden age of adventure radio—a time when sound effects masters created entire frontiers through the art of audio storytelling. Premiering in 1938 and running strong through the 1950s, the show captured post-Depression audiences yearning for tales of justice, honor, and survival in untamed lands. Sergeant Preston became an iconic figure in American popular culture, embodying the rugged, incorruptible lawman who relied on intelligence and integrity rather than quick-draw reflexes. The program's meticulous attention to atmospheric detail—the sled dogs' panting, the crunch of boots on packed snow, the distant howl of wolves—transported listeners miles away from their everyday lives into a world of genuine peril and heroism.</p>
+<p>Step back in time and experience the thrilling world that captivated millions of radio enthusiasts. Trapper's Gold awaits—a perfect example of why this classic series endured for nearly two decades. Settle in, tune in, and let the adventure begin.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

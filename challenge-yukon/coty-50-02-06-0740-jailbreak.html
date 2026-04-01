@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 02 06 (0740) Jailbreak — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0740) Jailbreak — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 02 06 (0740) Jailbreak — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 02 06 (0740) Jailbreak — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 02 06 (0740) Jailbreak — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 6, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 02 06 (0740) Jailbreak</h1>
+          <h1 class="episode__title">(0740) Jailbreak</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Coty 50 02 06 (0740) Jailbreak</p>
-<p>Picture yourself huddled around the radio on a winter's night as the iconic theme swells—that stirring charge of the Royal Canadian Mounted Police—and Sergeant Preston's steady voice crackles through the static. In "Jailbreak," a cunning criminal has orchestrated an audacious escape from the remote Yukon detention facility, and Preston, along with his faithful sled dog King, must navigate treacherous snow-covered terrain and darker human treachery to prevent a dangerous fugitive from vanishing into the frozen wilderness. The episode crackles with tension as pursuers close in, false leads multiply, and the harsh landscape itself becomes both refuge and executioner. Every shadow in the Yukon holds peril; every mile of white silence could be the last.</p>
-<p>*Sergeant Preston of the Yukon* became a cultural phenomenon because it captured something audiences desperately craved during the late 1930s and 1940s: adventure untainted by cynicism, justice delivered by an incorruptible hero, and the promise that order would prevail even at the edge of civilization. This 1940s episode exemplifies the show's golden period, when writers had perfected the formula of combining genuine Canadian frontier history with serialized melodrama. The show's authenticity—its respect for Mounted Police procedure and Yukon geography—lent credibility that kept listeners returning week after week, while the moral clarity of Preston's character provided reassurance during uncertain times.</p>
+          <p>Picture yourself huddled around the radio on a winter's night as the iconic theme swells—that stirring charge of the Royal Canadian Mounted Police—and Sergeant Preston's steady voice crackles through the static. In "Jailbreak," a cunning criminal has orchestrated an audacious escape from the remote Yukon detention facility, and Preston, along with his faithful sled dog King, must navigate treacherous snow-covered terrain and darker human treachery to prevent a dangerous fugitive from vanishing into the frozen wilderness. The episode crackles with tension as pursuers close in, false leads multiply, and the harsh landscape itself becomes both refuge and executioner. Every shadow in the Yukon holds peril; every mile of white silence could be the last.</p>
+<p>Sergeant Preston of the Yukon became a cultural phenomenon because it captured something audiences desperately craved during the late 1930s and 1940s: adventure untainted by cynicism, justice delivered by an incorruptible hero, and the promise that order would prevail even at the edge of civilization. This 1940s episode exemplifies the show's golden period, when writers had perfected the formula of combining genuine Canadian frontier history with serialized melodrama. The show's authenticity—its respect for Mounted Police procedure and Yukon geography—lent credibility that kept listeners returning week after week, while the moral clarity of Preston's character provided reassurance during uncertain times.</p>
 <p>Whether you're a devoted fan of classic radio adventure or simply curious about how storytellers once captivated millions, "Jailbreak" remains an essential listen. Settle in, dim the lights, and let Sergeant Preston and King lead you northward into mystery, danger, and the triumph of justice in the frozen Yukon. The story awaits.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

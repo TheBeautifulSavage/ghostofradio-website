@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 07 25 (0441) Beaver Dam — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0441) Beaver Dam — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 07 25 (0441) Beaver Dam — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 07 25 (0441) Beaver Dam — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 07 25 (0441) Beaver Dam — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · July 25, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 07 25 (0441) Beaver Dam</h1>
+          <h1 class="episode__title">(0441) Beaver Dam</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Beaver Dam</p>
-<p>Picture yourself huddled around a crackling radio on a July evening in 1940, as the familiar strains of Dudley Do-Right's march fill your parlor and the announcer's voice cuts through the static: "In the frozen North, the mightiest of dog teams and the courage of a man answer the call of duty in *Challenge of the Yukon*!" This week, Sergeant Preston confronts a mystery at an isolated beaver dam deep in the Yukon wilderness, where a seemingly simple assignment unravels into danger lurking beneath the surface of dark waters. With only King and his faithful sled dogs at his side, Preston must navigate treacherous terrain and outsmart cunning adversaries to solve the crime before the culprits slip away into the vast Canadian frontier. The sound effects team brings the episode to vivid life—the crack of ice, the howl of huskies, the splash of water—creating an immersive experience that transports you thousands of miles north.</p>
+          <p>Picture yourself huddled around a crackling radio on a July evening in 1940, as the familiar strains of Dudley Do-Right's march fill your parlor and the announcer's voice cuts through the static: "In the frozen North, the mightiest of dog teams and the courage of a man answer the call of duty in Challenge of the Yukon!" This week, Sergeant Preston confronts a mystery at an isolated beaver dam deep in the Yukon wilderness, where a seemingly simple assignment unravels into danger lurking beneath the surface of dark waters. With only King and his faithful sled dogs at his side, Preston must navigate treacherous terrain and outsmart cunning adversaries to solve the crime before the culprits slip away into the vast Canadian frontier. The sound effects team brings the episode to vivid life—the crack of ice, the howl of huskies, the splash of water—creating an immersive experience that transports you thousands of miles north.</p>
 <p>This beloved series, which ran from 1938 to 1955, captured America's imagination during the Depression and war years, offering audiences an escape into adventure while celebrating the triumph of justice and duty. Created in an era of genuine wilderness mystery, the show drew on authentic Canadian Mountie lore and the real dangers of frontier life, making each episode feel like a dispatch from the edge of civilization itself. Sergeant Preston became an American institution, spawning merchandise, comic strips, and later a television adaptation, all built on the foundation of these gripping radio dramas.</p>
 <p>Tune in now for "Beaver Dam"—a thrilling reminder of radio's golden age, when imagination and superb sound design could transport an entire nation to adventure.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

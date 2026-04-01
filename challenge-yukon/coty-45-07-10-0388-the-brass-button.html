@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 07 10 (0388) The Brass Button — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0388) The Brass Button — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 07 10 (0388) The Brass Button — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 07 10 (0388) The Brass Button — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 07 10 (0388) The Brass Button — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · July 10, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 07 10 (0388) The Brass Button</h1>
+          <h1 class="episode__title">(0388) The Brass Button</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Brass Button</p>
-<p>As the haunting strains of "Sergeant Preston of the Yukon" theme echo across the frozen wasteland, listeners are transported once again to Canada's unforgiving north, where justice moves as swiftly as Sergeant Preston's faithful sled dog King. In "The Brass Button," a small piece of military insignia becomes the linchpin of a gripping mystery—a seemingly insignificant clue that will lead our stalwart Mountie through treacherous terrain and dangerous confrontations. Is the button evidence of a crime, or does it point to something far more sinister? As snow swirls and wolves howl in the distance, Preston must navigate deception and danger to uncover the truth, with only his wits, his courage, and his canine companion to guide him through the darkness.</p>
+          <p>As the haunting strains of "Sergeant Preston of the Yukon" theme echo across the frozen wasteland, listeners are transported once again to Canada's unforgiving north, where justice moves as swiftly as Sergeant Preston's faithful sled dog King. In "The Brass Button," a small piece of military insignia becomes the linchpin of a gripping mystery—a seemingly insignificant clue that will lead our stalwart Mountie through treacherous terrain and dangerous confrontations. Is the button evidence of a crime, or does it point to something far more sinister? As snow swirls and wolves howl in the distance, Preston must navigate deception and danger to uncover the truth, with only his wits, his courage, and his canine companion to guide him through the darkness.</p>
 <p>This episode exemplifies why "Sergeant Preston of the Yukon" captivated millions of radio listeners throughout the late 1930s and 1940s. The show's brilliant blend of authentic wilderness adventure, criminal investigation, and the quiet heroism of law enforcement in remote regions struck a chord with audiences hungry for escapism and moral clarity. Each episode was meticulously crafted to showcase the resourcefulness required to maintain order in untamed lands, while Preston himself embodied the ideal of the honest, incorruptible lawman—a character whose popularity spawned merchandise, a television series, and countless devoted fans who tuned in faithfully each week.</p>
 <p>The crackling fidelity of this 1940s broadcast captures the golden age of radio drama in all its glory. Whether you're a longtime devotee of Sergeant Preston's adventures or a newcomer curious about the shows that defined an era, "The Brass Button" offers everything that made this series legendary: mystery, action, atmosphere, and the satisfying promise that right will ultimately prevail, even in the remote reaches of the Yukon.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

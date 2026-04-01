@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 05 23 (0655) The Duel — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0655) The Duel — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 05 23 (0655) The Duel — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 05 23 (0655) The Duel — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 05 23 (0655) The Duel — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 23, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 05 23 (0655) The Duel</h1>
+          <h1 class="episode__title">(0655) The Duel</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Duel</p>
-<p>Picture yourself huddled near your radio on a crisp evening as the haunting strains of the "Yukon Theme" fade into the wilderness—that unmistakable howl of King, Sergeant Preston's magnificent husky, echoing across the frozen North. In "The Duel," our stalwart Mountie faces his most personal reckoning yet, confronting a rival whose hatred burns hotter than any campfire could warm. Tension crackles through every line of dialogue as Preston navigates the treacherous politics of frontier justice, where a man's pride and his duty to the law collide like icebergs in the spring thaw. The stakes have never felt higher, and King's growl punctuates scenes heavy with the kind of moral ambiguity that made listeners lean in closer to their speakers, desperate to know how honor could prevail in a land where survival itself was uncertain.</p>
-<p>*Challenge of the Yukon* was more than mere escapism for Depression and wartime listeners—it was a masterclass in adventure storytelling. Sergeant Preston, brought vividly to life through crisp sound design and naturalistic performances, represented an idealized Canadian law enforcement that captured American imaginations for seventeen years. The show's meticulous attention to authentic Yukon geography and Mounted Police protocol gave it credibility that separated it from lesser adventure serials, while its episodic structure kept audiences returning faithfully, night after night, to follow Preston's endless campaign against the lawless frontier.</p>
-<p>Don't miss this pivotal episode. Tune in to *Challenge of the Yukon* and discover why millions made this their appointment with adventure. The Yukon's calling—can you hear it?</p>
+          <p>Picture yourself huddled near your radio on a crisp evening as the haunting strains of the "Yukon Theme" fade into the wilderness—that unmistakable howl of King, Sergeant Preston's magnificent husky, echoing across the frozen North. In "The Duel," our stalwart Mountie faces his most personal reckoning yet, confronting a rival whose hatred burns hotter than any campfire could warm. Tension crackles through every line of dialogue as Preston navigates the treacherous politics of frontier justice, where a man's pride and his duty to the law collide like icebergs in the spring thaw. The stakes have never felt higher, and King's growl punctuates scenes heavy with the kind of moral ambiguity that made listeners lean in closer to their speakers, desperate to know how honor could prevail in a land where survival itself was uncertain.</p>
+<p>Challenge of the Yukon was more than mere escapism for Depression and wartime listeners—it was a masterclass in adventure storytelling. Sergeant Preston, brought vividly to life through crisp sound design and naturalistic performances, represented an idealized Canadian law enforcement that captured American imaginations for seventeen years. The show's meticulous attention to authentic Yukon geography and Mounted Police protocol gave it credibility that separated it from lesser adventure serials, while its episodic structure kept audiences returning faithfully, night after night, to follow Preston's endless campaign against the lawless frontier.</p>
+<p>Don't miss this pivotal episode. Tune in to Challenge of the Yukon and discover why millions made this their appointment with adventure. The Yukon's calling—can you hear it?</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

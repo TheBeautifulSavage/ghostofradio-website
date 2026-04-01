@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 05 30 (0433) The Mitten — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0433) The Mitten — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 05 30 (0433) The Mitten — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 05 30 (0433) The Mitten — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 05 30 (0433) The Mitten — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 30, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 05 30 (0433) The Mitten</h1>
+          <h1 class="episode__title">(0433) The Mitten</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Mitten</p>
-<p>As the immortal bugle call of "Sergeant Preston of the Yukon" pierces the northern darkness, listeners are transported once again to the frozen vastness of Canada's unforgiving frontier. In "The Mitten," our stalwart Mountie and his faithful dog King face a mystery born of bitter cold and human desperation. When a lone mitten—seemingly insignificant—becomes the only clue to a missing prospector's fate, Preston must unravel a tangled web of greed, survival, and secrets buried beneath the relentless snow. The tension mounts as winter closes in and time becomes as precious as gold itself. Every shadow could conceal danger, every stranger might hold the key to salvation or doom. This is the Yukon as listeners craved it: harsh, unforgiving, yet offering the promise that courage and quick thinking might prevail against impossible odds.</p>
+          <p>As the immortal bugle call of "Sergeant Preston of the Yukon" pierces the northern darkness, listeners are transported once again to the frozen vastness of Canada's unforgiving frontier. In "The Mitten," our stalwart Mountie and his faithful dog King face a mystery born of bitter cold and human desperation. When a lone mitten—seemingly insignificant—becomes the only clue to a missing prospector's fate, Preston must unravel a tangled web of greed, survival, and secrets buried beneath the relentless snow. The tension mounts as winter closes in and time becomes as precious as gold itself. Every shadow could conceal danger, every stranger might hold the key to salvation or doom. This is the Yukon as listeners craved it: harsh, unforgiving, yet offering the promise that courage and quick thinking might prevail against impossible odds.</p>
 <p>What made "Challenge of the Yukon" essential listening for millions was its perfect marriage of action and authenticity. The show's writers wove genuine elements of frontier life—the geography, the climate, the cultural tensions—into narratives that felt urgent and real. Rather than cartoonish adventure, Preston embodied the earnest competence of the Royal Canadian Mounted Police, while King the Wonder Dog earned his place as a genuine partner in solving crimes. Running continuously from 1938 through the 1950s, the program defined the adventure serial format for a generation, proving that a well-crafted mystery set in an exotic locale could captivate audiences night after night.</p>
 <p>Don't miss this gripping chapter in Sergeant Preston's saga. Tune in to "The Mitten" and discover why listeners huddled around their radio sets, completely captivated as Preston and King pursued justice through the silent, deadly beauty of the Canadian wilderness.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

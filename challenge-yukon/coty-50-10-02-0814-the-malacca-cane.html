@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 10 02 (0814) The Malacca Cane — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0814) The Malacca Cane — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 10 02 (0814) The Malacca Cane — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 10 02 (0814) The Malacca Cane — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 10 02 (0814) The Malacca Cane — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 2, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 10 02 (0814) The Malacca Cane</h1>
+          <h1 class="episode__title">(0814) The Malacca Cane</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon - "The Malacca Cane"</p>
-<p>The howling winds of the Canadian frontier cut through your radio speaker as Sergeant Preston and his faithful dog King thunder across the frozen wasteland in pursuit of a cunning criminal whose possession of a seemingly innocent bamboo cane has set off a chain of violence and deception. What begins as a routine patrol into the remote reaches of the Yukon Territory spirals into a mystery where appearances deceive and nothing—not even a gentleman's walking stick—is quite what it seems. As Preston closes in on his quarry through blinding snow and treacherous mountain passes, listeners will find themselves gripped by the tension of a master lawman matching wits against someone whose desperation knows no bounds. The episode crackles with the authentic danger of frontier justice, where the law's reach is long but the wilderness longer still.</p>
-<p>By the 1940s, *Challenge of the Yukon* had become one of radio's most beloved adventure serials, captivating millions of listeners with its perfect blend of action, atmosphere, and moral clarity. Sergeant Preston embodied the stalwart virtues Americans cherished during wartime—courage, integrity, and an unwavering commitment to justice—while the Yukon's unforgiving landscape provided a canvas for storytelling that felt both exotic and earnest. The show's writers crafted episodes that valued clever plotting over mere gunplay, making Preston a thinking man's hero who could outwit criminals as readily as he could outride them.</p>
+          <p>The howling winds of the Canadian frontier cut through your radio speaker as Sergeant Preston and his faithful dog King thunder across the frozen wasteland in pursuit of a cunning criminal whose possession of a seemingly innocent bamboo cane has set off a chain of violence and deception. What begins as a routine patrol into the remote reaches of the Yukon Territory spirals into a mystery where appearances deceive and nothing—not even a gentleman's walking stick—is quite what it seems. As Preston closes in on his quarry through blinding snow and treacherous mountain passes, listeners will find themselves gripped by the tension of a master lawman matching wits against someone whose desperation knows no bounds. The episode crackles with the authentic danger of frontier justice, where the law's reach is long but the wilderness longer still.</p>
+<p>By the 1940s, Challenge of the Yukon had become one of radio's most beloved adventure serials, captivating millions of listeners with its perfect blend of action, atmosphere, and moral clarity. Sergeant Preston embodied the stalwart virtues Americans cherished during wartime—courage, integrity, and an unwavering commitment to justice—while the Yukon's unforgiving landscape provided a canvas for storytelling that felt both exotic and earnest. The show's writers crafted episodes that valued clever plotting over mere gunplay, making Preston a thinking man's hero who could outwit criminals as readily as he could outride them.</p>
 <p>Settle in with this 1940s episode and experience radio adventure at its finest. "The Malacca Cane" exemplifies why audiences kept their dials tuned to the North throughout the golden age of broadcasting. King barks in the distance—adventure awaits.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

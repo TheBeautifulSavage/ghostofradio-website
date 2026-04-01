@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 03 13 (0372) The Dog Head Nugget — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0372) The Dog Head Nugget — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 03 13 (0372) The Dog Head Nugget — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 03 13 (0372) The Dog Head Nugget — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 03 13 (0372) The Dog Head Nugget — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 13, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 03 13 (0372) The Dog Head Nugget</h1>
+          <h1 class="episode__title">(0372) The Dog Head Nugget</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Dog Head Nugget</p>
-<p>As snow swirls across the frozen wastes of Canada's far north, Sergeant Preston of the Royal Canadian Mounted Police faces his most tangled mystery yet—a nugget of gold shaped like a dog's head, and a web of deception that threatens to tear apart the fragile peace of a remote trading post. Listeners will be transported into a world of crackling ice, howling winds, and danger lurking in every shadow, where Preston and his loyal husky King must uncover whether greed or justice claims the prize. The stakes climb higher with each revelation: a prospector's questionable claim, a rival's murderous intent, and a fortune that could transform lives—or destroy them. This is vintage adventure storytelling, where the moral compass of a single Mountie becomes the only law that matters.</p>
-<p>*Challenge of the Yukon* captured American imaginations during the Golden Age of Radio by presenting a vision of Canada's wilderness as a thrilling frontier where honor and duty always triumph over the base impulses of human nature. Sergeant Preston's unwavering integrity—and King's uncanny ability to sense villainy—made the show a beloved staple from 1938 through the 1950s, appealing equally to children who thrilled at the adventure and adults who admired its celebration of law and order. The "Dog Head Nugget" episode exemplifies the show's genius for combining genuine suspense with the exotic appeal of the North, all delivered with the rich sound design that made radio drama an immersive experience.</p>
+          <p>As snow swirls across the frozen wastes of Canada's far north, Sergeant Preston of the Royal Canadian Mounted Police faces his most tangled mystery yet—a nugget of gold shaped like a dog's head, and a web of deception that threatens to tear apart the fragile peace of a remote trading post. Listeners will be transported into a world of crackling ice, howling winds, and danger lurking in every shadow, where Preston and his loyal husky King must uncover whether greed or justice claims the prize. The stakes climb higher with each revelation: a prospector's questionable claim, a rival's murderous intent, and a fortune that could transform lives—or destroy them. This is vintage adventure storytelling, where the moral compass of a single Mountie becomes the only law that matters.</p>
+<p>Challenge of the Yukon captured American imaginations during the Golden Age of Radio by presenting a vision of Canada's wilderness as a thrilling frontier where honor and duty always triumph over the base impulses of human nature. Sergeant Preston's unwavering integrity—and King's uncanny ability to sense villainy—made the show a beloved staple from 1938 through the 1950s, appealing equally to children who thrilled at the adventure and adults who admired its celebration of law and order. The "Dog Head Nugget" episode exemplifies the show's genius for combining genuine suspense with the exotic appeal of the North, all delivered with the rich sound design that made radio drama an immersive experience.</p>
 <p>Settle into your chair, tune in, and prepare for an evening of genuine mystery and adventure. The barking of King, the steady voice of Sergeant Preston, and the call of the North await—a reminder of when radio could transport millions across a continent to witness justice served in the frozen borderlands.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

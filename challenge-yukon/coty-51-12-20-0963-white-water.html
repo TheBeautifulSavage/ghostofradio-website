@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 12 20 (0963) White Water — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0963) White Water — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 12 20 (0963) White Water — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 12 20 (0963) White Water — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 12 20 (0963) White Water — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 12 20 (0963) White Water</h1>
+          <h1 class="episode__title">(0963) White Water</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: White Water</p>
-<p>Picture yourself huddled near the radio on a winter's evening as Sergeant Preston and his magnificent dog King plunge into the treacherous rapids of the Yukon's white water passages. In "White Water," Preston must navigate not only the churning, ice-cold torrents that threaten to sweep him and his canoe downstream, but also a cunning fur trader who has fled into the wilderness with stolen goods and a dangerous secret. The thundering roar of the rapids crackles through your speakers with startling authenticity, while Preston's steady voice cuts through the chaos with calm determination. King's loyal barks punctuate moments of mounting tension as man and beast battle nature itself—a nature that offers no mercy to the unprepared or foolish. Will Preston's legendary wilderness skills be enough when the very river becomes his adversary?</p>
-<p>This 1940s episode exemplifies what made *Challenge of the Yukon* essential listening for millions across North America. The show's meticulous attention to detail—from the authentic sound design of rushing water and dog-sled runners to Preston's unfailing code of frontier justice—transported listeners to a distant, romantic realm of the Canadian north. Unlike many adventure serials that relied purely on melodrama, Preston's world was grounded in real geography and genuine hazards. The show's creators consulted extensively with actual RCMP officers and northern prospectors, lending credibility that distinguished it from mere fantasy. Preston and King became cultural icons, embodying the virtues of courage, loyalty, and righteousness that radio audiences desperately needed during the tumultuous 1940s.</p>
+          <p>Picture yourself huddled near the radio on a winter's evening as Sergeant Preston and his magnificent dog King plunge into the treacherous rapids of the Yukon's white water passages. In "White Water," Preston must navigate not only the churning, ice-cold torrents that threaten to sweep him and his canoe downstream, but also a cunning fur trader who has fled into the wilderness with stolen goods and a dangerous secret. The thundering roar of the rapids crackles through your speakers with startling authenticity, while Preston's steady voice cuts through the chaos with calm determination. King's loyal barks punctuate moments of mounting tension as man and beast battle nature itself—a nature that offers no mercy to the unprepared or foolish. Will Preston's legendary wilderness skills be enough when the very river becomes his adversary?</p>
+<p>This 1940s episode exemplifies what made Challenge of the Yukon essential listening for millions across North America. The show's meticulous attention to detail—from the authentic sound design of rushing water and dog-sled runners to Preston's unfailing code of frontier justice—transported listeners to a distant, romantic realm of the Canadian north. Unlike many adventure serials that relied purely on melodrama, Preston's world was grounded in real geography and genuine hazards. The show's creators consulted extensively with actual RCMP officers and northern prospectors, lending credibility that distinguished it from mere fantasy. Preston and King became cultural icons, embodying the virtues of courage, loyalty, and righteousness that radio audiences desperately needed during the tumultuous 1940s.</p>
 <p>Don't miss this thrilling chapter in one of radio's greatest adventure sagas. Tune in to experience the authentic tension, masterful sound production, and timeless storytelling that kept listeners spellbound for nearly two decades. The rapids await.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

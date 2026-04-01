@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 53 10 29 (1118) The Death Dart — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(1118) The Death Dart — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 53 10 29 (1118) The Death Dart — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 53 10 29 (1118) The Death Dart — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 53 10 29 (1118) The Death Dart — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 53 10 29 (1118) The Death Dart</h1>
+          <h1 class="episode__title">(1118) The Death Dart</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Death Dart</p>
-<p>Deep in the frozen Yukon wilderness, where the northern lights dance over endless white expanses and danger lurks behind every snow-laden pine, Sergeant Preston faces his most mysterious case yet. A killer stalks the remote trading posts and mining camps—a phantom assassin who strikes with a weapon so strange, so deadly, that even seasoned sourdoughs whisper of dark magic. When a prominent merchant falls dead with a peculiar dart embedded in his chest, Preston and his faithful husky King must unravel a web of jealousy, greed, and revenge. Who among the close-knit frontier community harbors such a murderous secret? As winter tightens its grip and suspicion poisons every conversation, Preston must race against time to stop the death dart from claiming another victim. This episode crackles with the atmospheric tension that made listeners lean closer to their radio dials, each shadow in the script becoming real in the listener's imagination.</p>
-<p>*Challenge of the Yukon* captivated millions throughout the late 1930s and 1940s with its perfect marriage of authentic frontier lore and pulse-pounding mystery. Created during radio's golden age, the show balanced genuine historical detail about the Canadian North with serialized drama that kept families gathered around their sets night after night. Sergeant Preston became an icon of moral authority in a lawless land, while his relationship with King the dog added an emotional dimension that lifted the show above simple adventure fare.</p>
-<p>If you've never experienced the thrill of golden-age radio adventure, or if you're a devoted fan seeking a forgotten gem, *The Death Dart* awaits. Settle in, dim the lights, and let your imagination transport you to the frozen frontier. This is radio storytelling at its finest—where sound effects, skilled voice acting, and masterful writing create worlds more vivid than any picture show could offer.</p>
+          <p>Deep in the frozen Yukon wilderness, where the northern lights dance over endless white expanses and danger lurks behind every snow-laden pine, Sergeant Preston faces his most mysterious case yet. A killer stalks the remote trading posts and mining camps—a phantom assassin who strikes with a weapon so strange, so deadly, that even seasoned sourdoughs whisper of dark magic. When a prominent merchant falls dead with a peculiar dart embedded in his chest, Preston and his faithful husky King must unravel a web of jealousy, greed, and revenge. Who among the close-knit frontier community harbors such a murderous secret? As winter tightens its grip and suspicion poisons every conversation, Preston must race against time to stop the death dart from claiming another victim. This episode crackles with the atmospheric tension that made listeners lean closer to their radio dials, each shadow in the script becoming real in the listener's imagination.</p>
+<p>Challenge of the Yukon captivated millions throughout the late 1930s and 1940s with its perfect marriage of authentic frontier lore and pulse-pounding mystery. Created during radio's golden age, the show balanced genuine historical detail about the Canadian North with serialized drama that kept families gathered around their sets night after night. Sergeant Preston became an icon of moral authority in a lawless land, while his relationship with King the dog added an emotional dimension that lifted the show above simple adventure fare.</p>
+<p>If you've never experienced the thrill of golden-age radio adventure, or if you're a devoted fan seeking a forgotten gem, The Death Dart awaits. Settle in, dim the lights, and let your imagination transport you to the frozen frontier. This is radio storytelling at its finest—where sound effects, skilled voice acting, and masterful writing create worlds more vivid than any picture show could offer.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

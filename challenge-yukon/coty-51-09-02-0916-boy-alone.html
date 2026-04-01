@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 09 02 (0916) Boy Alone — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0916) Boy Alone — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 09 02 (0916) Boy Alone — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 09 02 (0916) Boy Alone — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 09 02 (0916) Boy Alone — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 09 02 (0916) Boy Alone</h1>
+          <h1 class="episode__title">(0916) Boy Alone</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Boy Alone</p>
-<p>As the howling wind cuts across the frozen wasteland and Sergeant Preston's dogsled team strains against the harness, a young boy's desperate cry pierces the Arctic silence. In "Boy Alone," listeners are thrust into one of the Yukon's most treacherous trials—a child separated from his family during a brutal snowstorm, with nothing but his wits and the harsh wilderness closing in around him. Preston must navigate impossible terrain and uncover the mystery of how the boy came to be lost, all while racing against the merciless clock of the northern night. This episode exemplifies the show's mastery of intimate human drama set against an unforgiving landscape, where survival depends not just on physical courage, but on quick thinking and moral clarity.</p>
+          <p>As the howling wind cuts across the frozen wasteland and Sergeant Preston's dogsled team strains against the harness, a young boy's desperate cry pierces the Arctic silence. In "Boy Alone," listeners are thrust into one of the Yukon's most treacherous trials—a child separated from his family during a brutal snowstorm, with nothing but his wits and the harsh wilderness closing in around him. Preston must navigate impossible terrain and uncover the mystery of how the boy came to be lost, all while racing against the merciless clock of the northern night. This episode exemplifies the show's mastery of intimate human drama set against an unforgiving landscape, where survival depends not just on physical courage, but on quick thinking and moral clarity.</p>
 <p>"Challenge of the Yukon" captured the imaginations of millions during the 1940s precisely because it grounded high adventure in the authentic details of frontier life. Created during radio's golden age, the series drew on real accounts of Canadian mounties and Yukon settlement stories, lending credibility to its thrilling narratives. Sergeant Preston became an American icon—a paragon of justice and compassion whose adventures were believable precisely because they were rooted in a real place and real historical conditions. Each episode offered listeners an escape to a world where danger was genuine, stakes were immediate, and a single man's integrity could make the difference between tragedy and redemption.</p>
 <p>Don't miss this gripping tale of survival and rescue. Tune in to "Boy Alone" and experience the golden age of radio adventure, where the crackle of the speakers becomes the howl of the Yukon wind itself, and every moment matters when a child's life hangs in the balance.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

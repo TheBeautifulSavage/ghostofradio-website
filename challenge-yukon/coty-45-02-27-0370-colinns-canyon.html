@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 02 27 (0370) Colinns Canyon — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0370) Colinns Canyon — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 02 27 (0370) Colinns Canyon — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 02 27 (0370) Colinns Canyon — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 02 27 (0370) Colinns Canyon — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 27, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 02 27 (0370) Colinns Canyon</h1>
+          <h1 class="episode__title">(0370) Colinns Canyon</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Colinn's Canyon</p>
-<p>The howling Arctic wind cuts through the darkness as Sergeant Preston and his faithful husky King plunge deeper into the unforgiving wilderness of Canada's frozen north. A man has vanished without a trace in the treacherous canyon country, and whispers of foul play echo across the snow-blanketed landscape. In this gripping installment, listeners will navigate treacherous ice fields and hidden caverns alongside Preston as he unravels a mystery that tests both his wits and his courage. The tension mounts with each clue discovered—a torn piece of clothing, suspicious tracks in the snow, the cryptic testimony of rough-hewn prospectors who may know more than they're telling. With King's keen senses and Preston's unwavering sense of justice, danger lurks around every corner of this forsaken canyon, and the truth remains buried beneath layers of deception and desperation.</p>
-<p>*Challenge of the Yukon* captivated millions of American households throughout the Golden Age of Radio, transporting listeners to the raw, authentic frontier where law and order hung by a thread. Sergeant Preston emerged as the conscience of the wilderness—a symbol of steadfast morality in an untamed land. The show's popularity was built on genuine adventure storytelling, meticulous attention to Yukon geography and culture, and the remarkable chemistry between Preston and King, whose barks and howls became instantly recognizable to devoted fans. Created during an era when radio drama reigned supreme, these episodes remain masterpieces of suspense, atmosphere, and adventure.</p>
-<p>Don't miss this classic tale of northern mystery and justice served cold as the Arctic itself. Tune in to *Challenge of the Yukon* and experience radio drama at its finest—where every sound effect crackles with authenticity and every word pulls you deeper into the frozen frontier.</p>
+          <p>The howling Arctic wind cuts through the darkness as Sergeant Preston and his faithful husky King plunge deeper into the unforgiving wilderness of Canada's frozen north. A man has vanished without a trace in the treacherous canyon country, and whispers of foul play echo across the snow-blanketed landscape. In this gripping installment, listeners will navigate treacherous ice fields and hidden caverns alongside Preston as he unravels a mystery that tests both his wits and his courage. The tension mounts with each clue discovered—a torn piece of clothing, suspicious tracks in the snow, the cryptic testimony of rough-hewn prospectors who may know more than they're telling. With King's keen senses and Preston's unwavering sense of justice, danger lurks around every corner of this forsaken canyon, and the truth remains buried beneath layers of deception and desperation.</p>
+<p>Challenge of the Yukon captivated millions of American households throughout the Golden Age of Radio, transporting listeners to the raw, authentic frontier where law and order hung by a thread. Sergeant Preston emerged as the conscience of the wilderness—a symbol of steadfast morality in an untamed land. The show's popularity was built on genuine adventure storytelling, meticulous attention to Yukon geography and culture, and the remarkable chemistry between Preston and King, whose barks and howls became instantly recognizable to devoted fans. Created during an era when radio drama reigned supreme, these episodes remain masterpieces of suspense, atmosphere, and adventure.</p>
+<p>Don't miss this classic tale of northern mystery and justice served cold as the Arctic itself. Tune in to Challenge of the Yukon and experience radio drama at its finest—where every sound effect crackles with authenticity and every word pulls you deeper into the frozen frontier.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

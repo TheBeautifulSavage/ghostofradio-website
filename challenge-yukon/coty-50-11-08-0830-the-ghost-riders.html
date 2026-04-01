@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 11 08 (0830) The Ghost Riders — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0830) The Ghost Riders — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 11 08 (0830) The Ghost Riders — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 11 08 (0830) The Ghost Riders — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 11 08 (0830) The Ghost Riders — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 8, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 11 08 (0830) The Ghost Riders</h1>
+          <h1 class="episode__title">(0830) The Ghost Riders</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Ghost Riders</p>
-<p>Picture yourself huddled around the radio on a cold autumn evening, the crackle of static giving way to the haunting sound of galloping hooves and distant, otherworldly voices carried on the northern wind. In "The Ghost Riders," Sergeant Preston finds himself tracking a band of mysterious horsemen who materialize from the Yukon mist like phantoms, vanishing without a trace before he can apprehend them. Are they merely outlaws using superstition to mask their crimes, or has Preston stumbled upon something far more sinister in those vast, unforgiving territories? The tension mounts as clues lead deeper into the wilderness, where the line between legend and reality blurs dangerously, and even his loyal dog King begins to sense something unnatural afoot.</p>
-<p>*Challenge of the Yukon* was appointment listening for millions throughout the late 1930s and 1940s, capturing the public's appetite for frontier justice and adventure precisely when audiences needed escape from economic hardship and gathering war clouds. Sergeant Preston—the Royal Canadian Mounted Police officer who "always gets his man"—became an American icon despite his Canadian setting, largely due to actor Dirk Weathers' authoritative yet approachable delivery and the show's masterful blend of genuine historical Yukon atmosphere with supernatural intrigue. Episodes like "The Ghost Riders" showcased the program's versatility, oscillating between gritty procedural work and mystery-tinged drama that kept listeners perpetually off-balance.</p>
+          <p>Picture yourself huddled around the radio on a cold autumn evening, the crackle of static giving way to the haunting sound of galloping hooves and distant, otherworldly voices carried on the northern wind. In "The Ghost Riders," Sergeant Preston finds himself tracking a band of mysterious horsemen who materialize from the Yukon mist like phantoms, vanishing without a trace before he can apprehend them. Are they merely outlaws using superstition to mask their crimes, or has Preston stumbled upon something far more sinister in those vast, unforgiving territories? The tension mounts as clues lead deeper into the wilderness, where the line between legend and reality blurs dangerously, and even his loyal dog King begins to sense something unnatural afoot.</p>
+<p>Challenge of the Yukon was appointment listening for millions throughout the late 1930s and 1940s, capturing the public's appetite for frontier justice and adventure precisely when audiences needed escape from economic hardship and gathering war clouds. Sergeant Preston—the Royal Canadian Mounted Police officer who "always gets his man"—became an American icon despite his Canadian setting, largely due to actor Dirk Weathers' authoritative yet approachable delivery and the show's masterful blend of genuine historical Yukon atmosphere with supernatural intrigue. Episodes like "The Ghost Riders" showcased the program's versatility, oscillating between gritty procedural work and mystery-tinged drama that kept listeners perpetually off-balance.</p>
 <p>Let the mysterious call of the North beckon you into Preston's world. Tune in now and discover whether courage and duty can triumph when facing enemies that may not even exist—or perhaps exist more terrifyingly than anyone imagined.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

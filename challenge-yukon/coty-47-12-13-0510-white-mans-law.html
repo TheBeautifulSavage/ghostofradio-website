@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 12 13 (0510) White Man's Law — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0510) White Man's Law — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 12 13 (0510) White Man's Law — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 12 13 (0510) White Man's Law — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 12 13 (0510) White Man's Law — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 13, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 12 13 (0510) White Man's Law</h1>
+          <h1 class="episode__title">(0510) White Man's Law</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># White Man's Law</p>
-<p>As the familiar strains of the "Skagway" march fill your parlor and that commanding voice announces "Sergeant Preston of the Yukon," you're transported once more to the frozen frontier where law and order hang by a thread. In this gripping episode, "White Man's Law," a dangerous collision erupts between justice and mercy when Preston must track down a fugitive accused of murder in the isolated mining camps. Is the man guilty, or has he been framed by forces more sinister than anyone suspected? With only his faithful dog King and his wits to guide him through whiteout conditions and treacherous terrain, Preston races against time and nature itself. The suspense crackles through your radio speaker—will frontier justice prevail, or will prejudice seal an innocent man's fate?</p>
-<p>*Challenge of the Yukon* captured the hearts of millions during the late 1930s and '40s precisely because it balanced thrilling adventure with genuine moral complexity. Sergeant Preston—never a two-dimensional hero—wrestled with the ambiguities of law enforcement in a lawless land. The show, which debuted in 1938 and became a cornerstone of ABC and Mutual broadcasting, reflected post-Depression America's hunger for tales of determined men imposing order on chaos, yet it never shied away from exploring the darker implications of power and prejudence. Each episode's 15-minute runtime packed remarkable storytelling, aided by magnificent sound design that brought the Yukon's savage beauty vividly to life.</p>
+          <p>As the familiar strains of the "Skagway" march fill your parlor and that commanding voice announces "Sergeant Preston of the Yukon," you're transported once more to the frozen frontier where law and order hang by a thread. In this gripping episode, "White Man's Law," a dangerous collision erupts between justice and mercy when Preston must track down a fugitive accused of murder in the isolated mining camps. Is the man guilty, or has he been framed by forces more sinister than anyone suspected? With only his faithful dog King and his wits to guide him through whiteout conditions and treacherous terrain, Preston races against time and nature itself. The suspense crackles through your radio speaker—will frontier justice prevail, or will prejudice seal an innocent man's fate?</p>
+<p>Challenge of the Yukon captured the hearts of millions during the late 1930s and '40s precisely because it balanced thrilling adventure with genuine moral complexity. Sergeant Preston—never a two-dimensional hero—wrestled with the ambiguities of law enforcement in a lawless land. The show, which debuted in 1938 and became a cornerstone of ABC and Mutual broadcasting, reflected post-Depression America's hunger for tales of determined men imposing order on chaos, yet it never shied away from exploring the darker implications of power and prejudence. Each episode's 15-minute runtime packed remarkable storytelling, aided by magnificent sound design that brought the Yukon's savage beauty vividly to life.</p>
 <p>Tune in now to experience why this show remained a beloved fixture in American homes for nearly two decades. Whether you're discovering the Yukon for the first time or revisiting old friends, "White Man's Law" reminds us why these adventures endured: they asked us hard questions while never letting us catch our breath.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

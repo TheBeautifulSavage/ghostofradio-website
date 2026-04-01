@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 09 13 (0806) The Polar Quest — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0806) The Polar Quest — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 09 13 (0806) The Polar Quest — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 09 13 (0806) The Polar Quest — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 09 13 (0806) The Polar Quest — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 13, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 09 13 (0806) The Polar Quest</h1>
+          <h1 class="episode__title">(0806) The Polar Quest</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Polar Quest</p>
-<p>Picture this: the endless white wasteland of the Arctic stretches before you, broken only by the howling wind and the urgent barking of King and his sled dogs. Sergeant Preston of the Yukon faces his most treacherous challenge yet—a desperate race against time and nature itself to locate a missing expedition somewhere in the frozen wastes beyond civilization. With temperatures plummeting and supplies dwindling, our noble Mountie must navigate by starlight and instinct alone, his only companions the faithful dogs whose keen senses may be the difference between triumph and tragedy. This episode crackles with genuine peril; listeners will find themselves gripping their radio sets as Preston confronts both the unforgiving elements and a mystery that grows more sinister with every passing moment.</p>
-<p>What made *Challenge of the Yukon* such a phenomenon during its golden age was its authentic grounding in real geography and actual Mounted Police protocol, combined with stories that captured the raw majesty and danger of Canada's last frontier. Unlike many adventure programs of the era that relied on fantasy, this series earned its devoted following by respecting both its setting and its audience's intelligence. The 1940s were peak years for the program, when writer-producer George W. Trendle had perfected the formula: man versus nature, duty versus personal desire, and always—*always*—the triumph of integrity and courage. The show's commitment to moral clarity resonated deeply with wartime audiences seeking heroes they could truly believe in.</p>
-<p>This is radio adventure at its finest: no special effects wizardry, just masterful sound design, compelling dialogue, and the power of imagination. Join Sergeant Preston and King as they embark on *The Polar Quest*—you won't find a more thrilling hour of classic entertainment anywhere on the dial.</p>
+          <p>Picture this: the endless white wasteland of the Arctic stretches before you, broken only by the howling wind and the urgent barking of King and his sled dogs. Sergeant Preston of the Yukon faces his most treacherous challenge yet—a desperate race against time and nature itself to locate a missing expedition somewhere in the frozen wastes beyond civilization. With temperatures plummeting and supplies dwindling, our noble Mountie must navigate by starlight and instinct alone, his only companions the faithful dogs whose keen senses may be the difference between triumph and tragedy. This episode crackles with genuine peril; listeners will find themselves gripping their radio sets as Preston confronts both the unforgiving elements and a mystery that grows more sinister with every passing moment.</p>
+<p>What made Challenge of the Yukon such a phenomenon during its golden age was its authentic grounding in real geography and actual Mounted Police protocol, combined with stories that captured the raw majesty and danger of Canada's last frontier. Unlike many adventure programs of the era that relied on fantasy, this series earned its devoted following by respecting both its setting and its audience's intelligence. The 1940s were peak years for the program, when writer-producer George W. Trendle had perfected the formula: man versus nature, duty versus personal desire, and always—always—the triumph of integrity and courage. The show's commitment to moral clarity resonated deeply with wartime audiences seeking heroes they could truly believe in.</p>
+<p>This is radio adventure at its finest: no special effects wizardry, just masterful sound design, compelling dialogue, and the power of imagination. Join Sergeant Preston and King as they embark on The Polar Quest—you won't find a more thrilling hour of classic entertainment anywhere on the dial.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

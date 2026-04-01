@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 10 13 (0561) Mine Of Good Hope — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0561) Mine Of Good Hope — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 10 13 (0561) Mine Of Good Hope — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 10 13 (0561) Mine Of Good Hope — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 10 13 (0561) Mine Of Good Hope — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 13, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 10 13 (0561) Mine Of Good Hope</h1>
+          <h1 class="episode__title">(0561) Mine Of Good Hope</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Mine of Good Hope"</p>
-<p>Picture yourself huddled close to your radio on a crisp autumn evening as Sergeant Preston and his trusty sled dog King venture into the frozen wilderness in search of a legendary gold mine hidden somewhere in the vast Yukon Territory. When a desperate prospector stumbles into their camp with a cryptic map and an even darker secret, Preston must navigate treacherous mountain passes, outwit a ruthless claim jumper, and unravel a mystery that could mean fortune—or death—for everyone involved. The crackle of the fire, the howl of wind through snow-laden pines, and King's loyal bark create an immersive soundscape that transports listeners to Canada's most unforgiving frontier. As danger closes in from all sides, only Preston's quick thinking, moral compass, and King's uncanny instincts stand between hope and tragedy in this pulse-pounding tale of greed, redemption, and adventure.</p>
-<p>*Challenge of the Yukon* captured American imaginations throughout the 1940s by celebrating the legendary Canadian Mountie—a figure embodying justice, courage, and honor in the lawless North. This episode exemplifies why the show became one of radio's most beloved adventure serials, combining genuine historical details about Yukon prospecting with thrilling melodrama and the deep bond between Preston and King, a German Shepherd whose intelligence and loyalty became as legendary as his master's. The program's success spawned a television series and cemented Sergeant Preston in popular culture as an icon of principled heroism.</p>
+          <p>Picture yourself huddled close to your radio on a crisp autumn evening as Sergeant Preston and his trusty sled dog King venture into the frozen wilderness in search of a legendary gold mine hidden somewhere in the vast Yukon Territory. When a desperate prospector stumbles into their camp with a cryptic map and an even darker secret, Preston must navigate treacherous mountain passes, outwit a ruthless claim jumper, and unravel a mystery that could mean fortune—or death—for everyone involved. The crackle of the fire, the howl of wind through snow-laden pines, and King's loyal bark create an immersive soundscape that transports listeners to Canada's most unforgiving frontier. As danger closes in from all sides, only Preston's quick thinking, moral compass, and King's uncanny instincts stand between hope and tragedy in this pulse-pounding tale of greed, redemption, and adventure.</p>
+<p>Challenge of the Yukon captured American imaginations throughout the 1940s by celebrating the legendary Canadian Mountie—a figure embodying justice, courage, and honor in the lawless North. This episode exemplifies why the show became one of radio's most beloved adventure serials, combining genuine historical details about Yukon prospecting with thrilling melodrama and the deep bond between Preston and King, a German Shepherd whose intelligence and loyalty became as legendary as his master's. The program's success spawned a television series and cemented Sergeant Preston in popular culture as an icon of principled heroism.</p>
 <p>Whether you're a longtime devotee or discovering the Yukon for the first time, "Mine of Good Hope" delivers everything that made this show essential listening: sterling character work, authentic frontier atmosphere, and the unshakeable conviction that good will prevail. Tune in as Sergeant Preston faces his greatest test yet!</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

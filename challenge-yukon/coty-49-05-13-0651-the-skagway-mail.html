@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 05 13 (0651) The Skagway Mail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0651) The Skagway Mail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 05 13 (0651) The Skagway Mail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 05 13 (0651) The Skagway Mail — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 05 13 (0651) The Skagway Mail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 13, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 05 13 (0651) The Skagway Mail</h1>
+          <h1 class="episode__title">(0651) The Skagway Mail</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Skagway Mail</p>
-<p>Picture yourself huddled close to your radio set on a frigid evening, the dial tuned to the crackle and hiss of distant broadcasting. Suddenly, the familiar thunder of galloping hooves breaks through—King, the magnificent Husky, races across the frozen Yukon alongside Sergeant Preston of the Royal Canadian Mounted Police. In "The Skagway Mail," Preston faces a desperate race against time through treacherous mountain passes where an avalanche has cut off the only mail route to the isolated settlement of Skagway. A young woman's letter holds the key to preventing a terrible injustice, but the roads are impassable, the weather is turning deadly, and Preston must rely on his wits, his courage, and his faithful dog to deliver it before nightfall. The tension mounts as each obstacle tests whether man and beast can overcome the merciless Yukon wilderness.</p>
-<p>For over a decade, *Challenge of the Yukon* captivated American listeners with tales of law and order at the edge of civilization. Debuting in 1938, the show struck the perfect balance between authentic adventure and compelling human drama, drawing inspiration from real RCMP cases while maintaining the romantic mystique of the North. Sergeant Preston became an icon of American radio—the incorruptible lawman whose character embodied the best of frontier justice, bringing order and morality to lawless territories. The show's meticulous sound design transported listeners thousands of miles north, while scripts focused on character and consequence rather than mere sensationalism.</p>
+          <p>Picture yourself huddled close to your radio set on a frigid evening, the dial tuned to the crackle and hiss of distant broadcasting. Suddenly, the familiar thunder of galloping hooves breaks through—King, the magnificent Husky, races across the frozen Yukon alongside Sergeant Preston of the Royal Canadian Mounted Police. In "The Skagway Mail," Preston faces a desperate race against time through treacherous mountain passes where an avalanche has cut off the only mail route to the isolated settlement of Skagway. A young woman's letter holds the key to preventing a terrible injustice, but the roads are impassable, the weather is turning deadly, and Preston must rely on his wits, his courage, and his faithful dog to deliver it before nightfall. The tension mounts as each obstacle tests whether man and beast can overcome the merciless Yukon wilderness.</p>
+<p>For over a decade, Challenge of the Yukon captivated American listeners with tales of law and order at the edge of civilization. Debuting in 1938, the show struck the perfect balance between authentic adventure and compelling human drama, drawing inspiration from real RCMP cases while maintaining the romantic mystique of the North. Sergeant Preston became an icon of American radio—the incorruptible lawman whose character embodied the best of frontier justice, bringing order and morality to lawless territories. The show's meticulous sound design transported listeners thousands of miles north, while scripts focused on character and consequence rather than mere sensationalism.</p>
 <p>This 1949 episode showcases why Preston's legend endured through the golden age of radio and beyond. Tune in to experience the craftsmanship of classic storytelling—where a simple mail run becomes an epic test of human resolve and the bond between man and nature.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

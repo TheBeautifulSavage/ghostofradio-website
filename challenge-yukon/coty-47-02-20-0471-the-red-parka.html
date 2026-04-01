@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 02 20 (0471) The Red Parka — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0471) The Red Parka — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 02 20 (0471) The Red Parka — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 02 20 (0471) The Red Parka — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 02 20 (0471) The Red Parka — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 20, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 02 20 (0471) The Red Parka</h1>
+          <h1 class="episode__title">(0471) The Red Parka</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Red Parka</p>
-<p>Through the static and crackle of a distant northern transmitter comes the thunder of hoofbeats across frozen tundra, and the commanding voice of Sergeant Preston calling his loyal husky King to action. In "The Red Parka," our scarlet-clad Mountie confronts a mystery that grips the Yukon with an icy hand—a missing trapper last seen wearing a distinctive red parka has vanished without trace into the unforgiving wilderness. Is he lost to the elements, or has foul play struck in this remote frontier? As Preston and King navigate treacherous mountain passes and interview suspicious characters in remote trading posts, the tension mounts with each revelation. The production captures that unmistakable early-1940s authenticity: the ambient sounds of wind howling across endless snowfields, the intimate yet authoritative tone of Preston's narration, and the perfect pacing that transforms a simple disappearance into genuine suspense. Listeners lean closer to their radios, unable to predict where this investigation will lead.</p>
-<p>*Challenge of the Yukon* became an American institution precisely because it balanced authentic wilderness adventure with the moral authority of the Royal Canadian Mounted Police. During the 1940s, with the Second World War consuming headlines, these episodes offered listeners escape to a heroic realm where good was unmistakable and justice always prevailed. Preston's character—noble, capable, and unfailingly fair—embodied the values audiences desperately wanted to believe in, while the Yukon's majesty provided welcome respite from a turbulent world.</p>
+          <p>Through the static and crackle of a distant northern transmitter comes the thunder of hoofbeats across frozen tundra, and the commanding voice of Sergeant Preston calling his loyal husky King to action. In "The Red Parka," our scarlet-clad Mountie confronts a mystery that grips the Yukon with an icy hand—a missing trapper last seen wearing a distinctive red parka has vanished without trace into the unforgiving wilderness. Is he lost to the elements, or has foul play struck in this remote frontier? As Preston and King navigate treacherous mountain passes and interview suspicious characters in remote trading posts, the tension mounts with each revelation. The production captures that unmistakable early-1940s authenticity: the ambient sounds of wind howling across endless snowfields, the intimate yet authoritative tone of Preston's narration, and the perfect pacing that transforms a simple disappearance into genuine suspense. Listeners lean closer to their radios, unable to predict where this investigation will lead.</p>
+<p>Challenge of the Yukon became an American institution precisely because it balanced authentic wilderness adventure with the moral authority of the Royal Canadian Mounted Police. During the 1940s, with the Second World War consuming headlines, these episodes offered listeners escape to a heroic realm where good was unmistakable and justice always prevailed. Preston's character—noble, capable, and unfailingly fair—embodied the values audiences desperately wanted to believe in, while the Yukon's majesty provided welcome respite from a turbulent world.</p>
 <p>Settle in with this exceptional episode and experience the golden age of radio adventure when a crackle of static could transport millions across the continent to Canada's frozen north. King barks, Preston commands, and somewhere in the Yukon, truth awaits discovery.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

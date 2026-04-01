@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 09 26 (0450) Blind Man's Claim — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0450) Blind Man's Claim — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 09 26 (0450) Blind Man's Claim — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 09 26 (0450) Blind Man's Claim — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 09 26 (0450) Blind Man's Claim — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 26, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 09 26 (0450) Blind Man's Claim</h1>
+          <h1 class="episode__title">(0450) Blind Man's Claim</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Blind Man's Claim</p>
-<p>Deep in the frozen heart of the Yukon wilderness, a grizzled prospector stumbles into Sergeant Preston's post with a desperate plea—his mining claim has been jumped by a ruthless claim jumper, and without his sight, he's helpless to defend what he's worked years to uncover. What begins as a simple property dispute quickly unravels into a tense cat-and-mouse game across treacherous ice fields and snow-laden peaks, where Preston and his magnificent sled dog King must navigate not only the brutal landscape but also the murky questions of justice in a land where law is often as frozen and unforgiving as the terrain itself. With each scene, the tension mounts: false leads, dangerous confrontations, and the ever-present threat that winter itself may settle the matter before justice can be served.</p>
-<p>This episode exemplifies what made *Challenge of the Yukon* such a beloved fixture in American radio from 1938 through the 1950s. The series capitalized on the public's enduring fascination with the Klondike Gold Rush and frontier mythology, delivering adventure that felt both timeless and immediate to Depression and wartime audiences. Sergeant Preston—the Royal Canadian Mounted Police officer who always got his man—became an iconic figure, while King the sled dog transformed into a character as compelling as any human protagonist. The show's meticulous sound design, from the crack of whips to the howl of wind across glaciers, transported listeners 3,000 miles north, offering escapism wrapped in moral clarity and outdoor excitement.</p>
+          <p>Deep in the frozen heart of the Yukon wilderness, a grizzled prospector stumbles into Sergeant Preston's post with a desperate plea—his mining claim has been jumped by a ruthless claim jumper, and without his sight, he's helpless to defend what he's worked years to uncover. What begins as a simple property dispute quickly unravels into a tense cat-and-mouse game across treacherous ice fields and snow-laden peaks, where Preston and his magnificent sled dog King must navigate not only the brutal landscape but also the murky questions of justice in a land where law is often as frozen and unforgiving as the terrain itself. With each scene, the tension mounts: false leads, dangerous confrontations, and the ever-present threat that winter itself may settle the matter before justice can be served.</p>
+<p>This episode exemplifies what made Challenge of the Yukon such a beloved fixture in American radio from 1938 through the 1950s. The series capitalized on the public's enduring fascination with the Klondike Gold Rush and frontier mythology, delivering adventure that felt both timeless and immediate to Depression and wartime audiences. Sergeant Preston—the Royal Canadian Mounted Police officer who always got his man—became an iconic figure, while King the sled dog transformed into a character as compelling as any human protagonist. The show's meticulous sound design, from the crack of whips to the howl of wind across glaciers, transported listeners 3,000 miles north, offering escapism wrapped in moral clarity and outdoor excitement.</p>
 <p>If you've never experienced the thrill of old-time radio adventure, or if you're a devoted fan seeking a classic episode, "Blind Man's Claim" is essential listening. Settle in with headphones, dim the lights, and let the Yukon's call transport you back to radio's golden age.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 01 15 (0972) Man On The Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0972) Man On The Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 01 15 (0972) Man On The Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 01 15 (0972) Man On The Trail — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 01 15 (0972) Man On The Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 01 15 (0972) Man On The Trail</h1>
+          <h1 class="episode__title">(0972) Man On The Trail</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Man On The Trail</p>
-<p>The howling Arctic wind cuts through your radio speaker as Sergeant Preston of the Yukon RCMP faces his greatest test yet. A desperate fugitive has vanished into the frozen wilderness, leaving only bloodstained snow and a cryptic trail that leads deeper into the unforgiving territory. With his loyal dog King at his side, Preston must race against time and the merciless cold to locate the man before nature—or something far more sinister—claims another victim. This episode crackles with tension as our hero navigates treacherous terrain, interrogates suspicious sourdoughs in remote cabins, and pieces together a mystery that challenges everything he thought he knew about justice in the Yukon.</p>
-<p>*Challenge of the Yukon* stands as one of radio's most enduring adventure serials, captivating audiences for nearly two decades with authentic tales of frontier law enforcement and survival against impossible odds. Premiering in 1938, the show drew inspiration from real RCMP operations while crafting narratives that transported listeners far from their daily lives into a world of dog sleds, gold claims, and rugged heroism. Sergeant Preston himself became an iconic figure—the incorruptible lawman who solved crimes not through violence, but through cunning, persistence, and unwavering moral conviction. The show's success spawned a television adaptation and a comic strip, cementing its place in Golden Age entertainment history.</p>
-<p>Tune in now to experience this gripping 1940s episode where Preston's deductive prowess and determination are tested against both the wilderness and human nature itself. This is radio drama at its finest—suspenseful, engaging, and utterly transporting. *On King, on you huskies!*</p>
+          <p>The howling Arctic wind cuts through your radio speaker as Sergeant Preston of the Yukon RCMP faces his greatest test yet. A desperate fugitive has vanished into the frozen wilderness, leaving only bloodstained snow and a cryptic trail that leads deeper into the unforgiving territory. With his loyal dog King at his side, Preston must race against time and the merciless cold to locate the man before nature—or something far more sinister—claims another victim. This episode crackles with tension as our hero navigates treacherous terrain, interrogates suspicious sourdoughs in remote cabins, and pieces together a mystery that challenges everything he thought he knew about justice in the Yukon.</p>
+<p>Challenge of the Yukon stands as one of radio's most enduring adventure serials, captivating audiences for nearly two decades with authentic tales of frontier law enforcement and survival against impossible odds. Premiering in 1938, the show drew inspiration from real RCMP operations while crafting narratives that transported listeners far from their daily lives into a world of dog sleds, gold claims, and rugged heroism. Sergeant Preston himself became an iconic figure—the incorruptible lawman who solved crimes not through violence, but through cunning, persistence, and unwavering moral conviction. The show's success spawned a television adaptation and a comic strip, cementing its place in Golden Age entertainment history.</p>
+<p>Tune in now to experience this gripping 1940s episode where Preston's deductive prowess and determination are tested against both the wilderness and human nature itself. This is radio drama at its finest—suspenseful, engaging, and utterly transporting. On King, on you huskies!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 11 15 (0575) The Second Chance — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0575) The Second Chance — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 11 15 (0575) The Second Chance — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 11 15 (0575) The Second Chance — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 11 15 (0575) The Second Chance — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 15, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 11 15 (0575) The Second Chance</h1>
+          <h1 class="episode__title">(0575) The Second Chance</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Second Chance</p>
-<p>Picture yourself huddled beside a crackling radio on a cold November evening in 1940, as the unmistakable thunder of galloping hooves and those immortal words—"Come on, King!"—signal the return of Sergeant Preston of the Yukon. In this week's thrilling installment, "The Second Chance," our stalwart Mountie faces a moral quandary that cuts to the very heart of justice in Canada's frozen frontier. A desperate fugitive stumbles into Preston's path, claiming redemption and a chance to escape a dark past, yet circumstances blur the line between compassion and duty. As blizzard winds howl across the tundra and King's keen instincts guide the way, listeners will find themselves caught between their loyalty to Preston's unwavering honor and sympathy for a broken soul seeking salvation. The tension builds with each scene—will Preston's faith in second chances prove justified, or will the harsh realities of frontier law demand a heavy price?</p>
-<p>*Challenge of the Yukon* was radio's quintessential adventure serial, capturing American and Canadian imaginations for nearly two decades with its potent blend of authentic northern atmosphere, action-packed drama, and Sergeant Preston's incorruptible moral code. Premiering in 1938, the show became a cultural phenomenon, spawning merchandise, a later television series, and fervent fan devotion. Each episode transported listeners beyond the constraints of ordinary life into a realm where courage, loyalty, and justice genuinely mattered—where a man and his dog could face impossible odds and emerge with their integrity intact.</p>
-<p>Don your heavy coat and settle in for an evening of sterling entertainment. Whether you're a devoted fan revisiting this classic or discovering Preston's adventures for the first time, "The Second Chance" exemplifies why *Challenge of the Yukon* remains unforgettable. Tune in and experience the golden age of radio adventure!</p>
+          <p>Picture yourself huddled beside a crackling radio on a cold November evening in 1940, as the unmistakable thunder of galloping hooves and those immortal words—"Come on, King!"—signal the return of Sergeant Preston of the Yukon. In this week's thrilling installment, "The Second Chance," our stalwart Mountie faces a moral quandary that cuts to the very heart of justice in Canada's frozen frontier. A desperate fugitive stumbles into Preston's path, claiming redemption and a chance to escape a dark past, yet circumstances blur the line between compassion and duty. As blizzard winds howl across the tundra and King's keen instincts guide the way, listeners will find themselves caught between their loyalty to Preston's unwavering honor and sympathy for a broken soul seeking salvation. The tension builds with each scene—will Preston's faith in second chances prove justified, or will the harsh realities of frontier law demand a heavy price?</p>
+<p>Challenge of the Yukon was radio's quintessential adventure serial, capturing American and Canadian imaginations for nearly two decades with its potent blend of authentic northern atmosphere, action-packed drama, and Sergeant Preston's incorruptible moral code. Premiering in 1938, the show became a cultural phenomenon, spawning merchandise, a later television series, and fervent fan devotion. Each episode transported listeners beyond the constraints of ordinary life into a realm where courage, loyalty, and justice genuinely mattered—where a man and his dog could face impossible odds and emerge with their integrity intact.</p>
+<p>Don your heavy coat and settle in for an evening of sterling entertainment. Whether you're a devoted fan revisiting this classic or discovering Preston's adventures for the first time, "The Second Chance" exemplifies why Challenge of the Yukon remains unforgettable. Tune in and experience the golden age of radio adventure!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

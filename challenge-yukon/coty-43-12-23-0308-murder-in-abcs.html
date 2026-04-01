@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 43 12 23 (0308) Murder In Abc's — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0308) Murder In Abc's — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 43 12 23 (0308) Murder In Abc's — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 43 12 23 (0308) Murder In Abc's — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 43 12 23 (0308) Murder In Abc's — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 23, 1943</span>
           </div>
-          <h1 class="episode__title">Coty 43 12 23 (0308) Murder In Abc's</h1>
+          <h1 class="episode__title">(0308) Murder In Abc's</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Murder in ABC's</p>
-<p>As the howling wind cuts across the frozen Yukon wilderness and Sergeant Preston's sled dogs strain against their harness, a grim discovery awaits—a body lies frozen in the remote outpost, and all evidence points to murder most calculated. In this gripping episode, our stalwart Mountie must navigate a maze of suspects and motives while the brutal Arctic itself becomes both witness and accomplice. With the killer still at large in a snowbound settlement where escape is impossible, tension mounts as Preston employs his legendary detective skills to separate truth from deception. Every clue, every alibi, every glance becomes crucial in a race against time where justice must prevail before another life is claimed by either human hand or the merciless cold.</p>
-<p>*Challenge of the Yukon* became a national phenomenon during the early 1940s, offering listeners a thrilling escape from the anxieties of wartime America through tales of rugged individualism, moral certainty, and the triumph of law and order in Earth's harshest frontier. Sergeant Preston—noble, incorruptible, and always accompanied by his loyal dog King—embodied the ideals many Americans held dear: duty, courage, and unwavering justice. The show's sprawling Yukon setting provided endless narrative possibilities, from lost gold shipments to frontier feuds, yet always grounded in the authentic hardship and beauty of the North. This particular mystery episode showcases the program's masterful blend of detective work and adventure, proving the series was far more than simple action fare.</p>
-<p>Settle into your chair, turn your dial to that familiar frequency, and prepare yourself for a mystery that will keep you guessing until the final, satisfying resolution. *Challenge of the Yukon* awaits—where danger lurks in every shadow and Sergeant Preston stands ready to deliver justice to the frozen ends of the earth.</p>
+          <p>As the howling wind cuts across the frozen Yukon wilderness and Sergeant Preston's sled dogs strain against their harness, a grim discovery awaits—a body lies frozen in the remote outpost, and all evidence points to murder most calculated. In this gripping episode, our stalwart Mountie must navigate a maze of suspects and motives while the brutal Arctic itself becomes both witness and accomplice. With the killer still at large in a snowbound settlement where escape is impossible, tension mounts as Preston employs his legendary detective skills to separate truth from deception. Every clue, every alibi, every glance becomes crucial in a race against time where justice must prevail before another life is claimed by either human hand or the merciless cold.</p>
+<p>Challenge of the Yukon became a national phenomenon during the early 1940s, offering listeners a thrilling escape from the anxieties of wartime America through tales of rugged individualism, moral certainty, and the triumph of law and order in Earth's harshest frontier. Sergeant Preston—noble, incorruptible, and always accompanied by his loyal dog King—embodied the ideals many Americans held dear: duty, courage, and unwavering justice. The show's sprawling Yukon setting provided endless narrative possibilities, from lost gold shipments to frontier feuds, yet always grounded in the authentic hardship and beauty of the North. This particular mystery episode showcases the program's masterful blend of detective work and adventure, proving the series was far more than simple action fare.</p>
+<p>Settle into your chair, turn your dial to that familiar frequency, and prepare yourself for a mystery that will keep you guessing until the final, satisfying resolution. Challenge of the Yukon awaits—where danger lurks in every shadow and Sergeant Preston stands ready to deliver justice to the frozen ends of the earth.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

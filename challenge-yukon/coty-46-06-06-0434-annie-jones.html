@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 06 06 (0434) Annie Jones — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0434) Annie Jones — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 06 06 (0434) Annie Jones — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 06 06 (0434) Annie Jones — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 06 06 (0434) Annie Jones — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · June 6, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 06 06 (0434) Annie Jones</h1>
+          <h1 class="episode__title">(0434) Annie Jones</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Annie Jones"</p>
-<p>As the familiar strains of the "Sergeant Preston of the Yukon" theme crescendo through your radio speaker, you're transported to the frozen frontier where duty and danger dance across an endless white wilderness. In this gripping installment, a young woman's desperate circumstances force Sergeant Preston and his faithful dog King into a treacherous investigation that cuts to the heart of frontier justice. Annie Jones has vanished under mysterious circumstances, and whispers of foul play echo through the trading posts and mining camps of the Yukon. With the snow piling high and time slipping away like water through frozen fingers, Preston must navigate both the brutal landscape and the shadowy secrets that settlements harbored—secrets that respectable folk preferred to keep buried. Every clue brings him closer to danger, every decision carries the weight of life and death, and every moment counts when civilization is a hundred miles away and the only law is the one he carries in his badge.</p>
-<p>*Challenge of the Yukon* captivated audiences throughout the 1940s and 1950s with its perfect formula of authentic frontier adventure and moral clarity. Sergeant Preston, portrayed with quiet authority and genuine compassion, represented the best of law enforcement—a man bound by code but tempered by humanity. The show's writers drew heavily from real Mountie histories and Yukon geography, lending an air of documentary authenticity to their tales of claim jumpers, lost souls, and frontier redemption. Unlike the cartoon antics of many radio adventures, Preston's world felt tangible, dangerous, and morally complex.</p>
+          <p>As the familiar strains of the "Sergeant Preston of the Yukon" theme crescendo through your radio speaker, you're transported to the frozen frontier where duty and danger dance across an endless white wilderness. In this gripping installment, a young woman's desperate circumstances force Sergeant Preston and his faithful dog King into a treacherous investigation that cuts to the heart of frontier justice. Annie Jones has vanished under mysterious circumstances, and whispers of foul play echo through the trading posts and mining camps of the Yukon. With the snow piling high and time slipping away like water through frozen fingers, Preston must navigate both the brutal landscape and the shadowy secrets that settlements harbored—secrets that respectable folk preferred to keep buried. Every clue brings him closer to danger, every decision carries the weight of life and death, and every moment counts when civilization is a hundred miles away and the only law is the one he carries in his badge.</p>
+<p>Challenge of the Yukon captivated audiences throughout the 1940s and 1950s with its perfect formula of authentic frontier adventure and moral clarity. Sergeant Preston, portrayed with quiet authority and genuine compassion, represented the best of law enforcement—a man bound by code but tempered by humanity. The show's writers drew heavily from real Mountie histories and Yukon geography, lending an air of documentary authenticity to their tales of claim jumpers, lost souls, and frontier redemption. Unlike the cartoon antics of many radio adventures, Preston's world felt tangible, dangerous, and morally complex.</p>
 <p>Don't miss "Annie Jones"—a tale that proves even in the harshest landscape, a lawman's conscience is his truest compass. Tune in today and discover why this series remains an essential chapter in radio's golden age.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 03 06 (0473) The Coffin — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0473) The Coffin — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 03 06 (0473) The Coffin — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 03 06 (0473) The Coffin — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 03 06 (0473) The Coffin — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 6, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 03 06 (0473) The Coffin</h1>
+          <h1 class="episode__title">(0473) The Coffin</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Coffin</p>
-<p>Picture yourself huddled around the radio on a winter evening as Sergeant Preston of the Yukon and his faithful husky, King, venture into the frozen wilderness to investigate a mystery that arrives in the most chilling form imaginable—a coffin. But who lies inside? And more pressing still, who sealed it shut? As the wind howls through pristine white valleys and the temperature plummets far below zero, Preston must unravel a tangled web of deception, desperation, and danger. The coffin becomes far more than a burial box; it's a puzzle wrapped in ice, and every clue Preston uncovers draws him deeper into a criminal conspiracy where the dead may not be quite as deceased as they appear. With King at his side, our Mountie faces adversaries as ruthless as the Yukon itself, where a single misstep means becoming part of the frozen landscape forever.</p>
-<p>*Challenge of the Yukon* captured the imagination of millions during its golden age on radio, and episodes like "The Coffin" showcase why. Premiering in 1938, the show became a cornerstone of adventure programming, featuring a Canadian Mountie who embodied justice and courage in the unforgiving North. The series struck a perfect balance between gritty realism—research into actual Yukon life was meticulous—and high-stakes melodrama that kept listeners riveted week after week. By the 1940s, when this episode aired, Preston had become as iconic as any Hollywood star, with "King, bring me the prisoner's file!" becoming household catch-phrases.</p>
+          <p>Picture yourself huddled around the radio on a winter evening as Sergeant Preston of the Yukon and his faithful husky, King, venture into the frozen wilderness to investigate a mystery that arrives in the most chilling form imaginable—a coffin. But who lies inside? And more pressing still, who sealed it shut? As the wind howls through pristine white valleys and the temperature plummets far below zero, Preston must unravel a tangled web of deception, desperation, and danger. The coffin becomes far more than a burial box; it's a puzzle wrapped in ice, and every clue Preston uncovers draws him deeper into a criminal conspiracy where the dead may not be quite as deceased as they appear. With King at his side, our Mountie faces adversaries as ruthless as the Yukon itself, where a single misstep means becoming part of the frozen landscape forever.</p>
+<p>Challenge of the Yukon captured the imagination of millions during its golden age on radio, and episodes like "The Coffin" showcase why. Premiering in 1938, the show became a cornerstone of adventure programming, featuring a Canadian Mountie who embodied justice and courage in the unforgiving North. The series struck a perfect balance between gritty realism—research into actual Yukon life was meticulous—and high-stakes melodrama that kept listeners riveted week after week. By the 1940s, when this episode aired, Preston had become as iconic as any Hollywood star, with "King, bring me the prisoner's file!" becoming household catch-phrases.</p>
 <p>Whether you're a devoted fan of classic radio adventure or discovering Sergeant Preston for the first time, "The Coffin" delivers everything that made this series legendary. Tune in and experience the suspense, the atmosphere, and the timeless appeal of a hero standing against the darkness of the wilderness.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

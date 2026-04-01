@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 12 13 (0960) Rainbow Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0960) Rainbow Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 12 13 (0960) Rainbow Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 12 13 (0960) Rainbow Gold — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 12 13 (0960) Rainbow Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 12 13 (0960) Rainbow Gold</h1>
+          <h1 class="episode__title">(0960) Rainbow Gold</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Rainbow Gold</p>
-<p>As the familiar strains of the Andes march swell through your radio speaker and King, the great Husky, bays into the northern wilderness, you're transported to the frozen Yukon where danger lurks around every snow-laden peak. In "Rainbow Gold," Sergeant Preston faces his most cunning adversary yet—not a common criminal or rogue claim jumper, but the intoxicating allure of sudden wealth itself. When prospectors discover what appears to be a mother lode hidden in a remote ravine accessible only during the brief summer thaw, greed transforms decent men into desperate rivals, and Preston must navigate treacherous terrain both physical and moral to prevent tragedy. The tension builds relentlessly as the sergeant and his trusty dog confront cave-ins, avalanche threats, and the darker impulses of human nature, all while racing against time and the encroaching arctic winter.</p>
-<p>*Challenge of the Yukon* occupied a special place in radio's golden age, running for seventeen years and captivating millions with its perfect blend of frontier authenticity and thrilling serialization. The show's writers meticulously researched Yukon history and geography, grounding their tales in real locations and period-accurate detail that lent surprising realism to even their most fantastical plots. Preston's unwavering moral code—pursuing justice with quiet competence rather than swagger—offered something refreshingly different from the typical radio hero of the 1940s. Episodes like "Rainbow Gold" showcased why the series endured: they understood that true adventure comes not from gunfights, but from watching principled characters wrestle with genuine dilemmas in unforgiving landscapes.</p>
+          <p>As the familiar strains of the Andes march swell through your radio speaker and King, the great Husky, bays into the northern wilderness, you're transported to the frozen Yukon where danger lurks around every snow-laden peak. In "Rainbow Gold," Sergeant Preston faces his most cunning adversary yet—not a common criminal or rogue claim jumper, but the intoxicating allure of sudden wealth itself. When prospectors discover what appears to be a mother lode hidden in a remote ravine accessible only during the brief summer thaw, greed transforms decent men into desperate rivals, and Preston must navigate treacherous terrain both physical and moral to prevent tragedy. The tension builds relentlessly as the sergeant and his trusty dog confront cave-ins, avalanche threats, and the darker impulses of human nature, all while racing against time and the encroaching arctic winter.</p>
+<p>Challenge of the Yukon occupied a special place in radio's golden age, running for seventeen years and captivating millions with its perfect blend of frontier authenticity and thrilling serialization. The show's writers meticulously researched Yukon history and geography, grounding their tales in real locations and period-accurate detail that lent surprising realism to even their most fantastical plots. Preston's unwavering moral code—pursuing justice with quiet competence rather than swagger—offered something refreshingly different from the typical radio hero of the 1940s. Episodes like "Rainbow Gold" showcased why the series endured: they understood that true adventure comes not from gunfights, but from watching principled characters wrestle with genuine dilemmas in unforgiving landscapes.</p>
 <p>Tune in as Sergeant Preston faces his greatest test yet—not against a villain, but against the very human weaknesses that no law can entirely overcome.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

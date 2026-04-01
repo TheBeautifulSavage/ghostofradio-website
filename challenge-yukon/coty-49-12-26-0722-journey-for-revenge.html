@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 12 26 (0722) Journey For Revenge — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0722) Journey For Revenge — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 12 26 (0722) Journey For Revenge — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 12 26 (0722) Journey For Revenge — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 12 26 (0722) Journey For Revenge — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 26, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 12 26 (0722) Journey For Revenge</h1>
+          <h1 class="episode__title">(0722) Journey For Revenge</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Journey For Revenge</p>
-<p>Picture yourself huddled beside a crackling radio on a winter's evening, as Sergeant Preston of the Yukon RCMP guides his magnificent sled dog team King across the frozen Canadian wilderness in this gripping 1940s adventure. In "Journey For Revenge," a shadowy prospector emerges from the snow-shrouded mountains with blood in his heart and vengeance in his voice—determined to settle an old score with an innocent man in the remote mining settlement of Dawson City. As Sergeant Preston unravels the tangled threads of justice and deception, listeners are swept along treacherous mountain passes and through whiteout conditions where survival itself becomes uncertain. The episode crackles with tension: muffled voices carried on Arctic wind, the urgent howling of the sled dogs, and the measured, authoritative presence of Sergeant Preston as he closes in on the truth before a terrible wrong can be committed.</p>
-<p>*Challenge of the Yukon* became a cornerstone of American radio adventure precisely because it captured the mythic appeal of the North while grounding itself in genuine RCMP procedure and Yukon geography. Created in 1938 during radio's golden age, the show's success spawned films and cemented Sergeant Preston as an enduring character of popular culture. Each episode delivered exactly what audiences craved: moral clarity in a complex world, with the law—represented by Preston's unwavering duty—ultimately triumphing over greed, passion, and lawlessness. The show's portrayal of Canada's frontier resonated deeply with American listeners seeking escape and reassurance during uncertain times.</p>
+          <p>Picture yourself huddled beside a crackling radio on a winter's evening, as Sergeant Preston of the Yukon RCMP guides his magnificent sled dog team King across the frozen Canadian wilderness in this gripping 1940s adventure. In "Journey For Revenge," a shadowy prospector emerges from the snow-shrouded mountains with blood in his heart and vengeance in his voice—determined to settle an old score with an innocent man in the remote mining settlement of Dawson City. As Sergeant Preston unravels the tangled threads of justice and deception, listeners are swept along treacherous mountain passes and through whiteout conditions where survival itself becomes uncertain. The episode crackles with tension: muffled voices carried on Arctic wind, the urgent howling of the sled dogs, and the measured, authoritative presence of Sergeant Preston as he closes in on the truth before a terrible wrong can be committed.</p>
+<p>Challenge of the Yukon became a cornerstone of American radio adventure precisely because it captured the mythic appeal of the North while grounding itself in genuine RCMP procedure and Yukon geography. Created in 1938 during radio's golden age, the show's success spawned films and cemented Sergeant Preston as an enduring character of popular culture. Each episode delivered exactly what audiences craved: moral clarity in a complex world, with the law—represented by Preston's unwavering duty—ultimately triumphing over greed, passion, and lawlessness. The show's portrayal of Canada's frontier resonated deeply with American listeners seeking escape and reassurance during uncertain times.</p>
 <p>Tune in now to experience radio drama at its finest. Let Sergeant Preston and King transport you to a world where justice prevails and courage conquers the unforgiving wilderness. This is classic storytelling that has captivated generations—don't miss your chance to discover why.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

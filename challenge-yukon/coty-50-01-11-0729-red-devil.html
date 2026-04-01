@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 01 11 (0729) Red Devil — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0729) Red Devil — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 01 11 (0729) Red Devil — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 01 11 (0729) Red Devil — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 01 11 (0729) Red Devil — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 11, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 01 11 (0729) Red Devil</h1>
+          <h1 class="episode__title">(0729) Red Devil</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Red Devil</p>
-<p>Picture this: the howling Arctic wind cuts across the frozen Yukon as Sergeant Preston of the Royal Canadian Mounted Police and his legendary sled dog King stand at the precipice of their most dangerous case yet. In "Red Devil," a mysterious figure—half-legend, half-menace—stalks the remote mining camps of the north, leaving chaos and terror in his wake. Is he man or myth? A wanted criminal masquerading as a ghostly phantom, or something darker still? As Preston navigates treacherous snow-covered passes and unforgiving wilderness, he must separate truth from superstition while the clock ticks and lives hang in the balance. The tension builds with every crackle of the radio, every distant howl, every revelation that brings Preston closer to the truth—and closer to danger.</p>
-<p>*Challenge of the Yukon* captured audiences throughout the 1940s by blending authentic frontier adventure with the intimate immediacy of radio drama. Sergeant Preston became an American icon, embodying the noble lawman battling both nature and human wickedness in one of entertainment's last great frontiers. The show's success lay in its meticulous attention to Yukon detail, its genuine respect for the landscape and its people, and the dynamic relationship between man and dog that transcended typical adventure fare. Episodes like "Red Devil" showcased why listeners tuned in religiously—the writing was sharp, the sound design immersive, and the stakes always felt devastatingly real.</p>
+          <p>Picture this: the howling Arctic wind cuts across the frozen Yukon as Sergeant Preston of the Royal Canadian Mounted Police and his legendary sled dog King stand at the precipice of their most dangerous case yet. In "Red Devil," a mysterious figure—half-legend, half-menace—stalks the remote mining camps of the north, leaving chaos and terror in his wake. Is he man or myth? A wanted criminal masquerading as a ghostly phantom, or something darker still? As Preston navigates treacherous snow-covered passes and unforgiving wilderness, he must separate truth from superstition while the clock ticks and lives hang in the balance. The tension builds with every crackle of the radio, every distant howl, every revelation that brings Preston closer to the truth—and closer to danger.</p>
+<p>Challenge of the Yukon captured audiences throughout the 1940s by blending authentic frontier adventure with the intimate immediacy of radio drama. Sergeant Preston became an American icon, embodying the noble lawman battling both nature and human wickedness in one of entertainment's last great frontiers. The show's success lay in its meticulous attention to Yukon detail, its genuine respect for the landscape and its people, and the dynamic relationship between man and dog that transcended typical adventure fare. Episodes like "Red Devil" showcased why listeners tuned in religiously—the writing was sharp, the sound design immersive, and the stakes always felt devastatingly real.</p>
 <p>Don't miss "Red Devil"—a masterclass in vintage radio suspense that reminds us why the Yukon became synonymous with mystery and adventure. Tune in and let Sergeant Preston's world transport you to a time when heroism meant facing the unknown with nothing but courage, cunning, and a faithful dog at your side. King leads the way. Will you follow?</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

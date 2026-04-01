@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 09 21 (0681) King And The Baxter Gang — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0681) King And The Baxter Gang — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 09 21 (0681) King And The Baxter Gang — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 09 21 (0681) King And The Baxter Gang — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 09 21 (0681) King And The Baxter Gang — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 21, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 09 21 (0681) King And The Baxter Gang</h1>
+          <h1 class="episode__title">(0681) King And The Baxter Gang</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: King and the Baxter Gang</p>
-<p>The howling Arctic wind cuts through the crystalline silence of the frozen north as Sergeant Preston and his magnificent dog King face their most cunning adversaries yet—the ruthless Baxter Gang, outlaws who've left a trail of violence across the Yukon frontier. In this gripping episode, Preston must navigate treacherous snowfields and darker human treachery, relying on his wits, his steadfast companion, and the code of justice that defines his character. The tension mounts as the sergeant closes in on the gang's hideout, where every shadow could conceal a drawn revolver and every snowdrift might be the last resting place of a man. With King's keen senses and Preston's unshakeable resolve, listeners will grip the edges of their chairs wondering whether law and order can triumph in a land where civilization seems impossibly distant.</p>
-<p>*Challenge of the Yukon* became a beloved staple of American radio precisely because it captured something essential about the frontier mythology that defined the 1940s imagination. Sergeant Preston—a Canadian Mountie fighting injustice across unforgiving wilderness—embodied the noble constable, the civilizing force against lawlessness. The show's success lay in its authenticity; episodes were grounded in actual Yukon geography and real criminal cases adapted for dramatic effect, while the relationship between Preston and King gave audiences a non-human character with genuine heroic agency. From 1938 through its peak years in the 1940s, the program dominated ratings and spawned merchandise, proving that listeners craved adventure rooted in both history and heart.</p>
+          <p>The howling Arctic wind cuts through the crystalline silence of the frozen north as Sergeant Preston and his magnificent dog King face their most cunning adversaries yet—the ruthless Baxter Gang, outlaws who've left a trail of violence across the Yukon frontier. In this gripping episode, Preston must navigate treacherous snowfields and darker human treachery, relying on his wits, his steadfast companion, and the code of justice that defines his character. The tension mounts as the sergeant closes in on the gang's hideout, where every shadow could conceal a drawn revolver and every snowdrift might be the last resting place of a man. With King's keen senses and Preston's unshakeable resolve, listeners will grip the edges of their chairs wondering whether law and order can triumph in a land where civilization seems impossibly distant.</p>
+<p>Challenge of the Yukon became a beloved staple of American radio precisely because it captured something essential about the frontier mythology that defined the 1940s imagination. Sergeant Preston—a Canadian Mountie fighting injustice across unforgiving wilderness—embodied the noble constable, the civilizing force against lawlessness. The show's success lay in its authenticity; episodes were grounded in actual Yukon geography and real criminal cases adapted for dramatic effect, while the relationship between Preston and King gave audiences a non-human character with genuine heroic agency. From 1938 through its peak years in the 1940s, the program dominated ratings and spawned merchandise, proving that listeners craved adventure rooted in both history and heart.</p>
 <p>Tune in now to experience radio drama at its finest—where a man and his dog stand alone against the wilderness and those who would prey upon it.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

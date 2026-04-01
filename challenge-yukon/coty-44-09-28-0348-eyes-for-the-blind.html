@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 09 28 (0348) Eyes For The Blind — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0348) Eyes For The Blind — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 09 28 (0348) Eyes For The Blind — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 09 28 (0348) Eyes For The Blind — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 09 28 (0348) Eyes For The Blind — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 28, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 09 28 (0348) Eyes For The Blind</h1>
+          <h1 class="episode__title">(0348) Eyes For The Blind</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Eyes For The Blind</p>
-<p>As the haunting strains of "Sergeant Preston of the Yukon" theme fade into the frozen darkness, listeners are transported to a desolate trading post buried deep in the Canadian wilderness, where a blind prospector has stumbled upon a fortune in gold—and enemies willing to kill for it. In this gripping episode, Sergeant Preston and his magnificent dog King must navigate the treacherous moral landscape where desperation breeds violence and trust becomes a luxury no one can afford. The prospector's blindness becomes both his vulnerability and, paradoxically, his greatest asset as he must rely on senses others have dulled by greed. With danger lurking in every shadow and the clock ticking against justice, this episode delivers the breathless tension that made the series an unmissable appointment for millions of radio listeners huddled around their sets.</p>
-<p>"Eyes For the Blind" exemplifies why *Sergeant Preston of the Yukon* endured for nearly two decades, becoming one of radio's most beloved adventure series. Created in an era when Americans craved escapism and heroism, the show offered the perfect blend: a noble lawman, a loyal dog companion, and stories drawn from the actual legends of the Canadian frontier. The program's success spawned comic books, films, and television adaptations, but the original radio broadcasts captured something irreplaceable—that golden age magic where sound effects, music, and skilled voice actors could transport an entire nation to another world.</p>
-<p>Don't miss this compelling episode of survival, suspense, and the triumph of character over circumstance. Tune in now and discover why *Sergeant Preston of the Yukon* remains essential listening for anyone seeking authentic adventure radio from radio's greatest era.</p>
+          <p>As the haunting strains of "Sergeant Preston of the Yukon" theme fade into the frozen darkness, listeners are transported to a desolate trading post buried deep in the Canadian wilderness, where a blind prospector has stumbled upon a fortune in gold—and enemies willing to kill for it. In this gripping episode, Sergeant Preston and his magnificent dog King must navigate the treacherous moral landscape where desperation breeds violence and trust becomes a luxury no one can afford. The prospector's blindness becomes both his vulnerability and, paradoxically, his greatest asset as he must rely on senses others have dulled by greed. With danger lurking in every shadow and the clock ticking against justice, this episode delivers the breathless tension that made the series an unmissable appointment for millions of radio listeners huddled around their sets.</p>
+<p>"Eyes For the Blind" exemplifies why Sergeant Preston of the Yukon endured for nearly two decades, becoming one of radio's most beloved adventure series. Created in an era when Americans craved escapism and heroism, the show offered the perfect blend: a noble lawman, a loyal dog companion, and stories drawn from the actual legends of the Canadian frontier. The program's success spawned comic books, films, and television adaptations, but the original radio broadcasts captured something irreplaceable—that golden age magic where sound effects, music, and skilled voice actors could transport an entire nation to another world.</p>
+<p>Don't miss this compelling episode of survival, suspense, and the triumph of character over circumstance. Tune in now and discover why Sergeant Preston of the Yukon remains essential listening for anyone seeking authentic adventure radio from radio's greatest era.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

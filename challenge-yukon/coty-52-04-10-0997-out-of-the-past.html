@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 04 10 (0997) Out Of The Past — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0997) Out Of The Past — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 04 10 (0997) Out Of The Past — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 04 10 (0997) Out Of The Past — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 04 10 (0997) Out Of The Past — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 04 10 (0997) Out Of The Past</h1>
+          <h1 class="episode__title">(0997) Out Of The Past</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Out Of The Past"</p>
-<p>As the snow crunches beneath the paws of King, that magnificent husky, Sergeant Preston of the Yukon Mounted Police finds himself drawn into a mystery that reaches back through the frozen years like a ghostly hand. A stranger arrives in the remote outpost bearing secrets—dangerous secrets—that threaten to unearth buried truths best left buried in the permafrost. Is this wanderer friend or foe? Can Preston trust the word of a man whose very presence seems to bring shadow and danger? Listen as the tension builds, as accusations fly across the trading post, and as our heroic Mountie must rely on his keen intellect, his faithful dog, and his unwavering sense of justice to separate fact from fiction. The Yukon has a long memory, and this episode proves that no man can outrun his past forever.</p>
-<p>*Challenge of the Yukon* captivated millions throughout the 1940s by bringing the raw adventure of Canada's north directly into American living rooms. The show's brilliance lay in its perfect marriage of action and introspection—Preston wasn't merely a two-fisted lawman, but a thoughtful protector of justice in lawless territory. The program's influence extended far beyond radio; it would eventually transition to television and later films, cementing its place in popular culture. What made episodes like "Out Of The Past" resonate was their exploration of moral complexity: justice isn't always simple when desperation and circumstance collide.</p>
+          <p>As the snow crunches beneath the paws of King, that magnificent husky, Sergeant Preston of the Yukon Mounted Police finds himself drawn into a mystery that reaches back through the frozen years like a ghostly hand. A stranger arrives in the remote outpost bearing secrets—dangerous secrets—that threaten to unearth buried truths best left buried in the permafrost. Is this wanderer friend or foe? Can Preston trust the word of a man whose very presence seems to bring shadow and danger? Listen as the tension builds, as accusations fly across the trading post, and as our heroic Mountie must rely on his keen intellect, his faithful dog, and his unwavering sense of justice to separate fact from fiction. The Yukon has a long memory, and this episode proves that no man can outrun his past forever.</p>
+<p>Challenge of the Yukon captivated millions throughout the 1940s by bringing the raw adventure of Canada's north directly into American living rooms. The show's brilliance lay in its perfect marriage of action and introspection—Preston wasn't merely a two-fisted lawman, but a thoughtful protector of justice in lawless territory. The program's influence extended far beyond radio; it would eventually transition to television and later films, cementing its place in popular culture. What made episodes like "Out Of The Past" resonate was their exploration of moral complexity: justice isn't always simple when desperation and circumstance collide.</p>
 <p>Don your parka and prepare your sled, for the call of duty beckons in the frozen north. Tune in now to discover whether Preston's legendary instincts will uncover the truth—or whether the past will finally catch up with him.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

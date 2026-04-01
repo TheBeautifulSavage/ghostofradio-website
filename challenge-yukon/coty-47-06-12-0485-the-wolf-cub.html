@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 06 12 (0485) The Wolf Cub — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0485) The Wolf Cub — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 06 12 (0485) The Wolf Cub — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 06 12 (0485) The Wolf Cub — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 06 12 (0485) The Wolf Cub — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · June 12, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 06 12 (0485) The Wolf Cub</h1>
+          <h1 class="episode__title">(0485) The Wolf Cub</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Wolf Cub</p>
-<p>Picture yourself huddled close to the radio on a winter evening, the crackle of distant static mingling with the haunting howl of wolves echoing across the frozen Yukon wilderness. In "The Wolf Cub," Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that tugs at the very heart of the north—a young wolf separated from its pack, caught between the wild's cruel indifference and the slim hope of human compassion. As Preston and his faithful husky King venture into a blizzard to uncover the cub's origins, listeners will find themselves caught in a thrilling web of survival, morality, and the untamed frontier's unforgiving laws. The tension builds masterfully as Preston must decide whether to protect the animal or protect the trappers and settlers whose livelihoods depend on controlling the wolf population.</p>
+          <p>Picture yourself huddled close to the radio on a winter evening, the crackle of distant static mingling with the haunting howl of wolves echoing across the frozen Yukon wilderness. In "The Wolf Cub," Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that tugs at the very heart of the north—a young wolf separated from its pack, caught between the wild's cruel indifference and the slim hope of human compassion. As Preston and his faithful husky King venture into a blizzard to uncover the cub's origins, listeners will find themselves caught in a thrilling web of survival, morality, and the untamed frontier's unforgiving laws. The tension builds masterfully as Preston must decide whether to protect the animal or protect the trappers and settlers whose livelihoods depend on controlling the wolf population.</p>
 <p>"Challenge of the Yukon" was one of radio's most beloved adventure programs, earning devoted listeners across North America with its authentic portrayal of Canadian frontier life and Sergeant Preston's unwavering sense of justice. Produced during the 1940s golden age of radio drama, the show captured something essential about the era's fascination with wilderness adventure and the heroic lawman bringing order to untamed lands. The program's meticulous attention to detail—from the howling winds to the crack of ice beneath boot heels—created an immersive experience that made listeners feel they were truly standing beside Preston in the snow.</p>
 <p>If you've never experienced the thrill of this classic adventure series, "The Wolf Cub" is the perfect episode to begin your journey into the Yukon. Let the distinctive opening theme transport you back to 1940s radio comfort and excitement. Press play and discover why millions of listeners made Sergeant Preston a household name.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

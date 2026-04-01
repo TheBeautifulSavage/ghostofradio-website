@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 05 04 (0647) The Sparrow — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0647) The Sparrow — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 05 04 (0647) The Sparrow — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 05 04 (0647) The Sparrow — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 05 04 (0647) The Sparrow — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 4, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 05 04 (0647) The Sparrow</h1>
+          <h1 class="episode__title">(0647) The Sparrow</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Sparrow</p>
-<p>Picture yourself huddled beside the radio on a frost-bitten evening as Sergeant Preston of the Yukon returns with a mystery that cuts to the very heart of frontier justice. In "The Sparrow," our stalwart Mountie must untangle a web of deception surrounding a seemingly innocent bird—but in the unforgiving Yukon wilderness, nothing is ever quite what it appears. As Preston and his magnificent sled dog King navigate treacherous snow and darker human impulses, listeners will find themselves gripped by a tale of greed, desperation, and the thin line between civilization and savagery at the world's edge. The crackle of the Arctic wind, the distant howl of wolves, and that iconic call of "On King! On, you huskies!"—all combine to transport you thousands of miles north to a place where a single clue might mean the difference between catching a criminal and becoming lost forever in an endless white wilderness.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon precisely because it captured the American imagination's hunger for authentic adventure grounded in real geography and genuine danger. Broadcasting from 1938 through the 1950s, the show's meticulous attention to Yukon lore and its portrayal of Sergeant Preston as a figure of unwavering integrity made it the gold standard of adventure radio. Each episode, whether named after a location or an object like "The Sparrow," promised listeners genuine peril alongside moral clarity—a reassuring combination during uncertain times.</p>
-<p>Don't miss this opportunity to experience radio as it was meant to be heard: with the full weight of dramatic tension, superb voice acting, and sound design that transforms your living room into the frozen frontier. Tune in to "The Sparrow" and discover why millions of listeners made *Challenge of the Yukon* appointment radio for nearly two decades.</p>
+          <p>Picture yourself huddled beside the radio on a frost-bitten evening as Sergeant Preston of the Yukon returns with a mystery that cuts to the very heart of frontier justice. In "The Sparrow," our stalwart Mountie must untangle a web of deception surrounding a seemingly innocent bird—but in the unforgiving Yukon wilderness, nothing is ever quite what it appears. As Preston and his magnificent sled dog King navigate treacherous snow and darker human impulses, listeners will find themselves gripped by a tale of greed, desperation, and the thin line between civilization and savagery at the world's edge. The crackle of the Arctic wind, the distant howl of wolves, and that iconic call of "On King! On, you huskies!"—all combine to transport you thousands of miles north to a place where a single clue might mean the difference between catching a criminal and becoming lost forever in an endless white wilderness.</p>
+<p>Challenge of the Yukon became a cultural phenomenon precisely because it captured the American imagination's hunger for authentic adventure grounded in real geography and genuine danger. Broadcasting from 1938 through the 1950s, the show's meticulous attention to Yukon lore and its portrayal of Sergeant Preston as a figure of unwavering integrity made it the gold standard of adventure radio. Each episode, whether named after a location or an object like "The Sparrow," promised listeners genuine peril alongside moral clarity—a reassuring combination during uncertain times.</p>
+<p>Don't miss this opportunity to experience radio as it was meant to be heard: with the full weight of dramatic tension, superb voice acting, and sound design that transforms your living room into the frozen frontier. Tune in to "The Sparrow" and discover why millions of listeners made Challenge of the Yukon appointment radio for nearly two decades.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

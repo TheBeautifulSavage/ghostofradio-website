@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 02 14 (0518) The Klondike Palace — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0518) The Klondike Palace — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 02 14 (0518) The Klondike Palace — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 02 14 (0518) The Klondike Palace — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 02 14 (0518) The Klondike Palace — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 14, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 02 14 (0518) The Klondike Palace</h1>
+          <h1 class="episode__title">(0518) The Klondike Palace</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Klondike Palace</p>
-<p>Picture yourself huddled close to your radio on a winter's night in 1948, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, as our stalwart Mountie races through the frozen wilderness toward the Klondike Palace. In this gripping installment, Preston finds himself entangled in a web of deception and danger when a seemingly innocent claim jumper scheme unravels into something far more sinister. The palatial saloon, nestled in the heart of the gold rush country, becomes a den of intrigue where fortunes hang in the balance and a man's honor—or his life—might be the price of betrayal. Will Preston's unwavering sense of justice prevail against the cunning criminals who hide behind the Palace's glittering facade?</p>
-<p>*Challenge of the Yukon* captivated millions throughout the golden age of radio by transporting listeners to the rugged frontier of Canada's Northland, where law and order were maintained not by faceless bureaucrats but by dedicated men willing to brave blizzards, wild animals, and hardened criminals. Sergeant Preston became an iconic figure of American popular culture, embodying the virtues of courage, integrity, and quick thinking that listeners admired and sought to emulate. The show's enduring appeal lay in its authentic atmosphere—meticulously researched details of mining operations, period-accurate dialog, and the genuine peril that could strike at any moment in the unforgiving North.</p>
+          <p>Picture yourself huddled close to your radio on a winter's night in 1948, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, as our stalwart Mountie races through the frozen wilderness toward the Klondike Palace. In this gripping installment, Preston finds himself entangled in a web of deception and danger when a seemingly innocent claim jumper scheme unravels into something far more sinister. The palatial saloon, nestled in the heart of the gold rush country, becomes a den of intrigue where fortunes hang in the balance and a man's honor—or his life—might be the price of betrayal. Will Preston's unwavering sense of justice prevail against the cunning criminals who hide behind the Palace's glittering facade?</p>
+<p>Challenge of the Yukon captivated millions throughout the golden age of radio by transporting listeners to the rugged frontier of Canada's Northland, where law and order were maintained not by faceless bureaucrats but by dedicated men willing to brave blizzards, wild animals, and hardened criminals. Sergeant Preston became an iconic figure of American popular culture, embodying the virtues of courage, integrity, and quick thinking that listeners admired and sought to emulate. The show's enduring appeal lay in its authentic atmosphere—meticulously researched details of mining operations, period-accurate dialog, and the genuine peril that could strike at any moment in the unforgiving North.</p>
 <p>If you've never experienced the thrill of Preston's adventures, or if you're a devoted fan seeking to revisit these timeless tales, "The Klondike Palace" stands as a sterling example of radio drama at its finest. Turn your dial, settle in, and let yourself be transported back to an era when stories came alive in the imagination alone.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

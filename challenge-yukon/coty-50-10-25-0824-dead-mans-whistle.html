@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 10 25 (0824) Dead Man's Whistle — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0824) Dead Man's Whistle — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 10 25 (0824) Dead Man's Whistle — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 10 25 (0824) Dead Man's Whistle — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 10 25 (0824) Dead Man's Whistle — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 25, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 10 25 (0824) Dead Man's Whistle</h1>
+          <h1 class="episode__title">(0824) Dead Man's Whistle</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Dead Man's Whistle</p>
-<p>The frozen wastes of the Yukon have never seemed more treacherous than when Sergeant Preston and his faithful husky King arrive at a remote trading post to investigate a mystery that chills the blood as surely as the Arctic wind. A prospector lies dead, his final moments marked by three long, mournful whistles that echo across the snowfields—a signal no man among the trading post's residents will claim to have made. As Preston's keen eyes scan the frost-crusted landscape and his steady voice probes the frightened settlers, a sinister pattern emerges: someone is signaling across the wilderness, and they're willing to kill to keep their secret hidden. With each passing hour, the isolation of the frozen north becomes suffocating, and Preston must separate truth from deception before the mysterious whistler strikes again.</p>
-<p>*Challenge of the Yukon* captured the imagination of millions during radio's golden age by delivering authentic adventure grounded in real geography and genuine RCMP protocol. The show's creator, George W. Trendle, insisted on historical accuracy, consulting with the Royal Canadian Mounted Police to ensure that Sergeant Preston's methods reflected real investigative procedure. This episode, produced during the height of the show's popularity in the 1940s, exemplifies why the series became a cultural phenomenon—it's a masterclass in radio storytelling, where sound effects of howling dogs, crunching snow, and that haunting whistle create an atmosphere of isolation that only the radio medium could achieve with such intimacy.</p>
+          <p>The frozen wastes of the Yukon have never seemed more treacherous than when Sergeant Preston and his faithful husky King arrive at a remote trading post to investigate a mystery that chills the blood as surely as the Arctic wind. A prospector lies dead, his final moments marked by three long, mournful whistles that echo across the snowfields—a signal no man among the trading post's residents will claim to have made. As Preston's keen eyes scan the frost-crusted landscape and his steady voice probes the frightened settlers, a sinister pattern emerges: someone is signaling across the wilderness, and they're willing to kill to keep their secret hidden. With each passing hour, the isolation of the frozen north becomes suffocating, and Preston must separate truth from deception before the mysterious whistler strikes again.</p>
+<p>Challenge of the Yukon captured the imagination of millions during radio's golden age by delivering authentic adventure grounded in real geography and genuine RCMP protocol. The show's creator, George W. Trendle, insisted on historical accuracy, consulting with the Royal Canadian Mounted Police to ensure that Sergeant Preston's methods reflected real investigative procedure. This episode, produced during the height of the show's popularity in the 1940s, exemplifies why the series became a cultural phenomenon—it's a masterclass in radio storytelling, where sound effects of howling dogs, crunching snow, and that haunting whistle create an atmosphere of isolation that only the radio medium could achieve with such intimacy.</p>
 <p>Tune in now to hear Sergeant Preston and King face their most enigmatic case yet, where danger lurks in every shadow and the answer to a dead man's final message may cost them their lives.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

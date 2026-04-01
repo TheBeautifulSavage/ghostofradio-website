@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 11 07 (0456) Trap In The Mountains — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0456) Trap In The Mountains — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 11 07 (0456) Trap In The Mountains — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 11 07 (0456) Trap In The Mountains — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 11 07 (0456) Trap In The Mountains — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 7, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 11 07 (0456) Trap In The Mountains</h1>
+          <h1 class="episode__title">(0456) Trap In The Mountains</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Trap In The Mountains</p>
-<p>As the howl of King, Sergeant Preston's faithful husky, pierces the frozen darkness, listeners are thrust deep into the unforgiving Canadian wilderness where danger lurks behind every snowdrift. In "Trap In The Mountains," Preston finds himself ensnared in a deadly game of survival—not against man-eating beasts, but against the cunning machinations of a desperate criminal fleeing justice across the treacherous peaks. With supplies dwindling and night falling fast, the resourceful Mountie must use every ounce of his wilderness expertise to spring the trap before it's too late. The crackle of the campfire, the biting wind, and the ever-present threat of avalanche and exposure create an atmosphere of genuine peril that kept millions of listeners on the edge of their seats during this episode's original broadcast in the 1940s.</p>
+          <p>As the howl of King, Sergeant Preston's faithful husky, pierces the frozen darkness, listeners are thrust deep into the unforgiving Canadian wilderness where danger lurks behind every snowdrift. In "Trap In The Mountains," Preston finds himself ensnared in a deadly game of survival—not against man-eating beasts, but against the cunning machinations of a desperate criminal fleeing justice across the treacherous peaks. With supplies dwindling and night falling fast, the resourceful Mountie must use every ounce of his wilderness expertise to spring the trap before it's too late. The crackle of the campfire, the biting wind, and the ever-present threat of avalanche and exposure create an atmosphere of genuine peril that kept millions of listeners on the edge of their seats during this episode's original broadcast in the 1940s.</p>
 <p>"Challenge of the Yukon," which premiered in 1938, became one of radio's most enduring adventure series precisely because it grounded its thrilling narratives in authentic frontier authenticity. While many competitors relied on far-fetched fantasy, this show's writers crafted stories that felt genuinely possible—a Mountie, his dog, and the vast North pitted against the very real dangers of isolation, criminal enterprise, and nature's wrath. Sergeant Preston (played masterfully by Paul Sutherland in later seasons) became an American icon of steadfast heroism, and the show's opening theme, taken from Rossini's "William Tell Overture," remains instantly recognizable to anyone who ever tuned a radio dial.</p>
 <p>Experience the golden age of adventure radio as it was meant to be heard. Settle in with "Trap In The Mountains" and discover why a generation relied on Preston and King to transport them to a frontier where courage, loyalty, and quick thinking meant the difference between survival and disaster.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

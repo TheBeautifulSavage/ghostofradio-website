@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 12 05 (0713) Dance At Caribou Creek — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0713) Dance At Caribou Creek — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 12 05 (0713) Dance At Caribou Creek — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 12 05 (0713) Dance At Caribou Creek — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 12 05 (0713) Dance At Caribou Creek — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 5, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 12 05 (0713) Dance At Caribou Creek</h1>
+          <h1 class="episode__title">(0713) Dance At Caribou Creek</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Dance at Caribou Creek</p>
-<p>Picture yourself huddled around the radio on a winter evening, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, and that unmistakable call: *"In the wild country of the Canadian northwest, there is a Mountie post at Fort Pierre, where Sergeant Preston of the Yukon maintains the peace and order of the great dominion..."* This December 1940 episode, "Dance at Caribou Creek," finds our hero navigating a web of frontier intrigue when a seemingly innocent social gathering becomes the cover for something far more sinister. As tensions simmer beneath the festive veneer of a remote settlement's winter dance, Preston must use all his wits and the fierce loyalty of King to uncover the truth before tragedy strikes in the frozen wasteland.</p>
-<p>What made *Challenge of the Yukon* such a beloved institution of American radio was its masterful blend of authentic adventure with moral clarity—a show where justice always prevailed, but never without genuine peril and suspense. Paul Sutherland's portrayal of Sergeant Preston became iconic, embodying the very spirit of the Canadian North, that vast, untamed frontier that captivated Depression-era listeners desperate for tales of honor and courage. The show's writers crafted episodes that were as much about character and human drama as they were about action, grounding fantastic adventures in the very real hardships and social dynamics of frontier life. Each episode served as a reminder that civilization—represented by the Mountie's unwavering duty—could hold back the wilderness and the criminal elements that preyed upon it.</p>
+          <p>Picture yourself huddled around the radio on a winter evening, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent husky, and that unmistakable call: "In the wild country of the Canadian northwest, there is a Mountie post at Fort Pierre, where Sergeant Preston of the Yukon maintains the peace and order of the great dominion..." This December 1940 episode, "Dance at Caribou Creek," finds our hero navigating a web of frontier intrigue when a seemingly innocent social gathering becomes the cover for something far more sinister. As tensions simmer beneath the festive veneer of a remote settlement's winter dance, Preston must use all his wits and the fierce loyalty of King to uncover the truth before tragedy strikes in the frozen wasteland.</p>
+<p>What made Challenge of the Yukon such a beloved institution of American radio was its masterful blend of authentic adventure with moral clarity—a show where justice always prevailed, but never without genuine peril and suspense. Paul Sutherland's portrayal of Sergeant Preston became iconic, embodying the very spirit of the Canadian North, that vast, untamed frontier that captivated Depression-era listeners desperate for tales of honor and courage. The show's writers crafted episodes that were as much about character and human drama as they were about action, grounding fantastic adventures in the very real hardships and social dynamics of frontier life. Each episode served as a reminder that civilization—represented by the Mountie's unwavering duty—could hold back the wilderness and the criminal elements that preyed upon it.</p>
 <p>Don't miss "Dance at Caribou Creek," where a festive celebration masks deadly secrets and only the keen detective work of Sergeant Preston and the loyalty of his remarkable dog can restore order to the frozen frontier. Tune in and experience radio adventure at its finest.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

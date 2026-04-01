@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 02 23 (0617) Signal In Green — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0617) Signal In Green — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 02 23 (0617) Signal In Green — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 02 23 (0617) Signal In Green — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 02 23 (0617) Signal In Green — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 23, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 02 23 (0617) Signal In Green</h1>
+          <h1 class="episode__title">(0617) Signal In Green</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Signal in Green</p>
-<p>Picture yourself huddled near the radio on a winter's evening as Sergeant Preston and his magnificent malamute King strike out across the frozen Yukon wilderness in pursuit of "Signal in Green"—a mysterious case that will test both man and beast against the unforgiving northern landscape. This episode crackles with the tension of a manhunt unfolding in darkness and snow, where a cryptic green signal becomes the only clue to a crime that reaches far beyond the frontier outpost. Listeners will find themselves swept into the vast, silent territories where danger lurks in every shadow and trust is a currency more precious than gold. As Preston and King navigate treacherous terrain and dangerous adversaries, the question lingers: who is sending the signal, and what terrible secret does it conceal?</p>
-<p>*Challenge of the Yukon* (later retitled *Sergeant Preston of the Yukon*) became an institution of American radio precisely because it captured something essential about the frontier spirit—adventure grounded in genuine geography and authentic wilderness peril. Broadcast throughout the 1940s when families gathered around their sets, the show's meticulous attention to the Yukon Territory's harsh realities, combined with the unshakeable moral code of its protagonist, made it appointment listening for millions. The partnership between Preston and King transcended the typical man-and-animal relationship, becoming a meditation on loyalty, duty, and survival against impossible odds.</p>
-<p>Don't miss this gripping installment. Tune in as Sergeant Preston confronts mystery and danger in the frozen north, where every howl of the wind could signal either salvation or doom. *Challenge of the Yukon* awaits—where adventure is always just beyond the next ridge.</p>
+          <p>Picture yourself huddled near the radio on a winter's evening as Sergeant Preston and his magnificent malamute King strike out across the frozen Yukon wilderness in pursuit of "Signal in Green"—a mysterious case that will test both man and beast against the unforgiving northern landscape. This episode crackles with the tension of a manhunt unfolding in darkness and snow, where a cryptic green signal becomes the only clue to a crime that reaches far beyond the frontier outpost. Listeners will find themselves swept into the vast, silent territories where danger lurks in every shadow and trust is a currency more precious than gold. As Preston and King navigate treacherous terrain and dangerous adversaries, the question lingers: who is sending the signal, and what terrible secret does it conceal?</p>
+<p>Challenge of the Yukon (later retitled Sergeant Preston of the Yukon) became an institution of American radio precisely because it captured something essential about the frontier spirit—adventure grounded in genuine geography and authentic wilderness peril. Broadcast throughout the 1940s when families gathered around their sets, the show's meticulous attention to the Yukon Territory's harsh realities, combined with the unshakeable moral code of its protagonist, made it appointment listening for millions. The partnership between Preston and King transcended the typical man-and-animal relationship, becoming a meditation on loyalty, duty, and survival against impossible odds.</p>
+<p>Don't miss this gripping installment. Tune in as Sergeant Preston confronts mystery and danger in the frozen north, where every howl of the wind could signal either salvation or doom. Challenge of the Yukon awaits—where adventure is always just beyond the next ridge.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

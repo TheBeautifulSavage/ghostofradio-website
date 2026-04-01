@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 08 03 (0671) The Renegade Huskie — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0671) The Renegade Huskie — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 08 03 (0671) The Renegade Huskie — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 08 03 (0671) The Renegade Huskie — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 08 03 (0671) The Renegade Huskie — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 3, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 08 03 (0671) The Renegade Huskie</h1>
+          <h1 class="episode__title">(0671) The Renegade Huskie</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Renegade Huskie</p>
-<p>Picture yourself huddled near a warm radio on a crisp evening as Sergeant Preston of the Yukon crackles to life through the static. In "The Renegade Huskie," our stalwart Mountie faces one of the frozen North's most cunning adversaries—not a human villain, but King, his own sled dog, possessed by some wild and uncontrollable nature that transforms the loyal companion into a danger to the settlement. As Preston pursues King across treacherous snow fields and through dense forest, listeners are transported into a world where man's dominion over nature is never guaranteed, where the harsh Yukon landscape tests not just physical endurance but moral conviction. The episode crackles with tension: will Preston be forced to destroy the animal he loves, or can he uncover the mystery behind King's sudden transformation? Every howl of the wind, every snap of a branch, every bark echoing across the wilderness carries the weight of an impossible choice.</p>
-<p>*Challenge of the Yukon* captured American imaginations throughout the late 1930s and 1940s by offering adventure that felt both fantastical and rooted in real frontier tradition. The show's genius lay in its understanding that the North was a character itself—untamed, beautiful, and merciless—against which human virtue could be tested and proven. Rather than relying solely on gunfights and lawman clichés, episodes like "The Renegade Huskie" explored the psychological and emotional dimensions of survival, making the program beloved by both children and adults who craved substantive storytelling.</p>
+          <p>Picture yourself huddled near a warm radio on a crisp evening as Sergeant Preston of the Yukon crackles to life through the static. In "The Renegade Huskie," our stalwart Mountie faces one of the frozen North's most cunning adversaries—not a human villain, but King, his own sled dog, possessed by some wild and uncontrollable nature that transforms the loyal companion into a danger to the settlement. As Preston pursues King across treacherous snow fields and through dense forest, listeners are transported into a world where man's dominion over nature is never guaranteed, where the harsh Yukon landscape tests not just physical endurance but moral conviction. The episode crackles with tension: will Preston be forced to destroy the animal he loves, or can he uncover the mystery behind King's sudden transformation? Every howl of the wind, every snap of a branch, every bark echoing across the wilderness carries the weight of an impossible choice.</p>
+<p>Challenge of the Yukon captured American imaginations throughout the late 1930s and 1940s by offering adventure that felt both fantastical and rooted in real frontier tradition. The show's genius lay in its understanding that the North was a character itself—untamed, beautiful, and merciless—against which human virtue could be tested and proven. Rather than relying solely on gunfights and lawman clichés, episodes like "The Renegade Huskie" explored the psychological and emotional dimensions of survival, making the program beloved by both children and adults who craved substantive storytelling.</p>
 <p>Tune in now and experience why this program remained a must-listen for over fifteen years. Sergeant Preston and King await your arrival in the Canadian wilderness.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

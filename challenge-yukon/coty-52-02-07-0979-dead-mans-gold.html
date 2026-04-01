@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 02 07 (0979) Dead Man's Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0979) Dead Man's Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 02 07 (0979) Dead Man's Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 02 07 (0979) Dead Man's Gold — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 02 07 (0979) Dead Man's Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 02 07 (0979) Dead Man's Gold</h1>
+          <h1 class="episode__title">(0979) Dead Man's Gold</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Dead Man's Gold</p>
-<p>As the howling wind cuts across the frozen Yukon wasteland, Sergeant Preston of the Royal Canadian Mounted Police and his magnificent husky King venture into the desolate reaches of the north country to uncover a sinister mystery. When a prospector's frozen corpse is discovered near an abandoned claim, whispers of hidden gold begin to circulate through the remote mining camps—but so do darker rumors of murder, betrayal, and a fortune that may have cost far more than its weight in gold. With only his wits, his faithful companion, and his unwavering devotion to justice, Preston must navigate treacherous terrain and even more treacherous human nature to separate truth from greed and ensure that the guilty answer for their crimes under the unforgiving northern sky.</p>
-<p>*Challenge of the Yukon* captured the imaginations of millions during the Golden Age of Radio, transporting listeners to a frontier of adventure and moral clarity during an era hungry for heroes and heroism. Preston became an iconic figure—the incorruptible lawman who brought civilization to the wilderness through courage and integrity rather than violence alone. The show's meticulous attention to Canadian geography and Yukon lore, combined with its compelling storytelling and the unforgettable sound design of crackling fires, creaking sleds, and King's loyal barks, created an immersive experience that made audiences feel they were truly on the trail. This 1940s episode exemplifies everything that made the series beloved for nearly two decades.</p>
-<p>Don't miss this thrilling installment of *Challenge of the Yukon*—settle in by the fireside and let the mystery of Dead Man's Gold pull you into one of radio's greatest adventure series.</p>
+          <p>As the howling wind cuts across the frozen Yukon wasteland, Sergeant Preston of the Royal Canadian Mounted Police and his magnificent husky King venture into the desolate reaches of the north country to uncover a sinister mystery. When a prospector's frozen corpse is discovered near an abandoned claim, whispers of hidden gold begin to circulate through the remote mining camps—but so do darker rumors of murder, betrayal, and a fortune that may have cost far more than its weight in gold. With only his wits, his faithful companion, and his unwavering devotion to justice, Preston must navigate treacherous terrain and even more treacherous human nature to separate truth from greed and ensure that the guilty answer for their crimes under the unforgiving northern sky.</p>
+<p>Challenge of the Yukon captured the imaginations of millions during the Golden Age of Radio, transporting listeners to a frontier of adventure and moral clarity during an era hungry for heroes and heroism. Preston became an iconic figure—the incorruptible lawman who brought civilization to the wilderness through courage and integrity rather than violence alone. The show's meticulous attention to Canadian geography and Yukon lore, combined with its compelling storytelling and the unforgettable sound design of crackling fires, creaking sleds, and King's loyal barks, created an immersive experience that made audiences feel they were truly on the trail. This 1940s episode exemplifies everything that made the series beloved for nearly two decades.</p>
+<p>Don't miss this thrilling installment of Challenge of the Yukon—settle in by the fireside and let the mystery of Dead Man's Gold pull you into one of radio's greatest adventure series.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

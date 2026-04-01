@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 10 16 (0502) The Last Cabin — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0502) The Last Cabin — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 10 16 (0502) The Last Cabin — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 10 16 (0502) The Last Cabin — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 10 16 (0502) The Last Cabin — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 16, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 10 16 (0502) The Last Cabin</h1>
+          <h1 class="episode__title">(0502) The Last Cabin</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Last Cabin</p>
-<p>Deep in the frozen Yukon wilderness, where the wind cuts like a knife and the thermometer plummets below zero, Sergeant Preston and his faithful husky King face their most desperate test yet. A missing trapper, a cabin lost somewhere in an impenetrable white void, and time running out as the arctic night closes in—these are the threads that weave this gripping tale of survival and duty. As Preston guides his dog sled across treacherous terrain, listening for any sign of life through the howling storm, listeners will feel the bite of frostbite and the weight of impossible odds. This episode captures everything that made *Challenge of the Yukon* a must-listen experience: authentic peril, unflinching tension, and a hero whose moral compass points true even when the compass itself freezes solid.</p>
-<p>*Challenge of the Yukon*, later rebranded as *Sergeant Preston of the Yukon*, was the crown jewel of adventure radio, captivating millions from 1938 through the 1950s with tales of justice and survival at the roof of North America. The show's commitment to atmospheric storytelling was unmatched—sound effects engineers created the crack of ice, the yelp of sled dogs, and the eerie silence of the northern frontier with meticulous precision. Sergeant Preston became an American icon, a man of unwavering integrity enforcing Canadian law in a land where civilization seemed a distant dream. Each episode resonated with post-Depression audiences hungry for tales of competence and heroism.</p>
+          <p>Deep in the frozen Yukon wilderness, where the wind cuts like a knife and the thermometer plummets below zero, Sergeant Preston and his faithful husky King face their most desperate test yet. A missing trapper, a cabin lost somewhere in an impenetrable white void, and time running out as the arctic night closes in—these are the threads that weave this gripping tale of survival and duty. As Preston guides his dog sled across treacherous terrain, listening for any sign of life through the howling storm, listeners will feel the bite of frostbite and the weight of impossible odds. This episode captures everything that made Challenge of the Yukon a must-listen experience: authentic peril, unflinching tension, and a hero whose moral compass points true even when the compass itself freezes solid.</p>
+<p>Challenge of the Yukon, later rebranded as Sergeant Preston of the Yukon, was the crown jewel of adventure radio, captivating millions from 1938 through the 1950s with tales of justice and survival at the roof of North America. The show's commitment to atmospheric storytelling was unmatched—sound effects engineers created the crack of ice, the yelp of sled dogs, and the eerie silence of the northern frontier with meticulous precision. Sergeant Preston became an American icon, a man of unwavering integrity enforcing Canadian law in a land where civilization seemed a distant dream. Each episode resonated with post-Depression audiences hungry for tales of competence and heroism.</p>
 <p>If you've never experienced the magic of stepping into Preston's boots, or if you're a devoted fan seeking to revisit these golden-age classics, "The Last Cabin" exemplifies why this show endured as a beloved cornerstone of radio drama. Tune in and let the Yukon's eternal call pull you back in time.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

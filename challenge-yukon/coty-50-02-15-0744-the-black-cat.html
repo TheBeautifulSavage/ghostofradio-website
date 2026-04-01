@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 02 15 (0744) The Black Cat — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0744) The Black Cat — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 02 15 (0744) The Black Cat — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 02 15 (0744) The Black Cat — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 02 15 (0744) The Black Cat — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 15, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 02 15 (0744) The Black Cat</h1>
+          <h1 class="episode__title">(0744) The Black Cat</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Black Cat</p>
-<p>Through the crackling speakers comes the howl of King, the magnificent husky, as Sergeant Preston ventures into the frozen darkness of Canada's frontier—where superstition and danger prowl as menacingly as any animal. In "The Black Cat," Preston finds himself caught between the rational world of law and order and the shadowy realm of frontier legend, where a mysterious black cat becomes the harbinger of trouble in a remote settlement. As winter grips the Yukon in an icy vice, whispers spread among the trappers and prospectors of a curse, of bad luck following in the cat's wake. But Preston knows that behind every superstition lies human motive, and behind every legend lurks a mystery waiting to be solved. With only his wits, his loyal dog, and his steadfast determination to uncover the truth, the Sergeant must navigate treacherous terrain and equally treacherous suspects to prevent tragedy from striking.</p>
-<p>*Challenge of the Yukon* captured the imaginations of millions during the Golden Age of Radio, transforming listeners into adventurers alongside Sergeant Preston as he maintained order across Canada's vast northern wilderness. Created during an era when radio was the primary source of entertainment, the show brilliantly blended the appeal of adventure serials with authentic frontier atmosphere, complete with the famous theme music and the thrilling cry of "On, King, on!" The 1940s episodes, particularly, showcase the program at its creative peak—crafting stories that balanced action-packed drama with genuine mystery, where moral complexity and human nature proved as challenging as any blizzard.</p>
+          <p>Through the crackling speakers comes the howl of King, the magnificent husky, as Sergeant Preston ventures into the frozen darkness of Canada's frontier—where superstition and danger prowl as menacingly as any animal. In "The Black Cat," Preston finds himself caught between the rational world of law and order and the shadowy realm of frontier legend, where a mysterious black cat becomes the harbinger of trouble in a remote settlement. As winter grips the Yukon in an icy vice, whispers spread among the trappers and prospectors of a curse, of bad luck following in the cat's wake. But Preston knows that behind every superstition lies human motive, and behind every legend lurks a mystery waiting to be solved. With only his wits, his loyal dog, and his steadfast determination to uncover the truth, the Sergeant must navigate treacherous terrain and equally treacherous suspects to prevent tragedy from striking.</p>
+<p>Challenge of the Yukon captured the imaginations of millions during the Golden Age of Radio, transforming listeners into adventurers alongside Sergeant Preston as he maintained order across Canada's vast northern wilderness. Created during an era when radio was the primary source of entertainment, the show brilliantly blended the appeal of adventure serials with authentic frontier atmosphere, complete with the famous theme music and the thrilling cry of "On, King, on!" The 1940s episodes, particularly, showcase the program at its creative peak—crafting stories that balanced action-packed drama with genuine mystery, where moral complexity and human nature proved as challenging as any blizzard.</p>
 <p>Tune in now to experience the suspense, the atmosphere, and the unforgettable storytelling that kept families huddled around their radios. Will Sergeant Preston uncover the truth before darkness claims another victim? The answer waits in "The Black Cat."</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

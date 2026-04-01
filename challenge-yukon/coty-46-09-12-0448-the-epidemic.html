@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 09 12 (0448) The Epidemic — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0448) The Epidemic — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 09 12 (0448) The Epidemic — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 09 12 (0448) The Epidemic — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 09 12 (0448) The Epidemic — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 12, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 09 12 (0448) The Epidemic</h1>
+          <h1 class="episode__title">(0448) The Epidemic</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "The Epidemic"</p>
-<p>As the crackling static settles and that iconic Canadian march swells through your speaker, you're transported to the frozen wilderness of the Yukon frontier, where Sergeant Preston of the Royal Canadian Mounted Police faces his most harrowing challenge yet. In "The Epidemic," a mysterious sickness sweeps through an isolated mining settlement just as a blizzard cuts off all routes to civilization. With King, his stalwart husky companion, Preston must race against time to prevent mass tragedy, navigating treacherous snow fields and the thin line between panic and hope among desperate colonists who look to him as their only salvation. The tension mounts with each passing moment—will the sergeant reach the remote outpost in time? Can he convince the frightened townsfolk to trust his unconventional solutions? The roaring wind and subtle sound effects pull you deeper into the crisis, making you feel the bitter cold and desperate urgency.</p>
-<p>*Challenge of the Yukon* became a national institution precisely because it captured something uniquely appealing about the North American spirit: the frontier tested by nature's cruelest forces, and civilization's servants—the Mounties—standing firm against impossible odds. Debuting in 1938 and running through the 1950s, the show combined genuine adventure with authentic Yukon lore, earning devoted listeners who tuned in religiously to follow Preston's exploits. This particular episode, from the early 1940s, represents the show at its narrative height, blending the intimate drama of individual survival with broader themes of community resilience.</p>
-<p>Don't miss your chance to experience this gripping adventure as audiences did nearly eighty years ago. Settle in, pour yourself something warm, and let *Challenge of the Yukon* transport you to that frozen frontier where duty and courage mean everything.</p>
+          <p>As the crackling static settles and that iconic Canadian march swells through your speaker, you're transported to the frozen wilderness of the Yukon frontier, where Sergeant Preston of the Royal Canadian Mounted Police faces his most harrowing challenge yet. In "The Epidemic," a mysterious sickness sweeps through an isolated mining settlement just as a blizzard cuts off all routes to civilization. With King, his stalwart husky companion, Preston must race against time to prevent mass tragedy, navigating treacherous snow fields and the thin line between panic and hope among desperate colonists who look to him as their only salvation. The tension mounts with each passing moment—will the sergeant reach the remote outpost in time? Can he convince the frightened townsfolk to trust his unconventional solutions? The roaring wind and subtle sound effects pull you deeper into the crisis, making you feel the bitter cold and desperate urgency.</p>
+<p>Challenge of the Yukon became a national institution precisely because it captured something uniquely appealing about the North American spirit: the frontier tested by nature's cruelest forces, and civilization's servants—the Mounties—standing firm against impossible odds. Debuting in 1938 and running through the 1950s, the show combined genuine adventure with authentic Yukon lore, earning devoted listeners who tuned in religiously to follow Preston's exploits. This particular episode, from the early 1940s, represents the show at its narrative height, blending the intimate drama of individual survival with broader themes of community resilience.</p>
+<p>Don't miss your chance to experience this gripping adventure as audiences did nearly eighty years ago. Settle in, pour yourself something warm, and let Challenge of the Yukon transport you to that frozen frontier where duty and courage mean everything.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 02 05 (0978) The Hidden Cabin — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0978) The Hidden Cabin — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 02 05 (0978) The Hidden Cabin — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 02 05 (0978) The Hidden Cabin — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 02 05 (0978) The Hidden Cabin — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 02 05 (0978) The Hidden Cabin</h1>
+          <h1 class="episode__title">(0978) The Hidden Cabin</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Hidden Cabin</p>
-<p>As Sergeant Preston and his faithful husky King venture deep into the frozen wilderness of the Yukon, a desperate mystery unfolds in the bitter cold. When prospectors vanish without a trace near a remote mountain pass, Preston must navigate treacherous snowdrifts and unforgiving terrain to locate a mysterious cabin hidden somewhere in the vast white expanse. With only King's keen senses and his own unwavering determination, the Royal Canadian Mounted Policeman must race against time and the elements to solve a crime that the Yukon itself seems determined to keep secret. Every shadow cast by the northern lights could conceal danger, and every sound carried on the wind might be a clue—or a warning.</p>
-<p>*Challenge of the Yukon* captured the imagination of millions during the Golden Age of Radio, bringing the romance of the Canadian frontier into living rooms across North America. Created during an era when adventure serials dominated the airwaves, the show became legendary for its authentic location recordings, authentic Yukon atmosphere, and the iconic barking of King the dog—a sound as recognizable to 1940s listeners as any musical theme. Sergeant Preston himself embodied the ideal of steadfast justice and rugged competence, a lawman who represented order and morality in a wild, untamed land. These episodes, recorded in the late 1930s and early 1940s, preserve a unique moment in broadcasting history when storytelling could transform a radio into a window onto the North.</p>
-<p>Tune in now and experience the crackle of the frozen Yukon, the tension of an unsolved mystery, and the reassuring presence of Sergeant Preston on the case. Let *The Hidden Cabin* transport you to a time when radio drama reigned supreme and adventure was just a twist of the dial away.</p>
+          <p>As Sergeant Preston and his faithful husky King venture deep into the frozen wilderness of the Yukon, a desperate mystery unfolds in the bitter cold. When prospectors vanish without a trace near a remote mountain pass, Preston must navigate treacherous snowdrifts and unforgiving terrain to locate a mysterious cabin hidden somewhere in the vast white expanse. With only King's keen senses and his own unwavering determination, the Royal Canadian Mounted Policeman must race against time and the elements to solve a crime that the Yukon itself seems determined to keep secret. Every shadow cast by the northern lights could conceal danger, and every sound carried on the wind might be a clue—or a warning.</p>
+<p>Challenge of the Yukon captured the imagination of millions during the Golden Age of Radio, bringing the romance of the Canadian frontier into living rooms across North America. Created during an era when adventure serials dominated the airwaves, the show became legendary for its authentic location recordings, authentic Yukon atmosphere, and the iconic barking of King the dog—a sound as recognizable to 1940s listeners as any musical theme. Sergeant Preston himself embodied the ideal of steadfast justice and rugged competence, a lawman who represented order and morality in a wild, untamed land. These episodes, recorded in the late 1930s and early 1940s, preserve a unique moment in broadcasting history when storytelling could transform a radio into a window onto the North.</p>
+<p>Tune in now and experience the crackle of the frozen Yukon, the tension of an unsolved mystery, and the reassuring presence of Sergeant Preston on the case. Let The Hidden Cabin transport you to a time when radio drama reigned supreme and adventure was just a twist of the dial away.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

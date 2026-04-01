@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 06 05 (0383) Trap Robber — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0383) Trap Robber — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 06 05 (0383) Trap Robber — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 06 05 (0383) Trap Robber — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 06 05 (0383) Trap Robber — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · June 5, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 06 05 (0383) Trap Robber</h1>
+          <h1 class="episode__title">(0383) Trap Robber</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Coty 45 06 05 — Trap Robber</p>
-<p>Picture this: the howling Arctic wind cuts across the frozen tundra as Sergeant Preston of the Royal Canadian Mounted Police receives word of a cunning criminal operating in the remote wilderness. "Trap Robber" sees our stalwart hero venturing into the unforgiving Yukon backcountry, where the line between hunter and hunted blurs in the endless white expanse. A mysterious figure is systematically plundering the trappers' lines—stealing furs, destroying equipment, and leaving chaos in their wake. With only the loyal King at his side and his wits as his weapons, Preston must unravel a web of deception and motive to catch this elusive menace before more innocent trappers fall victim to the thief's schemes. Expect tension mounting with each frozen mile, audacious plot twists, and the kind of moral clarity that made this series an American institution.</p>
+          <p>Picture this: the howling Arctic wind cuts across the frozen tundra as Sergeant Preston of the Royal Canadian Mounted Police receives word of a cunning criminal operating in the remote wilderness. "Trap Robber" sees our stalwart hero venturing into the unforgiving Yukon backcountry, where the line between hunter and hunted blurs in the endless white expanse. A mysterious figure is systematically plundering the trappers' lines—stealing furs, destroying equipment, and leaving chaos in their wake. With only the loyal King at his side and his wits as his weapons, Preston must unravel a web of deception and motive to catch this elusive menace before more innocent trappers fall victim to the thief's schemes. Expect tension mounting with each frozen mile, audacious plot twists, and the kind of moral clarity that made this series an American institution.</p>
 <p>"Challenge of the Yukon" captured the imaginations of millions during the Golden Age of Radio, running strong for nearly two decades on ABC and the Mutual network. At a time when Americans craved escape from economic hardship and uncertainty, Sergeant Preston embodied the virtues audiences desperately wanted to believe in: courage, integrity, and the triumph of law and order in the world's wildest places. Each episode transported listeners to a frontier where good and evil were unmistakable, where a righteous man with a dog could make a difference. The show's enduring popularity proved that there was something timeless about the RCMP sergeant's adventures—something that resonated across generations and regions.</p>
 <p>So tune in and let yourself be transported northward to those thrilling days of yesteryear. "Trap Robber" awaits, and King is ready to race through the snow at Preston's command.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

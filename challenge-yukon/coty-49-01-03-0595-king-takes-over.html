@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 01 03 (0595) King Takes Over — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0595) King Takes Over — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 01 03 (0595) King Takes Over — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 01 03 (0595) King Takes Over — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 01 03 (0595) King Takes Over — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 3, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 01 03 (0595) King Takes Over</h1>
+          <h1 class="episode__title">(0595) King Takes Over</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># King Takes Over</p>
-<p>As the immortal strains of "Donna Diana" swell through your radio speaker, you're transported to the frozen Yukon Territory, where danger lurks beneath every snowdrift and civilization exists only at the whim of nature's merciless hand. In "King Takes Over," Sergeant Preston and his magnificent King Dog must confront a crisis that strikes at the very heart of law and order in Canada's vast frontier. When a rogue claim jumper seizes control of a remote settlement through intimidation and deception, Preston finds himself stripped of his authority and forced to rely on his wits, his courage, and the unwavering loyalty of his canine partner. The tension builds as the Mountie must operate from the shadows, gathering evidence while an increasingly desperate criminal tightens his grip on the innocent townsfolk. With each passing moment, the stakes mount—will Preston's ingenuity prove greater than the villain's ruthlessness before someone pays the ultimate price?</p>
-<p>*Challenge of the Yukon* captured American imaginations during the 1940s by delivering authentic adventure rooted in the real exploits of Canada's legendary North West Mounted Police. Unlike the safe, urban heroes dominating radio schedules, Sergeant Preston operated in an untamed landscape where the frontier's oldest law—survival—often superseded the criminal code. The show's meticulous attention to period detail and Yukon geography, combined with the thundering hoofbeats and dog sled sequences that became its signature, created an unparalleled sense of immediacy and danger. King himself became beloved by listeners nationwide, a four-legged Mountie whose intelligence and valor exemplified Canadian courage.</p>
-<p>Settle into your chair, turn the dial to your local ABC or Mutual affiliate, and prepare for an expedition into the Yukon's frozen heart. *Sergeant Preston of the Yukon* awaits—*King,* forward!</p>
+          <p>As the immortal strains of "Donna Diana" swell through your radio speaker, you're transported to the frozen Yukon Territory, where danger lurks beneath every snowdrift and civilization exists only at the whim of nature's merciless hand. In "King Takes Over," Sergeant Preston and his magnificent King Dog must confront a crisis that strikes at the very heart of law and order in Canada's vast frontier. When a rogue claim jumper seizes control of a remote settlement through intimidation and deception, Preston finds himself stripped of his authority and forced to rely on his wits, his courage, and the unwavering loyalty of his canine partner. The tension builds as the Mountie must operate from the shadows, gathering evidence while an increasingly desperate criminal tightens his grip on the innocent townsfolk. With each passing moment, the stakes mount—will Preston's ingenuity prove greater than the villain's ruthlessness before someone pays the ultimate price?</p>
+<p>Challenge of the Yukon captured American imaginations during the 1940s by delivering authentic adventure rooted in the real exploits of Canada's legendary North West Mounted Police. Unlike the safe, urban heroes dominating radio schedules, Sergeant Preston operated in an untamed landscape where the frontier's oldest law—survival—often superseded the criminal code. The show's meticulous attention to period detail and Yukon geography, combined with the thundering hoofbeats and dog sled sequences that became its signature, created an unparalleled sense of immediacy and danger. King himself became beloved by listeners nationwide, a four-legged Mountie whose intelligence and valor exemplified Canadian courage.</p>
+<p>Settle into your chair, turn the dial to your local ABC or Mutual affiliate, and prepare for an expedition into the Yukon's frozen heart. Sergeant Preston of the Yukon awaits—King, forward!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

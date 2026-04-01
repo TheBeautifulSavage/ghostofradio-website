@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 03 23 (0321) King Meets Soapy Smith — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0321) King Meets Soapy Smith — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 03 23 (0321) King Meets Soapy Smith — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 03 23 (0321) King Meets Soapy Smith — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 03 23 (0321) King Meets Soapy Smith — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 23, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 03 23 (0321) King Meets Soapy Smith</h1>
+          <h1 class="episode__title">(0321) King Meets Soapy Smith</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># King Meets Soapy Smith</p>
-<p>As the haunting strains of the *Ode to Joy* fade into the crackling static of the Yukon wilderness, Sergeant Preston and his magnificent dog King face their most cunning adversary yet: the legendary con man Soapy Smith. In this taut episode from the early 1940s, our stalwart Mountie must navigate the treacherous underworld of frontier deception where a silver tongue proves as deadly as a loaded revolver. With King's keen senses and Preston's unwavering code of justice, they must unravel Smith's web of fraud and corruption before innocent prospectors lose their fortunes—or their lives. The tension crackles as sharply as the winter winds across the frozen north, with each scene peeling back another layer of mystery and danger.</p>
-<p>*Challenge of the Yukon* captured American imaginations throughout the golden age of radio by grounding its adventure in real history and geography. Soapy Smith was an actual historical figure whose criminal empire nearly ran unchecked through the Klondike during the great gold rush, making this encounter feel disturbingly authentic to Depression-era listeners hungry for tales of lawmen imposing order on chaos. Preston and King became cultural touchstones precisely because they embodied the ideals of honest strength prevailing against cunning corruption—a message that resonated deeply during uncertain times. The show's commitment to historical detail, combined with superior sound design and Paul Sutherland's commanding narration, elevated it far beyond simple pulp entertainment.</p>
+          <p>As the haunting strains of the Ode to Joy fade into the crackling static of the Yukon wilderness, Sergeant Preston and his magnificent dog King face their most cunning adversary yet: the legendary con man Soapy Smith. In this taut episode from the early 1940s, our stalwart Mountie must navigate the treacherous underworld of frontier deception where a silver tongue proves as deadly as a loaded revolver. With King's keen senses and Preston's unwavering code of justice, they must unravel Smith's web of fraud and corruption before innocent prospectors lose their fortunes—or their lives. The tension crackles as sharply as the winter winds across the frozen north, with each scene peeling back another layer of mystery and danger.</p>
+<p>Challenge of the Yukon captured American imaginations throughout the golden age of radio by grounding its adventure in real history and geography. Soapy Smith was an actual historical figure whose criminal empire nearly ran unchecked through the Klondike during the great gold rush, making this encounter feel disturbingly authentic to Depression-era listeners hungry for tales of lawmen imposing order on chaos. Preston and King became cultural touchstones precisely because they embodied the ideals of honest strength prevailing against cunning corruption—a message that resonated deeply during uncertain times. The show's commitment to historical detail, combined with superior sound design and Paul Sutherland's commanding narration, elevated it far beyond simple pulp entertainment.</p>
 <p>Don't miss this classic confrontation between justice and guile, where King's loyalty and Preston's integrity face the ultimate test against one of the Yukon's most formidable villains. Tune in now and discover why millions huddled around their radios for over fifteen years to follow these adventures.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

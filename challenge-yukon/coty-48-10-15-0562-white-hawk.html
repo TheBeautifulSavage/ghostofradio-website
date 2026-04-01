@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 10 15 (0562) White Hawk — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0562) White Hawk — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 10 15 (0562) White Hawk — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 10 15 (0562) White Hawk — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 10 15 (0562) White Hawk — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 15, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 10 15 (0562) White Hawk</h1>
+          <h1 class="episode__title">(0562) White Hawk</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># White Hawk</p>
-<p>Picture yourself huddled near your radio on a cold autumn evening as Sergeant Preston of the Yukon barks his iconic call to action. In "White Hawk," our Mountie hero faces one of the North's most cunning adversaries—a renegade trapper operating deep in the unforgiving wilderness where law is a distant concept and survival itself is the only rule. With only his trusty sled dog King at his side, Preston must track a man who has become as elusive as the white hawk that soars over the frozen peaks. The tension crackles through your speaker as Preston closes in, never knowing if the next snow-covered ridge will conceal an ambush or if the next frozen night might be his last. This is adventure in its purest form—authentic danger, moral clarity, and the clash between civilization and the wild frontier.</p>
-<p>*Challenge of the Yukon* captured America's imagination for nearly two decades because it delivered something audiences craved: a hero who embodied unflinching duty in a landscape of genuine peril. Sergeant Preston, played with steady authority by Paul Sutherland (and later others), represented the triumph of Canadian law and order in a remote region where justice seemed impossible. Set during the Klondike Gold Rush era, these episodes were grounded in historical detail and real geography, making listeners feel they were truly following the Mountie through actual dangers. The show's success spawned films, comic strips, and merchandise—a multimedia phenomenon before television arrived.</p>
-<p>Whether you're a longtime devotee of the mounted police or discovering this classic for the first time, "White Hawk" showcases everything that made *Challenge of the Yukon* essential listening. Tune in and let the howling wind and barking dogs transport you north to where civilization ends and one man's courage is all that stands between order and chaos.</p>
+          <p>Picture yourself huddled near your radio on a cold autumn evening as Sergeant Preston of the Yukon barks his iconic call to action. In "White Hawk," our Mountie hero faces one of the North's most cunning adversaries—a renegade trapper operating deep in the unforgiving wilderness where law is a distant concept and survival itself is the only rule. With only his trusty sled dog King at his side, Preston must track a man who has become as elusive as the white hawk that soars over the frozen peaks. The tension crackles through your speaker as Preston closes in, never knowing if the next snow-covered ridge will conceal an ambush or if the next frozen night might be his last. This is adventure in its purest form—authentic danger, moral clarity, and the clash between civilization and the wild frontier.</p>
+<p>Challenge of the Yukon captured America's imagination for nearly two decades because it delivered something audiences craved: a hero who embodied unflinching duty in a landscape of genuine peril. Sergeant Preston, played with steady authority by Paul Sutherland (and later others), represented the triumph of Canadian law and order in a remote region where justice seemed impossible. Set during the Klondike Gold Rush era, these episodes were grounded in historical detail and real geography, making listeners feel they were truly following the Mountie through actual dangers. The show's success spawned films, comic strips, and merchandise—a multimedia phenomenon before television arrived.</p>
+<p>Whether you're a longtime devotee of the mounted police or discovering this classic for the first time, "White Hawk" showcases everything that made Challenge of the Yukon essential listening. Tune in and let the howling wind and barking dogs transport you north to where civilization ends and one man's courage is all that stands between order and chaos.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

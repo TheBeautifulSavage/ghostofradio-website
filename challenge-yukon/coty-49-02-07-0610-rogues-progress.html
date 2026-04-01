@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 02 07 (0610) Rogue's Progress — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0610) Rogue's Progress — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 02 07 (0610) Rogue's Progress — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 02 07 (0610) Rogue's Progress — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 02 07 (0610) Rogue's Progress — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 7, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 02 07 (0610) Rogue's Progress</h1>
+          <h1 class="episode__title">(0610) Rogue's Progress</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Rogue's Progress</p>
-<p>The frozen wastes of the Yukon have never seemed more treacherous than when a cunning criminal slips through Sergeant Preston's grasp. In "Rogue's Progress," listeners are drawn into a cat-and-mouse game across desolate snow fields where honor means everything and a single misstep could mean death. As Preston and his faithful husky King track their quarry deeper into the Canadian wilderness, the episode crackles with mounting tension—each radio sound effect of howling winds and crunching snow beneath boots pulling you closer to the crackling speaker. The fugitive isn't merely running from justice; he's running toward his own dark destiny, and Preston must decide how far he'll go to see justice served in this unforgiving landscape.</p>
-<p>*Challenge of the Yukon* captured the imagination of millions during the Golden Age of Radio, transforming listeners into brave frontiersmen alongside Sergeant Preston. Premiering in 1938 and running continuously through the 1950s, the show became a cultural phenomenon that transcended the typical adventure serial—it was escapism with substance, combining authentic Canadian geography and Mountie lore with genuine moral complexity. The early 1940s episodes like "Rogue's Progress" represent the show at its creative peak, when writers had perfected the formula of action, character development, and the subtle reminder that law and order required sacrifice and wisdom, not just a steady hand and a loyal dog.</p>
-<p>Tune in now to experience the magic that kept families gathered around their sets each week, waiting to hear if King would bay at the villain's approach. *Rogue's Progress* awaits—where justice and mercy collide in the frozen North, and one Mountie's conviction is tested against the wilderness itself.</p>
+          <p>The frozen wastes of the Yukon have never seemed more treacherous than when a cunning criminal slips through Sergeant Preston's grasp. In "Rogue's Progress," listeners are drawn into a cat-and-mouse game across desolate snow fields where honor means everything and a single misstep could mean death. As Preston and his faithful husky King track their quarry deeper into the Canadian wilderness, the episode crackles with mounting tension—each radio sound effect of howling winds and crunching snow beneath boots pulling you closer to the crackling speaker. The fugitive isn't merely running from justice; he's running toward his own dark destiny, and Preston must decide how far he'll go to see justice served in this unforgiving landscape.</p>
+<p>Challenge of the Yukon captured the imagination of millions during the Golden Age of Radio, transforming listeners into brave frontiersmen alongside Sergeant Preston. Premiering in 1938 and running continuously through the 1950s, the show became a cultural phenomenon that transcended the typical adventure serial—it was escapism with substance, combining authentic Canadian geography and Mountie lore with genuine moral complexity. The early 1940s episodes like "Rogue's Progress" represent the show at its creative peak, when writers had perfected the formula of action, character development, and the subtle reminder that law and order required sacrifice and wisdom, not just a steady hand and a loyal dog.</p>
+<p>Tune in now to experience the magic that kept families gathered around their sets each week, waiting to hear if King would bay at the villain's approach. Rogue's Progress awaits—where justice and mercy collide in the frozen North, and one Mountie's conviction is tested against the wilderness itself.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

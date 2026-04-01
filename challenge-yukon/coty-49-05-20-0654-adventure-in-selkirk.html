@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 05 20 (0654) Adventure In Selkirk — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0654) Adventure In Selkirk — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 05 20 (0654) Adventure In Selkirk — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 05 20 (0654) Adventure In Selkirk — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 05 20 (0654) Adventure In Selkirk — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 20, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 05 20 (0654) Adventure In Selkirk</h1>
+          <h1 class="episode__title">(0654) Adventure In Selkirk</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Adventure in Selkirk</p>
-<p>The snow falls thick and merciless across the Canadian frontier as Sergeant Preston of the Yukon Police faces his most perilous case yet in this gripping 1940s episode. Deep in the remote Selkirk region, where civilization seems a distant memory and the wilderness answers to no law, a desperate criminal has vanished into the frozen wasteland—and Preston knows that every passing hour means the difference between justice and a killer's escape into the endless north. With only his loyal sled dog King and his unwavering determination to guide him, Preston must navigate treacherous mountain passes, decipher cryptic clues left in abandoned cabins, and outwit a cunning adversary who knows these savage lands as well as Preston knows the law. The tension crackles through the airwaves as danger lurks around every snowdrift, and listeners are transported directly into the heart of an unforgiving landscape where honor, courage, and the rule of law stand as humanity's last defense against chaos.</p>
-<p>For nearly two decades, *Challenge of the Yukon* captivated American radio audiences with tales of remote adventure and moral clarity that resonated deeply during the Depression and war years. Sergeant Preston became an iconic figure—a symbol of steadfast justice and frontier grit—while the show's meticulous attention to Yukon geography and authentic wilderness detail lent these stories genuine gravitas. Unlike flashier city-based detective serials, Preston's world demanded that justice be pursued through intelligence, perseverance, and an almost spiritual connection to the land itself. Each episode was a masterclass in dramatic storytelling, where the true antagonist was often the merciless environment itself.</p>
+          <p>The snow falls thick and merciless across the Canadian frontier as Sergeant Preston of the Yukon Police faces his most perilous case yet in this gripping 1940s episode. Deep in the remote Selkirk region, where civilization seems a distant memory and the wilderness answers to no law, a desperate criminal has vanished into the frozen wasteland—and Preston knows that every passing hour means the difference between justice and a killer's escape into the endless north. With only his loyal sled dog King and his unwavering determination to guide him, Preston must navigate treacherous mountain passes, decipher cryptic clues left in abandoned cabins, and outwit a cunning adversary who knows these savage lands as well as Preston knows the law. The tension crackles through the airwaves as danger lurks around every snowdrift, and listeners are transported directly into the heart of an unforgiving landscape where honor, courage, and the rule of law stand as humanity's last defense against chaos.</p>
+<p>For nearly two decades, Challenge of the Yukon captivated American radio audiences with tales of remote adventure and moral clarity that resonated deeply during the Depression and war years. Sergeant Preston became an iconic figure—a symbol of steadfast justice and frontier grit—while the show's meticulous attention to Yukon geography and authentic wilderness detail lent these stories genuine gravitas. Unlike flashier city-based detective serials, Preston's world demanded that justice be pursued through intelligence, perseverance, and an almost spiritual connection to the land itself. Each episode was a masterclass in dramatic storytelling, where the true antagonist was often the merciless environment itself.</p>
 <p>Don't miss this thrilling chapter in Preston's adventures. Tune in as King barks his loyal approval and another tale of northern justice unfolds across the frozen vastness of the Yukon.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

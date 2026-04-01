@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 11 13 (0947) Sneak Gun — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0947) Sneak Gun — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 11 13 (0947) Sneak Gun — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 11 13 (0947) Sneak Gun — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 11 13 (0947) Sneak Gun — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 11 13 (0947) Sneak Gun</h1>
+          <h1 class="episode__title">(0947) Sneak Gun</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon: "Sneak Gun"</p>
-<p>Deep in the frozen wilderness where the aurora dances across starlit skies, Sergeant Preston faces his most cunning adversary yet—a desperate fugitive armed with a weapon he'll use without warning or mercy. In this pulse-pounding episode, our intrepid Mountie and his faithful husky King must track a wanted criminal through blizzard and shadow, where every footprint in the snow could be a death trap and trust is a luxury neither man can afford. The tension crackles like ice breaking on the Yukon River as Preston closes in, knowing that his quarry has nothing left to lose and everything to gain. Will the Sergeant's legendary courage and quick wits prevail against a cornered killer, or will the frozen North claim another victim before justice is served?</p>
-<p>Since 1938, *Sergeant Preston of the Yukon* has captivated millions with tales of adventure, danger, and honor in Canada's rugged frontier. The show became a cultural phenomenon, spawning comic strips, novels, and later a beloved television series, all built on the foundation of these gripping radio dramas. What made Preston endure was his irrepressible determination—a man of principle in a lawless land, always accompanied by his magnificent dog King, solving crimes and protecting settlers with unwavering integrity. Each episode captured the romance of the North, the thrill of the hunt, and the moral certainty that good would triumph over evil.</p>
+          <p>Deep in the frozen wilderness where the aurora dances across starlit skies, Sergeant Preston faces his most cunning adversary yet—a desperate fugitive armed with a weapon he'll use without warning or mercy. In this pulse-pounding episode, our intrepid Mountie and his faithful husky King must track a wanted criminal through blizzard and shadow, where every footprint in the snow could be a death trap and trust is a luxury neither man can afford. The tension crackles like ice breaking on the Yukon River as Preston closes in, knowing that his quarry has nothing left to lose and everything to gain. Will the Sergeant's legendary courage and quick wits prevail against a cornered killer, or will the frozen North claim another victim before justice is served?</p>
+<p>Since 1938, Sergeant Preston of the Yukon has captivated millions with tales of adventure, danger, and honor in Canada's rugged frontier. The show became a cultural phenomenon, spawning comic strips, novels, and later a beloved television series, all built on the foundation of these gripping radio dramas. What made Preston endure was his irrepressible determination—a man of principle in a lawless land, always accompanied by his magnificent dog King, solving crimes and protecting settlers with unwavering integrity. Each episode captured the romance of the North, the thrill of the hunt, and the moral certainty that good would triumph over evil.</p>
 <p>Whether you're a devoted fan or discovering the Sergeant for the first time, "Sneak Gun" exemplifies everything that made this show an essential part of radio's golden age. Settle in by the fire, tune in, and let the howling winds of the Yukon carry you back to an era when adventure was broadcast live into living rooms across North America.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

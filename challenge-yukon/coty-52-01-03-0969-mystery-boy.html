@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 01 03 (0969) Mystery Boy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0969) Mystery Boy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 01 03 (0969) Mystery Boy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 01 03 (0969) Mystery Boy — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 01 03 (0969) Mystery Boy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 01 03 (0969) Mystery Boy</h1>
+          <h1 class="episode__title">(0969) Mystery Boy</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Mystery Boy</p>
-<p>Sergeant Preston of the Royal Canadian Mounted Police faces one of his most perplexing cases yet when a mysterious boy arrives in Fort Yukon with no memory of his past and no explanation for the curious cipher found in his possession. As Arctic winds howl across the frozen frontier and suspicious strangers begin arriving in town asking dangerous questions, Preston must unravel the boy's identity before sinister forces close in. Is he a runaway seeking refuge, or does his amnesia hide something far more sinister? With King, his faithful husky companion, at his side and the vast, unforgiving Yukon wilderness as his only witness, Preston navigates treacherous moral ground between duty and compassion in this gripping tale of mystery and redemption.</p>
-<p>For over a decade, *Challenge of the Yukon* captivated millions of American listeners with stories that captured the rugged spirit of the Canadian north while exploring the deeper moral complexities that faced law enforcement during an era of rapid social change. Premiering in 1938, the show became a cornerstone of ABC and Mutual radio programming, earning devoted fans through its authentic depiction of frontier justice tempered with genuine humanity. Sergeant Preston—brought to vivid life by announcer George Hicks and later the legendary Paul Sutherland—became an American icon precisely because he represented an idealized lawman who solved crimes not through brutality, but through keen observation, integrity, and understanding. Each episode showcased the Yukon as both antagonist and ally, with nature itself becoming a character that tested Preston's resolve and ingenuity.</p>
+          <p>Sergeant Preston of the Royal Canadian Mounted Police faces one of his most perplexing cases yet when a mysterious boy arrives in Fort Yukon with no memory of his past and no explanation for the curious cipher found in his possession. As Arctic winds howl across the frozen frontier and suspicious strangers begin arriving in town asking dangerous questions, Preston must unravel the boy's identity before sinister forces close in. Is he a runaway seeking refuge, or does his amnesia hide something far more sinister? With King, his faithful husky companion, at his side and the vast, unforgiving Yukon wilderness as his only witness, Preston navigates treacherous moral ground between duty and compassion in this gripping tale of mystery and redemption.</p>
+<p>For over a decade, Challenge of the Yukon captivated millions of American listeners with stories that captured the rugged spirit of the Canadian north while exploring the deeper moral complexities that faced law enforcement during an era of rapid social change. Premiering in 1938, the show became a cornerstone of ABC and Mutual radio programming, earning devoted fans through its authentic depiction of frontier justice tempered with genuine humanity. Sergeant Preston—brought to vivid life by announcer George Hicks and later the legendary Paul Sutherland—became an American icon precisely because he represented an idealized lawman who solved crimes not through brutality, but through keen observation, integrity, and understanding. Each episode showcased the Yukon as both antagonist and ally, with nature itself becoming a character that tested Preston's resolve and ingenuity.</p>
 <p>Don your parka and prepare for adventure. "Mystery Boy" exemplifies why this show endured for seventeen years—it's a masterclass in radio storytelling that combines genuine suspense with characters you'll genuinely care about. Tune in and discover why listeners across America eagerly awaited Preston's next challenge.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

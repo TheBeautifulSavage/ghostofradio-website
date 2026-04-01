@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 02 03 (0739) Blind Man's Buff — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0739) Blind Man's Buff — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 02 03 (0739) Blind Man's Buff — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 02 03 (0739) Blind Man's Buff — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 02 03 (0739) Blind Man's Buff — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 3, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 02 03 (0739) Blind Man's Buff</h1>
+          <h1 class="episode__title">(0739) Blind Man's Buff</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Blind Man's Buff</p>
-<p>Picture this: the howling wind cuts across the frozen Yukon wilderness as Sergeant Preston of the Royal Canadian Mounted Police faces an adversary unlike any other—a cunning criminal who has exploited the one thing Preston cannot overcome with courage or determination. In "Blind Man's Buff," our stalwart hero finds himself pursuing a fugitive through a blinding blizzard, his keen eyes rendered nearly useless by whiteout conditions and treacherous terrain. The criminal knows the landscape intimately, moving through the snow with an almost supernatural confidence, while Preston must rely on his instincts, his faithful dog King, and the wisdom of the northern wilderness itself. Listeners will grip the edge of their seats as Preston's legendary confidence wavers—will sheer grit be enough when physical advantage means nothing in the suffocating white darkness?</p>
-<p>*Challenge of the Yukon* proved that the adventure serial could thrive beyond the drawing rooms and city streets of urban mysteries. From 1938 through the 1950s, Sergeant Preston became a cultural icon precisely because he embodied both the romantic promise of the Canadian frontier and the rock-solid reliability of law enforcement. The show's genius lay in pitting its hero not just against criminals, but against nature itself—the unforgiving Yukon became as much a character as Preston or King. Radio audiences, huddled in their living rooms during the Depression and wartime years, craved this vision of a man who could triumph through character and determination in a vast, untamed land.</p>
+          <p>Picture this: the howling wind cuts across the frozen Yukon wilderness as Sergeant Preston of the Royal Canadian Mounted Police faces an adversary unlike any other—a cunning criminal who has exploited the one thing Preston cannot overcome with courage or determination. In "Blind Man's Buff," our stalwart hero finds himself pursuing a fugitive through a blinding blizzard, his keen eyes rendered nearly useless by whiteout conditions and treacherous terrain. The criminal knows the landscape intimately, moving through the snow with an almost supernatural confidence, while Preston must rely on his instincts, his faithful dog King, and the wisdom of the northern wilderness itself. Listeners will grip the edge of their seats as Preston's legendary confidence wavers—will sheer grit be enough when physical advantage means nothing in the suffocating white darkness?</p>
+<p>Challenge of the Yukon proved that the adventure serial could thrive beyond the drawing rooms and city streets of urban mysteries. From 1938 through the 1950s, Sergeant Preston became a cultural icon precisely because he embodied both the romantic promise of the Canadian frontier and the rock-solid reliability of law enforcement. The show's genius lay in pitting its hero not just against criminals, but against nature itself—the unforgiving Yukon became as much a character as Preston or King. Radio audiences, huddled in their living rooms during the Depression and wartime years, craved this vision of a man who could triumph through character and determination in a vast, untamed land.</p>
 <p>Tune in now for "Blind Man's Buff" and experience the golden age of radio adventure. Let the crackling static dissolve into that unmistakable theme, feel the bite of arctic wind through your speakers, and follow Sergeant Preston into one of his most harrowing cases. On the trail of the Yukon, danger waits around every corner—and sometimes, the greatest obstacles are the ones we cannot see.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

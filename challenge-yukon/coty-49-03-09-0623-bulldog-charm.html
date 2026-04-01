@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 03 09 (0623) Bulldog Charm — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0623) Bulldog Charm — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 03 09 (0623) Bulldog Charm — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 03 09 (0623) Bulldog Charm — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 03 09 (0623) Bulldog Charm — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 9, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 03 09 (0623) Bulldog Charm</h1>
+          <h1 class="episode__title">(0623) Bulldog Charm</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Bulldog Charm</p>
-<p>As the iconic William Tell Overture swells across your radio speaker, you're transported to the frozen wilderness of Canada's Yukon Territory, where Sergeant Preston and his loyal dog King face their most cunning adversary yet. In this gripping episode, "Bulldog Charm," a smooth-talking con artist rolls into town with a scheme that threatens to exploit the very heart of the frontier community—friendship and trust. With temperatures dropping and supplies running dangerously low, Preston must navigate treacherous terrain both physical and moral, unmasking deception while the clock ticks toward potential disaster. King's keen senses prove invaluable as master and dog work in perfect synchronicity, their bond tested by a mystery where nothing—and no one—is quite what they seem.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon during radio's golden age, pioneering the adventure serial format while capturing American imaginations desperate for tales of honor and heroism during uncertain times. The show's authentic attention to frontier detail, combined with genuine Canadian Mounted Police cooperation, lent credibility that elevated it beyond mere entertainment into a cherished institution. Sergeant Preston became an archetype of incorruptible justice, while King (whose name varied slightly throughout the series) represented the noble animal companion—a dynamic that would influence countless adventure stories for generations to come. These weren't simplistic good-versus-evil yarns; they were carefully crafted narratives exploring human nature against an unforgiving landscape.</p>
+          <p>As the iconic William Tell Overture swells across your radio speaker, you're transported to the frozen wilderness of Canada's Yukon Territory, where Sergeant Preston and his loyal dog King face their most cunning adversary yet. In this gripping episode, "Bulldog Charm," a smooth-talking con artist rolls into town with a scheme that threatens to exploit the very heart of the frontier community—friendship and trust. With temperatures dropping and supplies running dangerously low, Preston must navigate treacherous terrain both physical and moral, unmasking deception while the clock ticks toward potential disaster. King's keen senses prove invaluable as master and dog work in perfect synchronicity, their bond tested by a mystery where nothing—and no one—is quite what they seem.</p>
+<p>Challenge of the Yukon became a cultural phenomenon during radio's golden age, pioneering the adventure serial format while capturing American imaginations desperate for tales of honor and heroism during uncertain times. The show's authentic attention to frontier detail, combined with genuine Canadian Mounted Police cooperation, lent credibility that elevated it beyond mere entertainment into a cherished institution. Sergeant Preston became an archetype of incorruptible justice, while King (whose name varied slightly throughout the series) represented the noble animal companion—a dynamic that would influence countless adventure stories for generations to come. These weren't simplistic good-versus-evil yarns; they were carefully crafted narratives exploring human nature against an unforgiving landscape.</p>
 <p>Don't miss this stirring adventure in Canadian frontier justice. Settle in with the crackling warmth of your radio, let the majestic musical theme carry you northward, and discover why millions tuned in faithfully to follow Sergeant Preston and King into the Canadian wilderness. Press play now and experience radio drama at its finest.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

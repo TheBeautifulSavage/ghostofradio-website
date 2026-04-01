@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 12 27 (0592) Injun Devil — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0592) Injun Devil — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 12 27 (0592) Injun Devil — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 12 27 (0592) Injun Devil — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 12 27 (0592) Injun Devil — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 27, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 12 27 (0592) Injun Devil</h1>
+          <h1 class="episode__title">(0592) Injun Devil</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Injun Devil"</p>
-<p>The frozen wasteland of the Yukon awaits as Sergeant Preston, his loyal dog King, and the Northwest Mounted Police ride into one of their most gripping cases yet. When whispers of a mysterious phantom begin to circulate through the remote mining camps—a malevolent figure blamed for a string of violent robberies and murders—Preston must separate superstition from sinister truth. Is this truly a supernatural curse, or something far more calculated and human? As tension mounts and innocent lives hang in the balance, our hero must track a cunning criminal through blizzards and treacherous terrain, armed only with his wits, his courage, and the unwavering loyalty of King. The night sounds of the northern wilderness close in as reality and legend collide in this thrilling installment.</p>
-<p>*Challenge of the Yukon* captured the golden age of radio adventure, transforming a frozen wilderness into a character as compelling as any hero or villain. Sergeant Preston's tales of justice and survival in Canada's untamed north became a cultural phenomenon during the 1930s and 1940s, with listeners from every walk of life tuning in to follow their mounted hero. The show's meticulous attention to authentic detail—from period-accurate police procedure to genuine geographical references—lent credibility that made each impossible adventure feel entirely real. "Injun Devil" exemplifies the series' masterful blend of mystery, action, and atmospheric storytelling that kept millions suspended in rapt anticipation each week.</p>
-<p>Don't miss this classic episode of moral ambiguity and frontier justice. Tune in as Sergeant Preston and King unravel the truth behind the Yukon's most terrifying legend. In a world before television, radio transported listeners to the edge of civilization itself—and *Challenge of the Yukon* remains radio's greatest adventure.</p>
+          <p>The frozen wasteland of the Yukon awaits as Sergeant Preston, his loyal dog King, and the Northwest Mounted Police ride into one of their most gripping cases yet. When whispers of a mysterious phantom begin to circulate through the remote mining camps—a malevolent figure blamed for a string of violent robberies and murders—Preston must separate superstition from sinister truth. Is this truly a supernatural curse, or something far more calculated and human? As tension mounts and innocent lives hang in the balance, our hero must track a cunning criminal through blizzards and treacherous terrain, armed only with his wits, his courage, and the unwavering loyalty of King. The night sounds of the northern wilderness close in as reality and legend collide in this thrilling installment.</p>
+<p>Challenge of the Yukon captured the golden age of radio adventure, transforming a frozen wilderness into a character as compelling as any hero or villain. Sergeant Preston's tales of justice and survival in Canada's untamed north became a cultural phenomenon during the 1930s and 1940s, with listeners from every walk of life tuning in to follow their mounted hero. The show's meticulous attention to authentic detail—from period-accurate police procedure to genuine geographical references—lent credibility that made each impossible adventure feel entirely real. "Injun Devil" exemplifies the series' masterful blend of mystery, action, and atmospheric storytelling that kept millions suspended in rapt anticipation each week.</p>
+<p>Don't miss this classic episode of moral ambiguity and frontier justice. Tune in as Sergeant Preston and King unravel the truth behind the Yukon's most terrifying legend. In a world before television, radio transported listeners to the edge of civilization itself—and Challenge of the Yukon remains radio's greatest adventure.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

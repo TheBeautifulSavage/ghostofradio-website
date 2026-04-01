@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 04 06 (0323) Edward Carson — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0323) Edward Carson — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 04 06 (0323) Edward Carson — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 04 06 (0323) Edward Carson — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 04 06 (0323) Edward Carson — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 6, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 04 06 (0323) Edward Carson</h1>
+          <h1 class="episode__title">(0323) Edward Carson</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Edward Carson"</p>
-<p>As the familiar bugle call of the Royal Canadian Mounted Police pierces the frozen silence of the Yukon wilderness, listeners are transported once more to the untamed northern frontier where Sergeant Preston and his loyal sled dog King face yet another puzzling case. In "Edward Carson," the resourceful Mountie must unravel the mysterious disappearance of a man lost somewhere in the brutal Canadian backcountry—a case where survival itself becomes the greatest adversary. With only fragmented clues and the howling wind as company, Preston must navigate treacherous terrain, interrogate suspicious characters holed up in isolated trading posts, and trust his instincts to locate Carson before the merciless Arctic claims another victim. The tension builds expertly as each clue reveals a darker layer of deception, and listeners will find themselves gripping their radios in suspense, wondering whether justice and mercy can prevail against nature's indifference.</p>
-<p>What made *Challenge of the Yukon* such a beloved fixture in American homes throughout the 1940s was its perfect marriage of authentic frontier adventure with moral certainty—Sergeant Preston embodied law and order even in lawlessness, represented by the steadfast loyalty of King, his magnificent sled dog. The show's writers drew from real Canadian history and geography, lending credibility to their tales, while the sound effects department created an immersive soundscape of crackling fires, trudging footsteps through snow, and wind that seemed to emanate from listeners' own living rooms. Each episode reminded audiences that civilization's representatives—even isolated Mounties—stood vigilant against chaos.</p>
-<p>Don your parka and prepare for adventure. Tune in to this gripping 1940s episode and discover why millions of faithful listeners made *Challenge of the Yukon* their nightly appointment with excitement.</p>
+          <p>As the familiar bugle call of the Royal Canadian Mounted Police pierces the frozen silence of the Yukon wilderness, listeners are transported once more to the untamed northern frontier where Sergeant Preston and his loyal sled dog King face yet another puzzling case. In "Edward Carson," the resourceful Mountie must unravel the mysterious disappearance of a man lost somewhere in the brutal Canadian backcountry—a case where survival itself becomes the greatest adversary. With only fragmented clues and the howling wind as company, Preston must navigate treacherous terrain, interrogate suspicious characters holed up in isolated trading posts, and trust his instincts to locate Carson before the merciless Arctic claims another victim. The tension builds expertly as each clue reveals a darker layer of deception, and listeners will find themselves gripping their radios in suspense, wondering whether justice and mercy can prevail against nature's indifference.</p>
+<p>What made Challenge of the Yukon such a beloved fixture in American homes throughout the 1940s was its perfect marriage of authentic frontier adventure with moral certainty—Sergeant Preston embodied law and order even in lawlessness, represented by the steadfast loyalty of King, his magnificent sled dog. The show's writers drew from real Canadian history and geography, lending credibility to their tales, while the sound effects department created an immersive soundscape of crackling fires, trudging footsteps through snow, and wind that seemed to emanate from listeners' own living rooms. Each episode reminded audiences that civilization's representatives—even isolated Mounties—stood vigilant against chaos.</p>
+<p>Don your parka and prepare for adventure. Tune in to this gripping 1940s episode and discover why millions of faithful listeners made Challenge of the Yukon their nightly appointment with excitement.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

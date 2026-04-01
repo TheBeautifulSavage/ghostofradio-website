@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 12 20 (0590) The Emerald In The Nugget — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0590) The Emerald In The Nugget — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 12 20 (0590) The Emerald In The Nugget — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 12 20 (0590) The Emerald In The Nugget — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 12 20 (0590) The Emerald In The Nugget — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 20, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 12 20 (0590) The Emerald In The Nugget</h1>
+          <h1 class="episode__title">(0590) The Emerald In The Nugget</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Emerald In The Nugget</p>
-<p>Picture yourself huddled near the radio on a winter evening in December 1948, the crackle and hum of the speakers filling your parlor as the familiar thundering hoofbeats of King, Sergeant Preston's magnificent husky, pound across the frozen Yukon terrain. In "The Emerald in the Nugget," our intrepid Mountie finds himself embroiled in a mystery that blends the raw frontier's desperate greed with an unexpected glimmer of civilization's lost treasures. When a prospector stumbles upon an enormous gold nugget—only to discover an emerald inexplicably embedded within it—Preston must navigate a web of claim-jumpers, con artists, and desperate men willing to kill for either fortune. The tension mounts as voices crackle through static, and you'll find yourself leaning closer to the speaker, certain that danger lurks around every snow-laden corner of Canada's vast northland.</p>
+          <p>Picture yourself huddled near the radio on a winter evening in December 1948, the crackle and hum of the speakers filling your parlor as the familiar thundering hoofbeats of King, Sergeant Preston's magnificent husky, pound across the frozen Yukon terrain. In "The Emerald in the Nugget," our intrepid Mountie finds himself embroiled in a mystery that blends the raw frontier's desperate greed with an unexpected glimmer of civilization's lost treasures. When a prospector stumbles upon an enormous gold nugget—only to discover an emerald inexplicably embedded within it—Preston must navigate a web of claim-jumpers, con artists, and desperate men willing to kill for either fortune. The tension mounts as voices crackle through static, and you'll find yourself leaning closer to the speaker, certain that danger lurks around every snow-laden corner of Canada's vast northland.</p>
 <p>By the late 1940s, "Challenge of the Yukon" had become an American institution, running six days a week and captivating millions who yearned for tales of justice, honor, and adventure in exotic locales they'd never see. The show's formula—combining the reliable heroism of a Mountie with genuine mystery plotting and colorful frontier characters—struck a chord during an era when radio reigned supreme and the Yukon represented the last untamed frontier. Sergeant Preston became as iconic as any Hollywood star, his adventures unfolding in fifteen-minute installments that left listeners breathless and eager for the next day's chapter.</p>
 <p>This episode captures everything that made the series endure for over fifteen years: authentic period detail, genuine suspense, and the reassuring presence of a hero you could trust absolutely. Tune in and let the voice of Richard Simmons guide you northward, where justice always finds its way through the wilderness.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

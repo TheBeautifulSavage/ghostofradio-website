@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 04 18 (0427) Rex — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0427) Rex — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 04 18 (0427) Rex — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 04 18 (0427) Rex — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 04 18 (0427) Rex — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 18, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 04 18 (0427) Rex</h1>
+          <h1 class="episode__title">(0427) Rex</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon: "Rex" (April 18, 1946)</p>
-<p>The howling Arctic wind cuts through the Yukon wilderness as Sergeant Preston and his magnificent King Dog, Rex, face their most perilous challenge yet. When a desperate fugitive takes refuge in the frozen backcountry and Rex mysteriously vanishes, Preston must rely on his wits, his training, and an unlikely alliance to track down both the criminal and his loyal companion before the merciless cold claims them all. In this gripping episode, the bond between man and dog is tested against the unforgiving landscape, as Preston follows faint paw prints across endless snow and questions whether Rex's instincts can overcome the danger that surrounds them. Listeners will be drawn into the tension of the search, the eerie silence of the frozen expanse broken only by the occasional sled runner and dog bark, and the mounting dread that time is running out.</p>
-<p>*Challenge of the Yukon*, which premiered in 1938 and later became *Sergeant Preston of the Yukon*, captured the imaginations of millions of radio listeners who thrilled to tales of justice and survival in Canada's frozen north. The show's remarkable run across ABC and Mutual networks established it as one of radio's most enduring adventure serials, beloved for its authentic atmosphere, exciting narratives, and the unforgettable theme song—"Out of the North comes the cry of a man's voice"—that became iconic Americana. By 1946, the show had perfected its formula, delivering consistently gripping episodes that balanced action, character development, and the majestic danger of the Yukon itself.</p>
+          <p>The howling Arctic wind cuts through the Yukon wilderness as Sergeant Preston and his magnificent King Dog, Rex, face their most perilous challenge yet. When a desperate fugitive takes refuge in the frozen backcountry and Rex mysteriously vanishes, Preston must rely on his wits, his training, and an unlikely alliance to track down both the criminal and his loyal companion before the merciless cold claims them all. In this gripping episode, the bond between man and dog is tested against the unforgiving landscape, as Preston follows faint paw prints across endless snow and questions whether Rex's instincts can overcome the danger that surrounds them. Listeners will be drawn into the tension of the search, the eerie silence of the frozen expanse broken only by the occasional sled runner and dog bark, and the mounting dread that time is running out.</p>
+<p>Challenge of the Yukon, which premiered in 1938 and later became Sergeant Preston of the Yukon, captured the imaginations of millions of radio listeners who thrilled to tales of justice and survival in Canada's frozen north. The show's remarkable run across ABC and Mutual networks established it as one of radio's most enduring adventure serials, beloved for its authentic atmosphere, exciting narratives, and the unforgettable theme song—"Out of the North comes the cry of a man's voice"—that became iconic Americana. By 1946, the show had perfected its formula, delivering consistently gripping episodes that balanced action, character development, and the majestic danger of the Yukon itself.</p>
 <p>Step back into the golden age of radio adventure and discover why audiences huddled around their sets each week. Tune in to "Rex" and experience the thrilling partnership between Sergeant Preston and his faithful King Dog as they navigate treachery, survival, and the uncompromising wilderness—a classic tale of loyalty and determination that resonates across the decades.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

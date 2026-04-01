@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 11 10 (0573) Ben Yancy's Legacy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0573) Ben Yancy's Legacy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 11 10 (0573) Ben Yancy's Legacy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 11 10 (0573) Ben Yancy's Legacy — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 11 10 (0573) Ben Yancy's Legacy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 10, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 11 10 (0573) Ben Yancy's Legacy</h1>
+          <h1 class="episode__title">(0573) Ben Yancy's Legacy</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Ben Yancy's Legacy</p>
-<p>As the scratchy crackle of the opening theme fades into the frozen silence of the Canadian wilderness, listeners are thrust into a desperate race against time and the brutal northern elements. In this gripping installment, Sergeant Preston of the Yukon must uncover the truth behind the mysterious death of old prospector Ben Yancy, whose frozen corpse is discovered in a remote cabin with cryptic clues scattered about like pieces of a deadly puzzle. King, Preston's loyal husky companion, becomes instrumental in tracking the killer through blinding snowstorms and treacherous mountain passes, while suspicious locals and hardened claim-jumpers circle like wolves around Yancy's suspected fortune in gold. The episode crackles with genuine tension—the kind that made listeners huddle closer to their radio sets on winter evenings, wondering whether Preston's keen detective work and frontier justice could prevail in a landscape that seemed indifferent to human morality.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon during the Golden Age of Radio precisely because it balanced authentic adventure with character-driven mystery. Premiering in 1938 and running throughout the war years and beyond, the program captured American imaginations by presenting the Yukon not as a distant abstraction but as a vivid, dangerous place where civilization's rules bent under the weight of raw nature. Sergeant Preston himself—stoic, principled, and resourceful—embodied the idealized lawman that audiences desperately wanted to believe in, especially during uncertain times.</p>
+          <p>As the scratchy crackle of the opening theme fades into the frozen silence of the Canadian wilderness, listeners are thrust into a desperate race against time and the brutal northern elements. In this gripping installment, Sergeant Preston of the Yukon must uncover the truth behind the mysterious death of old prospector Ben Yancy, whose frozen corpse is discovered in a remote cabin with cryptic clues scattered about like pieces of a deadly puzzle. King, Preston's loyal husky companion, becomes instrumental in tracking the killer through blinding snowstorms and treacherous mountain passes, while suspicious locals and hardened claim-jumpers circle like wolves around Yancy's suspected fortune in gold. The episode crackles with genuine tension—the kind that made listeners huddle closer to their radio sets on winter evenings, wondering whether Preston's keen detective work and frontier justice could prevail in a landscape that seemed indifferent to human morality.</p>
+<p>Challenge of the Yukon became a cultural phenomenon during the Golden Age of Radio precisely because it balanced authentic adventure with character-driven mystery. Premiering in 1938 and running throughout the war years and beyond, the program captured American imaginations by presenting the Yukon not as a distant abstraction but as a vivid, dangerous place where civilization's rules bent under the weight of raw nature. Sergeant Preston himself—stoic, principled, and resourceful—embodied the idealized lawman that audiences desperately wanted to believe in, especially during uncertain times.</p>
 <p>Dust off your memories of those golden evenings when families gathered around the glowing dial, and surrender yourself once more to the wilderness. "Ben Yancy's Legacy" awaits with all the authenticity, suspense, and heart that made this program a timeless classic. Tune in and discover why, over eighty years later, Preston's adventures still command our attention.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

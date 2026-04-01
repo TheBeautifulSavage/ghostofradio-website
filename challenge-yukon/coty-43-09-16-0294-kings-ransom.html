@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 43 09 16 (0294) King's Ransom — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0294) King's Ransom — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 43 09 16 (0294) King's Ransom — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 43 09 16 (0294) King's Ransom — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 43 09 16 (0294) King's Ransom — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 16, 1943</span>
           </div>
-          <h1 class="episode__title">Coty 43 09 16 (0294) King's Ransom</h1>
+          <h1 class="episode__title">(0294) King's Ransom</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># King's Ransom</p>
-<p>When a wealthy fur trader vanishes into the frozen wilderness with a fortune in currency, Sergeant Preston and his magnificent dog King must navigate a treacherous landscape of greed, deception, and desperation. "King's Ransom" crackles with the tension of a manhunt across unforgiving terrain, where every snowdrift might conceal a desperate criminal and every passing hour draws the fugitive deeper into the Yukon's merciless grip. Listeners will find themselves gripping their radio dials as Preston pieces together cryptic clues—a torn piece of clothing, a peculiar set of dog tracks, whispered rumors in a trading post—racing against time and the elements to prevent a tragedy. The episode masterfully builds suspense through ambient sound design: the howl of wind across frozen tundra, the rhythmic padding of King's paws on packed snow, and the strained voices of men pushed to their moral and physical limits.</p>
-<p>*Challenge of the Yukon* captured America's imagination during the late Depression and early 1940s, offering audiences an escape into a romanticized frontier where justice always prevailed and a man's honor meant everything. Sergeant Preston became the archetypal lawman—incorruptible, resourceful, and bonded with his canine partner in a relationship that resonated with Depression-era listeners seeking themes of loyalty and purpose. The show's remarkable fifteen-year run spoke to its ability to balance thrilling adventure with genuine character development, never condescending to its audience while maintaining the moral clarity that made radio's golden age so compelling.</p>
+          <p>When a wealthy fur trader vanishes into the frozen wilderness with a fortune in currency, Sergeant Preston and his magnificent dog King must navigate a treacherous landscape of greed, deception, and desperation. "King's Ransom" crackles with the tension of a manhunt across unforgiving terrain, where every snowdrift might conceal a desperate criminal and every passing hour draws the fugitive deeper into the Yukon's merciless grip. Listeners will find themselves gripping their radio dials as Preston pieces together cryptic clues—a torn piece of clothing, a peculiar set of dog tracks, whispered rumors in a trading post—racing against time and the elements to prevent a tragedy. The episode masterfully builds suspense through ambient sound design: the howl of wind across frozen tundra, the rhythmic padding of King's paws on packed snow, and the strained voices of men pushed to their moral and physical limits.</p>
+<p>Challenge of the Yukon captured America's imagination during the late Depression and early 1940s, offering audiences an escape into a romanticized frontier where justice always prevailed and a man's honor meant everything. Sergeant Preston became the archetypal lawman—incorruptible, resourceful, and bonded with his canine partner in a relationship that resonated with Depression-era listeners seeking themes of loyalty and purpose. The show's remarkable fifteen-year run spoke to its ability to balance thrilling adventure with genuine character development, never condescending to its audience while maintaining the moral clarity that made radio's golden age so compelling.</p>
 <p>Tune in now to experience the crackling authenticity of "King's Ransom," where Preston's keen detective work and King's extraordinary instincts prove that in the Yukon, as in life, integrity and courage ultimately triumph. Adjust your dials to the north, and step back into an era when adventure spoke directly to the human spirit.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

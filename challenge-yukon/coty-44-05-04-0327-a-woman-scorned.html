@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 05 04 (0327) A Woman Scorned — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0327) A Woman Scorned — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 05 04 (0327) A Woman Scorned — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 05 04 (0327) A Woman Scorned — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 05 04 (0327) A Woman Scorned — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 4, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 05 04 (0327) A Woman Scorned</h1>
+          <h1 class="episode__title">(0327) A Woman Scorned</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "A Woman Scorned"</p>
-<p>Picture yourself huddled close to your radio set on a winter's night, the crackle of static giving way to the thunder of hoofbeats across frozen tundra and the loyal howl of King, the magnificent Canadian Mountie's dog. In this gripping installment, Sergeant Preston faces a case that cuts deeper than the Yukon's bitter cold—a woman's rage and a man's betrayal collide in the snow-swept frontier, where justice must be served but mercy hangs in the balance. As Preston investigates, he discovers that vengeance rarely follows the law's straight path, and a scorned heart may prove more dangerous than any outlaw or wilderness peril. The tension mounts as our stalwart hero must unravel the truth before a tragedy of passion becomes irreversible.</p>
-<p>From 1938 through the golden age of radio's decline in the mid-1950s, *Challenge of the Yukon* became synonymous with adventure itself—a show that transported millions of listeners to the rugged Canadian frontier where civilization was measured in courage rather than comforts. Drawing on authentic tales of the Royal Canadian Mounted Police and the Klondike Gold Rush era, the program captured a nostalgic America's hunger for tales of honor, duty, and survival against untamed nature. Sergeant Preston, played with steadfast gravitas by Paul Sutherland and later Richard Simmons, became an archetype of the moral lawman—incorruptible, resourceful, and always guided by the unspoken frontier code.</p>
+          <p>Picture yourself huddled close to your radio set on a winter's night, the crackle of static giving way to the thunder of hoofbeats across frozen tundra and the loyal howl of King, the magnificent Canadian Mountie's dog. In this gripping installment, Sergeant Preston faces a case that cuts deeper than the Yukon's bitter cold—a woman's rage and a man's betrayal collide in the snow-swept frontier, where justice must be served but mercy hangs in the balance. As Preston investigates, he discovers that vengeance rarely follows the law's straight path, and a scorned heart may prove more dangerous than any outlaw or wilderness peril. The tension mounts as our stalwart hero must unravel the truth before a tragedy of passion becomes irreversible.</p>
+<p>From 1938 through the golden age of radio's decline in the mid-1950s, Challenge of the Yukon became synonymous with adventure itself—a show that transported millions of listeners to the rugged Canadian frontier where civilization was measured in courage rather than comforts. Drawing on authentic tales of the Royal Canadian Mounted Police and the Klondike Gold Rush era, the program captured a nostalgic America's hunger for tales of honor, duty, and survival against untamed nature. Sergeant Preston, played with steadfast gravitas by Paul Sutherland and later Richard Simmons, became an archetype of the moral lawman—incorruptible, resourceful, and always guided by the unspoken frontier code.</p>
 <p>Tune in and experience storytelling from radio's greatest era, when sound effects and human voices painted vivid worlds in the theater of the mind. This episode exemplifies why listeners kept faith with Sergeant Preston and King for nearly two decades.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

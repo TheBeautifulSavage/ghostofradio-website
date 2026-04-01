@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 10 09 (0817) The Blue Paper — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0817) The Blue Paper — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 10 09 (0817) The Blue Paper — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 10 09 (0817) The Blue Paper — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 10 09 (0817) The Blue Paper — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 9, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 10 09 (0817) The Blue Paper</h1>
+          <h1 class="episode__title">(0817) The Blue Paper</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "The Blue Paper"</p>
-<p>As the distinctive gallop of Rex the Wonder Dog echoes across the frozen wastes, Sergeant Preston and his faithful Yukon King face their most enigmatic case yet. When a mysterious blue paper surfaces in the isolated trading posts of Canada's North, it becomes the key to a conspiracy that threatens to shake the very foundations of the frontier settlement. Listeners will be drawn into a web of intrigue where nothing is as it seems—shadowy figures lurk in the darkness beyond the cabin's firelight, coded messages hint at secrets worth killing for, and Preston must use every ounce of his detective's intuition to uncover the truth before another innocent soul falls prey to greed and deception. The crackling tension of the wilderness, punctuated by the howling wind and the distant call of unseen threats, creates an atmosphere thick with danger and suspense that only the frozen Yukon can deliver.</p>
-<p>This program represents the golden age of adventure radio, when sophisticated sound design and gifted voice actors transported millions of listeners into worlds both exotic and thrilling. *Challenge of the Yukon* became a phenomenon precisely because it balanced authentic frontier history with the romantic ideals of law and order, giving Depression-era audiences heroes they desperately needed—men of integrity like Preston who stood against chaos. The show's meticulous attention to detail, from the crunch of snow underfoot to the authentic dialogue of prospectors and Mounties, grounded even the most fantastical narratives in a sense of place and purpose.</p>
+          <p>As the distinctive gallop of Rex the Wonder Dog echoes across the frozen wastes, Sergeant Preston and his faithful Yukon King face their most enigmatic case yet. When a mysterious blue paper surfaces in the isolated trading posts of Canada's North, it becomes the key to a conspiracy that threatens to shake the very foundations of the frontier settlement. Listeners will be drawn into a web of intrigue where nothing is as it seems—shadowy figures lurk in the darkness beyond the cabin's firelight, coded messages hint at secrets worth killing for, and Preston must use every ounce of his detective's intuition to uncover the truth before another innocent soul falls prey to greed and deception. The crackling tension of the wilderness, punctuated by the howling wind and the distant call of unseen threats, creates an atmosphere thick with danger and suspense that only the frozen Yukon can deliver.</p>
+<p>This program represents the golden age of adventure radio, when sophisticated sound design and gifted voice actors transported millions of listeners into worlds both exotic and thrilling. Challenge of the Yukon became a phenomenon precisely because it balanced authentic frontier history with the romantic ideals of law and order, giving Depression-era audiences heroes they desperately needed—men of integrity like Preston who stood against chaos. The show's meticulous attention to detail, from the crunch of snow underfoot to the authentic dialogue of prospectors and Mounties, grounded even the most fantastical narratives in a sense of place and purpose.</p>
 <p>Don your heavy coat and step into the northern darkness. Whether you're a devoted follower of Sergeant Preston or discovering the Yukon's mysteries for the first time, "The Blue Paper" promises the kind of riveting storytelling that made radio the dominant entertainment medium of its era. Tune in now and discover why audiences tuned in faithfully for nearly two decades.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

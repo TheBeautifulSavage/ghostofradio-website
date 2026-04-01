@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 43 09 23 (0295) Murder On Train Time — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0295) Murder On Train Time — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 43 09 23 (0295) Murder On Train Time — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 43 09 23 (0295) Murder On Train Time — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 43 09 23 (0295) Murder On Train Time — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 23, 1943</span>
           </div>
-          <h1 class="episode__title">Coty 43 09 23 (0295) Murder On Train Time</h1>
+          <h1 class="episode__title">(0295) Murder On Train Time</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Murder on Train Time</p>
-<p>The Canadian wilderness holds few secrets from Sergeant Preston of the Yukon—but when a passenger train stranded in the frozen North becomes the scene of a brutal murder, even this stalwart Mountie must confront a mystery as twisted as a mountain pass in a blizzard. As the snow piles higher and suspicion spreads thicker among the desperate travelers locked in the train cars, Preston and his trusty dog King must separate truth from deception before another victim falls. Who among the trapped passengers harbors a murderous secret? A woman's scream pierces the darkness. A shot rings out. And Preston realizes that in this remote corner of the Dominion, justice must be swift—and deadly.</p>
-<p>*Challenge of the Yukon* captured the American imagination during an era when the North still seemed wild and untamed, a vast frontier where law and order meant something. Premiering in 1938 with the robust storytelling of pulp adventure magazines brought to life, the show became a staple of afternoon and evening radio, its announcer's booming introduction—"In the frozen North, a man of courage and a dog of loyalty"—becoming synonymous with thrilling escapism. Preston, played with steadfast conviction, embodied the ideal of masculine heroism and frontier justice that audiences craved during the Depression and war years. King, his loyal husky, became as beloved as the Sergeant himself, their bond representing the unshakeable loyalty and partnership that listeners longed for.</p>
+          <p>The Canadian wilderness holds few secrets from Sergeant Preston of the Yukon—but when a passenger train stranded in the frozen North becomes the scene of a brutal murder, even this stalwart Mountie must confront a mystery as twisted as a mountain pass in a blizzard. As the snow piles higher and suspicion spreads thicker among the desperate travelers locked in the train cars, Preston and his trusty dog King must separate truth from deception before another victim falls. Who among the trapped passengers harbors a murderous secret? A woman's scream pierces the darkness. A shot rings out. And Preston realizes that in this remote corner of the Dominion, justice must be swift—and deadly.</p>
+<p>Challenge of the Yukon captured the American imagination during an era when the North still seemed wild and untamed, a vast frontier where law and order meant something. Premiering in 1938 with the robust storytelling of pulp adventure magazines brought to life, the show became a staple of afternoon and evening radio, its announcer's booming introduction—"In the frozen North, a man of courage and a dog of loyalty"—becoming synonymous with thrilling escapism. Preston, played with steadfast conviction, embodied the ideal of masculine heroism and frontier justice that audiences craved during the Depression and war years. King, his loyal husky, became as beloved as the Sergeant himself, their bond representing the unshakeable loyalty and partnership that listeners longed for.</p>
 <p>If you've never ventured into the Yukon with Preston and King, "Murder on Train Time" offers the perfect introduction to this classic series. Settle in, adjust your radio dial, and prepare yourself for an evening of suspense, danger, and the triumph of good over evil in one of radio's most enduring adventures.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

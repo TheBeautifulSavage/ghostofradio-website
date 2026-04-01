@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 04 09 (0478) The Story Of Big John — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0478) The Story Of Big John — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 04 09 (0478) The Story Of Big John — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 04 09 (0478) The Story Of Big John — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 04 09 (0478) The Story Of Big John — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 9, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 04 09 (0478) The Story Of Big John</h1>
+          <h1 class="episode__title">(0478) The Story Of Big John</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Story of Big John</p>
-<p>Picture yourself huddled close to your radio dial on a crisp evening, the crackling static giving way to the familiar strains of the "Renfrew of the Mounted" theme, as Sergeant Preston's authoritative voice cuts through the Canadian wilderness. In "The Story of Big John," listeners are thrust into the frozen Yukon where a mysterious figure—a man of legendary proportions and darker reputation—emerges from the backwoods with secrets that could shatter the fragile peace of a remote settlement. As Preston and his faithful husky King navigate treacherous snowdrifts and moral ambiguity, the episode builds with palpable tension: Who is Big John, really? Has he come to seek redemption, or does he bring danger to innocent lives? The episode's atmospheric sound design—the howling wind, the creaking ice, the distant dog sleds—transports you directly into the harsh, unforgiving landscape where justice and mercy often collide.</p>
+          <p>Picture yourself huddled close to your radio dial on a crisp evening, the crackling static giving way to the familiar strains of the "Renfrew of the Mounted" theme, as Sergeant Preston's authoritative voice cuts through the Canadian wilderness. In "The Story of Big John," listeners are thrust into the frozen Yukon where a mysterious figure—a man of legendary proportions and darker reputation—emerges from the backwoods with secrets that could shatter the fragile peace of a remote settlement. As Preston and his faithful husky King navigate treacherous snowdrifts and moral ambiguity, the episode builds with palpable tension: Who is Big John, really? Has he come to seek redemption, or does he bring danger to innocent lives? The episode's atmospheric sound design—the howling wind, the creaking ice, the distant dog sleds—transports you directly into the harsh, unforgiving landscape where justice and mercy often collide.</p>
 <p>"Challenge of the Yukon" was more than mere entertainment; it was a cultural phenomenon that captured America's imagination during the Depression and war years. Sergeant Preston became an icon of stalwart Canadian authority and frontier morality, while the show's intricate plots and character development elevated it above typical adventure fare. Each episode, including this gripping tale of Big John, reflected genuine research into Yukon history and Royal Canadian Mounted Police procedures, grounding the drama in authenticity that resonated with Depression-era audiences seeking escape alongside substance.</p>
 <p>Tune in now to experience why "Challenge of the Yukon" remained one of radio's most beloved programs for nearly two decades. These episodes are windows into a golden age of storytelling—where suspense, character, and the vast Canadian wilderness combined to create unforgettable radio drama.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 10 24 (0695) The Missing Money — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0695) The Missing Money — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 10 24 (0695) The Missing Money — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 10 24 (0695) The Missing Money — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 10 24 (0695) The Missing Money — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 24, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 10 24 (0695) The Missing Money</h1>
+          <h1 class="episode__title">(0695) The Missing Money</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Missing Money</p>
-<p>Picture yourself huddled close to the radio on a crisp autumn evening, the crackling static giving way to the unmistakable howl of sled dogs and the jingling of harness bells. Sergeant Preston and King, his magnificent malamute, race across the frozen Yukon wilderness in pursuit of a mystery that threatens to shatter the fragile trust of a remote trading post community. When a shipment of gold—the lifeblood of survival in this unforgiving frontier—vanishes without a trace, suspicion falls upon an unlikely culprit. As Preston navigates treacherous terrain and treacherous human nature alike, listeners are drawn into a taut drama of accusation and deception, where a single misstep could mean the difference between justice and a terrible mistake. The tension builds with each clue uncovered, each suspect interrogated, each motive examined under the cold northern light.</p>
-<p>*Challenge of the Yukon* captivated millions throughout the 1940s precisely because it captured something essential about the American frontier spirit—the lone lawman bringing order to chaos, the bond between man and beast stronger than civilization itself. Sergeant Preston became an icon of radio adventure, and this particular episode exemplifies why: it combines genuine mystery with authentic wilderness atmosphere, creating a world where danger lurks in both nature and human hearts. The show's commitment to adventure storytelling without sacrificing character and plot made it a perennial favorite, spawning later television and film adaptations that could never quite recapture the magic of voices and imagination.</p>
+          <p>Picture yourself huddled close to the radio on a crisp autumn evening, the crackling static giving way to the unmistakable howl of sled dogs and the jingling of harness bells. Sergeant Preston and King, his magnificent malamute, race across the frozen Yukon wilderness in pursuit of a mystery that threatens to shatter the fragile trust of a remote trading post community. When a shipment of gold—the lifeblood of survival in this unforgiving frontier—vanishes without a trace, suspicion falls upon an unlikely culprit. As Preston navigates treacherous terrain and treacherous human nature alike, listeners are drawn into a taut drama of accusation and deception, where a single misstep could mean the difference between justice and a terrible mistake. The tension builds with each clue uncovered, each suspect interrogated, each motive examined under the cold northern light.</p>
+<p>Challenge of the Yukon captivated millions throughout the 1940s precisely because it captured something essential about the American frontier spirit—the lone lawman bringing order to chaos, the bond between man and beast stronger than civilization itself. Sergeant Preston became an icon of radio adventure, and this particular episode exemplifies why: it combines genuine mystery with authentic wilderness atmosphere, creating a world where danger lurks in both nature and human hearts. The show's commitment to adventure storytelling without sacrificing character and plot made it a perennial favorite, spawning later television and film adaptations that could never quite recapture the magic of voices and imagination.</p>
 <p>If you've never experienced the raw thrill of old-time radio adventure, or if you're a devoted fan seeking to revisit these golden moments, don't miss "The Missing Money." Tune in and let yourself be transported northward, where justice travels by dogsled and every mystery demands solving before the next blizzard arrives.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 05 31 (0789) The Dead Man's Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0789) The Dead Man's Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 05 31 (0789) The Dead Man's Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 05 31 (0789) The Dead Man's Trail — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 05 31 (0789) The Dead Man's Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 31, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 05 31 (0789) The Dead Man's Trail</h1>
+          <h1 class="episode__title">(0789) The Dead Man's Trail</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Dead Man's Trail</p>
-<p>Picture yourself huddled near the crackling warmth of your radio on a cold evening, as the immortal theme swells and Sergeant Preston's commanding voice cuts through the static: "In the frozen wastes of the Canadian Yukon, the great Mounted Police maintain law and order." In this gripping 1940s installment, a prospector lies frozen in an unmarked grave, his killer vanished into the trackless white wilderness, leaving only a cryptic trail of footprints that could lead to either justice or Preston's doom. With his faithful husky King at his side, Preston must unravel the mystery before the killer can escape across the border into Alaska, following clues through blinding snowstorms and treacherous mountain passes where one misstep means death—and not always the kind that leaves a body to find.</p>
-<p>*Challenge of the Yukon* captured the imagination of Depression-era America and beyond, offering listeners the romantic allure of Canada's last frontier combined with the intellectual satisfaction of a well-plotted mystery. The show's remarkable fifteen-year run testified to its appeal: audiences craved tales of civilization's champions enforcing justice in untamed lands, where honor, courage, and Mounted Police determination ultimately prevailed. Sergeant Preston himself became an iconic figure rivaling the greatest radio detectives, and the writers crafted episodes that balanced authentic period detail with pure escapist adventure, making each broadcast both believable and thrilling.</p>
+          <p>Picture yourself huddled near the crackling warmth of your radio on a cold evening, as the immortal theme swells and Sergeant Preston's commanding voice cuts through the static: "In the frozen wastes of the Canadian Yukon, the great Mounted Police maintain law and order." In this gripping 1940s installment, a prospector lies frozen in an unmarked grave, his killer vanished into the trackless white wilderness, leaving only a cryptic trail of footprints that could lead to either justice or Preston's doom. With his faithful husky King at his side, Preston must unravel the mystery before the killer can escape across the border into Alaska, following clues through blinding snowstorms and treacherous mountain passes where one misstep means death—and not always the kind that leaves a body to find.</p>
+<p>Challenge of the Yukon captured the imagination of Depression-era America and beyond, offering listeners the romantic allure of Canada's last frontier combined with the intellectual satisfaction of a well-plotted mystery. The show's remarkable fifteen-year run testified to its appeal: audiences craved tales of civilization's champions enforcing justice in untamed lands, where honor, courage, and Mounted Police determination ultimately prevailed. Sergeant Preston himself became an iconic figure rivaling the greatest radio detectives, and the writers crafted episodes that balanced authentic period detail with pure escapist adventure, making each broadcast both believable and thrilling.</p>
 <p>"The Dead Man's Trail" exemplifies everything that made this series beloved across North America—authentic Yukon atmosphere, a puzzle demanding solution, and a hero who combines physical prowess with keen investigative intellect. Don't miss this sterling example of Golden Age radio drama, where the only thing more dangerous than the killer is the unforgiving landscape itself.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

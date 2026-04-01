@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 03 20 (0991) The Prisoner — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0991) The Prisoner — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 03 20 (0991) The Prisoner — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 03 20 (0991) The Prisoner — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 03 20 (0991) The Prisoner — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 03 20 (0991) The Prisoner</h1>
+          <h1 class="episode__title">(0991) The Prisoner</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Prisoner</p>
-<p>As the haunting strains of "Donna Diana" fade into the crackling Arctic night, Sergeant Preston and his magnificent mount King face their most harrowing challenge yet: a desperate man, a frozen wasteland, and a secret that could unravel justice itself. In "The Prisoner," our Canadian Mounted Policeman must navigate the treacherous moral terrain between duty and compassion when he discovers a fugitive whose crime may be far less black-and-white than the harsh Yukon landscape suggests. With danger lurking in every shadow cast by the northern lights and King's keen senses the only advantage against the unforgiving wilderness, Preston must decide whether the letter of the law or the spirit of justice will guide his horse across the frozen tundra.</p>
-<p>*Challenge of the Yukon* captured the imagination of radio audiences throughout the 1940s by blending authentic frontier adventure with surprisingly nuanced storytelling. Unlike simpler adventure serials of the era, Preston's cases often explored moral complexity—the show understood that the wild demanded more than simple heroics. Produced during an era when radio dominated American entertainment and the Canadian Mounted Police represented an almost mythical figure of integrity and honor, the program became a beloved staple of afternoon and evening schedules. Sergeant Preston became the gold standard for the adventure-drama format, influencing countless shows that followed and cementing the Yukon itself as a character as compelling as any actor in the cast.</p>
-<p>Whether you're a devoted fan of classic radio or discovering this timeless adventure for the first time, "The Prisoner" exemplifies why *Challenge of the Yukon* endured for nearly two decades. Tune in, settle back, and let the sound effects transport you to a world where loyalty, danger, and moral courage play out against the raw beauty of the Canadian North.</p>
+          <p>As the haunting strains of "Donna Diana" fade into the crackling Arctic night, Sergeant Preston and his magnificent mount King face their most harrowing challenge yet: a desperate man, a frozen wasteland, and a secret that could unravel justice itself. In "The Prisoner," our Canadian Mounted Policeman must navigate the treacherous moral terrain between duty and compassion when he discovers a fugitive whose crime may be far less black-and-white than the harsh Yukon landscape suggests. With danger lurking in every shadow cast by the northern lights and King's keen senses the only advantage against the unforgiving wilderness, Preston must decide whether the letter of the law or the spirit of justice will guide his horse across the frozen tundra.</p>
+<p>Challenge of the Yukon captured the imagination of radio audiences throughout the 1940s by blending authentic frontier adventure with surprisingly nuanced storytelling. Unlike simpler adventure serials of the era, Preston's cases often explored moral complexity—the show understood that the wild demanded more than simple heroics. Produced during an era when radio dominated American entertainment and the Canadian Mounted Police represented an almost mythical figure of integrity and honor, the program became a beloved staple of afternoon and evening schedules. Sergeant Preston became the gold standard for the adventure-drama format, influencing countless shows that followed and cementing the Yukon itself as a character as compelling as any actor in the cast.</p>
+<p>Whether you're a devoted fan of classic radio or discovering this timeless adventure for the first time, "The Prisoner" exemplifies why Challenge of the Yukon endured for nearly two decades. Tune in, settle back, and let the sound effects transport you to a world where loyalty, danger, and moral courage play out against the raw beauty of the Canadian North.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

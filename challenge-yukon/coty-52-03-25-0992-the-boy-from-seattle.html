@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 03 25 (0992) The Boy From Seattle — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0992) The Boy From Seattle — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 03 25 (0992) The Boy From Seattle — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 03 25 (0992) The Boy From Seattle — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 03 25 (0992) The Boy From Seattle — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 03 25 (0992) The Boy From Seattle</h1>
+          <h1 class="episode__title">(0992) The Boy From Seattle</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Boy From Seattle</p>
-<p>Picture yourself huddled close to your radio on a bitter northern night, the wind howling outside like wolves at the door, as Sergeant Preston and his magnificent sled dog King plunge into the frozen wilderness to uncover the mystery of a young fugitive from Seattle. This thrilling episode pulls listeners into a tale of redemption and danger, where a boy's desperate flight to the Yukon leads him into a treacherous web of misunderstanding and peril. With each crackling transmission from the frozen north, the drama intensifies: Is the boy a criminal on the run, or an innocent soul fleeing circumstances beyond his control? As Preston questions suspicious prospectors and navigates avalanche-prone mountain passes, the audience is left wondering whether justice and mercy can exist in the same frozen moment.</p>
-<p>*Challenge of the Yukon*, which premiered in 1938 and became a beloved staple across ABC and Mutual networks, captured America's imagination during the Depression and war years by offering something increasingly precious—escapism coupled with heroic virtue. Sergeant Preston embodied the best of frontier justice: fair, competent, and guided by a moral compass that pointed true north. The show's meticulous attention to authentic Yukon detail, combined with sound effects that made listeners feel the crunch of snow beneath their feet, created an immersive world unlike anything television would later provide. Each episode balanced action, mystery, and character-driven drama, proving that adventure radio needed neither spectacle nor visual excess to captivate millions.</p>
-<p>Don't miss "The Boy From Seattle," a remarkable episode that exemplifies why *Sergeant Preston of the Yukon* remained essential listening for over fifteen years. Tune in now and discover why King the dog and his master became legends of the North.</p>
+          <p>Picture yourself huddled close to your radio on a bitter northern night, the wind howling outside like wolves at the door, as Sergeant Preston and his magnificent sled dog King plunge into the frozen wilderness to uncover the mystery of a young fugitive from Seattle. This thrilling episode pulls listeners into a tale of redemption and danger, where a boy's desperate flight to the Yukon leads him into a treacherous web of misunderstanding and peril. With each crackling transmission from the frozen north, the drama intensifies: Is the boy a criminal on the run, or an innocent soul fleeing circumstances beyond his control? As Preston questions suspicious prospectors and navigates avalanche-prone mountain passes, the audience is left wondering whether justice and mercy can exist in the same frozen moment.</p>
+<p>Challenge of the Yukon, which premiered in 1938 and became a beloved staple across ABC and Mutual networks, captured America's imagination during the Depression and war years by offering something increasingly precious—escapism coupled with heroic virtue. Sergeant Preston embodied the best of frontier justice: fair, competent, and guided by a moral compass that pointed true north. The show's meticulous attention to authentic Yukon detail, combined with sound effects that made listeners feel the crunch of snow beneath their feet, created an immersive world unlike anything television would later provide. Each episode balanced action, mystery, and character-driven drama, proving that adventure radio needed neither spectacle nor visual excess to captivate millions.</p>
+<p>Don't miss "The Boy From Seattle," a remarkable episode that exemplifies why Sergeant Preston of the Yukon remained essential listening for over fifteen years. Tune in now and discover why King the dog and his master became legends of the North.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

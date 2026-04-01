@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 03 20 (0373) Silver Point Renegades — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0373) Silver Point Renegades — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 03 20 (0373) Silver Point Renegades — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 03 20 (0373) Silver Point Renegades — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 03 20 (0373) Silver Point Renegades — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 20, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 03 20 (0373) Silver Point Renegades</h1>
+          <h1 class="episode__title">(0373) Silver Point Renegades</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Silver Point Renegades</p>
-<p>Picture yourself huddled by the radio on a winter's evening as Sergeant Preston and his faithful husky King push deeper into the frozen wilderness of Canada's northern frontier. In "Silver Point Renegades," our stalwart Mountie faces a desperate band of outlaws who've established a lawless stronghold in the remote reaches of the Yukon, their stolen fortune and ruthless ambitions threatening to corrupt the last untamed corner of the dominion. With nothing but his wits, his revolver, and King's keen senses, Preston must navigate a treacherous landscape of moral ambiguity and physical danger—where trust is scarce, the cold is merciless, and justice seems impossibly distant. The crackling dialogue, the rumble of sled dogs across packed snow, and the haunting call of the wilderness create an immersive drama that transports listeners 2,000 miles north from their living rooms.</p>
-<p>*Challenge of the Yukon* became a radio phenomenon precisely because it captured something essential about the American imagination: the frontier as both proving ground and sanctuary, where character is forged in isolation and civilization's rules can be rewritten. During the 1940s, as global conflict raged, this show offered audiences a comforting mythology of good triumphing through courage and steadfastness. Sergeant Preston embodied the ideal lawman—unfailingly principled yet pragmatic, capable of showing mercy without weakness. The series' meticulous attention to period detail and authentic northern geography gave listeners the feeling they were receiving genuine dispatches from the edge of the known world.</p>
-<p>Don't miss this gripping tale of frontier justice and wilderness survival. Tune in to experience why *Sergeant Preston of the Yukon* captivated millions—where every episode promised adventure, honor, and the eternal struggle between civilization and the untamed North.</p>
+          <p>Picture yourself huddled by the radio on a winter's evening as Sergeant Preston and his faithful husky King push deeper into the frozen wilderness of Canada's northern frontier. In "Silver Point Renegades," our stalwart Mountie faces a desperate band of outlaws who've established a lawless stronghold in the remote reaches of the Yukon, their stolen fortune and ruthless ambitions threatening to corrupt the last untamed corner of the dominion. With nothing but his wits, his revolver, and King's keen senses, Preston must navigate a treacherous landscape of moral ambiguity and physical danger—where trust is scarce, the cold is merciless, and justice seems impossibly distant. The crackling dialogue, the rumble of sled dogs across packed snow, and the haunting call of the wilderness create an immersive drama that transports listeners 2,000 miles north from their living rooms.</p>
+<p>Challenge of the Yukon became a radio phenomenon precisely because it captured something essential about the American imagination: the frontier as both proving ground and sanctuary, where character is forged in isolation and civilization's rules can be rewritten. During the 1940s, as global conflict raged, this show offered audiences a comforting mythology of good triumphing through courage and steadfastness. Sergeant Preston embodied the ideal lawman—unfailingly principled yet pragmatic, capable of showing mercy without weakness. The series' meticulous attention to period detail and authentic northern geography gave listeners the feeling they were receiving genuine dispatches from the edge of the known world.</p>
+<p>Don't miss this gripping tale of frontier justice and wilderness survival. Tune in to experience why Sergeant Preston of the Yukon captivated millions—where every episode promised adventure, honor, and the eternal struggle between civilization and the untamed North.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

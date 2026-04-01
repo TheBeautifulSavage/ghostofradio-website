@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 07 20 (0338) Lucky Walters — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0338) Lucky Walters — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 07 20 (0338) Lucky Walters — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 07 20 (0338) Lucky Walters — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 07 20 (0338) Lucky Walters — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · July 20, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 07 20 (0338) Lucky Walters</h1>
+          <h1 class="episode__title">(0338) Lucky Walters</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Lucky Walters – Challenge of the Yukon</p>
-<p>As the crackling organ theme swells and Sergeant Preston's authoritative voice cuts through the northern static, listeners are transported once again to the frozen wilderness where justice rides on a dogsled and danger lurks behind every snowbank. In "Lucky Walters," the Mounted Police officer and his magnificent King face their most perplexing case yet: a prospector whose remarkable fortune seems almost too good to be true, and a series of suspicious claims that suggest something sinister lurks beneath the glittering surface of easy gold. As Preston investigates the claims staked by the mysteriously fortunate Walters, the tension builds through expertly timed pauses and the evocative sound of wind howling across the tundra. What begins as routine record-checking transforms into a web of deception where even luck itself becomes suspect, and Preston must rely on his keen judgment and loyal King to separate truth from fortune-hunter's fantasy.</p>
-<p>*Challenge of the Yukon*, which ran from 1938 through the early 1950s, became the gold standard of adventure radio programming by perfectly balancing authentic Yukon lore with serialized drama. The show's meticulous attention to period detail—from mining regulations to sled-dog commands—created an immersive world that millions of listeners embraced as gospel truth. Each episode delivered exactly what radio audiences craved: clear moral authority, exotic locale, and the reassuring presence of a lawman who always got his man, whether through brute force or quiet investigation.</p>
+          <p>As the crackling organ theme swells and Sergeant Preston's authoritative voice cuts through the northern static, listeners are transported once again to the frozen wilderness where justice rides on a dogsled and danger lurks behind every snowbank. In "Lucky Walters," the Mounted Police officer and his magnificent King face their most perplexing case yet: a prospector whose remarkable fortune seems almost too good to be true, and a series of suspicious claims that suggest something sinister lurks beneath the glittering surface of easy gold. As Preston investigates the claims staked by the mysteriously fortunate Walters, the tension builds through expertly timed pauses and the evocative sound of wind howling across the tundra. What begins as routine record-checking transforms into a web of deception where even luck itself becomes suspect, and Preston must rely on his keen judgment and loyal King to separate truth from fortune-hunter's fantasy.</p>
+<p>Challenge of the Yukon, which ran from 1938 through the early 1950s, became the gold standard of adventure radio programming by perfectly balancing authentic Yukon lore with serialized drama. The show's meticulous attention to period detail—from mining regulations to sled-dog commands—created an immersive world that millions of listeners embraced as gospel truth. Each episode delivered exactly what radio audiences craved: clear moral authority, exotic locale, and the reassuring presence of a lawman who always got his man, whether through brute force or quiet investigation.</p>
 <p>Don your warmest furs and settle in for an evening of classic radio mystery. "Lucky Walters" awaits, where the gold may be real, but the danger is absolutely certain. Tune in to discover whether Preston's legendary instincts prove true once again—or whether even the Mounted Police can be fooled by a lucky strike.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

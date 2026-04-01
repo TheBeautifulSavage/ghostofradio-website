@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 10 21 (0937) The Mutiny's Survivor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0937) The Mutiny's Survivor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 10 21 (0937) The Mutiny's Survivor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 10 21 (0937) The Mutiny's Survivor — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 10 21 (0937) The Mutiny's Survivor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 10 21 (0937) The Mutiny's Survivor</h1>
+          <h1 class="episode__title">(0937) The Mutiny's Survivor</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Mutiny's Survivor</p>
-<p>Picture yourself hunched close to your radio on a frost-bitten evening, the static crackling like distant wolves, as Sergeant Preston of the Yukon faces one of his most harrowing cases yet. In "The Mutiny's Survivor," a desperate man stumbles out of the frozen wilderness with a tale of betrayal, mutiny, and murder among a remote trading expedition. With only fragmented memories and a mysterious wound, he may hold the key to solving a crime that has left death in its wake across the unforgiving northern frontier. As Preston and his legendary dog King press deeper into the investigation, listeners will find themselves caught between conflicting testimonies, hidden motives, and the creeping suspicion that not everyone is telling the truth. The tension mounts with each revelation, building toward a climactic confrontation that only a lawman of Preston's courage and conviction could orchestrate.</p>
-<p>*Challenge of the Yukon* captured America's imagination during the Depression and War years by transforming the remote Canadian north into a realm of adventure and moral clarity. Sergeant Preston became a cultural icon—a symbol of justice, loyalty, and the triumph of civilization over wilderness—while King the Wonder Dog earned his own devoted following. These episodes, broadcast live with remarkable sound design that transported listeners to blizzards and isolation cabins, represented some of radio's finest adventure storytelling. The show's popularity spawned merchandise, comic strips, and later a television series, but the magic always resided in that original radio format, where imagination filled in every frozen landscape and shadowed face.</p>
-<p>Don't miss this gripping tale of survival and deception. Tune in now to hear how Sergeant Preston untangles the mystery of *The Mutiny's Survivor*—a story where loyalty is tested and the truth cuts sharper than any Arctic wind.</p>
+          <p>Picture yourself hunched close to your radio on a frost-bitten evening, the static crackling like distant wolves, as Sergeant Preston of the Yukon faces one of his most harrowing cases yet. In "The Mutiny's Survivor," a desperate man stumbles out of the frozen wilderness with a tale of betrayal, mutiny, and murder among a remote trading expedition. With only fragmented memories and a mysterious wound, he may hold the key to solving a crime that has left death in its wake across the unforgiving northern frontier. As Preston and his legendary dog King press deeper into the investigation, listeners will find themselves caught between conflicting testimonies, hidden motives, and the creeping suspicion that not everyone is telling the truth. The tension mounts with each revelation, building toward a climactic confrontation that only a lawman of Preston's courage and conviction could orchestrate.</p>
+<p>Challenge of the Yukon captured America's imagination during the Depression and War years by transforming the remote Canadian north into a realm of adventure and moral clarity. Sergeant Preston became a cultural icon—a symbol of justice, loyalty, and the triumph of civilization over wilderness—while King the Wonder Dog earned his own devoted following. These episodes, broadcast live with remarkable sound design that transported listeners to blizzards and isolation cabins, represented some of radio's finest adventure storytelling. The show's popularity spawned merchandise, comic strips, and later a television series, but the magic always resided in that original radio format, where imagination filled in every frozen landscape and shadowed face.</p>
+<p>Don't miss this gripping tale of survival and deception. Tune in now to hear how Sergeant Preston untangles the mystery of The Mutiny's Survivor—a story where loyalty is tested and the truth cuts sharper than any Arctic wind.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

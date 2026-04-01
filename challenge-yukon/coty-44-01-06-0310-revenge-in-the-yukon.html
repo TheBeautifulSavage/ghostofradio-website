@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 01 06 (0310) Revenge In The Yukon — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0310) Revenge In The Yukon — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 01 06 (0310) Revenge In The Yukon — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 01 06 (0310) Revenge In The Yukon — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 01 06 (0310) Revenge In The Yukon — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 6, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 01 06 (0310) Revenge In The Yukon</h1>
+          <h1 class="episode__title">(0310) Revenge In The Yukon</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Revenge In The Yukon</p>
-<p>Picture yourself huddled near a crackling radio on a winter's evening as the immortal strains of "Donna Diana" crescendo through your speaker—and Sergeant Preston of the Yukon thunders into action once more. In "Revenge In The Yukon," our stalwart Mountie faces a threat more personal and cunning than the usual fur thieves and claim jumpers that plague the frozen north. A mysterious figure from the past emerges from the snow-laden wilderness, bent on settling an old score through whatever ruthless means the unforgiving landscape will permit. With his loyal dog King at his side, Preston must navigate not only the treacherous terrain of the Canadian frontier but also the murky moral complexities of a vengeance that threatens to consume everyone in its path. The episode crackles with tension as danger lurks around every snow-covered corner, and Preston's unwavering sense of justice faces its ultimate test.</p>
+          <p>Picture yourself huddled near a crackling radio on a winter's evening as the immortal strains of "Donna Diana" crescendo through your speaker—and Sergeant Preston of the Yukon thunders into action once more. In "Revenge In The Yukon," our stalwart Mountie faces a threat more personal and cunning than the usual fur thieves and claim jumpers that plague the frozen north. A mysterious figure from the past emerges from the snow-laden wilderness, bent on settling an old score through whatever ruthless means the unforgiving landscape will permit. With his loyal dog King at his side, Preston must navigate not only the treacherous terrain of the Canadian frontier but also the murky moral complexities of a vengeance that threatens to consume everyone in its path. The episode crackles with tension as danger lurks around every snow-covered corner, and Preston's unwavering sense of justice faces its ultimate test.</p>
 <p>For over seventeen years, "Sergeant Preston of the Yukon" captured the imagination of millions of radio listeners, blending the romance of the Klondike Gold Rush era with timeless tales of law and order triumphing in the wilderness. The show's meticulous attention to period detail, combined with genuine adventure writing, made it a staple of American radio during the Golden Age. Each episode transported audiences to a frontier that seemed simultaneously distant and intimate, where a single man's integrity could stand against the lawlessness of nature itself.</p>
 <p>Don't miss this gripping chapter in Sergeant Preston's legendary saga. Tune in now and discover why audiences across the nation made this show essential listening for over two decades.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

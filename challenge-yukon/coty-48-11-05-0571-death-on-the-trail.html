@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 11 05 (0571) Death On The Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0571) Death On The Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 11 05 (0571) Death On The Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 11 05 (0571) Death On The Trail — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 11 05 (0571) Death On The Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 5, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 11 05 (0571) Death On The Trail</h1>
+          <h1 class="episode__title">(0571) Death On The Trail</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Death On The Trail</p>
-<p>As the howling Arctic wind cuts across the frozen Yukon wilderness, Sergeant Preston of the Royal Canadian Mounted Police faces his most perilous case yet. A prospector lies dead in the snow, his claim mysteriously abandoned, and whispers of foul play echo through the trading posts of Dawson City. With only his faithful husky King at his side and a trail of cryptic clues buried beneath drifts of Canadian snow, Preston must race against time and the merciless elements to uncover whether this death was accident, suicide, or calculated murder. This gripping episode captures everything that made the series an American obsession during the golden age of radio—the tension of justice pursued across an unforgiving landscape, the warm companionship between man and dog, and the moral certainty of the Mountie who always gets his man.</p>
-<p>*Challenge of the Yukon* stood apart from other adventure serials by grounding its thrills in genuine geography and Canadian history, beginning its run in 1938 as listeners were hungry for escapism during the Depression. Sergeant Preston—played with steadfast conviction by Paul Sutherland—became an icon of law and order, while the show's rich sound design transported millions into a realm of barking dogs, creaking sleighs, and crackling campfires. The series' meticulous attention to Yukon detail and authentic RCMP procedures gave each episode an air of documentary realism that radio audiences found irresistible.</p>
-<p>Don't miss this classic tale of northern justice and frontier mystery. Tune in to *Death On The Trail* and experience why Sergeant Preston and King became household names, proving that courage and duty triumph even in the harshest corners of the earth.</p>
+          <p>As the howling Arctic wind cuts across the frozen Yukon wilderness, Sergeant Preston of the Royal Canadian Mounted Police faces his most perilous case yet. A prospector lies dead in the snow, his claim mysteriously abandoned, and whispers of foul play echo through the trading posts of Dawson City. With only his faithful husky King at his side and a trail of cryptic clues buried beneath drifts of Canadian snow, Preston must race against time and the merciless elements to uncover whether this death was accident, suicide, or calculated murder. This gripping episode captures everything that made the series an American obsession during the golden age of radio—the tension of justice pursued across an unforgiving landscape, the warm companionship between man and dog, and the moral certainty of the Mountie who always gets his man.</p>
+<p>Challenge of the Yukon stood apart from other adventure serials by grounding its thrills in genuine geography and Canadian history, beginning its run in 1938 as listeners were hungry for escapism during the Depression. Sergeant Preston—played with steadfast conviction by Paul Sutherland—became an icon of law and order, while the show's rich sound design transported millions into a realm of barking dogs, creaking sleighs, and crackling campfires. The series' meticulous attention to Yukon detail and authentic RCMP procedures gave each episode an air of documentary realism that radio audiences found irresistible.</p>
+<p>Don't miss this classic tale of northern justice and frontier mystery. Tune in to Death On The Trail and experience why Sergeant Preston and King became household names, proving that courage and duty triumph even in the harshest corners of the earth.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

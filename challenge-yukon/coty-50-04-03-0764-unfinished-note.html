@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 04 03 (0764) Unfinished Note — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0764) Unfinished Note — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 04 03 (0764) Unfinished Note — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 04 03 (0764) Unfinished Note — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 04 03 (0764) Unfinished Note — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 3, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 04 03 (0764) Unfinished Note</h1>
+          <h1 class="episode__title">(0764) Unfinished Note</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon: "Unfinished Note"</p>
-<p>Deep in the frozen wilderness where silence is broken only by the crack of ice and the howl of wind through mountain passes, Sergeant Preston faces his most perplexing case yet. A hastily scrawled note—incomplete, urgent, desperate—is the only clue to a missing prospector's fate. As Preston and his faithful husky, King, pursue the trail across snow-laden peaks and into abandoned mining camps, they must race against time and the merciless Yukon winter. The tension builds with each twist: a cryptic warning about claim jumpers, a cabin shrouded in mystery, and questions that demand answers before another life is lost to the frozen north. Listeners will find themselves gripping their chairs as Preston decodes the clues, his steady voice cutting through the atmospheric sound effects of howling blizzards and crunching snowshoes to piece together a puzzle that could mean life or death.</p>
-<p>*Challenge of the Yukon* became a cornerstone of American radio adventure precisely because it balanced genuine historical atmosphere with compelling human drama. Set during the Klondike Gold Rush, the show drew on real accounts of Mounted Police heroism while crafting mysteries that spoke to the anxiety of the Great Depression era. Sergeant Preston—the American radio answer to Canadian authenticity—embodied the virtues listeners desperately needed: integrity, courage, and the belief that justice prevails even in Earth's harshest corners. The show's success spawned a later television series and remains a benchmark for adventure radio craft.</p>
+          <p>Deep in the frozen wilderness where silence is broken only by the crack of ice and the howl of wind through mountain passes, Sergeant Preston faces his most perplexing case yet. A hastily scrawled note—incomplete, urgent, desperate—is the only clue to a missing prospector's fate. As Preston and his faithful husky, King, pursue the trail across snow-laden peaks and into abandoned mining camps, they must race against time and the merciless Yukon winter. The tension builds with each twist: a cryptic warning about claim jumpers, a cabin shrouded in mystery, and questions that demand answers before another life is lost to the frozen north. Listeners will find themselves gripping their chairs as Preston decodes the clues, his steady voice cutting through the atmospheric sound effects of howling blizzards and crunching snowshoes to piece together a puzzle that could mean life or death.</p>
+<p>Challenge of the Yukon became a cornerstone of American radio adventure precisely because it balanced genuine historical atmosphere with compelling human drama. Set during the Klondike Gold Rush, the show drew on real accounts of Mounted Police heroism while crafting mysteries that spoke to the anxiety of the Great Depression era. Sergeant Preston—the American radio answer to Canadian authenticity—embodied the virtues listeners desperately needed: integrity, courage, and the belief that justice prevails even in Earth's harshest corners. The show's success spawned a later television series and remains a benchmark for adventure radio craft.</p>
 <p>Tune in now and step into those snow-bound territories where every sound carries danger and every choice carries weight. Discover why audiences kept their dials tuned to the Yukon for nearly two decades.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

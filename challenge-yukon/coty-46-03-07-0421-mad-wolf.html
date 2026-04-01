@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 03 07 (0421) Mad Wolf — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0421) Mad Wolf — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 03 07 (0421) Mad Wolf — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 03 07 (0421) Mad Wolf — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 03 07 (0421) Mad Wolf — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 7, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 03 07 (0421) Mad Wolf</h1>
+          <h1 class="episode__title">(0421) Mad Wolf</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon: "Mad Wolf"</p>
-<p>As the wolf howl pierces the frozen Yukon night, Sergeant Preston and his loyal dog King face their most terrifying quarry yet—a massive timber wolf driven to unprecedented savagery, leaving a trail of death across the desolate frontier. In this gripping 1940s episode, listeners will experience the raw tension of man versus nature as Preston pursues the creature through blinding snowstorms and treacherous mountain passes, racing against time to stop the beast before it claims another victim. The sound design crackles with authenticity: the crunch of boots on packed snow, the distant howls echoing through valleys, and the urgent barking of sled dogs straining against their traces. Preston's steady voice cuts through the chaos—calm, determined, and unyielding—as he tracks a mystery that grows darker with each discovery. Is the wolf truly mad, or is something more sinister at work in this remote corner of Canada?</p>
-<p>*Sergeant Preston of the Yukon* became a cultural phenomenon because it captured the public's imagination during the golden age of radio, offering listeners a weekly escape into a romanticized but thrillingly dangerous North. First airing in 1938 and running strong through the 1950s, the show built its reputation on authentic adventure, complex moral dilemmas, and the unshakeable character of a lawman who embodied Canadian virtue and American heroism. "Mad Wolf" exemplifies why the series endured: it balances genuine frontier peril with character-driven storytelling, never relying on cheap scares or melodrama.</p>
+          <p>As the wolf howl pierces the frozen Yukon night, Sergeant Preston and his loyal dog King face their most terrifying quarry yet—a massive timber wolf driven to unprecedented savagery, leaving a trail of death across the desolate frontier. In this gripping 1940s episode, listeners will experience the raw tension of man versus nature as Preston pursues the creature through blinding snowstorms and treacherous mountain passes, racing against time to stop the beast before it claims another victim. The sound design crackles with authenticity: the crunch of boots on packed snow, the distant howls echoing through valleys, and the urgent barking of sled dogs straining against their traces. Preston's steady voice cuts through the chaos—calm, determined, and unyielding—as he tracks a mystery that grows darker with each discovery. Is the wolf truly mad, or is something more sinister at work in this remote corner of Canada?</p>
+<p>Sergeant Preston of the Yukon became a cultural phenomenon because it captured the public's imagination during the golden age of radio, offering listeners a weekly escape into a romanticized but thrillingly dangerous North. First airing in 1938 and running strong through the 1950s, the show built its reputation on authentic adventure, complex moral dilemmas, and the unshakeable character of a lawman who embodied Canadian virtue and American heroism. "Mad Wolf" exemplifies why the series endured: it balances genuine frontier peril with character-driven storytelling, never relying on cheap scares or melodrama.</p>
 <p>Don't miss this classic tale of survival and justice. Tune in for "Mad Wolf" and discover why millions tuned in faithfully each week to follow Sergeant Preston into the untamed North.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 12 08 (0585) The Dawson Fire — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0585) The Dawson Fire — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 12 08 (0585) The Dawson Fire — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 12 08 (0585) The Dawson Fire — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 12 08 (0585) The Dawson Fire — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 8, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 12 08 (0585) The Dawson Fire</h1>
+          <h1 class="episode__title">(0585) The Dawson Fire</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Dawson Fire</p>
-<p>Picture this: the crackling of a roaring inferno cutting through the frigid Yukon night, the desperate shouts of miners and townsfolk, and the distant but growing thunder of dog sled runners across the frozen ground. In "The Dawson Fire," Sergeant Preston of the Royal Canadian Mounted Police finds himself racing against time itself as a catastrophic blaze threatens to consume Dawson City—and with it, the lives of everyone trapped in its path. With King, his magnificent sled dog, at his side, Preston must navigate treacherous terrain and impossible odds to reach the town before the flames consume everything. This episode crackles with the kind of authentic danger that kept millions of listeners glued to their radios, wondering whether even the resourceful Mountie could overcome nature's fury.</p>
-<p>*Challenge of the Yukon* captured something uniquely American about the adventure serial format: the marriage of frontier heroism with orderly, lawful authority. Sergeant Preston embodied the RCMP officer as idealized protector—always equipped with quick thinking, moral certainty, and an unshakeable bond with his dog. Throughout its seventeen-year run, the show's writers mined the Klondike Gold Rush era for authentic-sounding tales of survival, claim jumping, and justice in the wilderness. Episodes like "The Dawson Fire" showed that the greatest threats weren't always villains with guns; sometimes they were the unforgiving landscape itself, and only courage, loyalty, and ingenuity could prevail.</p>
+          <p>Picture this: the crackling of a roaring inferno cutting through the frigid Yukon night, the desperate shouts of miners and townsfolk, and the distant but growing thunder of dog sled runners across the frozen ground. In "The Dawson Fire," Sergeant Preston of the Royal Canadian Mounted Police finds himself racing against time itself as a catastrophic blaze threatens to consume Dawson City—and with it, the lives of everyone trapped in its path. With King, his magnificent sled dog, at his side, Preston must navigate treacherous terrain and impossible odds to reach the town before the flames consume everything. This episode crackles with the kind of authentic danger that kept millions of listeners glued to their radios, wondering whether even the resourceful Mountie could overcome nature's fury.</p>
+<p>Challenge of the Yukon captured something uniquely American about the adventure serial format: the marriage of frontier heroism with orderly, lawful authority. Sergeant Preston embodied the RCMP officer as idealized protector—always equipped with quick thinking, moral certainty, and an unshakeable bond with his dog. Throughout its seventeen-year run, the show's writers mined the Klondike Gold Rush era for authentic-sounding tales of survival, claim jumping, and justice in the wilderness. Episodes like "The Dawson Fire" showed that the greatest threats weren't always villains with guns; sometimes they were the unforgiving landscape itself, and only courage, loyalty, and ingenuity could prevail.</p>
 <p>Tune in to experience one of radio's most enduring adventures. Hear the roar of the flames, feel the bitter cold of the Yukon, and discover how Sergeant Preston's quick wits and King's loyal heart face their greatest test yet. This is classic radio adventure at its finest.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 02 10 (0849) The King Of Keeno Creek — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0849) The King Of Keeno Creek — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 02 10 (0849) The King Of Keeno Creek — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 02 10 (0849) The King Of Keeno Creek — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 02 10 (0849) The King Of Keeno Creek — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 02 10 (0849) The King Of Keeno Creek</h1>
+          <h1 class="episode__title">(0849) The King Of Keeno Creek</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The King of Keeno Creek</p>
-<p>The frozen wastes of the Yukon have spawned many rough characters, but few as cunning as the claim-jumper known as "King" Malvern—a ruthless prospector who rules Keeno Creek with an iron fist and a loaded revolver. When innocent miners begin disappearing from their claims, Sergeant Preston of the Royal Canadian Mounted Police must venture into the remote northern wilderness with his faithful dog King to uncover the truth. What awaits is a tense game of cat and mouse across treacherous snow fields and hidden mining camps, where every frozen moment could be Preston's last and the bitter cold is the least of his worries.</p>
-<p>*Challenge of the Yukon* became a phenomenon throughout the late 1930s and 1940s, offering American listeners a thrilling escape into Canada's vast frontier at a time when adventure and heroism felt urgently needed. Sergeant Preston—portrayed with steady resolve by Paul Sutherland—embodied the moral certitude and unwavering justice that made the show essential evening entertainment. The program's meticulous attention to authentic Yukon geography and period detail, combined with the iconic thunder of hoofbeats and Rossini's William Tell Overture, created an immersive world that captivated millions. King, the magnificent sled dog, became a character in his own right, earning equal billing and proving that loyalty transcends the boundary between man and beast.</p>
+          <p>The frozen wastes of the Yukon have spawned many rough characters, but few as cunning as the claim-jumper known as "King" Malvern—a ruthless prospector who rules Keeno Creek with an iron fist and a loaded revolver. When innocent miners begin disappearing from their claims, Sergeant Preston of the Royal Canadian Mounted Police must venture into the remote northern wilderness with his faithful dog King to uncover the truth. What awaits is a tense game of cat and mouse across treacherous snow fields and hidden mining camps, where every frozen moment could be Preston's last and the bitter cold is the least of his worries.</p>
+<p>Challenge of the Yukon became a phenomenon throughout the late 1930s and 1940s, offering American listeners a thrilling escape into Canada's vast frontier at a time when adventure and heroism felt urgently needed. Sergeant Preston—portrayed with steady resolve by Paul Sutherland—embodied the moral certitude and unwavering justice that made the show essential evening entertainment. The program's meticulous attention to authentic Yukon geography and period detail, combined with the iconic thunder of hoofbeats and Rossini's William Tell Overture, created an immersive world that captivated millions. King, the magnificent sled dog, became a character in his own right, earning equal billing and proving that loyalty transcends the boundary between man and beast.</p>
 <p>Whether you're a devoted fan of classic radio adventure or discovering this legendary series for the first time, "The King of Keeno Creek" represents the show at its finest—a taut, compelling drama that reminds us why the great age of radio remains unforgotten. Tune in and let Sergeant Preston guide you back to a simpler, more heroic time.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

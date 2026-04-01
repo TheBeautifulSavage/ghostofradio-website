@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 10 30 (0826) Undercover — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0826) Undercover — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 10 30 (0826) Undercover — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 10 30 (0826) Undercover — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 10 30 (0826) Undercover — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 30, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 10 30 (0826) Undercover</h1>
+          <h1 class="episode__title">(0826) Undercover</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Undercover</p>
-<p>As the familiar strains of "Donna Diana" herald another thrilling adventure from the frozen north, Sergeant Preston and his magnificent dog King prepare for their most dangerous assignment yet—going undercover to infiltrate a ruthless gang of fur smugglers operating in the remote Yukon wilderness. This electrifying installment plunges listeners into a world of deception and peril where trust is a luxury the Sergeant cannot afford. With nothing but his wits, his loyal companion, and a fabricated identity, Preston must navigate the treacherous criminal underworld while concealing his true allegiance to the Royal Canadian Mounted Police. Every shadow could harbor betrayal, every gesture of friendship a potential trap. The tension crackles through your radio speaker as the Sergeant walks a razor's edge between maintaining his cover and preventing a shipment of stolen pelts from reaching unscrupulous dealers in the States—all while the gang's suspicious leader watches his every move.</p>
-<p>For nearly two decades, *Challenge of the Yukon* captivated millions of Americans with its intoxicating blend of frontier justice, natural perils, and the indomitable spirit of law enforcement. Created in an era when radio was the primary source of entertainment and escapism, the show became a beloved institution that defined adventure programming. The Yukon setting provided an exotic yet accessible backdrop—a land of genuine danger where civilized rules held no sway and a man's character was tested by both wilderness and wickedness. Sergeant Preston, with his unwavering moral compass and supernatural rapport with King, embodied the idealized lawman that audiences craved during turbulent times.</p>
-<p>Slip on your headphones and surrender yourself to the howling wind and sinister whispers of the far north. *Challenge of the Yukon* awaits with all the danger, drama, and determination that made it radio's greatest adventure series.</p>
+          <p>As the familiar strains of "Donna Diana" herald another thrilling adventure from the frozen north, Sergeant Preston and his magnificent dog King prepare for their most dangerous assignment yet—going undercover to infiltrate a ruthless gang of fur smugglers operating in the remote Yukon wilderness. This electrifying installment plunges listeners into a world of deception and peril where trust is a luxury the Sergeant cannot afford. With nothing but his wits, his loyal companion, and a fabricated identity, Preston must navigate the treacherous criminal underworld while concealing his true allegiance to the Royal Canadian Mounted Police. Every shadow could harbor betrayal, every gesture of friendship a potential trap. The tension crackles through your radio speaker as the Sergeant walks a razor's edge between maintaining his cover and preventing a shipment of stolen pelts from reaching unscrupulous dealers in the States—all while the gang's suspicious leader watches his every move.</p>
+<p>For nearly two decades, Challenge of the Yukon captivated millions of Americans with its intoxicating blend of frontier justice, natural perils, and the indomitable spirit of law enforcement. Created in an era when radio was the primary source of entertainment and escapism, the show became a beloved institution that defined adventure programming. The Yukon setting provided an exotic yet accessible backdrop—a land of genuine danger where civilized rules held no sway and a man's character was tested by both wilderness and wickedness. Sergeant Preston, with his unwavering moral compass and supernatural rapport with King, embodied the idealized lawman that audiences craved during turbulent times.</p>
+<p>Slip on your headphones and surrender yourself to the howling wind and sinister whispers of the far north. Challenge of the Yukon awaits with all the danger, drama, and determination that made it radio's greatest adventure series.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 02 22 (0747) Trail's End — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0747) Trail's End — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 02 22 (0747) Trail's End — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 02 22 (0747) Trail's End — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 02 22 (0747) Trail's End — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 22, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 02 22 (0747) Trail's End</h1>
+          <h1 class="episode__title">(0747) Trail's End</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Trail's End</p>
-<p>Picture yourself huddled around the radio on a frigid winter's night, the crackle of the speaker matched only by the snap of your home's fireplace. In "Trail's End," listeners are thrust into the unforgiving Yukon wilderness with Sergeant Preston of the Royal Canadian Mounted Police and his legendary dog, King. When a desperate fugitive's trail goes cold in a blinding snowstorm, Preston must push deeper into unmapped territory, where every shadow could conceal danger and where the frozen landscape itself becomes as much an adversary as the criminal he pursues. The tension builds methodically—the distant howl of wolves, the labored breathing of man and beast, the grim determination in Preston's voice as he closes in on his quarry. This is adventure stripped to its essentials: survival, justice, and the bond between man and animal tested against nature's cruelest forces.</p>
-<p>What makes *Challenge of the Yukon* endure in the hearts of radio enthusiasts is precisely this formula executed with remarkable authenticity. The show, which premiered in 1938 and ran for nearly two decades, captured the public's fascination with Canada's remote northern frontier at a moment when the American imagination remained captivated by tales of wilderness heroism. The scripts balanced genuine danger with the moral clarity of law and order, while the sound effects—meticulously crafted in studio—made listeners genuinely believe they were shivering alongside Preston and King on the tundra. Each episode was a masterclass in economical storytelling, squeezing genuine suspense and character into a tight narrative frame.</p>
+          <p>Picture yourself huddled around the radio on a frigid winter's night, the crackle of the speaker matched only by the snap of your home's fireplace. In "Trail's End," listeners are thrust into the unforgiving Yukon wilderness with Sergeant Preston of the Royal Canadian Mounted Police and his legendary dog, King. When a desperate fugitive's trail goes cold in a blinding snowstorm, Preston must push deeper into unmapped territory, where every shadow could conceal danger and where the frozen landscape itself becomes as much an adversary as the criminal he pursues. The tension builds methodically—the distant howl of wolves, the labored breathing of man and beast, the grim determination in Preston's voice as he closes in on his quarry. This is adventure stripped to its essentials: survival, justice, and the bond between man and animal tested against nature's cruelest forces.</p>
+<p>What makes Challenge of the Yukon endure in the hearts of radio enthusiasts is precisely this formula executed with remarkable authenticity. The show, which premiered in 1938 and ran for nearly two decades, captured the public's fascination with Canada's remote northern frontier at a moment when the American imagination remained captivated by tales of wilderness heroism. The scripts balanced genuine danger with the moral clarity of law and order, while the sound effects—meticulously crafted in studio—made listeners genuinely believe they were shivering alongside Preston and King on the tundra. Each episode was a masterclass in economical storytelling, squeezing genuine suspense and character into a tight narrative frame.</p>
 <p>If you've never experienced the magic of radio adventure, "Trail's End" is the perfect gateway. Tune in and let your imagination do what modern screens cannot—transport you completely to another world.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

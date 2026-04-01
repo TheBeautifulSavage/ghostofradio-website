@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 07 10 (0796) The Diamond Solitaire — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0796) The Diamond Solitaire — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 07 10 (0796) The Diamond Solitaire — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 07 10 (0796) The Diamond Solitaire — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 07 10 (0796) The Diamond Solitaire — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · July 10, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 07 10 (0796) The Diamond Solitaire</h1>
+          <h1 class="episode__title">(0796) The Diamond Solitaire</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Diamond Solitaire</p>
-<p>As the familiar strains of "Donna Diana" crackle through the receiver, you're transported once more to the frozen vastness of Canada's Yukon Territory, where Sergeant Preston of the Royal Canadian Mounted Police faces a mystery as glittering and treacherous as northern ice. In "The Diamond Solitaire," a priceless gem has vanished into the wilderness, and Preston must navigate a tangled web of greed, deception, and desperation to recover it before criminals slip across the border into lawless territory. With his faithful husky King at his side and nothing but his wits and unwavering sense of justice to guide him, Preston pursues leads through remote settlements and snow-locked passes. Listen as the tension mounts through expertly crafted sound design—the howl of wolves, the crunch of boots on frozen ground, the distant jingle of harness bells—building toward a confrontation that will test not only Preston's investigative skills but his moral character.</p>
-<p>From 1938 through the mid-1950s, *Sergeant Preston of the Yukon* captivated millions of listeners who craved authentic adventure grounded in the romance of Canada's wild frontier. The show's meticulous attention to period detail and northern geography gave it credibility that set it apart from typical Western fare, while Preston himself—incorruptible, intelligent, and driven by duty rather than ego—embodied an idealized vision of Canadian law enforcement that resonated deeply with Depression and wartime audiences seeking heroes of steadfast principle.</p>
+          <p>As the familiar strains of "Donna Diana" crackle through the receiver, you're transported once more to the frozen vastness of Canada's Yukon Territory, where Sergeant Preston of the Royal Canadian Mounted Police faces a mystery as glittering and treacherous as northern ice. In "The Diamond Solitaire," a priceless gem has vanished into the wilderness, and Preston must navigate a tangled web of greed, deception, and desperation to recover it before criminals slip across the border into lawless territory. With his faithful husky King at his side and nothing but his wits and unwavering sense of justice to guide him, Preston pursues leads through remote settlements and snow-locked passes. Listen as the tension mounts through expertly crafted sound design—the howl of wolves, the crunch of boots on frozen ground, the distant jingle of harness bells—building toward a confrontation that will test not only Preston's investigative skills but his moral character.</p>
+<p>From 1938 through the mid-1950s, Sergeant Preston of the Yukon captivated millions of listeners who craved authentic adventure grounded in the romance of Canada's wild frontier. The show's meticulous attention to period detail and northern geography gave it credibility that set it apart from typical Western fare, while Preston himself—incorruptible, intelligent, and driven by duty rather than ego—embodied an idealized vision of Canadian law enforcement that resonated deeply with Depression and wartime audiences seeking heroes of steadfast principle.</p>
 <p>Join Sergeant Preston and King as they close in on "The Diamond Solitaire." Your adventure awaits—just turn the dial and let your imagination do the rest.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

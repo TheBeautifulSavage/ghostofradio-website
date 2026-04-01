@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 11 01 (0569) The Call Of Duty — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0569) The Call Of Duty — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 11 01 (0569) The Call Of Duty — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 11 01 (0569) The Call Of Duty — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 11 01 (0569) The Call Of Duty — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 1, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 11 01 (0569) The Call Of Duty</h1>
+          <h1 class="episode__title">(0569) The Call Of Duty</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Call of Duty</p>
-<p>As the familiar strains of Schubert's "Rosamunde" crackle through your speaker and Sergeant Preston's authoritative voice cuts through the northern darkness, you find yourself transported to the frozen Yukon frontier. In "The Call of Duty," Preston and his faithful husky King face a moral reckoning that cuts deeper than the permafrost itself—a case that pits loyalty to the law against the bonds of friendship and brotherhood. When a trusted member of the mounted police force is implicated in a crime that could destroy his career and reputation, Preston must navigate the treacherous terrain of justice and mercy, knowing that every decision carries the weight of a man's entire life. The howling wind and distant dog barks create an atmosphere of isolation and dread, while the mounting tension promises that this is no ordinary frontier mystery.</p>
+          <p>As the familiar strains of Schubert's "Rosamunde" crackle through your speaker and Sergeant Preston's authoritative voice cuts through the northern darkness, you find yourself transported to the frozen Yukon frontier. In "The Call of Duty," Preston and his faithful husky King face a moral reckoning that cuts deeper than the permafrost itself—a case that pits loyalty to the law against the bonds of friendship and brotherhood. When a trusted member of the mounted police force is implicated in a crime that could destroy his career and reputation, Preston must navigate the treacherous terrain of justice and mercy, knowing that every decision carries the weight of a man's entire life. The howling wind and distant dog barks create an atmosphere of isolation and dread, while the mounting tension promises that this is no ordinary frontier mystery.</p>
 <p>"Challenge of the Yukon" captivated millions during radio's golden age by combining the adventure of the wild north with a deeply moral universe where right action mattered profoundly. The show's popularity stemmed from its perfect blend of action-packed storytelling and genuine character development—Sergeant Preston wasn't merely a lawman, but a thoughtful man bound by duty to a higher code. This 1940s episode exemplifies the show's greatest strength: its ability to explore complex ethical dilemmas wrapped in the thrilling package of adventure fiction, all while maintaining the authenticity of Canadian frontier life that listeners craved during wartime.</p>
 <p>Settle into your easy chair and discover why this program remained a staple for seventeen years. "The Call of Duty" awaits—a reminder that sometimes the greatest challenges we face aren't against outlaws and criminals, but against our own hearts.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

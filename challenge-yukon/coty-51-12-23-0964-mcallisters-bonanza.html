@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 12 23 (0964) Mcallister's Bonanza — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0964) Mcallister's Bonanza — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 12 23 (0964) Mcallister's Bonanza — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 12 23 (0964) Mcallister's Bonanza — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 12 23 (0964) Mcallister's Bonanza — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 12 23 (0964) Mcallister's Bonanza</h1>
+          <h1 class="episode__title">(0964) Mcallister's Bonanza</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># McAllister's Bonanza</p>
-<p>Picture yourself huddled around the radio on a December evening in the 1940s as the familiar sound of Rossini's "William Tell Overture" crackles through the speaker, and Sergeant Preston's steady voice commands, "King! Forward!" In *McAllister's Bonanza*, our hero faces one of his most treacherous cases yet when a claim-jumper's scheme threatens to destroy an honest prospector's dreams in the frozen wilderness. As temperatures plummet and trust becomes as scarce as gold itself, Preston and his faithful Husky must navigate a tangle of deception, greed, and frontier justice—all while the brutal Yukon stands ready to claim those who falter. The stakes have never felt higher as our Mountie closes in on a truth that could mean the difference between survival and ruin for an innocent man.</p>
-<p>*Challenge of the Yukon*, which ran throughout the golden age of radio from 1938 to 1955, captured the imagination of millions of listeners with its perfect blend of authentic frontier adventure and moral clarity. The show's popularity proved so enduring that it was later adapted into the beloved television series *Sergeant Preston of the Yukon*. These episodes represent a uniquely American form of storytelling—combining the romance of the North with the reassurance that law and decency would ultimately prevail. Each broadcast transported listeners away from the anxieties of their own era into a world where right and wrong seemed refreshingly clear.</p>
-<p>If you've never heard Sergeant Preston's adventures, *McAllister's Bonanza* is an excellent entry point into this classic series. Press play and let yourself be transported back to an era when radio was king, when adventure was just a twist of the dial away, and when a Mountie and his dog were all that stood between justice and chaos in the great white north.</p>
+          <p>Picture yourself huddled around the radio on a December evening in the 1940s as the familiar sound of Rossini's "William Tell Overture" crackles through the speaker, and Sergeant Preston's steady voice commands, "King! Forward!" In McAllister's Bonanza, our hero faces one of his most treacherous cases yet when a claim-jumper's scheme threatens to destroy an honest prospector's dreams in the frozen wilderness. As temperatures plummet and trust becomes as scarce as gold itself, Preston and his faithful Husky must navigate a tangle of deception, greed, and frontier justice—all while the brutal Yukon stands ready to claim those who falter. The stakes have never felt higher as our Mountie closes in on a truth that could mean the difference between survival and ruin for an innocent man.</p>
+<p>Challenge of the Yukon, which ran throughout the golden age of radio from 1938 to 1955, captured the imagination of millions of listeners with its perfect blend of authentic frontier adventure and moral clarity. The show's popularity proved so enduring that it was later adapted into the beloved television series Sergeant Preston of the Yukon. These episodes represent a uniquely American form of storytelling—combining the romance of the North with the reassurance that law and decency would ultimately prevail. Each broadcast transported listeners away from the anxieties of their own era into a world where right and wrong seemed refreshingly clear.</p>
+<p>If you've never heard Sergeant Preston's adventures, McAllister's Bonanza is an excellent entry point into this classic series. Press play and let yourself be transported back to an era when radio was king, when adventure was just a twist of the dial away, and when a Mountie and his dog were all that stood between justice and chaos in the great white north.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

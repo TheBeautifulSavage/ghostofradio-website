@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 43 08 19 (0290) Caught By A Button — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0290) Caught By A Button — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 43 08 19 (0290) Caught By A Button — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 43 08 19 (0290) Caught By A Button — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 43 08 19 (0290) Caught By A Button — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 19, 1943</span>
           </div>
-          <h1 class="episode__title">Coty 43 08 19 (0290) Caught By A Button</h1>
+          <h1 class="episode__title">(0290) Caught By A Button</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Caught By A Button</p>
-<p>As the familiar strains of the *Charge of the Light Brigade* herald Sergeant Preston of the Yukon across your radio, you'll find yourself thrust into the frozen wilderness where a seemingly insignificant detail becomes a matter of life and death. In this gripping 1940 episode, a tiny button—torn from a villain's coat during a desperate struggle—becomes the crucial thread that unravels an elaborate crime. Preston must navigate treacherous snowfields and darker human impulses to prove his case, all while King, his faithful husky, remains at his side. The tension builds as clues multiply and suspicion falls upon the innocent, creating that perfect marriage of detective work and adventure that made the series an unmissable appointment for listeners huddled around their sets.</p>
-<p>*Challenge of the Yukon*, which premiered in 1938 and thrived through the golden age of radio, captured America's imagination during an era when radio drama was the primary form of home entertainment. The show's genius lay in blending the frontier adventure formula with genuine detective mystery, all set against the authentic backdrop of Canada's North. Sergeant Preston became an iconic character—a symbol of justice and courage—while the writing consistently delivered clever plotting that rewarded attentive listeners. This particular episode exemplifies why the series endured for nearly two decades: it understood that the greatest mysteries often turn on the smallest details, much like the human dramas unfolding in living rooms across America during the 1940s.</p>
+          <p>As the familiar strains of the Charge of the Light Brigade herald Sergeant Preston of the Yukon across your radio, you'll find yourself thrust into the frozen wilderness where a seemingly insignificant detail becomes a matter of life and death. In this gripping 1940 episode, a tiny button—torn from a villain's coat during a desperate struggle—becomes the crucial thread that unravels an elaborate crime. Preston must navigate treacherous snowfields and darker human impulses to prove his case, all while King, his faithful husky, remains at his side. The tension builds as clues multiply and suspicion falls upon the innocent, creating that perfect marriage of detective work and adventure that made the series an unmissable appointment for listeners huddled around their sets.</p>
+<p>Challenge of the Yukon, which premiered in 1938 and thrived through the golden age of radio, captured America's imagination during an era when radio drama was the primary form of home entertainment. The show's genius lay in blending the frontier adventure formula with genuine detective mystery, all set against the authentic backdrop of Canada's North. Sergeant Preston became an iconic character—a symbol of justice and courage—while the writing consistently delivered clever plotting that rewarded attentive listeners. This particular episode exemplifies why the series endured for nearly two decades: it understood that the greatest mysteries often turn on the smallest details, much like the human dramas unfolding in living rooms across America during the 1940s.</p>
 <p>Don't let this Canadian adventure pass you by. Tune in to hear how Sergeant Preston transforms a single button into evidence, how King's instincts guide his master toward truth, and why listeners made this program an essential part of their weekly routine. Step into the Yukon—justice awaits.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

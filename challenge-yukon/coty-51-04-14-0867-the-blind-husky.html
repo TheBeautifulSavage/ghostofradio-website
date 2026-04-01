@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 04 14 (0867) The Blind Husky — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0867) The Blind Husky — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 04 14 (0867) The Blind Husky — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 04 14 (0867) The Blind Husky — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 04 14 (0867) The Blind Husky — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 04 14 (0867) The Blind Husky</h1>
+          <h1 class="episode__title">(0867) The Blind Husky</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Blind Husky</p>
-<p>Picture yourself huddled near your radio on a bitter northern evening as Sergeant Preston of the Yukon faces his most harrowing case yet—a desperate musher whose lead dog has gone blind just as a killer stalks the frozen wilderness. In "The Blind Husky," Preston must unravel whether the animal's affliction is natural tragedy or calculated sabotage, all while pursuing a dangerous criminal through whiteout conditions where trust in your team means the difference between survival and death. The sled runners crunch against ice, King the Wonder Dog's anxious whines punctuate the howling wind, and tension mounts as Preston realizes the real danger may lie not in the pursuit, but in the secrets his witnesses refuse to share. This is frontier justice at its most intimate and unforgiving.</p>
-<p>*Challenge of the Yukon* captured something irreplaceable during radio's golden age—the romance of Canadian wilderness justice filtered through the everyman heroism of a Mounted Policeman and his faithful companion. Premiering in 1938, the show became a phenomenon precisely because it grounded adventure in character and moral complexity. Unlike simple shoot-em-ups, Preston's cases often explored the thin line between law and survival, between civilization's rules and the unforgiving ethics of the north. By the 1940s, when this episode aired, the formula was perfected: atmospheric sound design, Sergeant Preston's measured narration, and mysteries that required brains as much as bravery.</p>
+          <p>Picture yourself huddled near your radio on a bitter northern evening as Sergeant Preston of the Yukon faces his most harrowing case yet—a desperate musher whose lead dog has gone blind just as a killer stalks the frozen wilderness. In "The Blind Husky," Preston must unravel whether the animal's affliction is natural tragedy or calculated sabotage, all while pursuing a dangerous criminal through whiteout conditions where trust in your team means the difference between survival and death. The sled runners crunch against ice, King the Wonder Dog's anxious whines punctuate the howling wind, and tension mounts as Preston realizes the real danger may lie not in the pursuit, but in the secrets his witnesses refuse to share. This is frontier justice at its most intimate and unforgiving.</p>
+<p>Challenge of the Yukon captured something irreplaceable during radio's golden age—the romance of Canadian wilderness justice filtered through the everyman heroism of a Mounted Policeman and his faithful companion. Premiering in 1938, the show became a phenomenon precisely because it grounded adventure in character and moral complexity. Unlike simple shoot-em-ups, Preston's cases often explored the thin line between law and survival, between civilization's rules and the unforgiving ethics of the north. By the 1940s, when this episode aired, the formula was perfected: atmospheric sound design, Sergeant Preston's measured narration, and mysteries that required brains as much as bravery.</p>
 <p>Whether you're new to the series or a devoted fan, "The Blind Husky" exemplifies why listeners tuned in faithfully for seventeen years. Adjust your dial, settle in, and let Preston guide you into the Canadian darkness—where justice runs as deep as the snow is high.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

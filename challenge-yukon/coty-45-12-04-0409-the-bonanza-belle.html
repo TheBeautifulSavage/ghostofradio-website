@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 12 04 (0409) The Bonanza Belle — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0409) The Bonanza Belle — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 12 04 (0409) The Bonanza Belle — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 12 04 (0409) The Bonanza Belle — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 12 04 (0409) The Bonanza Belle — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 4, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 12 04 (0409) The Bonanza Belle</h1>
+          <h1 class="episode__title">(0409) The Bonanza Belle</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Bonanza Belle</p>
-<p>Picture yourself huddled close to your radio set on a winter's evening as Sergeant Preston and his faithful husky King venture into the frozen heart of the Yukon, pursuing a mystery as elusive as the northern lights themselves. In "The Bonanza Belle," our stalwart Mountie encounters a riverboat shrouded in whispered rumors of hidden gold and darker secrets—secrets that demand justice. The crackle of the transmission mingles with howling wind and sled dogs' urgent barks as Preston navigates treacherous ice floes and the even more treacherous greed of frontier prospectors. Will he uncover the truth before the Yukon's merciless winter claims another victim? The tension builds with each carefully crafted sound effect, each measured word from Preston's steady voice, drawing listeners deeper into the Canadian wilderness where law and order hang as precariously as icicles from a cabin eave.</p>
-<p>*Challenge of the Yukon* stands as a defining adventure serial of radio's golden age, capturing America's fascination with the remote, romantic north during an era when the frontier still felt tantalizingly alive in the collective imagination. Debuting in 1938, the show became a phenomenon, inspiring lunch pails, comic strips, and eventually the iconic film serials. What set Preston apart was the grounded authenticity beneath the adventure—real Yukon geography, actual Mountie procedures, and a hero motivated by duty rather than mere thrills. The show's longevity through the 1940s and into the 1950s testifies to listeners' hunger for heroism, justice, and the triumph of civilization against nature's indifferent challenges.</p>
+          <p>Picture yourself huddled close to your radio set on a winter's evening as Sergeant Preston and his faithful husky King venture into the frozen heart of the Yukon, pursuing a mystery as elusive as the northern lights themselves. In "The Bonanza Belle," our stalwart Mountie encounters a riverboat shrouded in whispered rumors of hidden gold and darker secrets—secrets that demand justice. The crackle of the transmission mingles with howling wind and sled dogs' urgent barks as Preston navigates treacherous ice floes and the even more treacherous greed of frontier prospectors. Will he uncover the truth before the Yukon's merciless winter claims another victim? The tension builds with each carefully crafted sound effect, each measured word from Preston's steady voice, drawing listeners deeper into the Canadian wilderness where law and order hang as precariously as icicles from a cabin eave.</p>
+<p>Challenge of the Yukon stands as a defining adventure serial of radio's golden age, capturing America's fascination with the remote, romantic north during an era when the frontier still felt tantalizingly alive in the collective imagination. Debuting in 1938, the show became a phenomenon, inspiring lunch pails, comic strips, and eventually the iconic film serials. What set Preston apart was the grounded authenticity beneath the adventure—real Yukon geography, actual Mountie procedures, and a hero motivated by duty rather than mere thrills. The show's longevity through the 1940s and into the 1950s testifies to listeners' hunger for heroism, justice, and the triumph of civilization against nature's indifferent challenges.</p>
 <p>So tune in now to "The Bonanza Belle" and let the crackling static transport you north to a land where one man's courage stands against impossible odds. What awaits Sergeant Preston on the frozen rivers? Only your radio can tell you.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

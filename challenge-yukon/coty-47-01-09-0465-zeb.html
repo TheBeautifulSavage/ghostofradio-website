@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 01 09 (0465) Zeb — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0465) Zeb — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 01 09 (0465) Zeb — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 01 09 (0465) Zeb — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 01 09 (0465) Zeb — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 9, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 01 09 (0465) Zeb</h1>
+          <h1 class="episode__title">(0465) Zeb</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Zeb"</p>
-<p>The frozen wastes of the Canadian northwest stretch endlessly beneath a starless sky as Sergeant Preston and his faithful husky King venture deep into unforgiving territory to track down the mysterious outlaw known only as Zeb. What begins as a routine patrol transforms into a harrowing game of cat-and-mouse across blizzard-swept passes and isolated mining camps, where trust is as scarce as warmth and every shadow could conceal danger. Listeners will find themselves gripping their radios as Preston navigates a treacherous landscape where a man's word means everything and a moment's hesitation could spell death—all while the howling wind and the faithful baying of King underscore the mounting tension of this classic frontier justice tale.</p>
-<p>*Challenge of the Yukon* captured the imaginations of millions throughout the 1940s by combining the raw authenticity of the Klondike Gold Rush era with the moral certainty of a lawman bringing order to chaos. Sergeant Preston became an icon of that golden age of radio adventure, embodying the steadfast virtue and dogged determination that audiences craved during uncertain times. This particular episode, recorded in the show's robust mid-run period, showcases the program at its finest—with richly detailed sound effects, compelling characterization, and a script that balances action with genuine human drama. The episodes' enduring appeal lies in their faithful recreation of a vanishing frontier and the timeless struggle between civilization and the untamed wilderness.</p>
+          <p>The frozen wastes of the Canadian northwest stretch endlessly beneath a starless sky as Sergeant Preston and his faithful husky King venture deep into unforgiving territory to track down the mysterious outlaw known only as Zeb. What begins as a routine patrol transforms into a harrowing game of cat-and-mouse across blizzard-swept passes and isolated mining camps, where trust is as scarce as warmth and every shadow could conceal danger. Listeners will find themselves gripping their radios as Preston navigates a treacherous landscape where a man's word means everything and a moment's hesitation could spell death—all while the howling wind and the faithful baying of King underscore the mounting tension of this classic frontier justice tale.</p>
+<p>Challenge of the Yukon captured the imaginations of millions throughout the 1940s by combining the raw authenticity of the Klondike Gold Rush era with the moral certainty of a lawman bringing order to chaos. Sergeant Preston became an icon of that golden age of radio adventure, embodying the steadfast virtue and dogged determination that audiences craved during uncertain times. This particular episode, recorded in the show's robust mid-run period, showcases the program at its finest—with richly detailed sound effects, compelling characterization, and a script that balances action with genuine human drama. The episodes' enduring appeal lies in their faithful recreation of a vanishing frontier and the timeless struggle between civilization and the untamed wilderness.</p>
 <p>Don't miss this gripping installment of radio's greatest adventure series. Tune in as Sergeant Preston faces his most cunning adversary yet in a tale of pursuit and survival where only the strongest—and most righteous—will emerge victorious from the merciless Yukon.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

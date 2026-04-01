@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 11 16 (0705) Note Of Evidence — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0705) Note Of Evidence — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 11 16 (0705) Note Of Evidence — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 11 16 (0705) Note Of Evidence — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 11 16 (0705) Note Of Evidence — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 16, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 11 16 (0705) Note Of Evidence</h1>
+          <h1 class="episode__title">(0705) Note Of Evidence</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Note of Evidence</p>
-<p>As the iconic bugle call of the Royal Canadian Mounted Police pierces the arctic night, Sergeant Preston and his faithful dog King face their most perplexing mystery yet. A seemingly innocent piece of paper—a single note left at a remote trading post—becomes the thread that unravels a conspiracy of theft and deception across the frozen Yukon wilderness. With nothing but their wits, their courage, and the bond between man and beast, Preston must trace the cryptic message through blizzards and bitter cold to unmask a criminal who has outsmarted every lawman between Dawson City and the Arctic Circle. The tension mounts as clues emerge from the most unexpected places, and listeners will find themselves drawn into the relentless pursuit of justice where the vast, unforgiving landscape itself becomes both sanctuary and threat.</p>
-<p>*Challenge of the Yukon* captivated audiences throughout the 1940s as one of radio's most authentic adventure serials, grounded in genuine Canadian history and the real exploits of the RCMP. Unlike the exaggerated shoot-em-ups flooding the airwaves, Preston's cases emphasized clever deduction and moral conviction, presenting law enforcement as a noble calling. The show's creators consulted extensively with mounted police officers to ensure the details of northern life rang true—from sled dog commands to trading post protocols. This commitment to authenticity, combined with the natural chemistry between Paul Sutherland's steady-voiced hero and the sound effects team's masterful evocation of howling winds and creaking ice, created an immersive experience that transported listeners directly to Canada's frozen frontier.</p>
+          <p>As the iconic bugle call of the Royal Canadian Mounted Police pierces the arctic night, Sergeant Preston and his faithful dog King face their most perplexing mystery yet. A seemingly innocent piece of paper—a single note left at a remote trading post—becomes the thread that unravels a conspiracy of theft and deception across the frozen Yukon wilderness. With nothing but their wits, their courage, and the bond between man and beast, Preston must trace the cryptic message through blizzards and bitter cold to unmask a criminal who has outsmarted every lawman between Dawson City and the Arctic Circle. The tension mounts as clues emerge from the most unexpected places, and listeners will find themselves drawn into the relentless pursuit of justice where the vast, unforgiving landscape itself becomes both sanctuary and threat.</p>
+<p>Challenge of the Yukon captivated audiences throughout the 1940s as one of radio's most authentic adventure serials, grounded in genuine Canadian history and the real exploits of the RCMP. Unlike the exaggerated shoot-em-ups flooding the airwaves, Preston's cases emphasized clever deduction and moral conviction, presenting law enforcement as a noble calling. The show's creators consulted extensively with mounted police officers to ensure the details of northern life rang true—from sled dog commands to trading post protocols. This commitment to authenticity, combined with the natural chemistry between Paul Sutherland's steady-voiced hero and the sound effects team's masterful evocation of howling winds and creaking ice, created an immersive experience that transported listeners directly to Canada's frozen frontier.</p>
 <p>Don't miss this enthralling investigation where evidence speaks volumes and one small note changes everything. Tune in and experience why audiences returned faithfully each week to follow Sergeant Preston into the great white north.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

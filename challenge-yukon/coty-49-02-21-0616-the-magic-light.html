@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 02 21 (0616) The Magic Light — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0616) The Magic Light — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 02 21 (0616) The Magic Light — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 02 21 (0616) The Magic Light — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 02 21 (0616) The Magic Light — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 21, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 02 21 (0616) The Magic Light</h1>
+          <h1 class="episode__title">(0616) The Magic Light</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Magic Light</p>
-<p>Deep in the frozen Canadian wilderness, where the pines bow under crushing snow and the aurora dances across obsidian skies, Sergeant Preston of the Yukon faces a mystery that defies all logic. When a prospector stumbles into Fort Yukon raving about a mysterious light guiding him through a blizzard—a light that appeared and vanished like a phantom—Preston must separate superstition from survival. Is it a natural phenomenon, a trick of desperate minds, or something more sinister lurking in the remote outback? Listeners will thrill as Preston and his faithful husky King investigate remote cabins, interrogate frightened prospectors, and venture into the howling darkness themselves, where the truth may prove far more unsettling than any ghost story.</p>
-<p>*Challenge of the Yukon* became a beacon of adventure radio during the late 1930s and 1940s, capitalizing on America's enduring fascination with the Klondike frontier and tales of rugged individualism. The show's authentic production—complete with howling wind, sled dogs, and crackling ice—transported audiences from their living rooms to the edge of civilization itself. Sergeant Preston embodied the ideal of lawful frontier justice, a mounted constable who relied on wits, courage, and loyal King to maintain order where civilization barely reached. Episodes like "The Magic Light" showcased the program's storytelling prowess, blending genuine atmospheric tension with the kind of rational mystery-solving that made listeners return week after week.</p>
-<p>Don your furs and prepare your mind for a journey into the unknown. *Challenge of the Yukon* awaits—where danger lurks in shadow and light, and Sergeant Preston stands ready. The north calls.</p>
+          <p>Deep in the frozen Canadian wilderness, where the pines bow under crushing snow and the aurora dances across obsidian skies, Sergeant Preston of the Yukon faces a mystery that defies all logic. When a prospector stumbles into Fort Yukon raving about a mysterious light guiding him through a blizzard—a light that appeared and vanished like a phantom—Preston must separate superstition from survival. Is it a natural phenomenon, a trick of desperate minds, or something more sinister lurking in the remote outback? Listeners will thrill as Preston and his faithful husky King investigate remote cabins, interrogate frightened prospectors, and venture into the howling darkness themselves, where the truth may prove far more unsettling than any ghost story.</p>
+<p>Challenge of the Yukon became a beacon of adventure radio during the late 1930s and 1940s, capitalizing on America's enduring fascination with the Klondike frontier and tales of rugged individualism. The show's authentic production—complete with howling wind, sled dogs, and crackling ice—transported audiences from their living rooms to the edge of civilization itself. Sergeant Preston embodied the ideal of lawful frontier justice, a mounted constable who relied on wits, courage, and loyal King to maintain order where civilization barely reached. Episodes like "The Magic Light" showcased the program's storytelling prowess, blending genuine atmospheric tension with the kind of rational mystery-solving that made listeners return week after week.</p>
+<p>Don your furs and prepare your mind for a journey into the unknown. Challenge of the Yukon awaits—where danger lurks in shadow and light, and Sergeant Preston stands ready. The north calls.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

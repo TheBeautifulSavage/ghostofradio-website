@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 07 19 (0797) Stolen Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0797) Stolen Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 07 19 (0797) Stolen Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 07 19 (0797) Stolen Gold — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 07 19 (0797) Stolen Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · July 19, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 07 19 (0797) Stolen Gold</h1>
+          <h1 class="episode__title">(0797) Stolen Gold</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Stolen Gold</p>
-<p>In the frozen wastes north of Dawson City, a fortune in Yukon gold has vanished without a trace, and Sergeant Preston of the Royal Canadian Mounted Police must untangle a web of greed, deception, and Arctic intrigue to recover it. As our intrepid Mountie and his faithful husky companion King race across windswept snowfields and through shadowed trading posts, the stakes grow deadlier with each new clue. Someone in this remote corner of the territory knows far more than they're telling, and Preston's sharp investigative mind must cut through lies and misdirection to find the truth—before the thieves disappear into the vast wilderness forever. This episode crackles with the tension of a desperate manhunt and the timeless allure of gold fever.</p>
-<p>*Challenge of the Yukon* became a radio sensation during the 1940s precisely because it captured something essential about the North American frontier mythology—the triumph of law and order in lawless lands, the bond between man and animal, and the romantic notion of justice pursued across impossible terrain. Actor Actually Paul Sutherland brought gravitas and quiet determination to Sergeant Preston, making him the thinking listener's action hero, a problem-solver as much as an adventurer. The show's writers drew inspiration from genuine Canadian history while crafting stories that transcended mere shoot-'em-up western fare, offering instead tales of human nature tested by isolation and circumstance. The show's popularity proved that audiences hungered for intelligent adventure with moral weight.</p>
+          <p>In the frozen wastes north of Dawson City, a fortune in Yukon gold has vanished without a trace, and Sergeant Preston of the Royal Canadian Mounted Police must untangle a web of greed, deception, and Arctic intrigue to recover it. As our intrepid Mountie and his faithful husky companion King race across windswept snowfields and through shadowed trading posts, the stakes grow deadlier with each new clue. Someone in this remote corner of the territory knows far more than they're telling, and Preston's sharp investigative mind must cut through lies and misdirection to find the truth—before the thieves disappear into the vast wilderness forever. This episode crackles with the tension of a desperate manhunt and the timeless allure of gold fever.</p>
+<p>Challenge of the Yukon became a radio sensation during the 1940s precisely because it captured something essential about the North American frontier mythology—the triumph of law and order in lawless lands, the bond between man and animal, and the romantic notion of justice pursued across impossible terrain. Actor Actually Paul Sutherland brought gravitas and quiet determination to Sergeant Preston, making him the thinking listener's action hero, a problem-solver as much as an adventurer. The show's writers drew inspiration from genuine Canadian history while crafting stories that transcended mere shoot-'em-up western fare, offering instead tales of human nature tested by isolation and circumstance. The show's popularity proved that audiences hungered for intelligent adventure with moral weight.</p>
 <p>Tune in now for "Stolen Gold" and join Sergeant Preston as he navigates betrayal and treachery to restore justice to the Yukon. With King at his side and duty in his heart, our hero faces his most cunning adversaries yet. This is adventure radio at its finest—thrilling, expertly crafted, and utterly unforgettable.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

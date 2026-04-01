@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 10 29 (0568) The Phantom Gang — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0568) The Phantom Gang — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 10 29 (0568) The Phantom Gang — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 10 29 (0568) The Phantom Gang — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 10 29 (0568) The Phantom Gang — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 29, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 10 29 (0568) The Phantom Gang</h1>
+          <h1 class="episode__title">(0568) The Phantom Gang</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Phantom Gang</p>
-<p>Picture yourself huddled around the radio on a crisp autumn evening as Sergeant Preston of the Yukon faces his most baffling case yet. A mysterious gang of outlaws strikes without warning across the frozen territories—leaving no trace, no witnesses, and no pattern that even the sharp-eyed Mountie can decipher. Are they ghosts? Phantoms conjured from the howling wilderness itself? As Preston and his loyal dog King navigate treacherous snowdrifts and darker human treachery, the tension mounts with every coded clue and false lead. This episode masterfully weaves the show's signature blend of authentic frontier peril with genuine mystery, keeping you guessing until the final dramatic reveal.</p>
-<p>*Challenge of the Yukon* stands as one of radio's most enduring adventure serials, a show that captured the imagination of millions throughout the 1940s and 1950s. What made Preston and King such compelling heroes wasn't merely their courage—it was their humanity, their methodical detective work against the backdrop of an untamed North. The show's writers drew inspiration from real Canadian police work and frontier lore, grounding their fantastical adventures in historical authenticity. By 1948, when this episode aired, the show had perfected its formula: combining the rugged individualism of the Western with the intellectual puzzle-solving of a mystery thriller.</p>
+          <p>Picture yourself huddled around the radio on a crisp autumn evening as Sergeant Preston of the Yukon faces his most baffling case yet. A mysterious gang of outlaws strikes without warning across the frozen territories—leaving no trace, no witnesses, and no pattern that even the sharp-eyed Mountie can decipher. Are they ghosts? Phantoms conjured from the howling wilderness itself? As Preston and his loyal dog King navigate treacherous snowdrifts and darker human treachery, the tension mounts with every coded clue and false lead. This episode masterfully weaves the show's signature blend of authentic frontier peril with genuine mystery, keeping you guessing until the final dramatic reveal.</p>
+<p>Challenge of the Yukon stands as one of radio's most enduring adventure serials, a show that captured the imagination of millions throughout the 1940s and 1950s. What made Preston and King such compelling heroes wasn't merely their courage—it was their humanity, their methodical detective work against the backdrop of an untamed North. The show's writers drew inspiration from real Canadian police work and frontier lore, grounding their fantastical adventures in historical authenticity. By 1948, when this episode aired, the show had perfected its formula: combining the rugged individualism of the Western with the intellectual puzzle-solving of a mystery thriller.</p>
 <p>Don't miss "The Phantom Gang" and discover why listeners across North America made this show their must-hear appointment. Whether you're new to Sergeant Preston or a devoted fan, this episode exemplifies everything that made old-time radio a golden age of imagination. Tune in now and let the call of the North bring you back to an era when storytelling meant everything—and the only limit was the listener's own vivid imagination.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

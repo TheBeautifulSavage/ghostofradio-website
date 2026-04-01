@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 12 01 (0840) Spider Burke's Daughter — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0840) Spider Burke's Daughter — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 12 01 (0840) Spider Burke's Daughter — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 12 01 (0840) Spider Burke's Daughter — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 12 01 (0840) Spider Burke's Daughter — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 1, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 12 01 (0840) Spider Burke's Daughter</h1>
+          <h1 class="episode__title">(0840) Spider Burke's Daughter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Spider Burke's Daughter</p>
-<p>Deep in the frozen wasteland of Canada's Yukon Territory, Sergeant Preston of the Royal Canadian Mounted Police faces one of his most treacherous cases yet. When word reaches him that Spider Burke—a notorious trappers' outlaw thought long dead—may have a daughter hidden somewhere in the remote north, Preston and his extraordinary dog King must navigate a labyrinth of deception, vengeance, and hidden identities. Is the mysterious young woman they discover friend or foe? Does she know of her father's criminal past, and more pressingly, does she share his dangerous instincts? As avalanches threaten and winter's bite closes in, Preston must separate truth from lies while racing against time and the unforgiving elements. The tension crackles through every scene as danger lurks around each snow-covered corner.</p>
-<p>*Challenge of the Yukon* premiered in 1938 as one of radio's most immersive adventure serials, captivating millions of listeners who tuned in faithfully for Sergeant Preston's exploits. The show brilliantly captured the romance of the Canadian frontier during an era when radio was America's primary source of entertainment and escapism. Produced with meticulous attention to atmospheric detail—crackling fires, howling winds, and the loyal barks of King—each episode transported audiences far from their living rooms into a world of honor, duty, and survival. The program's popularity spawned a television series in the 1950s, but nothing quite matched the intimacy and imagination sparked by the original radio broadcasts.</p>
-<p>Don't miss this gripping 1940s installment where loyalty, legacy, and justice collide on the frozen frontier. Tune in to *Spider Burke's Daughter* and discover why listeners huddled around their radios couldn't wait for Preston's next adventure.</p>
+          <p>Deep in the frozen wasteland of Canada's Yukon Territory, Sergeant Preston of the Royal Canadian Mounted Police faces one of his most treacherous cases yet. When word reaches him that Spider Burke—a notorious trappers' outlaw thought long dead—may have a daughter hidden somewhere in the remote north, Preston and his extraordinary dog King must navigate a labyrinth of deception, vengeance, and hidden identities. Is the mysterious young woman they discover friend or foe? Does she know of her father's criminal past, and more pressingly, does she share his dangerous instincts? As avalanches threaten and winter's bite closes in, Preston must separate truth from lies while racing against time and the unforgiving elements. The tension crackles through every scene as danger lurks around each snow-covered corner.</p>
+<p>Challenge of the Yukon premiered in 1938 as one of radio's most immersive adventure serials, captivating millions of listeners who tuned in faithfully for Sergeant Preston's exploits. The show brilliantly captured the romance of the Canadian frontier during an era when radio was America's primary source of entertainment and escapism. Produced with meticulous attention to atmospheric detail—crackling fires, howling winds, and the loyal barks of King—each episode transported audiences far from their living rooms into a world of honor, duty, and survival. The program's popularity spawned a television series in the 1950s, but nothing quite matched the intimacy and imagination sparked by the original radio broadcasts.</p>
+<p>Don't miss this gripping 1940s installment where loyalty, legacy, and justice collide on the frozen frontier. Tune in to Spider Burke's Daughter and discover why listeners huddled around their radios couldn't wait for Preston's next adventure.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

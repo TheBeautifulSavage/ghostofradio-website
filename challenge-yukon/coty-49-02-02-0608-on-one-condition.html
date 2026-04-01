@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 02 02 (0608) On One Condition — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0608) On One Condition — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 02 02 (0608) On One Condition — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 02 02 (0608) On One Condition — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 02 02 (0608) On One Condition — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 2, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 02 02 (0608) On One Condition</h1>
+          <h1 class="episode__title">(0608) On One Condition</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># On One Condition</p>
-<p>As the howling Arctic wind cuts across the frozen wastes and Sergeant Preston's dog team strains against their harnesses, listeners are drawn into a tale of conscience and consequence that cuts deeper than any blizzard. "On One Condition" presents our Mountie hero with a moral quandary that refuses easy resolution—a desperate fugitive offers critical information about a criminal enterprise, but only if Preston agrees to let him escape into the Yukon wilderness. With King, his magnificent husky, at his side and the weight of duty pressing down upon him, Preston must navigate treacherous terrain both physical and ethical. The tension crackles through the radio speaker as voices clash in dimly lit cabins and across frozen landscapes, where one man's freedom hangs in the balance against the law he's sworn to uphold.</p>
-<p>*Challenge of the Yukon* stood apart from typical adventure serials of the 1940s by grounding its stories in the real history and genuine hardships of Canada's northlands. Rather than relying solely on melodrama, the show drew audiences into a world of authentic detail—the logistics of dog sledding, the psychology of frontier isolation, the complex moral questions that arose when civilization's rules met wilderness survival. Sergeant Preston became an icon precisely because he embodied both authority and humanity, capable of bending but never breaking under pressure. Episodes like this one demonstrate why the series endured for nearly two decades, earning a devoted following that treasured its blend of action, character depth, and respect for audience intelligence.</p>
+          <p>As the howling Arctic wind cuts across the frozen wastes and Sergeant Preston's dog team strains against their harnesses, listeners are drawn into a tale of conscience and consequence that cuts deeper than any blizzard. "On One Condition" presents our Mountie hero with a moral quandary that refuses easy resolution—a desperate fugitive offers critical information about a criminal enterprise, but only if Preston agrees to let him escape into the Yukon wilderness. With King, his magnificent husky, at his side and the weight of duty pressing down upon him, Preston must navigate treacherous terrain both physical and ethical. The tension crackles through the radio speaker as voices clash in dimly lit cabins and across frozen landscapes, where one man's freedom hangs in the balance against the law he's sworn to uphold.</p>
+<p>Challenge of the Yukon stood apart from typical adventure serials of the 1940s by grounding its stories in the real history and genuine hardships of Canada's northlands. Rather than relying solely on melodrama, the show drew audiences into a world of authentic detail—the logistics of dog sledding, the psychology of frontier isolation, the complex moral questions that arose when civilization's rules met wilderness survival. Sergeant Preston became an icon precisely because he embodied both authority and humanity, capable of bending but never breaking under pressure. Episodes like this one demonstrate why the series endured for nearly two decades, earning a devoted following that treasured its blend of action, character depth, and respect for audience intelligence.</p>
 <p>Step into the frozen North where duty and mercy collide. Tune in for "On One Condition" and discover why Sergeant Preston remains an immortal figure in radio adventure—a man who understood that justice sometimes requires understanding the gray spaces between right and wrong.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

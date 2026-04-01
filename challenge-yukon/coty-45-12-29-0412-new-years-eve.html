@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 12 29 (0412) New Year's Eve — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0412) New Year's Eve — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 12 29 (0412) New Year's Eve — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 12 29 (0412) New Year's Eve — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 12 29 (0412) New Year's Eve — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 29, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 12 29 (0412) New Year's Eve</h1>
+          <h1 class="episode__title">(0412) New Year's Eve</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: New Year's Eve (1940s)</p>
-<p>As the clock strikes midnight on December 31st in the frozen Yukon Territory, Sergeant Preston of the Royal Canadian Mounted Police faces his most perilous case yet—one that threatens to trap him and his loyal husky King in an inescapable web of danger just as the new year arrives. With temperatures plummeting far below zero and civilization miles away, Preston must outwit a cunning criminal who has deliberately cut off all means of escape, using the very wilderness that Preston knows so well as an instrument of deadly betrayal. Listen as the roar of the wind echoes through your radio speaker, as dog sleds race across treacherous ice, and as Preston's quick wits become his only shield against a foe who believes the harsh Arctic itself is their greatest ally. This is adventure at its most primal and suspenseful—no studio tricks, just the raw struggle between justice and desperation played out under the aurora borealis.</p>
-<p>For over a decade, *Challenge of the Yukon* captured the imaginations of millions of American families, proving that the most gripping stories didn't require city skylines or modern conveniences. The show's appeal lay in its authenticity: real accounts of RCMP service provided the backbone for scripts that balanced genuine frontier history with unflinching action-adventure storytelling. Preston became more than a character—he was an ideal of steadfast courage and moral integrity that resonated deeply during wartime America, a reminder that courage and decency could triumph even in the harshest circumstances imaginable.</p>
-<p>Settle in by the fireside this New Year's Eve and rediscover why this program became a cornerstone of radio entertainment. Tune in now to experience Sergeant Preston's most thrilling midnight adventure—*Challenge of the Yukon* awaits.</p>
+          <p>As the clock strikes midnight on December 31st in the frozen Yukon Territory, Sergeant Preston of the Royal Canadian Mounted Police faces his most perilous case yet—one that threatens to trap him and his loyal husky King in an inescapable web of danger just as the new year arrives. With temperatures plummeting far below zero and civilization miles away, Preston must outwit a cunning criminal who has deliberately cut off all means of escape, using the very wilderness that Preston knows so well as an instrument of deadly betrayal. Listen as the roar of the wind echoes through your radio speaker, as dog sleds race across treacherous ice, and as Preston's quick wits become his only shield against a foe who believes the harsh Arctic itself is their greatest ally. This is adventure at its most primal and suspenseful—no studio tricks, just the raw struggle between justice and desperation played out under the aurora borealis.</p>
+<p>For over a decade, Challenge of the Yukon captured the imaginations of millions of American families, proving that the most gripping stories didn't require city skylines or modern conveniences. The show's appeal lay in its authenticity: real accounts of RCMP service provided the backbone for scripts that balanced genuine frontier history with unflinching action-adventure storytelling. Preston became more than a character—he was an ideal of steadfast courage and moral integrity that resonated deeply during wartime America, a reminder that courage and decency could triumph even in the harshest circumstances imaginable.</p>
+<p>Settle in by the fireside this New Year's Eve and rediscover why this program became a cornerstone of radio entertainment. Tune in now to experience Sergeant Preston's most thrilling midnight adventure—Challenge of the Yukon awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

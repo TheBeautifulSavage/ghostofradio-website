@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 43 09 30 (0296) A Previewed Confession — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0296) A Previewed Confession — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 43 09 30 (0296) A Previewed Confession — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 43 09 30 (0296) A Previewed Confession — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 43 09 30 (0296) A Previewed Confession — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 30, 1943</span>
           </div>
-          <h1 class="episode__title">Coty 43 09 30 (0296) A Previewed Confession</h1>
+          <h1 class="episode__title">(0296) A Previewed Confession</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># A Previewed Confession</p>
-<p>As the haunting strains of the Yukon theme fade into the crackling Northern silence, Sergeant Preston and his magnificent dog King stand at a crossroads of justice and deception in "A Previewed Confession." Deep in the frozen Yukon wilderness, a culprit believes themselves one step ahead of the law, confident that a carefully rehearsed alibi will shield them from Preston's legendary investigative prowess. But the Mountie's keen eye and unwavering commitment to truth have cracked tougher cases than this. Listeners will find themselves suspended between hope and dread as Preston methodically unravels the threads of a confession that's been practiced one too many times, each clue drawing him closer to the heart of the deception. The tension builds with every knock on a cabin door, every sharp exchange of dialogue, as the Canadian wilderness itself seems to hold its breath, waiting to see if justice will prevail.</p>
-<p>*Challenge of the Yukon* captivated audiences throughout the 1940s and beyond with tales of Sergeant Preston's moral authority set against the untamed backdrop of Canadian frontier life. The show's formula proved irresistible: a compelling mystery, exotic locale, and a hero whose unwavering righteousness reflected the values audiences desperately needed during uncertain times. These episodes represented escapism with substance, adventure with meaning, and the comforting certainty that good men could—and would—set things right.</p>
+          <p>As the haunting strains of the Yukon theme fade into the crackling Northern silence, Sergeant Preston and his magnificent dog King stand at a crossroads of justice and deception in "A Previewed Confession." Deep in the frozen Yukon wilderness, a culprit believes themselves one step ahead of the law, confident that a carefully rehearsed alibi will shield them from Preston's legendary investigative prowess. But the Mountie's keen eye and unwavering commitment to truth have cracked tougher cases than this. Listeners will find themselves suspended between hope and dread as Preston methodically unravels the threads of a confession that's been practiced one too many times, each clue drawing him closer to the heart of the deception. The tension builds with every knock on a cabin door, every sharp exchange of dialogue, as the Canadian wilderness itself seems to hold its breath, waiting to see if justice will prevail.</p>
+<p>Challenge of the Yukon captivated audiences throughout the 1940s and beyond with tales of Sergeant Preston's moral authority set against the untamed backdrop of Canadian frontier life. The show's formula proved irresistible: a compelling mystery, exotic locale, and a hero whose unwavering righteousness reflected the values audiences desperately needed during uncertain times. These episodes represented escapism with substance, adventure with meaning, and the comforting certainty that good men could—and would—set things right.</p>
 <p>Tune in now to experience radio drama at its finest. "A Previewed Confession" awaits, ready to remind you why millions once huddled around their sets each week, eager to follow Sergeant Preston and King into one more thrilling mystery of the great North. The truth is waiting to be discovered.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

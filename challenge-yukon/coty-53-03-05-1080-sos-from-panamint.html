@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 53 03 05 (1080) Sos From Panamint — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(1080) Sos From Panamint — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 53 03 05 (1080) Sos From Panamint — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 53 03 05 (1080) Sos From Panamint — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 53 03 05 (1080) Sos From Panamint — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 53 03 05 (1080) Sos From Panamint</h1>
+          <h1 class="episode__title">(1080) Sos From Panamint</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># S.O.S. From Panamint</p>
-<p>Deep in the Nevada desert, where scorching winds howl across barren salt flats and abandoned mining claims crumble into dust, Sergeant Preston and his faithful malamute King face their most desperate gamble yet. A mysterious distress signal crackles through the wilderness—a prospector stranded near the ghost town of Panamint, dying of thirst and pursued by men willing to kill for the secret of his hidden gold claim. With nothing but a map, his wits, and the uncanny tracking abilities of his loyal companion, Preston must navigate treacherous terrain where the land itself becomes as deadly as the criminals who prowl it. Every decision could mean the difference between salvation and a lonely grave buried beneath the desert sun.</p>
-<p>*Challenge of the Yukon*, which gripped American audiences throughout the Golden Age of Radio, was far more than mere adventure fodder. The program captured something essential about the nation's mythology during wartime—the idealized figure of law and order triumphing through courage, quick thinking, and an unbreakable bond of loyalty between man and beast. Sergeant Preston, the Mountie who operated in the far north, became a cultural touchstone for millions of listeners, and his adventures—whether in frozen wastes or scorching deserts—embodied the virtues of frontier justice when civilian life felt increasingly uncertain and chaotic.</p>
-<p>If you've never experienced Preston's world through your radio speaker, *S.O.S. From Panamint* offers the perfect entry point: danger that feels immediate and genuine, stakes that matter, and a hero you'll instinctively trust to navigate impossibly difficult terrain. Tune in and discover why an entire generation huddled around their radios, hanging on every word of adventure that still resonates today.</p>
+          <p>Deep in the Nevada desert, where scorching winds howl across barren salt flats and abandoned mining claims crumble into dust, Sergeant Preston and his faithful malamute King face their most desperate gamble yet. A mysterious distress signal crackles through the wilderness—a prospector stranded near the ghost town of Panamint, dying of thirst and pursued by men willing to kill for the secret of his hidden gold claim. With nothing but a map, his wits, and the uncanny tracking abilities of his loyal companion, Preston must navigate treacherous terrain where the land itself becomes as deadly as the criminals who prowl it. Every decision could mean the difference between salvation and a lonely grave buried beneath the desert sun.</p>
+<p>Challenge of the Yukon, which gripped American audiences throughout the Golden Age of Radio, was far more than mere adventure fodder. The program captured something essential about the nation's mythology during wartime—the idealized figure of law and order triumphing through courage, quick thinking, and an unbreakable bond of loyalty between man and beast. Sergeant Preston, the Mountie who operated in the far north, became a cultural touchstone for millions of listeners, and his adventures—whether in frozen wastes or scorching deserts—embodied the virtues of frontier justice when civilian life felt increasingly uncertain and chaotic.</p>
+<p>If you've never experienced Preston's world through your radio speaker, S.O.S. From Panamint offers the perfect entry point: danger that feels immediate and genuine, stakes that matter, and a hero you'll instinctively trust to navigate impossibly difficult terrain. Tune in and discover why an entire generation huddled around their radios, hanging on every word of adventure that still resonates today.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

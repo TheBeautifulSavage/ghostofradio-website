@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 12 03 (0583) The Sergeant's Right — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0583) The Sergeant's Right — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 12 03 (0583) The Sergeant's Right — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 12 03 (0583) The Sergeant's Right — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 12 03 (0583) The Sergeant's Right — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 3, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 12 03 (0583) The Sergeant's Right</h1>
+          <h1 class="episode__title">(0583) The Sergeant's Right</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Sergeant's Right</p>
-<p>Picture yourself huddled near your radio set on a December evening, the static crackling to life as the iconic theme swells—that gallant charge of the Royal Canadian Mounted Police. In "The Sergeant's Right," Sergeant Preston faces his most vexing challenge yet: not a criminal or a blizzard, but his own conscience. A man he once arrested has returned from the frozen territories with evidence that Preston may have made a terrible mistake years ago. As the mystery unravels across the snow-swept Yukon landscape, listeners are drawn into a tale that asks whether even the most honorable lawman can admit when justice has been miscarved. The tension builds with each clue, each confession, until Preston must choose between his pride and what is truly right. King, his magnificent sled dog companion, seems to sense the moral weight bearing down on his master as they traverse the treacherous northern wilderness.</p>
-<p>*Challenge of the Yukon* became one of radio's most enduring adventures precisely because it balanced action with genuine human dilemma. While the show thrilled audiences with authentic tales of frontier law enforcement, it never lost sight of the characters' depths. Sergeant Preston—unlike many radio heroes of the era—was permitted to be fallible, conflicted, and constantly tested by the harsh morality of the untamed north. This 1940s episode exemplifies that mature storytelling, reflecting the growing sophistication of radio drama during the Golden Age.</p>
+          <p>Picture yourself huddled near your radio set on a December evening, the static crackling to life as the iconic theme swells—that gallant charge of the Royal Canadian Mounted Police. In "The Sergeant's Right," Sergeant Preston faces his most vexing challenge yet: not a criminal or a blizzard, but his own conscience. A man he once arrested has returned from the frozen territories with evidence that Preston may have made a terrible mistake years ago. As the mystery unravels across the snow-swept Yukon landscape, listeners are drawn into a tale that asks whether even the most honorable lawman can admit when justice has been miscarved. The tension builds with each clue, each confession, until Preston must choose between his pride and what is truly right. King, his magnificent sled dog companion, seems to sense the moral weight bearing down on his master as they traverse the treacherous northern wilderness.</p>
+<p>Challenge of the Yukon became one of radio's most enduring adventures precisely because it balanced action with genuine human dilemma. While the show thrilled audiences with authentic tales of frontier law enforcement, it never lost sight of the characters' depths. Sergeant Preston—unlike many radio heroes of the era—was permitted to be fallible, conflicted, and constantly tested by the harsh morality of the untamed north. This 1940s episode exemplifies that mature storytelling, reflecting the growing sophistication of radio drama during the Golden Age.</p>
 <p>Whether you're a devoted admirer of the series or discovering Preston's adventures for the first time, "The Sergeant's Right" delivers everything the show promised: adventure, atmosphere, and a hero worth following into the frozen darkness. Tune in and discover why generations of listeners trusted Sergeant Preston to guide them through the Canadian wilderness.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

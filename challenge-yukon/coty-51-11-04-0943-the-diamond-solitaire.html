@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 11 04 (0943) The Diamond Solitaire — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0943) The Diamond Solitaire — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 11 04 (0943) The Diamond Solitaire — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 11 04 (0943) The Diamond Solitaire — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 11 04 (0943) The Diamond Solitaire — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 11 04 (0943) The Diamond Solitaire</h1>
+          <h1 class="episode__title">(0943) The Diamond Solitaire</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Diamond Solitaire</p>
-<p>As twilight descends across the frozen wastes of the Canadian Yukon, Sergeant Preston of the Royal Canadian Mounted Police faces his most perilous case yet. A priceless diamond—the legendary Diamond Solitaire—has vanished from a remote trading post, and with it, the hopes of a desperate family clinging to fortune in this unforgiving wilderness. In "The Diamond Solitaire," danger lurks beneath every snowdrift and suspicion clouds every conversation. Will Preston's keen detective skills and unwavering sense of justice prevail against the brutal elements and cunning criminals who would stop at nothing to possess the glittering prize? With his loyal dog King at his side and his trusty service revolver ever ready, Preston must navigate treacherous terrain and even more treacherous human nature to solve the mystery before another soul is lost to the Yukon's merciless grip.</p>
-<p>*Challenge of the Yukon* captivated millions of listeners during radio's golden age, transporting audiences from their living rooms to a landscape of authentic adventure and moral certainty. The show's meticulous attention to detail—from the howling winds of the frozen north to the measured cadence of Sergeant Preston's voice—created an immersive experience that defined the adventure serial format. Broadcast nationwide over ABC and Mutual networks from 1938 through the 1950s, the program became synonymous with the triumph of law and order against impossible odds, a reassuring constant during turbulent times.</p>
-<p>Don't miss this gripping installment of one of radio's most enduring classics. Settle in by the fireside, let the crackle of the broadcast transport you northward, and witness why *Challenge of the Yukon* remained a beloved staple of American radio for nearly two decades. The Diamond Solitaire awaits—and so does justice.</p>
+          <p>As twilight descends across the frozen wastes of the Canadian Yukon, Sergeant Preston of the Royal Canadian Mounted Police faces his most perilous case yet. A priceless diamond—the legendary Diamond Solitaire—has vanished from a remote trading post, and with it, the hopes of a desperate family clinging to fortune in this unforgiving wilderness. In "The Diamond Solitaire," danger lurks beneath every snowdrift and suspicion clouds every conversation. Will Preston's keen detective skills and unwavering sense of justice prevail against the brutal elements and cunning criminals who would stop at nothing to possess the glittering prize? With his loyal dog King at his side and his trusty service revolver ever ready, Preston must navigate treacherous terrain and even more treacherous human nature to solve the mystery before another soul is lost to the Yukon's merciless grip.</p>
+<p>Challenge of the Yukon captivated millions of listeners during radio's golden age, transporting audiences from their living rooms to a landscape of authentic adventure and moral certainty. The show's meticulous attention to detail—from the howling winds of the frozen north to the measured cadence of Sergeant Preston's voice—created an immersive experience that defined the adventure serial format. Broadcast nationwide over ABC and Mutual networks from 1938 through the 1950s, the program became synonymous with the triumph of law and order against impossible odds, a reassuring constant during turbulent times.</p>
+<p>Don't miss this gripping installment of one of radio's most enduring classics. Settle in by the fireside, let the crackle of the broadcast transport you northward, and witness why Challenge of the Yukon remained a beloved staple of American radio for nearly two decades. The Diamond Solitaire awaits—and so does justice.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 10 03 (0451) The Wooden Case — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0451) The Wooden Case — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 10 03 (0451) The Wooden Case — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 10 03 (0451) The Wooden Case — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 10 03 (0451) The Wooden Case — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 3, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 10 03 (0451) The Wooden Case</h1>
+          <h1 class="episode__title">(0451) The Wooden Case</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Wooden Case</p>
-<p>As the crackling opening theme swells across the frozen expanse of the Yukon, Sergeant Preston of the Royal Canadian Mounted Police faces his most perplexing mystery yet. A shipment of furs vanishes without a trace, leaving behind only an ordinary wooden case—but nothing is ever ordinary in the vast northern wilderness. This episode crackles with mounting tension as Preston and his faithful dog King navigate treacherous snowfields and darker human conspiracies, piecing together clues that lead from a remote trading post to the shadowy underworld of claim jumpers and frontier schemers. The atmospheric sound design pulls listeners deep into the howling Arctic night, where danger lurks around every frost-covered corner and trust becomes as precious as gold dust.</p>
-<p>*Challenge of the Yukon* was a cultural phenomenon that captured the imagination of millions, transforming the Canadian north into America's most thrilling frontier. Premiering in 1938, the series became a masterclass in adventure storytelling—grounding its tales in authentic frontier details while crafting narratives that spoke to Depression-era audiences about justice, courage, and the triumph of moral authority. Sergeant Preston became an iconic figure of radio's golden age, embodying the RCMP's legendary reputation while the show's innovative use of sound effects and orchestral scoring set new standards for the medium. This 1940s episode, recorded when the show was at peak popularity, showcases why *Challenge of the Yukon* became one of radio's most beloved series.</p>
-<p>Don your parka and settle in for an evening of classic adventure. Tune in to *The Wooden Case* and discover why listeners tuned in faithfully each week to follow Sergeant Preston's exploits—where justice travels by dogsled and every mystery unfolds beneath the northern lights.</p>
+          <p>As the crackling opening theme swells across the frozen expanse of the Yukon, Sergeant Preston of the Royal Canadian Mounted Police faces his most perplexing mystery yet. A shipment of furs vanishes without a trace, leaving behind only an ordinary wooden case—but nothing is ever ordinary in the vast northern wilderness. This episode crackles with mounting tension as Preston and his faithful dog King navigate treacherous snowfields and darker human conspiracies, piecing together clues that lead from a remote trading post to the shadowy underworld of claim jumpers and frontier schemers. The atmospheric sound design pulls listeners deep into the howling Arctic night, where danger lurks around every frost-covered corner and trust becomes as precious as gold dust.</p>
+<p>Challenge of the Yukon was a cultural phenomenon that captured the imagination of millions, transforming the Canadian north into America's most thrilling frontier. Premiering in 1938, the series became a masterclass in adventure storytelling—grounding its tales in authentic frontier details while crafting narratives that spoke to Depression-era audiences about justice, courage, and the triumph of moral authority. Sergeant Preston became an iconic figure of radio's golden age, embodying the RCMP's legendary reputation while the show's innovative use of sound effects and orchestral scoring set new standards for the medium. This 1940s episode, recorded when the show was at peak popularity, showcases why Challenge of the Yukon became one of radio's most beloved series.</p>
+<p>Don your parka and settle in for an evening of classic adventure. Tune in to The Wooden Case and discover why listeners tuned in faithfully each week to follow Sergeant Preston's exploits—where justice travels by dogsled and every mystery unfolds beneath the northern lights.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

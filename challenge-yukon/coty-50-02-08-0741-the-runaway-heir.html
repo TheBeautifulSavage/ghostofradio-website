@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 02 08 (0741) The Runaway Heir — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0741) The Runaway Heir — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 02 08 (0741) The Runaway Heir — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 02 08 (0741) The Runaway Heir — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 02 08 (0741) The Runaway Heir — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 8, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 02 08 (0741) The Runaway Heir</h1>
+          <h1 class="episode__title">(0741) The Runaway Heir</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Runaway Heir</p>
-<p>Through the crystalline silence of the Canadian wilderness, a young man's desperate flight becomes Sergeant Preston's most perplexing case yet. When the spoiled heir to a Chicago fortune vanishes into the frozen Yukon, leaving behind only cryptic clues and a trail of lies, Preston must unravel whether this is a kidnapping, a suicide, or something far more sinister. As the snow falls thick and unforgiving across the northland, King—Preston's loyal malamute—picks up a scent that leads our hero deeper into a mystery where wealth means nothing and survival is the only currency that matters. Listen as Preston battles both the elements and human deception, racing against time in this gripping tale of ambition, desperation, and frontier justice.</p>
-<p>*Challenge of the Yukon* captured America's imagination for nearly two decades precisely because it married the romance of the frontier with the psychology of modern crime. Broadcast during the Golden Age of radio, when families huddled around their sets for adventure and drama, Sergeant Preston embodied the ideal of Canadian law and order—a man as incorruptible as the wilderness itself. The show's writers crafted episodes that felt authentic to the Klondike's rich history while exploring timeless themes of greed and redemption. King, Preston's German Shepherd (often misremembered as a husky), became one of radio's most beloved animal characters, and the show's opening theme—the stirring call of "Yukon King!"—became iconic across North America.</p>
-<p>Settle in for *The Runaway Heir* and experience why millions of listeners turned to their dials each week to follow Preston's adventures. This episode remains a masterclass in radio drama: tension, atmosphere, and the triumph of good over corruption in the frozen heart of Canada's last frontier.</p>
+          <p>Through the crystalline silence of the Canadian wilderness, a young man's desperate flight becomes Sergeant Preston's most perplexing case yet. When the spoiled heir to a Chicago fortune vanishes into the frozen Yukon, leaving behind only cryptic clues and a trail of lies, Preston must unravel whether this is a kidnapping, a suicide, or something far more sinister. As the snow falls thick and unforgiving across the northland, King—Preston's loyal malamute—picks up a scent that leads our hero deeper into a mystery where wealth means nothing and survival is the only currency that matters. Listen as Preston battles both the elements and human deception, racing against time in this gripping tale of ambition, desperation, and frontier justice.</p>
+<p>Challenge of the Yukon captured America's imagination for nearly two decades precisely because it married the romance of the frontier with the psychology of modern crime. Broadcast during the Golden Age of radio, when families huddled around their sets for adventure and drama, Sergeant Preston embodied the ideal of Canadian law and order—a man as incorruptible as the wilderness itself. The show's writers crafted episodes that felt authentic to the Klondike's rich history while exploring timeless themes of greed and redemption. King, Preston's German Shepherd (often misremembered as a husky), became one of radio's most beloved animal characters, and the show's opening theme—the stirring call of "Yukon King!"—became iconic across North America.</p>
+<p>Settle in for The Runaway Heir and experience why millions of listeners turned to their dials each week to follow Preston's adventures. This episode remains a masterclass in radio drama: tension, atmosphere, and the triumph of good over corruption in the frozen heart of Canada's last frontier.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

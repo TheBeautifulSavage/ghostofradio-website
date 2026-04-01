@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 12 30 (0724) The Prodigal Father — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0724) The Prodigal Father — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 12 30 (0724) The Prodigal Father — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 12 30 (0724) The Prodigal Father — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 12 30 (0724) The Prodigal Father — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 30, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 12 30 (0724) The Prodigal Father</h1>
+          <h1 class="episode__title">(0724) The Prodigal Father</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Prodigal Father</p>
-<p>The frozen wastelands of the Yukon Territory close in as Sergeant Preston and his magnificent dog King discover a desperate man wandering the snowbound wilderness, delirious and half-starved. But this is no common wanderer—he's a fugitive running from his own past, a father estranged from his son for five long years. As Preston works to bring the man to safety and justice, the truth emerges in heartbreaking detail: the boy has grown hard, believing his father abandoned him willingly. With King's faithful tracking and Preston's moral compass guiding the way, this episode explores the redemptive power of facing one's mistakes in a landscape where a man's word and character are all that stand between survival and death.</p>
-<p>*Challenge of the Yukon* became a North American institution because it understood something fundamental about adventure: true heroism wasn't merely about catching criminals or enduring hardship, but about restoring human dignity in an unforgiving world. Sergeant Preston, with his Mountie authority tempered by genuine compassion, brought law and order to the frontier while never losing sight of the humanity behind the crime. During the 1940s, when the show reached its peak popularity, listeners tuned in not just for the thrilling dog-sled chases and gunfights, but for Preston's quiet moral certainty—the sense that even in the vast, indifferent north, redemption remained possible.</p>
-<p>Pull up a chair by the fire, adjust your radio dial, and prepare yourself for a tale of lost fathers and second chances set against howling winds and endless snow. *The Prodigal Father* reminds us why Sergeant Preston remains unforgettable: because he believed that bringing a man home—truly home—was the greatest victory of all.</p>
+          <p>The frozen wastelands of the Yukon Territory close in as Sergeant Preston and his magnificent dog King discover a desperate man wandering the snowbound wilderness, delirious and half-starved. But this is no common wanderer—he's a fugitive running from his own past, a father estranged from his son for five long years. As Preston works to bring the man to safety and justice, the truth emerges in heartbreaking detail: the boy has grown hard, believing his father abandoned him willingly. With King's faithful tracking and Preston's moral compass guiding the way, this episode explores the redemptive power of facing one's mistakes in a landscape where a man's word and character are all that stand between survival and death.</p>
+<p>Challenge of the Yukon became a North American institution because it understood something fundamental about adventure: true heroism wasn't merely about catching criminals or enduring hardship, but about restoring human dignity in an unforgiving world. Sergeant Preston, with his Mountie authority tempered by genuine compassion, brought law and order to the frontier while never losing sight of the humanity behind the crime. During the 1940s, when the show reached its peak popularity, listeners tuned in not just for the thrilling dog-sled chases and gunfights, but for Preston's quiet moral certainty—the sense that even in the vast, indifferent north, redemption remained possible.</p>
+<p>Pull up a chair by the fire, adjust your radio dial, and prepare yourself for a tale of lost fathers and second chances set against howling winds and endless snow. The Prodigal Father reminds us why Sergeant Preston remains unforgettable: because he believed that bringing a man home—truly home—was the greatest victory of all.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

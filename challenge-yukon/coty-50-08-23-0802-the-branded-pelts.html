@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 08 23 (0802) The Branded Pelts — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0802) The Branded Pelts — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 08 23 (0802) The Branded Pelts — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 08 23 (0802) The Branded Pelts — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 08 23 (0802) The Branded Pelts — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 23, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 08 23 (0802) The Branded Pelts</h1>
+          <h1 class="episode__title">(0802) The Branded Pelts</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Branded Pelts</p>
-<p>*The frozen wastes of the Yukon stretch endlessly beneath a starless sky as Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that cuts to the heart of the north country's most valuable commodity—furs. When a shipment of premium pelts arrives at the trading post bearing a mysterious brand, Preston must unravel a clever smuggling scheme that threatens to bankrupt honest trappers and line the pockets of ruthless profiteers. With only King, his faithful husky, at his side, the Sergeant pursues clues across treacherous snowfields and through fog-shrouded forests, racing against time and the elements themselves. This episode crackles with the tension of a criminal conspiracy and the primal danger of the wilderness, where a single misstep can mean death.*</p>
+          <p>The frozen wastes of the Yukon stretch endlessly beneath a starless sky as Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that cuts to the heart of the north country's most valuable commodity—furs. When a shipment of premium pelts arrives at the trading post bearing a mysterious brand, Preston must unravel a clever smuggling scheme that threatens to bankrupt honest trappers and line the pockets of ruthless profiteers. With only King, his faithful husky, at his side, the Sergeant pursues clues across treacherous snowfields and through fog-shrouded forests, racing against time and the elements themselves. This episode crackles with the tension of a criminal conspiracy and the primal danger of the wilderness, where a single misstep can mean death.</p>
 <p>Challenge of the Yukon captured America's imagination during the Golden Age of Radio with its perfect blend of adventure, justice, and the romantic mythology of the Canadian frontier. Sergeant Preston became an icon of unwavering integrity and competence, embodying the values listeners cherished during the turbulent 1940s. The show's popularity was so enduring that it spawned comic books, a television series, and merchandise that flew off store shelves. What set this program apart was its vivid sound design—the crack of whips, the howling wind, the baying of sled dogs—which transported listeners directly into the harsh beauty of the subarctic. Each episode balanced thrilling action with genuine character development, making Preston not just a hero, but a friend visitors to home every week.</p>
 <p>Join Sergeant Preston as he confronts greed, deception, and the unforgiving wilderness in "The Branded Pelts." Settle in, turn down the lights, and let the magic of old-time radio transport you to a time when adventure was just a radio dial away.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

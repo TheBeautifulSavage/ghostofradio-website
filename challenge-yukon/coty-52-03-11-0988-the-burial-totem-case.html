@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 03 11 (0988) The Burial Totem Case — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0988) The Burial Totem Case — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 03 11 (0988) The Burial Totem Case — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 03 11 (0988) The Burial Totem Case — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 03 11 (0988) The Burial Totem Case — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 03 11 (0988) The Burial Totem Case</h1>
+          <h1 class="episode__title">(0988) The Burial Totem Case</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Burial Totem Case</p>
-<p>Picture yourself huddled close to your radio set on a frost-bitten evening in the 1940s as Sergeant Preston's dog team cuts through the howling darkness of the Canadian wilderness. In "The Burial Totem Case," a sacred First Nations monument has vanished from a remote settlement, and with it, the fragile peace between suspicious trappers and indigenous peoples. As Preston and his faithful companion King gallop across frozen tundra to investigate, you'll hear the crunch of snow beneath sled runners, the distant cry of wolves, and the tense voices of men whose greed—or ignorance—might ignite deadly conflict. This episode crackles with the tension of a mystery that threatens to unravel the hard-won trust holding a community together, all while darker forces lurk in the shadows of the northern frontier.</p>
-<p>*Challenge of the Yukon* emerged during radio's golden age as one of America's most beloved adventure serials, capturing the public imagination with tales of justice, loyalty, and survival at the edge of civilization. Sergeant Preston, that tireless Mountie with his legendary dog King, became synonymous with integrity and fair-dealing—a hero who treated all people with respect, whether they were wealthy prospectors or marginalized indigenous communities. These episodes, broadcast throughout the 1940s over ABC and Mutual networks, offered listeners more than mere entertainment; they provided a weekly escape to a vast, untamed landscape where good prevailed and order triumphed over chaos. The show's authentic sound design—recorded with meticulous attention to detail—transported audiences thousands of miles north.</p>
+          <p>Picture yourself huddled close to your radio set on a frost-bitten evening in the 1940s as Sergeant Preston's dog team cuts through the howling darkness of the Canadian wilderness. In "The Burial Totem Case," a sacred First Nations monument has vanished from a remote settlement, and with it, the fragile peace between suspicious trappers and indigenous peoples. As Preston and his faithful companion King gallop across frozen tundra to investigate, you'll hear the crunch of snow beneath sled runners, the distant cry of wolves, and the tense voices of men whose greed—or ignorance—might ignite deadly conflict. This episode crackles with the tension of a mystery that threatens to unravel the hard-won trust holding a community together, all while darker forces lurk in the shadows of the northern frontier.</p>
+<p>Challenge of the Yukon emerged during radio's golden age as one of America's most beloved adventure serials, capturing the public imagination with tales of justice, loyalty, and survival at the edge of civilization. Sergeant Preston, that tireless Mountie with his legendary dog King, became synonymous with integrity and fair-dealing—a hero who treated all people with respect, whether they were wealthy prospectors or marginalized indigenous communities. These episodes, broadcast throughout the 1940s over ABC and Mutual networks, offered listeners more than mere entertainment; they provided a weekly escape to a vast, untamed landscape where good prevailed and order triumphed over chaos. The show's authentic sound design—recorded with meticulous attention to detail—transported audiences thousands of miles north.</p>
 <p>Don't miss this gripping adventure. Tune in to "The Burial Totem Case" and witness Sergeant Preston face one of his most challenging investigations, where solving a crime means preserving something far more precious than gold.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 02 28 (0985) Laurie And The New Recruits — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0985) Laurie And The New Recruits — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 02 28 (0985) Laurie And The New Recruits — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 02 28 (0985) Laurie And The New Recruits — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 02 28 (0985) Laurie And The New Recruits — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 02 28 (0985) Laurie And The New Recruits</h1>
+          <h1 class="episode__title">(0985) Laurie And The New Recruits</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Laurie and the New Recruits</p>
-<p>As the familiar strains of the *Donna Diana Overture* fade and King the Wonder Dog's paws strike the frozen ground, listeners are plunged into the stark, unforgiving landscape of Canada's Yukon Territory. In this episode, Sergeant Preston faces an unexpected crisis when a shipment of raw recruits arrives at the remote barracks, ill-equipped and green, just as reports filter in of a dangerous criminal operating in the nearby mining settlements. With supplies running low and his seasoned men stretched thin across hundreds of square miles of wilderness, Preston must transform these untested newcomers into capable lawmen—all while an unseen threat draws closer. The introduction of Laurie, a determined young recruit with something to prove, adds a layer of personal stakes to the narrative. Listeners will find themselves gripped by the tension of winter's approach, the camaraderie forged through adversity, and the question of whether these novices can rise to the unforgiving demands of the Mounted Police.</p>
-<p>What made *Challenge of the Yukon* endure for nearly two decades was precisely this formula: the marriage of authentic frontier law enforcement with intimate human drama. While the show's plots were entirely fictional, they were grounded in the real history of the Royal Canadian Mounted Police and drew heavily from period accounts of Yukon life during the gold rush era and beyond. Each episode balanced action and character development, allowing listeners to invest emotionally in Preston's world while remaining thrilled by the dangers lurking in the snow and shadows.</p>
+          <p>As the familiar strains of the Donna Diana Overture fade and King the Wonder Dog's paws strike the frozen ground, listeners are plunged into the stark, unforgiving landscape of Canada's Yukon Territory. In this episode, Sergeant Preston faces an unexpected crisis when a shipment of raw recruits arrives at the remote barracks, ill-equipped and green, just as reports filter in of a dangerous criminal operating in the nearby mining settlements. With supplies running low and his seasoned men stretched thin across hundreds of square miles of wilderness, Preston must transform these untested newcomers into capable lawmen—all while an unseen threat draws closer. The introduction of Laurie, a determined young recruit with something to prove, adds a layer of personal stakes to the narrative. Listeners will find themselves gripped by the tension of winter's approach, the camaraderie forged through adversity, and the question of whether these novices can rise to the unforgiving demands of the Mounted Police.</p>
+<p>What made Challenge of the Yukon endure for nearly two decades was precisely this formula: the marriage of authentic frontier law enforcement with intimate human drama. While the show's plots were entirely fictional, they were grounded in the real history of the Royal Canadian Mounted Police and drew heavily from period accounts of Yukon life during the gold rush era and beyond. Each episode balanced action and character development, allowing listeners to invest emotionally in Preston's world while remaining thrilled by the dangers lurking in the snow and shadows.</p>
 <p>Don your parka and settle in by the fire—this is adventure radio at its finest, where duty, courage, and the bonds of brotherhood are tested against nature itself. Tune in now to discover whether Preston's recruits have what it takes to survive the Yukon.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

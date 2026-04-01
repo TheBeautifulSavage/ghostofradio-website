@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 43 09 09 (0293) A Swill O' Gunpowder — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0293) A Swill O' Gunpowder — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 43 09 09 (0293) A Swill O' Gunpowder — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 43 09 09 (0293) A Swill O' Gunpowder — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 43 09 09 (0293) A Swill O' Gunpowder — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 9, 1943</span>
           </div>
-          <h1 class="episode__title">Coty 43 09 09 (0293) A Swill O' Gunpowder</h1>
+          <h1 class="episode__title">(0293) A Swill O' Gunpowder</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: A Swill O' Gunpowder</p>
-<p>As the crackling static settles and the familiar strain of "The Ballad of the Yukon" fills your parlor, you're transported once more to the frozen wilderness of Canada's far north, where Sergeant Preston and his magnificent dog King face their most explosive challenge yet. In "A Swill O' Gunpowder," a routine patrol becomes a desperate race against time when a cache of dynamite meant for legitimate mining operations falls into the hands of desperate claim jumpers. What begins as a simple investigation spirals into a web of deception, desperation, and danger that will test the sergeant's wits and his faithful companion's instincts. The howling wind and distant dog sleds provide an authentic backdrop as Preston navigates treacherous terrain and even more treacherous human nature—where a single misstep could mean annihilation in the unforgiving northern landscape.</p>
-<p>For nearly two decades, *Challenge of the Yukon* captivated American audiences with its perfect alchemy of frontier heroism and intimate drama. The show's meticulous attention to authentic Canadian geography and mining-era detail set it apart from other adventure serials, while Sergeant Preston emerged as an idealized lawman—incorruptible, intelligent, and genuinely compassionate toward the flawed characters populating his jurisdiction. The relationship between Preston and King became iconic, establishing the template for the gentleman adventurer and his loyal animal companion that would echo through popular culture for generations.</p>
+          <p>As the crackling static settles and the familiar strain of "The Ballad of the Yukon" fills your parlor, you're transported once more to the frozen wilderness of Canada's far north, where Sergeant Preston and his magnificent dog King face their most explosive challenge yet. In "A Swill O' Gunpowder," a routine patrol becomes a desperate race against time when a cache of dynamite meant for legitimate mining operations falls into the hands of desperate claim jumpers. What begins as a simple investigation spirals into a web of deception, desperation, and danger that will test the sergeant's wits and his faithful companion's instincts. The howling wind and distant dog sleds provide an authentic backdrop as Preston navigates treacherous terrain and even more treacherous human nature—where a single misstep could mean annihilation in the unforgiving northern landscape.</p>
+<p>For nearly two decades, Challenge of the Yukon captivated American audiences with its perfect alchemy of frontier heroism and intimate drama. The show's meticulous attention to authentic Canadian geography and mining-era detail set it apart from other adventure serials, while Sergeant Preston emerged as an idealized lawman—incorruptible, intelligent, and genuinely compassionate toward the flawed characters populating his jurisdiction. The relationship between Preston and King became iconic, establishing the template for the gentleman adventurer and his loyal animal companion that would echo through popular culture for generations.</p>
 <p>Settle in with a cup of cocoa and let yourself be drawn into the frozen frontier. These vintage broadcasts represent a golden age of imagination, when sound effects and skilled voice actors could paint entire landscapes in the mind's eye. "A Swill O' Gunpowder" promises the perfect blend of authentic adventure and genuine human drama that made this series a beloved fixture in homes across America.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

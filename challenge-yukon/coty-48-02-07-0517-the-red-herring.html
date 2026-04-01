@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 02 07 (0517) The Red Herring — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0517) The Red Herring — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 02 07 (0517) The Red Herring — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 02 07 (0517) The Red Herring — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 02 07 (0517) The Red Herring — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 7, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 02 07 (0517) The Red Herring</h1>
+          <h1 class="episode__title">(0517) The Red Herring</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Red Herring</p>
-<p>As winter's icy grip tightens around the vast Yukon wilderness, Sergeant Preston and his magnificent dog King face their most bewildering case yet. A notorious claim jumper has vanished without a trace, leaving behind only conflicting accounts and a trail that seems to lead everywhere and nowhere. Is the mysterious stranger spotted near the frozen creek bed truly the fugitive, or merely an innocent sourdough caught in a web of suspicion? With a snowstorm rolling in from the north and tempers flaring hot in the settlement, Preston must separate fact from deception before an innocent man hangs for a crime he didn't commit—and the real culprit disappears into the trackless frontier. Listen as the Mountie and his loyal companion navigate a labyrinth of misdirection, following clues that crumble beneath scrutiny while the clock ticks toward justice or tragedy.</p>
-<p>*Challenge of the Yukon* captivated millions throughout the 1940s with its perfect blend of authentic frontier atmosphere and timeless morality. This 1940s episode represents the show at its creative peak, when writers masterfully wove intricate mysteries around Sergeant Preston's unwavering commitment to fairness and the law. The program's popularity lay not merely in its adventure, but in its celebration of integrity and reason prevailing over hysteria and assumption—themes that resonated powerfully during wartime radio's golden age. Each episode showcased Paul Sutherland's commanding performance as Preston, a character who embodied the Canadian Mountie's legendary devotion to justice, supported by the show's evocative sound design that transported listeners directly into snow-blanketed mountain passes and desolate trading posts.</p>
-<p>Don your parka and prepare your nerves for an unforgettable journey into mystery and suspense. *The Red Herring* stands as a masterclass in old-time radio drama—the kind of episode that kept families gathered around their sets, hanging on every word. Tune in now and discover why *Challenge of the Yukon* remains a cherished cornerstone of American broadcasting history.</p>
+          <p>As winter's icy grip tightens around the vast Yukon wilderness, Sergeant Preston and his magnificent dog King face their most bewildering case yet. A notorious claim jumper has vanished without a trace, leaving behind only conflicting accounts and a trail that seems to lead everywhere and nowhere. Is the mysterious stranger spotted near the frozen creek bed truly the fugitive, or merely an innocent sourdough caught in a web of suspicion? With a snowstorm rolling in from the north and tempers flaring hot in the settlement, Preston must separate fact from deception before an innocent man hangs for a crime he didn't commit—and the real culprit disappears into the trackless frontier. Listen as the Mountie and his loyal companion navigate a labyrinth of misdirection, following clues that crumble beneath scrutiny while the clock ticks toward justice or tragedy.</p>
+<p>Challenge of the Yukon captivated millions throughout the 1940s with its perfect blend of authentic frontier atmosphere and timeless morality. This 1940s episode represents the show at its creative peak, when writers masterfully wove intricate mysteries around Sergeant Preston's unwavering commitment to fairness and the law. The program's popularity lay not merely in its adventure, but in its celebration of integrity and reason prevailing over hysteria and assumption—themes that resonated powerfully during wartime radio's golden age. Each episode showcased Paul Sutherland's commanding performance as Preston, a character who embodied the Canadian Mountie's legendary devotion to justice, supported by the show's evocative sound design that transported listeners directly into snow-blanketed mountain passes and desolate trading posts.</p>
+<p>Don your parka and prepare your nerves for an unforgettable journey into mystery and suspense. The Red Herring stands as a masterclass in old-time radio drama—the kind of episode that kept families gathered around their sets, hanging on every word. Tune in now and discover why Challenge of the Yukon remains a cherished cornerstone of American broadcasting history.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

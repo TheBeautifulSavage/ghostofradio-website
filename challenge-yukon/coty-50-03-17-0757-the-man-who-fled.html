@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 03 17 (0757) The Man Who Fled — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0757) The Man Who Fled — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 03 17 (0757) The Man Who Fled — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 03 17 (0757) The Man Who Fled — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 03 17 (0757) The Man Who Fled — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 17, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 03 17 (0757) The Man Who Fled</h1>
+          <h1 class="episode__title">(0757) The Man Who Fled</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Man Who Fled</p>
-<p>Picture yourself huddled close to the radio on a crisp northern evening as Sergeant Preston and his magnificent dog King arrive at a remote trading post deep in the frozen Yukon wilderness. *The Man Who Fled* plunges listeners into a gripping manhunt where nothing is as it seems—a fugitive has vanished into the white expanse, leaving behind only cryptic clues and desperate circumstances. Is he a killer fleeing justice, or an innocent man running from false accusation? As Preston methodically pieces together the puzzle, the tension mounts with each crackling revelation. The howling wind, the isolation of the frontier, and the moral ambiguity of frontier justice create an atmosphere thick with suspense, while the supporting cast of hardened traders and weathered locals add texture to this tale of survival and redemption in Canada's unforgiving north.</p>
-<p>*Challenge of the Yukon* captured the imagination of millions during radio's golden age by offering something genuinely different: adventure grounded in real geography and authentic frontier challenges, rather than the fantastical escapism of many contemporaries. Sergeant Preston—the Royal Canadian Mounted Police's most famous fictional officer—became an American icon representing honor, perseverance, and unwavering justice. Throughout the show's impressive seventeen-year run, scripts like this one explored complex human dilemmas alongside thrilling action, treating listeners as intelligent adults who craved both entertainment and substance. The show's popularity spawned a television series and comic adaptations, but the radio episodes remain the truest expression of the format's intimate power.</p>
-<p>Don't let this classic tale slip away into history. Tune in to *The Man Who Fled* and experience why audiences across North America made this show essential listening for nearly two decades.</p>
+          <p>Picture yourself huddled close to the radio on a crisp northern evening as Sergeant Preston and his magnificent dog King arrive at a remote trading post deep in the frozen Yukon wilderness. The Man Who Fled plunges listeners into a gripping manhunt where nothing is as it seems—a fugitive has vanished into the white expanse, leaving behind only cryptic clues and desperate circumstances. Is he a killer fleeing justice, or an innocent man running from false accusation? As Preston methodically pieces together the puzzle, the tension mounts with each crackling revelation. The howling wind, the isolation of the frontier, and the moral ambiguity of frontier justice create an atmosphere thick with suspense, while the supporting cast of hardened traders and weathered locals add texture to this tale of survival and redemption in Canada's unforgiving north.</p>
+<p>Challenge of the Yukon captured the imagination of millions during radio's golden age by offering something genuinely different: adventure grounded in real geography and authentic frontier challenges, rather than the fantastical escapism of many contemporaries. Sergeant Preston—the Royal Canadian Mounted Police's most famous fictional officer—became an American icon representing honor, perseverance, and unwavering justice. Throughout the show's impressive seventeen-year run, scripts like this one explored complex human dilemmas alongside thrilling action, treating listeners as intelligent adults who craved both entertainment and substance. The show's popularity spawned a television series and comic adaptations, but the radio episodes remain the truest expression of the format's intimate power.</p>
+<p>Don't let this classic tale slip away into history. Tune in to The Man Who Fled and experience why audiences across North America made this show essential listening for nearly two decades.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

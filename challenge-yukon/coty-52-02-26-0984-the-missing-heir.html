@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 02 26 (0984) The Missing Heir — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0984) The Missing Heir — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 02 26 (0984) The Missing Heir — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 02 26 (0984) The Missing Heir — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 02 26 (0984) The Missing Heir — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 02 26 (0984) The Missing Heir</h1>
+          <h1 class="episode__title">(0984) The Missing Heir</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Missing Heir</p>
-<p>Picture yourself huddled around the radio on a frozen winter evening as Sergeant Preston and his magnificent dog King plunge into the snow-swept wilderness of Canada's Yukon Territory. In "The Missing Heir," a desperate case unfolds when a wealthy businessman's son vanishes without a trace during a treacherous journey through unforgiving terrain. With only cryptic clues and the howling wind as companions, Preston must navigate both the brutal landscape and the shadowy world of greed and deception that may have orchestrated the boy's disappearance. Will the resourceful Mountie and his faithful canine companion track down the missing heir before foul play claims another victim? The tension mounts with each broadcast as danger lurks around every snow-laden pine, and loyalties are tested in the isolated frontier.</p>
+          <p>Picture yourself huddled around the radio on a frozen winter evening as Sergeant Preston and his magnificent dog King plunge into the snow-swept wilderness of Canada's Yukon Territory. In "The Missing Heir," a desperate case unfolds when a wealthy businessman's son vanishes without a trace during a treacherous journey through unforgiving terrain. With only cryptic clues and the howling wind as companions, Preston must navigate both the brutal landscape and the shadowy world of greed and deception that may have orchestrated the boy's disappearance. Will the resourceful Mountie and his faithful canine companion track down the missing heir before foul play claims another victim? The tension mounts with each broadcast as danger lurks around every snow-laden pine, and loyalties are tested in the isolated frontier.</p>
 <p>"Sergeant Preston of the Yukon" captured the imaginations of millions during radio's golden age, combining the adventure-serial formula with authentic tales of Canadian law enforcement on the frontier. Airing throughout the 1940s and 1950s, the program became a cultural phenomenon, with listeners from coast to coast tuning in for Preston's stentorian command to "On, King, on!" The show's meticulous attention to Yukon geography, mining culture, and the real challenges faced by Mounties gave it credibility that set it apart from more fantastical contemporaries. Each episode delivered genuine suspense wrapped in the mystique of the North, making Preston and King household names.</p>
 <p>Don't miss this gripping tale of wilderness justice and cunning villainy. Tune in now to "The Missing Heir" and discover why generations of listeners made Sergeant Preston their appointment with adventure. In the frozen wastes where law and order hang by a thread, one man and one dog stand ready. The Yukon awaits.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 09 07 (1030) Murder On The Mountain — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(1030) Murder On The Mountain — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 09 07 (1030) Murder On The Mountain — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 09 07 (1030) Murder On The Mountain — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 09 07 (1030) Murder On The Mountain — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 09 07 (1030) Murder On The Mountain</h1>
+          <h1 class="episode__title">(1030) Murder On The Mountain</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Murder On The Mountain</p>
-<p>As the howling Arctic wind cuts through the frozen peaks of Canada's wilderness, Sergeant Preston and his faithful husky King find themselves racing against time to solve a baffling murder high in the unforgiving mountains. A prospector lies dead in his remote cabin, and all evidence points to an innocent trapper—but Preston knows the truth runs deeper than appearances suggest. With only the testimony of a terrified woman and King's uncanny instincts to guide him, our heroes must navigate treacherous snowdrifts and dangerous terrain while piecing together a puzzle of deception, greed, and frontier justice. The tension mounts as Preston closes in on the real killer, and listeners will find themselves gripping their radio sets, wondering whether he can prove his case before another life is claimed by both killer and cruel climate.</p>
-<p>*Challenge of the Yukon* captivated millions during radio's golden age by delivering authentic adventure grounded in the real history of the Canadian North during the Gold Rush era. The show's genius lay in its perfect marriage of historical detail with pulse-pounding drama—Preston was based on real Mounties who patrolled those remote territories, and the writers drew inspiration from actual cases and frontier conditions. This particular episode, from the show's peak years, exemplifies what made the series endure for seventeen years: compelling mysteries that turned the harsh landscape itself into a character, complex moral questions about justice and mercy, and that special chemistry between man and dog that audiences could never resist.</p>
-<p>Settle back in your favorite chair, dim the lights, and let the crackle of your speaker transport you to the snow-covered Yukon. *Murder on the Mountain* awaits—a masterclass in suspenseful storytelling from an era when imagination was the only special effect radio needed.</p>
+          <p>As the howling Arctic wind cuts through the frozen peaks of Canada's wilderness, Sergeant Preston and his faithful husky King find themselves racing against time to solve a baffling murder high in the unforgiving mountains. A prospector lies dead in his remote cabin, and all evidence points to an innocent trapper—but Preston knows the truth runs deeper than appearances suggest. With only the testimony of a terrified woman and King's uncanny instincts to guide him, our heroes must navigate treacherous snowdrifts and dangerous terrain while piecing together a puzzle of deception, greed, and frontier justice. The tension mounts as Preston closes in on the real killer, and listeners will find themselves gripping their radio sets, wondering whether he can prove his case before another life is claimed by both killer and cruel climate.</p>
+<p>Challenge of the Yukon captivated millions during radio's golden age by delivering authentic adventure grounded in the real history of the Canadian North during the Gold Rush era. The show's genius lay in its perfect marriage of historical detail with pulse-pounding drama—Preston was based on real Mounties who patrolled those remote territories, and the writers drew inspiration from actual cases and frontier conditions. This particular episode, from the show's peak years, exemplifies what made the series endure for seventeen years: compelling mysteries that turned the harsh landscape itself into a character, complex moral questions about justice and mercy, and that special chemistry between man and dog that audiences could never resist.</p>
+<p>Settle back in your favorite chair, dim the lights, and let the crackle of your speaker transport you to the snow-covered Yukon. Murder on the Mountain awaits—a masterclass in suspenseful storytelling from an era when imagination was the only special effect radio needed.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

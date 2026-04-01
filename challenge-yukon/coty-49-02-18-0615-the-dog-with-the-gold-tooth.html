@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 02 18 (0615) The Dog With The Gold Tooth — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0615) The Dog With The Gold Tooth — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 02 18 (0615) The Dog With The Gold Tooth — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 02 18 (0615) The Dog With The Gold Tooth — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 02 18 (0615) The Dog With The Gold Tooth — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · February 18, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 02 18 (0615) The Dog With The Gold Tooth</h1>
+          <h1 class="episode__title">(0615) The Dog With The Gold Tooth</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Dog With The Gold Tooth</p>
-<p>Picture yourself huddled beside a crackling radio on a bitter winter's night, the wind howling outside like wolves at the door, as Sergeant Preston's authoritative voice cuts through the static with urgent news from Canada's frozen frontier. In "The Dog With The Gold Tooth," our heroic Mountie and his trusty lead dog King face their most peculiar mystery yet—a dog bearing an unmistakable golden tooth becomes the only clue to a crime that threatens the peace of the Yukon. As Preston and King pursue the trail through blinding snowstorms and across treacherous mountain passes, listeners will find themselves breathless with anticipation, wondering whether a single gleaming tooth could possibly unravel a criminal conspiracy. The episode crackles with atmosphere: the thunder of sled runners across ice, the yelping of the dog team, the sinister whispers of wrongdoers scheming in shadowed cabins—all rendered in vivid sound design that transports you straight to that remote, unforgiving landscape.</p>
+          <p>Picture yourself huddled beside a crackling radio on a bitter winter's night, the wind howling outside like wolves at the door, as Sergeant Preston's authoritative voice cuts through the static with urgent news from Canada's frozen frontier. In "The Dog With The Gold Tooth," our heroic Mountie and his trusty lead dog King face their most peculiar mystery yet—a dog bearing an unmistakable golden tooth becomes the only clue to a crime that threatens the peace of the Yukon. As Preston and King pursue the trail through blinding snowstorms and across treacherous mountain passes, listeners will find themselves breathless with anticipation, wondering whether a single gleaming tooth could possibly unravel a criminal conspiracy. The episode crackles with atmosphere: the thunder of sled runners across ice, the yelping of the dog team, the sinister whispers of wrongdoers scheming in shadowed cabins—all rendered in vivid sound design that transports you straight to that remote, unforgiving landscape.</p>
 <p>"Challenge of the Yukon" captivated millions during radio's golden age by combining the timeless appeal of the adventure serial with authentic frontier authenticity. The show's meticulous attention to detail—from Yukon geography to Mountie protocol—grounded fantastical tales in a real world listeners could believe in. Each episode built upon the previous, creating a serialized universe where danger lurked perpetually and moral clarity prevailed. By the 1940s, when this episode aired, Sergeant Preston had become a beloved institution, his adventures spawning toy dogs, comic strips, and later a television series that would captivate another generation.</p>
 <p>If you've never experienced the golden age of radio adventure, or if you're a longtime devotee seeking to revisit those treasured years, "The Dog With The Gold Tooth" offers the perfect introduction to Preston's world—one where justice, loyalty, and an extraordinary canine partner triumph against the unforgiving North.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

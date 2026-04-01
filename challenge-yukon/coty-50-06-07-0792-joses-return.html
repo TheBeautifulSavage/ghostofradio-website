@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 06 07 (0792) Jose's Return — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0792) Jose's Return — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 06 07 (0792) Jose's Return — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 06 07 (0792) Jose's Return — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 06 07 (0792) Jose's Return — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · June 7, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 06 07 (0792) Jose's Return</h1>
+          <h1 class="episode__title">(0792) Jose's Return</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Jose's Return</p>
-<p>As the familiar thunder of galloping hooves echoes across the frozen frontier, Sergeant Preston and his magnificent husky King venture into the treacherous mountain passes where an old acquaintance emerges from the shadows of the past. Jose—a man Preston believed dead, lost to the unforgiving Yukon wilderness years before—has returned with a mystery that could unravel the Mountie's carefully ordered world. In this gripping episode, listeners are transported to snow-blanketed logging camps and isolated trading posts where trust becomes as precious as gold dust, and the line between redemption and revenge grows perilously thin. The tension builds expertly as Preston must determine whether Jose's sudden reappearance is driven by gratitude, desperation, or something far more sinister. With King's instincts pitted against human cunning, and the remote wilderness holding deadly secrets, this episode exemplifies why audiences tuned in faithfully throughout the 1940s.</p>
-<p>*Challenge of the Yukon* was more than mere entertainment—it was a cultural touchstone that brought the romance of the Canadian frontier into living rooms across North America during the Great Depression and war years. Sergeant Preston, played with commanding authenticity by Paul Sutherland, became an icon of steady justice and moral fortitude, while King the Husky was the true heart of the series, often solving mysteries where human detective work fell short. The show's meticulous attention to wilderness detail and authentic Yukon lore gave listeners an escape into a world where good triumphed through courage and integrity, values deeply resonant with audiences seeking hope during uncertain times.</p>
-<p>Don't miss this tale of mystery and redemption from radio's golden age. Tune in and discover why *Challenge of the Yukon* remains a masterpiece of suspense, adventure, and the indomitable human spirit.</p>
+          <p>As the familiar thunder of galloping hooves echoes across the frozen frontier, Sergeant Preston and his magnificent husky King venture into the treacherous mountain passes where an old acquaintance emerges from the shadows of the past. Jose—a man Preston believed dead, lost to the unforgiving Yukon wilderness years before—has returned with a mystery that could unravel the Mountie's carefully ordered world. In this gripping episode, listeners are transported to snow-blanketed logging camps and isolated trading posts where trust becomes as precious as gold dust, and the line between redemption and revenge grows perilously thin. The tension builds expertly as Preston must determine whether Jose's sudden reappearance is driven by gratitude, desperation, or something far more sinister. With King's instincts pitted against human cunning, and the remote wilderness holding deadly secrets, this episode exemplifies why audiences tuned in faithfully throughout the 1940s.</p>
+<p>Challenge of the Yukon was more than mere entertainment—it was a cultural touchstone that brought the romance of the Canadian frontier into living rooms across North America during the Great Depression and war years. Sergeant Preston, played with commanding authenticity by Paul Sutherland, became an icon of steady justice and moral fortitude, while King the Husky was the true heart of the series, often solving mysteries where human detective work fell short. The show's meticulous attention to wilderness detail and authentic Yukon lore gave listeners an escape into a world where good triumphed through courage and integrity, values deeply resonant with audiences seeking hope during uncertain times.</p>
+<p>Don't miss this tale of mystery and redemption from radio's golden age. Tune in and discover why Challenge of the Yukon remains a masterpiece of suspense, adventure, and the indomitable human spirit.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

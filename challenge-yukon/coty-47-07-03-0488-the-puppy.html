@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 07 03 (0488) The Puppy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0488) The Puppy — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 07 03 (0488) The Puppy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 07 03 (0488) The Puppy — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 07 03 (0488) The Puppy — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · July 3, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 07 03 (0488) The Puppy</h1>
+          <h1 class="episode__title">(0488) The Puppy</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Puppy</p>
-<p>Picture yourself huddled close to your radio on a crisp evening as Sergeant Preston of the Yukon embarks on one of his most touching adventures yet. In this moving installment, our stalwart Mountie and his legendary sled dog King discover an abandoned puppy struggling through the unforgiving Canadian wilderness. What begins as a simple rescue mission evolves into a gripping tale of survival, loyalty, and the unexpected bond between man, beast, and beast—as Preston must decide whether to bring the vulnerable creature back to civilization or leave it to fend for itself in the frozen frontier. The howling wind and distant wolf calls create an atmosphere of genuine peril, while the whimpering pup serves as a poignant reminder of nature's cruelty and the costs of frontier life.</p>
-<p>*Challenge of the Yukon* stands as one of radio's greatest adventure serials, running for an impressive seventeen years and captivating millions of listeners with its authentic portrayal of law and order in Canada's remote North. Sergeant Preston, brilliantly portrayed by Paul Sutherland and later Dick Wesson, became an American institution—a hero who solved crimes not through gunplay but through wits, courage, and an unshakeable moral compass. The show's popularity was so immense it spawned comic books, television adaptations, and merchandise that dominated toy stores throughout the 1940s and 50s. These episodes represent a golden age of storytelling when sound effects and voice acting alone could transport listeners thousands of miles away.</p>
+          <p>Picture yourself huddled close to your radio on a crisp evening as Sergeant Preston of the Yukon embarks on one of his most touching adventures yet. In this moving installment, our stalwart Mountie and his legendary sled dog King discover an abandoned puppy struggling through the unforgiving Canadian wilderness. What begins as a simple rescue mission evolves into a gripping tale of survival, loyalty, and the unexpected bond between man, beast, and beast—as Preston must decide whether to bring the vulnerable creature back to civilization or leave it to fend for itself in the frozen frontier. The howling wind and distant wolf calls create an atmosphere of genuine peril, while the whimpering pup serves as a poignant reminder of nature's cruelty and the costs of frontier life.</p>
+<p>Challenge of the Yukon stands as one of radio's greatest adventure serials, running for an impressive seventeen years and captivating millions of listeners with its authentic portrayal of law and order in Canada's remote North. Sergeant Preston, brilliantly portrayed by Paul Sutherland and later Dick Wesson, became an American institution—a hero who solved crimes not through gunplay but through wits, courage, and an unshakeable moral compass. The show's popularity was so immense it spawned comic books, television adaptations, and merchandise that dominated toy stores throughout the 1940s and 50s. These episodes represent a golden age of storytelling when sound effects and voice acting alone could transport listeners thousands of miles away.</p>
 <p>Don't miss "The Puppy," a episode that exemplifies why this series touched the hearts of both children and adults. Tune in now to experience the majesty of the Yukon and discover what happens when Preston's duty to the wilderness collides with his capacity for compassion.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 11 21 (0707) The King Emperor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0707) The King Emperor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 11 21 (0707) The King Emperor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 11 21 (0707) The King Emperor — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 11 21 (0707) The King Emperor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 21, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 11 21 (0707) The King Emperor</h1>
+          <h1 class="episode__title">(0707) The King Emperor</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: The King Emperor</p>
-<p>As the familiar fanfare of Rossini's *William Tell Overture* crackles across the airwaves, Sergeant Preston and his magnificent sled dog King burst into an adventure that will test both man and beast against the brutal Yukon wilderness and human treachery. In "The King Emperor," our stalwart Mountie finds himself navigating a perilous mystery involving a missing prospector, a cabin lost in the snow-choked mountains, and a scheme that threatens the very survival of a remote trading post. With King's keen senses and Preston's unwavering dedication to justice, listeners will be transported to the frozen frontier where danger lurks in every shadow and the howling wind carries secrets worth killing for. The tension mounts as our hero races against time and the elements, piecing together clues in a gripping tale of ambition, betrayal, and redemption that exemplifies why audiences made this program appointment radio throughout the 1940s.</p>
-<p>*Challenge of the Yukon* became legendary for its authentic portrayal of Canada's harsh north, benefiting from scripts that honored real Mounted Police procedures and Yukon geography while never sacrificing dramatic excitement. The show's popularity was so immense that it spawned films, comic strips, and merchandise, capturing post-Depression America's hunger for tales of honorable lawmen bringing civilization to the frontier. Sergeant Preston—played with conviction by various actors throughout the series—represented an idealized constable whose moral compass never wavered, making the program beloved by families and young listeners eager for adventure without excess.</p>
+          <p>As the familiar fanfare of Rossini's William Tell Overture crackles across the airwaves, Sergeant Preston and his magnificent sled dog King burst into an adventure that will test both man and beast against the brutal Yukon wilderness and human treachery. In "The King Emperor," our stalwart Mountie finds himself navigating a perilous mystery involving a missing prospector, a cabin lost in the snow-choked mountains, and a scheme that threatens the very survival of a remote trading post. With King's keen senses and Preston's unwavering dedication to justice, listeners will be transported to the frozen frontier where danger lurks in every shadow and the howling wind carries secrets worth killing for. The tension mounts as our hero races against time and the elements, piecing together clues in a gripping tale of ambition, betrayal, and redemption that exemplifies why audiences made this program appointment radio throughout the 1940s.</p>
+<p>Challenge of the Yukon became legendary for its authentic portrayal of Canada's harsh north, benefiting from scripts that honored real Mounted Police procedures and Yukon geography while never sacrificing dramatic excitement. The show's popularity was so immense that it spawned films, comic strips, and merchandise, capturing post-Depression America's hunger for tales of honorable lawmen bringing civilization to the frontier. Sergeant Preston—played with conviction by various actors throughout the series—represented an idealized constable whose moral compass never wavered, making the program beloved by families and young listeners eager for adventure without excess.</p>
 <p>Don't miss this classic episode, preserved from the golden age of radio. Settle in, tune in, and let the snow swirl around you as Sergeant Preston and King pursue justice across the unforgiving Yukon landscape.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

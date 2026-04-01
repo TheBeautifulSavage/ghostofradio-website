@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 12 27 (0511) The Shepherd Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0511) The Shepherd Dog — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 12 27 (0511) The Shepherd Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 12 27 (0511) The Shepherd Dog — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 12 27 (0511) The Shepherd Dog — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 27, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 12 27 (0511) The Shepherd Dog</h1>
+          <h1 class="episode__title">(0511) The Shepherd Dog</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Shepherd Dog</p>
-<p>Picture this: the vast silence of the Yukon wilderness broken only by the howling wind and the distant cry of sled dogs. Sergeant Preston of the Mounted Police faces one of his most peculiar cases yet—a valuable shepherd dog has vanished from a remote trading post, and with it, the only hope an elderly prospector has of surviving the brutal winter ahead. As Preston and his trusty malamute King trek through blinding snow and treacherous mountain passes, the mystery deepens. Is the dog truly lost, or has it fallen into the hands of someone with sinister intent? This episode crackles with suspense and the kind of intimate human drama that made *Challenge of the Yukon* so beloved—it's not just about solving a crime, but about the profound bonds between man and beast in one of Earth's most unforgiving landscapes.</p>
-<p>Throughout its seventeen-year run, *Challenge of the Yukon* captured America's imagination by grounding fantastic adventure in the real history of the Canadian North. The show premiered in 1938 and became a phenomenon, spawning comic books, movies, and endless Saturday morning reruns. What set it apart was its authentic respect for the landscape and the Mounted Police themselves, combined with storytelling that balanced action with genuine emotional stakes. The *Coty* episode designation reveals this as a 1940s broadcast, during the show's golden years when writing and production reached their peak. Each episode was a masterclass in audio drama—sound effects of cracking ice and barking dogs transported listeners thousands of miles north.</p>
-<p>If you've never experienced the unique thrill of *Sergeant Preston of the Yukon*, "The Shepherd Dog" is an ideal entry point—a tale that reminds us why this classic show endured. Settle in with the static, let your imagination take the reins, and prepare to answer the call of adventure. *King, away!*</p>
+          <p>Picture this: the vast silence of the Yukon wilderness broken only by the howling wind and the distant cry of sled dogs. Sergeant Preston of the Mounted Police faces one of his most peculiar cases yet—a valuable shepherd dog has vanished from a remote trading post, and with it, the only hope an elderly prospector has of surviving the brutal winter ahead. As Preston and his trusty malamute King trek through blinding snow and treacherous mountain passes, the mystery deepens. Is the dog truly lost, or has it fallen into the hands of someone with sinister intent? This episode crackles with suspense and the kind of intimate human drama that made Challenge of the Yukon so beloved—it's not just about solving a crime, but about the profound bonds between man and beast in one of Earth's most unforgiving landscapes.</p>
+<p>Throughout its seventeen-year run, Challenge of the Yukon captured America's imagination by grounding fantastic adventure in the real history of the Canadian North. The show premiered in 1938 and became a phenomenon, spawning comic books, movies, and endless Saturday morning reruns. What set it apart was its authentic respect for the landscape and the Mounted Police themselves, combined with storytelling that balanced action with genuine emotional stakes. The Coty episode designation reveals this as a 1940s broadcast, during the show's golden years when writing and production reached their peak. Each episode was a masterclass in audio drama—sound effects of cracking ice and barking dogs transported listeners thousands of miles north.</p>
+<p>If you've never experienced the unique thrill of Sergeant Preston of the Yukon, "The Shepherd Dog" is an ideal entry point—a tale that reminds us why this classic show endured. Settle in with the static, let your imagination take the reins, and prepare to answer the call of adventure. King, away!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

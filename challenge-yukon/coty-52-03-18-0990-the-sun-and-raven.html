@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 03 18 (0990) The Sun And Raven — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0990) The Sun And Raven — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 03 18 (0990) The Sun And Raven — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 03 18 (0990) The Sun And Raven — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 03 18 (0990) The Sun And Raven — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 03 18 (0990) The Sun And Raven</h1>
+          <h1 class="episode__title">(0990) The Sun And Raven</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Sun and Raven</p>
-<p>Picture this: the Arctic wind howls across the frozen wastes as Sergeant Preston of the Yukon Royal Canadian Mounted Police faces a mystery that blends the ancient folklore of the indigenous peoples with the harsh realities of frontier justice. In "The Sun and Raven," our steadfast Mountie finds himself caught between two worlds—drawn into a case where superstition and crime become perilously intertwined. When a trapper vanishes without a trace and the only clues are cryptic symbols tied to a centuries-old legend, Preston must decide whether he's chasing a supernatural phantom or a cunning criminal who understands the power of fear. With his loyal dog King at his side and his wits as sharp as the Arctic ice beneath his boots, Preston ventures into uncharted territory where the line between myth and murder grows dangerously thin.</p>
-<p>What made *Challenge of the Yukon* endure for nearly two decades was precisely this blend of adventure, moral clarity, and respect for the land and people of Canada's north. Airing during the Golden Age of radio, the show brought listeners an escape into untamed wilderness while featuring protagonists—both human and canine—whose integrity never wavered. The writers crafted stories that honored Native traditions rather than merely exoticizing them, a progressive touch for the 1940s. With its thrilling musical cues, atmospheric sound design, and the famous clarion call of "King, you huskies!" the series transported millions of listeners from their living rooms directly to the frozen frontier.</p>
+          <p>Picture this: the Arctic wind howls across the frozen wastes as Sergeant Preston of the Yukon Royal Canadian Mounted Police faces a mystery that blends the ancient folklore of the indigenous peoples with the harsh realities of frontier justice. In "The Sun and Raven," our steadfast Mountie finds himself caught between two worlds—drawn into a case where superstition and crime become perilously intertwined. When a trapper vanishes without a trace and the only clues are cryptic symbols tied to a centuries-old legend, Preston must decide whether he's chasing a supernatural phantom or a cunning criminal who understands the power of fear. With his loyal dog King at his side and his wits as sharp as the Arctic ice beneath his boots, Preston ventures into uncharted territory where the line between myth and murder grows dangerously thin.</p>
+<p>What made Challenge of the Yukon endure for nearly two decades was precisely this blend of adventure, moral clarity, and respect for the land and people of Canada's north. Airing during the Golden Age of radio, the show brought listeners an escape into untamed wilderness while featuring protagonists—both human and canine—whose integrity never wavered. The writers crafted stories that honored Native traditions rather than merely exoticizing them, a progressive touch for the 1940s. With its thrilling musical cues, atmospheric sound design, and the famous clarion call of "King, you huskies!" the series transported millions of listeners from their living rooms directly to the frozen frontier.</p>
 <p>Tune in now and experience the magic that captivated audiences for decades. Will Preston unravel the mystery before darkness falls over the Yukon?</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

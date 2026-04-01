@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 04 21 (0869) Rowdy's Choice — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0869) Rowdy's Choice — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 04 21 (0869) Rowdy's Choice — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 04 21 (0869) Rowdy's Choice — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 04 21 (0869) Rowdy's Choice — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 04 21 (0869) Rowdy's Choice</h1>
+          <h1 class="episode__title">(0869) Rowdy's Choice</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Rowdy's Choice</p>
-<p>Picture yourself huddled around the radio on a crisp evening in the 1940s as Sergeant Preston of the Yukon RCMP faces one of his most wrenching decisions yet. In "Rowdy's Choice," the loyal sled dog who has been Preston's steadfast companion through countless frozen perils must decide between following his master into danger or obeying the call of his own heart. As blizzard winds howl through the studio sound effects and danger closes in from the wilderness, listeners will grip their seats wondering whether the bonds of loyalty can survive the pull of nature itself. With King the Wonder Dog's fate hanging in the balance and a desperate chase across treacherous ice floes, this episode crackles with the emotional intensity that made *Challenge of the Yukon* appointment radio for millions of American families.</p>
+          <p>Picture yourself huddled around the radio on a crisp evening in the 1940s as Sergeant Preston of the Yukon RCMP faces one of his most wrenching decisions yet. In "Rowdy's Choice," the loyal sled dog who has been Preston's steadfast companion through countless frozen perils must decide between following his master into danger or obeying the call of his own heart. As blizzard winds howl through the studio sound effects and danger closes in from the wilderness, listeners will grip their seats wondering whether the bonds of loyalty can survive the pull of nature itself. With King the Wonder Dog's fate hanging in the balance and a desperate chase across treacherous ice floes, this episode crackles with the emotional intensity that made Challenge of the Yukon appointment radio for millions of American families.</p>
 <p>Sergeant Preston's adventures stood apart from typical Western fare by transplanting the lawman archetype to the frozen Canadian north, where nature itself became as formidable an antagonist as any human villain. Premiering in 1938 and running for seventeen years across ABC and Mutual networks, the show pioneered a unique blend of RCMP procedural authenticity with genuine outdoor adventure—writers consulted actual Canadian authorities and incorporated real geographical landmarks. The character of King, Preston's magnificent husky, transcended typical sidekick status to become a true protagonist in episodes like this one, reflecting the show's sophisticated understanding that listeners craved moral complexity alongside thrilling action. The production's meticulous attention to sound design—real dog handlers, authentically recorded sled runners, and crackling fire—transported audiences beyond the studio into the vast, unforgiving Yukon.</p>
 <p>Don't miss this poignant chapter in one of radio's greatest adventure series. Tune in now to discover whether Rowdy finds redemption, whether Preston's judgment prevails, and how one man and his dog navigate the most difficult choice of all.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

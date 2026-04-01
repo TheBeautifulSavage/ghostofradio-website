@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 01 06 (0727) The Battle At Bradley's — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0727) The Battle At Bradley's — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 01 06 (0727) The Battle At Bradley's — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 01 06 (0727) The Battle At Bradley's — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 01 06 (0727) The Battle At Bradley's — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 6, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 01 06 (0727) The Battle At Bradley's</h1>
+          <h1 class="episode__title">(0727) The Battle At Bradley's</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Battle At Bradley's</p>
-<p>Picture this: the snow-swept wilderness of the Yukon, where the wind cuts like a knife and danger lurks behind every frozen ridge. In "The Battle At Bradley's," Sergeant Preston of the Royal Canadian Mounted Police faces one of his most desperate confrontations yet—a tense, gun-smoke showdown at a remote trading post where outlaws have dug in like wolves preparing for their last stand. As listeners tune in, they'll hear the crack of gunfire echoing across the tundra, the frantic shouts of men pushed to their breaking point, and the steady, unwavering voice of Preston himself, refusing to back down despite overwhelming odds. With his faithful dog King at his side, Preston must outwit a gang of hardened criminals before innocent lives are lost and justice is buried under the Yukon snow. The tension builds from the opening gong strike—this is old-time radio adventure at its finest, where every sound effect, every dramatic pause, and every word carries the weight of life and death in Canada's frozen frontier.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon precisely because it captured the romance of the North American frontier at a moment when audiences desperately needed adventure and heroism. Premiering in 1938 and running strong through the 1940s, the show featured real locations, authentic Canadian geography, and stories rooted in the actual work of the Mounted Police. Episodes like "The Battle At Bradley's" exemplify why the program earned a devoted national following—they delivered genuine thrills wrapped in the mystique of the wilderness, with Preston as the moral compass guiding listeners through moral ambiguity and lawless territory.</p>
+          <p>Picture this: the snow-swept wilderness of the Yukon, where the wind cuts like a knife and danger lurks behind every frozen ridge. In "The Battle At Bradley's," Sergeant Preston of the Royal Canadian Mounted Police faces one of his most desperate confrontations yet—a tense, gun-smoke showdown at a remote trading post where outlaws have dug in like wolves preparing for their last stand. As listeners tune in, they'll hear the crack of gunfire echoing across the tundra, the frantic shouts of men pushed to their breaking point, and the steady, unwavering voice of Preston himself, refusing to back down despite overwhelming odds. With his faithful dog King at his side, Preston must outwit a gang of hardened criminals before innocent lives are lost and justice is buried under the Yukon snow. The tension builds from the opening gong strike—this is old-time radio adventure at its finest, where every sound effect, every dramatic pause, and every word carries the weight of life and death in Canada's frozen frontier.</p>
+<p>Challenge of the Yukon became a cultural phenomenon precisely because it captured the romance of the North American frontier at a moment when audiences desperately needed adventure and heroism. Premiering in 1938 and running strong through the 1940s, the show featured real locations, authentic Canadian geography, and stories rooted in the actual work of the Mounted Police. Episodes like "The Battle At Bradley's" exemplify why the program earned a devoted national following—they delivered genuine thrills wrapped in the mystique of the wilderness, with Preston as the moral compass guiding listeners through moral ambiguity and lawless territory.</p>
 <p>Don't miss this classic tale of frontier justice. Tune in to hear how Sergeant Preston and King face down their most vicious adversaries yet in one of radio's greatest adventure series.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

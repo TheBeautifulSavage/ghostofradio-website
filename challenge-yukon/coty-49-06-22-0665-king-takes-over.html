@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 06 22 (0665) King Takes Over — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0665) King Takes Over — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 06 22 (0665) King Takes Over — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 06 22 (0665) King Takes Over — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 06 22 (0665) King Takes Over — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · June 22, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 06 22 (0665) King Takes Over</h1>
+          <h1 class="episode__title">(0665) King Takes Over</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: King Takes Over</p>
-<p>Deep in the frozen wastes where the Northern Lights dance across endless ice fields, Sergeant Preston of the Royal Canadian Mounted Police faces a challenge that strikes at the very heart of his authority. When a ruthless claim-jumper named Rafe Donovan seizes control of the settlement and turns the miners against their trusted lawman, Preston must rely on his legendary dog team and his wits to reclaim order before the lawless frontier consumes everything. This episode crackles with tension as Preston finds himself outnumbered and outmaneuvered, forced to operate in the shadows while Donovan plays king of the frozen wasteland. Will King, his magnificent lead husky, prove more loyal than the men who've turned their backs? The answer lies somewhere in the howling wilderness, where justice and desperation collide under the aurora's eerie glow.</p>
-<p>*Challenge of the Yukon* captivated millions throughout the 1940s by transforming the Canadian North into a realm of genuine peril and moral complexity. Unlike the sanitized westerns of radio's golden age, Preston's adventures acknowledged the brutal realities of frontier life while maintaining an unwavering code of honor. The show's creator, George W. Trendle, grounded each episode in authentic Yukon geography and actual RCMP procedures, lending credibility that listeners found irresistible. The dynamic between Preston and King elevated the program beyond typical adventure fare—their partnership became the emotional core that made each crisis feel devastatingly personal.</p>
-<p>Don't miss this gripping installment of frontier justice, where one man and his faithful dog stand against the lawless tide. Tune in now and discover why *Challenge of the Yukon* became the voice of adventure for an entire generation.</p>
+          <p>Deep in the frozen wastes where the Northern Lights dance across endless ice fields, Sergeant Preston of the Royal Canadian Mounted Police faces a challenge that strikes at the very heart of his authority. When a ruthless claim-jumper named Rafe Donovan seizes control of the settlement and turns the miners against their trusted lawman, Preston must rely on his legendary dog team and his wits to reclaim order before the lawless frontier consumes everything. This episode crackles with tension as Preston finds himself outnumbered and outmaneuvered, forced to operate in the shadows while Donovan plays king of the frozen wasteland. Will King, his magnificent lead husky, prove more loyal than the men who've turned their backs? The answer lies somewhere in the howling wilderness, where justice and desperation collide under the aurora's eerie glow.</p>
+<p>Challenge of the Yukon captivated millions throughout the 1940s by transforming the Canadian North into a realm of genuine peril and moral complexity. Unlike the sanitized westerns of radio's golden age, Preston's adventures acknowledged the brutal realities of frontier life while maintaining an unwavering code of honor. The show's creator, George W. Trendle, grounded each episode in authentic Yukon geography and actual RCMP procedures, lending credibility that listeners found irresistible. The dynamic between Preston and King elevated the program beyond typical adventure fare—their partnership became the emotional core that made each crisis feel devastatingly personal.</p>
+<p>Don't miss this gripping installment of frontier justice, where one man and his faithful dog stand against the lawless tide. Tune in now and discover why Challenge of the Yukon became the voice of adventure for an entire generation.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

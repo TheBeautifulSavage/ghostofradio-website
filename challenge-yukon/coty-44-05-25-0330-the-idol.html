@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 05 25 (0330) The Idol — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0330) The Idol — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 05 25 (0330) The Idol — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 05 25 (0330) The Idol — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 05 25 (0330) The Idol — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 25, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 05 25 (0330) The Idol</h1>
+          <h1 class="episode__title">(0330) The Idol</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Idol</p>
-<p>Picture yourself huddled close to your radio on a spring evening in 1945, the dial tuned to that familiar trumpet fanfare and the thunder of galloping hooves. "Challenge of the Yukon" crackles to life, and you're transported once more to the frozen wilderness where Sergeant Preston of the Royal Canadian Mounted Police faces his greatest trial yet. In "The Idol," a sacred artifact surfaces in a remote mining camp, igniting a dangerous obsession among fortune seekers and indigenous peoples alike. As tensions mount and greed threatens to ignite violence in the snow-blanketed frontier, Preston must navigate the treacherous divide between cultures while King, his trusty husky companion, senses danger lurking in the shadows. The episode pulses with genuine peril—you can almost feel the bitter cold seeping through your radio cabinet as dark forces converge on this isolated outpost.</p>
+          <p>Picture yourself huddled close to your radio on a spring evening in 1945, the dial tuned to that familiar trumpet fanfare and the thunder of galloping hooves. "Challenge of the Yukon" crackles to life, and you're transported once more to the frozen wilderness where Sergeant Preston of the Royal Canadian Mounted Police faces his greatest trial yet. In "The Idol," a sacred artifact surfaces in a remote mining camp, igniting a dangerous obsession among fortune seekers and indigenous peoples alike. As tensions mount and greed threatens to ignite violence in the snow-blanketed frontier, Preston must navigate the treacherous divide between cultures while King, his trusty husky companion, senses danger lurking in the shadows. The episode pulses with genuine peril—you can almost feel the bitter cold seeping through your radio cabinet as dark forces converge on this isolated outpost.</p>
 <p>This show arrived during radio's golden age, when adventure serials captured the imagination of millions. "Challenge of the Yukon" stood apart for its authentic Canadian setting and respectful (for its era) portrayal of Yukon culture, while delivering the genuine thrills audiences craved. Sergeant Preston became an icon—the ideal lawman, ever resourceful, deeply principled, and inseparable from his faithful companion. Through hundreds of episodes spanning two decades, listeners followed his exploits with the devotion reserved for true heroes, and "The Idol" exemplifies why: it's a masterclass in tension and moral complexity wrapped in adventure's most thrilling package.</p>
 <p>If you've never experienced the magic of classic radio adventure, or if you're a devoted fan seeking to revisit this golden era, "The Idol" awaits. Settle in, let the static fade away, and prepare yourself for mystery, danger, and the unmistakable sound of justice thundering across the Yukon tundra.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

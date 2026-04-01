@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 04 16 (0479) The Torn Sleeve — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0479) The Torn Sleeve — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 04 16 (0479) The Torn Sleeve — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 04 16 (0479) The Torn Sleeve — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 04 16 (0479) The Torn Sleeve — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 16, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 04 16 (0479) The Torn Sleeve</h1>
+          <h1 class="episode__title">(0479) The Torn Sleeve</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Torn Sleeve</p>
-<p>Picture this: a vast, frozen expanse where the only sounds are the howl of the Arctic wind and the distant baying of sled dogs. Sergeant Preston and King, his magnificent lead dog, are closing in on a desperate fugitive who has fled into the Canadian wilderness—leaving behind nothing but a scrap of torn fabric caught on a jagged outcrop of ice. This single piece of evidence becomes the thread that unravels an intricate mystery of mistaken identity, frontier justice, and redemption. As Preston follows the barely visible trail deeper into the Yukon's merciless landscape, listeners will find themselves drawn into a taut tale of pursuit where survival itself hangs in the balance, and where the line between hunter and hunted blurs in the suffocating cold.</p>
-<p>*Challenge of the Yukon* thrived on the golden age of radio adventure, a period when imagination was the only special effect needed. Premiering in 1938, this series captured the public's fascination with the Canadian North—a landscape both beautiful and brutally unforgiving, far removed from Depression-era America. Sergeant Preston became an icon of frontier morality, a lawman whose dog team, his wits, and his unwavering sense of justice were all the equipment he needed. The show's writers expertly wove together elements of genuine Yukon history with compelling human drama, creating episodes that kept families gathered around their radios week after week.</p>
-<p>If you're seeking an evening of pure adventure—the crack of a whip, the thunder of hooves, the camaraderie between man and beast—then *The Torn Sleeve* awaits you. Tune in and let Sergeant Preston guide you through one of radio's most thrilling journeys into the frozen North.</p>
+          <p>Picture this: a vast, frozen expanse where the only sounds are the howl of the Arctic wind and the distant baying of sled dogs. Sergeant Preston and King, his magnificent lead dog, are closing in on a desperate fugitive who has fled into the Canadian wilderness—leaving behind nothing but a scrap of torn fabric caught on a jagged outcrop of ice. This single piece of evidence becomes the thread that unravels an intricate mystery of mistaken identity, frontier justice, and redemption. As Preston follows the barely visible trail deeper into the Yukon's merciless landscape, listeners will find themselves drawn into a taut tale of pursuit where survival itself hangs in the balance, and where the line between hunter and hunted blurs in the suffocating cold.</p>
+<p>Challenge of the Yukon thrived on the golden age of radio adventure, a period when imagination was the only special effect needed. Premiering in 1938, this series captured the public's fascination with the Canadian North—a landscape both beautiful and brutally unforgiving, far removed from Depression-era America. Sergeant Preston became an icon of frontier morality, a lawman whose dog team, his wits, and his unwavering sense of justice were all the equipment he needed. The show's writers expertly wove together elements of genuine Yukon history with compelling human drama, creating episodes that kept families gathered around their radios week after week.</p>
+<p>If you're seeking an evening of pure adventure—the crack of a whip, the thunder of hooves, the camaraderie between man and beast—then The Torn Sleeve awaits you. Tune in and let Sergeant Preston guide you through one of radio's most thrilling journeys into the frozen North.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 01 28 (0606) Lost River Ambush — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0606) Lost River Ambush — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 01 28 (0606) Lost River Ambush — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 01 28 (0606) Lost River Ambush — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 01 28 (0606) Lost River Ambush — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 28, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 01 28 (0606) Lost River Ambush</h1>
+          <h1 class="episode__title">(0606) Lost River Ambush</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Lost River Ambush</p>
-<p>Picture yourself huddled around the radio on a winter's evening, the crackle of the dial settling into that familiar theme—the thundering hoofbeats of King, Sergeant Preston's magnificent husky, racing across the frozen wastes of the Canadian northwest. In "Lost River Ambush," our Mountie protagonist finds himself trapped in one of the Yukon's most treacherous stretches, where a criminal mastermind has orchestrated an elaborate scheme to ambush a gold shipment. With avalanche threats closing in from above and hostile trappers converging from below, Preston must use his wits, his courage, and the unwavering loyalty of King to navigate a deadly gauntlet where trust is as scarce as warmth in the Arctic night. The tension mounts with each passing moment as the temperature drops and the noose tightens.</p>
-<p>*Challenge of the Yukon* stands as one of radio's most enduring adventures, bringing listeners the raw majesty and unforgiving landscape of the Canadian frontier during an era when such tales captured America's imagination. Broadcasting from 1938 through 1955, the show earned its place in the golden age of radio drama through meticulous sound design—the howl of wind, the crack of ice, the yelp of dog sleds—and stories that balanced frontier justice with genuine human drama. Each episode represented an escape to a wilder, simpler world where right and wrong were clearly drawn and personal honor meant everything.</p>
-<p>Tune in to experience the full atmospheric richness of radio's greatest adventure serial. Whether you're a longtime fan or discovering *Challenge of the Yukon* for the first time, "Lost River Ambush" exemplifies why this show commanded loyal listeners for nearly two decades. Let King's loyal bark and Preston's steady voice guide you through the frozen mystery waiting to unfold.</p>
+          <p>Picture yourself huddled around the radio on a winter's evening, the crackle of the dial settling into that familiar theme—the thundering hoofbeats of King, Sergeant Preston's magnificent husky, racing across the frozen wastes of the Canadian northwest. In "Lost River Ambush," our Mountie protagonist finds himself trapped in one of the Yukon's most treacherous stretches, where a criminal mastermind has orchestrated an elaborate scheme to ambush a gold shipment. With avalanche threats closing in from above and hostile trappers converging from below, Preston must use his wits, his courage, and the unwavering loyalty of King to navigate a deadly gauntlet where trust is as scarce as warmth in the Arctic night. The tension mounts with each passing moment as the temperature drops and the noose tightens.</p>
+<p>Challenge of the Yukon stands as one of radio's most enduring adventures, bringing listeners the raw majesty and unforgiving landscape of the Canadian frontier during an era when such tales captured America's imagination. Broadcasting from 1938 through 1955, the show earned its place in the golden age of radio drama through meticulous sound design—the howl of wind, the crack of ice, the yelp of dog sleds—and stories that balanced frontier justice with genuine human drama. Each episode represented an escape to a wilder, simpler world where right and wrong were clearly drawn and personal honor meant everything.</p>
+<p>Tune in to experience the full atmospheric richness of radio's greatest adventure serial. Whether you're a longtime fan or discovering Challenge of the Yukon for the first time, "Lost River Ambush" exemplifies why this show commanded loyal listeners for nearly two decades. Let King's loyal bark and Preston's steady voice guide you through the frozen mystery waiting to unfold.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

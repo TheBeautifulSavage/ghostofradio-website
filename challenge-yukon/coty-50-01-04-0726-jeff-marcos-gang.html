@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 01 04 (0726) Jeff Marco's Gang — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0726) Jeff Marco's Gang — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 01 04 (0726) Jeff Marco's Gang — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 01 04 (0726) Jeff Marco's Gang — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 01 04 (0726) Jeff Marco's Gang — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 4, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 01 04 (0726) Jeff Marco's Gang</h1>
+          <h1 class="episode__title">(0726) Jeff Marco's Gang</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Jeff Marco's Gang</p>
-<p>The frozen wilderness of the Canadian north pulses with danger as Sergeant Preston and his magnificent dog King face down one of the territory's most ruthless outlaw gangs. In "Jeff Marco's Gang," listeners are transported into a world of howling winds, snow-laden pines, and the ever-present threat of frontier justice gone wrong. The episode crackles with tension as Preston pursues Marco's hardened criminals across treacherous terrain, where a single misstep means freezing death or a bullet in the back. With only his wits, his loyal King, and his unwavering commitment to the law, Preston must navigate the moral complexities of frontier justice while closing in on men who have nothing left to lose. The atmospheric sound design—crackling fires, howling wolves, the crunch of boots on packed snow—transforms your living room into the unforgiving Yukon, where survival and righteousness hang in the balance.</p>
-<p>*Challenge of the Yukon* became a cultural phenomenon because it captured something essential about the American character: the lone lawman standing against chaos, armed with integrity rather than just firepower. Premiering in 1938 and running for nearly two decades, the show embodied a romanticized vision of Canadian frontier life that resonated deeply with Depression-era audiences seeking heroes of incorruptible principle. Sergeant Preston—later immortalized in the 1950s television adaptation—represented an older, nobler tradition of law enforcement, where personal honor mattered as much as the badge. This particular 1940s episode showcases the show at its peak, with taut scripts and compelling villains that elevated it far beyond simple adventure fare.</p>
-<p>Don your parka and mush into the frozen north. Experience the thrilling confrontation that makes *Challenge of the Yukon* essential listening for anyone who loves classic adventure radio.</p>
+          <p>The frozen wilderness of the Canadian north pulses with danger as Sergeant Preston and his magnificent dog King face down one of the territory's most ruthless outlaw gangs. In "Jeff Marco's Gang," listeners are transported into a world of howling winds, snow-laden pines, and the ever-present threat of frontier justice gone wrong. The episode crackles with tension as Preston pursues Marco's hardened criminals across treacherous terrain, where a single misstep means freezing death or a bullet in the back. With only his wits, his loyal King, and his unwavering commitment to the law, Preston must navigate the moral complexities of frontier justice while closing in on men who have nothing left to lose. The atmospheric sound design—crackling fires, howling wolves, the crunch of boots on packed snow—transforms your living room into the unforgiving Yukon, where survival and righteousness hang in the balance.</p>
+<p>Challenge of the Yukon became a cultural phenomenon because it captured something essential about the American character: the lone lawman standing against chaos, armed with integrity rather than just firepower. Premiering in 1938 and running for nearly two decades, the show embodied a romanticized vision of Canadian frontier life that resonated deeply with Depression-era audiences seeking heroes of incorruptible principle. Sergeant Preston—later immortalized in the 1950s television adaptation—represented an older, nobler tradition of law enforcement, where personal honor mattered as much as the badge. This particular 1940s episode showcases the show at its peak, with taut scripts and compelling villains that elevated it far beyond simple adventure fare.</p>
+<p>Don your parka and mush into the frozen north. Experience the thrilling confrontation that makes Challenge of the Yukon essential listening for anyone who loves classic adventure radio.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

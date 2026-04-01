@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 04 29 (0645) Fire In The Sky — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0645) Fire In The Sky — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 04 29 (0645) Fire In The Sky — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 04 29 (0645) Fire In The Sky — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 04 29 (0645) Fire In The Sky — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 29, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 04 29 (0645) Fire In The Sky</h1>
+          <h1 class="episode__title">(0645) Fire In The Sky</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Fire In The Sky</p>
-<p>Picture yourself huddled close to the radio on a crisp evening, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent dog sled lead—and you're plunged into the frozen Yukon wilderness where danger lurks in every shadow. In "Fire In The Sky," Preston faces one of nature's most terrifying spectacles when a meteor streaks across the northern heavens, crashing somewhere in the remote backcountry. What follows is a desperate race against time and the elements: Is it merely a celestial phenomenon, or does it herald something far more sinister? As the mysterious fire in the sky ignites panic among settlers and Mounties alike, Preston must separate fact from frontier folklore while pursuing a trail that leads him through blizzards and across treacherous terrain. The tension builds masterfully as our hero discovers that someone may be using the meteor as cover for far more earthly crimes.</p>
-<p>What made *Challenge of the Yukon* such an enduring favorite from 1938 through the 1950s was precisely this blend of the fantastical and the grounded—adventures that stretched the imagination while maintaining the authentic grit of the Canadian wilderness and the unwavering moral code of the Royal Canadian Mounted Police. Sergeant Preston became an icon of American radio, and the show's writers crafted episodes that captivated both children and adults, mixing genuine frontier peril with just enough mystery and wonder to keep listeners guessing until the final dramatic resolution.</p>
+          <p>Picture yourself huddled close to the radio on a crisp evening, the crackle of static giving way to the thundering hoofbeats of King, Sergeant Preston's magnificent dog sled lead—and you're plunged into the frozen Yukon wilderness where danger lurks in every shadow. In "Fire In The Sky," Preston faces one of nature's most terrifying spectacles when a meteor streaks across the northern heavens, crashing somewhere in the remote backcountry. What follows is a desperate race against time and the elements: Is it merely a celestial phenomenon, or does it herald something far more sinister? As the mysterious fire in the sky ignites panic among settlers and Mounties alike, Preston must separate fact from frontier folklore while pursuing a trail that leads him through blizzards and across treacherous terrain. The tension builds masterfully as our hero discovers that someone may be using the meteor as cover for far more earthly crimes.</p>
+<p>What made Challenge of the Yukon such an enduring favorite from 1938 through the 1950s was precisely this blend of the fantastical and the grounded—adventures that stretched the imagination while maintaining the authentic grit of the Canadian wilderness and the unwavering moral code of the Royal Canadian Mounted Police. Sergeant Preston became an icon of American radio, and the show's writers crafted episodes that captivated both children and adults, mixing genuine frontier peril with just enough mystery and wonder to keep listeners guessing until the final dramatic resolution.</p>
 <p>Don't miss "Fire In The Sky"—a masterclass in old-time radio storytelling that proves why millions tuned in faithfully each week. Press play and let yourself be transported to a world where duty, courage, and justice still mean everything.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 09 18 (0498) The Fraud — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0498) The Fraud — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 09 18 (0498) The Fraud — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 09 18 (0498) The Fraud — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 09 18 (0498) The Fraud — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · September 18, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 09 18 (0498) The Fraud</h1>
+          <h1 class="episode__title">(0498) The Fraud</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Fraud</p>
-<p>Picture yourself huddled around the radio on a winter's evening, the crackle of static giving way to that unmistakable fanfare and the thundering hoofbeats of King the Wonder Dog. In "The Fraud," Sergeant Preston faces one of the Yukon's most cunning adversaries—not a desperate criminal or ruthless claim jumper, but a con artist whose silver tongue threatens to destroy an honest man's life. When a slick operator arrives in the territory with forged documents and an elaborate scheme, Preston must navigate the murky waters between suspicion and proof, all while the innocent suffer under the weight of deception. The tension builds as our hero races across snow-swept landscapes, piecing together clues that will expose the truth before another victim loses everything to this master manipulator.</p>
-<p>*Challenge of the Yukon* was a phenomenon that captured America's imagination during the Great Depression and wartime years, offering listeners a weekly escape into adventure and moral clarity. Sergeant Preston—that stalwart representative of Canadian law and order—embodied the values audiences desperately needed: integrity, courage, and unwavering justice. The show's scripts were grounded in authentic frontier atmosphere, with writers drawing on Yukon history and the real Royal Canadian Mounted Police to create stories that felt urgent and immediate. Each episode unfolded with cinematic pacing that kept millions of listeners on the edge of their seats, from schoolchildren to their grandparents.</p>
+          <p>Picture yourself huddled around the radio on a winter's evening, the crackle of static giving way to that unmistakable fanfare and the thundering hoofbeats of King the Wonder Dog. In "The Fraud," Sergeant Preston faces one of the Yukon's most cunning adversaries—not a desperate criminal or ruthless claim jumper, but a con artist whose silver tongue threatens to destroy an honest man's life. When a slick operator arrives in the territory with forged documents and an elaborate scheme, Preston must navigate the murky waters between suspicion and proof, all while the innocent suffer under the weight of deception. The tension builds as our hero races across snow-swept landscapes, piecing together clues that will expose the truth before another victim loses everything to this master manipulator.</p>
+<p>Challenge of the Yukon was a phenomenon that captured America's imagination during the Great Depression and wartime years, offering listeners a weekly escape into adventure and moral clarity. Sergeant Preston—that stalwart representative of Canadian law and order—embodied the values audiences desperately needed: integrity, courage, and unwavering justice. The show's scripts were grounded in authentic frontier atmosphere, with writers drawing on Yukon history and the real Royal Canadian Mounted Police to create stories that felt urgent and immediate. Each episode unfolded with cinematic pacing that kept millions of listeners on the edge of their seats, from schoolchildren to their grandparents.</p>
 <p>Don't miss "The Fraud"—a masterclass in suspense that reminds us why this series remained a beloved staple of radio for nearly two decades. Tune in now and discover why Sergeant Preston and King the Wonder Dog became legends of the golden age.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

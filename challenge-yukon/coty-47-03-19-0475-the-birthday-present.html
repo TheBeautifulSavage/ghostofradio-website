@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 03 19 (0475) The Birthday Present — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0475) The Birthday Present — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 03 19 (0475) The Birthday Present — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 03 19 (0475) The Birthday Present — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 03 19 (0475) The Birthday Present — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 19, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 03 19 (0475) The Birthday Present</h1>
+          <h1 class="episode__title">(0475) The Birthday Present</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Birthday Present</p>
-<p>As snow swirls across the frozen Yukon wilderness and King barks his urgent signal, Sergeant Preston faces his most personal challenge yet. When a young prospector's daughter arrives unexpectedly at Fort Nelson with news of a missing birthday gift—a fortune in gold dust meant to save her father's claim—Preston must navigate a treacherous web of claim jumpers, unforgiving terrain, and his own divided loyalties. In this 1940s adventure, the legendary Mountie discovers that justice in the frozen north isn't always about enforcing the law, but sometimes about protecting the innocent from those who would exploit the gold rush's cutthroat desperation. As midnight approaches on the girl's birthday, Preston must race his dog sled through blizzard conditions to recover the stolen cache and restore a family's shattered hopes.</p>
-<p>*Challenge of the Yukon*, which captivated millions during its seventeen-year run, transformed the character of Sergeant Preston into an American icon of frontier virtue. Broadcasting from 1938 to 1955, the show's gripping narratives of mounted police heroics and Yukon adventure made it one of radio's most beloved series, spawning later television adaptations that would define the character for generations. The program's attention to historical detail—from authentic descriptions of mining operations to authentic depictions of RCMP protocol—gave listeners the thrilling sense they were witnessing real events from Canada's gold rush era. Episodes like "The Birthday Present" showcase the show's particular genius: intimate human drama set against epic landscapes, where a Mountie's courage is measured not in gunfights, but in his unwavering commitment to the vulnerable.</p>
+          <p>As snow swirls across the frozen Yukon wilderness and King barks his urgent signal, Sergeant Preston faces his most personal challenge yet. When a young prospector's daughter arrives unexpectedly at Fort Nelson with news of a missing birthday gift—a fortune in gold dust meant to save her father's claim—Preston must navigate a treacherous web of claim jumpers, unforgiving terrain, and his own divided loyalties. In this 1940s adventure, the legendary Mountie discovers that justice in the frozen north isn't always about enforcing the law, but sometimes about protecting the innocent from those who would exploit the gold rush's cutthroat desperation. As midnight approaches on the girl's birthday, Preston must race his dog sled through blizzard conditions to recover the stolen cache and restore a family's shattered hopes.</p>
+<p>Challenge of the Yukon, which captivated millions during its seventeen-year run, transformed the character of Sergeant Preston into an American icon of frontier virtue. Broadcasting from 1938 to 1955, the show's gripping narratives of mounted police heroics and Yukon adventure made it one of radio's most beloved series, spawning later television adaptations that would define the character for generations. The program's attention to historical detail—from authentic descriptions of mining operations to authentic depictions of RCMP protocol—gave listeners the thrilling sense they were witnessing real events from Canada's gold rush era. Episodes like "The Birthday Present" showcase the show's particular genius: intimate human drama set against epic landscapes, where a Mountie's courage is measured not in gunfights, but in his unwavering commitment to the vulnerable.</p>
 <p>Don't miss this stirring tale of duty, compassion, and one faithful dog's loyalty. Tune in now for an adventure that will carry you back to the golden age of radio drama and the unforgettable legend of Sergeant Preston of the Yukon.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

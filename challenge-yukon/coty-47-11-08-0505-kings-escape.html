@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 11 08 (0505) King's Escape — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0505) King's Escape — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 11 08 (0505) King's Escape — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 11 08 (0505) King's Escape — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 11 08 (0505) King's Escape — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 8, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 11 08 (0505) King's Escape</h1>
+          <h1 class="episode__title">(0505) King's Escape</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># King's Escape</p>
-<p>Deep in the frozen wilderness where pines bow beneath mountains of snow, Sergeant Preston of the Royal Canadian Mounted Police faces his most cunning adversary yet—a desperate criminal known only as King, who has orchestrated a brazen escape from the remote northern prison. As howling winds rake the barren landscape and temperatures plummet far below zero, our intrepid Mountie and his loyal husky companion King must race against time and nature itself. The fugitive leaves a twisted trail of clues and double-crosses across the frozen frontier, each step pulling Preston deeper into a cat-and-mouse game where one misstep could mean death. Will Sergeant Preston's legendary tracking skills and unwavering sense of justice prevail against an enemy who knows the unforgiving North as well as he does? Listen as the tension mounts with every crackle of the radio, every ghostly sound of the northern lights, and every desperate choice that could seal a man's fate in the Yukon's merciless grip.</p>
-<p>For over a decade, *Challenge of the Yukon* captured America's imagination during the Great Depression and beyond, transporting listeners away from their troubles into a realm of genuine heroism and moral clarity. The show's protagonist embodied the best of the Mountie legend—honorable, fearless, and incorruptible—perfectly mirroring the era's longing for straightforward virtue. Created during radio's golden age, this episode represents the show's mature period, when writers had perfected the art of weaving suspense, geography, and character into narratives that felt both thrilling and authentic.</p>
+          <p>Deep in the frozen wilderness where pines bow beneath mountains of snow, Sergeant Preston of the Royal Canadian Mounted Police faces his most cunning adversary yet—a desperate criminal known only as King, who has orchestrated a brazen escape from the remote northern prison. As howling winds rake the barren landscape and temperatures plummet far below zero, our intrepid Mountie and his loyal husky companion King must race against time and nature itself. The fugitive leaves a twisted trail of clues and double-crosses across the frozen frontier, each step pulling Preston deeper into a cat-and-mouse game where one misstep could mean death. Will Sergeant Preston's legendary tracking skills and unwavering sense of justice prevail against an enemy who knows the unforgiving North as well as he does? Listen as the tension mounts with every crackle of the radio, every ghostly sound of the northern lights, and every desperate choice that could seal a man's fate in the Yukon's merciless grip.</p>
+<p>For over a decade, Challenge of the Yukon captured America's imagination during the Great Depression and beyond, transporting listeners away from their troubles into a realm of genuine heroism and moral clarity. The show's protagonist embodied the best of the Mountie legend—honorable, fearless, and incorruptible—perfectly mirroring the era's longing for straightforward virtue. Created during radio's golden age, this episode represents the show's mature period, when writers had perfected the art of weaving suspense, geography, and character into narratives that felt both thrilling and authentic.</p>
 <p>Don your fur coat and brave the elements alongside Sergeant Preston. This is radio adventure at its finest—a timeless tale of law, order, and courage in the frozen North that continues to thrill listeners nearly eighty years later.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 05 27 (0657) The Skull In The Stone — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0657) The Skull In The Stone — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 05 27 (0657) The Skull In The Stone — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 05 27 (0657) The Skull In The Stone — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 05 27 (0657) The Skull In The Stone — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 27, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 05 27 (0657) The Skull In The Stone</h1>
+          <h1 class="episode__title">(0657) The Skull In The Stone</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Skull In The Stone</p>
-<p>Deep in the frozen wastes where the Canadian north stretches endlessly white and unforgiving, Sergeant Preston of the Yukon faces a mystery that will test both his investigative prowess and his nerve. When a prospector stumbles upon a macabre discovery—a human skull embedded within solid stone—the good Sergeant must determine whether he's uncovered a natural curiosity or evidence of a cold-blooded crime. With his trusty sled dog King at his side and the vast, indifferent wilderness pressing in on all sides, Preston races against time and the elements to uncover the truth. This episode crackles with the kind of genuine suspense that could only be delivered through the immediacy of live radio, where listeners must construct the snow-laden landscapes and shadowed dangers entirely in their minds.</p>
-<p>*Challenge of the Yukon* represented something uniquely American—and Canadian—about adventure storytelling in the golden age of radio. Premiering in 1938, the series proved that audiences hungered for tales of frontier justice and northern wilderness drama, delivered by the authoritative voice of Sergeant Preston and punctuated by the famous theme song that became iconic across three continents. The show's meticulous attention to period detail and its celebration of Canadian geography gave it a realism that set it apart from purely fantastical fare, while the character of Preston embodied an idealized law enforcement hero for Depression-era and wartime listeners seeking reassurance and order.</p>
+          <p>Deep in the frozen wastes where the Canadian north stretches endlessly white and unforgiving, Sergeant Preston of the Yukon faces a mystery that will test both his investigative prowess and his nerve. When a prospector stumbles upon a macabre discovery—a human skull embedded within solid stone—the good Sergeant must determine whether he's uncovered a natural curiosity or evidence of a cold-blooded crime. With his trusty sled dog King at his side and the vast, indifferent wilderness pressing in on all sides, Preston races against time and the elements to uncover the truth. This episode crackles with the kind of genuine suspense that could only be delivered through the immediacy of live radio, where listeners must construct the snow-laden landscapes and shadowed dangers entirely in their minds.</p>
+<p>Challenge of the Yukon represented something uniquely American—and Canadian—about adventure storytelling in the golden age of radio. Premiering in 1938, the series proved that audiences hungered for tales of frontier justice and northern wilderness drama, delivered by the authoritative voice of Sergeant Preston and punctuated by the famous theme song that became iconic across three continents. The show's meticulous attention to period detail and its celebration of Canadian geography gave it a realism that set it apart from purely fantastical fare, while the character of Preston embodied an idealized law enforcement hero for Depression-era and wartime listeners seeking reassurance and order.</p>
 <p>Don your parka and mush into the frozen unknown with Sergeant Preston and King. Whether you're a longtime devotee of this classic series or discovering it for the first time, "The Skull In The Stone" delivers the authentic thrills that made this show essential listening for a generation. The north calls—will you answer?</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

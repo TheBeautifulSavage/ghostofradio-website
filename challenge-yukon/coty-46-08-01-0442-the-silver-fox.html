@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 08 01 (0442) The Silver Fox — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0442) The Silver Fox — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 08 01 (0442) The Silver Fox — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 08 01 (0442) The Silver Fox — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 08 01 (0442) The Silver Fox — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 1, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 08 01 (0442) The Silver Fox</h1>
+          <h1 class="episode__title">(0442) The Silver Fox</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Silver Fox</p>
-<p>Picture yourself huddled around the radio on a winter's evening as Sergeant Preston of the Yukon crackles through the static, his voice steady and authoritative against the howling arctic wind. In "The Silver Fox," our intrepid Mountie faces a cunning adversary who has eluded the law across the frozen frontier—a notorious trapper whose prize catch, a legendary silver pelt worth a fortune, becomes the centerpiece of a dangerous game of wits and survival. With only his faithful dog King and his wits to guide him through blinding snowstorms and treacherous terrain, Preston must outmaneuver a desperate criminal willing to kill for wealth. The tension mounts as the hunter becomes the hunted, each plot twist pulling listeners deeper into the perilous wilderness where justice is as unforgiving as the elements themselves.</p>
+          <p>Picture yourself huddled around the radio on a winter's evening as Sergeant Preston of the Yukon crackles through the static, his voice steady and authoritative against the howling arctic wind. In "The Silver Fox," our intrepid Mountie faces a cunning adversary who has eluded the law across the frozen frontier—a notorious trapper whose prize catch, a legendary silver pelt worth a fortune, becomes the centerpiece of a dangerous game of wits and survival. With only his faithful dog King and his wits to guide him through blinding snowstorms and treacherous terrain, Preston must outmaneuver a desperate criminal willing to kill for wealth. The tension mounts as the hunter becomes the hunted, each plot twist pulling listeners deeper into the perilous wilderness where justice is as unforgiving as the elements themselves.</p>
 <p>"Challenge of the Yukon" became a phenomenon precisely because it captured something quintessentially American—the frontier spirit and the triumph of law and order in untamed lands. Premiering in 1938 and running strong through the 1950s, the series brought the Canadian North to millions of American households with remarkable authenticity, blending real Yukon geography and Mounted Police procedure with thrilling adventure narratives. Each episode was crafted with meticulous sound design: authentic howling dogs, crackling fires, and the crunch of boots on snow transported listeners thousands of miles from their living rooms. The show became a cultural touchstone, inspiring children and adults alike with tales of duty, courage, and the noble pursuit of justice.</p>
 <p>Don't miss your chance to experience this classic slice of radio drama history. Tune in to "The Silver Fox" and rediscover why Sergeant Preston and King became legends whispered about in parlors and playrooms across the nation.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

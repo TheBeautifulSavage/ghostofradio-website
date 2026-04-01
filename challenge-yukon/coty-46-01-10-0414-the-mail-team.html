@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 01 10 (0414) The Mail Team — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0414) The Mail Team — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 01 10 (0414) The Mail Team — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 01 10 (0414) The Mail Team — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 01 10 (0414) The Mail Team — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 10, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 01 10 (0414) The Mail Team</h1>
+          <h1 class="episode__title">(0414) The Mail Team</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Mail Team</p>
-<p>Picture yourself huddled close to the radio on a winter's evening, the wind howling outside your window, as Sergeant Preston and his magnificent sled dog team race against impossible odds through the frozen Canadian wilderness. In "The Mail Team," a crucial government dispatch has gone missing somewhere in the treacherous Yukon backcountry, and only Preston's legendary skill and King's unwavering loyalty stand between civilization and catastrophe. With temperatures plummeting and time running out, our hero must navigate blinding snowstorms, navigate treacherous terrain, and outwit both nature and those who would profit from the mail's disappearance. The tension crackles across the airwaves as Preston's commanding voice cuts through the static—every decision could mean life or death, and listeners are pulled deep into a world where human courage is measured against the raw, unforgiving power of the North.</p>
-<p>*Challenge of the Yukon* became a phenomenon during the 1940s precisely because it captured something essential about the American spirit during wartime: the triumph of duty, integrity, and individual heroism. Sergeant Preston emerged as a moral touchstone for millions of listeners seeking reassurance that goodness could prevail. The show's meticulous attention to authentic Yukon lore, combined with stellar sound design—those crackling fires, barking dogs, and creaking sleds—transported audiences thousands of miles from their living rooms. Episodes like "The Mail Team" exemplified the series' formula at its peak: high stakes, clear moral stakes, and a protagonist whose competence and decency were never in question.</p>
+          <p>Picture yourself huddled close to the radio on a winter's evening, the wind howling outside your window, as Sergeant Preston and his magnificent sled dog team race against impossible odds through the frozen Canadian wilderness. In "The Mail Team," a crucial government dispatch has gone missing somewhere in the treacherous Yukon backcountry, and only Preston's legendary skill and King's unwavering loyalty stand between civilization and catastrophe. With temperatures plummeting and time running out, our hero must navigate blinding snowstorms, navigate treacherous terrain, and outwit both nature and those who would profit from the mail's disappearance. The tension crackles across the airwaves as Preston's commanding voice cuts through the static—every decision could mean life or death, and listeners are pulled deep into a world where human courage is measured against the raw, unforgiving power of the North.</p>
+<p>Challenge of the Yukon became a phenomenon during the 1940s precisely because it captured something essential about the American spirit during wartime: the triumph of duty, integrity, and individual heroism. Sergeant Preston emerged as a moral touchstone for millions of listeners seeking reassurance that goodness could prevail. The show's meticulous attention to authentic Yukon lore, combined with stellar sound design—those crackling fires, barking dogs, and creaking sleds—transported audiences thousands of miles from their living rooms. Episodes like "The Mail Team" exemplified the series' formula at its peak: high stakes, clear moral stakes, and a protagonist whose competence and decency were never in question.</p>
 <p>Don't miss this restored episode from the golden age of radio drama. Settle in, turn down the lights, and let Sergeant Preston and King guide you through one of broadcasting's most thrilling adventures. Your journey to the Yukon awaits.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

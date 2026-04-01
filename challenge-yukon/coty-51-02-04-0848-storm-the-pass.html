@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 02 04 (0848) Storm The Pass — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0848) Storm The Pass — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 02 04 (0848) Storm The Pass — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 02 04 (0848) Storm The Pass — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 02 04 (0848) Storm The Pass — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 02 04 (0848) Storm The Pass</h1>
+          <h1 class="episode__title">(0848) Storm The Pass</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Storm The Pass</p>
-<p>Picture yourself huddled around the radio on a winter's evening as Sergeant Preston and his magnificent dog King thunder through the frozen Yukon wilderness in a desperate race against time. In "Storm The Pass," a criminal mastermind has orchestrated the perfect crime, and all evidence points north—toward the treacherous mountain passes where blizzards can bury a man in minutes and civilization is nothing but a distant memory. Preston must navigate not only the brutal terrain and whiteout conditions but also his own suspicions about who among the frontier settlement can be trusted. As the organ swells and the signature gallop of horses echoes through your living room, you'll find yourself gripping your armrest, wondering whether justice can outrun the storm bearing down on the Yukon.</p>
-<p>For nearly two decades, *Challenge of the Yukon* captured America's imagination during radio's golden age, offering escapist adventure to listeners enduring economic hardship and global uncertainty. The show's formula was irresistible: a noble Mountie, his loyal canine companion, and the vast Canadian wilderness provided the perfect canvas for tales of frontier justice and human resilience. By the 1940s, when this episode aired, the program had become a cultural institution, spawning comic strips and a devoted national audience. Sergeant Preston represented an idealized American hero—steadfast, intelligent, and uncompromising in his pursuit of justice—while King embodied loyalty itself. The Yukon setting transported listeners far from their troubles into a world where good and evil remained clearly defined.</p>
+          <p>Picture yourself huddled around the radio on a winter's evening as Sergeant Preston and his magnificent dog King thunder through the frozen Yukon wilderness in a desperate race against time. In "Storm The Pass," a criminal mastermind has orchestrated the perfect crime, and all evidence points north—toward the treacherous mountain passes where blizzards can bury a man in minutes and civilization is nothing but a distant memory. Preston must navigate not only the brutal terrain and whiteout conditions but also his own suspicions about who among the frontier settlement can be trusted. As the organ swells and the signature gallop of horses echoes through your living room, you'll find yourself gripping your armrest, wondering whether justice can outrun the storm bearing down on the Yukon.</p>
+<p>For nearly two decades, Challenge of the Yukon captured America's imagination during radio's golden age, offering escapist adventure to listeners enduring economic hardship and global uncertainty. The show's formula was irresistible: a noble Mountie, his loyal canine companion, and the vast Canadian wilderness provided the perfect canvas for tales of frontier justice and human resilience. By the 1940s, when this episode aired, the program had become a cultural institution, spawning comic strips and a devoted national audience. Sergeant Preston represented an idealized American hero—steadfast, intelligent, and uncompromising in his pursuit of justice—while King embodied loyalty itself. The Yukon setting transported listeners far from their troubles into a world where good and evil remained clearly defined.</p>
 <p>Don your thermal woolens and settle in for an episode that exemplifies the show's finest storytelling. "Storm The Pass" delivers suspense, atmosphere, and the kind of satisfying resolution that kept millions of Canadians and Americans tuning in week after week. Let Sergeant Preston's steady voice and King's noble presence guide you through one unforgettable Yukon night.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

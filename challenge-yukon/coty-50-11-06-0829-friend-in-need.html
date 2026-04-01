@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 11 06 (0829) Friend In Need — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0829) Friend In Need — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 11 06 (0829) Friend In Need — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 11 06 (0829) Friend In Need — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 11 06 (0829) Friend In Need — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 6, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 11 06 (0829) Friend In Need</h1>
+          <h1 class="episode__title">(0829) Friend In Need</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon: Friend In Need</p>
-<p>When the wind howls across the frozen wastes and a man's only ally is his stalwart dog King, survival becomes a matter of seconds. In "Friend In Need," Sergeant Preston faces one of his most harrowing tests yet—stranded in the unforgiving Yukon wilderness with an injured companion and dwindling supplies. As darkness closes in and the temperature plummets, listeners will hear the crackling of the fire, the distant howl of wolves, and Preston's steady voice reasoning through impossible odds. This episode crackles with tension as man and beast struggle against nature's cruelest hand, and trust becomes the only currency that matters. The script builds relentlessly toward a climax where a single decision could mean life or death, captured with the authentic sound design that made this series legendary.</p>
+          <p>When the wind howls across the frozen wastes and a man's only ally is his stalwart dog King, survival becomes a matter of seconds. In "Friend In Need," Sergeant Preston faces one of his most harrowing tests yet—stranded in the unforgiving Yukon wilderness with an injured companion and dwindling supplies. As darkness closes in and the temperature plummets, listeners will hear the crackling of the fire, the distant howl of wolves, and Preston's steady voice reasoning through impossible odds. This episode crackles with tension as man and beast struggle against nature's cruelest hand, and trust becomes the only currency that matters. The script builds relentlessly toward a climax where a single decision could mean life or death, captured with the authentic sound design that made this series legendary.</p>
 <p>"Challenge of the Yukon" arrived during radio's golden age when listeners hunged for tales of frontier courage and loyalty. The program, which premiered in 1938 and ran for nearly two decades, became synonymous with adventure itself—a show where the Mounted Police always got their man, and the North's harsh beauty tested character as much as it tested bodies. Sergeant Preston, played with unwavering authority, embodied the idealized lawman of the North, accompanied always by the magnificent King—a character who captured imaginations and spawned toy dogs and merchandise across North America. These weren't merely adventure tales; they were moral chronicles of justice, perseverance, and the bond between man and animal.</p>
 <p>Tune in now and discover why "Challenge of the Yukon" remained one of radio's most beloved programs throughout its remarkable run. Settle in by the hearth, and let the authentic world of the Canadian North—with all its peril and promise—transport you to an age when heroes still lived by their word.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

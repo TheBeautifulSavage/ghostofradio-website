@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 05 22 (1009) Guard Of Honor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(1009) Guard Of Honor — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 05 22 (1009) Guard Of Honor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 05 22 (1009) Guard Of Honor — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 05 22 (1009) Guard Of Honor — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 05 22 (1009) Guard Of Honor</h1>
+          <h1 class="episode__title">(1009) Guard Of Honor</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Guard of Honor</p>
-<p>Picture yourself huddled near your radio set on a cool evening, the crackle of the speaker pulling you northward into the vast Canadian wilderness. In "Guard of Honor," Sergeant Preston and his magnificent dog King face a test that cuts to the very heart of duty and honor. A precious artifact—one of immense cultural significance—has gone missing from a remote settlement, and suspicion falls upon an unlikely guardian. As Preston methodically pieces together clues scattered across frozen terrain and through the testimony of hardened prospectors and trappers, the real drama unfolds not in chase scenes, but in moral complexity. Someone trusted has seemingly betrayed that trust, but Preston's keen mind and unwavering integrity suggest the truth may run far deeper. Will justice and friendship survive what appears to be an irredeemable betrayal? The tension mounts as every scene carries weight, every word of dialogue another thread in a tapestry of mystery.</p>
-<p>For over fifteen years, *Challenge of the Yukon* captivated millions of listeners with tales that balanced rugged adventure with genuine character development—a rarity in adventure programming. Created during an era when radio was the dominant entertainment medium, the show presented the Canadian North not as mere backdrop but as a living entity, a landscape that tested character and revealed truth. Sergeant Preston, portrayed with steady gravitas, embodied the ideals of the Royal Canadian Mounted Police: fairness, persistence, and compassion. King the dog became an icon in his own right, a character whose loyalty transcended species and spoke to something universal in the human heart.</p>
-<p>Tune in now to experience why *Challenge of the Yukon* remained beloved across decades. Let Sergeant Preston guide you through mystery, danger, and the enduring question: what does honor truly mean?</p>
+          <p>Picture yourself huddled near your radio set on a cool evening, the crackle of the speaker pulling you northward into the vast Canadian wilderness. In "Guard of Honor," Sergeant Preston and his magnificent dog King face a test that cuts to the very heart of duty and honor. A precious artifact—one of immense cultural significance—has gone missing from a remote settlement, and suspicion falls upon an unlikely guardian. As Preston methodically pieces together clues scattered across frozen terrain and through the testimony of hardened prospectors and trappers, the real drama unfolds not in chase scenes, but in moral complexity. Someone trusted has seemingly betrayed that trust, but Preston's keen mind and unwavering integrity suggest the truth may run far deeper. Will justice and friendship survive what appears to be an irredeemable betrayal? The tension mounts as every scene carries weight, every word of dialogue another thread in a tapestry of mystery.</p>
+<p>For over fifteen years, Challenge of the Yukon captivated millions of listeners with tales that balanced rugged adventure with genuine character development—a rarity in adventure programming. Created during an era when radio was the dominant entertainment medium, the show presented the Canadian North not as mere backdrop but as a living entity, a landscape that tested character and revealed truth. Sergeant Preston, portrayed with steady gravitas, embodied the ideals of the Royal Canadian Mounted Police: fairness, persistence, and compassion. King the dog became an icon in his own right, a character whose loyalty transcended species and spoke to something universal in the human heart.</p>
+<p>Tune in now to experience why Challenge of the Yukon remained beloved across decades. Let Sergeant Preston guide you through mystery, danger, and the enduring question: what does honor truly mean?</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

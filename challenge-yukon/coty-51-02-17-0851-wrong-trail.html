@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 02 17 (0851) Wrong Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0851) Wrong Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 02 17 (0851) Wrong Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 02 17 (0851) Wrong Trail — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 02 17 (0851) Wrong Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 02 17 (0851) Wrong Trail</h1>
+          <h1 class="episode__title">(0851) Wrong Trail</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Wrong Trail</p>
-<p>Deep in the frozen wilderness where pine forests surrender to endless white, Sergeant Preston of the Royal Canadian Mounted Police faces his most cunning adversary yet—not a criminal, but the very land itself. When a desperate fugitive deliberately lays false tracks across the treacherous Yukon terrain, Preston and his legendary dog King must race against time and a merciless blizzard to prevent an innocent man from freezing to death miles from civilization. This taut episode crackles with the peculiar tension only the North can create: the hunter becoming hunted, the tracker becoming lost, and trust itself becoming a weapon as dangerous as any gun. Listeners will find themselves gripping their chairs as Preston methodically unravels a web of misdirection, his steady voice and moral clarity cutting through the howling wind and human deceit alike.</p>
-<p>What made *Challenge of the Yukon* an institution in American homes during the 1940s was its unique alchemy of authentic frontier spirit and intelligent moral storytelling. Unlike the pulpy lawman tales flooding the airwaves, Preston's cases often explored themes of justice tinged with mercy, duty complicated by compassion. The show's creators drew from real RCMP histories and Canadian geography, lending it a documentary-like credibility that elevated every episode beyond mere adventure fodder. King, the wonder dog, became as beloved as any human character precisely because he represented loyalty unmoored from self-interest—a virtue desperately appealing during wartime uncertainty.</p>
+          <p>Deep in the frozen wilderness where pine forests surrender to endless white, Sergeant Preston of the Royal Canadian Mounted Police faces his most cunning adversary yet—not a criminal, but the very land itself. When a desperate fugitive deliberately lays false tracks across the treacherous Yukon terrain, Preston and his legendary dog King must race against time and a merciless blizzard to prevent an innocent man from freezing to death miles from civilization. This taut episode crackles with the peculiar tension only the North can create: the hunter becoming hunted, the tracker becoming lost, and trust itself becoming a weapon as dangerous as any gun. Listeners will find themselves gripping their chairs as Preston methodically unravels a web of misdirection, his steady voice and moral clarity cutting through the howling wind and human deceit alike.</p>
+<p>What made Challenge of the Yukon an institution in American homes during the 1940s was its unique alchemy of authentic frontier spirit and intelligent moral storytelling. Unlike the pulpy lawman tales flooding the airwaves, Preston's cases often explored themes of justice tinged with mercy, duty complicated by compassion. The show's creators drew from real RCMP histories and Canadian geography, lending it a documentary-like credibility that elevated every episode beyond mere adventure fodder. King, the wonder dog, became as beloved as any human character precisely because he represented loyalty unmoored from self-interest—a virtue desperately appealing during wartime uncertainty.</p>
 <p>"Wrong Trail" exemplifies why millions tuned in religiously each week, pencil poised over their radio dials. Here is adventure that respects the listener's intelligence, excitement that never sacrifices character, and a hero who understands that the greatest challenges aren't conquered—they're understood. Switch on your dial and discover why the North still calls.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

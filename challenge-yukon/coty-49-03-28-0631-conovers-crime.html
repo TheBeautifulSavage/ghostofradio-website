@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 03 28 (0631) Conover's Crime — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0631) Conover's Crime — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 03 28 (0631) Conover's Crime — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 03 28 (0631) Conover's Crime — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 03 28 (0631) Conover's Crime — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 28, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 03 28 (0631) Conover's Crime</h1>
+          <h1 class="episode__title">(0631) Conover's Crime</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Conover's Crime</p>
-<p>When Sergeant Preston and his loyal dog King thunder across the frozen wastes toward the isolated trading post at Fort Yukon, they race against time itself. A cunning criminal named Conover has vanished into the white wilderness with stolen furs and valuable government documents, leaving behind only frozen footprints and a trail of lies. As wind howls through the Great White North and darkness falls upon the endless snow fields, Preston must use every ounce of his frontier wisdom to track a dangerous fugitive who will stop at nothing to escape justice. Listen as the Royal Canadian Mounted Police sergeant interrogates desperate witnesses, deciphers cryptic clues, and outsmarts a criminal mind as cold and merciless as the Yukon itself.</p>
-<p>*Challenge of the Yukon* stood apart from other adventure serials of the 1940s by grounding its action in real geography, authentic Mountie procedures, and the genuine perils of Arctic survival. Broadcast continuously from 1938 through the mid-1950s, the show became a staple of American radio, captivating children and adults alike with its vivid sound design—crackling ice, howling dogs, and crisp gunshots echoing across frozen tundra. Sergeant Preston, portrayed with steady authority and moral certitude, embodied an ideal of Canadian law and order that resonated during wartime America, while the character's bond with his remarkable sled dog King offered an emotional counterweight to the show's darker criminal elements.</p>
-<p>Tune in now to experience the resourcefulness and courage of the North's greatest lawman as he pursues Conover's Crime. Whether you're a longtime devotee of Preston's exploits or discovering this classic series for the first time, this episode captures everything that made *Challenge of the Yukon* essential listening: danger, mystery, unforgettable characters, and the triumph of justice under the dancing northern lights.</p>
+          <p>When Sergeant Preston and his loyal dog King thunder across the frozen wastes toward the isolated trading post at Fort Yukon, they race against time itself. A cunning criminal named Conover has vanished into the white wilderness with stolen furs and valuable government documents, leaving behind only frozen footprints and a trail of lies. As wind howls through the Great White North and darkness falls upon the endless snow fields, Preston must use every ounce of his frontier wisdom to track a dangerous fugitive who will stop at nothing to escape justice. Listen as the Royal Canadian Mounted Police sergeant interrogates desperate witnesses, deciphers cryptic clues, and outsmarts a criminal mind as cold and merciless as the Yukon itself.</p>
+<p>Challenge of the Yukon stood apart from other adventure serials of the 1940s by grounding its action in real geography, authentic Mountie procedures, and the genuine perils of Arctic survival. Broadcast continuously from 1938 through the mid-1950s, the show became a staple of American radio, captivating children and adults alike with its vivid sound design—crackling ice, howling dogs, and crisp gunshots echoing across frozen tundra. Sergeant Preston, portrayed with steady authority and moral certitude, embodied an ideal of Canadian law and order that resonated during wartime America, while the character's bond with his remarkable sled dog King offered an emotional counterweight to the show's darker criminal elements.</p>
+<p>Tune in now to experience the resourcefulness and courage of the North's greatest lawman as he pursues Conover's Crime. Whether you're a longtime devotee of Preston's exploits or discovering this classic series for the first time, this episode captures everything that made Challenge of the Yukon essential listening: danger, mystery, unforgettable characters, and the triumph of justice under the dancing northern lights.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

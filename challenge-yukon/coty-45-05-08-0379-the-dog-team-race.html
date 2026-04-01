@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 05 08 (0379) The Dog Team Race — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0379) The Dog Team Race — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 05 08 (0379) The Dog Team Race — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 05 08 (0379) The Dog Team Race — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 05 08 (0379) The Dog Team Race — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 8, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 05 08 (0379) The Dog Team Race</h1>
+          <h1 class="episode__title">(0379) The Dog Team Race</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Dog Team Race</p>
-<p>Picture yourself huddled near a crackling radio on a frigid winter evening as Sergeant Preston of the Yukon embarks upon one of his most thrilling adventures yet. The frozen wilderness closes in around our stalwart Mountie as he enters a grueling dog team race across treacherous northern terrain—a contest where not just honor, but lives hang in the balance. With King, his magnificent husky, pulling the sled through blinding snow and bone-chilling winds, Preston must outrace cunning rivals and uncover a sinister plot that threatens to claim victory through foul play rather than skill. Every bark of the dogs, every crack of the whip, and every breathless moment of dialogue crackles with authentic danger as the competition intensifies and the true nature of his opponents is revealed.</p>
-<p>*Challenge of the Yukon* became an American institution precisely because it captured something listeners desperately craved during the late 1930s and 1940s: adventure untethered from everyday struggle, yet grounded in real geography and genuine heroism. Sergeant Preston—always proper, always principled, always accompanied by King—embodied the ideal of the frontier lawman at a time when civilization felt increasingly complicated. The show's Mutual Broadcasting Network roots gave it reach across the continent, and by the forties, Preston's steady voice had become as familiar to American families as the morning newspaper. These weren't mere fantasies; they were myths being constructed in real-time, celebrating the virtue of persistence, loyalty, and fair dealing.</p>
+          <p>Picture yourself huddled near a crackling radio on a frigid winter evening as Sergeant Preston of the Yukon embarks upon one of his most thrilling adventures yet. The frozen wilderness closes in around our stalwart Mountie as he enters a grueling dog team race across treacherous northern terrain—a contest where not just honor, but lives hang in the balance. With King, his magnificent husky, pulling the sled through blinding snow and bone-chilling winds, Preston must outrace cunning rivals and uncover a sinister plot that threatens to claim victory through foul play rather than skill. Every bark of the dogs, every crack of the whip, and every breathless moment of dialogue crackles with authentic danger as the competition intensifies and the true nature of his opponents is revealed.</p>
+<p>Challenge of the Yukon became an American institution precisely because it captured something listeners desperately craved during the late 1930s and 1940s: adventure untethered from everyday struggle, yet grounded in real geography and genuine heroism. Sergeant Preston—always proper, always principled, always accompanied by King—embodied the ideal of the frontier lawman at a time when civilization felt increasingly complicated. The show's Mutual Broadcasting Network roots gave it reach across the continent, and by the forties, Preston's steady voice had become as familiar to American families as the morning newspaper. These weren't mere fantasies; they were myths being constructed in real-time, celebrating the virtue of persistence, loyalty, and fair dealing.</p>
 <p>Tune in now and experience the crack of the whip, the howling wind, and the thunder of paws across ice and snow. This is radio at its most evocative, transporting you north to a simpler world where good triumphs through courage and integrity.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

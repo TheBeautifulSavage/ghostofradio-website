@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 11 22 (0507) King Gets His Man — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0507) King Gets His Man — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 11 22 (0507) King Gets His Man — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 11 22 (0507) King Gets His Man — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 11 22 (0507) King Gets His Man — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 22, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 11 22 (0507) King Gets His Man</h1>
+          <h1 class="episode__title">(0507) King Gets His Man</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># King Gets His Man</p>
-<p>The crackling static clears and you're thrust into the frozen heart of the Yukon wilderness, where Sergeant Preston and his magnificent King dog face their most cunning adversary yet. In this gripping 1940s episode, a desperate fugitive has fled deep into the unforgiving northern territory, leaving a trail of deception and danger in his wake. As temperatures plummet and supplies dwindle, Preston must rely on King's legendary tracking abilities and his own hard-won frontier instincts to pursue his quarry across treacherous ice floes and through blinding snowstorms. What begins as a routine manhunt evolves into a thrilling game of cat and mouse where neither hunter nor hunted can afford a single mistake. With each passing moment, the stakes climb higher, the tension mounts, and listeners find themselves breathless with anticipation—wondering whether Preston's iron determination and King's unwavering loyalty will finally bring the criminal to justice.</p>
-<p>*Sergeant Preston of the Yukon* became a cultural phenomenon precisely because it captured something essential about the North American frontier myth during an era when radio reigned supreme. Debuting in 1938, the show became a beloved staple for families huddled around their sets, offering thrilling escapism during the Depression and early 1940s. The partnership between Preston and his dog King—inspired by a real Mountie and his canine companion—struck an irresistible chord with audiences hungry for tales of heroism, loyalty, and justice triumphing against nature's fury.</p>
+          <p>The crackling static clears and you're thrust into the frozen heart of the Yukon wilderness, where Sergeant Preston and his magnificent King dog face their most cunning adversary yet. In this gripping 1940s episode, a desperate fugitive has fled deep into the unforgiving northern territory, leaving a trail of deception and danger in his wake. As temperatures plummet and supplies dwindle, Preston must rely on King's legendary tracking abilities and his own hard-won frontier instincts to pursue his quarry across treacherous ice floes and through blinding snowstorms. What begins as a routine manhunt evolves into a thrilling game of cat and mouse where neither hunter nor hunted can afford a single mistake. With each passing moment, the stakes climb higher, the tension mounts, and listeners find themselves breathless with anticipation—wondering whether Preston's iron determination and King's unwavering loyalty will finally bring the criminal to justice.</p>
+<p>Sergeant Preston of the Yukon became a cultural phenomenon precisely because it captured something essential about the North American frontier myth during an era when radio reigned supreme. Debuting in 1938, the show became a beloved staple for families huddled around their sets, offering thrilling escapism during the Depression and early 1940s. The partnership between Preston and his dog King—inspired by a real Mountie and his canine companion—struck an irresistible chord with audiences hungry for tales of heroism, loyalty, and justice triumphing against nature's fury.</p>
 <p>Don't miss this masterclass in golden-age radio adventure. Tune in to experience the sights, sounds, and soul-stirring drama that captivated millions of listeners and defined an entire generation's understanding of adventure and honor. "King Gets His Man" reminds us why these stories endured: because they speak to something timeless in the human spirit.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

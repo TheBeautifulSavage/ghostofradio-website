@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 43 08 12 (0289) A Footprint In Leather — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0289) A Footprint In Leather — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 43 08 12 (0289) A Footprint In Leather — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 43 08 12 (0289) A Footprint In Leather — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 43 08 12 (0289) A Footprint In Leather — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 12, 1943</span>
           </div>
-          <h1 class="episode__title">Coty 43 08 12 (0289) A Footprint In Leather</h1>
+          <h1 class="episode__title">(0289) A Footprint In Leather</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># A Footprint In Leather</p>
-<p>Deep in the frozen wilderness where man is merely a speck against the vast Canadian north, Sergeant Preston of the Royal Canadian Mounted Police faces his most puzzling case yet. When a mysterious leather footprint—too small for any grown man, too deliberate to be accidental—appears at the scene of a remote trading post robbery, Preston must unravel a web of deception that reaches from the isolated frontier settlements to the shadowy underworld of fur smugglers. With only his faithful dog King and his wits to guide him through blizzards and treacherous terrain, the sergeant pursues a culprit whose identity seems as elusive as the northern lights themselves. This episode crackles with the tension of a manhunt against impossible odds, where one overlooked detail could mean the difference between justice served and a criminal vanishing forever into the wilderness.</p>
-<p>*Sergeant Preston of the Yukon* captured American imaginations throughout the Golden Age of Radio by combining the gritty realism of frontier law enforcement with the exotic allure of Canada's untamed landscape. Premiering in 1938, the show became one of radio's most beloved adventure serials, spawning merchandise, comic books, and later a television series. What made Preston legendary was the character's unflinching dedication to justice, his partnership with the magnificent dog King, and the show's commitment to weaving authentic Yukon geography and Royal Canadian Mounted Police procedure into every episode. By the early 1940s, when "A Footprint in Leather" aired, the formula had reached its peak—combining detective work with outdoor adventure in a way that no competing program could match.</p>
+          <p>Deep in the frozen wilderness where man is merely a speck against the vast Canadian north, Sergeant Preston of the Royal Canadian Mounted Police faces his most puzzling case yet. When a mysterious leather footprint—too small for any grown man, too deliberate to be accidental—appears at the scene of a remote trading post robbery, Preston must unravel a web of deception that reaches from the isolated frontier settlements to the shadowy underworld of fur smugglers. With only his faithful dog King and his wits to guide him through blizzards and treacherous terrain, the sergeant pursues a culprit whose identity seems as elusive as the northern lights themselves. This episode crackles with the tension of a manhunt against impossible odds, where one overlooked detail could mean the difference between justice served and a criminal vanishing forever into the wilderness.</p>
+<p>Sergeant Preston of the Yukon captured American imaginations throughout the Golden Age of Radio by combining the gritty realism of frontier law enforcement with the exotic allure of Canada's untamed landscape. Premiering in 1938, the show became one of radio's most beloved adventure serials, spawning merchandise, comic books, and later a television series. What made Preston legendary was the character's unflinching dedication to justice, his partnership with the magnificent dog King, and the show's commitment to weaving authentic Yukon geography and Royal Canadian Mounted Police procedure into every episode. By the early 1940s, when "A Footprint in Leather" aired, the formula had reached its peak—combining detective work with outdoor adventure in a way that no competing program could match.</p>
 <p>Don't miss this masterclass in radio storytelling. Tune in as Sergeant Preston tracks his quarry across frozen lakes and through dense forests, where the only evidence is a single footprint in leather. The mystery awaits—and in the Yukon, time is always running out.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

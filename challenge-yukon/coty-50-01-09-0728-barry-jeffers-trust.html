@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 01 09 (0728) Barry Jeffer's Trust — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0728) Barry Jeffer's Trust — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 01 09 (0728) Barry Jeffer's Trust — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 01 09 (0728) Barry Jeffer's Trust — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 01 09 (0728) Barry Jeffer's Trust — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 9, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 01 09 (0728) Barry Jeffer's Trust</h1>
+          <h1 class="episode__title">(0728) Barry Jeffer's Trust</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon: Barry Jeffer's Trust</p>
-<p>As the familiar strains of "Yukon King" echo across the frozen wastes, Sergeant Preston and his loyal sled dog King face a mystery that cuts to the very heart of frontier justice. Barry Jeffer's Trust opens with a man's reputation hanging by a thread—the accused stands accused of betrayal, his honor questioned in a land where a person's word is everything. Will Preston's keen detective work uncover the truth before an innocent man is condemned to exile in the unforgiving north? This episode crackles with the tension of a moral dilemma, where good intentions collide with circumstantial evidence, and listeners are left guessing whether justice will triumph or whether the frozen Yukon will swallow another man's broken dreams.</p>
-<p>For nearly two decades, *Sergeant Preston of the Yukon* captured the imagination of millions who huddled around their radio sets, transported instantly to Canada's wildest frontier. The show's brilliance lay in its perfect balance—authentic adventure grounded in the real history of the Royal Canadian Mounted Police, combined with the timeless appeal of a hero's unwavering moral compass. Airing during the late 1930s and 1940s, when Americans craved both escapism and reassurance that right would prevail, Preston became the gold standard for adventure programming. Actor Dick Wesson's steady delivery and the show's meticulous sound design—the crack of the whip, the howling wind, King's faithful bark—transformed listeners' living rooms into the Yukon's pristine wilderness.</p>
-<p>Tune in today and experience why families made *Challenge of the Yukon* must-listen radio. In an era before television conquered the living room, this show proved that the greatest adventures lived in the imagination, waiting for listeners brave enough to venture north.</p>
+          <p>As the familiar strains of "Yukon King" echo across the frozen wastes, Sergeant Preston and his loyal sled dog King face a mystery that cuts to the very heart of frontier justice. Barry Jeffer's Trust opens with a man's reputation hanging by a thread—the accused stands accused of betrayal, his honor questioned in a land where a person's word is everything. Will Preston's keen detective work uncover the truth before an innocent man is condemned to exile in the unforgiving north? This episode crackles with the tension of a moral dilemma, where good intentions collide with circumstantial evidence, and listeners are left guessing whether justice will triumph or whether the frozen Yukon will swallow another man's broken dreams.</p>
+<p>For nearly two decades, Sergeant Preston of the Yukon captured the imagination of millions who huddled around their radio sets, transported instantly to Canada's wildest frontier. The show's brilliance lay in its perfect balance—authentic adventure grounded in the real history of the Royal Canadian Mounted Police, combined with the timeless appeal of a hero's unwavering moral compass. Airing during the late 1930s and 1940s, when Americans craved both escapism and reassurance that right would prevail, Preston became the gold standard for adventure programming. Actor Dick Wesson's steady delivery and the show's meticulous sound design—the crack of the whip, the howling wind, King's faithful bark—transformed listeners' living rooms into the Yukon's pristine wilderness.</p>
+<p>Tune in today and experience why families made Challenge of the Yukon must-listen radio. In an era before television conquered the living room, this show proved that the greatest adventures lived in the imagination, waiting for listeners brave enough to venture north.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 04 04 (0425) The Return Of Pete Hunt — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0425) The Return Of Pete Hunt — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 04 04 (0425) The Return Of Pete Hunt — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 04 04 (0425) The Return Of Pete Hunt — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 04 04 (0425) The Return Of Pete Hunt — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 4, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 04 04 (0425) The Return Of Pete Hunt</h1>
+          <h1 class="episode__title">(0425) The Return Of Pete Hunt</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Return of Pete Hunt</p>
-<p>Deep in the frozen Yukon wilderness, where the howl of sled dogs cuts through endless white silence, danger stirs once more. "The Return of Pete Hunt" crackles with the kind of menace that made listeners huddle closer to their radios on winter nights. Pete Hunt is back—and he's brought trouble with him. Sergeant Preston and King, his loyal malamute companion, must navigate treacherous terrain and darker human nature to uncover what schemes have drawn this mysterious figure back to the frozen frontier. The episode builds with mounting tension: cryptic warnings, shadowy encounters in trading posts, and the constant threat of betrayal. Will Preston's steady nerve and King's instincts be enough to expose Hunt's true intentions before innocents are caught in the crossfire? From the first crackling sound effect of sled runners on snow, you're transported to a world of genuine peril and frontier justice.</p>
-<p>*Challenge of the Yukon* endured as radio's longest-running adventure series precisely because it captured something authentic about Canada's north while delivering the pulse-pounding drama audiences craved. Sergeant Preston, portrayed with weathered authority, represented law and order in lawless territory—a reassuring figure during uncertain times. King wasn't merely comic relief but a fully realized character whose barks and growls conveyed danger and loyalty with remarkable sophistication. These 1940s episodes, produced during the Golden Age of radio, showcase the medium at its creative peak, with sound design that transformed intimate home radios into gateways to distant frontiers.</p>
-<p>Whether you're a devoted fan of the series or discovering it for the first time, "The Return of Pete Hunt" exemplifies why *Challenge of the Yukon* captivated millions. Tune in and let Sergeant Preston guide you into mystery, danger, and adventure—where justice rides behind a dogsled and the Yukon's secrets run as deep as the snow is white.</p>
+          <p>Deep in the frozen Yukon wilderness, where the howl of sled dogs cuts through endless white silence, danger stirs once more. "The Return of Pete Hunt" crackles with the kind of menace that made listeners huddle closer to their radios on winter nights. Pete Hunt is back—and he's brought trouble with him. Sergeant Preston and King, his loyal malamute companion, must navigate treacherous terrain and darker human nature to uncover what schemes have drawn this mysterious figure back to the frozen frontier. The episode builds with mounting tension: cryptic warnings, shadowy encounters in trading posts, and the constant threat of betrayal. Will Preston's steady nerve and King's instincts be enough to expose Hunt's true intentions before innocents are caught in the crossfire? From the first crackling sound effect of sled runners on snow, you're transported to a world of genuine peril and frontier justice.</p>
+<p>Challenge of the Yukon endured as radio's longest-running adventure series precisely because it captured something authentic about Canada's north while delivering the pulse-pounding drama audiences craved. Sergeant Preston, portrayed with weathered authority, represented law and order in lawless territory—a reassuring figure during uncertain times. King wasn't merely comic relief but a fully realized character whose barks and growls conveyed danger and loyalty with remarkable sophistication. These 1940s episodes, produced during the Golden Age of radio, showcase the medium at its creative peak, with sound design that transformed intimate home radios into gateways to distant frontiers.</p>
+<p>Whether you're a devoted fan of the series or discovering it for the first time, "The Return of Pete Hunt" exemplifies why Challenge of the Yukon captivated millions. Tune in and let Sergeant Preston guide you into mystery, danger, and adventure—where justice rides behind a dogsled and the Yukon's secrets run as deep as the snow is white.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

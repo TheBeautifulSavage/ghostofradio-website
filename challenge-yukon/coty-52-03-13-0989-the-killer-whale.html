@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 52 03 13 (0989) The Killer Whale — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0989) The Killer Whale — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 52 03 13 (0989) The Killer Whale — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 52 03 13 (0989) The Killer Whale — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 52 03 13 (0989) The Killer Whale — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 52 03 13 (0989) The Killer Whale</h1>
+          <h1 class="episode__title">(0989) The Killer Whale</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Killer Whale</p>
-<p>When Sergeant Preston and his faithful husky King arrive at a remote coastal settlement, they discover a mystery as vast and treacherous as the northern seas themselves. A massive killer whale has been terrorizing the waters, destroying fishing nets and threatening the very livelihood of the native hunters who depend on the ocean's bounty. But Preston suspects there's more to this tale than simple animal behavior—whispers among the trappers speak of sabotage, of greed, and of men willing to exploit the very forces of nature to settle old scores. As tension builds across crackling radio waves, our mounted lawman must navigate both the icy waters and the dangerous currents of human ambition, all while a creature of legend stalks beneath the surface. The stakes have never been higher, nor the setting more perilously remote.</p>
-<p>*Challenge of the Yukon* captured the imaginations of millions during radio's golden age by blending authentic Canadian frontier history with thrilling adventure and moral clarity. Created in 1938, the series followed the exploits of a real historical figure—Royal Canadian Mounted Police Sergeant James Macleod—reimagined through the lens of serialized drama. What set Preston's stories apart was their grounding in actual geography and genuine frontier challenges, from wildlife encounters to claim disputes, all delivered with the production quality and sound design that made radio the premier entertainment medium of its era.</p>
-<p>Don your parka and hitch up the dog team—adventure awaits in the frozen north. Tune in to *Challenge of the Yukon* and experience why audiences from coast to coast tuned in faithfully to hear Sergeant Preston's next brush with danger, human folly, and the untamed wilderness.</p>
+          <p>When Sergeant Preston and his faithful husky King arrive at a remote coastal settlement, they discover a mystery as vast and treacherous as the northern seas themselves. A massive killer whale has been terrorizing the waters, destroying fishing nets and threatening the very livelihood of the native hunters who depend on the ocean's bounty. But Preston suspects there's more to this tale than simple animal behavior—whispers among the trappers speak of sabotage, of greed, and of men willing to exploit the very forces of nature to settle old scores. As tension builds across crackling radio waves, our mounted lawman must navigate both the icy waters and the dangerous currents of human ambition, all while a creature of legend stalks beneath the surface. The stakes have never been higher, nor the setting more perilously remote.</p>
+<p>Challenge of the Yukon captured the imaginations of millions during radio's golden age by blending authentic Canadian frontier history with thrilling adventure and moral clarity. Created in 1938, the series followed the exploits of a real historical figure—Royal Canadian Mounted Police Sergeant James Macleod—reimagined through the lens of serialized drama. What set Preston's stories apart was their grounding in actual geography and genuine frontier challenges, from wildlife encounters to claim disputes, all delivered with the production quality and sound design that made radio the premier entertainment medium of its era.</p>
+<p>Don your parka and hitch up the dog team—adventure awaits in the frozen north. Tune in to Challenge of the Yukon and experience why audiences from coast to coast tuned in faithfully to hear Sergeant Preston's next brush with danger, human folly, and the untamed wilderness.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

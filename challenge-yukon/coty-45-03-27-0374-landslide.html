@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 03 27 (0374) Landslide — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0374) Landslide — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 03 27 (0374) Landslide — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 03 27 (0374) Landslide — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 03 27 (0374) Landslide — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 27, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 03 27 (0374) Landslide</h1>
+          <h1 class="episode__title">(0374) Landslide</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Landslide</p>
-<p>Picture yourself huddled around the radio on a winter evening, as Sergeant Preston and his loyal dog King venture into the treacherous Yukon wilderness where nature itself becomes their greatest adversary. In "Landslide," the Mountie faces one of his most harrowing trials yet—a catastrophic mountain collapse that threatens not only his life but the safety of an entire settlement nestled in the shadow of unstable peaks. As rocks thunder down the mountainside and the ground trembles beneath his feet, Preston must rely on his wits, his courage, and King's extraordinary senses to avert disaster. The tension crackles through every moment as rescue transforms into a desperate race against geological forces that care nothing for justice or heroism.</p>
-<p>*Challenge of the Yukon* captured the imaginations of millions during the golden age of radio, standing as one of the most enduring adventure series of its era. Premiering in 1938 and running nearly two decades, the show exemplified everything audiences craved during turbulent times—a stalwart hero in an untamed frontier, where the law was as reliable as the North Star and loyalty between man and beast transcended words. The Yukon itself became as much a character as any actor, with sound effects masters crafting authentic wilderness ambiance that transported listeners beyond their living rooms into frozen vastness. Preston's steadfast morality and King's unwavering devotion offered comfort and inspiration during an uncertain world.</p>
-<p>This particular episode, preserved from the 1940s, remains a masterclass in radio storytelling—proof that the finest adventures need no visual effects beyond the human imagination. Tune in to experience why generations were captivated by *Sergeant Preston of the Yukon*, where every episode promised genuine peril and the triumph of courage over chaos.</p>
+          <p>Picture yourself huddled around the radio on a winter evening, as Sergeant Preston and his loyal dog King venture into the treacherous Yukon wilderness where nature itself becomes their greatest adversary. In "Landslide," the Mountie faces one of his most harrowing trials yet—a catastrophic mountain collapse that threatens not only his life but the safety of an entire settlement nestled in the shadow of unstable peaks. As rocks thunder down the mountainside and the ground trembles beneath his feet, Preston must rely on his wits, his courage, and King's extraordinary senses to avert disaster. The tension crackles through every moment as rescue transforms into a desperate race against geological forces that care nothing for justice or heroism.</p>
+<p>Challenge of the Yukon captured the imaginations of millions during the golden age of radio, standing as one of the most enduring adventure series of its era. Premiering in 1938 and running nearly two decades, the show exemplified everything audiences craved during turbulent times—a stalwart hero in an untamed frontier, where the law was as reliable as the North Star and loyalty between man and beast transcended words. The Yukon itself became as much a character as any actor, with sound effects masters crafting authentic wilderness ambiance that transported listeners beyond their living rooms into frozen vastness. Preston's steadfast morality and King's unwavering devotion offered comfort and inspiration during an uncertain world.</p>
+<p>This particular episode, preserved from the 1940s, remains a masterclass in radio storytelling—proof that the finest adventures need no visual effects beyond the human imagination. Tune in to experience why generations were captivated by Sergeant Preston of the Yukon, where every episode promised genuine peril and the triumph of courage over chaos.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

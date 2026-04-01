@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 10 06 (0816) The Criminal Collie — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0816) The Criminal Collie — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 10 06 (0816) The Criminal Collie — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 10 06 (0816) The Criminal Collie — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 10 06 (0816) The Criminal Collie — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 6, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 10 06 (0816) The Criminal Collie</h1>
+          <h1 class="episode__title">(0816) The Criminal Collie</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Criminal Collie</p>
-<p>Step into the frozen wilderness of the Yukon with Sergeant Preston and his magnificent King as they face one of their most peculiar mysteries yet. In "The Criminal Collie," our stalwart Mounted Police officer confronts a case that will test his legendary tracking skills—but this time, the culprit prowls on four legs, not two. When a valuable sled dog goes rogue, leaving a trail of mischief across the frozen settlements, Preston must unravel whether the collie is truly criminal or merely a pawn in a larger, more sinister scheme. As the snow falls thick and the northern lights flicker overhead, danger lurks in every shadow, and only Preston's keen detective work and King's unwavering loyalty can separate truth from deception in this gripping tale of frontier justice.</p>
+          <p>Step into the frozen wilderness of the Yukon with Sergeant Preston and his magnificent King as they face one of their most peculiar mysteries yet. In "The Criminal Collie," our stalwart Mounted Police officer confronts a case that will test his legendary tracking skills—but this time, the culprit prowls on four legs, not two. When a valuable sled dog goes rogue, leaving a trail of mischief across the frozen settlements, Preston must unravel whether the collie is truly criminal or merely a pawn in a larger, more sinister scheme. As the snow falls thick and the northern lights flicker overhead, danger lurks in every shadow, and only Preston's keen detective work and King's unwavering loyalty can separate truth from deception in this gripping tale of frontier justice.</p>
 <p>"Challenge of the Yukon," which aired under its more familiar title "Sergeant Preston of the Yukon" during radio's golden age, became one of the most beloved adventure serials of the 1930s through 1950s. The show's authentic portrayal of Canadian Mountie duty, combined with thrilling wilderness adventure and the charismatic partnership between Preston and his wonder dog King, captivated millions of listeners each week. This episode exemplifies what made the series special—the willingness to explore unusual narratives within the framework of crime-solving and frontier adventure, never losing sight of the show's core appeal: a hero of unwavering integrity facing extraordinary challenges in North America's last great wild frontier.</p>
 <p>Don't miss this fascinating chapter in one of radio's most enduring adventure series. Settle in, tune in, and discover why listeners made "Challenge of the Yukon" appointment radio for nearly two decades.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

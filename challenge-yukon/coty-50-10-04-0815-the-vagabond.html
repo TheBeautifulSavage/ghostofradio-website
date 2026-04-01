@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 10 04 (0815) The Vagabond — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0815) The Vagabond — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 10 04 (0815) The Vagabond — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 10 04 (0815) The Vagabond — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 10 04 (0815) The Vagabond — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 4, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 10 04 (0815) The Vagabond</h1>
+          <h1 class="episode__title">(0815) The Vagabond</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Vagabond</p>
-<p>Picture yourself huddled close to the radio on a winter's night as the thundering hoofbeats of King, the wonder dog, announce another adventure in Canada's frozen frontier. In "The Vagabond," Sergeant Preston encounters a mysterious drifter whose presence brings danger and moral ambiguity to the remote settlements of the Yukon. Is this itinerant stranger a criminal fleeing justice, or merely a unfortunate soul seeking redemption in the wilderness? As Preston navigates treacherous snow-covered terrain with his faithful malamute companion, listeners are drawn into a tale of suspicion, loyalty, and the harsh realities of frontier law. The episode crackles with tension—every creaking floorboard in a trading post, every whispered accusation, every dramatic reveal carries weight in this intimate audio medium where imagination transforms simple sound effects into an entire world of danger and intrigue.</p>
-<p>*Challenge of the Yukon* was a phenomenon that dominated American radio throughout the Golden Age, captivating millions with its exotic setting and earnest heroism. The show's appeal lay in its authentic portrayal of early 20th-century Canadian law enforcement combined with the timeless appeal of adventure and moral certainty. By the 1940s, when this episode aired, the program had become a cultural institution, spawning merchandise, comic strips, and eventually a film serial. Each episode represented the very best of what radio drama could achieve—professional acting, sophisticated sound design, and stories that explored the complexity of human nature against an unforgiving landscape.</p>
+          <p>Picture yourself huddled close to the radio on a winter's night as the thundering hoofbeats of King, the wonder dog, announce another adventure in Canada's frozen frontier. In "The Vagabond," Sergeant Preston encounters a mysterious drifter whose presence brings danger and moral ambiguity to the remote settlements of the Yukon. Is this itinerant stranger a criminal fleeing justice, or merely a unfortunate soul seeking redemption in the wilderness? As Preston navigates treacherous snow-covered terrain with his faithful malamute companion, listeners are drawn into a tale of suspicion, loyalty, and the harsh realities of frontier law. The episode crackles with tension—every creaking floorboard in a trading post, every whispered accusation, every dramatic reveal carries weight in this intimate audio medium where imagination transforms simple sound effects into an entire world of danger and intrigue.</p>
+<p>Challenge of the Yukon was a phenomenon that dominated American radio throughout the Golden Age, captivating millions with its exotic setting and earnest heroism. The show's appeal lay in its authentic portrayal of early 20th-century Canadian law enforcement combined with the timeless appeal of adventure and moral certainty. By the 1940s, when this episode aired, the program had become a cultural institution, spawning merchandise, comic strips, and eventually a film serial. Each episode represented the very best of what radio drama could achieve—professional acting, sophisticated sound design, and stories that explored the complexity of human nature against an unforgiving landscape.</p>
 <p>Don your heavy coat and venture into the Yukon with Sergeant Preston and King. "The Vagabond" awaits, promising the thrilling blend of mystery and action that made this show essential listening for generations of devoted fans.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 03 18 (0627) The Caribou Case — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0627) The Caribou Case — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 03 18 (0627) The Caribou Case — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 03 18 (0627) The Caribou Case — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 03 18 (0627) The Caribou Case — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 18, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 03 18 (0627) The Caribou Case</h1>
+          <h1 class="episode__title">(0627) The Caribou Case</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Caribou Case</p>
-<p>Picture yourself huddled near the crackling warmth of your radio on a winter's evening as Sergeant Preston of the Yukon mounted police ventures into the frozen wilderness to investigate a mysterious case involving missing caribou—a mystery that threatens the survival of an entire remote settlement. This episode crackles with the kind of tension that only the Canadian north could produce: vast, unforgiving terrain where a single misstep means death, where trust is as scarce as firewood, and where a man's word is his bond. As Preston and his faithful malamute King navigate treacherous snowdrifts and interrogate hardened prospectors, the question that grips listeners is simple yet devastating—who stands to profit from the herds' disappearance, and what lengths will they go to protect their secret?</p>
-<p>*Challenge of the Yukon* stands as a masterpiece of American radio adventure, capturing the authentic spirit of the Canadian frontier during its most romantic era. The show's meticulous attention to detail—from the distinctive opening fanfare of Rimsky-Korsakov's "Hymn to the Sun" to the realistic sound effects of sled dogs and howling winds—transported millions of listeners directly into Preston's world. During the 1940s, as listeners endured their own hardships of wartime uncertainty, Preston's unwavering justice and heroic perseverance offered both escape and inspiration. The writers crafted episodes that balanced genuine danger with the triumph of Canadian lawfulness and ingenuity.</p>
+          <p>Picture yourself huddled near the crackling warmth of your radio on a winter's evening as Sergeant Preston of the Yukon mounted police ventures into the frozen wilderness to investigate a mysterious case involving missing caribou—a mystery that threatens the survival of an entire remote settlement. This episode crackles with the kind of tension that only the Canadian north could produce: vast, unforgiving terrain where a single misstep means death, where trust is as scarce as firewood, and where a man's word is his bond. As Preston and his faithful malamute King navigate treacherous snowdrifts and interrogate hardened prospectors, the question that grips listeners is simple yet devastating—who stands to profit from the herds' disappearance, and what lengths will they go to protect their secret?</p>
+<p>Challenge of the Yukon stands as a masterpiece of American radio adventure, capturing the authentic spirit of the Canadian frontier during its most romantic era. The show's meticulous attention to detail—from the distinctive opening fanfare of Rimsky-Korsakov's "Hymn to the Sun" to the realistic sound effects of sled dogs and howling winds—transported millions of listeners directly into Preston's world. During the 1940s, as listeners endured their own hardships of wartime uncertainty, Preston's unwavering justice and heroic perseverance offered both escape and inspiration. The writers crafted episodes that balanced genuine danger with the triumph of Canadian lawfulness and ingenuity.</p>
 <p>Don't miss "The Caribou Case"—a gripping adventure that showcases why Sergeant Preston remained radio's most beloved mountie. Tune in and discover whether justice will prevail in the unforgiving North.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

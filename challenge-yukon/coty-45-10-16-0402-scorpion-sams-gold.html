@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 10 16 (0402) Scorpion Sam's Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0402) Scorpion Sam's Gold — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 10 16 (0402) Scorpion Sam's Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 10 16 (0402) Scorpion Sam's Gold — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 10 16 (0402) Scorpion Sam's Gold — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 16, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 10 16 (0402) Scorpion Sam's Gold</h1>
+          <h1 class="episode__title">(0402) Scorpion Sam's Gold</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Scorpion Sam's Gold</p>
-<p>As the howling Arctic wind cuts through the Canadian wilderness, Sergeant Preston of the Yukon Mounted Police faces his most cunning adversary yet—a ruthless prospector known only as Scorpion Sam, whose poisoned schemes threaten to destroy an innocent man's claim and life. When a mysterious gold strike draws every fortune-seeker north of the Dawson trail, Preston must navigate treacherous mountain passes, navigate the code of the frontier, and rely on his loyal sled dog King to uncover a web of deception that winds tighter with each broadcast segment. The tension crackles like a radio frequency as honest miners face sabotage, trusted partnerships splinter under greed's pressure, and the question looms: can Preston reach Sam before another innocent prospector falls victim to poisoned whiskey and backdoor schemes? This episode captures the essence of *Challenge of the Yukon* at its finest—gritty, morally complex, and utterly uncompromising in its portrayal of the Gold Rush frontier.</p>
-<p>The show's longevity and loyal following stemmed from its commitment to authenticity; writers drew heavily from actual Yukon history, real RCMP procedures, and documented prospecting dangers. By the 1940s, when this episode aired, *Challenge of the Yukon* had become the gold standard of adventure radio, beloved by families who tuned in five nights a week to hear Preston's steady, authoritative voice restore justice to lawless territory. Sergeant Preston became an icon—the incorruptible lawman who embodied Canadian wilderness lore and the triumph of civilization over chaos.</p>
+          <p>As the howling Arctic wind cuts through the Canadian wilderness, Sergeant Preston of the Yukon Mounted Police faces his most cunning adversary yet—a ruthless prospector known only as Scorpion Sam, whose poisoned schemes threaten to destroy an innocent man's claim and life. When a mysterious gold strike draws every fortune-seeker north of the Dawson trail, Preston must navigate treacherous mountain passes, navigate the code of the frontier, and rely on his loyal sled dog King to uncover a web of deception that winds tighter with each broadcast segment. The tension crackles like a radio frequency as honest miners face sabotage, trusted partnerships splinter under greed's pressure, and the question looms: can Preston reach Sam before another innocent prospector falls victim to poisoned whiskey and backdoor schemes? This episode captures the essence of Challenge of the Yukon at its finest—gritty, morally complex, and utterly uncompromising in its portrayal of the Gold Rush frontier.</p>
+<p>The show's longevity and loyal following stemmed from its commitment to authenticity; writers drew heavily from actual Yukon history, real RCMP procedures, and documented prospecting dangers. By the 1940s, when this episode aired, Challenge of the Yukon had become the gold standard of adventure radio, beloved by families who tuned in five nights a week to hear Preston's steady, authoritative voice restore justice to lawless territory. Sergeant Preston became an icon—the incorruptible lawman who embodied Canadian wilderness lore and the triumph of civilization over chaos.</p>
 <p>Don your furs and grab your headphones, adventurer. History awaits in the frozen North, where greed and honor collide beneath the aurora borealis. Tune in now and discover why audiences huddled around their receivers eighty years ago, breathless for Preston's next triumph.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

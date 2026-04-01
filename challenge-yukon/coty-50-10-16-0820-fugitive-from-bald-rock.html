@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 10 16 (0820) Fugitive From Bald Rock — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0820) Fugitive From Bald Rock — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 10 16 (0820) Fugitive From Bald Rock — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 10 16 (0820) Fugitive From Bald Rock — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 10 16 (0820) Fugitive From Bald Rock — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 16, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 10 16 (0820) Fugitive From Bald Rock</h1>
+          <h1 class="episode__title">(0820) Fugitive From Bald Rock</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Fugitive From Bald Rock</p>
-<p>As the familiar call of a bugle pierces the Canadian wilderness and King barks his approval, listeners in 1940s living rooms are transported once more to the frozen frontier where justice rides on dogsleds. In "Fugitive From Bald Rock," Sergeant Preston faces one of his most treacherous pursuits yet—a desperate criminal has fled into the unforgiving terrain of the Yukon, and the sergeant's legendary canine companion is their only hope of picking up the scent before the harsh northern winter claims another soul. What begins as a routine manhunt quickly spirals into a desperate race against nature itself, as Preston must navigate treacherous mountain passes and bone-chilling blizzards to corner a fugitive who has nothing left to lose. The crackle of the radio, the sound of sled runners cutting through snow, and the mounting tension of the chase create an atmosphere of genuine peril that had audiences gripping their armrests in anticipation.</p>
-<p>*Challenge of the Yukon* represented something uniquely American in the golden age of radio—an escape into adventure that felt both thrilling and morally certain. Running from 1938 to 1955 across multiple networks, the show became a cultural phenomenon that spoke to audiences yearning for clear-cut heroism and untamed wilderness during Depression and wartime anxieties. Sergeant Preston embodied the ideal of the incorruptible lawman, while King remained radio's most famous animal sidekick, their partnership celebrating loyalty and courage against the vast indifference of the frozen north.</p>
+          <p>As the familiar call of a bugle pierces the Canadian wilderness and King barks his approval, listeners in 1940s living rooms are transported once more to the frozen frontier where justice rides on dogsleds. In "Fugitive From Bald Rock," Sergeant Preston faces one of his most treacherous pursuits yet—a desperate criminal has fled into the unforgiving terrain of the Yukon, and the sergeant's legendary canine companion is their only hope of picking up the scent before the harsh northern winter claims another soul. What begins as a routine manhunt quickly spirals into a desperate race against nature itself, as Preston must navigate treacherous mountain passes and bone-chilling blizzards to corner a fugitive who has nothing left to lose. The crackle of the radio, the sound of sled runners cutting through snow, and the mounting tension of the chase create an atmosphere of genuine peril that had audiences gripping their armrests in anticipation.</p>
+<p>Challenge of the Yukon represented something uniquely American in the golden age of radio—an escape into adventure that felt both thrilling and morally certain. Running from 1938 to 1955 across multiple networks, the show became a cultural phenomenon that spoke to audiences yearning for clear-cut heroism and untamed wilderness during Depression and wartime anxieties. Sergeant Preston embodied the ideal of the incorruptible lawman, while King remained radio's most famous animal sidekick, their partnership celebrating loyalty and courage against the vast indifference of the frozen north.</p>
 <p>Tune in now to experience the crack of the whip, the loyal pant of a magnificent husky, and Sergeant Preston's unflinching pursuit of justice across the Yukon's unforgiving landscape. This is radio adventure at its finest.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

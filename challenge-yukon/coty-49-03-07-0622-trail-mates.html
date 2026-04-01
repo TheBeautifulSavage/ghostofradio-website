@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 03 07 (0622) Trail Mates — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0622) Trail Mates — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 03 07 (0622) Trail Mates — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 03 07 (0622) Trail Mates — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 03 07 (0622) Trail Mates — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 7, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 03 07 (0622) Trail Mates</h1>
+          <h1 class="episode__title">(0622) Trail Mates</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Trail Mates</p>
-<p>Picture yourself huddled near the crackling radio on a winter's evening, the wind howling outside your window, as Sergeant Preston's distinctive voice cuts through the static with urgent command: "King! King! On, boy!" This is *Trail Mates*—a tense episode where the Royal Canadian Mounted Police sergeant and his legendary malamute must navigate the treacherous Yukon wilderness to rescue a trapper stranded in the frozen north. With nothing but a cryptic message, a fading trail, and the howling darkness of the Canadian frontier, Preston and King race against time and the brutal elements. The sound design immerses you completely: the crunch of snow beneath boots, the eerie wind through pine forests, and the primal barking of sled dogs create an atmosphere of genuine peril. This isn't mere adventure—it's survival against an unforgiving landscape where one misstep means death.</p>
-<p>What made *Challenge of the Yukon* resonate with millions of listeners was its perfect blend of authentic wilderness atmosphere and moral clarity. Running from 1938 to 1955, the show capitalized on America's fascination with the Last Frontier, offering thrilling tales of justice prevailing against nature's fury and human corruption alike. Sergeant Preston embodied the idealized Mountie—honorable, resourceful, and always accompanied by his faithful companion King, who often proved as clever and brave as any human character. The show's writers drew inspiration from real Yukon lore while crafting self-contained dramas that could unfold across fifteen tightly-paced minutes.</p>
-<p>Don't miss *Trail Mates*—it's a masterclass in vintage radio suspense that proves why families gathered around the radio dial night after night. Tune in now and experience the golden age of adventure radio when imagination was the only special effect you needed.</p>
+          <p>Picture yourself huddled near the crackling radio on a winter's evening, the wind howling outside your window, as Sergeant Preston's distinctive voice cuts through the static with urgent command: "King! King! On, boy!" This is Trail Mates—a tense episode where the Royal Canadian Mounted Police sergeant and his legendary malamute must navigate the treacherous Yukon wilderness to rescue a trapper stranded in the frozen north. With nothing but a cryptic message, a fading trail, and the howling darkness of the Canadian frontier, Preston and King race against time and the brutal elements. The sound design immerses you completely: the crunch of snow beneath boots, the eerie wind through pine forests, and the primal barking of sled dogs create an atmosphere of genuine peril. This isn't mere adventure—it's survival against an unforgiving landscape where one misstep means death.</p>
+<p>What made Challenge of the Yukon resonate with millions of listeners was its perfect blend of authentic wilderness atmosphere and moral clarity. Running from 1938 to 1955, the show capitalized on America's fascination with the Last Frontier, offering thrilling tales of justice prevailing against nature's fury and human corruption alike. Sergeant Preston embodied the idealized Mountie—honorable, resourceful, and always accompanied by his faithful companion King, who often proved as clever and brave as any human character. The show's writers drew inspiration from real Yukon lore while crafting self-contained dramas that could unfold across fifteen tightly-paced minutes.</p>
+<p>Don't miss Trail Mates—it's a masterclass in vintage radio suspense that proves why families gathered around the radio dial night after night. Tune in now and experience the golden age of adventure radio when imagination was the only special effect you needed.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 03 06 (0521) The Debt — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0521) The Debt — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 03 06 (0521) The Debt — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 03 06 (0521) The Debt — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 03 06 (0521) The Debt — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 6, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 03 06 (0521) The Debt</h1>
+          <h1 class="episode__title">(0521) The Debt</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "The Debt"</p>
-<p>Picture yourself huddled close to the radio on a winter's evening as the iconic bugle call pierces the static, and that resonant voice announces: "Challenge of the Yukon!" In this gripping 1940s episode, "The Debt," Sergeant Preston finds himself ensnared in a web of obligation when a ruthless claim jumper calls in an old favor—one paid in blood during a desperate frontier survival. With King, his magnificent Husky, prowling the frozen wastes at his side, Preston must navigate the treacherous moral territory between duty and honor, law and conscience. The tension mounts as the sergeant realizes his debtor intends to exploit the code of the North for criminal gain, forcing a showdown that will test everything Preston stands for. The desolate howl of wind across the Yukon tundra serves as the perfect accompaniment to this tale of frontier justice and personal reckoning.</p>
-<p>*Challenge of the Yukon* thrived during radio's golden age by capturing the listener's imagination with authentic tales of the Canadian wilderness. The show's longevity—running from 1938 to 1955—speaks to its appeal: audiences craved adventure divorced from their increasingly urbanized lives, combined with a protagonist whose unwavering moral compass provided certainty in uncertain times. Sergeant Preston became an American icon, embodying the virtues of courage, integrity, and compassion that resonated deeply during the Depression and World War II years.</p>
+          <p>Picture yourself huddled close to the radio on a winter's evening as the iconic bugle call pierces the static, and that resonant voice announces: "Challenge of the Yukon!" In this gripping 1940s episode, "The Debt," Sergeant Preston finds himself ensnared in a web of obligation when a ruthless claim jumper calls in an old favor—one paid in blood during a desperate frontier survival. With King, his magnificent Husky, prowling the frozen wastes at his side, Preston must navigate the treacherous moral territory between duty and honor, law and conscience. The tension mounts as the sergeant realizes his debtor intends to exploit the code of the North for criminal gain, forcing a showdown that will test everything Preston stands for. The desolate howl of wind across the Yukon tundra serves as the perfect accompaniment to this tale of frontier justice and personal reckoning.</p>
+<p>Challenge of the Yukon thrived during radio's golden age by capturing the listener's imagination with authentic tales of the Canadian wilderness. The show's longevity—running from 1938 to 1955—speaks to its appeal: audiences craved adventure divorced from their increasingly urbanized lives, combined with a protagonist whose unwavering moral compass provided certainty in uncertain times. Sergeant Preston became an American icon, embodying the virtues of courage, integrity, and compassion that resonated deeply during the Depression and World War II years.</p>
 <p>Don't miss this compelling chapter in one of radio's most beloved adventure series. Whether you're a longtime devotee of the North or discovering Preston's exploits for the first time, "The Debt" delivers everything that made this show legendary: atmospheric storytelling, high stakes, and a hero worth following into the frozen unknown.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

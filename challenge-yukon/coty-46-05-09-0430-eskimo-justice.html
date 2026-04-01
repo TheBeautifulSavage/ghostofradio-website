@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 05 09 (0430) Eskimo Justice — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0430) Eskimo Justice — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 05 09 (0430) Eskimo Justice — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 05 09 (0430) Eskimo Justice — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 05 09 (0430) Eskimo Justice — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · May 9, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 05 09 (0430) Eskimo Justice</h1>
+          <h1 class="episode__title">(0430) Eskimo Justice</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Eskimo Justice</p>
-<p>When you settle in with your radio tonight, prepare yourself for a tale of frozen justice and divided loyalties as Sergeant Preston and his magnificent dog King venture deep into the unforgiving Yukon territories. In "Eskimo Justice," our Mountie protagonist finds himself caught between the demands of colonial law and the ancient customs of the Inuit people—a conflict that threatens to tear apart the fragile peace he's worked so hard to maintain. As temperatures plunge and suspicion spreads through a remote settlement, Preston must navigate not only the treacherous arctic landscape but the equally dangerous terrain of cultural understanding, all while King's keen senses uncover clues that may prove crucial to solving a crime born from desperation and pride.</p>
-<p>*Challenge of the Yukon* emerged during radio's golden age as something more than mere entertainment—it was a window into the Canadian frontier that captivated millions of listeners from 1938 through the 1950s. The show's brilliant blend of outdoor adventure, genuine danger, and compelling character work made it one of the medium's most enduring successes, spawning a film, television series, and an iconic catchphrase that still echoes today. This particular episode, recorded in the early 1940s, captures the show at its creative peak, when writers were exploring more nuanced themes about colonialism and indigenous cultures rather than settling for simple good-versus-evil narratives.</p>
+          <p>When you settle in with your radio tonight, prepare yourself for a tale of frozen justice and divided loyalties as Sergeant Preston and his magnificent dog King venture deep into the unforgiving Yukon territories. In "Eskimo Justice," our Mountie protagonist finds himself caught between the demands of colonial law and the ancient customs of the Inuit people—a conflict that threatens to tear apart the fragile peace he's worked so hard to maintain. As temperatures plunge and suspicion spreads through a remote settlement, Preston must navigate not only the treacherous arctic landscape but the equally dangerous terrain of cultural understanding, all while King's keen senses uncover clues that may prove crucial to solving a crime born from desperation and pride.</p>
+<p>Challenge of the Yukon emerged during radio's golden age as something more than mere entertainment—it was a window into the Canadian frontier that captivated millions of listeners from 1938 through the 1950s. The show's brilliant blend of outdoor adventure, genuine danger, and compelling character work made it one of the medium's most enduring successes, spawning a film, television series, and an iconic catchphrase that still echoes today. This particular episode, recorded in the early 1940s, captures the show at its creative peak, when writers were exploring more nuanced themes about colonialism and indigenous cultures rather than settling for simple good-versus-evil narratives.</p>
 <p>Don't miss your chance to experience this forgotten gem of broadcast drama. Tune in to hear Sergeant Preston and King battle both the elements and their own conscience in a story that remains surprisingly relevant today.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

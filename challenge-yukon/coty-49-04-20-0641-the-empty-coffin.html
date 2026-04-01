@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 04 20 (0641) The Empty Coffin — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0641) The Empty Coffin — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 04 20 (0641) The Empty Coffin — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 04 20 (0641) The Empty Coffin — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 04 20 (0641) The Empty Coffin — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · April 20, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 04 20 (0641) The Empty Coffin</h1>
+          <h1 class="episode__title">(0641) The Empty Coffin</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Empty Coffin</p>
-<p>Picture yourself huddled close to your radio on a crackling April evening in 1949, the northern lights dancing invisibly beyond your living room walls. Sergeant Preston and his loyal dog King are deep in the frozen wilderness when they stumble upon a mystery that defies the brutal logic of the Yukon—a coffin, carefully constructed and solemnly buried, yet utterly empty. Who would go to such lengths to stage a funeral in the merciless Canadian backcountry? As Preston investigates, the tension mounts with each clue: suspicious tracks in the snow, whispered conversations at the trading post, and a widow whose grief seems somehow theatrical. This episode crackles with the kind of atmospheric suspense that made listeners check their doors, a mystery that asks whether the Yukon's greatest dangers come from nature's fury or from the desperate schemes hidden in men's hearts.</p>
-<p>For nearly two decades, *Challenge of the Yukon* captivated millions as one of radio's most enduring adventure serials, and episodes like "The Empty Coffin" showcase why. Sergeant Preston became an American icon—the ideal lawman, unflinching yet fair, accompanied by the commanding bellow of his malamute King. The show's commitment to authentic Yukon atmosphere, combined with tightly plotted mysteries and genuine moral complexity, set it apart from mere pulp entertainment. This wasn't just adventure for adventure's sake; it was frontier justice tempered with compassion, excitement tempered with conscience.</p>
+          <p>Picture yourself huddled close to your radio on a crackling April evening in 1949, the northern lights dancing invisibly beyond your living room walls. Sergeant Preston and his loyal dog King are deep in the frozen wilderness when they stumble upon a mystery that defies the brutal logic of the Yukon—a coffin, carefully constructed and solemnly buried, yet utterly empty. Who would go to such lengths to stage a funeral in the merciless Canadian backcountry? As Preston investigates, the tension mounts with each clue: suspicious tracks in the snow, whispered conversations at the trading post, and a widow whose grief seems somehow theatrical. This episode crackles with the kind of atmospheric suspense that made listeners check their doors, a mystery that asks whether the Yukon's greatest dangers come from nature's fury or from the desperate schemes hidden in men's hearts.</p>
+<p>For nearly two decades, Challenge of the Yukon captivated millions as one of radio's most enduring adventure serials, and episodes like "The Empty Coffin" showcase why. Sergeant Preston became an American icon—the ideal lawman, unflinching yet fair, accompanied by the commanding bellow of his malamute King. The show's commitment to authentic Yukon atmosphere, combined with tightly plotted mysteries and genuine moral complexity, set it apart from mere pulp entertainment. This wasn't just adventure for adventure's sake; it was frontier justice tempered with compassion, excitement tempered with conscience.</p>
 <p>Don't miss this riveting chapter in the legendary saga. Tune in and discover why generations of listeners made an appointment with Sergeant Preston and King every week—because out there in that vast, unforgiving wilderness, justice wears a red coat and travels with a noble companion.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

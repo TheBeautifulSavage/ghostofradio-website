@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 47 06 26 (0487) Pet Bear — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0487) Pet Bear — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 47 06 26 (0487) Pet Bear — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 47 06 26 (0487) Pet Bear — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 47 06 26 (0487) Pet Bear — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · June 26, 1947</span>
           </div>
-          <h1 class="episode__title">Coty 47 06 26 (0487) Pet Bear</h1>
+          <h1 class="episode__title">(0487) Pet Bear</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "Pet Bear"</p>
-<p>Deep in the frozen Yukon wilderness, Sergeant Preston of the Royal Canadian Mounted Police faces an unexpected adversary—not a hardened criminal or claim-jumping scoundrel, but a massive grizzly bear with an unsettling attachment to a remote trading post. When the beast refuses to leave, the local trappers grow desperate, and Preston must uncover the truth behind the animal's strange behavior before panic and bullets claim an innocent life. This is the kind of intimate frontier drama that made *Challenge of the Yukon* essential listening: the clash between civilization and untamed nature, heightened by genuine tension and the crackle of authentic wilderness atmosphere that only radio could conjure in the listener's imagination.</p>
-<p>Broadcast in the late 1930s and early 1940s, *Challenge of the Yukon* embodied a uniquely Canadian adventure tradition—serious, methodical, and grounded in the real dangers of the north. Unlike American westerns that celebrated quick-draw showdowns, Sergeant Preston stories emphasized investigation, patience, and respect for the harsh landscape itself. With Preston's horse King and his dog Yukon King beside him, the show captured a romanticized yet credible vision of frontier law enforcement, drawing heavily from actual RCMP procedures and Yukon geography. The program became a cultural phenomenon, running for nearly two decades and spawning a television series that would captivate audiences well into the 1950s.</p>
+          <p>Deep in the frozen Yukon wilderness, Sergeant Preston of the Royal Canadian Mounted Police faces an unexpected adversary—not a hardened criminal or claim-jumping scoundrel, but a massive grizzly bear with an unsettling attachment to a remote trading post. When the beast refuses to leave, the local trappers grow desperate, and Preston must uncover the truth behind the animal's strange behavior before panic and bullets claim an innocent life. This is the kind of intimate frontier drama that made Challenge of the Yukon essential listening: the clash between civilization and untamed nature, heightened by genuine tension and the crackle of authentic wilderness atmosphere that only radio could conjure in the listener's imagination.</p>
+<p>Broadcast in the late 1930s and early 1940s, Challenge of the Yukon embodied a uniquely Canadian adventure tradition—serious, methodical, and grounded in the real dangers of the north. Unlike American westerns that celebrated quick-draw showdowns, Sergeant Preston stories emphasized investigation, patience, and respect for the harsh landscape itself. With Preston's horse King and his dog Yukon King beside him, the show captured a romanticized yet credible vision of frontier law enforcement, drawing heavily from actual RCMP procedures and Yukon geography. The program became a cultural phenomenon, running for nearly two decades and spawning a television series that would captivate audiences well into the 1950s.</p>
 <p>Step into the crackling silence of the Yukon with this remarkable episode, where the greatest threat isn't always human. Whether you're a devoted fan of vintage adventure radio or discovering the north for the first time, "Pet Bear" exemplifies why generations of listeners huddled around their sets, eager for Sergeant Preston's next challenge.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

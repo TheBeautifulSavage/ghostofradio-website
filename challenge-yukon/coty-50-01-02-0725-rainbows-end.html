@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 01 02 (0725) Rainbow's End — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0725) Rainbow's End — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 01 02 (0725) Rainbow's End — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 01 02 (0725) Rainbow's End — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 01 02 (0725) Rainbow's End — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 2, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 01 02 (0725) Rainbow's End</h1>
+          <h1 class="episode__title">(0725) Rainbow's End</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: Rainbow's End</p>
-<p>Venture into the frozen Canadian wilderness where Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that blurs the line between fortune and folly. In "Rainbow's End," our steadfast hero and his loyal sled dog King must track down a prospector who has vanished without a trace, leaving behind only cryptic clues and whispered legends of a hidden gold strike. As a violent storm sweeps across the Yukon, Preston navigates treacherous mountain passes and encounters desperate men willing to kill for wealth. The episode crackles with tension—will Preston reach the prospector in time, or will the wilderness claim another victim before justice can be served? Every shadow holds danger, every companion a potential suspect, and the legendary "rainbow's end" may prove to be a death trap rather than salvation.</p>
-<p>*Challenge of the Yukon* captivated audiences throughout the 1940s and '50s with its perfect blend of authentic adventure and moral clarity. Sergeant Preston became an American icon, embodying the virtues of the North American frontier: courage, integrity, and an unwavering commitment to law and order. The show's writers drew inspiration from real RCMP histories and Yukon geography, grounding their fantastical tales in genuine detail. This 1940s installment exemplifies the series at its peak—when the production values were sharp, the scripts tightly plotted, and the supporting cast of recurring characters at their finest. The show's influence extended far beyond radio; Preston would later become a television star, cementing the character's place in popular culture.</p>
+          <p>Venture into the frozen Canadian wilderness where Sergeant Preston of the Royal Canadian Mounted Police faces a mystery that blurs the line between fortune and folly. In "Rainbow's End," our steadfast hero and his loyal sled dog King must track down a prospector who has vanished without a trace, leaving behind only cryptic clues and whispered legends of a hidden gold strike. As a violent storm sweeps across the Yukon, Preston navigates treacherous mountain passes and encounters desperate men willing to kill for wealth. The episode crackles with tension—will Preston reach the prospector in time, or will the wilderness claim another victim before justice can be served? Every shadow holds danger, every companion a potential suspect, and the legendary "rainbow's end" may prove to be a death trap rather than salvation.</p>
+<p>Challenge of the Yukon captivated audiences throughout the 1940s and '50s with its perfect blend of authentic adventure and moral clarity. Sergeant Preston became an American icon, embodying the virtues of the North American frontier: courage, integrity, and an unwavering commitment to law and order. The show's writers drew inspiration from real RCMP histories and Yukon geography, grounding their fantastical tales in genuine detail. This 1940s installment exemplifies the series at its peak—when the production values were sharp, the scripts tightly plotted, and the supporting cast of recurring characters at their finest. The show's influence extended far beyond radio; Preston would later become a television star, cementing the character's place in popular culture.</p>
 <p>Don't miss this thrilling chapter from the golden age of radio drama. "Rainbow's End" reminds us why millions of listeners tuned in faithfully each week, eager to follow Sergeant Preston into the untamed North. Stream it now and discover radio entertainment at its most captivating.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 03 17 (0859) The Third Strike — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0859) The Third Strike — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 03 17 (0859) The Third Strike — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 03 17 (0859) The Third Strike — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 03 17 (0859) The Third Strike — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 03 17 (0859) The Third Strike</h1>
+          <h1 class="episode__title">(0859) The Third Strike</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Third Strike</p>
-<p>Picture yourself huddled near your radio on a crisp evening, the amber dial glowing warmly in the darkened parlor as Sergeant Preston of the Yukon RCMP ventures into the frozen wilderness with his faithful husky, King. In "The Third Strike," our stalwart lawman finds himself pursuing a cunning fugitive through treacherous mountain passes and unforgiving snow drifts, where one misstep means death and justice hangs by the thinnest of threads. The titular "third strike" carries the weight of desperation—a criminal cornered, a mounted policeman unwilling to yield, and the vast, indifferent frontier as their battleground. You'll hear the crack of ice breaking beneath sled runners, the howl of the wind cutting across the tundra, and Preston's measured, resolute voice cutting through the chaos as he closes in on his quarry. The tension builds masterfully as the hunter becomes hunted, and listeners are left wondering whether civilization's representative can prevail against both nature and human depravity in Canada's untamed north.</p>
-<p>*Challenge of the Yukon* became a cornerstone of adventure radio precisely because it captured something authentic about the Canadian frontier myth while delivering pure escapist thrills. Airing from 1938 through the 1950s, the show rode the wave of a nation's appetite for tales of order and heroism, with Sergeant Preston embodying the incorruptible lawman who never yields to wilderness or villainy. Each episode showcased meticulously crafted sound design that brought the Yukon alive—nature itself became a character, as formidable as any criminal.</p>
+          <p>Picture yourself huddled near your radio on a crisp evening, the amber dial glowing warmly in the darkened parlor as Sergeant Preston of the Yukon RCMP ventures into the frozen wilderness with his faithful husky, King. In "The Third Strike," our stalwart lawman finds himself pursuing a cunning fugitive through treacherous mountain passes and unforgiving snow drifts, where one misstep means death and justice hangs by the thinnest of threads. The titular "third strike" carries the weight of desperation—a criminal cornered, a mounted policeman unwilling to yield, and the vast, indifferent frontier as their battleground. You'll hear the crack of ice breaking beneath sled runners, the howl of the wind cutting across the tundra, and Preston's measured, resolute voice cutting through the chaos as he closes in on his quarry. The tension builds masterfully as the hunter becomes hunted, and listeners are left wondering whether civilization's representative can prevail against both nature and human depravity in Canada's untamed north.</p>
+<p>Challenge of the Yukon became a cornerstone of adventure radio precisely because it captured something authentic about the Canadian frontier myth while delivering pure escapist thrills. Airing from 1938 through the 1950s, the show rode the wave of a nation's appetite for tales of order and heroism, with Sergeant Preston embodying the incorruptible lawman who never yields to wilderness or villainy. Each episode showcased meticulously crafted sound design that brought the Yukon alive—nature itself became a character, as formidable as any criminal.</p>
 <p>Don't miss "The Third Strike"—tune in and let the crackle of the speakers transport you northward, where justice travels by dog sled and honor means everything.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

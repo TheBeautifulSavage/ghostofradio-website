@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 03 01 (0750) When Thief Catches Thief — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0750) When Thief Catches Thief — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 03 01 (0750) When Thief Catches Thief — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 03 01 (0750) When Thief Catches Thief — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 03 01 (0750) When Thief Catches Thief — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 1, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 03 01 (0750) When Thief Catches Thief</h1>
+          <h1 class="episode__title">(0750) When Thief Catches Thief</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># When Thief Catches Thief</p>
-<p>As the haunting call of a husky cuts through the frozen Yukon silence, listeners are transported once more to the Canadian frontier where justice wears a scarlet tunic and travels by dogsled. In "When Thief Catches Thief," Sergeant Preston faces a cunning con artist working the mining camps, a smooth-talking swindler who preys on the dreams of prospectors seeking their fortune in gold-rich creeks. What begins as a routine investigation spirals into a taut battle of wits as Preston must outthink a criminal who knows every angle, every dodge, every trick in the book. The tension mounts as our intrepid Mountie pursues his quarry across treacherous terrain, where one misstep in the snow means death, and where trust itself becomes a dangerous luxury.</p>
-<p>*Challenge of the Yukon* dominated American radio throughout the 1940s, captivating audiences with its perfect blend of rugged adventure and moral certitude during an era hungry for heroes untainted by cynicism. Sergeant Preston, portrayed with steadfast authority by Paul Sutherland and later by Bert Lytell, embodied the incorruptible lawman—a figure of stability during wartime uncertainty. The show's brilliance lay in its ability to make listeners *feel* the bite of Arctic wind through their radios, to hear genuine danger in the snarling conflicts between man and wilderness. These episodes, recorded with meticulous attention to sound design, became the template for adventure serials everywhere.</p>
-<p>Settle into your favorite chair and prepare for thirty minutes of genuine suspense, where ingenuity triumphs over deception and the Yukon's unforgiving landscape becomes the ultimate judge. *When Thief Catches Thief* reminds us why audiences huddled around their receivers night after night, eager to follow Sergeant Preston into yet another impossible situation. On your mark—adventure awaits!</p>
+          <p>As the haunting call of a husky cuts through the frozen Yukon silence, listeners are transported once more to the Canadian frontier where justice wears a scarlet tunic and travels by dogsled. In "When Thief Catches Thief," Sergeant Preston faces a cunning con artist working the mining camps, a smooth-talking swindler who preys on the dreams of prospectors seeking their fortune in gold-rich creeks. What begins as a routine investigation spirals into a taut battle of wits as Preston must outthink a criminal who knows every angle, every dodge, every trick in the book. The tension mounts as our intrepid Mountie pursues his quarry across treacherous terrain, where one misstep in the snow means death, and where trust itself becomes a dangerous luxury.</p>
+<p>Challenge of the Yukon dominated American radio throughout the 1940s, captivating audiences with its perfect blend of rugged adventure and moral certitude during an era hungry for heroes untainted by cynicism. Sergeant Preston, portrayed with steadfast authority by Paul Sutherland and later by Bert Lytell, embodied the incorruptible lawman—a figure of stability during wartime uncertainty. The show's brilliance lay in its ability to make listeners feel the bite of Arctic wind through their radios, to hear genuine danger in the snarling conflicts between man and wilderness. These episodes, recorded with meticulous attention to sound design, became the template for adventure serials everywhere.</p>
+<p>Settle into your favorite chair and prepare for thirty minutes of genuine suspense, where ingenuity triumphs over deception and the Yukon's unforgiving landscape becomes the ultimate judge. When Thief Catches Thief reminds us why audiences huddled around their receivers night after night, eager to follow Sergeant Preston into yet another impossible situation. On your mark—adventure awaits!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

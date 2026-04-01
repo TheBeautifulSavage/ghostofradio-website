@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 46 08 29 (0446) Preston Goes To Jail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0446) Preston Goes To Jail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 46 08 29 (0446) Preston Goes To Jail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 46 08 29 (0446) Preston Goes To Jail — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 46 08 29 (0446) Preston Goes To Jail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 29, 1946</span>
           </div>
-          <h1 class="episode__title">Coty 46 08 29 (0446) Preston Goes To Jail</h1>
+          <h1 class="episode__title">(0446) Preston Goes To Jail</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Preston Goes To Jail</p>
-<p>The Yukon's frozen silence breaks with a terrible accusation. Sergeant Preston of the Royal Canadian Mounted Police—legendary lawman of the North, trusted friend to prospectors and trappers alike—finds himself stripped of badge and freedom, locked behind bars on a charge that threatens to destroy everything he's built. As the cell door clangs shut, listeners hear the familiar cry of his faithful dog King, separated from his master and calling desperately across the harsh Canadian wilderness. This is no ordinary courtroom drama; this is the unthinkable made real, as Preston must navigate a conspiracy that strikes at the very heart of justice in the remote frontier. Will his character, proven through countless dangerous adventures, be enough to clear his name? Or has someone finally found a way to bring down the North's most formidable protector?</p>
-<p>*Challenge of the Yukon* captivated millions during radio's golden age by grounding its adventures in authentic locations and genuine peril. Broadcast from 1938 to 1955, the show's unflinching willingness to put its hero in genuine jeopardy set it apart from safer adventure serials. The writing captured the raw reality of frontier justice—where isolation breeds suspicion and where a man's reputation could crumble as quickly as spring ice. Sergeant Preston became an icon precisely because he faced consequences; he wasn't invulnerable, he was indomitable.</p>
-<p>Tune in now to *Preston Goes To Jail* and experience why listeners huddled around their radios every week, desperate to know whether the Yukon's greatest lawman could overcome the one enemy he couldn't simply outrun or outwit. King is waiting. Justice hangs in the balance.</p>
+          <p>The Yukon's frozen silence breaks with a terrible accusation. Sergeant Preston of the Royal Canadian Mounted Police—legendary lawman of the North, trusted friend to prospectors and trappers alike—finds himself stripped of badge and freedom, locked behind bars on a charge that threatens to destroy everything he's built. As the cell door clangs shut, listeners hear the familiar cry of his faithful dog King, separated from his master and calling desperately across the harsh Canadian wilderness. This is no ordinary courtroom drama; this is the unthinkable made real, as Preston must navigate a conspiracy that strikes at the very heart of justice in the remote frontier. Will his character, proven through countless dangerous adventures, be enough to clear his name? Or has someone finally found a way to bring down the North's most formidable protector?</p>
+<p>Challenge of the Yukon captivated millions during radio's golden age by grounding its adventures in authentic locations and genuine peril. Broadcast from 1938 to 1955, the show's unflinching willingness to put its hero in genuine jeopardy set it apart from safer adventure serials. The writing captured the raw reality of frontier justice—where isolation breeds suspicion and where a man's reputation could crumble as quickly as spring ice. Sergeant Preston became an icon precisely because he faced consequences; he wasn't invulnerable, he was indomitable.</p>
+<p>Tune in now to Preston Goes To Jail and experience why listeners huddled around their radios every week, desperate to know whether the Yukon's greatest lawman could overcome the one enemy he couldn't simply outrun or outwit. King is waiting. Justice hangs in the balance.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

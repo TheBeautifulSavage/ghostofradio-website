@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 50 07 07 (0795) Race Of The River Boats — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0795) Race Of The River Boats — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 50 07 07 (0795) Race Of The River Boats — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 50 07 07 (0795) Race Of The River Boats — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 50 07 07 (0795) Race Of The River Boats — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · July 7, 1950</span>
           </div>
-          <h1 class="episode__title">Coty 50 07 07 (0795) Race Of The River Boats</h1>
+          <h1 class="episode__title">(0795) Race Of The River Boats</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Race of the River Boats</p>
-<p>Picture yourself huddled around the radio on a crackling summer evening as Sergeant Preston's steady voice cuts through the static: somewhere in the frozen vastness of the Yukon Territory, a fortune in gold dust hangs in the balance, and two rival riverboat captains are locked in a desperate race against time and treacherous rapids. This week's episode pulses with the kind of high-stakes tension that made listeners grip their armchair edges—as our heroic Mountie and his magnificent sled dog King must navigate not only the perilous waters but also the schemes of cunning claim-jumpers and desperate men willing to stop at nothing to claim their prize. The roar of rushing water mingles with barked commands and revving engines as "Race of the River Boats" unfolds with the breakneck pacing that made this series an appointment for millions of radio listeners throughout the 1940s.</p>
-<p>*Challenge of the Yukon* captured something uniquely American about the frontier spirit—that blend of lawlessness and justice, danger and honor—transplanted to Canada's remote north. The show's formula proved nearly unbeatable: Sergeant Preston embodied the rule of law and moral certainty that Depression and wartime audiences craved, while the Yukon itself became a character as formidable as any villain, its glaciers and gold fields promising both fortune and doom. Producer George W. Trendle crafted dozens of episodes that became classics of the adventure genre, each one featuring the unforgettable theme and Preston's iconic rallying cry: "On, King! On!"</p>
+          <p>Picture yourself huddled around the radio on a crackling summer evening as Sergeant Preston's steady voice cuts through the static: somewhere in the frozen vastness of the Yukon Territory, a fortune in gold dust hangs in the balance, and two rival riverboat captains are locked in a desperate race against time and treacherous rapids. This week's episode pulses with the kind of high-stakes tension that made listeners grip their armchair edges—as our heroic Mountie and his magnificent sled dog King must navigate not only the perilous waters but also the schemes of cunning claim-jumpers and desperate men willing to stop at nothing to claim their prize. The roar of rushing water mingles with barked commands and revving engines as "Race of the River Boats" unfolds with the breakneck pacing that made this series an appointment for millions of radio listeners throughout the 1940s.</p>
+<p>Challenge of the Yukon captured something uniquely American about the frontier spirit—that blend of lawlessness and justice, danger and honor—transplanted to Canada's remote north. The show's formula proved nearly unbeatable: Sergeant Preston embodied the rule of law and moral certainty that Depression and wartime audiences craved, while the Yukon itself became a character as formidable as any villain, its glaciers and gold fields promising both fortune and doom. Producer George W. Trendle crafted dozens of episodes that became classics of the adventure genre, each one featuring the unforgettable theme and Preston's iconic rallying cry: "On, King! On!"</p>
 <p>Settle in and experience why listeners couldn't wait to discover what challenge awaited Preston and King on the frontier. Tune in now to "Race of the River Boats" and rediscover the golden age of radio adventure—where every episode promised danger, honor, and the triumph of justice in the frozen north.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

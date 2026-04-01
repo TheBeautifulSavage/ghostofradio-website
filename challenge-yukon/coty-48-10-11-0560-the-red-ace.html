@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 10 11 (0560) The Red Ace — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0560) The Red Ace — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 10 11 (0560) The Red Ace — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 10 11 (0560) The Red Ace — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 10 11 (0560) The Red Ace — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 11, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 10 11 (0560) The Red Ace</h1>
+          <h1 class="episode__title">(0560) The Red Ace</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Challenge of the Yukon: "The Red Ace"</p>
-<p>Through the crackle of your radio speaker comes the distant howl of sled dogs and the sharp crack of a whip across frozen tundra. Sergeant Preston of the Royal Canadian Mounted Police faces his most cunning adversary yet—a mysterious outlaw known only as "The Red Ace," whose daring exploits have left the Yukon Territory in turmoil. As Preston and his legendary lead dog King navigate treacherous mountain passes and unforgiving snowstorms, the noose tightens around a criminal mastermind who seems always one step ahead. Will Preston's unflinching sense of duty and King's uncanny tracking abilities be enough to apprehend this elusive foe before winter claims them all?</p>
-<p>This 1940s episode exemplifies why *Challenge of the Yukon* captivated millions of listeners during radio's golden age. Premiering in 1938 and continuing strong into the post-war years, the series brilliantly balanced authentic Canadian frontier atmosphere with serialized storytelling that kept audiences returning night after night. The show's formula—combining genuine Mountie lore, spectacular sound design, and the unshakeable bond between man and dog—made Preston an icon alongside The Lone Ranger and The Green Hornet. "The Red Ace" showcases the program's mastery of suspense, layering multiple plot threads while maintaining the moral clarity that made the Mounties irresistible heroes to Depression and wartime listeners seeking reassurance that justice, however challenging, would ultimately prevail.</p>
+          <p>Through the crackle of your radio speaker comes the distant howl of sled dogs and the sharp crack of a whip across frozen tundra. Sergeant Preston of the Royal Canadian Mounted Police faces his most cunning adversary yet—a mysterious outlaw known only as "The Red Ace," whose daring exploits have left the Yukon Territory in turmoil. As Preston and his legendary lead dog King navigate treacherous mountain passes and unforgiving snowstorms, the noose tightens around a criminal mastermind who seems always one step ahead. Will Preston's unflinching sense of duty and King's uncanny tracking abilities be enough to apprehend this elusive foe before winter claims them all?</p>
+<p>This 1940s episode exemplifies why Challenge of the Yukon captivated millions of listeners during radio's golden age. Premiering in 1938 and continuing strong into the post-war years, the series brilliantly balanced authentic Canadian frontier atmosphere with serialized storytelling that kept audiences returning night after night. The show's formula—combining genuine Mountie lore, spectacular sound design, and the unshakeable bond between man and dog—made Preston an icon alongside The Lone Ranger and The Green Hornet. "The Red Ace" showcases the program's mastery of suspense, layering multiple plot threads while maintaining the moral clarity that made the Mounties irresistible heroes to Depression and wartime listeners seeking reassurance that justice, however challenging, would ultimately prevail.</p>
 <p>Tune in now to "The Red Ace" and experience the thrilling adventure that once held an entire nation in suspense. In an era before television dominated the airwaves, this was the sound of excitement itself—immersive, intimate, and unforgettable.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 48 03 20 (0523) King Comes Home — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0523) King Comes Home — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 48 03 20 (0523) King Comes Home — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 48 03 20 (0523) King Comes Home — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 48 03 20 (0523) King Comes Home — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · March 20, 1948</span>
           </div>
-          <h1 class="episode__title">Coty 48 03 20 (0523) King Comes Home</h1>
+          <h1 class="episode__title">(0523) King Comes Home</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># King Comes Home</p>
-<p>Deep in the frozen wilderness where the Yukon River cuts through endless white, Sergeant Preston of the Royal Canadian Mounted Police faces his most personal challenge yet. When word reaches Fort MacKenzie that King, his faithful sled dog and truest companion, has vanished into a blizzard, Preston's iron resolve begins to crack. This episode captures the raw emotion beneath the Mountie's stoic exterior as he ventures into the howling darkness, following nothing but hope and the faint memory of a dog's distant howl. The stakes have never felt higher—not for King of the North, but for the man who calls him partner. Listeners will feel the bite of arctic wind, the desperation of a search that seems doomed, and the unshakeable bond between man and beast that defines the soul of the Canadian frontier.</p>
-<p>*Challenge of the Yukon* struck a unique chord with American audiences during the early 1940s, capturing the spirit of adventure and masculine virtue that radio drama audiences craved. Unlike the urban detectives and masked vigilantes dominating the airwaves, Sergeant Preston embodied something more—a lawman answerable not just to authority, but to the untamed land itself. The show's authenticity drew from actual RCMP history and Yukon geography, while King became more than a mascot; he was a character with depth, loyalty, and surprising emotional complexity. Through Preston's devotion to his dog, the series explored themes of companionship and duty that resonated across a nation facing its own uncertain times.</p>
-<p>Tune in now to this classic moment of high drama and touching humanity. Hear how the legendary Sergeant Preston faces his greatest test, where civilization means nothing and only the bond between man and dog endures. *King Comes Home* awaits.</p>
+          <p>Deep in the frozen wilderness where the Yukon River cuts through endless white, Sergeant Preston of the Royal Canadian Mounted Police faces his most personal challenge yet. When word reaches Fort MacKenzie that King, his faithful sled dog and truest companion, has vanished into a blizzard, Preston's iron resolve begins to crack. This episode captures the raw emotion beneath the Mountie's stoic exterior as he ventures into the howling darkness, following nothing but hope and the faint memory of a dog's distant howl. The stakes have never felt higher—not for King of the North, but for the man who calls him partner. Listeners will feel the bite of arctic wind, the desperation of a search that seems doomed, and the unshakeable bond between man and beast that defines the soul of the Canadian frontier.</p>
+<p>Challenge of the Yukon struck a unique chord with American audiences during the early 1940s, capturing the spirit of adventure and masculine virtue that radio drama audiences craved. Unlike the urban detectives and masked vigilantes dominating the airwaves, Sergeant Preston embodied something more—a lawman answerable not just to authority, but to the untamed land itself. The show's authenticity drew from actual RCMP history and Yukon geography, while King became more than a mascot; he was a character with depth, loyalty, and surprising emotional complexity. Through Preston's devotion to his dog, the series explored themes of companionship and duty that resonated across a nation facing its own uncertain times.</p>
+<p>Tune in now to this classic moment of high drama and touching humanity. Hear how the legendary Sergeant Preston faces his greatest test, where civilization means nothing and only the bond between man and dog endures. King Comes Home awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 10 30 (0404) The Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0404) The Trail — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 10 30 (0404) The Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 10 30 (0404) The Trail — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 10 30 (0404) The Trail — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · October 30, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 10 30 (0404) The Trail</h1>
+          <h1 class="episode__title">(0404) The Trail</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Trail</p>
-<p>Picture yourself huddled close to your radio on a crisp evening, the crackle of the speaker drawing you into the frozen Yukon wilderness where Sergeant Preston and his trusty husky King face their most perilous test yet. In "The Trail," a desperate fugitive flees across treacherous snow-covered terrain, and Preston must decide whether justice demands he pursue the man through a blizzard that threatens to bury both hunter and hunted alike. The episode crackles with tension—you'll hear the howl of wind across glacial passes, the sharp bark of King sensing danger ahead, and Preston's measured voice cutting through the storm with quiet determination. What begins as a straightforward manhunt becomes something far more morally complex as the truth about the fugitive's crime slowly unravels, challenging everything Preston believes about duty and mercy in this unforgiving land.</p>
-<p>*Challenge of the Yukon* stood apart from the crowded field of adventure programs in the late 1930s and 1940s by grounding its stories in the genuine mythology of the Canadian frontier. Created around the exploits of the real North-West Mounted Police, the series captured the romance of a disappearing wilderness while maintaining an admirable authenticity in its details—from the geography of the territory to the very real dangers of arctic survival. Preston became an icon of incorruptible lawmanship, a figure who embodied the best of the RCMP mystique just as the organization itself was cementing its legendary status in the public imagination.</p>
+          <p>Picture yourself huddled close to your radio on a crisp evening, the crackle of the speaker drawing you into the frozen Yukon wilderness where Sergeant Preston and his trusty husky King face their most perilous test yet. In "The Trail," a desperate fugitive flees across treacherous snow-covered terrain, and Preston must decide whether justice demands he pursue the man through a blizzard that threatens to bury both hunter and hunted alike. The episode crackles with tension—you'll hear the howl of wind across glacial passes, the sharp bark of King sensing danger ahead, and Preston's measured voice cutting through the storm with quiet determination. What begins as a straightforward manhunt becomes something far more morally complex as the truth about the fugitive's crime slowly unravels, challenging everything Preston believes about duty and mercy in this unforgiving land.</p>
+<p>Challenge of the Yukon stood apart from the crowded field of adventure programs in the late 1930s and 1940s by grounding its stories in the genuine mythology of the Canadian frontier. Created around the exploits of the real North-West Mounted Police, the series captured the romance of a disappearing wilderness while maintaining an admirable authenticity in its details—from the geography of the territory to the very real dangers of arctic survival. Preston became an icon of incorruptible lawmanship, a figure who embodied the best of the RCMP mystique just as the organization itself was cementing its legendary status in the public imagination.</p>
 <p>If you've never experienced Preston's adventures, or if you're revisiting this classic program, "The Trail" exemplifies why millions of listeners made this their weekly appointment. It's storytelling at its finest—intimate yet sweeping, thrilling yet thoughtful. Tune in and discover why this show endured for nearly two decades, capturing the spirit of an age when radio could transport you thousands of miles to where duty and the wilderness collide.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

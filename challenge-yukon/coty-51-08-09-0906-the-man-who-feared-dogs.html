@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 51 08 09 (0906) The Man Who Feared Dogs — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0906) The Man Who Feared Dogs — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 51 08 09 (0906) The Man Who Feared Dogs — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 51 08 09 (0906) The Man Who Feared Dogs — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 51 08 09 (0906) The Man Who Feared Dogs — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · 1940s</span>
           </div>
-          <h1 class="episode__title">Coty 51 08 09 (0906) The Man Who Feared Dogs</h1>
+          <h1 class="episode__title">(0906) The Man Who Feared Dogs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Man Who Feared Dogs</p>
-<p>As our story opens on the frozen frontier, Sergeant Preston and his legendary lead dog King are hot on the trail of a desperate fugitive fleeing through the unforgiving Yukon wilderness. But this chase is unlike any other—their quarry is a man consumed by an irrational terror of dogs, and as he flees the law, he's driving himself further into madness. Will a crack lawman and his faithful canine companion be able to corner a criminal whose very fear of dogs is both his weakness and his weapon? The crackling static of 1940s radio fades away to reveal howling winds, the distant barking of sled dogs, and the measured voice of Sergeant Preston as he pursues justice through snowdrifts and dark forests. In this gripping episode, the psychological dimensions of frontier justice clash with the raw power of man's best friend.</p>
-<p>*Challenge of the Yukon*, which aired throughout the late 1930s and 1940s, became one of radio's most beloved adventure serials, transporting millions of listeners nightly from their living rooms to the icy expanses of Canada's remote north. The show's genius lay in its formula: a stalwart Mountie, a dog of almost human loyalty, and a new mystery to solve each episode. At a time when Americans were seeking escape from economic hardship and gathering global tensions, Preston and King offered reliable heroism and the promise that justice always prevailed. The series pioneered the "procedural" approach to drama, influencing countless crime and adventure shows that followed.</p>
-<p>Don't miss this classic tale of fear, duty, and the unbreakable bond between man and beast. Tune in now and discover why audiences made *Sergeant Preston of the Yukon* an enduring legend of the golden age of radio.</p>
+          <p>As our story opens on the frozen frontier, Sergeant Preston and his legendary lead dog King are hot on the trail of a desperate fugitive fleeing through the unforgiving Yukon wilderness. But this chase is unlike any other—their quarry is a man consumed by an irrational terror of dogs, and as he flees the law, he's driving himself further into madness. Will a crack lawman and his faithful canine companion be able to corner a criminal whose very fear of dogs is both his weakness and his weapon? The crackling static of 1940s radio fades away to reveal howling winds, the distant barking of sled dogs, and the measured voice of Sergeant Preston as he pursues justice through snowdrifts and dark forests. In this gripping episode, the psychological dimensions of frontier justice clash with the raw power of man's best friend.</p>
+<p>Challenge of the Yukon, which aired throughout the late 1930s and 1940s, became one of radio's most beloved adventure serials, transporting millions of listeners nightly from their living rooms to the icy expanses of Canada's remote north. The show's genius lay in its formula: a stalwart Mountie, a dog of almost human loyalty, and a new mystery to solve each episode. At a time when Americans were seeking escape from economic hardship and gathering global tensions, Preston and King offered reliable heroism and the promise that justice always prevailed. The series pioneered the "procedural" approach to drama, influencing countless crime and adventure shows that followed.</p>
+<p>Don't miss this classic tale of fear, duty, and the unbreakable bond between man and beast. Tune in now and discover why audiences made Sergeant Preston of the Yukon an enduring legend of the golden age of radio.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

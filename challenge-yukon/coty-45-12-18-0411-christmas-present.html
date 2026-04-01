@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 45 12 18 (0411) Christmas Present — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0411) Christmas Present — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 45 12 18 (0411) Christmas Present — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 45 12 18 (0411) Christmas Present — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 45 12 18 (0411) Christmas Present — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · December 18, 1945</span>
           </div>
-          <h1 class="episode__title">Coty 45 12 18 (0411) Christmas Present</h1>
+          <h1 class="episode__title">(0411) Christmas Present</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># Christmas Present</p>
-<p>As the winter wind howls across the frozen Yukon wilderness and church bells echo through Fort Yukon, Sergeant Preston and his legendary husky King face their most bittersweet case yet. A mysterious package has arrived at the remote trading post—a Christmas present intended for a young boy whose father vanished months ago in the unforgiving northern territories. When clues suggest the gift may have come from a man thought long dead, Preston must unravel a tangle of hope, deception, and frontier justice before the holiday passes. Will the sergeant discover whether this present brings reunion or closure? The tension builds masterfully as Preston's investigation takes him deeper into the snow-choked wilderness, where survival itself becomes uncertain and every decision carries weight that transcends mere police work.</p>
-<p>*Challenge of the Yukon* captured audiences for nearly two decades by grounding its adventures in the harsh realities of Canada's north, where law and order were often the only thread holding fragile communities together. Sergeant Preston—based loosely on real-mounted police who patrolled these territories—represented steadfast justice and compassion in a landscape that demanded both. By the 1940s, when this episode aired, the show had perfected its formula: combining the authentic detail of frontier life with genuine emotional stakes that resonated with Depression and wartime listeners seeking heroism tinged with humanity.</p>
+          <p>As the winter wind howls across the frozen Yukon wilderness and church bells echo through Fort Yukon, Sergeant Preston and his legendary husky King face their most bittersweet case yet. A mysterious package has arrived at the remote trading post—a Christmas present intended for a young boy whose father vanished months ago in the unforgiving northern territories. When clues suggest the gift may have come from a man thought long dead, Preston must unravel a tangle of hope, deception, and frontier justice before the holiday passes. Will the sergeant discover whether this present brings reunion or closure? The tension builds masterfully as Preston's investigation takes him deeper into the snow-choked wilderness, where survival itself becomes uncertain and every decision carries weight that transcends mere police work.</p>
+<p>Challenge of the Yukon captured audiences for nearly two decades by grounding its adventures in the harsh realities of Canada's north, where law and order were often the only thread holding fragile communities together. Sergeant Preston—based loosely on real-mounted police who patrolled these territories—represented steadfast justice and compassion in a landscape that demanded both. By the 1940s, when this episode aired, the show had perfected its formula: combining the authentic detail of frontier life with genuine emotional stakes that resonated with Depression and wartime listeners seeking heroism tinged with humanity.</p>
 <p>This particular episode exemplifies why the series remained beloved through its fifteen-year run. It takes the familiar adventure framework and infuses it with the peculiar poignancy of Christmas—that season when isolation cuts deepest and hope becomes most fragile. Tune in to hear how Preston's dogged determination and his faithful companion King navigate mystery, mercy, and the true meaning of a present in the wilderness.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 43 11 04 (0301) A Date To Remember — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0301) A Date To Remember — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 43 11 04 (0301) A Date To Remember — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 43 11 04 (0301) A Date To Remember — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 43 11 04 (0301) A Date To Remember — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · November 4, 1943</span>
           </div>
-          <h1 class="episode__title">Coty 43 11 04 (0301) A Date To Remember</h1>
+          <h1 class="episode__title">(0301) A Date To Remember</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># A Date To Remember</p>
-<p>As the strains of the famous "Charge of the Light Brigade" overture crackle through your speaker, you're transported straight into the frozen wilderness of Canada's Yukon Territory, where danger lurks beneath every snow-laden pine and around every treacherous mountain pass. In this thrilling installment, Sergeant Preston faces a mystery that hinges on a single date—a promise made, a rendezvous that could mean the difference between life and death. With his faithful dog King at his side, Preston must race against time through blizzards and hostile terrain to uncover why a frontier woman's fate depends on one man keeping an appointment that others would prefer he never made. The tension builds as the sergeant pieces together clues that lead him deeper into a web of deception, where trust is as scarce as warmth in the unforgiving north.</p>
-<p>What made *Challenge of the Yukon* such a beloved fixture of American radio from 1938 through the 1950s was its perfect marriage of authentic frontier atmosphere with genuine human drama. Unlike the stylized shoot-'em-up westerns that dominated the airwaves, Sergeant Preston's stories emphasized law, order, and moral courage—the real challenges facing Mounties and settlers in the Canadian north. The show's writers crafted episodes that felt rooted in the actual history and geography of the Yukon, grounding their adventures in a world of mounted police integrity and rugged survival. This episode exemplifies why audiences tuned in faithfully, night after night, for a glimpse into a world where civilization was fragile and character was everything.</p>
+          <p>As the strains of the famous "Charge of the Light Brigade" overture crackle through your speaker, you're transported straight into the frozen wilderness of Canada's Yukon Territory, where danger lurks beneath every snow-laden pine and around every treacherous mountain pass. In this thrilling installment, Sergeant Preston faces a mystery that hinges on a single date—a promise made, a rendezvous that could mean the difference between life and death. With his faithful dog King at his side, Preston must race against time through blizzards and hostile terrain to uncover why a frontier woman's fate depends on one man keeping an appointment that others would prefer he never made. The tension builds as the sergeant pieces together clues that lead him deeper into a web of deception, where trust is as scarce as warmth in the unforgiving north.</p>
+<p>What made Challenge of the Yukon such a beloved fixture of American radio from 1938 through the 1950s was its perfect marriage of authentic frontier atmosphere with genuine human drama. Unlike the stylized shoot-'em-up westerns that dominated the airwaves, Sergeant Preston's stories emphasized law, order, and moral courage—the real challenges facing Mounties and settlers in the Canadian north. The show's writers crafted episodes that felt rooted in the actual history and geography of the Yukon, grounding their adventures in a world of mounted police integrity and rugged survival. This episode exemplifies why audiences tuned in faithfully, night after night, for a glimpse into a world where civilization was fragile and character was everything.</p>
 <p>Don't miss this classic adventure—settle in with the crackle of vintage radio and experience the tension of "A Date To Remember," where one man's promise could change everything.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

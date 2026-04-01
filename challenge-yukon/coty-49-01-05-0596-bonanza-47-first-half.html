@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 49 01 05 (0596) Bonanza 47 (first Half) — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0596) Bonanza 47 (first Half) — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 49 01 05 (0596) Bonanza 47 (first Half) — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 49 01 05 (0596) Bonanza 47 (first Half) — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 49 01 05 (0596) Bonanza 47 (first Half) — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · January 5, 1949</span>
           </div>
-          <h1 class="episode__title">Coty 49 01 05 (0596) Bonanza 47 (first Half)</h1>
+          <h1 class="episode__title">(0596) Bonanza 47 (first Half)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Sergeant Preston of the Yukon: Bonanza 47 (First Half)</p>
-<p>Picture yourself huddled near your radio on a winter's evening as Sergeant Preston and his magnificent dog King thunder across frozen tundra in pursuit of claim jumpers and fortune seekers. In "Bonanza 47," our stalwart Mountie faces a race against time in the unforgiving Klondike wilderness where a prospector's hard-won gold discovery has attracted the attention of ruthless criminals. With temperatures plummeting and civilization hundreds of miles away, Preston must navigate treacherous ice fields and navigate even more dangerous human ambition—all while King's keen senses prove invaluable in tracking the culprits through blinding snow. The tension crackles through your loudspeaker as the first half of this adventure builds to a cliffhanger that will leave you desperate to tune in again tomorrow night.</p>
-<p>*Challenge of the Yukon* captured the American imagination during the Depression and war years by delivering exactly what listeners craved: heroism, loyalty, and the triumph of Canadian justice in Earth's harshest landscape. Sergeant Preston became an unlikely icon—not through gunslinging theatrics, but through quiet competence, moral certitude, and a partnership with his dog that spoke to something deeper in the audience's collective soul. These episodes, broadcast live or from scripts just hours old, represented the golden age of radio drama when sound effects artists created entire worlds with coconut shells and crinkled cellophane, and voice actors like Paul Sutherland delivered performances of surprising depth.</p>
-<p>Don't miss this gripping northern adventure! Tune in for "Bonanza 47" and remember: *In the frozen North, one man and his dog stand against the darkness.* Sergeant Preston rides again.</p>
+          <p>Picture yourself huddled near your radio on a winter's evening as Sergeant Preston and his magnificent dog King thunder across frozen tundra in pursuit of claim jumpers and fortune seekers. In "Bonanza 47," our stalwart Mountie faces a race against time in the unforgiving Klondike wilderness where a prospector's hard-won gold discovery has attracted the attention of ruthless criminals. With temperatures plummeting and civilization hundreds of miles away, Preston must navigate treacherous ice fields and navigate even more dangerous human ambition—all while King's keen senses prove invaluable in tracking the culprits through blinding snow. The tension crackles through your loudspeaker as the first half of this adventure builds to a cliffhanger that will leave you desperate to tune in again tomorrow night.</p>
+<p>Challenge of the Yukon captured the American imagination during the Depression and war years by delivering exactly what listeners craved: heroism, loyalty, and the triumph of Canadian justice in Earth's harshest landscape. Sergeant Preston became an unlikely icon—not through gunslinging theatrics, but through quiet competence, moral certitude, and a partnership with his dog that spoke to something deeper in the audience's collective soul. These episodes, broadcast live or from scripts just hours old, represented the golden age of radio drama when sound effects artists created entire worlds with coconut shells and crinkled cellophane, and voice actors like Paul Sutherland delivered performances of surprising depth.</p>
+<p>Don't miss this gripping northern adventure! Tune in for "Bonanza 47" and remember: In the frozen North, one man and his dog stand against the darkness. Sergeant Preston rides again.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

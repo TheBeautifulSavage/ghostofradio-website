@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coty 44 08 17 (0342) King Breaks The Wheel Of Fortune — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
+  <title>(0342) King Breaks The Wheel Of Fortune — Challenge of the Yukon / Sergeant Preston | Ghost of Radio</title>
   <meta name="description" content="Listen to Coty 44 08 17 (0342) King Breaks The Wheel Of Fortune — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Coty 44 08 17 (0342) King Breaks The Wheel Of Fortune — Challenge of the Yukon / Sergeant Preston">
   <meta property="og:description" content="Listen to Coty 44 08 17 (0342) King Breaks The Wheel Of Fortune — Challenge of the Yukon / Sergeant Preston (ABC/Mutual, 1940s). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Challenge of the Yukon / Sergeant Preston</span>
             <span class="episode__network">ABC/Mutual · August 17, 1944</span>
           </div>
-          <h1 class="episode__title">Coty 44 08 17 (0342) King Breaks The Wheel Of Fortune</h1>
+          <h1 class="episode__title">(0342) King Breaks The Wheel Of Fortune</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># King Breaks The Wheel Of Fortune</p>
-<p>As the immortal Fanfare for the Common Man crackles to life through your radio speaker, you're transported once more to the vast, unforgiving wilderness of the Canadian northwest. In "King Breaks The Wheel Of Fortune," Sergeant Preston of the Yukon and his legendary sled dog, King, face a desperate race against time and treachery. A fortune wheel—a gambling contraption that has claimed the savings and sanity of half the prospectors in the territory—holds the key to solving a mystery that stretches from the frozen tundra to the shadowy corners of Dawson City. When a desperate gambler turns up frozen in the snow, Preston must untangle a web of deceit, desperation, and greed before the true culprit strikes again. The faithful King proves invaluable once more, his keen senses and unwavering loyalty cutting through the northern fog to uncover clues that would defeat any ordinary investigator.</p>
+          <p>As the immortal Fanfare for the Common Man crackles to life through your radio speaker, you're transported once more to the vast, unforgiving wilderness of the Canadian northwest. In "King Breaks The Wheel Of Fortune," Sergeant Preston of the Yukon and his legendary sled dog, King, face a desperate race against time and treachery. A fortune wheel—a gambling contraption that has claimed the savings and sanity of half the prospectors in the territory—holds the key to solving a mystery that stretches from the frozen tundra to the shadowy corners of Dawson City. When a desperate gambler turns up frozen in the snow, Preston must untangle a web of deceit, desperation, and greed before the true culprit strikes again. The faithful King proves invaluable once more, his keen senses and unwavering loyalty cutting through the northern fog to uncover clues that would defeat any ordinary investigator.</p>
 <p>"Challenge of the Yukon" was radio's premier adventure serial, captivating millions of listeners for nearly two decades with tales of justice and survival in Canada's last frontier. The show's formula—authentic Yukon atmosphere, a heroic but believable protagonist, and the genuine partnership between man and animal—struck a chord with Depression-era and wartime audiences seeking escape and inspiration. Sergeant Preston embodied the virtues of honor, courage, and quick thinking, while King represented loyalty and instinct transcending species. These 1940s episodes represent the show at its creative peak, combining gripping mystery plots with the atmospheric sound design that made old-time radio unforgettable.</p>
 <p>Whether you're a devoted fan of the series or discovering Preston and King for the first time, "King Breaks The Wheel Of Fortune" delivers everything that made this show legendary: adventure, atmosphere, and the timeless bond between a man and his dog. Tune in and let the northern wilderness claim you once more.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
