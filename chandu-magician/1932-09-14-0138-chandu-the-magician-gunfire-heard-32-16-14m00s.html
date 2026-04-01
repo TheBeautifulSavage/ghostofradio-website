@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Chandu the Magician: "Gunfire Heard"</p>
-<p>*Air Date: 1932*</p>
+          <p>Air Date: 1932</p>
 <p>Step into the shadow-haunted streets of the Orient as gunfire erupts in the dead of night, shattering the fragile peace Chandu has fought so desperately to maintain. In this electrifying episode, our master of the mystic arts finds himself caught between the cracking whip of criminal conspiracy and the silent, deadly arts of Eastern sorcery. The very air crackles with danger as Chandu races against time—will his miraculous powers prove sufficient against bullets and betrayal? Listeners will grip their radio dials as each gunshot draws our hero closer to a precipice from which even magic may not save him. The orchestra swells, voices crack with urgency, and the question hangs suspended in the static: who fires those fatal shots, and can Chandu uncover the truth before tragedy strikes?</p>
 <p>This episode represents the golden zenith of "Chandu the Magician," the show that captivated millions during radio's most experimental era. Premiering in 1932 on ABC and later joining the Mutual network, Chandu pioneered the fantasy-adventure format that would dominate American radio for nearly two decades. The show's ingenious blend of contemporary mystery, Asian mysticism, and genuine magic—grounded in the real teachings of Yogi philosophy—created an intoxicating atmosphere unlike anything audiences had experienced. Frank Chandler, our protagonist, embodied the 1930s fascination with the exotic East, offering listeners an escape route from Depression-era anxieties into realms where mind could triumph over circumstance.</p>
 <p>Don't miss "Gunfire Heard," an essential artifact of radio's pioneering days. Settle into your favorite chair, adjust the dial, and let Chandu transport you to a world where danger lurks around every corner and the impossible becomes merely improbable. This is radio as it was meant to be heard.</p>
@@ -97,9 +96,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
