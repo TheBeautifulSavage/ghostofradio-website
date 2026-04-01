@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Box 13: "Killer At Large"</p>
-<p>Dan Halloween's luck has run out. When he opens the mysterious Box 13 to discover his latest assignment, the contents prove more sinister than usual—a desperate plea from someone hunted by a murderer loose in the city. As our resourceful journalist navigates shadowy streets and dangerous encounters, every shadow could conceal the killer, every phone call could be a trap. This episode crackles with genuine menace, building tension through the expert interplay of sound effects: the screech of tires, the crack of a revolver, whispered threats through the telephone wire. Listeners will find themselves leaning closer to their radio sets as the noose tightens around both the killer and Halloween himself.</p>
+          <p>Dan Halloween's luck has run out. When he opens the mysterious Box 13 to discover his latest assignment, the contents prove more sinister than usual—a desperate plea from someone hunted by a murderer loose in the city. As our resourceful journalist navigates shadowy streets and dangerous encounters, every shadow could conceal the killer, every phone call could be a trap. This episode crackles with genuine menace, building tension through the expert interplay of sound effects: the screech of tires, the crack of a revolver, whispered threats through the telephone wire. Listeners will find themselves leaning closer to their radio sets as the noose tightens around both the killer and Halloween himself.</p>
 <p>Box 13 arrived in 1948 as a masterclass in radio economy—smart writing, superior production values, and the charismatic charm of host Dan Midnight (played by creator-star Alan Ladd) made it an instant hit across the syndication circuit. The show epitomized post-war adventure radio, arriving just as television threatened the medium's dominance, proving that imagination through sound remained unmatched. Each episode unfolded like a pulp magazine story, but with the immediacy and intimacy that only radio could deliver. "Killer At Large" showcases why audiences couldn't resist tuning in week after week, never knowing what Box 13 might contain.</p>
 <p>Don't miss this classic exercise in suspense and mystery. Settle in, dim the lights, and prepare yourself for the sinister contents of Box 13. Adventure and danger await—just dial in and listen.</p>
         </div>
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
