@@ -82,11 +82,10 @@
         </div>
 
         <div class="episode__content">
-          <p># The Great Gildersleeve: Leila Ransome Back In Town</p>
-<p>*November 10, 1948*</p>
+          <p>November 10, 1948</p>
 <p>Picture the living rooms of America on a crisp autumn evening—the radio's warm glow casting a golden hue across the furniture as millions of listeners settle in for their weekly appointment with Throckmorton P. Gildersleeve. Tonight, the genial water commissioner of Summerfield faces a delicious complication: Leila Ransome has returned to town, and her arrival promises to upend the carefully balanced domestic comedy that listeners have come to cherish. Will the charming, quick-witted Leila rekindle old flames? What schemes and misunderstandings will her presence spark? The stage is set for the kind of romantic entanglement that has made this show an American institution—where propriety clashes hilariously with desire, and the bumbling but well-meaning Gildersleeve stumbles headlong into situations of his own making.</p>
-<p>Since its 1941 debut, *The Great Gildersleeve* has distinguished itself as a masterpiece of ensemble comedy, spinning off from *Fibber McGee and Molly* to become a sensation in its own right. Harold Peary's perfectly calibrated performance—that unmistakable chuckle, the bemused delivery—transformed the character into an everyman audiences adored. In 1948, as post-war America sought comfort in familiar voices and situations, the show remained a beacon of warmth and laughter, offering escapism wrapped in genuine heart and impeccable comic timing.</p>
-<p>Whether you're a devoted fan of the show's golden era or a newcomer curious about what captivated tens of millions of Americans, this episode captures everything that makes *The Great Gildersleeve* timeless: witty banter, romantic misadventure, and the reassuring presence of a character whose good intentions perpetually outpace his good judgment. Tune in and discover why radio comedy, at its finest, remains utterly irresistible.</p>
+<p>Since its 1941 debut, The Great Gildersleeve has distinguished itself as a masterpiece of ensemble comedy, spinning off from Fibber McGee and Molly to become a sensation in its own right. Harold Peary's perfectly calibrated performance—that unmistakable chuckle, the bemused delivery—transformed the character into an everyman audiences adored. In 1948, as post-war America sought comfort in familiar voices and situations, the show remained a beacon of warmth and laughter, offering escapism wrapped in genuine heart and impeccable comic timing.</p>
+<p>Whether you're a devoted fan of the show's golden era or a newcomer curious about what captivated tens of millions of Americans, this episode captures everything that makes The Great Gildersleeve timeless: witty banter, romantic misadventure, and the reassuring presence of a character whose good intentions perpetually outpace his good judgment. Tune in and discover why radio comedy, at its finest, remains utterly irresistible.</p>
         </div>
 
         
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
