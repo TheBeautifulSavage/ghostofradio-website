@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Fort Laramie: The Massacre</p>
-<p>*Original Air Date: August 5, 1956*</p>
+          <p>Original Air Date: August 5, 1956</p>
 <p>As darkness falls over the Wyoming plains, a desperate messenger arrives at Fort Laramie bearing news of unimaginable tragedy. A cavalry patrol has been ambushed in a remote canyon, and now the fort's commanding officers must grapple with the gruesome aftermath and the terrible decisions that follow. In this gripping episode, "The Massacre," listeners will experience the tension that crackles through the barracks and officers' quarters as conflicting accounts emerge and the true extent of the disaster becomes clear. The wind howls across the prairie as men struggle with guilt, duty, and the desire for vengeance. This is western drama stripped of Hollywood gloss—a raw examination of frontier violence and its consequences, where there are no easy answers and every choice carries moral weight.</p>
 <p>Fort Laramie's unflinching approach to the adult western set it apart from the formulaic shoot-'em-ups that dominated radio throughout the 1950s. The show, which aired on CBS, drew its power from the real historical fort and the authentic conflicts of the post-Civil War era—tensions between soldiers and Native peoples, the clash between military protocol and frontier realities, and the personal dramas simmering beneath the surface of military life. Rather than celebrating conquest, the series examined it with complexity and nuance, reflecting a more sophisticated audience's hunger for substantive storytelling.</p>
 <p>Step into the candlelit command tent and hear the weight of command decisions echo across the high plains. "The Massacre" remains a masterclass in radio drama, where sound and silence work together to create an unforgettable portrait of the American frontier.</p>
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
