@@ -1127,10 +1127,31 @@
     <div class="email-capture__inner">
       <h3 class="email-capture__title">&#128251; Never Miss an Episode</h3>
       <p class="email-capture__desc">Get notified when new shows and episodes are added to Ghost of Radio.</p>
-      <form class="email-capture__form" action="https://formspree.io/f/ghostofradio" method="POST">
-        <input type="email" name="email" placeholder="your@email.com" required class="email-capture__input">
-        <button type="submit" class="email-capture__btn">Subscribe Free</button>
+      <form class="email-capture__form" id="emailForm" onsubmit="submitEmail(event)">
+        <input type="email" name="email" placeholder="your@email.com" required class="email-capture__input" id="emailInput">
+        <button type="submit" class="email-capture__btn" id="emailBtn">Subscribe Free</button>
       </form>
+      <p id="emailMsg" style="display:none;color:#c9a84c;margin-top:.5rem"></p>
+      <script>
+      async function submitEmail(e) {
+        e.preventDefault();
+        var email = document.getElementById("emailInput").value;
+        var btn = document.getElementById("emailBtn");
+        var msg = document.getElementById("emailMsg");
+        btn.textContent = "Subscribing...";
+        btn.disabled = true;
+        try {
+          var r = await fetch("https://gor-email-capture.ghostofradio.workers.dev", {
+            method:"POST", headers:{"Content-Type":"application/json"},
+            body: JSON.stringify({email:email})
+          });
+          var d = await r.json();
+          msg.textContent = d.success ? "✅ Subscribed! Check your email." : "Something went wrong. Try again.";
+        } catch(err) { msg.textContent = "Something went wrong. Try again."; }
+        msg.style.display = "block";
+        btn.style.display = "none";
+      }
+      </script>
       <p class="email-capture__fine">No spam. Unsubscribe anytime. ghostofradio.com</p>
     </div>
   </div>

@@ -42,10 +42,31 @@
       <div class="subscribe-sub">Free Subscription</div>
       <h1 class="subscribe-title">📻 Never Miss an Episode</h1>
       <p class="subscribe-desc">Get notified when new classic old-time radio shows and episodes are added. No spam — just the good stuff from the golden age of radio.</p>
-      <form class="subscribe-form" action="https://formspree.io/f/ghostofradio" method="POST">
-        <input type="email" name="email" placeholder="your@email.com" required class="subscribe-input" aria-label="Email address">
-        <button type="submit" class="subscribe-btn">Subscribe Free</button>
+      <form class="subscribe-form" id="emailForm" onsubmit="submitEmail(event)">
+        <input type="email" name="email" placeholder="your@email.com" required class="subscribe-input" aria-label="Email address" id="emailInput">
+        <button type="submit" class="subscribe-btn" id="emailBtn">Subscribe Free</button>
       </form>
+      <p id="emailMsg" style="display:none;color:#c9a84c;margin-top:.5rem"></p>
+      <script>
+      async function submitEmail(e) {
+        e.preventDefault();
+        var email = document.getElementById("emailInput").value;
+        var btn = document.getElementById("emailBtn");
+        var msg = document.getElementById("emailMsg");
+        btn.textContent = "Subscribing...";
+        btn.disabled = true;
+        try {
+          var r = await fetch("https://gor-email-capture.ghostofradio.workers.dev", {
+            method:"POST", headers:{"Content-Type":"application/json"},
+            body: JSON.stringify({email:email})
+          });
+          var d = await r.json();
+          msg.textContent = d.success ? "\u2705 Subscribed! Check your email." : "Something went wrong. Try again.";
+        } catch(err) { msg.textContent = "Something went wrong. Try again."; }
+        msg.style.display = "block";
+        btn.style.display = "none";
+      }
+      </script>
       <p class="subscribe-fine">No spam. Unsubscribe anytime. ghostofradio.com</p>
       <a href="/" class="subscribe-back">← Back to Ghost of Radio</a>
     </div>
