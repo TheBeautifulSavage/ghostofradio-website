@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1962 02 04 775 The Nugget Of Truth Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Nugget Of Truth Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1962 02 04 775 The Nugget Of Truth Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1962 02 04 775 The Nugget Of Truth Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1962 02 04 775 The Nugget Of Truth Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · February 4, 1962</span>
           </div>
-          <h1 class="episode__title">Ytjd 1962 02 04 775 The Nugget Of Truth Matter</h1>
+          <h1 class="episode__title">The Nugget Of Truth Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,9 +87,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Nugget of Truth Matter</p>
-<p>As the February snow falls thick over the American heartland, insurance investigator Johnny Dollar finds himself deep in the shadowy world of mining claims and desperate men. In "The Nugget of Truth Matter," our quick-witted operative confronts a case that demands equal parts cunning and moral conviction—a prospector's claim worth thousands hangs in the balance, but so does a man's reputation. The episode crackles with the characteristic snap of Dollar's internal monologue, that distinctive first-person narration that draws listeners into his mind as he unravels lies, follows false leads, and edges ever closer to a truth someone would rather keep buried. You'll hear the authentic sounds of mining towns, the shuffle of paperwork in dusty claim offices, and the underlying tension of a man who knows that in this business, everyone has a price—and everyone has secrets.</p>
-<p>By 1962, *Yours Truly, Johnny Dollar* had become an institution, surviving the transistor radio revolution and the rise of television where so many of its radio brethren had fallen silent. The show's longevity stemmed from its brilliant formula: the insurance investigation allowed writers to explore noir sensibilities without the constraints of detective fiction, touching on fraud, desperation, and human nature itself. Dollar's character—pragmatic, intelligent, occasionally cynical but never truly corrupt—embodied a particular kind of American everyman navigating a morally complicated world. Each episode was self-contained yet psychologically rich, offering listeners something that television couldn't quite capture: the intimacy of a man's thoughts as he navigates danger and deception.</p>
+          <p>As the February snow falls thick over the American heartland, insurance investigator Johnny Dollar finds himself deep in the shadowy world of mining claims and desperate men. In "The Nugget of Truth Matter," our quick-witted operative confronts a case that demands equal parts cunning and moral conviction—a prospector's claim worth thousands hangs in the balance, but so does a man's reputation. The episode crackles with the characteristic snap of Dollar's internal monologue, that distinctive first-person narration that draws listeners into his mind as he unravels lies, follows false leads, and edges ever closer to a truth someone would rather keep buried. You'll hear the authentic sounds of mining towns, the shuffle of paperwork in dusty claim offices, and the underlying tension of a man who knows that in this business, everyone has a price—and everyone has secrets.</p>
+<p>By 1962, Yours Truly, Johnny Dollar had become an institution, surviving the transistor radio revolution and the rise of television where so many of its radio brethren had fallen silent. The show's longevity stemmed from its brilliant formula: the insurance investigation allowed writers to explore noir sensibilities without the constraints of detective fiction, touching on fraud, desperation, and human nature itself. Dollar's character—pragmatic, intelligent, occasionally cynical but never truly corrupt—embodied a particular kind of American everyman navigating a morally complicated world. Each episode was self-contained yet psychologically rich, offering listeners something that television couldn't quite capture: the intimacy of a man's thoughts as he navigates danger and deception.</p>
 <p>Tune in now and let Johnny Dollar guide you through one final case from radio's golden age. In just thirty minutes, you'll understand why this show captivated millions—and why it remains utterly riveting.</p>
         </div>
 
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

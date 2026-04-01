@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1962 04 22 786 The Skidmore Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Skidmore Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1962 04 22 786 The Skidmore Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1962 04 22 786 The Skidmore Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1962 04 22 786 The Skidmore Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · April 22, 1962</span>
           </div>
-          <h1 class="episode__title">Ytjd 1962 04 22 786 The Skidmore Matter</h1>
+          <h1 class="episode__title">The Skidmore Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,8 +87,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Skidmore Matter</p>
-<p>When Johnny Dollar steps off the train into the fog-shrouded streets of a small Pacific coast town, he's chasing more than just an insurance claim—he's hunting the truth buried beneath layers of small-town secrets and carefully constructed lies. "The Skidmore Matter" crackles with the tension of a man asking dangerous questions in places where everybody knows everybody's business, where a missing heirloom and a dead man's debts intersect in ways that suggest foul play. As Johnny's distinctive voice cuts through the static of interrogations and tense confrontations, listeners will find themselves caught in a web of alibis and hidden motives, where the real value of the claim may pale beside the value of keeping certain facts hidden. The episode pulses with that quintessential hard-boiled atmosphere—the rain on rooftops, the click of a lighter, the measured cadence of a seasoned investigator who's learned to read people the way others read books.</p>
+          <p>When Johnny Dollar steps off the train into the fog-shrouded streets of a small Pacific coast town, he's chasing more than just an insurance claim—he's hunting the truth buried beneath layers of small-town secrets and carefully constructed lies. "The Skidmore Matter" crackles with the tension of a man asking dangerous questions in places where everybody knows everybody's business, where a missing heirloom and a dead man's debts intersect in ways that suggest foul play. As Johnny's distinctive voice cuts through the static of interrogations and tense confrontations, listeners will find themselves caught in a web of alibis and hidden motives, where the real value of the claim may pale beside the value of keeping certain facts hidden. The episode pulses with that quintessential hard-boiled atmosphere—the rain on rooftops, the click of a lighter, the measured cadence of a seasoned investigator who's learned to read people the way others read books.</p>
 <p>By 1962, "Yours Truly Johnny Dollar" had become the gold standard of radio noir, sustaining itself through sheer storytelling prowess even as television threatened to eclipse the entire medium. This particular episode represents the show at its mature peak, when writer-producer Jack Johnstone and star Bob Bailey had honed their craft into an art form. The Johnny Dollar formula—a self-employed investigator working for various insurance companies, paid a per diem rather than a salary, working cases that ranged from the mundane to the spectacular—allowed for endless variation while maintaining an intimate, first-person connection to the audience.</p>
 <p>If you've never experienced the magnetic pull of Johnny Dollar's world, or if you're a devoted fan revisiting old cases, "The Skidmore Matter" offers the perfect window into why millions of Americans gathered around their radio sets long into the television age. Press play, dim the lights, and let the mystery unfold.</p>
         </div>
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

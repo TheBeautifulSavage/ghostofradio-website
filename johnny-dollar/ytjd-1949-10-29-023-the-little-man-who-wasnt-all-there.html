@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1949 10 29 023 The Little Man Who Wasn't All There — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Little Man Who Wasn't All There — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1949 10 29 023 The Little Man Who Wasn't All There — Yours Truly Johnny Dollar (CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1949 10 29 023 The Little Man Who Wasn't All There — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1949 10 29 023 The Little Man Who Wasn't All There — Yours Truly Johnny Dollar (CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · October 29, 1949</span>
           </div>
-          <h1 class="episode__title">Ytjd 1949 10 29 023 The Little Man Who Wasn't All There</h1>
+          <h1 class="episode__title">The Little Man Who Wasn't All There</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Little Man Who Wasn't All There</p>
-<p>Picture this: a rain-slicked Manhattan street corner at midnight, where insurance investigator Johnny Dollar finds himself tracking a man who may not exist at all—or worse, a man whose existence hinges on whether a widow's sanity can survive the truth. In this October 1949 episode, every shadow holds a secret, every witness tells a different story, and Johnny's five-dollar-a-day expense account takes him deeper into a maze of mistaken identities and fractured memories. The audio landscape crackles with the unmistakable atmosphere of postwar noir—distant sirens, the muffled jazz drift of a gin joint, the pneumatic hiss of closing doors—while tension builds through Johnny's razor-sharp internal monologue. What starts as a routine claim investigation transforms into something far more unsettling: a meditation on identity itself, on the fragile line between what we remember and what actually happened.</p>
-<p>*Yours Truly, Johnny Dollar* arrived at CBS in 1949 at the precise moment American audiences craved both reassurance and unease. Here was a show that married the procedural logic of insurance investigation with genuine psychological complexity—no masked avengers or contrived coincidences, just a quick-witted investigator and the ordinary people whose lives contain extraordinary secrets. This episode exemplifies the show's genius: it concerns itself not with melodrama but with authenticity, with the messy human stories that lurk beneath bureaucratic forms and claim adjustments. The program would become the longest-running radio drama of its era, and episodes like this one reveal why listeners kept tuning in.</p>
+          <p>Picture this: a rain-slicked Manhattan street corner at midnight, where insurance investigator Johnny Dollar finds himself tracking a man who may not exist at all—or worse, a man whose existence hinges on whether a widow's sanity can survive the truth. In this October 1949 episode, every shadow holds a secret, every witness tells a different story, and Johnny's five-dollar-a-day expense account takes him deeper into a maze of mistaken identities and fractured memories. The audio landscape crackles with the unmistakable atmosphere of postwar noir—distant sirens, the muffled jazz drift of a gin joint, the pneumatic hiss of closing doors—while tension builds through Johnny's razor-sharp internal monologue. What starts as a routine claim investigation transforms into something far more unsettling: a meditation on identity itself, on the fragile line between what we remember and what actually happened.</p>
+<p>Yours Truly, Johnny Dollar arrived at CBS in 1949 at the precise moment American audiences craved both reassurance and unease. Here was a show that married the procedural logic of insurance investigation with genuine psychological complexity—no masked avengers or contrived coincidences, just a quick-witted investigator and the ordinary people whose lives contain extraordinary secrets. This episode exemplifies the show's genius: it concerns itself not with melodrama but with authenticity, with the messy human stories that lurk beneath bureaucratic forms and claim adjustments. The program would become the longest-running radio drama of its era, and episodes like this one reveal why listeners kept tuning in.</p>
 <p>For those who appreciate mystery that respects the listener's intelligence, who hear in radio drama the pure power of suggestion and voice, this episode remains essential listening. Tune in and let Johnny Dollar guide you through the labyrinth—you won't emerge quite the same.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

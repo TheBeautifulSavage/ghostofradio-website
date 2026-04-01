@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1962 09 16 807 The No Matter Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The No Matter Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1962 09 16 807 The No Matter Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1962 09 16 807 The No Matter Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1962 09 16 807 The No Matter Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · September 16, 1962</span>
           </div>
-          <h1 class="episode__title">Ytjd 1962 09 16 807 The No Matter Matter</h1>
+          <h1 class="episode__title">The No Matter Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The No Matter Matter</p>
-<p>On a September evening in 1962, Johnny Dollar finds himself ensnared in a labyrinth of contradictions where nothing—and everything—matters. This installment of *Yours Truly, Johnny Dollar* plunges the world-weary insurance investigator into a case where the usual rules of evidence seem to dissolve like smoke under a streetlamp. As the case unfolds across crackling phone lines and dimly lit offices, listeners will encounter the kind of twisted logic and moral ambiguity that made the show a fixture in millions of American homes. The sound design is immaculate: typewriter keys clacking, the sharp ring of telephones, and Johnny's gravelly voice cutting through the static of doubt and deception. You'll hear the desperation in witness testimonies and feel the weight of mysteries that refuse to be neatly solved. This is noir at its finest—not the glossy Hollywood version, but the real thing, where every answer spawns three new questions.</p>
-<p>By 1962, *Yours Truly, Johnny Dollar* had become an American institution, and this episode represents the show at the height of its creative powers. Created by former advertising man Blake Edwards and starring Mandel Kramer as the quintessential private eye, the series pioneered the documentary-style case format that would influence television detective shows for decades. Each episode was a self-contained mystery, yet they wove together into a portrait of postwar American anxieties—fraud, greed, moral compromise. The show's meticulous attention to detail and psychological complexity appealed to listeners who craved intelligent storytelling in an increasingly mass-produced entertainment landscape.</p>
-<p>Tune in now and discover why generations of radio enthusiasts have called *Yours Truly, Johnny Dollar* the finest mystery program ever broadcast. "The No Matter Matter" awaits.</p>
+          <p>On a September evening in 1962, Johnny Dollar finds himself ensnared in a labyrinth of contradictions where nothing—and everything—matters. This installment of Yours Truly, Johnny Dollar plunges the world-weary insurance investigator into a case where the usual rules of evidence seem to dissolve like smoke under a streetlamp. As the case unfolds across crackling phone lines and dimly lit offices, listeners will encounter the kind of twisted logic and moral ambiguity that made the show a fixture in millions of American homes. The sound design is immaculate: typewriter keys clacking, the sharp ring of telephones, and Johnny's gravelly voice cutting through the static of doubt and deception. You'll hear the desperation in witness testimonies and feel the weight of mysteries that refuse to be neatly solved. This is noir at its finest—not the glossy Hollywood version, but the real thing, where every answer spawns three new questions.</p>
+<p>By 1962, Yours Truly, Johnny Dollar had become an American institution, and this episode represents the show at the height of its creative powers. Created by former advertising man Blake Edwards and starring Mandel Kramer as the quintessential private eye, the series pioneered the documentary-style case format that would influence television detective shows for decades. Each episode was a self-contained mystery, yet they wove together into a portrait of postwar American anxieties—fraud, greed, moral compromise. The show's meticulous attention to detail and psychological complexity appealed to listeners who craved intelligent storytelling in an increasingly mass-produced entertainment landscape.</p>
+<p>Tune in now and discover why generations of radio enthusiasts have called Yours Truly, Johnny Dollar the finest mystery program ever broadcast. "The No Matter Matter" awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

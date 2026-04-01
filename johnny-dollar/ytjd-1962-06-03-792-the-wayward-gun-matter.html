@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1962 06 03 792 The Wayward Gun Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Wayward Gun Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1962 06 03 792 The Wayward Gun Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1962 06 03 792 The Wayward Gun Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1962 06 03 792 The Wayward Gun Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · June 3, 1962</span>
           </div>
-          <h1 class="episode__title">Ytjd 1962 06 03 792 The Wayward Gun Matter</h1>
+          <h1 class="episode__title">The Wayward Gun Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Wayward Gun Matter</p>
-<p>When insurance investigator Johnny Dollar steps off the train in a dusty southwestern town, he finds himself entangled in a case far more complex than the simple claim on his desk suggests. A seemingly straightforward matter of a missing firearm unravels into a web of deception, jealousy, and small-town secrets where everyone has something to hide and someone had everything to lose. As Johnny pursues the truth through dimly lit saloons and shadowed office corridors, the tension mounts with each interview—will he uncover the real perpetrator before another shot rings out in the night? The expert performances and taut script pull listeners into a noir atmosphere thick with suspicion, where even a simple gun becomes a loaded instrument of fate.</p>
-<p>By 1962, *Yours Truly, Johnny Dollar* had become a legendary fixture of American radio, having thrilled audiences for over a decade with its fastidious attention to investigative detail and richly drawn characters. Unlike the cartoonish action heroes that dominated the airwaves, Johnny Dollar was a thinking man's detective—methodical, skeptical, and driven by the meticulous logic of insurance investigation rather than heroic impulse. This particular episode, broadcast in the show's final year, exemplifies the series' mastery of the form: a complete mystery resolved in thirty minutes with the intelligence and sophistication that made CBS's crime drama programming the gold standard of the medium.</p>
+          <p>When insurance investigator Johnny Dollar steps off the train in a dusty southwestern town, he finds himself entangled in a case far more complex than the simple claim on his desk suggests. A seemingly straightforward matter of a missing firearm unravels into a web of deception, jealousy, and small-town secrets where everyone has something to hide and someone had everything to lose. As Johnny pursues the truth through dimly lit saloons and shadowed office corridors, the tension mounts with each interview—will he uncover the real perpetrator before another shot rings out in the night? The expert performances and taut script pull listeners into a noir atmosphere thick with suspicion, where even a simple gun becomes a loaded instrument of fate.</p>
+<p>By 1962, Yours Truly, Johnny Dollar had become a legendary fixture of American radio, having thrilled audiences for over a decade with its fastidious attention to investigative detail and richly drawn characters. Unlike the cartoonish action heroes that dominated the airwaves, Johnny Dollar was a thinking man's detective—methodical, skeptical, and driven by the meticulous logic of insurance investigation rather than heroic impulse. This particular episode, broadcast in the show's final year, exemplifies the series' mastery of the form: a complete mystery resolved in thirty minutes with the intelligence and sophistication that made CBS's crime drama programming the gold standard of the medium.</p>
 <p>Don't miss "The Wayward Gun Matter"—a masterclass in old-time radio suspense that proves sometimes the smallest details unlock the biggest secrets.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

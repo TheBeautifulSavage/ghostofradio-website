@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1962 08 26 804 The Gold Rush Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Gold Rush Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1962 08 26 804 The Gold Rush Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1962 08 26 804 The Gold Rush Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1962 08 26 804 The Gold Rush Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · August 26, 1962</span>
           </div>
-          <h1 class="episode__title">Ytjd 1962 08 26 804 The Gold Rush Matter</h1>
+          <h1 class="episode__title">The Gold Rush Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Gold Rush Matter</p>
-<p>When Johnny Dollar steps off the train into the fog-shrouded Sierra Nevada foothills, he's hunting for more than just insurance fraud—he's chasing ghosts. A century-old mining claim has suddenly become valuable again, and someone is willing to kill to keep it buried. In this August 1962 episode, the crackle of static gives way to the distant wail of a locomotive whistle and the sinister clink of a pickaxe against stone. Johnny's world-weary narration—that distinctive first-person drawl that made him America's favorite one-man insurance detective—guides listeners through a labyrinth of deception where old prospectors with long memories and smooth-talking developers with short ethics collide in a struggle for fortune. The atmosphere is thick with menace: crackling campfires, the nervous shuffle of suspicious characters, and always Johnny's sardonic observations cutting through the murk like a knife. You'll hear every detail of his investigation, from his opening report to his closing case summary, as he methodically uncovers whether this is a legitimate claim or an elaborate con—with a murder thrown in to complicate matters.</p>
-<p>*Yours Truly, Johnny Dollar* represented something uniquely American: the insurance investigator as existential hero, more interested in uncovering truth than in glory. From 1949 through 1962, Johnny Dollar became the longest-running dramatic program in radio history, and this late-period episode showcases why. The show's format—presenting each case as Johnny's own first-person narrative—created an intimate, almost confessional quality that drew millions of listeners into his morally complex world. By 1962, the show was broadcasting in a medium fighting for its life against television, yet these final episodes demonstrated radio's unmatched ability to ignite the imagination.</p>
+          <p>When Johnny Dollar steps off the train into the fog-shrouded Sierra Nevada foothills, he's hunting for more than just insurance fraud—he's chasing ghosts. A century-old mining claim has suddenly become valuable again, and someone is willing to kill to keep it buried. In this August 1962 episode, the crackle of static gives way to the distant wail of a locomotive whistle and the sinister clink of a pickaxe against stone. Johnny's world-weary narration—that distinctive first-person drawl that made him America's favorite one-man insurance detective—guides listeners through a labyrinth of deception where old prospectors with long memories and smooth-talking developers with short ethics collide in a struggle for fortune. The atmosphere is thick with menace: crackling campfires, the nervous shuffle of suspicious characters, and always Johnny's sardonic observations cutting through the murk like a knife. You'll hear every detail of his investigation, from his opening report to his closing case summary, as he methodically uncovers whether this is a legitimate claim or an elaborate con—with a murder thrown in to complicate matters.</p>
+<p>Yours Truly, Johnny Dollar represented something uniquely American: the insurance investigator as existential hero, more interested in uncovering truth than in glory. From 1949 through 1962, Johnny Dollar became the longest-running dramatic program in radio history, and this late-period episode showcases why. The show's format—presenting each case as Johnny's own first-person narrative—created an intimate, almost confessional quality that drew millions of listeners into his morally complex world. By 1962, the show was broadcasting in a medium fighting for its life against television, yet these final episodes demonstrated radio's unmatched ability to ignite the imagination.</p>
 <p>Join Johnny in the California gold country where old fortunes and older sins refuse to stay buried. The Gold Rush Matter awaits.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

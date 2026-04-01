@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1962 01 21 773 The Terrible Torch Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Terrible Torch Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1962 01 21 773 The Terrible Torch Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1962 01 21 773 The Terrible Torch Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1962 01 21 773 The Terrible Torch Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · January 21, 1962</span>
           </div>
-          <h1 class="episode__title">Ytjd 1962 01 21 773 The Terrible Torch Matter</h1>
+          <h1 class="episode__title">The Terrible Torch Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Terrible Torch Matter</p>
-<p>When a priceless violin vanishes in flames at a prestigious Manhattan concert hall, insurance investigator Johnny Dollar finds himself tangled in a case where arson, greed, and musical obsession collide in the shadows of the theater district. In this January 1962 episode, our everyman hero must navigate between desperate insurance claimants, bitter rivals in the classical music world, and a fire inspector convinced the blaze was no accident. The crackle of flames seems to echo through every interrogation scene, and Dollar's weary voice—world-worn but determined—cuts through the smoky atmospherics as he pieces together motives and opportunity. Is the torch work the act of a vengeful competitor, or does the truth lie buried deeper, hidden behind the curtain of high society and artistic temperament?</p>
-<p>*Yours Truly Johnny Dollar* arrived on CBS radio as a singular achievement: a hard-boiled detective show built entirely around a protagonist defined not by superhuman powers or government authority, but by his expense account. Created by writer Blake Edwards, the show became a favorite among audiences who appreciated its grounded realism and Johnny's conversational, first-person narration—a technique that made listeners feel like confidants in each investigation. By 1962, the show was in its final season, having already survived the medium's golden age and adapted to a new era of entertainment. This particular episode, with its sophisticated urban setting and morally complex characters, exemplifies why the series maintained devoted listeners right through its swan song.</p>
-<p>Don your fedora and dim the lights. Pull up a chair and let Johnny Dollar light his next cigarette as he untangles *The Terrible Torch Matter*—a case that proves even fire leaves trails, if you know where to look.</p>
+          <p>When a priceless violin vanishes in flames at a prestigious Manhattan concert hall, insurance investigator Johnny Dollar finds himself tangled in a case where arson, greed, and musical obsession collide in the shadows of the theater district. In this January 1962 episode, our everyman hero must navigate between desperate insurance claimants, bitter rivals in the classical music world, and a fire inspector convinced the blaze was no accident. The crackle of flames seems to echo through every interrogation scene, and Dollar's weary voice—world-worn but determined—cuts through the smoky atmospherics as he pieces together motives and opportunity. Is the torch work the act of a vengeful competitor, or does the truth lie buried deeper, hidden behind the curtain of high society and artistic temperament?</p>
+<p>Yours Truly Johnny Dollar arrived on CBS radio as a singular achievement: a hard-boiled detective show built entirely around a protagonist defined not by superhuman powers or government authority, but by his expense account. Created by writer Blake Edwards, the show became a favorite among audiences who appreciated its grounded realism and Johnny's conversational, first-person narration—a technique that made listeners feel like confidants in each investigation. By 1962, the show was in its final season, having already survived the medium's golden age and adapted to a new era of entertainment. This particular episode, with its sophisticated urban setting and morally complex characters, exemplifies why the series maintained devoted listeners right through its swan song.</p>
+<p>Don your fedora and dim the lights. Pull up a chair and let Johnny Dollar light his next cigarette as he untangles The Terrible Torch Matter—a case that proves even fire leaves trails, if you know where to look.</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

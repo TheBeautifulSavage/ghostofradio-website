@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1961 07 23 748 The Chuckanut Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Chuckanut Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1961 07 23 748 The Chuckanut Matter — Yours Truly Johnny Dollar (CBS, 1961). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1961 07 23 748 The Chuckanut Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1961 07 23 748 The Chuckanut Matter — Yours Truly Johnny Dollar (CBS, 1961). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · July 23, 1961</span>
           </div>
-          <h1 class="episode__title">Ytjd 1961 07 23 748 The Chuckanut Matter</h1>
+          <h1 class="episode__title">The Chuckanut Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Chuckanut Matter</p>
-<p>On a fog-shrouded July evening in 1961, insurance investigator Johnny Dollar finds himself entangled in the murky affairs of the Chuckanut region, where nothing is quite what it seems and a seemingly routine claim threatens to unravel into something far more sinister. With his trademark gravelly voice and world-weary observations, Dollar navigates a landscape of deception where the trail of evidence winds through shadowy dealings and questionable characters. The Pacific Northwest atmosphere—all dampness, isolation, and secrets—bleeds through the speakers as our hero digs deeper, his sharp investigative instincts pitted against forces that would rather keep certain truths buried. Expect the crackling authenticity of noir detective work translated to radio: the clink of a glass, the distant rumble of a boat engine, the measured footsteps of a man closing in on the truth.</p>
-<p>By 1961, *Yours Truly, Johnny Dollar* had become radio's most durable adventure series, having premiered on CBS in 1949 with a formula that proved irresistible to millions of listeners. Dollar himself—neither cop nor private eye, but an insurance investigator—occupied a unique niche in the golden age of radio drama, allowing writers to craft intricate puzzles of fraud, greed, and human weakness without the procedural constraints of law enforcement tales. The show's success lay in its meticulous plotting, its willingness to explore the grimy underbelly of ordinary life, and the chemistry between the audience and a protagonist who treated each case with the gravity it deserved. By this episode's date, the show was in its final stretch, yet maintaining the high standards that had made it essential listening.</p>
-<p>Settle in with the lights low and tune in to experience a vanished era of broadcast drama—where storytelling was paramount and the human voice, expertly deployed, could conjure entire worlds of suspense and intrigue. *Yours Truly, Johnny Dollar* awaits.</p>
+          <p>On a fog-shrouded July evening in 1961, insurance investigator Johnny Dollar finds himself entangled in the murky affairs of the Chuckanut region, where nothing is quite what it seems and a seemingly routine claim threatens to unravel into something far more sinister. With his trademark gravelly voice and world-weary observations, Dollar navigates a landscape of deception where the trail of evidence winds through shadowy dealings and questionable characters. The Pacific Northwest atmosphere—all dampness, isolation, and secrets—bleeds through the speakers as our hero digs deeper, his sharp investigative instincts pitted against forces that would rather keep certain truths buried. Expect the crackling authenticity of noir detective work translated to radio: the clink of a glass, the distant rumble of a boat engine, the measured footsteps of a man closing in on the truth.</p>
+<p>By 1961, Yours Truly, Johnny Dollar had become radio's most durable adventure series, having premiered on CBS in 1949 with a formula that proved irresistible to millions of listeners. Dollar himself—neither cop nor private eye, but an insurance investigator—occupied a unique niche in the golden age of radio drama, allowing writers to craft intricate puzzles of fraud, greed, and human weakness without the procedural constraints of law enforcement tales. The show's success lay in its meticulous plotting, its willingness to explore the grimy underbelly of ordinary life, and the chemistry between the audience and a protagonist who treated each case with the gravity it deserved. By this episode's date, the show was in its final stretch, yet maintaining the high standards that had made it essential listening.</p>
+<p>Settle in with the lights low and tune in to experience a vanished era of broadcast drama—where storytelling was paramount and the human voice, expertly deployed, could conjure entire worlds of suspense and intrigue. Yours Truly, Johnny Dollar awaits.</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

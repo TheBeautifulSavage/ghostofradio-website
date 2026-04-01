@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1955 10 31 251 The Valentine Matter Ep 1 — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Valentine Matter Ep 1 — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1955 10 31 251 The Valentine Matter Ep 1 — Yours Truly Johnny Dollar (CBS, 1955). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1955 10 31 251 The Valentine Matter Ep 1 — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1955 10 31 251 The Valentine Matter Ep 1 — Yours Truly Johnny Dollar (CBS, 1955). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · October 31, 1955</span>
           </div>
-          <h1 class="episode__title">Ytjd 1955 10 31 251 The Valentine Matter Ep 1</h1>
+          <h1 class="episode__title">The Valentine Matter Ep 1</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Valentine Matter - Part One</p>
-<p>Picture this: a rain-slicked Manhattan street, the amber glow of neon bleeding through fog, and Johnny Dollar stepping out of a cab with nothing but a notebook and that particular brand of weary confidence that comes from settling claims that others won't touch. On this Halloween Eve broadcast, Dollar finds himself tangled in a case that begins with a stolen emerald and ends—well, that's what the next five nights will reveal. What starts as a straightforward theft investigation in Manhattan's glittering jewelry district quickly spirals into shadowy complications involving a mysterious woman, a vanished insurance agent, and a secret that someone is willing to kill to keep buried. The Valentine Matter demands every ounce of Dollar's cunning as he navigates speakeasies, society parties, and back alleys where trust is a luxury and deception is currency.</p>
-<p>By 1955, *Yours Truly Johnny Dollar* had become the gold standard of American radio drama—a show that proved listeners craved intelligent, grown-up storytelling delivered with crisp dialogue and authentic atmosphere. Unlike the superheroes and soap operas crowding the airwaves, Johnny Dollar was everyman with edge: a freelance insurance investigator earning his "per diem" solving crimes one case at a time. Each episode, narrator Bob Bailey's world-weary delivery pulled audiences directly into Dollar's consciousness, making the insurance business feel as dangerous and morally complex as any noir thriller. The show's innovative use of sound design—every footstep, every drink poured, every door slammed—created an immersive experience that television, despite its growing popularity, couldn't yet match.</p>
+          <p>Picture this: a rain-slicked Manhattan street, the amber glow of neon bleeding through fog, and Johnny Dollar stepping out of a cab with nothing but a notebook and that particular brand of weary confidence that comes from settling claims that others won't touch. On this Halloween Eve broadcast, Dollar finds himself tangled in a case that begins with a stolen emerald and ends—well, that's what the next five nights will reveal. What starts as a straightforward theft investigation in Manhattan's glittering jewelry district quickly spirals into shadowy complications involving a mysterious woman, a vanished insurance agent, and a secret that someone is willing to kill to keep buried. The Valentine Matter demands every ounce of Dollar's cunning as he navigates speakeasies, society parties, and back alleys where trust is a luxury and deception is currency.</p>
+<p>By 1955, Yours Truly Johnny Dollar had become the gold standard of American radio drama—a show that proved listeners craved intelligent, grown-up storytelling delivered with crisp dialogue and authentic atmosphere. Unlike the superheroes and soap operas crowding the airwaves, Johnny Dollar was everyman with edge: a freelance insurance investigator earning his "per diem" solving crimes one case at a time. Each episode, narrator Bob Bailey's world-weary delivery pulled audiences directly into Dollar's consciousness, making the insurance business feel as dangerous and morally complex as any noir thriller. The show's innovative use of sound design—every footstep, every drink poured, every door slammed—created an immersive experience that television, despite its growing popularity, couldn't yet match.</p>
 <p>Settle in with a bourbon, dim the lights, and let the opening theme transport you back to 1955. The Valentine Matter awaits, unfolding across five nights of intrigue. This is radio drama at its finest.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

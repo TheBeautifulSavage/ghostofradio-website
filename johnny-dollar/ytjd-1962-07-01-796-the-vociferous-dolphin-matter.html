@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1962 07 01 796 The Vociferous Dolphin Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Vociferous Dolphin Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1962 07 01 796 The Vociferous Dolphin Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1962 07 01 796 The Vociferous Dolphin Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1962 07 01 796 The Vociferous Dolphin Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · July 1, 1962</span>
           </div>
-          <h1 class="episode__title">Ytjd 1962 07 01 796 The Vociferous Dolphin Matter</h1>
+          <h1 class="episode__title">The Vociferous Dolphin Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Vociferous Dolphin Matter</p>
-<p>When insurance investigator Johnny Dollar steps off the Bermuda ferry into a sultry July evening, the salt-tinged air carries more than the promise of tropical mystery—it carries danger. A seemingly straightforward claim involving a marine research facility spirals into a web of corporate intrigue, coded messages whispered between lab coats, and one very unusual dolphin whose behavior has triggered a half-million dollar insurance dispute. As Johnny navigates the humid nights and sun-scorched docks of Bermuda, nothing is quite as it seems. A missing researcher, a jealous colleague, and a creature whose unusual intelligence may hold the key to everything—this is vintage Johnny Dollar territory, where the investigation peels back layers of deception as methodically as a detective might examine evidence under a lamp's harsh glow. The writing crackles with mid-century skepticism about scientific progress and corporate greed, while the sound design transports you straight to those islands where secrets rot in the heat.</p>
-<p>By 1962, *Yours Truly Johnny Dollar* had become CBS's most enduring crime anthology, a show that refined the insurance investigation to an art form. Unlike the bombastic detectives of pulp fiction, Johnny operated in the gray spaces where claims and truth diverged, where ordinary people became entangled in extraordinary circumstances. This particular episode exemplifies the show's later sophistication—the plots grown more cerebral, the dialogue sharper, the moral ambiguities deeper. Radio itself was fading, television ascendant, yet *Johnny Dollar* remained uncompromising in its commitment to intelligent storytelling.</p>
-<p>Tune in to *The Vociferous Dolphin Matter* and discover why, after thirteen years on the air, this show still commanded devoted listeners who knew that the best mysteries unfold not on screen, but in the theater of the mind.</p>
+          <p>When insurance investigator Johnny Dollar steps off the Bermuda ferry into a sultry July evening, the salt-tinged air carries more than the promise of tropical mystery—it carries danger. A seemingly straightforward claim involving a marine research facility spirals into a web of corporate intrigue, coded messages whispered between lab coats, and one very unusual dolphin whose behavior has triggered a half-million dollar insurance dispute. As Johnny navigates the humid nights and sun-scorched docks of Bermuda, nothing is quite as it seems. A missing researcher, a jealous colleague, and a creature whose unusual intelligence may hold the key to everything—this is vintage Johnny Dollar territory, where the investigation peels back layers of deception as methodically as a detective might examine evidence under a lamp's harsh glow. The writing crackles with mid-century skepticism about scientific progress and corporate greed, while the sound design transports you straight to those islands where secrets rot in the heat.</p>
+<p>By 1962, Yours Truly Johnny Dollar had become CBS's most enduring crime anthology, a show that refined the insurance investigation to an art form. Unlike the bombastic detectives of pulp fiction, Johnny operated in the gray spaces where claims and truth diverged, where ordinary people became entangled in extraordinary circumstances. This particular episode exemplifies the show's later sophistication—the plots grown more cerebral, the dialogue sharper, the moral ambiguities deeper. Radio itself was fading, television ascendant, yet Johnny Dollar remained uncompromising in its commitment to intelligent storytelling.</p>
+<p>Tune in to The Vociferous Dolphin Matter and discover why, after thirteen years on the air, this show still commanded devoted listeners who knew that the best mysteries unfold not on screen, but in the theater of the mind.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

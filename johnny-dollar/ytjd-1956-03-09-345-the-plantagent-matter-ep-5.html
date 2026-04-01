@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1956 03 09 345 The Plantagent Matter Ep 5 — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Plantagent Matter Ep 5 — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1956 03 09 345 The Plantagent Matter Ep 5 — Yours Truly Johnny Dollar (CBS, 1956). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1956 03 09 345 The Plantagent Matter Ep 5 — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1956 03 09 345 The Plantagent Matter Ep 5 — Yours Truly Johnny Dollar (CBS, 1956). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · March 9, 1956</span>
           </div>
-          <h1 class="episode__title">Ytjd 1956 03 09 345 The Plantagent Matter Ep 5</h1>
+          <h1 class="episode__title">The Plantagent Matter Ep 5</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Plantagent Matter - Episode 5</p>
-<p>Picture this: it's a rain-slicked street corner in 1956, and insurance investigator Johnny Dollar is closing in on a truth that someone desperately wants to keep buried. In this fifth and final installment of "The Plantagent Matter," our weary protagonist faces his most dangerous moment yet—cornered between warring factions, each with everything to lose. The script crackles with the authentic grit of post-war noir, as Johnny's sharp wit becomes his only weapon against accusations that could destroy his reputation and his life. Listen for the unmistakable tension in Mandel Kramer's voice as he threads the needle between desperation and defiance, all while the haunting orchestral score underscores every revelation that brings him closer to the truth.</p>
-<p>*Yours Truly, Johnny Dollar* pioneered the insurance investigator drama during radio's golden age, transforming mundane claims investigations into genuine cliffhangers that riveted millions of listeners. By 1956, the show had perfected its formula: complex five-part serials that unfolded across a week's broadcasts, keeping audiences returning night after night. The "Plantagent Matter" exemplifies why the series remained a CBS staple for over a decade—it's smart, morally ambiguous storytelling that treats its audience like adults. Johnny Dollar himself became an American icon precisely because he was no caped crusader; he was a professional doing a job, yet finding himself tangled in webs of human greed, passion, and desperation that any listener could recognize.</p>
+          <p>Picture this: it's a rain-slicked street corner in 1956, and insurance investigator Johnny Dollar is closing in on a truth that someone desperately wants to keep buried. In this fifth and final installment of "The Plantagent Matter," our weary protagonist faces his most dangerous moment yet—cornered between warring factions, each with everything to lose. The script crackles with the authentic grit of post-war noir, as Johnny's sharp wit becomes his only weapon against accusations that could destroy his reputation and his life. Listen for the unmistakable tension in Mandel Kramer's voice as he threads the needle between desperation and defiance, all while the haunting orchestral score underscores every revelation that brings him closer to the truth.</p>
+<p>Yours Truly, Johnny Dollar pioneered the insurance investigator drama during radio's golden age, transforming mundane claims investigations into genuine cliffhangers that riveted millions of listeners. By 1956, the show had perfected its formula: complex five-part serials that unfolded across a week's broadcasts, keeping audiences returning night after night. The "Plantagent Matter" exemplifies why the series remained a CBS staple for over a decade—it's smart, morally ambiguous storytelling that treats its audience like adults. Johnny Dollar himself became an American icon precisely because he was no caped crusader; he was a professional doing a job, yet finding himself tangled in webs of human greed, passion, and desperation that any listener could recognize.</p>
 <p>If you've been following Johnny's investigation all week, tonight's the payoff you've been waiting for. Tune in and discover whether our hero can survive the deadly convergence of secrets, lies, and the people who'd kill to keep them hidden. The answer awaits when the final pieces of the Plantagent puzzle fall into place.</p>
         </div>
 
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

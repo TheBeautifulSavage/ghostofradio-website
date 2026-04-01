@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1949 10 15 021 Dr Otto Schmedlich — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>Dr Otto Schmedlich — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1949 10 15 021 Dr Otto Schmedlich — Yours Truly Johnny Dollar (CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1949 10 15 021 Dr Otto Schmedlich — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1949 10 15 021 Dr Otto Schmedlich — Yours Truly Johnny Dollar (CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · October 15, 1949</span>
           </div>
-          <h1 class="episode__title">Ytjd 1949 10 15 021 Dr Otto Schmedlich</h1>
+          <h1 class="episode__title">Dr Otto Schmedlich</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Yours Truly Johnny Dollar: Dr. Otto Schmedlich</p>
-<p>Step into the fog-shrouded streets of 1949 as insurance investigator Johnny Dollar takes on a case as murky and dangerous as any he's faced. "Dr. Otto Schmedlich" plunges you into the shadowy world of postwar espionage and medical intrigue, where a seemingly routine insurance claim masks something far more sinister. With only his wits, his expense account, and that distinctive dry narration, Dollar must untangle the mystery surrounding a European scientist whose arrival in America raises more questions than answers. The sound of rain on windows, the crackle of telephone lines, and the sharp snap of danger punctuate every moment as Johnny closes in on the truth. This is noir radio at its finest—intelligent, taut, and utterly absorbing.</p>
-<p>*Yours Truly Johnny Dollar* stands as one of the golden age's most sophisticated detective programs, eschewing the gimmicks of competitors for genuine investigative storytelling and complex characterization. Premiering on CBS in 1949, the show rode the postwar American appetite for realistic crime drama, anchored by Mandel Kramer's world-weary performance as the calculating, quotable Dollar. This early episode perfectly captures the show's early promise, blending the paranoia of the emerging Cold War with the timeless appeal of the insurance investigation procedural. Unlike the flashier detective shows of the era, *Johnny Dollar* earned critical respect by treating its audience as intelligent adults capable of following intricate plots and appreciating dry humor.</p>
-<p>If you've never experienced the particular satisfaction of old-time radio drama—that intimate marriage of voice, sound effects, and imagination—this is the perfect introduction. Tune in and discover why millions of listeners made *Yours Truly Johnny Dollar* their nightly appointment with suspense. Your expense account awaits.</p>
+          <p>Step into the fog-shrouded streets of 1949 as insurance investigator Johnny Dollar takes on a case as murky and dangerous as any he's faced. "Dr. Otto Schmedlich" plunges you into the shadowy world of postwar espionage and medical intrigue, where a seemingly routine insurance claim masks something far more sinister. With only his wits, his expense account, and that distinctive dry narration, Dollar must untangle the mystery surrounding a European scientist whose arrival in America raises more questions than answers. The sound of rain on windows, the crackle of telephone lines, and the sharp snap of danger punctuate every moment as Johnny closes in on the truth. This is noir radio at its finest—intelligent, taut, and utterly absorbing.</p>
+<p>Yours Truly Johnny Dollar stands as one of the golden age's most sophisticated detective programs, eschewing the gimmicks of competitors for genuine investigative storytelling and complex characterization. Premiering on CBS in 1949, the show rode the postwar American appetite for realistic crime drama, anchored by Mandel Kramer's world-weary performance as the calculating, quotable Dollar. This early episode perfectly captures the show's early promise, blending the paranoia of the emerging Cold War with the timeless appeal of the insurance investigation procedural. Unlike the flashier detective shows of the era, Johnny Dollar earned critical respect by treating its audience as intelligent adults capable of following intricate plots and appreciating dry humor.</p>
+<p>If you've never experienced the particular satisfaction of old-time radio drama—that intimate marriage of voice, sound effects, and imagination—this is the perfect introduction. Tune in and discover why millions of listeners made Yours Truly Johnny Dollar their nightly appointment with suspense. Your expense account awaits.</p>
         </div>
 
         
@@ -134,9 +133,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1962 05 27 791 The Zipp Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Zipp Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1962 05 27 791 The Zipp Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1962 05 27 791 The Zipp Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1962 05 27 791 The Zipp Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · May 27, 1962</span>
           </div>
-          <h1 class="episode__title">Ytjd 1962 05 27 791 The Zipp Matter</h1>
+          <h1 class="episode__title">The Zipp Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Zipp Matter</p>
-<p>When Johnny Dollar answers his phone on a gray May evening in 1962, he has no idea that a simple insurance claim will lead him into the shadowy underworld of a case that defies easy answers. *The Zipp Matter* crackles with the tension of a man caught between two worlds—the legitimate claims he's paid to investigate and the dangerous secrets people will kill to keep hidden. As Johnny peels back the layers of this seemingly routine matter, listeners will find themselves pulled into a web of deception where nobody quite is who they claim to be, and every clue seems to lead somewhere darker than the last. The episode exemplifies the show's trademark blend of hard-boiled dialogue, clever plotting, and that unmistakable atmosphere of post-war American urban anxiety—a world where trust is currency and information is weaponry.</p>
-<p>By 1962, *Yours Truly Johnny Dollar* had already established itself as one of radio's most enduring dramas, setting the gold standard for the insurance investigator genre since 1949. Star Bob Bailey's portrayal of the world-weary, cigarette-smoking sleuth became synonymous with late-night radio sophistication, appealing to adults who appreciated intelligent storytelling and moral complexity. The show's success lay in its refusal to offer simple solutions; each case exposed the compromises and contradictions lurking beneath ordinary American life. *The Zipp Matter* arrives during the show's final season—a period when the writers seemed to dig even deeper into psychological realism, crafting scenarios that lingered in the mind long after the final commercial break.</p>
-<p>If you appreciate vintage radio drama that doesn't insult your intelligence, pour yourself a drink, dim the lights, and settle in for *The Zipp Matter*. Johnny Dollar awaits.</p>
+          <p>When Johnny Dollar answers his phone on a gray May evening in 1962, he has no idea that a simple insurance claim will lead him into the shadowy underworld of a case that defies easy answers. The Zipp Matter crackles with the tension of a man caught between two worlds—the legitimate claims he's paid to investigate and the dangerous secrets people will kill to keep hidden. As Johnny peels back the layers of this seemingly routine matter, listeners will find themselves pulled into a web of deception where nobody quite is who they claim to be, and every clue seems to lead somewhere darker than the last. The episode exemplifies the show's trademark blend of hard-boiled dialogue, clever plotting, and that unmistakable atmosphere of post-war American urban anxiety—a world where trust is currency and information is weaponry.</p>
+<p>By 1962, Yours Truly Johnny Dollar had already established itself as one of radio's most enduring dramas, setting the gold standard for the insurance investigator genre since 1949. Star Bob Bailey's portrayal of the world-weary, cigarette-smoking sleuth became synonymous with late-night radio sophistication, appealing to adults who appreciated intelligent storytelling and moral complexity. The show's success lay in its refusal to offer simple solutions; each case exposed the compromises and contradictions lurking beneath ordinary American life. The Zipp Matter arrives during the show's final season—a period when the writers seemed to dig even deeper into psychological realism, crafting scenarios that lingered in the mind long after the final commercial break.</p>
+<p>If you appreciate vintage radio drama that doesn't insult your intelligence, pour yourself a drink, dim the lights, and settle in for The Zipp Matter. Johnny Dollar awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

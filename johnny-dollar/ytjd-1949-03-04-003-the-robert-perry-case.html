@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1949 03 04 003 The Robert Perry Case — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Robert Perry Case — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1949 03 04 003 The Robert Perry Case — Yours Truly Johnny Dollar (CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1949 03 04 003 The Robert Perry Case — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1949 03 04 003 The Robert Perry Case — Yours Truly Johnny Dollar (CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · March 4, 1949</span>
           </div>
-          <h1 class="episode__title">Ytjd 1949 03 04 003 The Robert Perry Case</h1>
+          <h1 class="episode__title">The Robert Perry Case</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -82,9 +82,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Robert Perry Case</p>
-<p>When the case file lands on Johnny Dollar's desk on a rain-slicked March evening in 1949, it carries the weight of a man's reputation—and possibly his life. The Robert Perry case pulls our intrepid insurance investigator into a labyrinth of accusations, alibis, and carefully constructed lies where every answer only deepens the mystery. As Johnny's distinctive voice guides you through smoke-filled rooms and shadowed corridors, you'll find yourself swept into the classic noir atmosphere that made this series an appointment for millions: the snap of crisp dialogue, the subtle menace in casual conversation, the constant tension between what people claim and what they actually mean. This early episode showcases the formula that would captivate audiences for over a decade—a puzzle that demands solving, a mystery that refuses easy answers, and a protagonist willing to dig deeper than most men would dare.</p>
-<p>*Yours Truly, Johnny Dollar* premiered on CBS Radio at precisely the moment when America's post-war anxieties made noir tales essential listening. The show's innovation was deceptively simple: rather than rely on gimmicks or supernatural elements, it grounded its mysteries in the mundane world of insurance investigation, where the real crime often lies not in violence but in deception. Johnny Dollar, played with world-weary intelligence by Bob Bailey and later other talented actors, became the everyman detective—smart, stubborn, and perpetually skeptical of convenient explanations. By 1949, the show was finding its footing, developing the taut storytelling and atmospheric production that would define the golden age of radio drama.</p>
+          <p>When the case file lands on Johnny Dollar's desk on a rain-slicked March evening in 1949, it carries the weight of a man's reputation—and possibly his life. The Robert Perry case pulls our intrepid insurance investigator into a labyrinth of accusations, alibis, and carefully constructed lies where every answer only deepens the mystery. As Johnny's distinctive voice guides you through smoke-filled rooms and shadowed corridors, you'll find yourself swept into the classic noir atmosphere that made this series an appointment for millions: the snap of crisp dialogue, the subtle menace in casual conversation, the constant tension between what people claim and what they actually mean. This early episode showcases the formula that would captivate audiences for over a decade—a puzzle that demands solving, a mystery that refuses easy answers, and a protagonist willing to dig deeper than most men would dare.</p>
+<p>Yours Truly, Johnny Dollar premiered on CBS Radio at precisely the moment when America's post-war anxieties made noir tales essential listening. The show's innovation was deceptively simple: rather than rely on gimmicks or supernatural elements, it grounded its mysteries in the mundane world of insurance investigation, where the real crime often lies not in violence but in deception. Johnny Dollar, played with world-weary intelligence by Bob Bailey and later other talented actors, became the everyman detective—smart, stubborn, and perpetually skeptical of convenient explanations. By 1949, the show was finding its footing, developing the taut storytelling and atmospheric production that would define the golden age of radio drama.</p>
 <p>Tonight, tune in and discover why audiences huddled around their radios to follow this man with the quick mind and quicker wit. The answers to the Robert Perry case await—if you're brave enough to investigate.</p>
         </div>
 
@@ -134,9 +133,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

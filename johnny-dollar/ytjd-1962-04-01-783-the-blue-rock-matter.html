@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1962 04 01 783 The Blue Rock Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Blue Rock Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1962 04 01 783 The Blue Rock Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1962 04 01 783 The Blue Rock Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1962 04 01 783 The Blue Rock Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · April 1, 1962</span>
           </div>
-          <h1 class="episode__title">Ytjd 1962 04 01 783 The Blue Rock Matter</h1>
+          <h1 class="episode__title">The Blue Rock Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,9 +87,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Blue Rock Matter</p>
-<p>When insurance investigator Johnny Dollar steps off the train in the dusty mining town of Blue Rock, Colorado, he finds himself entangled in a case of sabotage, murder, and corporate greed that cuts deeper than the silver veins running beneath the earth. A routine claim investigation transforms into a desperate hunt for the truth when a mining supervisor turns up dead—and the trail leads straight to the heart of a family empire built on decades of secrets. As Johnny navigates the treacherous landscape of small-town politics and hidden motives, the listener is drawn into an atmosphere thick with tension, where every conversation crackles with the possibility of danger and deception. The March snow falls silent over Blue Rock as our hero digs deeper, following a trail of clues that grow more sinister with each discovery, building toward a climactic confrontation that will shake the foundations of a community.</p>
-<p>*Yours Truly, Johnny Dollar* stands as one of radio's finest achievements in the detective genre, and this 1962 episode showcases why the program remained vital even as television threatened radio's dominance. With its documentary-style realism, complex plots, and Bob Bailey's world-weary yet determined performance as the "man with the action-packed expense account," the series captured the spirit of post-war American cynicism and moral ambiguity. By 1962, the show had already become an institution, proving that radio drama could compete with any medium by offering intelligent writing, atmospheric sound design, and stories that lingered in the imagination.</p>
+          <p>When insurance investigator Johnny Dollar steps off the train in the dusty mining town of Blue Rock, Colorado, he finds himself entangled in a case of sabotage, murder, and corporate greed that cuts deeper than the silver veins running beneath the earth. A routine claim investigation transforms into a desperate hunt for the truth when a mining supervisor turns up dead—and the trail leads straight to the heart of a family empire built on decades of secrets. As Johnny navigates the treacherous landscape of small-town politics and hidden motives, the listener is drawn into an atmosphere thick with tension, where every conversation crackles with the possibility of danger and deception. The March snow falls silent over Blue Rock as our hero digs deeper, following a trail of clues that grow more sinister with each discovery, building toward a climactic confrontation that will shake the foundations of a community.</p>
+<p>Yours Truly, Johnny Dollar stands as one of radio's finest achievements in the detective genre, and this 1962 episode showcases why the program remained vital even as television threatened radio's dominance. With its documentary-style realism, complex plots, and Bob Bailey's world-weary yet determined performance as the "man with the action-packed expense account," the series captured the spirit of post-war American cynicism and moral ambiguity. By 1962, the show had already become an institution, proving that radio drama could compete with any medium by offering intelligent writing, atmospheric sound design, and stories that lingered in the imagination.</p>
 <p>Step into the dark corridors of insurance investigation and corporate malfeasance. Tune in to this gripping episode and discover why Johnny Dollar's cases became legendary.</p>
         </div>
 
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

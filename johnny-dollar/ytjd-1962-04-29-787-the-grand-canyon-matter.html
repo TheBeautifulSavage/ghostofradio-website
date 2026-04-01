@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1962 04 29 787 The Grand Canyon Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Grand Canyon Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1962 04 29 787 The Grand Canyon Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1962 04 29 787 The Grand Canyon Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1962 04 29 787 The Grand Canyon Matter — Yours Truly Johnny Dollar (CBS, 1962). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · April 29, 1962</span>
           </div>
-          <h1 class="episode__title">Ytjd 1962 04 29 787 The Grand Canyon Matter</h1>
+          <h1 class="episode__title">The Grand Canyon Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Grand Canyon Matter</p>
-<p>When insurance investigator Johnny Dollar arrives in Arizona to investigate a dubious claim, he finds himself drawn into a web of deception as tangled as the Colorado River's ancient gorge. A supposedly accidental death at the rim becomes increasingly suspicious as Johnny digs deeper, uncovering financial desperation, a tangled love affair, and a motive buried as deep as the canyon floor itself. With only the dry desert wind and his quick wit as companions, Johnny must navigate between helpful rangers, evasive witnesses, and his own doubts about what really happened that fateful afternoon. The desert landscape becomes almost another character—isolating, unforgiving, and full of secrets. By the time Johnny pieces together the truth, listeners will find themselves equally unsure of what they believed, in the best tradition of the show's expertly crafted mysteries.</p>
-<p>*Yours Truly, Johnny Dollar* stands as the longest-running dramatic series in radio history, and for good reason. The show pioneered a uniquely American noir sensibility—the hard-boiled insurance investigator replacing the traditional private eye as our guide through a murky world of human weakness and greed. What made the series endure through thirteen years and nearly a thousand episodes was its commitment to authentic detail and moral complexity; Johnny Dollar never encountered a simple case, and neither would his listeners. By 1962, as television was claiming radio's crown, episodes like this one represented the medium at its finest, proving that imagination and superior writing could still captivate audiences without a single visual aid.</p>
-<p>Don't miss this sterling example of radio detective drama at its peak. Tune in to *The Grand Canyon Matter* and rediscover why millions of listeners made Johnny Dollar appointment listening, night after night.</p>
+          <p>When insurance investigator Johnny Dollar arrives in Arizona to investigate a dubious claim, he finds himself drawn into a web of deception as tangled as the Colorado River's ancient gorge. A supposedly accidental death at the rim becomes increasingly suspicious as Johnny digs deeper, uncovering financial desperation, a tangled love affair, and a motive buried as deep as the canyon floor itself. With only the dry desert wind and his quick wit as companions, Johnny must navigate between helpful rangers, evasive witnesses, and his own doubts about what really happened that fateful afternoon. The desert landscape becomes almost another character—isolating, unforgiving, and full of secrets. By the time Johnny pieces together the truth, listeners will find themselves equally unsure of what they believed, in the best tradition of the show's expertly crafted mysteries.</p>
+<p>Yours Truly, Johnny Dollar stands as the longest-running dramatic series in radio history, and for good reason. The show pioneered a uniquely American noir sensibility—the hard-boiled insurance investigator replacing the traditional private eye as our guide through a murky world of human weakness and greed. What made the series endure through thirteen years and nearly a thousand episodes was its commitment to authentic detail and moral complexity; Johnny Dollar never encountered a simple case, and neither would his listeners. By 1962, as television was claiming radio's crown, episodes like this one represented the medium at its finest, proving that imagination and superior writing could still captivate audiences without a single visual aid.</p>
+<p>Don't miss this sterling example of radio detective drama at its peak. Tune in to The Grand Canyon Matter and rediscover why millions of listeners made Johnny Dollar appointment listening, night after night.</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

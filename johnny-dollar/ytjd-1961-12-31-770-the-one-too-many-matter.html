@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1961 12 31 770 The One Too Many Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The One Too Many Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1961 12 31 770 The One Too Many Matter — Yours Truly Johnny Dollar (CBS, 1961). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1961 12 31 770 The One Too Many Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1961 12 31 770 The One Too Many Matter — Yours Truly Johnny Dollar (CBS, 1961). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · December 31, 1961</span>
           </div>
-          <h1 class="episode__title">Ytjd 1961 12 31 770 The One Too Many Matter</h1>
+          <h1 class="episode__title">The One Too Many Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,10 +87,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The One Too Many Matter</p>
-<p>As the clock ticks toward midnight on New Year's Eve, insurance investigator Johnny Dollar finds himself ensnared in a case that threatens to become his final assignment. A mysterious client arrives at his office just as the city celebrates outside, bringing word of a death that insurance companies would prefer to forget—one too many claims, one too many questions. With each commercial break marked by the jingle of his expense account, Dollar ventures deeper into a world of forged documents and desperate men, where the line between accident and murder blurs beneath the neon glow of early sixties Los Angeles. The tension builds relentlessly as Johnny races against both the clock and his own demons, knowing that somewhere in this tangled web of lies lies the truth that will either save or doom him. By the time that final bell tolls at midnight, nothing will ever be quite the same.</p>
-<p>*Yours Truly, Johnny Dollar* stands as one of radio's most enduring masterpieces—a thinking man's noir that proved the medium could sustain complex, serialized storytelling with intelligence and style. Throughout the 1950s and into the early 1960s, creator-writer John Michael Hayes crafted episodes that rivaled any television drama, grounding each investigation in meticulous detail and moral ambiguity. By 1961, as the medium itself faced extinction from television, the show remained a beacon of sophisticated adult drama, with announcer Herb Butterfield's warm narration guiding listeners through Johnny's personal journey alongside his professional cases.</p>
-<p>Don't let this New Year's Eve pass without experiencing one of radio's finest hours. Step into Johnny Dollar's office, light a cigarette, and prepare yourself for *The One Too Many Matter*—a case that proves why some stories demand to be heard in the dark.</p>
+          <p>As the clock ticks toward midnight on New Year's Eve, insurance investigator Johnny Dollar finds himself ensnared in a case that threatens to become his final assignment. A mysterious client arrives at his office just as the city celebrates outside, bringing word of a death that insurance companies would prefer to forget—one too many claims, one too many questions. With each commercial break marked by the jingle of his expense account, Dollar ventures deeper into a world of forged documents and desperate men, where the line between accident and murder blurs beneath the neon glow of early sixties Los Angeles. The tension builds relentlessly as Johnny races against both the clock and his own demons, knowing that somewhere in this tangled web of lies lies the truth that will either save or doom him. By the time that final bell tolls at midnight, nothing will ever be quite the same.</p>
+<p>Yours Truly, Johnny Dollar stands as one of radio's most enduring masterpieces—a thinking man's noir that proved the medium could sustain complex, serialized storytelling with intelligence and style. Throughout the 1950s and into the early 1960s, creator-writer John Michael Hayes crafted episodes that rivaled any television drama, grounding each investigation in meticulous detail and moral ambiguity. By 1961, as the medium itself faced extinction from television, the show remained a beacon of sophisticated adult drama, with announcer Herb Butterfield's warm narration guiding listeners through Johnny's personal journey alongside his professional cases.</p>
+<p>Don't let this New Year's Eve pass without experiencing one of radio's finest hours. Step into Johnny Dollar's office, light a cigarette, and prepare yourself for The One Too Many Matter—a case that proves why some stories demand to be heard in the dark.</p>
         </div>
 
         
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

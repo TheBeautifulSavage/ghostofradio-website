@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ytjd 1961 10 08 759 The Medium Rare Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
+  <title>The Medium Rare Matter — Yours Truly Johnny Dollar | Ghost of Radio</title>
   <meta name="description" content="Listen to Ytjd 1961 10 08 759 The Medium Rare Matter — Yours Truly Johnny Dollar (CBS, 1961). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ytjd 1961 10 08 759 The Medium Rare Matter — Yours Truly Johnny Dollar">
   <meta property="og:description" content="Listen to Ytjd 1961 10 08 759 The Medium Rare Matter — Yours Truly Johnny Dollar (CBS, 1961). Classic old time radio streaming free on Ghost of Radio.">
@@ -53,7 +53,7 @@
             <span class="episode__show">Yours Truly Johnny Dollar</span>
             <span class="episode__network">CBS · October 8, 1961</span>
           </div>
-          <h1 class="episode__title">Ytjd 1961 10 08 759 The Medium Rare Matter</h1>
+          <h1 class="episode__title">The Medium Rare Matter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -87,9 +87,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Medium Rare Matter</p>
-<p>When insurance investigator Johnny Dollar steps into a spiritualist's parlor on a fog-thick October evening, he expects to find fraud—but instead discovers something far more sinister lurking beneath the velvet curtains and séance table knockings. A wealthy widow's missing diamonds, a medium claiming contact with the dead, and a cast of desperate characters all converge in this quintessential 1961 episode that crackles with the kind of atmospheric tension that made *Yours Truly Johnny Dollar* appointment listening for millions. As Johnny peels back layer after layer of deception, the line between the supernatural and the criminal grows deliciously blurred, with danger following our hero through dimly lit drawing rooms and shadowy backstage secrets. You'll hear the unmistakable snap of Bob Bailey's delivery, that rapid-fire narration that made Johnny Dollar the thinking person's gumshoe—a man who trusted his wits more than his fists, his insurance adjuster's eye keener than any cop's badge.</p>
-<p>By 1961, *Yours Truly Johnny Dollar* had already established itself as CBS's answer to hard-boiled detective fiction, bringing the prose poetry of Raymond Chandler to the intimate medium of radio. What set the show apart from countless other crime dramas was its meticulous construction: each 25-minute episode unfolded like a perfectly plotted short story, with Johnny's first-person narration creating an immediacy that kept listeners hanging on every word. The show's longevity—running successfully for over a decade—testified to its appeal during an era when television was beginning to steal radio's audience. Episodes like "The Medium Rare Matter" prove why devoted fans still tune in today.</p>
+          <p>When insurance investigator Johnny Dollar steps into a spiritualist's parlor on a fog-thick October evening, he expects to find fraud—but instead discovers something far more sinister lurking beneath the velvet curtains and séance table knockings. A wealthy widow's missing diamonds, a medium claiming contact with the dead, and a cast of desperate characters all converge in this quintessential 1961 episode that crackles with the kind of atmospheric tension that made Yours Truly Johnny Dollar appointment listening for millions. As Johnny peels back layer after layer of deception, the line between the supernatural and the criminal grows deliciously blurred, with danger following our hero through dimly lit drawing rooms and shadowy backstage secrets. You'll hear the unmistakable snap of Bob Bailey's delivery, that rapid-fire narration that made Johnny Dollar the thinking person's gumshoe—a man who trusted his wits more than his fists, his insurance adjuster's eye keener than any cop's badge.</p>
+<p>By 1961, Yours Truly Johnny Dollar had already established itself as CBS's answer to hard-boiled detective fiction, bringing the prose poetry of Raymond Chandler to the intimate medium of radio. What set the show apart from countless other crime dramas was its meticulous construction: each 25-minute episode unfolded like a perfectly plotted short story, with Johnny's first-person narration creating an immediacy that kept listeners hanging on every word. The show's longevity—running successfully for over a decade—testified to its appeal during an era when television was beginning to steal radio's audience. Episodes like "The Medium Rare Matter" prove why devoted fans still tune in today.</p>
 <p>Don't miss this masterwork of mystery and misdirection. Settle in, dim the lights, and let Johnny Dollar guide you through a case where seeing is decidedly not believing.</p>
         </div>
 
@@ -126,9 +125,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
