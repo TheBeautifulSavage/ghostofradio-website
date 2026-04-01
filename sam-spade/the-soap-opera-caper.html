@@ -60,7 +60,7 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-soap-opera-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p>*</p>
 <p>In "The Soap Opera Caper," a sleek black sedan pulls up to a bustling radio station in downtown Los Angeles, where Sam Spade, the city's most enigmatic private detective, is set to investigate an elaborate case involving a soap opera and its starlet. The episode opens with Spade receiving a mysterious letter that hints at blackmail against the show's leading lady, Laura Fairbanks, who is both admired and feared for her intense on-screen presence. As he steps into the radio studio’s chaotic atmosphere, with sound effects echoing off walls and scripts flying through the air, Sam quickly uncovers layers of deception and intrigue surrounding a recent script change that threatened to ruin an actress's career. The drama escalates when Spade meets Laura herself—beautiful but brittle, with secrets buried deep beneath her flawless makeup and perfectly coiffed hair. As he delves deeper into the case, unraveling clues hidden in the soap opera’s scripts and broadcast recordings, it becomes clear that nothing is as simple or straightforward as a Hollywood melodrama might suggest.</p>
 
 <div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p>The year 1951 was a time of significant global tension and domestic change. In America, fears of communism were pervasive, with Senator Joseph McCarthy leading aggressive investigations into alleged communist infiltration within the government, military, and entertainment industry. This period saw a chilling atmosphere in the United States as individuals and organizations faced scrutiny over their political leanings. Additionally, the Korean War was intensifying, bringing home to Americans the harsh reality of another global conflict after World War II. The nation was also witnessing shifts in culture and society; women were returning to more traditional roles after WWII’s industrial surge, while the baby boom was beginning to reshape family structures. Against this backdrop, radio drama like "The Adventures of Sam Spade" offered an escape from reality—a place where listeners could immerse themselves in mystery and adventure, far removed from Cold War anxieties and everyday pressures.</p>
@@ -86,12 +86,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

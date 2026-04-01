@@ -60,18 +60,18 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-251235679-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>The December 15, 1950 episode of "The Adventures of Sam Spade," titled "The 251235679 Caper," unfolds like a dense fog over the neon-lit streets of San Francisco. The plot revolves around Spade's latest client, an enigmatic woman named Evelyn Lane, who presents him with a cryptic sequence of numbers: 251235679. This innocuous string of digits leads to a web of espionage and betrayal that intertwines the city's underworld with its political elite. The episode is a masterclass in atmospheric tension, as Spade navigates a maze of dead ends, threats, and double-crosses. Each turn reveals another layer of corruption, from corrupt politicians to greedy businessmen, all vying for control over a secret weapon that could tip the balance of power globally.</p>
 <p>Evelyn Lane proves to be a character of profound depth and mystery; her past entwines with Spade's own, creating an emotional resonance that elevates the episode beyond mere detective work. The chemistry between Sam Spade and his assistant, Effie Dexter, is equally compelling, as they exchange wry banter and unspoken trust amidst the chaos. The voice acting by Howard Shaw captures the dry wit and steely resolve of Spade, making him a figure both distant and deeply human—a man haunted by his past but driven by a fierce sense of justice.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1950</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1950</h3><p></p>
 <p>The year 1950 was a time of profound transition in America. The nation had emerged from World War II as an economic superpower, yet the Cold War's shadow loomed large. With tensions escalating between the United States and the Soviet Union, fears of communist infiltration were pervasive. McCarthyism began to take root, leading to widespread paranoia about subversive activities within government institutions. Americans feared not only foreign threats but also internal betrayal, a climate that resonated deeply with the plot's themes in "The 251235679 Caper."</p>
 <p>On an economic front, post-war prosperity was mixed with uncertainty. The GI Bill had helped millions of veterans return to civilian life, boosting housing and consumer markets, yet inflation and labor disputes also challenged stability. Radio dramas like "Sam Spade" provided a form of escapism from these anxieties while tapping into them artistically. They offered listeners an outlet for their fears about espionage, betrayal, and the loss of American values in an increasingly globalized world.</p>
 <p>The medium itself was at a crossroads. Television was beginning to encroach on radio's dominance but had yet to fully establish its supremacy. This period saw radio companies scrambling to innovate, with "Sam Spade" exemplifying this trend through its complex plots and intricate soundscapes that leveraged the unique strengths of audio storytelling.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>What makes "The 251235679 Caper" stand out is not just its narrative depth but also its craft. Howard Shaw's performance as Sam Spade encapsulates the essence of radio drama, where characters are defined through dialogue and sound alone. The episode showcases the power of this medium to create vivid images and emotional connections without visual aids, a testament to the artistry of radio storytelling.</p>
 <p>Moreover, "The 251235679 Caper" speaks directly to contemporary fears about technology and its implications on society. In an age where numbers and codes held the keys to power, the episode foreshadowed concerns that continue to resonate today—concerns over surveillance, cybersecurity, and the ethical use of advanced technologies. Its exploration of these themes through the lens of 1950's fears makes it a timeless piece of entertainment and social commentary, highlighting why radio dramas remain relevant even as media consumption shifts towards more visual formats.</p>
 
@@ -94,12 +94,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

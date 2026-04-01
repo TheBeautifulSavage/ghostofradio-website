@@ -60,19 +60,19 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/chargogagog.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>"The Adventures of Sam Spade," which aired September 25, 1949, presents an atmospheric and gripping episode titled "Chargogagog." This tale unfolds in a small, isolated community nestled deep within the mountains, where the fog hangs heavy and secrets run thick. As private detective Sam Spade investigates a series of mysterious disappearances, he finds himself entangled in a web of deceit spun by the town’s elite. The episode masterfully captures the ominous mood with its haunting sound effects—ominous echoes, eerie wind chimes, and distant whispers—and Bernard Herrmann's evocative score heightens the suspense as Spade navigates through darkened back alleys and dimly lit parlors.</p>
 <p>At the center of this drama is Sam Spade himself, a character who embodies both cynicism and resilience. Played with a gruff authority by Howard Smith, Spade’s relentless pursuit of truth often puts him at odds with the townsfolk, whose faces shift from suspicion to hostility as they fear his interference will expose their illicit activities. The episode climaxes in a chilling confrontation where Spade uncovers a sinister plot involving human trafficking and organ harvesting—a revelation that shakes even the most hardened investigators.</p>
 <p>Chargogagog is not just a place but a metaphor for the darkness lurking beneath the surface of societal norms, and Sam Spade’s unwavering determination to expose it serves as a beacon of justice in an otherwise murky landscape. The episode's blend of noir elements with supernatural undertones creates a chilling narrative that keeps listeners on the edge of their seats.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1949</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1949</h3><p></p>
 <p>In 1949, America was at a pivotal moment between the end of World War II and the onset of the Cold War era. The nation had emerged from years of global conflict with a mixture of optimism and apprehension about its future role in international affairs. Domestically, the country experienced an economic boom but also grappled with social tensions and fears over subversion by communist sympathizers. Joseph McCarthy's early rhetoric began to resonate among Americans concerned about national security and ideological threats.</p>
 <p>Radio dramas like "The Adventures of Sam Spade" thrived in this atmosphere of uncertainty. They offered a platform for exploring societal issues through the lens of fictional narratives, reflecting broader cultural anxieties and moral dilemmas faced by ordinary citizens. The medium's ability to evoke vivid imagery with minimal visual cues allowed listeners to project their fears onto characters like Sam Spade who battled corruption and injustice, resonating deeply with audiences who sought comfort in stories that mirrored real-world challenges.</p>
 <p>Moreover, the burgeoning post-war culture saw a growing interest in entertainment that tackled complex themes such as crime, espionage, and ethical dilemmas. Programs like "Spade" tapped into these interests by weaving intricate plots that challenged listeners to question their assumptions about right and wrong, much like how contemporary films and novels were doing on other fronts.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>"Chargogagog," despite being a work of fiction, exemplifies the enduring power of radio drama to engage audiences through evocative storytelling. Howard Smith's portrayal of Sam Spade is a tour de force of voice acting that captures the character’s weary yet determined spirit, allowing listeners to feel the weight of his moral burdens and the risks he takes for justice. The episode's intricate plot, combining elements of noir detective fiction with supernatural horror, showcases the versatility of radio as a medium capable of delivering complex narratives without relying on visual cues.</p>
 <p>Furthermore, "Chargogagog" remains relevant today because it speaks to timeless themes such as corruption, fear, and resistance against oppression—issues that continue to resonate in contemporary society. Its ability to provoke thought and stir emotions through sound alone underscores the unique artistic merit of radio drama, a form that has seen resurgence in popularity among aficionados seeking immersive audio experiences.</p>
 <p>In sum, "Chargogagog" is not merely an entertaining episode; it is a testament to the enduring legacy of classic radio storytelling—a medium that continues to captivate and inspire new generations of listeners.</p>
@@ -96,12 +96,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

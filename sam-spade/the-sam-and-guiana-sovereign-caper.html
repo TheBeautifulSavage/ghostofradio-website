@@ -60,7 +60,7 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-sam-and-guiana-sovereign-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p>*</p>
 <p>"The Sam And Guiana Sovereign Caper" is a thrilling and atmospheric tale in "The Adventures of Sam Spade," one that captures the essence of noir detective storytelling through its intricate plot and palpable tension. Set against the backdrop of post-war America, where disillusionment and paranoia run rampant, Sam Spade finds himself embroiled in a high-stakes mystery involving stolen jewels from South America and a mysterious conspiracy lurking beneath the city's veneer of normalcy. The episode begins with Spade receiving an urgent message from his old flame, Miss Ophelia Larkin, who is now involved in an unusual business venture with a group of dubious characters. As Spade delves deeper into the case, he encounters a web of deceit and danger, navigating through dimly lit streets where every shadow could hide an enemy. The narrative bristles with suspense as Spade unravels clues leading to a secret society that wields considerable influence over both local politics and international trade routes.</p>
 <p>The episode is not just a series of events but a character-driven drama, showcasing the complexities of Sam Spade's personality. With his trademark blend of cynicism and sharp wit, Spade interacts with a colorful array of suspects: the eccentric millionaire who claims to have unearthed ancient treasures; the mysterious woman whose only purpose seems to be leading Spade into more danger; and the corrupt cop who offers tempting bribes in exchange for turning a blind eye. Each interaction paints a vivid picture of a world where trust is hard-earned, if earned at all, and every decision carries significant risk.</p>
 
@@ -88,12 +88,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

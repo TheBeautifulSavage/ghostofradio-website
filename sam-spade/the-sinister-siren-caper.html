@@ -60,19 +60,19 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-sinister-siren-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>"The Sinister Siren Caper" takes listeners deep into the dark underbelly of a bustling metropolis where private detective Sam Spade navigates a web of deceit and danger. The episode opens with Spade receiving an urgent call from one of his many dubious clients, Lila Vane, a sultry and enigmatic femme fatale who claims to be in grave peril. She describes being followed by shadowy figures and warns that her life is at stake if she doesn’t find the missing blueprints for an atomic bomb component hidden somewhere within the city. The setting is fraught with tension and danger, as Spade’s investigation leads him through seedy bars, dimly lit alleys, and high-society cocktail parties, each location bringing a new layer of complexity to the plot.</p>
 <p>The narrative quickly escalates when Spade discovers that Lila Vane is not merely a victim but perhaps an active player in her own perilous game. As he delves deeper into the mystery, his instincts are tested by a series of unexpected twists and betrayals. The air thickens with suspicion as Spade uncovers evidence linking Lila to a shadowy organization intent on stealing atomic secrets for nefarious purposes abroad. This episode is particularly gripping due to its relentless pacing and the palpable sense that every turn could be Spade’s last. The dialogue crackles with menace, and each character, from the seedy nightclub owner to the high-powered lawyer defending Lila, seems to have their own agenda.</p>
 <p>As the plot unravels, Sam Spade is left questioning who he can trust and what exactly lies at the heart of this perilous game. The episode climaxes in a tense showdown where Spade must make a life-or-death decision that will not only determine his fate but also impact the broader geopolitical landscape of a post-war world.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p></p>
 <p>The year 1951 was a period marked by significant tensions and transformations, both at home and abroad. Following World War II, the United States found itself in an increasingly tense Cold War with the Soviet Union, where espionage and atomic secrets were at the forefront of global politics. The fear of communism and nuclear proliferation permeated every aspect of American life, shaping cultural narratives such as "The Sinister Siren Caper." Radio dramas like this one tapped into these fears, weaving them into thrilling stories that resonated with listeners who lived in an age where the line between reality and fiction was often blurred.</p>
 <p>Domestically, the nation grappled with post-war economic changes. The transition from wartime production to peacetime industries brought about both opportunities and challenges, including labor disputes and strikes. These social dynamics were mirrored in radio shows that depicted characters struggling against adversity, whether it was a private eye navigating a criminal underworld or everyday citizens facing the uncertainties of job transitions.</p>
 <p>Amidst these tensions, Americans also held onto hope for progress and prosperity. The Korean War, which began in 1950, added to existing fears but also spurred technological advancements and military alliances that would shape future international relations. Radio dramas like "The Adventures of Sam Spade" offered an escape from reality while simultaneously reflecting the complexities of the era, providing listeners with a vicarious experience of adventure and suspense.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>"The Sinister Siren Caper" stands out not only for its gripping narrative but also for its masterful use of audio storytelling techniques. The episode showcases the ability of radio drama to convey intense visual imagery through dialogue, sound effects, and music alone. The sparse yet evocative descriptions of setting allow listeners to paint their own vivid pictures, immersing them in a world of mystery and danger. Moreover, the episode’s exploration of themes such as espionage and nuclear proliferation remains relevant today, making it a timeless piece of cultural commentary that continues to resonate with contemporary audiences who appreciate historical context and sophisticated storytelling.</p>
 
 <p><em>"The Adventures of Sam Spade, detective."</em></p>
@@ -94,12 +94,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

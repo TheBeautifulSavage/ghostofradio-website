@@ -60,18 +60,18 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-string-of-death-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>The String of Death Caper is a gripping installment in The Adventures of Sam Spade, broadcast on February 2, 1951, that masterfully blends suspense with the gritty realism characteristic of Dashiell Hammett’s original detective fiction. In this episode, private investigator Sam Spade (voiced by Howard Grimm) finds himself embroiled in a web of deceit and danger when he is hired to uncover the truth behind the mysterious disappearance of a valuable necklace known as the "String of Death." The narrative unfolds with a palpable sense of urgency, set against the backdrop of San Francisco’s neon-lit streets and fog-shrouded alleys. Spade navigates through a labyrinth of suspects, each harboring secrets and motives that threaten to pull him into a deadly game of cat and mouse.</p>
 <p>The drama intensifies as Spade uncovers clues leading him to a high-stakes poker club frequented by the city’s elite. Here, he encounters a cast of characters who are as enigmatic as they are dangerous: the slick-talking gambler with eyes that shift nervously at every sound; the elegant socialite who seems more interested in keeping her past hidden than catching thieves; and the bumbling but loyal cop, Tom Polhaus (voiced by William Conrad), whose presence offers a stark contrast to Spade’s world-weariness. As night falls and shadows lengthen, tension escalates with each revelation, culminating in a heart-stopping confrontation that tests Spade’s nerves and mettle.</p>
 <p>The episode is a testament to the power of radio drama to paint vivid landscapes through sound alone. The soundscape, meticulously crafted by composer Leo Gauthier, complements Grimm’s nuanced portrayal of Sam Spade, breathing life into an auditory narrative that leaves listeners on edge until the very last minute.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p></p>
 <p>The year 1951 was a time of profound change and uncertainty in America. The country found itself grappling with the aftermath of World War II and the dawn of a new era marked by Cold War tensions and the looming threat of nuclear annihilation. Public opinion was divided over the Korean War, which had intensified international hostilities and strained domestic morale. Americans were also deeply concerned about internal threats such as communist infiltration, exemplified by Senator Joseph McCarthy’s infamous hearings that year. The fear of subversion and espionage permeated every facet of society, casting a long shadow of suspicion and paranoia.</p>
 <p>Economically, the post-war boom was well underway, but social issues like racial segregation continued to fester, leading to significant unrest in urban areas across the country. In this climate of apprehension and hope, radio dramas like The Adventures of Sam Spade provided an escape from reality while also reflecting contemporary anxieties through their narratives. Listeners found solace in the familiar tropes of detective fiction—crime-solving, moral ambiguity, and the triumph of individual ingenuity over collective fear. Radio’s ability to engage audiences emotionally without visual distractions made it a powerful medium for storytelling during this period.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>The String of Death Caper stands out not only as an exemplary piece of radio drama but also as a reflection of its era’s cultural preoccupations and anxieties. Howard Grimm’s performance as Sam Spade captures the character’s stoic resilience and moral complexity, embodying the resilience of Americans in the face of Cold War uncertainties. The episode’s intricate plot and well-crafted dialogue underscore the craft involved in radio storytelling, which relies entirely on auditory cues to immerse listeners in a rich narrative tapestry. In an age where television was beginning to overshadow traditional broadcasting, The Adventures of Sam Spade reminds us why classic radio dramas remain compelling works of art that continue to captivate audiences today.</p>
 
 <p><em>"The Adventures of Sam Spade, detective."</em></p>
@@ -93,12 +93,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

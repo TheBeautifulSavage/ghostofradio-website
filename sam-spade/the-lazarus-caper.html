@@ -60,19 +60,19 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-lazarus-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>"The Lazarus Caper" is a gripping installment of "The Adventures of Sam Spade," airing on September 12, 1948, just as the sun sets over an anxious and uncertain post-war America. This episode dives into the mysterious world of antiquities theft and conspiracy when renowned archeologist Dr. Lazarus is approached by shadowy figures who threaten to destroy his career unless he steals a priceless artifact from a nearby museum. When Sam Spade is called in to investigate, he finds himself entangled in a web of deceit that reaches far beyond the hallowed halls of academia into the dark underbelly of society.</p>
 <p>The atmosphere is thick with tension and intrigue as Spade navigates through the labyrinthine corridors of power and prestige that surround Dr. Lazarus's high-profile academic circle. From the grandeur of university lecture halls to the seedy backrooms where deals are made in exchange for favors, the episode paints a vivid picture of moral ambiguity where even the most respected figures might be hiding dark secrets. The drama reaches its climax when Spade uncovers evidence linking the plot to international espionage and political machinations, forcing him into an ethical dilemma that challenges his sense of justice.</p>
 <p>Characters like Dr. Lazarus, portrayed with a mix of desperation and arrogance, add depth to the narrative, while the enigmatic threats lurking in the shadows create a palpable sense of danger. Sam Spade himself remains the unwavering pillar of integrity amidst chaos, but even he struggles with the weight of uncovering truths that could have devastating consequences for innocent bystanders.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1948</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1948</h3><p></p>
 <p>In 1948, America was grappling with profound changes and enduring anxieties as it transitioned from a wartime economy to peacetime realities. The year marked significant developments in both domestic and international affairs. Domestically, the U.S. faced rising concerns over labor strikes, economic inflation, and political polarization exacerbated by Cold War tensions. People were hopeful for stability and prosperity but also fearful of the uncertainties that lay ahead, from nuclear armament to the looming threat of communism. This climate of unease made radio dramas like "The Adventures of Sam Spade" particularly resonant, offering audiences a cathartic escape into worlds where heroism and justice prevailed over chaos.</p>
 <p>On the international stage, the Berlin Blockade by the Soviet Union in June 1948 underscored the escalating Cold War tensions that were reshaping global politics. This event not only highlighted the strategic importance of Germany but also fueled American fears about the spread of communism and the potential for another world war. The Marshall Plan, launched in the same year, aimed to rebuild Western Europe’s economies and prevent communist influence—a testament to the interconnectedness of economic recovery and national security.</p>
 <p>Radio dramas like "The Adventures of Sam Spade" were more than mere entertainment; they reflected and commented on these broader societal concerns. By weaving elements of espionage and political intrigue into their narratives, such shows tapped into the public's fascination with the unseen forces shaping global events. As America looked to its future amidst this backdrop of change and conflict, radio dramas provided a medium for exploring and understanding the complexities of modern life in an engaging and accessible format.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>"The Lazarus Caper" remains compelling today not just because of its intricate plot and well-drawn characters but also due to its enduring relevance. The episode's exploration of ethical dilemmas, political intrigue, and the collision between academic integrity and clandestine operations resonates with contemporary issues such as whistleblowing, espionage, and the impact of international politics on local communities. Sam Spade’s unwavering commitment to justice and truth is a timeless message that echoes through the decades, reminding listeners of the enduring value of moral courage in times of uncertainty.</p>
 <p>Moreover, the episode showcases the masterful storytelling techniques characteristic of classic radio drama, blending vivid soundscapes with evocative dialogue to create immersive narratives. The ability of "The Adventures of Sam Spade" to transport listeners into a fully realized world through audio alone underscores why such productions continue to captivate audiences even in an era dominated by visual media. In an age where information and entertainment are increasingly visual, rediscovering the power and artistry of old-time radio offers fresh insights into storytelling's foundational elements and its capacity for emotional engagement.</p>
 
@@ -95,12 +95,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

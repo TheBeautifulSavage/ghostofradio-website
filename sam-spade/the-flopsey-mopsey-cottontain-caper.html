@@ -60,15 +60,15 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-flopsey-mopsey-cottontain-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>In "The Flopsey Mopsey Cottontain Caper," Sam Spade, voiced with his usual blend of cynicism and wit by Howard Thrush, finds himself embroiled in a bizarre case involving stolen dolls that lead to more than just the theft of toys. The episode opens with a whimsical yet unsettling scene: an elaborate dollhouse burglary where antique dolls are pilfered from the homes of wealthy patrons. Spade’s investigation quickly spirals into a web of blackmail and murder as he uncovers a plot involving a secret society known only by its code name, "The Flopsey Mopsey Cottontain Club." The atmosphere is eerie, reminiscent of a Gothic mystery novel, with dimly lit parlors and shadowy figures lurking in the background. As Spade delves deeper into the case, he encounters a cast of characters that includes a mysterious benefactor who claims to know everything about the stolen dolls, a nosy socialite who stumbles upon clues she shouldn’t have, and a menacing figure with ties to the criminal underworld. The episode culminates in an explosive confrontation where Spade’s deductive skills are put to the test as he unravels a conspiracy that threatens more than just its wealthy victims but also national security.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1949</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1949</h3><p></p>
 <p>The year 1949 was a time of significant transformation and tension across the globe. In America, the post-war era had ushered in an economic boom coupled with deep-seated anxieties about future threats. The onset of the Cold War intensified fears of communism, particularly after the Soviet Union’s successful test of an atomic bomb that summer. This event not only escalated tensions but also led to increased government surveillance and the establishment of loyalty oaths for federal employees. Americans were caught between a sense of prosperity and fear as they grappled with the aftermath of World War II. Radio dramas like "The Adventures of Sam Spade" resonated deeply because they offered escapism through gripping narratives while often reflecting societal fears—themes of espionage, corruption, and hidden dangers mirrored real-world concerns. The medium of radio was uniquely positioned to capture listeners' imaginations, painting vivid pictures with sound alone, which made it an indispensable part of American culture during this period.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>"The Flopsey Mopsey Cottontain Caper" stands out not just for its intricate plot and atmospheric storytelling but also for the way it encapsulates the complex interplay between entertainment and social commentary in post-war America. Howard Thrush’s portrayal of Sam Spade is a masterclass in character voice, bringing depth to the iconic detective with his trademark blend of toughness and vulnerability. The episode's use of sound effects, from the creaking floors as Spade investigates eerie dollhouses to the ominous background hum during tense confrontations, demonstrates how radio could create immersive experiences that television would struggle to match for years. Moreover, its exploration of themes such as corruption, hidden societies, and the threat of external powers speaks directly to contemporary fears, making it a prime example of why old-time radio remains relevant today—its ability to capture the essence of an era through craft and narrative brilliance.</p>
 
 <p><em>"The Adventures of Sam Spade, detective."</em></p>
@@ -90,12 +90,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

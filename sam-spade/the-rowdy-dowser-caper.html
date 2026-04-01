@@ -60,17 +60,17 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-rowdy-dowser-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>The Rowdy Dowser Caper is a gripping installment of The Adventures of Sam Spade, an atmospheric detective series that captures the essence of its era with sharp dialogue and suspenseful plot twists. Set against the backdrop of a small town beset by drought and desperation, this episode unfolds as a con artist named "Rowdy" Dowser arrives in town, promising to locate underground water sources using his unorthodox methods. Initially skeptical, Sam Spade is reluctantly pulled into Dowser's game when a local rancher insists on hiring him for a much-needed well. As the stakes rise and tensions mount between Dowser’s dubious claims and the townsfolk’s desperate need for relief, Spade must navigate a labyrinth of deceit and danger to uncover the truth. The episode builds with palpable tension as Dowser's shady dealings threaten not only to ruin his clients but also to stir up long-buried grudges and rivalries among the townspeople.</p>
 <p>Characters are vividly etched in this tale, from the brash and charismatic Rowdy Dowser to the beleaguered rancher who believes fervently in any hope of salvation. Sam Spade himself remains a steadfast presence, his sharp-eyed skepticism providing a counterbalance to the town’s feverish optimism. His interactions with the townspeople reveal not only their desperation but also their complex web of relationships and motives. The episode is richly atmospheric, employing clever sound effects and voice characterizations to bring the dusty streets and sun-baked landscapes of this small-town setting to life.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p></p>
 <p>In 1951, the world was still reeling from the aftermath of World War II, with new tensions emerging between the United States and the Soviet Union that would soon give rise to the Cold War. The threat of nuclear warfare loomed large over global politics, and Americans were grappling with a range of domestic issues such as economic recovery, housing shortages, and widespread fear of communism infiltrating American institutions. Meanwhile, the Korean War had begun, adding further anxiety about military entanglements abroad.</p>
 <p>Against this backdrop of political unease and social change, radio dramas like The Adventures of Sam Spade offered an escape into a world of mystery and adventure that resonated deeply with audiences hungry for entertainment and diversion from their everyday worries. Listeners found solace in the familiar format of detective stories, which allowed them to indulge in suspenseful narratives while also providing moral clarity through the triumph of justice over corruption—a reassuring message during uncertain times.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>"The Rowdy Dowser Caper" exemplifies the enduring power and appeal of radio drama as a storytelling medium. Its intricate plot, masterfully crafted dialogue, and atmospheric sound design showcase why such episodes continue to captivate listeners today. The episode’s nuanced portrayal of human nature through its exploration of greed, desperation, and skepticism reflects universal themes that transcend time. Moreover, it highlights the versatility of Sam Spade as a character—capable of navigating complex moral dilemmas with wit and integrity. This episode is not just a relic of 1950s radio; it stands as a testament to the enduring artistry of the form and its ability to engage audiences across generations.</p>
 
 <p><em>"The Adventures of Sam Spade, detective."</em></p>
@@ -92,12 +92,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

@@ -60,17 +60,17 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-shot-in-the-dark-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>The Shot in the Dark Caper is a thrilling episode of The Adventures of Sam Spade, broadcast just months before the series concluded its run on CBS. The episode opens with Spade, played by Gerald Mohr, receiving an urgent call from his client, Mrs. Jane Winters, who claims that her husband was murdered during a high-stakes poker game at a lavish hotel in downtown San Francisco. As Spade delves deeper into the case, he uncovers a web of deceit involving corrupt politicians, illegal gambling syndicates, and shadowy underworld figures. The atmospheric narration by Morrie Ryskind paints vivid scenes of dark alleys, dimly lit speakeasies, and the constant threat of danger that looms over every step Spade takes. Mohr’s portrayal of Sam Spade is impeccable; his voice carries the weight of a seasoned detective who has seen it all yet remains fiercely independent and morally uncompromising.</p>
 <p>The episode climaxes in a dramatic confrontation at a secret gambling den, where Spade must use all his cunning to outmaneuver his adversaries. The tension is palpable as Spade’s investigation leads him to suspect that the murder might be connected to an illegal shipment of diamonds being smuggled into San Francisco via a luxury yacht owned by one of the city's most powerful businessmen. Mohr’s nuanced delivery captures the complexity of Sam Spade—a man who walks a thin line between legality and morality, always driven by a sense of justice rather than personal gain. The episode concludes with a cliffhanger that leaves listeners on the edge of their seats, eager to learn what happens next in this intricate web of deceit.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p></p>
 <p>1951 was a year marked by significant tensions and uncertainties both domestically and internationally. With World War II having ended just six years prior, Americans were still grappling with its aftermath. The Korean War had erupted earlier that year, bringing back the specter of global conflict and fueling fears of communist expansionism. At home, concerns about domestic security were heightened by Senator Joseph McCarthy’s relentless campaign against perceived communists within the government and entertainment industries. This era was characterized by a palpable sense of paranoia, with many Americans fearing subversion from within their own ranks. Despite these challenges, there was also optimism regarding technological advancements such as television and jet aircraft that promised to reshape daily life in profound ways.</p>
 <p>Against this backdrop, radio drama continued to hold a significant place in American culture. Shows like The Adventures of Sam Spade captivated audiences with their intricate plots and memorable characters. In an era where visual media were becoming more prevalent, the enduring appeal of radio dramas lay in their ability to engage listeners' imaginations through vivid soundscapes and compelling narratives. The Shot in the Dark Caper exemplified this power, weaving a tale that resonated deeply with fears about corruption and moral ambiguity pervasive during the early 1950s.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>The Shot in the Dark Caper stands out not only for its gripping storyline but also for the masterful way it captures the essence of Sam Spade—a character whose integrity and resilience are tested against a backdrop of societal upheaval. Gerald Mohr’s performance brings to life Dashiell Hammett’s iconic detective, showcasing how radio drama can convey complex emotions and moral dilemmas through voice alone. Moreover, this episode underscores the enduring relevance of classic detective stories in addressing contemporary anxieties. In an age when visual media dominate cultural consumption, revisiting such episodes reminds us of radio's unique ability to create immersive worlds that engage both mind and heart, fostering a deeper connection between artist and audience.</p>
 
 <p><em>"The Adventures of Sam Spade, detective."</em></p>
@@ -92,12 +92,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

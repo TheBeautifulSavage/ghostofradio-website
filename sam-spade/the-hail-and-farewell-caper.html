@@ -60,19 +60,19 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-hail-and-farewell-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>In "The Hail and Farewell Caper," Sam Spade navigates through a labyrinth of deceit and danger, as the final season of the radio series comes to a close with a bang rather than a whimper. Set against the backdrop of bustling San Francisco, Spade is called upon by an enigmatic figure known only as "The Lady" to investigate a peculiar case involving a lavish party at a grand mansion. The guests are as diverse and intriguing as the city itself: former spies, politicians with questionable motives, and socialites with more secrets than they let on. As the evening progresses, what begins as a simple inquiry into a missing piece of jewelry quickly spirals into a web of murder and betrayal.</p>
 <p>The atmosphere is charged with tension and suspense. The soundscape expertly captures the shifting moods through sparse background music that transitions from soft jazz to eerie strings as the plot thickens. Sam Spade, voiced by Howard Duff, projects his trademark cynicism and resilience, his voice cutting like a scalpel through layers of deceit. His sidekick, Archer, played with both comic relief and genuine heart by Joseph Kearns, provides a stark contrast to Spade’s brooding demeanor. The episode climaxes in a harrowing confrontation at the mansion, where the truth about the missing piece of jewelry is revealed amidst gunfire and shadowy figures.</p>
 <p>As the clock strikes midnight, the guests scatter like frightened birds, leaving behind a trail of clues that lead Spade to an unexpected revelation about his own past—a poignant reminder of how the characters themselves are intertwined with the fabric of their city and era. This episode serves not only as a thrilling capstone but also as a farewell to the listeners who have accompanied Sam Spade through countless adventures in the foggy streets of San Francisco.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p></p>
 <p>The world in 1951 was still reeling from the aftermath of World War II, yet on the brink of entering the Cold War era. The Korean War had begun earlier that year, sending shockwaves through American society and intensifying fears about global conflict and communist expansion. The McCarthy hearings were just beginning to grip the nation with accusations of subversion and espionage within government institutions and Hollywood. Americans feared for their security and stability amidst rising tensions between the United States and the Soviet Union.</p>
 <p>Economically, 1951 saw a booming post-war economy, fueled by consumer demand and industrial expansion. The GI Bill had made homeownership and higher education more accessible to returning veterans, contributing to a sense of optimism and upward mobility. Yet alongside this economic prosperity was the shadow of nuclear weapons and the looming threat of atomic warfare, which loomed large in public consciousness and imagination.</p>
 <p>Against this backdrop of uncertainty and hope, radio dramas like "The Adventures of Sam Spade" resonated deeply with audiences. They provided an escape from daily anxieties while reflecting broader societal concerns through their narratives. The interplay between espionage themes and personal morality mirrored the ideological battles and moral dilemmas of the Cold War era.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>"The Hail and Farewell Caper" stands as a testament to the enduring craft of radio drama, showcasing how well-crafted sound design can transport listeners into vividly imagined worlds. Howard Duff’s portrayal of Sam Spade is iconic, capturing the character's blend of toughness and vulnerability with masterful nuance. The episode weaves intricate plot threads seamlessly, offering a dense yet accessible narrative that demands active listening.</p>
 <p>Moreover, it encapsulates the spirit of its time—reflecting on the past while looking to an uncertain future. This final episode beautifully ties together personal stories and larger historical contexts, making it a poignant reminder of radio drama's unique power to bridge individual experiences with collective narratives. For anyone who appreciates storytelling and the artistry of radio, "The Hail and Farewell Caper" is essential listening—a fitting conclusion to an era where sound told tales that still resonate today.</p>
 
@@ -95,12 +95,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

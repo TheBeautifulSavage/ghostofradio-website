@@ -60,17 +60,17 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-red-star-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>"The Red Star Caper," an episode from "The Adventures of Sam Spade" aired January 12, 1951, is a thrilling detective drama that encapsulates the noir atmosphere and narrative flair of its time. The story unfolds in a foggy San Francisco where private investigator Sam Spade (voiced by Gerald Mohr) receives an urgent call from a wealthy socialite named Mrs. Vandemeyer who has lost her precious family heirloom, a red star pendant adorned with rubies. As the night progresses, Spade's investigation leads him into a labyrinth of deceit and danger involving blackmail, betrayal, and a mysterious figure known only as "The Red Star." The episode is rich in tension, with Spade navigating through shadowy alleys, dark rooms filled with whispered secrets, and encounters that test his loyalty and ingenuity. The atmosphere is thick with suspense, punctuated by the sounds of footsteps on wet pavement and the ominous ticking of a clock counting down to an impending deadline.</p>
 <p>The characters are vividly drawn: Sam Spade remains as enigmatic and morally ambiguous as ever, navigating a moral gray area where justice often means doing what's necessary, no matter how unsavory. Mrs. Vandemeyer is a complex figure, both elegant and desperate, her high society façade cracking under the weight of loss and fear. Meanwhile, "The Red Star" looms large as an elusive yet ever-present threat, his identity shrouded in mystery until the dramatic climax when all pieces fall into place with the suddenness of a punchline.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p></p>
 <p>In 1951, America was grappling with the aftermath of World War II and the onset of the Cold War. The Korean War had begun earlier that year, igniting fears of another global conflict while also raising questions about military readiness and the balance between national security and individual freedoms. At home, McCarthyism cast a long shadow over American society, breeding paranoia and suspicion as government committees sought out supposed communists in every facet of life, from Hollywood to universities. Amidst this climate of fear and uncertainty, old time radio served as both an escape and a mirror for the nation's psyche, reflecting anxieties through crime dramas like "The Adventures of Sam Spade" that explored themes of betrayal, corruption, and the thin line between heroism and villainy.</p>
 <p>Radiophonic storytelling thrived in this environment because it could evoke vivid imagery and emotions without relying on visual cues—listeners had to imagine the scenes and scenarios themselves, making the experience deeply personal and immersive. The suspenseful narratives of radio detectives like Sam Spade tapped into widespread concerns about loyalty and integrity in a rapidly changing world. For many Americans tuning in during 1951, these shows offered both entertainment and a reflection on their own struggles with morality and survival amidst societal upheaval.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>"The Red Star Caper" stands out not just for its gripping plot but also for the way it exemplifies the art of radio drama. With limited visual aids to rely upon, radio storytellers had to master the craft of painting pictures with words alone. In this episode, the voice acting by Gerald Mohr as Sam Spade is impeccable; his narration and dialogue create a palpable sense of place and character. The sound effects are also noteworthy for their ability to enhance the mood—rain falling outside Spade's office window, a door creaking open in an eerie silence—all adding layers of tension and realism.</p>
 <p>Beyond its technical merits, this episode remains relevant today because it encapsulates themes that continue to resonate: questions about personal morality versus societal pressure, the allure and dangers of secrecy, and the struggle against overwhelming forces. In an era where media landscapes have expanded dramatically beyond radio, "The Red Star Caper" still offers a compelling reminder of how powerful storytelling can be when done with skill and sensitivity, inviting listeners into a world both familiar and fantastical through the medium of sound alone.</p>
 
@@ -93,12 +93,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

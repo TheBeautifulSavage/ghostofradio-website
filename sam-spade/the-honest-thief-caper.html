@@ -60,15 +60,15 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-honest-thief-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>"The Honest Thief Caper," an episode of "The Adventures of Sam Spade" that aired on May 28, 1950, unfolds in the gritty streets of San Francisco during a rain-soaked evening. The atmosphere is thick with tension as Spade investigates the mysterious disappearance of a notorious thief named Red Smith, known for his elaborate heists but also for his peculiar habit of returning stolen goods to their rightful owners. As Spade delves deeper into Smith’s last job—a daring robbery at the prestigious Club Royale—he uncovers a web of deceit that implicates some of the city's most influential figures. The episode masterfully weaves together elements of mystery, suspense, and moral ambiguity. Sam Spade is not just seeking justice but navigating a complex landscape where everyone has something to hide and no one can be trusted entirely. From the dimly lit alleys of Chinatown to the shadowy corners of high society, "The Honest Thief Caper" captures the essence of post-war San Francisco, where the lines between good and evil are as blurred as the city's fog.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1950</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1950</h3><p></p>
 <p>In 1950, the United States was a country still grappling with the aftermath of World War II. The Korean War had just begun, adding to an already tense international climate characterized by growing Cold War tensions and fear of communist expansion. At home, Americans were contending with the Red Scare and the rise of McCarthyism—a period marked by rampant suspicion and accusations against alleged communists within American institutions. This era also witnessed significant social changes, including the beginning of a baby boom that would shape American society for decades to come. The post-war economic prosperity brought about an increased demand for entertainment options, making radio dramas like "The Adventures of Sam Spade" immensely popular. These shows offered listeners a sense of escapism and familiarity amidst a world rife with uncertainty. The radio was a vital medium through which millions of Americans connected with each other and their nation's cultural narrative, providing comfort and community in times of fear and change.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>"The Honest Thief Caper" is not just an episode of detective fiction but a testament to the enduring craft of audio storytelling. The episode excels in creating vivid mental imagery through its dialogue and sound design, immersing listeners in the dark and morally complex world of Sam Spade. The interplay between characters such as the enigmatic Red Smith and the unflappable Spade highlights the show's ability to explore themes of honor and morality within a noir setting. This episode exemplifies how radio dramas could transport audiences to different worlds and times, challenging them with ethical dilemmas and intriguing plot twists that remain engaging even by today’s standards. "The Honest Thief Caper" remains worth listening to for its masterful blend of narrative tension, character depth, and the rich sonic tapestry that defined old-time radio drama at its best.</p>
 
 <p><em>"The Adventures of Sam Spade, detective."</em></p>
@@ -90,12 +90,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>

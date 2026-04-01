@@ -60,15 +60,15 @@
 </div>
 <audio id="episodeAudio" preload="none"><source src="https://pub-43a2a91d87c649239fa207174290a900.r2.dev/sam-spade/the-vendetta-caper.mp3" type="audio/mpeg"></audio>
 </div>
-<h2>The Episode</h2><p>**</p>
+<h2>The Episode</h2><p></p>
 <p>In "The Vendetta Caper," a chilling tale unfolds in the neon-lit streets of post-war Los Angeles, where Sam Spade (Howard Duff) finds himself entangled in a web of danger and betrayal. The episode opens with a tense phone call that thrusts Spade into an intricate plot involving a powerful crime syndicate seeking revenge against a rival gang. As Spade investigates, he uncovers the identity of the mysterious "Black Falcon," who orchestrates the vendetta from the shadows. The atmosphere is thick with suspicion and danger; each character seems to hide a secret, and every turn leads to another dead end or unexpected twist. With his sharp wit and relentless determination, Sam Spade navigates through a maze of double-crosses and assassins, all while trying to protect those close to him from the clutches of this vendetta-driven war. The episode culminates in a high-stakes confrontation where Spade must choose between personal loyalty and justice, testing his moral code against the harsh realities of life on the edge.</p>
-<p>**</p>
+<p></p>
 
-<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p>**</p>
+<div class="era-box"><div class="era-box-label">Historical Context</div><h3>The World of 1951</h3><p></p>
 <p>1951 was a year marked by significant shifts both domestically and internationally. The Korean War had begun earlier that year, escalating tensions globally as the United States found itself increasingly entangled in Cold War conflicts. At home, Americans were grappling with economic inflation, labor strikes, and the ongoing threat of communism, all of which contributed to an atmosphere of uncertainty and anxiety. People feared the spread of nuclear weapons and espionage, while also hoping for a return to peace and prosperity. In this context, radio dramas like "The Adventures of Sam Spade" offered a form of escape from reality, allowing listeners to immerse themselves in thrilling narratives that reflected some of their fears without confronting them directly. The noir genre epitomized by shows such as Spade's resonated deeply because it mirrored the complexities and moral ambiguities of post-war society, providing an outlet for vicarious experiences and reflections on justice, betrayal, and redemption.</p>
-<p>**</p>
+<p></p>
 </div>
-<h2>Why Listen Today</h2><p>**</p>
+<h2>Why Listen Today</h2><p>*</p>
 <p>"The Vendetta Caper" stands out not only for its gripping narrative but also for the deft handling of dialogue and character dynamics. Howard Duff's portrayal of Sam Spade captures both the hard-boiled cynicism and the underlying humanity of the detective figure, making him relatable even to contemporary audiences who might have different expectations for storytelling. The episode's ability to weave complex plot elements into a cohesive and emotionally engaging tapestry showcases the power of radio drama in evoking vivid imagery through sound alone. Today, listening to "The Vendetta Caper" offers listeners a glimpse into an era when audio storytelling was at its zenith, highlighting how well-crafted scripts and performances can create compelling narratives that transcend their medium's limitations and speak across generations.</p>
 
 <p><em>"The Adventures of Sam Spade, detective."</em></p>
@@ -90,12 +90,12 @@ const wf=document.getElementById('waveform');
 heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
 const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars2=wf.querySelectorAll('span');
 function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
-let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(p*bars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(pbars2.length);bars2.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
 playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
-audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)100;ct.textContent=fmt(audio.currentTime);});
 audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
 audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
-pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)audio.duration;});
 vb.addEventListener('input',()=>{audio.volume=vb.value;});
 audio.volume=0.85;
 </script>
