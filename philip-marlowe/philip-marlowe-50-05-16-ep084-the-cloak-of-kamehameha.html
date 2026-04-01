@@ -83,10 +83,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Philip Marlowe: The Cloak of Kamehameha</p>
-<p>*Broadcast May 16, 1950*</p>
+          <p>Broadcast May 16, 1950</p>
 <p>When a priceless Hawaiian artifact vanishes from a heavily guarded estate, Philip Marlowe finds himself navigating a labyrinth of lies, double-crosses, and dangerous obsessions that stretches from the sun-baked streets of Los Angeles to the shadowy underworld of black-market collectors. A seemingly straightforward case of theft spirals into something far more sinister when Marlowe discovers that more than one person is willing to kill for the legendary cloak—and that the artifact's history carries dark secrets of its own. As the detective closes in on the truth, he must confront criminals with ice in their veins, society figures with plenty to hide, and a mystery that challenges everything he thought he knew about his would-be employer. The tension crackles through every scene, building toward a climactic confrontation where Marlowe's quick wits and quicker reflexes may be the only things standing between him and a tropical death far from home.</p>
-<p>*The Adventures of Philip Marlowe* captured the essence of post-war American noir during its four-year CBS run, bringing Raymond Chandler's world-weary detective to millions of radio listeners. Van Heflin's perfect rendering of Marlowe—cynical yet decent, tough yet thoughtful—became the definitive radio voice of the character, while the show's inventive sound design and sharply written scripts earned it a devoted following. Episodes like "The Cloak of Kamehameha" showcase the program's talent for transforming exotic locales and archeological mysteries into intimate, psychologically complex dramas played out in intimate living rooms across America.</p>
+<p>The Adventures of Philip Marlowe captured the essence of post-war American noir during its four-year CBS run, bringing Raymond Chandler's world-weary detective to millions of radio listeners. Van Heflin's perfect rendering of Marlowe—cynical yet decent, tough yet thoughtful—became the definitive radio voice of the character, while the show's inventive sound design and sharply written scripts earned it a devoted following. Episodes like "The Cloak of Kamehameha" showcase the program's talent for transforming exotic locales and archeological mysteries into intimate, psychologically complex dramas played out in intimate living rooms across America.</p>
 <p>Don't miss this gripping tale of art, ambition, and murder. Tune in as Philip Marlowe uncovers the truth hidden beneath centuries of history and layers of deception.</p>
         </div>
 
@@ -122,9 +121,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

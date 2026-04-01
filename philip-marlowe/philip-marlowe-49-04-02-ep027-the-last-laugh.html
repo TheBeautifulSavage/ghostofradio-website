@@ -88,10 +88,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Last Laugh</p>
-<p>When the script opens on a rain-slicked Los Angeles street corner at midnight, you can practically hear the water dripping from the fire escapes and smell the wet pavement outside the corner drugstore. Philip Marlowe receives a desperate telephone call—a woman's voice, trembling with fear, begging him to meet her at the Roseland Ballroom. What begins as a simple missing-persons inquiry spirals into something far darker: a tangled web of blackmail, theater people with dangerous secrets, and a murder that may not be murder at all. As Marlowe navigates the glittering nightclub underworld, each clue pulls him deeper into a case where nothing is as it seems, and laughter may indeed be the only defense against the encroaching shadows.</p>
+          <p>When the script opens on a rain-slicked Los Angeles street corner at midnight, you can practically hear the water dripping from the fire escapes and smell the wet pavement outside the corner drugstore. Philip Marlowe receives a desperate telephone call—a woman's voice, trembling with fear, begging him to meet her at the Roseland Ballroom. What begins as a simple missing-persons inquiry spirals into something far darker: a tangled web of blackmail, theater people with dangerous secrets, and a murder that may not be murder at all. As Marlowe navigates the glittering nightclub underworld, each clue pulls him deeper into a case where nothing is as it seems, and laughter may indeed be the only defense against the encroaching shadows.</p>
 <p>CBS's adaptation of Raymond Chandler's iconic detective brought the hardboiled literary sensation to radio audiences with an authenticity that made listeners feel they were right there in Marlowe's office, filing away evidence and nursing a whiskey. This 1949 episode exemplifies the show's mastery of atmospheric storytelling—the crackle of static between scenes, the moody orchestral cues, and Van Heflin's world-weary but principled delivery as Marlowe created an immersive experience no visual medium could quite capture. The radio format allowed listeners' imaginations to conjure their own Los Angeles, their own shadowy femmes fatales, their own corrupt cops and desperate dreamers.</p>
-<p>If you've never experienced the magic of classic radio detective work, *The Last Laugh* is the perfect entry point into Philip Marlowe's world. Tune in and let your mind do what it does best—paint the murky, thrilling landscape of noir exactly as you imagine it.</p>
+<p>If you've never experienced the magic of classic radio detective work, The Last Laugh is the perfect entry point into Philip Marlowe's world. Tune in and let your mind do what it does best—paint the murky, thrilling landscape of noir exactly as you imagine it.</p>
         </div>
 
         
@@ -127,9 +126,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

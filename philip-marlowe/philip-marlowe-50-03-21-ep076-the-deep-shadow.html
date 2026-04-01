@@ -88,8 +88,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Philip Marlowe: "The Deep Shadow"</p>
-<p>*Air Date: March 21, 1950*</p>
+          <p>Air Date: March 21, 1950</p>
 <p>In this gripping installment, private investigator Philip Marlowe finds himself ensnared in a web of deception that runs far deeper than the simple case he thought he'd taken on. When a beautiful woman walks into his office with a tale of blackmail and stolen photographs, Marlowe's skepticism—honed by years navigating Los Angeles's criminal underworld—immediately goes on high alert. But nothing in this case is quite what it seems. As the investigation unfolds across smoky jazz clubs and rain-slicked downtown streets, Marlowe discovers that the "Deep Shadow" hanging over his client extends to the highest echelons of the city's power structure. With each revelation, the danger intensifies, and our hard-boiled hero realizes he may have stumbled into something that could cost him his license—or his life. Gerald Mohr's distinctive voice brings Marlowe's sharp wit and dangerous charm to vivid life, while the masterfully crafted sound design transports listeners directly into the murky, menacing atmosphere of post-war Los Angeles.</p>
 <p>The Adventures of Philip Marlowe stands as one of the finest adaptations of Raymond Chandler's iconic detective, capturing the essence of American noir at its peak. During its run from 1947 to 1951 on CBS, the show became a benchmark for sophisticated radio drama, proving that detective fiction could be both intellectually engaging and thrillingly suspenseful. This particular episode exemplifies why the series earned such devoted listeners: it's a masterclass in plot construction and character development, wrapped in the golden-age glamour of network radio production.</p>
 <p>Don your fedora and step into the shadows with Philip Marlowe. "The Deep Shadow" awaits—a reminder of why classic radio drama still captivates audiences decades later.</p>
@@ -128,9 +127,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
