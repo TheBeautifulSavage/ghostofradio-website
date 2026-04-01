@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Richard Diamond, Private Detective: The John Blackwell Case</p>
-<p>*December 17, 1949*</p>
+          <p>December 17, 1949</p>
 <p>The office is dark except for the glow of a cigarette and the amber light filtering through venetian blinds. Richard Diamond—suave, sharp, and perpetually one wrong move away from a bullet—finds himself entangled in the shadowy affairs of John Blackwell, a man who may be dead, alive, or something far more complicated. As Diamond digs deeper into the case, the city's underbelly reveals itself through crisp dialogue exchanges and sudden moments of danger. You'll hear the squeak of a desk chair, the distant wail of a siren, the unmistakable click of a revolver's hammer. This is the world where motive hides behind expensive suits, alibis crumble under pressure, and trust is the rarest commodity in town. The Blackwell case is a masterclass in noir storytelling—a web of deception that pulls our detective from seedy nightclubs to penthouse offices, where answers only breed more questions.</p>
 <p>Richard Diamond emerged during the golden age of radio detective fiction, when audiences craved the gritty realism of hard-boiled private investigation. Starring Dick Powell in the title role, the show captured the exact spirit of the American crime story that had captivated readers through pulp magazines and novels. What set Diamond apart was its commitment to tight plotting and genuine atmosphere—no cartoon villainy, just the murky morality of a man trying to navigate a corrupt world for thirty dollars a day. NBC and later CBS recognized something special in this program, and listeners made it a staple of their weekly radio schedules.</p>
 <p>Tune in now and experience the case that defined a season. The truth about John Blackwell is waiting—if you have the nerve to uncover it.</p>
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
