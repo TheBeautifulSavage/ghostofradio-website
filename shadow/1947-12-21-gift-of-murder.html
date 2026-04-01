@@ -71,10 +71,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Gift Of Murder</p>
-<p>When a mysterious gift arrives at the Manhattan townhouse of wealthy philanthropist Victor Ashford, it promises only one thing: death. As midnight approaches and the hour of reckoning draws near, Lamont Cranston finds himself racing against time to uncover the identity of a killer hidden in shadows far deeper than his own. This 1947 episode of The Shadow crackles with the tension of a locked-room mystery, each ticking second amplified by the orchestra's haunting strings and the knowledge that somewhere in the city, a murderer is counting down to vengeance. Listeners will be drawn into an intricate web of blackmail, hidden identities, and the question that gnaws at every turn: who bears the gifts—and who bears the guilt?</p>
+          <p>When a mysterious gift arrives at the Manhattan townhouse of wealthy philanthropist Victor Ashford, it promises only one thing: death. As midnight approaches and the hour of reckoning draws near, Lamont Cranston finds himself racing against time to uncover the identity of a killer hidden in shadows far deeper than his own. This 1947 episode of The Shadow crackles with the tension of a locked-room mystery, each ticking second amplified by the orchestra's haunting strings and the knowledge that somewhere in the city, a murderer is counting down to vengeance. Listeners will be drawn into an intricate web of blackmail, hidden identities, and the question that gnaws at every turn: who bears the gifts—and who bears the guilt?</p>
 <p>By 1947, The Shadow had become America's most celebrated crime drama, a show that had captivated millions since its CBS debut a decade earlier. The program elevated the "pulp hero" archetype to an art form, with Orson Welles's iconic portrayal of the mysterious vigilante setting the standard for radio drama itself. By this point in the series, under the steady direction of various talented producers and writers, the show had perfected its formula: atmospheric storytelling grounded in metropolitan noir, psychological complexity that treated listeners as intelligent adults, and performances that conveyed moral ambiguity alongside thrilling suspense. "Gift of Murder" exemplifies everything that made the show legendary—intelligent plotting, stellar voice acting, and sound design that transforms the listener's imagination into a personal cinema of the mind.</p>
-<p>Tune in tonight and discover why The Shadow remains radio's greatest detective drama. In the world of Lamont Cranston, evil casts no shadow—it *is* the shadow. Let your ears guide you into the darkness.</p>
+<p>Tune in tonight and discover why The Shadow remains radio's greatest detective drama. In the world of Lamont Cranston, evil casts no shadow—it is the shadow. Let your ears guide you into the darkness.</p>
         </div>
 
         <footer class="episode__footer">
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
