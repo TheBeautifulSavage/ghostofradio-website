@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Only Girl</p>
-<p>Step into the parlor car of a moonlit express as The Railroad Hour transports you to the tender romance of Victor Herbert's *The Only Girl*. In this enchanting episode, the rails themselves seem to hum with the strains of unforgettable melodies while a young couple's destiny unfolds against the rhythmic clatter of wheels on steel. As the orchestra swells and the cast's luminous voices fill your living room, you'll experience the intoxicating blend of comedy and pathos that defined the golden age of American operetta—a tale of love, mistaken identity, and the redemptive power of music, all woven seamlessly into Radio City's finest production. Every moment crackles with authenticity, from the authentic sound effects of a working locomotive to the impeccable orchestrations that showcase why Herbert remains America's most treasured operetta composer.</p>
+          <p>Step into the parlor car of a moonlit express as The Railroad Hour transports you to the tender romance of Victor Herbert's The Only Girl. In this enchanting episode, the rails themselves seem to hum with the strains of unforgettable melodies while a young couple's destiny unfolds against the rhythmic clatter of wheels on steel. As the orchestra swells and the cast's luminous voices fill your living room, you'll experience the intoxicating blend of comedy and pathos that defined the golden age of American operetta—a tale of love, mistaken identity, and the redemptive power of music, all woven seamlessly into Radio City's finest production. Every moment crackles with authenticity, from the authentic sound effects of a working locomotive to the impeccable orchestrations that showcase why Herbert remains America's most treasured operetta composer.</p>
 <p>The Railroad Hour represents a remarkable achievement in 1940s radio: the resurrection of operetta for a new generation raised on swing and big bands. During its six-year run on ABC, the show became a cultural institution, proving that classical music and sophisticated storytelling could captivate millions of ordinary Americans gathered around their receivers. By adapting beloved works from the operetta canon—from Herbert to Friml to Romberg—the program kept alive a theatrical tradition that might otherwise have vanished into memory. These episodes endure as magnificent time capsules, capturing the taste and sensibility of postwar America at its most optimistic and culturally ambitious.</p>
-<p>*The Only Girl* awaits your discovery—a jewel from radio's most refined hour. Tune in and let yourself be carried away by the magic that once united a nation through shared wonder and melody.</p>
+<p>The Only Girl awaits your discovery—a jewel from radio's most refined hour. Tune in and let yourself be carried away by the magic that once united a nation through shared wonder and melody.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Railroad Hour: State Fair</p>
-<p>Step aboard for an enchanting journey through the heartland as The Railroad Hour presents Rodgers and Hammerstein's beloved *State Fair*—a musical celebration of small-town American dreams and rustic romance. On this March evening in 1949, listeners will be transported to the Iowa State Fair, where the aroma of prize-winning livestock and homemade preserves mingles with the anticipation of young love and competition. The orchestra swells with the iconic strains of "It Might As Well Be Spring" as we follow the Frake family's adventure, complete with sultry singing, engaging dialogue, and all the warmth of a community gathered under the Midwestern sun. From the thrilling pig competition to the delicate courtship that blossoms among the carnival lights, this episode captures everything that made the American State Fair a magical institution—a place where ordinary folks could briefly taste extraordinary possibilities.</p>
+          <p>Step aboard for an enchanting journey through the heartland as The Railroad Hour presents Rodgers and Hammerstein's beloved State Fair—a musical celebration of small-town American dreams and rustic romance. On this March evening in 1949, listeners will be transported to the Iowa State Fair, where the aroma of prize-winning livestock and homemade preserves mingles with the anticipation of young love and competition. The orchestra swells with the iconic strains of "It Might As Well Be Spring" as we follow the Frake family's adventure, complete with sultry singing, engaging dialogue, and all the warmth of a community gathered under the Midwestern sun. From the thrilling pig competition to the delicate courtship that blossoms among the carnival lights, this episode captures everything that made the American State Fair a magical institution—a place where ordinary folks could briefly taste extraordinary possibilities.</p>
 <p>The Railroad Hour's adaptation of this 1945 Rodgers and Hammerstein musical represents the golden age of radio drama, when Broadway's finest scores were freshly reimagined for the medium's intimate audience. The show's clever conceit—using rail travel as a narrative frame for presenting stage musicals—allowed ABC to bring sophisticated theatrical entertainment into living rooms across America. By 1949, such broadcasts had become cultural events, eagerly anticipated by families who couldn't afford Broadway tickets or who lived far from any theater. This particular episode preserves not merely a beloved story, but a moment when radio still reigned supreme as America's primary source of quality entertainment.</p>
-<p>So tune your dial to The Railroad Hour and experience the charm that captivated millions. *State Fair* awaits—all aboard!</p>
+<p>So tune your dial to The Railroad Hour and experience the charm that captivated millions. State Fair awaits—all aboard!</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
