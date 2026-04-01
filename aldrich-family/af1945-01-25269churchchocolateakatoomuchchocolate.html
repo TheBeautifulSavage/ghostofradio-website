@@ -71,10 +71,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Aldrich Family: "Church Chocolate / A Kinda Too Much Chocolate"</p>
-<p>**January 25, 1945**</p>
+          <p>January 25, 1945</p>
 <p>Picture this: it's a crisp winter evening in 1945, and the Aldrich household is in delightful chaos. Young Henry Aldrich has gotten his hands on far more chocolate than any teenager reasonably should—perhaps meant for a church social or community event—and what follows is a masterclass in escalating comedic mishaps. As Henry attempts to hide his confectionery transgression from his increasingly exasperated parents, listeners will find themselves caught between rooting for the clever boy and sympathizing with adults who just want a quiet evening at home. The writing crackles with that distinctive blend of snappy dialogue and physical comedy that somehow translates perfectly through the radio waves, and Ezra Stone's earnest delivery as Henry makes every stuttered excuse and panicked explanation feel utterly authentic. You can practically hear the chocolate-smudged fingerprints on the furniture.</p>
-<p>*The Aldrich Family* was appointment listening for millions of Americans, and this episode captures why perfectly. Running strong from 1939 through 1953, the show's genius lay in its specificity—these weren't broad stereotypes but recognizable American teenagers with genuine problems, even if those problems involved an embarrassing surplus of sweets. During wartime 1945, when rationing made even chocolate a relative luxury, this episode spoke directly to audiences' experiences with scarcity and temptation. The show's warm portrayal of family life offered comfort and laughter when both were desperately needed on the home front.</p>
+<p>The Aldrich Family was appointment listening for millions of Americans, and this episode captures why perfectly. Running strong from 1939 through 1953, the show's genius lay in its specificity—these weren't broad stereotypes but recognizable American teenagers with genuine problems, even if those problems involved an embarrassing surplus of sweets. During wartime 1945, when rationing made even chocolate a relative luxury, this episode spoke directly to audiences' experiences with scarcity and temptation. The show's warm portrayal of family life offered comfort and laughter when both were desperately needed on the home front.</p>
 <p>Don't miss this perfectly preserved slice of American domestic life. Tune in to hear how Henry talks his way out of this one—or doesn't.</p>
         </div>
 
@@ -97,9 +96,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
