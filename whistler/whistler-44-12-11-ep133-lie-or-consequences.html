@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Whistler: "Lie or Consequences"</p>
-<p>A man sits in the darkness, alone with his conscience—and a stranger who knows too much. When a seemingly innocent confession spirals into a web of blackmail and desperation, our mysterious protagonist discovers that some lies, once told, can never be taken back. In this episode, the Whistler guides us through the murky moral landscape of a man caught between protecting his secret and saving his life. With each eerie whistle and careful word, the tension tightens like a noose. The question isn't whether he'll be discovered—it's what he'll do when the walls close in.</p>
+          <p>A man sits in the darkness, alone with his conscience—and a stranger who knows too much. When a seemingly innocent confession spirals into a web of blackmail and desperation, our mysterious protagonist discovers that some lies, once told, can never be taken back. In this episode, the Whistler guides us through the murky moral landscape of a man caught between protecting his secret and saving his life. With each eerie whistle and careful word, the tension tightens like a noose. The question isn't whether he'll be discovered—it's what he'll do when the walls close in.</p>
 <p>The Whistler stands as one of radio's most enduring thrillers, a show that understood the power of suggestion and the intimacy of the medium in ways few programs ever achieved. Airing throughout the 1940s on CBS, each episode distilled noir cynicism into fifteen minutes of pure, distilled dread. Unlike the hero-driven adventures that dominated radio, The Whistler presented ordinary people making extraordinary moral compromises, their fates sealed not by fate but by their own choices. This particular episode, broadcast in late 1944, exemplifies the show's mastery—a meditation on truth and consequences that resonates with the anxieties of wartime America, when secrets and subterfuge touched every American household.</p>
-<p>If you've never experienced The Whistler, prepare yourself for something darker and more psychologically complex than you might expect from classic radio. Tune in to "Lie or Consequences" and discover why millions of listeners tuned in night after night, held captive by that unforgettable whistle and the timeless question: what would *you* do?</p>
+<p>If you've never experienced The Whistler, prepare yourself for something darker and more psychologically complex than you might expect from classic radio. Tune in to "Lie or Consequences" and discover why millions of listeners tuned in night after night, held captive by that unforgettable whistle and the timeless question: what would you do?</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

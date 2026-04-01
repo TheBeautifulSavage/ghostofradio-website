@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Whistler: The Deadly Penny</p>
-<p>In the fog-shrouded streets of a city where fortunes turn on the flip of a coin, one man discovers that a single penny—worthless to most—holds the power of life and death. As our unseen narrator whistles his haunting theme through the darkness, we're drawn into *The Deadly Penny*, where greed, superstition, and cold-blooded murder converge in a tale as dark as midnight itself. A chance inheritance, a collector's obsession, and a fortune hidden in plain sight set the stage for a psychological thriller that will keep you guessing until the final, twist-filled moments. What begins as an innocent curiosity about a rare coin spirals into a nightmare of betrayal, where trusted friends become executioners and fortune becomes a curse. This is the world of The Whistler—where fate lurks around every corner and destiny arrives without warning.</p>
+          <p>In the fog-shrouded streets of a city where fortunes turn on the flip of a coin, one man discovers that a single penny—worthless to most—holds the power of life and death. As our unseen narrator whistles his haunting theme through the darkness, we're drawn into The Deadly Penny, where greed, superstition, and cold-blooded murder converge in a tale as dark as midnight itself. A chance inheritance, a collector's obsession, and a fortune hidden in plain sight set the stage for a psychological thriller that will keep you guessing until the final, twist-filled moments. What begins as an innocent curiosity about a rare coin spirals into a nightmare of betrayal, where trusted friends become executioners and fortune becomes a curse. This is the world of The Whistler—where fate lurks around every corner and destiny arrives without warning.</p>
 <p>For thirteen years, The Whistler captivated millions of radio listeners with tales of noir intrigue and moral complexity that challenged the conventions of wartime entertainment. Created during an era when Americans huddled around their radio sets seeking escape, the show transcended typical mystery fare by exploring the darker corners of human nature—greed, desperation, and the thin line between justice and vengeance. The show's signature whistled melody, performed by composer Frederic Ziv himself, became iconic, while the unnamed Whistler narrator served as our guide through each morality play, offering commentary with the knowing distance of fate itself. Each week brought a different protagonist, but all discovered that evil often wears an ordinary face.</p>
-<p>Don't miss *The Deadly Penny*—a masterwork of suspense that proves The Whistler's enduring brilliance. Tune in and remember: you never know when fate might whistle your name.</p>
+<p>Don't miss The Deadly Penny—a masterwork of suspense that proves The Whistler's enduring brilliance. Tune in and remember: you never know when fate might whistle your name.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

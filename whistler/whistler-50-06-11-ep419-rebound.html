@@ -82,8 +82,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Whistler: "Rebound"</p>
-<p>*Originally broadcast June 11, 1950*</p>
+          <p>Originally broadcast June 11, 1950</p>
 <p>Picture this: a dimly lit office, the kind where trouble walks in wearing desperation like a cheap suit. A man sits at his desk, nursing regrets and a glass of whiskey, when fate—or something darker—comes knocking. This is the world of "Rebound," an episode that exemplifies everything The Whistler does best: weaving psychological suspense with moral ambiguity, where the line between victim and villain blurs as easily as smoke in a spotlight. Our mysterious narrator—that disembodied voice with the haunting whistle—guides listeners through a labyrinth of second chances and unintended consequences, where a man's attempt to reclaim his life becomes the very rope that hangs him. The production crackles with authenticity: footsteps on wet pavement, the clink of ice in a glass, hushed conversations in shadowed corners. You'll feel the paranoia, the claustrophobia, the inexorable pull of circumstance closing in like a noose.</p>
 <p>The Whistler's eight-year run on CBS created something uniquely American: a five-minute descent into noir territory that required no visual gimmicks, just superb writing, stellar character work, and sound design that made listeners' skin crawl. By 1950, the show had perfected its formula—psychological realism married to mystery, grounded stories of ordinary people meeting extraordinary consequences. "Rebound" represents The Whistler at its peak, proof that radio drama needed only talented actors, sharp dialogue, and that unforgettable whistle to transport millions into worlds of shadow and suspicion.</p>
 <p>Tune in now to "Rebound" and rediscover why, for over a decade, listeners huddled around their radios waiting for that famous whistle. This episode showcases exactly why The Whistler remains a landmark achievement in American radio—intimate, intelligent, and utterly unforgettable.</p>
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
