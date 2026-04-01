@@ -83,11 +83,10 @@
         </div>
 
         <div class="episode__content">
-          <p># Our Miss Brooks: Helping Hands</p>
-<p>**September 11, 1955**</p>
+          <p>September 11, 1955</p>
 <p>Picture this: it's a crisp autumn morning in 1955, and Miss Connie Brooks is about to learn that good intentions can lead to the most hilarious complications imaginable. When she sets out to lend a helping hand to someone in need, the schemes, misunderstandings, and physical comedy that unfold will have you laughing so hard you'll nearly miss the clever wordplay that makes this show tick. What begins as simple charity spirals into a wonderfully tangled mess of mistaken identities and well-meaning chaos, all anchored by Eve Arden's impeccable comedic timing and quick-witted charm. The entire staff of Madison High School gets pulled into the mayhem, from Principal Conlan's exasperated authority to Mr. Boynton's bemused bewilderment, creating that perfect storm of ensemble comedy that keeps listeners tuning in week after week.</p>
-<p>*Our Miss Brooks* was more than just a radio show—it was a cultural touchstone for millions of Americans during the 1950s, capturing the heart of small-town American life through the eyes of an independent, intelligent woman navigating the obstacles of post-war society. Eve Arden's portrayal of an unmarried, career-focused teacher was refreshingly progressive for its era, proving that a woman's worth extended far beyond traditional domestic roles. The show's success on radio would eventually lead to television, but these original broadcasts represent the pure magic of the medium: intimate, immediate, and utterly brilliant.</p>
-<p>Don't miss this charming reminder of why radio comedy became the heartbeat of American entertainment. Tune in to *Our Miss Brooks: Helping Hands* and experience an afternoon of genuine laughter and warmth.</p>
+<p>Our Miss Brooks was more than just a radio show—it was a cultural touchstone for millions of Americans during the 1950s, capturing the heart of small-town American life through the eyes of an independent, intelligent woman navigating the obstacles of post-war society. Eve Arden's portrayal of an unmarried, career-focused teacher was refreshingly progressive for its era, proving that a woman's worth extended far beyond traditional domestic roles. The show's success on radio would eventually lead to television, but these original broadcasts represent the pure magic of the medium: intimate, immediate, and utterly brilliant.</p>
+<p>Don't miss this charming reminder of why radio comedy became the heartbeat of American entertainment. Tune in to Our Miss Brooks: Helping Hands and experience an afternoon of genuine laughter and warmth.</p>
         </div>
 
         
@@ -122,9 +121,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
