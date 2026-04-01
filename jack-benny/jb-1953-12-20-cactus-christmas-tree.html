@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1953 12 20 Cactus Christmas Tree — The Jack Benny Program | Ghost of Radio</title>
+  <title>Cactus Christmas Tree — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1953 12 20 Cactus Christmas Tree — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1953 12 20 Cactus Christmas Tree — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1953 12 20 Cactus Christmas Tree — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1953</span>
           </div>
-          <h1 class="episode__title">Jb 1953 12 20 Cactus Christmas Tree</h1>
+          <h1 class="episode__title">Cactus Christmas Tree</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Jb 1953 12 20 Cactus Christmas Tree</p>
-<p>Picture this: it's December 20th, 1953, and Jack Benny is facing a crisis that would test even his legendary cheapness. Somewhere in the desert, a peculiar Christmas tree made entirely of cactus has become the object of desire, and naturally, Jack's elaborate schemes to obtain it—or better yet, to avoid paying for it—spiral into magnificent chaos. As the orchestra swells and the audience roars with anticipation, listeners are transported into Jack's world of impeccable comic timing, where every pause between words is a punchline waiting to land. Mary Livingstone's sharp wit cuts through Jack's pretensions, Don Wilson's booming announcer voice drips with mock sincerity, and the supporting cast tumbles through a script that crackles with the kind of spontaneous-feeling humor that made Sunday nights unmissable across America's living rooms. The promise of yuletide mayhem and desert absurdity unfolds with the precision of a Swiss timepiece—the very instrument Jack himself has fussed over for twenty years of broadcasts.</p>
+          <p>Picture this: it's December 20th, 1953, and Jack Benny is facing a crisis that would test even his legendary cheapness. Somewhere in the desert, a peculiar Christmas tree made entirely of cactus has become the object of desire, and naturally, Jack's elaborate schemes to obtain it—or better yet, to avoid paying for it—spiral into magnificent chaos. As the orchestra swells and the audience roars with anticipation, listeners are transported into Jack's world of impeccable comic timing, where every pause between words is a punchline waiting to land. Mary Livingstone's sharp wit cuts through Jack's pretensions, Don Wilson's booming announcer voice drips with mock sincerity, and the supporting cast tumbles through a script that crackles with the kind of spontaneous-feeling humor that made Sunday nights unmissable across America's living rooms. The promise of yuletide mayhem and desert absurdity unfolds with the precision of a Swiss timepiece—the very instrument Jack himself has fussed over for twenty years of broadcasts.</p>
 <p>By 1953, The Jack Benny Program had become American radio's most beloved institution, a weekly ritual that transcended mere entertainment to become genuine cultural glue. Benny's genius lay not in slapstick or crude humor, but in character—the creation of an unforgettable everyman whose vanity, stinginess, and underlying decency resonated with Depression-era survivors and post-war prosperity alike. This episode exemplifies his approach: a simple premise transformed through timing, chemistry, and the collaborative brilliance of a cast that had been perfecting their craft together for over two decades.</p>
 <p>Dust off the dial, settle into your favorite chair, and prepare for an evening of laughter that still sparkles with warmth and wit nearly seventy years later. This is radio comedy at its finest—where imagination, timing, and the human voice create entertainment that no television screen has ever quite captured.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

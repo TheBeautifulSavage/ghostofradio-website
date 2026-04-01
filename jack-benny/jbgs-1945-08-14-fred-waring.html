@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1945 08 14 Fred Waring — The Jack Benny Program | Ghost of Radio</title>
+  <title>Fred Waring — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1945 08 14 Fred Waring — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1945 08 14 Fred Waring — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1945 08 14 Fred Waring — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1945</span>
           </div>
-          <h1 class="episode__title">Jbgs 1945 08 14 Fred Waring</h1>
+          <h1 class="episode__title">Fred Waring</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: August 14, 1945</p>
-<p>Step into the living rooms of America on this warm summer evening in 1945, where Jack Benny's unmistakable violin introduction crackles through the airwaves with all the comic timing that has made him radio's most beloved entertainer. In this particular broadcast, Fred Waring and his Pennsylvanians bring their legendary vocal precision and instrumental brilliance to the program, promising a delightful collision of Benny's deadpan comedy and Waring's polished showmanship. Listen as Jack fumbles his way through musical numbers with his characteristic self-deprecating humor, while Don Wilson's booming announcer voice punctuates the evening with irrepressible enthusiasm. The chemistry between these radio titans crackles with the kind of spontaneous wit and rehearsed spontaneity that kept America tuned in night after night—you'll hear the live audience roaring with laughter at gags about Jack's notoriously cheap ways, his eternal rivalry with Fred Allen, and his hilariously inadequate violin playing.</p>
+          <p>Step into the living rooms of America on this warm summer evening in 1945, where Jack Benny's unmistakable violin introduction crackles through the airwaves with all the comic timing that has made him radio's most beloved entertainer. In this particular broadcast, Fred Waring and his Pennsylvanians bring their legendary vocal precision and instrumental brilliance to the program, promising a delightful collision of Benny's deadpan comedy and Waring's polished showmanship. Listen as Jack fumbles his way through musical numbers with his characteristic self-deprecating humor, while Don Wilson's booming announcer voice punctuates the evening with irrepressible enthusiasm. The chemistry between these radio titans crackles with the kind of spontaneous wit and rehearsed spontaneity that kept America tuned in night after night—you'll hear the live audience roaring with laughter at gags about Jack's notoriously cheap ways, his eternal rivalry with Fred Allen, and his hilariously inadequate violin playing.</p>
 <p>This August evening finds the nation in extraordinary times. World War II was coming to a close—Japan would surrender just days after this broadcast—and radio had become the heartbeat of American morale and unity. The Jack Benny Program was already a thirteen-year institution by 1945, having weathered the Great Depression and become an unshakeable fixture of American culture. Fred Waring himself was a patriotic ambassador of American music and entertainment, and these cross-over appearances between comedy and music variety programs represented radio's golden age at its absolute apex.</p>
 <p>Don't miss this fascinating glimpse into American entertainment during history's pivotal moments. This is radio at its finest: live, unpredictable, and utterly captivating.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1948 02 15 Surprise Birthday Party — The Jack Benny Program | Ghost of Radio</title>
+  <title>Surprise Birthday Party — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1948 02 15 Surprise Birthday Party — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1948 02 15 Surprise Birthday Party — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1948 02 15 Surprise Birthday Party — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1948</span>
           </div>
-          <h1 class="episode__title">Jb 1948 02 15 Surprise Birthday Party</h1>
+          <h1 class="episode__title">Surprise Birthday Party</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Surprise Birthday Party (February 15, 1948)</p>
-<p>Picture yourself huddled around the radio on a Sunday evening as the familiar strains of "Love in Bloom" crackle through the speaker, and Jack Benny's smooth voice greets you with his signature "Well!" What unfolds is pure mayhem—a surprise birthday party orchestrated by Mary Livingstone and the gang, complete with Rochester's deadpan asides, Don Wilson's booming announcements, and Phil Harris's irreverent charm all conspiring against our perpetually thirty-nine-year-old hero. The tension builds beautifully as Jack grows increasingly suspicious, his vanity both protective shield and comedy goldmine. Will the secret hold? You'll find yourself laughing at the physical comedy translated into perfectly timed dialogue, the running gags that have become as comforting as an old friend, and the warm ensemble chemistry that made this show America's most beloved half-hour.</p>
+          <p>Picture yourself huddled around the radio on a Sunday evening as the familiar strains of "Love in Bloom" crackle through the speaker, and Jack Benny's smooth voice greets you with his signature "Well!" What unfolds is pure mayhem—a surprise birthday party orchestrated by Mary Livingstone and the gang, complete with Rochester's deadpan asides, Don Wilson's booming announcements, and Phil Harris's irreverent charm all conspiring against our perpetually thirty-nine-year-old hero. The tension builds beautifully as Jack grows increasingly suspicious, his vanity both protective shield and comedy goldmine. Will the secret hold? You'll find yourself laughing at the physical comedy translated into perfectly timed dialogue, the running gags that have become as comforting as an old friend, and the warm ensemble chemistry that made this show America's most beloved half-hour.</p>
 <p>By 1948, The Jack Benny Program had already become the gold standard of radio comedy, having made the leap from local Los Angeles performances to nationwide phenomenon. Benny's genius lay not in rapid-fire jokes but in character—his stingy, vain, yet fundamentally decent persona created a framework where every joke resonated with deeper human truth. This episode captures the show at its creative peak, when the cast had become so finely tuned that they could play off each other with the precision of a jazz ensemble. Radio comedy of this caliber would vanish within a decade as television emerged; these recordings are precious artifacts of a golden age.</p>
 <p>Tune in and discover why millions of Americans made this their Sunday evening tradition. This is radio comedy at its finest—witty, warm, and wonderfully human.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

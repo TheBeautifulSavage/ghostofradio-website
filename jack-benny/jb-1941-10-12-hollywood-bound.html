@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 10 12 Hollywood Bound — The Jack Benny Program | Ghost of Radio</title>
+  <title>Hollywood Bound — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 10 12 Hollywood Bound — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 10 12 Hollywood Bound — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 10 12 Hollywood Bound — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 10 12 Hollywood Bound</h1>
+          <h1 class="episode__title">Hollywood Bound</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Hollywood Bound (October 12, 1941)</p>
-<p>Picture yourself settling into your favorite chair on a Sunday evening in mid-October, the warm glow of your radio set casting amber light across the living room. Jack Benny—perpetually 39 years old and hopelessly broke despite his fame—has decided to make the trip to Hollywood, and the results are as chaotic as you'd expect. With his stooge-like band members and perpetual foil Rochester at his side, Jack encounters every imaginable mishap on the road west: a broken-down Maxwell that barely runs, suspicious strangers, and his own elaborate schemes to avoid paying for anything. The comedy unfolds with impeccable timing, building from quick-fire one-liners to elaborate comic sequences that only radio's greatest comedic mind could orchestrate. Don Bestor and his orchestra punctuate the hijinks with jazzy stings and dramatic flourishes, while the live studio audience erupts in laughter that pulls you directly into the Beverly Hills Hotel hijinks.</p>
+          <p>Picture yourself settling into your favorite chair on a Sunday evening in mid-October, the warm glow of your radio set casting amber light across the living room. Jack Benny—perpetually 39 years old and hopelessly broke despite his fame—has decided to make the trip to Hollywood, and the results are as chaotic as you'd expect. With his stooge-like band members and perpetual foil Rochester at his side, Jack encounters every imaginable mishap on the road west: a broken-down Maxwell that barely runs, suspicious strangers, and his own elaborate schemes to avoid paying for anything. The comedy unfolds with impeccable timing, building from quick-fire one-liners to elaborate comic sequences that only radio's greatest comedic mind could orchestrate. Don Bestor and his orchestra punctuate the hijinks with jazzy stings and dramatic flourishes, while the live studio audience erupts in laughter that pulls you directly into the Beverly Hills Hotel hijinks.</p>
 <p>This episode captures The Jack Benny Program at its creative peak—just weeks before Pearl Harbor would reshape American life and radio programming itself. In 1941, Jack Benny had become radio's supreme comedian, having perfected the art of timing and character that made him a household name. What sets his program apart from competing variety shows is Benny's willingness to mock himself relentlessly; his miserliness, his vanity, his inability to play violin—these became running gags that audiences craved week after week. This episode is a masterclass in that formula.</p>
 <p>Whether you're a devoted fan of vintage radio or discovering Jack Benny for the first time, "Hollywood Bound" exemplifies why millions tuned in faithfully each week. It's comedy captured in its finest medium—where your imagination fills the screen and timing is everything. Tune in and discover why Jack Benny reigned as radio's undisputed king of comedy.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

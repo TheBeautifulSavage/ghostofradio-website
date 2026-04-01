@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1952 10 05 Scoop Benny Ace Reporter — The Jack Benny Program | Ghost of Radio</title>
+  <title>Scoop Benny Ace Reporter — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1952 10 05 Scoop Benny Ace Reporter — The Jack Benny Program (NBC/CBS, 1952). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1952 10 05 Scoop Benny Ace Reporter — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1952 10 05 Scoop Benny Ace Reporter — The Jack Benny Program (NBC/CBS, 1952). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1952</span>
           </div>
-          <h1 class="episode__title">Jb 1952 10 05 Scoop Benny Ace Reporter</h1>
+          <h1 class="episode__title">Scoop Benny Ace Reporter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Scoop Benny, Ace Reporter"</p>
-<p>Picture this: It's a crisp October evening in 1952, and Jack Benny—that perpetually broke violinist with a heart of gold—has stumbled into his greatest role yet: a hard-boiled newspaper reporter hot on the trail of a scandal that could shake the city to its foundations. But nothing is quite as it seems when Jack's involved. As he bumbles through the newsroom with his characteristic deadpan delivery, dodging fast-talking editors and suspicious femme fatales, the comedy spirals into delightful absurdity. Don Wilson's booming announcer voice will guide you through this noir-inspired caper, while the orchestra punctuates every pratfall and double-take with perfectly timed musical stings. Expect mistaken identities, running gags that circle back with precision, and Jack's trademark ability to extract maximum comedy from minimum effort—all wrapped in the sophisticated wit that made this show an American institution.</p>
+          <p>Picture this: It's a crisp October evening in 1952, and Jack Benny—that perpetually broke violinist with a heart of gold—has stumbled into his greatest role yet: a hard-boiled newspaper reporter hot on the trail of a scandal that could shake the city to its foundations. But nothing is quite as it seems when Jack's involved. As he bumbles through the newsroom with his characteristic deadpan delivery, dodging fast-talking editors and suspicious femme fatales, the comedy spirals into delightful absurdity. Don Wilson's booming announcer voice will guide you through this noir-inspired caper, while the orchestra punctuates every pratfall and double-take with perfectly timed musical stings. Expect mistaken identities, running gags that circle back with precision, and Jack's trademark ability to extract maximum comedy from minimum effort—all wrapped in the sophisticated wit that made this show an American institution.</p>
 <p>By 1952, The Jack Benny Program had already been entertaining audiences for two decades, having migrated from radio to television and back again, proving its timeless appeal. Jack's ensemble cast—including the loyal Mary Livingstone, the laconic Rochester, and the perpetually indignant Phil Harris—had become as familiar to American listeners as family members. This particular episode showcases why the show remained a ratings juggernaut: its ability to blend vaudeville traditions with contemporary humor, creating comedy that appealed equally to sophisticates and everyday listeners.</p>
 <p>Step back into October 1952 and experience why families gathered around their radio sets for this appointment with entertainment. "Scoop Benny, Ace Reporter" is thirty minutes of pure, unadulterated radio magic—a perfect specimen of the Golden Age when timing, voice acting, and clever writing could transport millions directly into Jack's world of comic misadventure.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

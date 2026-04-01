@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1939 10 29 Eddie Cantor's 25th Anniversary Dinner (benny Excerpt) — The Jack Benny Program | Ghost of Radio</title>
+  <title>Eddie Cantor's 25th Anniversary Dinner (benny Excerpt) — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1939 10 29 Eddie Cantor's 25th Anniversary Dinner (benny Excerpt) — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1939 10 29 Eddie Cantor's 25th Anniversary Dinner (benny Excerpt) — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1939 10 29 Eddie Cantor's 25th Anniversary Dinner (benny Excerpt) — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jbgs 1939 10 29 Eddie Cantor's 25th Anniversary Dinner (benny Excerpt)</h1>
+          <h1 class="episode__title">Eddie Cantor's 25th Anniversary Dinner (benny Excerpt)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Jack Benny Program: Eddie Cantor's 25th Anniversary Dinner</p>
-<p>Picture yourself in a radio studio on October 29th, 1939, as Jack Benny and his ensemble gather to celebrate one of vaudeville's greatest showmen. The air crackles with excitement as this star-studded tribute unfolds—a glittering dinner party broadcast live to millions of American homes. Listeners tune in to hear the smooth interplay between Benny and his celebrated guests, the orchestra swelling behind carefully timed comedic exchanges, and that unmistakable tension between Benny's perpetual miserliness and the generosity of spirit required for such an occasion. This excerpt captures the essence of what made the program an institution: impeccable timing, genuine affection between performers, and the electricity of live radio comedy that kept America laughing through the Depression's final shadows.</p>
+          <p>Picture yourself in a radio studio on October 29th, 1939, as Jack Benny and his ensemble gather to celebrate one of vaudeville's greatest showmen. The air crackles with excitement as this star-studded tribute unfolds—a glittering dinner party broadcast live to millions of American homes. Listeners tune in to hear the smooth interplay between Benny and his celebrated guests, the orchestra swelling behind carefully timed comedic exchanges, and that unmistakable tension between Benny's perpetual miserliness and the generosity of spirit required for such an occasion. This excerpt captures the essence of what made the program an institution: impeccable timing, genuine affection between performers, and the electricity of live radio comedy that kept America laughing through the Depression's final shadows.</p>
 <p>By 1939, Jack Benny had already established himself as radio's most meticulous perfectionist, commanding Nielsen ratings that rivaled anything on the dial. Yet this episode represents something deeper than mere entertainment—it's a snapshot of the entertainment world honoring one of its own, Eddie Cantor, whose career spanned the transition from stage to screen to radio. The program itself, having moved between networks and evolved constantly since 1932, had perfected the formula that made Benny a household name: a variety show anchored by comedy sketches that gave regular listeners beloved recurring characters like Rochester and Mary Livingstone. This particular broadcast exists at the intersection of nostalgia and contemporary relevance, capturing an industry paying homage to its roots.</p>
 <p>Dust off your imagination and join the studio audience for an evening of genuine star power and radio magic. This is the sound of an era when entertainment meant live performance, spontaneous wit, and the kind of comedy that played to the ear rather than the eye. Tune in to hear Jack Benny at his finest.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

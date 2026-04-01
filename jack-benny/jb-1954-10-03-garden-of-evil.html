@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1954 10 03 Garden Of Evil — The Jack Benny Program | Ghost of Radio</title>
+  <title>Garden Of Evil — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1954 10 03 Garden Of Evil — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1954 10 03 Garden Of Evil — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1954 10 03 Garden Of Evil — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1954</span>
           </div>
-          <h1 class="episode__title">Jb 1954 10 03 Garden Of Evil</h1>
+          <h1 class="episode__title">Garden Of Evil</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Garden of Evil"</p>
-<p>Picture yourself settling into your favorite chair on a crisp October evening in 1954, the warm glow of your radio console casting shadows across the living room as Jack Benny's unmistakable voice crackles through the speaker. In this week's episode, "Garden of Evil," Jack finds himself ensnared in yet another delightfully absurd predicament—this time involving a mysterious garden, romantic entanglements, and of course, the razor-sharp wit of his supporting cast. The interplay between Jack's perpetually exasperated delivery and the rapid-fire comedic volleys from Mary Livingstone, Rochester, and Phil Harris creates an atmosphere of controlled chaos that somehow feels as comfortable as an old friend's company. You'll find yourself grinning at the perfectly timed pauses, the orchestral stings that punctuate the jokes, and the sound effects that transport you directly into Jack's world of comic misfortune.</p>
+          <p>Picture yourself settling into your favorite chair on a crisp October evening in 1954, the warm glow of your radio console casting shadows across the living room as Jack Benny's unmistakable voice crackles through the speaker. In this week's episode, "Garden of Evil," Jack finds himself ensnared in yet another delightfully absurd predicament—this time involving a mysterious garden, romantic entanglements, and of course, the razor-sharp wit of his supporting cast. The interplay between Jack's perpetually exasperated delivery and the rapid-fire comedic volleys from Mary Livingstone, Rochester, and Phil Harris creates an atmosphere of controlled chaos that somehow feels as comfortable as an old friend's company. You'll find yourself grinning at the perfectly timed pauses, the orchestral stings that punctuate the jokes, and the sound effects that transport you directly into Jack's world of comic misfortune.</p>
 <p>By 1954, The Jack Benny Program had already achieved legendary status as America's favorite half-hour of comedy, having run continuously since 1932 through radio's golden age. Jack's genius lay not in elaborate plots but in character—the vain, stingy, yet somehow lovable everyman—and his impeccable timing, a craft he'd honed through decades of vaudeville. This particular season marked the show's transition as television was beginning to steal radio's crown, yet the program remained a sanctuary for listeners who preferred their entertainment delivered through the magic of sound and imagination.</p>
 <p>Don't miss this glimpse into mid-century American comedy at its finest. Tune in to "Garden of Evil" and discover why millions of listeners made The Jack Benny Program an unmissable part of their weekly routine—where laughter was always just a dial turn away.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

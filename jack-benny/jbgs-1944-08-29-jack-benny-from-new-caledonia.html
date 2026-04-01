@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1944 08 29 Jack Benny From New Caledonia — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny From New Caledonia — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1944 08 29 Jack Benny From New Caledonia — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1944 08 29 Jack Benny From New Caledonia — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1944 08 29 Jack Benny From New Caledonia — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jbgs 1944 08 29 Jack Benny From New Caledonia</h1>
+          <h1 class="episode__title">Jack Benny From New Caledonia</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Jack Benny From New Caledonia" (August 29, 1944)</p>
-<p>Picture this: it's late August 1944, and Jack Benny himself is broadcasting live from a remote corner of the South Pacific—New Caledonia, a staging ground for American forces in the Pacific Theater. The opening theme crackles through the airwaves with an electric urgency, and listeners are transported thousands of miles away to an island outpost where the familiar voice of radio's stingiest comedian is preparing an entertainment package for the troops. What unfolds is pure Benny magic wrapped in patriotic purpose: his razor-sharp timing remains intact despite the sweltering heat and challenging circumstances, Rochester's dry quips land with perfect comedic precision, and the entire broadcast carries an undeniable poignancy—here are America's finest entertainers, literally risking their safety to bring laughter to homesick soldiers. The sketches crackle with the kind of desperate humor that makes you forget, just for a moment, that there's a war happening beyond the studio walls.</p>
+          <p>Picture this: it's late August 1944, and Jack Benny himself is broadcasting live from a remote corner of the South Pacific—New Caledonia, a staging ground for American forces in the Pacific Theater. The opening theme crackles through the airwaves with an electric urgency, and listeners are transported thousands of miles away to an island outpost where the familiar voice of radio's stingiest comedian is preparing an entertainment package for the troops. What unfolds is pure Benny magic wrapped in patriotic purpose: his razor-sharp timing remains intact despite the sweltering heat and challenging circumstances, Rochester's dry quips land with perfect comedic precision, and the entire broadcast carries an undeniable poignancy—here are America's finest entertainers, literally risking their safety to bring laughter to homesick soldiers. The sketches crackle with the kind of desperate humor that makes you forget, just for a moment, that there's a war happening beyond the studio walls.</p>
 <p>This broadcast represents Jack Benny at his most important—not merely as a comedy virtuoso, but as a cultural institution serving his country. During the war years, Benny was tireless in his commitment to entertaining servicemen, making multiple USO tours and remote broadcasts from active theaters of war. The Benny Program had already become a national treasure, the gold standard of comedy radio, and episodes like this one reveal why: the man's ability to connect with an audience, any audience, anywhere, was simply unmatched.</p>
 <p>Don't miss this remarkable snapshot of American entertainment in wartime. Hear Jack Benny do what he did best—make people laugh when they needed it most.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

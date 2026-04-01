@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 05 10 Jack Thinks He's Going To Be Fired Broadcast From Mather Field, San Francisco — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Thinks He's Going To Be Fired Broadcast From Mather Field, San Francisco — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 05 10 Jack Thinks He's Going To Be Fired Broadcast From Mather Field, San Francisco — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 05 10 Jack Thinks He's Going To Be Fired Broadcast From Mather Field, San Francisco — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 05 10 Jack Thinks He's Going To Be Fired Broadcast From Mather Field, San Francisco — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 05 10 Jack Thinks He's Going To Be Fired Broadcast From Mather Field, San Francisco</h1>
+          <h1 class="episode__title">Jack Thinks He's Going To Be Fired Broadcast From Mather Field, San Francisco</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Jack Thinks He's Going To Be Fired"</p>
-<p>Picture this: May 10th, 1942, and Jack Benny stands nervously backstage at Mather Field in San Francisco, the very heart of America's wartime defense effort. Our cheapskate maestro is convinced—absolutely certain—that this broadcast will be his last. With his violin tucked under one arm and his characteristic anxiety in full bloom, Jack spends the evening in comedic agony, certain that some terrible fate awaits him. As the live audience roars with laughter, listeners across the nation tuned to NBC Radio are treated to one of the program's finest showcases of Jack's masterful timing and physical comedy translated perfectly through the airwaves. The supporting cast—Mary Livingstone's dry wit, Rochester's unflappable wisdom, and the various characters that populate Jack's world—weave effortlessly through the narrative, each moment building toward the inevitable resolution that somehow always eluded Jack's worried expectations.</p>
+          <p>Picture this: May 10th, 1942, and Jack Benny stands nervously backstage at Mather Field in San Francisco, the very heart of America's wartime defense effort. Our cheapskate maestro is convinced—absolutely certain—that this broadcast will be his last. With his violin tucked under one arm and his characteristic anxiety in full bloom, Jack spends the evening in comedic agony, certain that some terrible fate awaits him. As the live audience roars with laughter, listeners across the nation tuned to NBC Radio are treated to one of the program's finest showcases of Jack's masterful timing and physical comedy translated perfectly through the airwaves. The supporting cast—Mary Livingstone's dry wit, Rochester's unflappable wisdom, and the various characters that populate Jack's world—weave effortlessly through the narrative, each moment building toward the inevitable resolution that somehow always eluded Jack's worried expectations.</p>
 <p>What made The Jack Benny Program legendary was precisely this formula: taking the universal anxiety of job security and spinning it into pure gold during the tense spring of 1942, when America needed laughter more than ever. Broadcasting from a military installation added genuine gravitas to the proceedings, connecting the show to the broader war effort while maintaining the domestic comfort and humor that kept morale steady on the home front. Jack's stingy persona, his competitive relationship with his violin, and his willingness to be the perpetual fool made him everyman during uncertain times.</p>
 <p>This episode captures radio comedy at its finest—where timing, ensemble work, and the intimate connection between performer and listener created something genuinely magical. Tune in and discover why Jack Benny remained America's favorite miser for over two decades.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

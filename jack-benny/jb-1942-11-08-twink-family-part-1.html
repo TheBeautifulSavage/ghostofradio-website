@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 11 08 Twink Family Part 1 — The Jack Benny Program | Ghost of Radio</title>
+  <title>Twink Family Part 1 — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 11 08 Twink Family Part 1 — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 11 08 Twink Family Part 1 — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 11 08 Twink Family Part 1 — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 11 08 Twink Family Part 1</h1>
+          <h1 class="episode__title">Twink Family Part 1</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "The Twink Family, Part 1" (November 8, 1942)</p>
-<p>Step into the living rooms of America on a Sunday evening in November, where millions gather around their radio sets for a half-hour escape from wartime anxieties. This week, Jack Benny and his repertory company embark on an elaborate comic adventure involving the eccentric Twink family—a two-part episode that promises the kind of elaborately constructed silliness that has made the program America's favorite comedy hour. Don Wilson's magnificent baritone will open the broadcast, and listeners can expect Rochester's razor-sharp one-liners, Mary Livingstone's patient exasperation with her husband's misadventures, and a parade of guest stars and bit players that will keep you laughing as the carefully orchestrated chaos unfolds. The writing is characteristically sharp and the timing impeccable, with Benny's gift for deadpan delivery the perfect instrument for mining comedy from absurdity.</p>
+          <p>Step into the living rooms of America on a Sunday evening in November, where millions gather around their radio sets for a half-hour escape from wartime anxieties. This week, Jack Benny and his repertory company embark on an elaborate comic adventure involving the eccentric Twink family—a two-part episode that promises the kind of elaborately constructed silliness that has made the program America's favorite comedy hour. Don Wilson's magnificent baritone will open the broadcast, and listeners can expect Rochester's razor-sharp one-liners, Mary Livingstone's patient exasperation with her husband's misadventures, and a parade of guest stars and bit players that will keep you laughing as the carefully orchestrated chaos unfolds. The writing is characteristically sharp and the timing impeccable, with Benny's gift for deadpan delivery the perfect instrument for mining comedy from absurdity.</p>
 <p>By 1942, The Jack Benny Program had already established itself as the gold standard of American radio comedy, having pioneered a style of humor that emphasized character and situation over broad slapstick. What makes this program endure is its perfect marriage of vaudeville tradition and sophisticated radio craft—Benny's violin interludes, his running gags about his age and miserliness, and an ensemble cast so finely tuned they work like a Swiss watch. This particular episode captures the show at the height of its creative powers, when the writers and performers understood every nuance of comedy timing and the vast, invisible audience that depended on them for weekly entertainment.</p>
 <p>Don't miss the opening salvo of this two-part saga. The Twink Family awaits, and with them, the kind of meticulous comic construction that made Jack Benny a household deity.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

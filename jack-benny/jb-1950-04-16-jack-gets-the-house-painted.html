@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1950 04 16 Jack Gets The House Painted — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Gets The House Painted — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1950 04 16 Jack Gets The House Painted — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1950 04 16 Jack Gets The House Painted — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1950 04 16 Jack Gets The House Painted — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1950</span>
           </div>
-          <h1 class="episode__title">Jb 1950 04 16 Jack Gets The House Painted</h1>
+          <h1 class="episode__title">Jack Gets The House Painted</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Jack Gets The House Painted</p>
-<p>Picture this: it's Sunday evening, April 16th, 1950, and Jack Benny has decided his Maple Drive home needs a fresh coat of paint. What could possibly go wrong? Everything, as it turns out. In this hilarious episode, listeners will delight as Jack's famous stinginess collides spectacularly with the simple task of house painting. Watch—or rather, listen—as he hagggles with contractors, questions every estimate, and inevitably becomes entangled in a comedy of errors involving his hapless butler Rochester, the long-suffering Don Wilson, and a parade of increasingly exasperated tradesmen. The chemistry between the cast crackles with the ease of seasoned performers who'd been perfecting their timing for nearly two decades, while the studio audience roars at every perfectly placed pause and that signature "Well!" that only Jack could deliver.</p>
+          <p>Picture this: it's Sunday evening, April 16th, 1950, and Jack Benny has decided his Maple Drive home needs a fresh coat of paint. What could possibly go wrong? Everything, as it turns out. In this hilarious episode, listeners will delight as Jack's famous stinginess collides spectacularly with the simple task of house painting. Watch—or rather, listen—as he hagggles with contractors, questions every estimate, and inevitably becomes entangled in a comedy of errors involving his hapless butler Rochester, the long-suffering Don Wilson, and a parade of increasingly exasperated tradesmen. The chemistry between the cast crackles with the ease of seasoned performers who'd been perfecting their timing for nearly two decades, while the studio audience roars at every perfectly placed pause and that signature "Well!" that only Jack could deliver.</p>
 <p>By 1950, The Jack Benny Program had become the gold standard of radio comedy, a show that had evolved from its musical variety roots into something far more sophisticated—a character-driven sitcom that proved radio audiences craved wit over slapstick. Jack's persona, that magnificently vain, perpetually thirty-nine-year-old cheapskate, had become as familiar to Americans as the furniture in their own living rooms. The supporting cast—Rochester's weary wisdom, Don Wilson's bombastic announcer persona, Mary Livingstone's sharp-tongued observations—had become part of the cultural fabric, and their interplay had been honed to perfection through hundreds of broadcasts.</p>
 <p>This is radio comedy at its finest, where everything depends on performance and timing rather than sight gags or special effects. Tune in to hear why this show commanded an estimated 30 million listeners and remained the ratings champion of its era. Jack Benny and company are waiting for you.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1932 05 02 First Show — The Jack Benny Program | Ghost of Radio</title>
+  <title>First Show — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1932 05 02 First Show — The Jack Benny Program (NBC/CBS, 1932). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1932 05 02 First Show — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1932 05 02 First Show — The Jack Benny Program (NBC/CBS, 1932). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1932</span>
           </div>
-          <h1 class="episode__title">Jb 1932 05 02 First Show</h1>
+          <h1 class="episode__title">First Show</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: May 2, 1932</p>
-<p>Picture yourself huddled around a warm radio receiver on a Monday evening in the depths of the Great Depression, when a soft, measured voice crackles through the speaker with the perfect blend of sophistication and self-deprecating charm. This is Jack Benny's inaugural broadcast, a moment of cultural electricity that would launch one of radio's most enduring institutions. What unfolds is not quite like anything listeners had heard before—a loose, almost conversational comedy wrapped around musical interludes, punctuated by Benny's masterful timing and his ability to find humor in the mundane and absurd. There's an immediacy to this first show, an almost palpable sense that something special is beginning, even as Benny himself seems bemused by the whole affair, treating his new radio venture with the kind of wry skepticism that would become his trademark.</p>
+          <p>Picture yourself huddled around a warm radio receiver on a Monday evening in the depths of the Great Depression, when a soft, measured voice crackles through the speaker with the perfect blend of sophistication and self-deprecating charm. This is Jack Benny's inaugural broadcast, a moment of cultural electricity that would launch one of radio's most enduring institutions. What unfolds is not quite like anything listeners had heard before—a loose, almost conversational comedy wrapped around musical interludes, punctuated by Benny's masterful timing and his ability to find humor in the mundane and absurd. There's an immediacy to this first show, an almost palpable sense that something special is beginning, even as Benny himself seems bemused by the whole affair, treating his new radio venture with the kind of wry skepticism that would become his trademark.</p>
 <p>In 1932, with breadlines forming across America and families desperate for affordable entertainment, radio was becoming the nation's hearth. Jack Benny understood something fundamental about his audience—they didn't need elaborate production or bombastic performances; they needed to feel invited into the home of someone genuinely clever and genuinely human. Unlike the vaudeville shouters and slapstick comedians who dominated early radio, Benny pioneered a subtler, more intimate form of comedy, one built on character and consistency rather than explosive punchlines. This first broadcast plants the seeds for a show that would dominate the medium for over two decades, eventually spawning a legendary supporting cast and becoming a cultural institution.</p>
 <p>Tune in now to witness the very beginning—when Jack Benny stepped before the microphone for the first time, nervous and confident all at once, ready to redefine what comedy on radio could be. History was being made, and you're invited to hear it unfold.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

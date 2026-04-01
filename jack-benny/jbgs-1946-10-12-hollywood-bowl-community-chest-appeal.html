@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1946 10 12 Hollywood Bowl Community Chest Appeal — The Jack Benny Program | Ghost of Radio</title>
+  <title>Hollywood Bowl Community Chest Appeal — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1946 10 12 Hollywood Bowl Community Chest Appeal — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1946 10 12 Hollywood Bowl Community Chest Appeal — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1946 10 12 Hollywood Bowl Community Chest Appeal — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1946</span>
           </div>
-          <h1 class="episode__title">Jbgs 1946 10 12 Hollywood Bowl Community Chest Appeal</h1>
+          <h1 class="episode__title">Hollywood Bowl Community Chest Appeal</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Hollywood Bowl Community Chest Appeal (October 12, 1946)</p>
-<p>Picture this: October 12th, 1946. The massive Hollywood Bowl, that glittering amphitheater carved into the Hollywood Hills, is packed to the rafters with an eager audience. Jack Benny takes the stage not merely to entertain, but to rally his listeners for a cause that mattered desperately in postwar America—the Community Chest appeal. What unfolds is pure theatrical magic: Benny's trademark stinginess collides hilariously with genuine civic duty as he cajoles his famous repertory of characters into supporting the fundraising effort. You'll hear Don Wilson's booming announcer voice, Phil Harris's smooth banter, Mary Livingstone's quick-witted retorts, and Rochester's deadpan wisdom. The tension between Benny's comedic miserliness and the evening's noble purpose creates an electric atmosphere—can Jack actually convince his radio family (and listeners at home) to open their wallets? The scripts crackle with the kind of wartime-to-peacetime energy that defined 1946: America was rebuilding, and radio stars were duty-bound to lead the charge.</p>
+          <p>Picture this: October 12th, 1946. The massive Hollywood Bowl, that glittering amphitheater carved into the Hollywood Hills, is packed to the rafters with an eager audience. Jack Benny takes the stage not merely to entertain, but to rally his listeners for a cause that mattered desperately in postwar America—the Community Chest appeal. What unfolds is pure theatrical magic: Benny's trademark stinginess collides hilariously with genuine civic duty as he cajoles his famous repertory of characters into supporting the fundraising effort. You'll hear Don Wilson's booming announcer voice, Phil Harris's smooth banter, Mary Livingstone's quick-witted retorts, and Rochester's deadpan wisdom. The tension between Benny's comedic miserliness and the evening's noble purpose creates an electric atmosphere—can Jack actually convince his radio family (and listeners at home) to open their wallets? The scripts crackle with the kind of wartime-to-peacetime energy that defined 1946: America was rebuilding, and radio stars were duty-bound to lead the charge.</p>
 <p>This episode captures The Jack Benny Program at the absolute height of its powers. By 1946, Benny had spent fourteen years perfecting the alchemy of situation comedy on radio—transforming himself into a beloved character who could be simultaneously selfish and endearing, pompous yet vulnerable. His willingness to perform for charity, to use his considerable talents for community benefit, revealed the genuine heart beneath the comic persona that made millions tune in every Sunday night.</p>
 <p>Don't miss this remarkable artifact of American entertainment and goodwill. This is Jack Benny doing what he did best: making you laugh while making you care. Tune in and experience a night at the Hollywood Bowl that proves comedy and conscience aren't mutually exclusive.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lux 1938 09 26 Seven Keys To Baldpate W Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Seven Keys To Baldpate W Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Lux 1938 09 26 Seven Keys To Baldpate W Jack Benny — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Lux 1938 09 26 Seven Keys To Baldpate W Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Lux 1938 09 26 Seven Keys To Baldpate W Jack Benny — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1938</span>
           </div>
-          <h1 class="episode__title">Lux 1938 09 26 Seven Keys To Baldpate W Jack Benny</h1>
+          <h1 class="episode__title">Seven Keys To Baldpate W Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Seven Keys to Baldpate (September 26, 1938)</p>
-<p>Picture this: it's late September, 1938, and America tunes in to hear Jack Benny himself caught in a delightfully tangled mystery at the remote Baldpate Inn. As the doors lock and suspicion swirls around every shadowy corner, Jack's trademark deadpan delivery collides gloriously with genuine intrigue. This Lux Radio Theatre presentation brings the classic stage play "Seven Keys to Baldpate" to vivid life, complete with creaking floorboards, whispered secrets, and the brilliant supporting cast that makes Benny's comedy sing. Don't expect laugh-track simplicity—expect genuine theatrical tension punctuated by perfectly timed comic relief, where Benny's bemused bewilderment becomes our own as the mystery deepens and the stakes rise.</p>
+          <p>Picture this: it's late September, 1938, and America tunes in to hear Jack Benny himself caught in a delightfully tangled mystery at the remote Baldpate Inn. As the doors lock and suspicion swirls around every shadowy corner, Jack's trademark deadpan delivery collides gloriously with genuine intrigue. This Lux Radio Theatre presentation brings the classic stage play "Seven Keys to Baldpate" to vivid life, complete with creaking floorboards, whispered secrets, and the brilliant supporting cast that makes Benny's comedy sing. Don't expect laugh-track simplicity—expect genuine theatrical tension punctuated by perfectly timed comic relief, where Benny's bemused bewilderment becomes our own as the mystery deepens and the stakes rise.</p>
 <p>This broadcast arrives at a fascinating crossroads in American entertainment history. By 1938, Jack Benny had already become radio royalty, his Sunday night slot an unmissable ritual for millions of families. Yet here, on the Lux Radio Theatre—the network's prestigious dramatic showcase—he ventures beyond his familiar domestic comedy into this darker, more theatrical territory. The episode showcases why Benny's genius extended far beyond mere gags; his ability to inhabit character, to create genuine comic pathos, and to work seamlessly with ensemble casts made him genuinely versatile. The Baldpate mystery gave listeners something unexpected from their beloved miser: mystery, sophistication, and a heretofore-hidden dramatic dimension.</p>
 <p>Whether you're a devoted Benny enthusiast or discovering his talents for the first time, this episode offers a rare glimpse into radio's golden age when comedy and drama could dance together, when a star's versatility was measured by how far beyond type-casting he could venture. Tune in to hear Jack Benny do what he did best: make us laugh while keeping us guessing until the final key turns in the lock.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1946 04 28 The Kid From Brooklyn — The Jack Benny Program | Ghost of Radio</title>
+  <title>The Kid From Brooklyn — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1946 04 28 The Kid From Brooklyn — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1946 04 28 The Kid From Brooklyn — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1946 04 28 The Kid From Brooklyn — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1946</span>
           </div>
-          <h1 class="episode__title">Jb 1946 04 28 The Kid From Brooklyn</h1>
+          <h1 class="episode__title">The Kid From Brooklyn</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,9 +71,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Kid From Brooklyn (April 28, 1946)</p>
-<p>Picture this: it's a Sunday evening in 1946, and across America, families are settling in around their radios for Jack Benny's latest comedic adventure. This week, Jack encounters a brash young boxer fresh off the streets of Brooklyn—and naturally, he becomes the unwilling target of the kid's misplaced admiration and relentless pestering. What unfolds is a masterclass in verbal sparring and perfectly timed pauses, as Jack's deadpan delivery clashes hilariously with the newcomer's aggressive charm. Don Rochester's orchestra swells between scenes, and you'll hear the familiar cast—Mary Livingstone's pointed remarks, Don Wilson's booming announcer voice—all conspiring to entangle poor Jack in yet another predicament of his own making.</p>
-<p>The Jack Benny Program was radio's greatest gift to American comedy, and by 1946, Jack had perfected an almost Shakespearean understanding of the form. Unlike louder, more frantic comedians, Benny's genius lay in what he *didn't* say—his pauses became legendary, the spaces between words sometimes funnier than the jokes themselves. Post-war audiences craved both escapism and sophistication, and Jack delivered both in equal measure, his thinly-veiled cheapness and vanity serving as gentle satire of American materialism. Each episode was a theatrical event, performed live with a studio audience whose laughter was as much a part of the experience as the script itself.</p>
+          <p>Picture this: it's a Sunday evening in 1946, and across America, families are settling in around their radios for Jack Benny's latest comedic adventure. This week, Jack encounters a brash young boxer fresh off the streets of Brooklyn—and naturally, he becomes the unwilling target of the kid's misplaced admiration and relentless pestering. What unfolds is a masterclass in verbal sparring and perfectly timed pauses, as Jack's deadpan delivery clashes hilariously with the newcomer's aggressive charm. Don Rochester's orchestra swells between scenes, and you'll hear the familiar cast—Mary Livingstone's pointed remarks, Don Wilson's booming announcer voice—all conspiring to entangle poor Jack in yet another predicament of his own making.</p>
+<p>The Jack Benny Program was radio's greatest gift to American comedy, and by 1946, Jack had perfected an almost Shakespearean understanding of the form. Unlike louder, more frantic comedians, Benny's genius lay in what he didn't say—his pauses became legendary, the spaces between words sometimes funnier than the jokes themselves. Post-war audiences craved both escapism and sophistication, and Jack delivered both in equal measure, his thinly-veiled cheapness and vanity serving as gentle satire of American materialism. Each episode was a theatrical event, performed live with a studio audience whose laughter was as much a part of the experience as the script itself.</p>
 <p>This is radio comedy at its peak—smart, intimate, and utterly irreplaceable. Tune in and discover why millions of listeners made The Jack Benny Program an unmissable appointment each week. Hear the warmth, the wit, and the perfect comic timing that made Jack Benny immortal.</p>
         </div>
 
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

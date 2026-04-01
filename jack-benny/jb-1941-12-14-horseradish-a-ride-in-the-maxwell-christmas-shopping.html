@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 12 14 Horseradish A Ride In The Maxwell Christmas Shopping — The Jack Benny Program | Ghost of Radio</title>
+  <title>Horseradish A Ride In The Maxwell Christmas Shopping — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 12 14 Horseradish A Ride In The Maxwell Christmas Shopping — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 12 14 Horseradish A Ride In The Maxwell Christmas Shopping — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 12 14 Horseradish A Ride In The Maxwell Christmas Shopping — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 12 14 Horseradish A Ride In The Maxwell Christmas Shopping</h1>
+          <h1 class="episode__title">Horseradish A Ride In The Maxwell Christmas Shopping</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - December 14, 1941</p>
-<p>Picture the crackling warmth of your radio on a winter evening, just one week after Pearl Harbor shattered the nation's peace. Jack Benny and his familiar cast of comedic conspirators return to lift spirits with their brand of gentle, sophisticated humor—and this week they've concocted a delightful holiday madness involving a bottle of horseradish, a temperamental ride in Jack's perpetually decrepit Maxwell automobile, and the seasonal chaos of Christmas shopping. As the orchestra swells and Jack's carefully timed pauses punctuate the comedy, you'll hear Rochester's deadpan observations, Mary Livingstone's sharp-tongued banter, and Don Wilson's booming announcer's laugh cutting through the studio audience's roaring approval. There's an unmistakable poignancy to this particular broadcast—Americans gathering around their sets needed laughter now more than ever, and Jack Benny knew exactly how to deliver it.</p>
+          <p>Picture the crackling warmth of your radio on a winter evening, just one week after Pearl Harbor shattered the nation's peace. Jack Benny and his familiar cast of comedic conspirators return to lift spirits with their brand of gentle, sophisticated humor—and this week they've concocted a delightful holiday madness involving a bottle of horseradish, a temperamental ride in Jack's perpetually decrepit Maxwell automobile, and the seasonal chaos of Christmas shopping. As the orchestra swells and Jack's carefully timed pauses punctuate the comedy, you'll hear Rochester's deadpan observations, Mary Livingstone's sharp-tongued banter, and Don Wilson's booming announcer's laugh cutting through the studio audience's roaring approval. There's an unmistakable poignancy to this particular broadcast—Americans gathering around their sets needed laughter now more than ever, and Jack Benny knew exactly how to deliver it.</p>
 <p>The Jack Benny Program had already become a cultural institution by 1941, setting the standard for comedy-variety radio that would influence entertainment for decades. Benny's genius lay not in broad slapstick but in character-driven humor—the perfectly executed timing, the running gags (his ongoing feud with Fred Allen, his miserly reputation, that immortal Maxwell), and an ensemble cast whose chemistry felt like eavesdropping on old friends. Broadcasting just eight days after America's entry into World War II, this episode represents radio at its most vital function: providing comfort, continuity, and escape during uncertain times.</p>
 <p>Tune in and discover why America tuned in religiously every week. Hear the sounds of a golden age when comedy meant something deeper than mere jokes—it meant connection, familiarity, and hope delivered through the speaker in your living room.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cp 1942 11 10 Jack Benny, Alice Faye, Cass Daley — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny, Alice Faye, Cass Daley — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Cp 1942 11 10 Jack Benny, Alice Faye, Cass Daley — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Cp 1942 11 10 Jack Benny, Alice Faye, Cass Daley — The Jack Benny Program">
   <meta property="og:description" content="Listen to Cp 1942 11 10 Jack Benny, Alice Faye, Cass Daley — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Cp 1942 11 10 Jack Benny, Alice Faye, Cass Daley</h1>
+          <h1 class="episode__title">Jack Benny, Alice Faye, Cass Daley</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program — November 10, 1942</p>
-<p>Step into Studio 6-B on this crisp November evening in 1942, where Jack Benny takes the microphone with his signature wavering violin tucked under his arm—and a full roster of Hollywood's finest ready to share the stage. Fresh from her triumphs on the silver screen, the enchanting Alice Faye brings her golden-voiced warmth to the proceedings, while the irrepressible Cass Daley, Hollywood's comic sensation, prepares to unleash her trademark zaniness upon an unsuspecting audience. What unfolds is ninety minutes of comedy sketches, musical interludes, and the kind of perfectly timed mayhem that made Jack's Sunday night broadcast the most anticipated appointment in American living rooms. Listen as Rochester delivers his deadpan retorts, as the orchestra swells under Bert Gordon's baton, and as Jack himself—perpetually thirty-nine years old—navigates the chaos with impeccable comic timing and his trademark stingy charm.</p>
+          <p>Step into Studio 6-B on this crisp November evening in 1942, where Jack Benny takes the microphone with his signature wavering violin tucked under his arm—and a full roster of Hollywood's finest ready to share the stage. Fresh from her triumphs on the silver screen, the enchanting Alice Faye brings her golden-voiced warmth to the proceedings, while the irrepressible Cass Daley, Hollywood's comic sensation, prepares to unleash her trademark zaniness upon an unsuspecting audience. What unfolds is ninety minutes of comedy sketches, musical interludes, and the kind of perfectly timed mayhem that made Jack's Sunday night broadcast the most anticipated appointment in American living rooms. Listen as Rochester delivers his deadpan retorts, as the orchestra swells under Bert Gordon's baton, and as Jack himself—perpetually thirty-nine years old—navigates the chaos with impeccable comic timing and his trademark stingy charm.</p>
 <p>In 1942, as America fought on two fronts and the home front endured rationing and uncertainty, radio was the great escape and the great unifier. The Jack Benny Program had already become an institution, having pioneered the situation comedy format that would dominate entertainment for decades to come. Benny's genius lay not in punchlines alone but in character—his relationship with Rochester, his rivalry with Fred Allen, his vanity, his miserliness—these became as familiar to listeners as members of their own family. With guest stars like Faye and Daley, each episode became an event, a chance to hear Hollywood personalities in their element, unscripted and vital in ways television could never quite capture.</p>
 <p>Dust off your dial and tune in to this glorious snapshot of radio's golden age. This is entertainment as it was meant to be heard—intimate, immediate, and utterly alive with the spark of live performance.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

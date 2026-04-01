@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1945 12 25 Elgin Christmas Special — The Jack Benny Program | Ghost of Radio</title>
+  <title>Elgin Christmas Special — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1945 12 25 Elgin Christmas Special — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1945 12 25 Elgin Christmas Special — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1945 12 25 Elgin Christmas Special — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1945</span>
           </div>
-          <h1 class="episode__title">Jbgs 1945 12 25 Elgin Christmas Special</h1>
+          <h1 class="episode__title">Elgin Christmas Special</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Christmas Special (December 25, 1945)</p>
-<p>Picture this: it's Christmas morning, 1945, and across America, families gather around their radio sets as Jack Benny's familiar, measured voice crackles through the speaker. This Elgin-sponsored special captures something magical—the first real Christmas broadcast since the war's end, with our nation's servicemen finally coming home. Jack and his beloved cast—Mary Livingstone, Don Wilson, and the irrepressible Rochester—have crafted a program that seamlessly weaves holiday sentiment with the razor-sharp comedy that made them radio's most beloved ensemble. Expect musical interludes from the orchestra, Rochester's devastating zingers about Jack's notorious stinginess, and Mary's exasperated reactions to her husband's endless schemes. There's genuine warmth beneath the comedy this year, a palpable relief and gratitude that permeates even the most ridiculous sketches.</p>
+          <p>Picture this: it's Christmas morning, 1945, and across America, families gather around their radio sets as Jack Benny's familiar, measured voice crackles through the speaker. This Elgin-sponsored special captures something magical—the first real Christmas broadcast since the war's end, with our nation's servicemen finally coming home. Jack and his beloved cast—Mary Livingstone, Don Wilson, and the irrepressible Rochester—have crafted a program that seamlessly weaves holiday sentiment with the razor-sharp comedy that made them radio's most beloved ensemble. Expect musical interludes from the orchestra, Rochester's devastating zingers about Jack's notorious stinginess, and Mary's exasperated reactions to her husband's endless schemes. There's genuine warmth beneath the comedy this year, a palpable relief and gratitude that permeates even the most ridiculous sketches.</p>
 <p>The Jack Benny Program stands as radio's finest achievement in variety entertainment, and this 1945 Christmas special represents the show at its zenith. After thirteen years on the air, Jack and his writers had perfected the art of the half-hour broadcast—blending stand-up, scripted comedy, musical performance, and ensemble chemistry into something utterly unique. This particular episode captures a nation in transition, celebrating peace and reunification with laughter. The Elgin sponsorship kept the show's quality production values pristine, and the writers knew exactly how to balance humor with the genuine emotion many listeners carried in their hearts that December.</p>
 <p>So settle in with hot cocoa and family, and let this seventy-five-year-old broadcast transport you back to that magical Christmas when Jack Benny reminded America how to laugh again. This is radio at its finest—timeless, warm, and unmistakably genuine.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

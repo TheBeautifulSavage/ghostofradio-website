@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1944 12 26 Elgin Christmas Special — The Jack Benny Program | Ghost of Radio</title>
+  <title>Elgin Christmas Special — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1944 12 26 Elgin Christmas Special — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1944 12 26 Elgin Christmas Special — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1944 12 26 Elgin Christmas Special — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jbgs 1944 12 26 Elgin Christmas Special</h1>
+          <h1 class="episode__title">Elgin Christmas Special</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Christmas Special (December 26, 1944)</p>
-<p>Picture yourself huddled around the radio on the day after Christmas, 1944—a time when American families desperately needed laughter amidst the uncertainty of war. Jack Benny, that perpetually thirty-nine-year-old miser with the world-weary delivery and impeccable timing, returns with his beloved cast for a holiday special that captures something magical about radio's golden age. This episode brings together all the familiar faces: Mary Livingstone's sharp-tongued observations, Rochester's deadpan wisdom, Don Wilson's booming announcements, and the musical interludes that made each broadcast an event. Expect the genteel chaos of Jack's household, witty repartee about holiday spending (naturally causing Jack financial anguish), and musical numbers that remind you why variety radio was appointment listening. The Elgin watch sponsorship adds a touch of period authenticity—these were the commercials listeners actually anticipated, delivered with the same comedic flair as the show itself.</p>
+          <p>Picture yourself huddled around the radio on the day after Christmas, 1944—a time when American families desperately needed laughter amidst the uncertainty of war. Jack Benny, that perpetually thirty-nine-year-old miser with the world-weary delivery and impeccable timing, returns with his beloved cast for a holiday special that captures something magical about radio's golden age. This episode brings together all the familiar faces: Mary Livingstone's sharp-tongued observations, Rochester's deadpan wisdom, Don Wilson's booming announcements, and the musical interludes that made each broadcast an event. Expect the genteel chaos of Jack's household, witty repartee about holiday spending (naturally causing Jack financial anguish), and musical numbers that remind you why variety radio was appointment listening. The Elgin watch sponsorship adds a touch of period authenticity—these were the commercials listeners actually anticipated, delivered with the same comedic flair as the show itself.</p>
 <p>In 1944, as American soldiers fought across two continents, The Jack Benny Program stood as a beacon of normalcy and sophistication. The show had already become a cultural institution, pioneering the sitcom format and proving that comedy could thrive through character and ensemble timing rather than slapstick. Jack's particular genius—playing himself as a vain, cheap, and delightfully self-aware version of Jack Benny—revolutionized how comedy could work in broadcasting. This Christmas special represents the show at its peak, when Jack's influence on American entertainment was virtually unmatched.</p>
 <p>Tune in now to experience an artifact of wartime America, when laughter and the familiar voices of beloved performers offered comfort and escape. In just thirty minutes, you'll understand why millions of listeners made this appointment every week—this is radio entertainment at its finest.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1936 05 17 Everybody's Not So Hot — The Jack Benny Program | Ghost of Radio</title>
+  <title>Everybody's Not So Hot — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1936 05 17 Everybody's Not So Hot — The Jack Benny Program (NBC/CBS, 1936). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1936 05 17 Everybody's Not So Hot — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1936 05 17 Everybody's Not So Hot — The Jack Benny Program (NBC/CBS, 1936). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1936</span>
           </div>
-          <h1 class="episode__title">Jb 1936 05 17 Everybody's Not So Hot</h1>
+          <h1 class="episode__title">Everybody's Not So Hot</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Everybody's Not So Hot"</p>
-<p>Picture this: it's May 17th, 1936, and across the nation, families are settling in around their radio sets as Jack Benny's familiar musical cue fades and his voice cuts through with that signature delivery—warm, self-deprecating, perfectly timed. Tonight's episode promises one of Jack's elaborate schemes gone hilariously wrong, with his long-suffering announcer Don Wilson caught in the crossfire and the orchestra ready to punctuate every pratfall with comedic precision. In this particular installment, everyone around Jack seems to be succeeding at something or other, and Jack's vanity simply cannot bear it. What follows is a masterclass in comedic timing and character work, as Jack attempts to prove he's still "hot" while everything conspires against him in the most delightful ways. The chemistry between Jack and his ensemble—his girlfriend Mary Livingstone, his valet Rochester, and the rest of the supporting cast—crackles with the energy of performers who've honed their craft through hundreds of live broadcasts.</p>
+          <p>Picture this: it's May 17th, 1936, and across the nation, families are settling in around their radio sets as Jack Benny's familiar musical cue fades and his voice cuts through with that signature delivery—warm, self-deprecating, perfectly timed. Tonight's episode promises one of Jack's elaborate schemes gone hilariously wrong, with his long-suffering announcer Don Wilson caught in the crossfire and the orchestra ready to punctuate every pratfall with comedic precision. In this particular installment, everyone around Jack seems to be succeeding at something or other, and Jack's vanity simply cannot bear it. What follows is a masterclass in comedic timing and character work, as Jack attempts to prove he's still "hot" while everything conspires against him in the most delightful ways. The chemistry between Jack and his ensemble—his girlfriend Mary Livingstone, his valet Rochester, and the rest of the supporting cast—crackles with the energy of performers who've honed their craft through hundreds of live broadcasts.</p>
 <p>By 1936, The Jack Benny Program had already become the gold standard of radio comedy, pioneering techniques that would influence entertainment for decades. Jack's genius lay not in rapid-fire jokes but in character-driven humor: his stinginess, his vanity, his terrible violin playing were beloved running gags that audiences anticipated with delight. This episode exemplifies why NBC's investment in Benny's talents paid dividends in ratings and cultural impact.</p>
 <p>Don't miss the chance to experience why Jack Benny was the undisputed king of radio comedy. Tune in to "Everybody's Not So Hot" and discover the wit and warmth that made millions of Americans tune in faithfully, week after week, to see what ridiculous situation Jack would find himself in next.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

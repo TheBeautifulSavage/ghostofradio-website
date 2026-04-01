@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 10 18 Jack Donates Maxwell To Scrap Drive — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Donates Maxwell To Scrap Drive — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 10 18 Jack Donates Maxwell To Scrap Drive — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 10 18 Jack Donates Maxwell To Scrap Drive — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 10 18 Jack Donates Maxwell To Scrap Drive — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 10 18 Jack Donates Maxwell To Scrap Drive</h1>
+          <h1 class="episode__title">Jack Donates Maxwell To Scrap Drive</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program — October 18, 1942</p>
-<p>Picture this: Jack Benny stands in his living room, face flushed with indignation, as his beloved Maxwell automobile—that wheezing, sputtering jalopy that's been the butt of jokes for a decade—becomes the unlikely centerpiece of a patriotic crisis. It's wartime, and a scrap metal drive has swept the nation, calling on every citizen to sacrifice for the war effort. But how can Jack part with the Maxwell, even for Uncle Sam? This episode captures the comedian at his finest: the internal conflict is exquisite, his timing impeccable, as he wrestles with duty and nostalgia while his supporting cast—particularly Mary Livingstone's deadpan barbs and Phil Harris's cocky trumpet player routine—circle like vultures. The tension builds to a crescendo of comic absurdity that only Jack Benny could milk with such perfect restraint. You'll hear the studio audience roar with recognition and laughter as Jack finally surrenders his mechanical companion, but only after extracting every ounce of comedy from the moment.</p>
+          <p>Picture this: Jack Benny stands in his living room, face flushed with indignation, as his beloved Maxwell automobile—that wheezing, sputtering jalopy that's been the butt of jokes for a decade—becomes the unlikely centerpiece of a patriotic crisis. It's wartime, and a scrap metal drive has swept the nation, calling on every citizen to sacrifice for the war effort. But how can Jack part with the Maxwell, even for Uncle Sam? This episode captures the comedian at his finest: the internal conflict is exquisite, his timing impeccable, as he wrestles with duty and nostalgia while his supporting cast—particularly Mary Livingstone's deadpan barbs and Phil Harris's cocky trumpet player routine—circle like vultures. The tension builds to a crescendo of comic absurdity that only Jack Benny could milk with such perfect restraint. You'll hear the studio audience roar with recognition and laughter as Jack finally surrenders his mechanical companion, but only after extracting every ounce of comedy from the moment.</p>
 <p>This episode stands as a remarkable snapshot of 1942 America: entertainment and patriotism intertwined, a beloved radio show using its cultural reach to champion the war effort while remaining irreverently funny. The Jack Benny Program was radio's gold standard for sophisticated comedy, where the jokes didn't rely on slapstick but on character, timing, and running gags that listeners cherished. By donating the Maxwell—that symbol of American humor and Jack's eternal cheap-skate persona—the episode transforms comedy into citizenship, proving that radio could entertain and inspire simultaneously.</p>
 <p>Tune in for a masterclass in comedic timing and a nostalgic glimpse of a nation united through laughter. This is radio at its peak.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

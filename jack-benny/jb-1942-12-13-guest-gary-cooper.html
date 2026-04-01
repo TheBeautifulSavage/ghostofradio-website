@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 12 13 Guest Gary Cooper — The Jack Benny Program | Ghost of Radio</title>
+  <title>Guest Gary Cooper — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 12 13 Guest Gary Cooper — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 12 13 Guest Gary Cooper — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 12 13 Guest Gary Cooper — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 12 13 Guest Gary Cooper</h1>
+          <h1 class="episode__title">Guest Gary Cooper</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: December 13, 1942</p>
-<p>Picture yourself huddled around the radio on a cold December evening in 1942, when the nation's anxiety hung as heavy as winter fog. Tonight, Jack Benny welcomes Hollywood's most ruggedly charming leading man, Gary Cooper, into his carefully constructed world of comedy. What unfolds is pure magic—Cooper, the strong silent type from the silver screen, rendered delightfully awkward by Benny's relentless comedic needling. Between musical interludes from the orchestra and perfectly timed interruptions from Eddie "Rochester" Anderson, the show builds toward moments of genuine hilarity. You can almost hear the studio audience roaring as Jack feigns wounded surprise at Cooper's dry wit, each exchange a master class in comedic timing that would influence generations of performers.</p>
+          <p>Picture yourself huddled around the radio on a cold December evening in 1942, when the nation's anxiety hung as heavy as winter fog. Tonight, Jack Benny welcomes Hollywood's most ruggedly charming leading man, Gary Cooper, into his carefully constructed world of comedy. What unfolds is pure magic—Cooper, the strong silent type from the silver screen, rendered delightfully awkward by Benny's relentless comedic needling. Between musical interludes from the orchestra and perfectly timed interruptions from Eddie "Rochester" Anderson, the show builds toward moments of genuine hilarity. You can almost hear the studio audience roaring as Jack feigns wounded surprise at Cooper's dry wit, each exchange a master class in comedic timing that would influence generations of performers.</p>
 <p>This episode captures the essence of why The Jack Benny Program dominated American radio for over two decades. Unlike variety shows that simply showcased talent, Benny created a recurring world where listeners felt like intimate friends visiting a character they knew intimately—vain, miserly, yet endearing. During wartime, when Americans desperately needed laughter and escape, Benny delivered both without sacrificing sophistication. Guests like Cooper were drawn to the show precisely because Benny's comedy transcended celebrity worship; he treated Hollywood's biggest names as foils for his own carefully cultivated persona. The December 1942 broadcast stands as a particularly rich example of this alchemy.</p>
 <p>Settle back and experience radio at its golden peak. This is comedy without a laugh track, intelligence without condescension, and entertainment that made millions forget—if only for thirty minutes—the weight of a nation at war.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

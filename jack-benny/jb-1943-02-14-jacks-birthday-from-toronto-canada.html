@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1943 02 14 Jack's Birthday From Toronto, Canada — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack's Birthday From Toronto, Canada — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1943 02 14 Jack's Birthday From Toronto, Canada — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1943 02 14 Jack's Birthday From Toronto, Canada — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1943 02 14 Jack's Birthday From Toronto, Canada — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Jb 1943 02 14 Jack's Birthday From Toronto, Canada</h1>
+          <h1 class="episode__title">Jack's Birthday From Toronto, Canada</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Jack's Birthday From Toronto, Canada</p>
-<p>Picture this: it's February 14th, 1943, and Jack Benny is broadcasting live from Toronto—not from his usual NBC studio, but from the heart of Canada during wartime. This special birthday episode crackles with an electric energy that only a remote broadcast can deliver, complete with the unpredictability that comes with performing before a live audience in unfamiliar territory. Listeners will hear the unmistakable warmth of Jack's iconic deadpan humor as he celebrates another year, but this time surrounded by the enthusiastic Canadian crowd whose laughter adds a thrilling new dimension to the familiar proceedings. Between musical interludes from Phil Harris and Don Wilson's booming announcer voice, Jack navigates birthday gags, audience banter, and the gentle ribbing from his supporting cast that made the program an institution. There's something particularly poignant about a wartime birthday broadcast—a moment of joy and levity in an uncertain world, beamed across borders to homesick servicemen and families huddled around their radio sets.</p>
+          <p>Picture this: it's February 14th, 1943, and Jack Benny is broadcasting live from Toronto—not from his usual NBC studio, but from the heart of Canada during wartime. This special birthday episode crackles with an electric energy that only a remote broadcast can deliver, complete with the unpredictability that comes with performing before a live audience in unfamiliar territory. Listeners will hear the unmistakable warmth of Jack's iconic deadpan humor as he celebrates another year, but this time surrounded by the enthusiastic Canadian crowd whose laughter adds a thrilling new dimension to the familiar proceedings. Between musical interludes from Phil Harris and Don Wilson's booming announcer voice, Jack navigates birthday gags, audience banter, and the gentle ribbing from his supporting cast that made the program an institution. There's something particularly poignant about a wartime birthday broadcast—a moment of joy and levity in an uncertain world, beamed across borders to homesick servicemen and families huddled around their radio sets.</p>
 <p>The Jack Benny Program stands as one of radio's greatest achievements, a show that perfected the art of situational comedy and verbal wit long before television ever existed. Benny's genius lay not in slapstick or forced humor, but in character—the perpetually thirty-nine-year-old cheapskate with his violin, his ancient Maxwell automobile, and his perfectly timed pauses. By 1943, the program had already become a cultural phenomenon, and this Toronto broadcast represents the show at the height of its creative powers, when Benny's influence extended far beyond entertainment to become a morale-boosting beacon during America's war effort.</p>
 <p>Don't miss this rare glimpse into Golden Age radio history—a genuine piece of February 14th, 1943, preserved in time.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

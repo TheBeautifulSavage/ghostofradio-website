@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1954 05 23 Jack's Trip To Las Vegas — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack's Trip To Las Vegas — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1954 05 23 Jack's Trip To Las Vegas — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1954 05 23 Jack's Trip To Las Vegas — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1954 05 23 Jack's Trip To Las Vegas — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1954</span>
           </div>
-          <h1 class="episode__title">Jb 1954 05 23 Jack's Trip To Las Vegas</h1>
+          <h1 class="episode__title">Jack's Trip To Las Vegas</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Jack's Trip to Las Vegas</p>
-<p>Picture this: it's a warm May evening in 1954, and Jack Benny is about to take his radio audience on a wild excursion to the neon-lit gambling capital of the American West. What could possibly go wrong? Everything, of course—and therein lies the magic. In this uproarious episode, Jack's carefully laid plans for a relaxing vacation collide spectacularly with his miserliness, his valet Rochester's dry wit, and a series of increasingly absurd complications involving slot machines, showgirls, and the inevitable arrival of his perpetually broke announcer Don Wilson. You'll hear the band strike up that iconic theme as the action whisks you from Hollywood to the glittering casinos, where Jack's famously thin wallet becomes the source of endless comedic gold. The supporting cast's impeccable timing makes every punchline land like a perfectly dealt hand of cards.</p>
+          <p>Picture this: it's a warm May evening in 1954, and Jack Benny is about to take his radio audience on a wild excursion to the neon-lit gambling capital of the American West. What could possibly go wrong? Everything, of course—and therein lies the magic. In this uproarious episode, Jack's carefully laid plans for a relaxing vacation collide spectacularly with his miserliness, his valet Rochester's dry wit, and a series of increasingly absurd complications involving slot machines, showgirls, and the inevitable arrival of his perpetually broke announcer Don Wilson. You'll hear the band strike up that iconic theme as the action whisks you from Hollywood to the glittering casinos, where Jack's famously thin wallet becomes the source of endless comedic gold. The supporting cast's impeccable timing makes every punchline land like a perfectly dealt hand of cards.</p>
 <p>By 1954, The Jack Benny Program had become an American institution, having made the transition from radio to television while maintaining its radio broadcast—a testament to the show's enduring appeal. This episode epitomizes the program's genius: taking the everyman struggles of its protagonist and inflating them into fantastical scenarios that somehow felt intimate and relatable. Jack's deadpan delivery, perfected over more than two decades on air, combined with his ensemble's chemistry, created comedy that transcended mere jokes. The writing was sophisticated, the performances were impeccable, and the laughs were genuine—this was comedy as craft.</p>
 <p>If you've never experienced the charm of 1950s radio comedy at its finest, or if you're a devoted fan seeking to relive a treasured memory, this episode is your ticket. Settle into your favorite chair, tune in, and let Jack Benny and his talented cast transport you to a simpler time when comedy meant intelligent writing, expert ensemble work, and the pure pleasure of the human voice spinning tales of hilarious misadventure.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

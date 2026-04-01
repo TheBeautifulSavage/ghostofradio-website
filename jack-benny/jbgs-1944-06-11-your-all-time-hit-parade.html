@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1944 06 11 Your All Time Hit Parade — The Jack Benny Program | Ghost of Radio</title>
+  <title>Your All Time Hit Parade — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1944 06 11 Your All Time Hit Parade — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1944 06 11 Your All Time Hit Parade — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1944 06 11 Your All Time Hit Parade — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jbgs 1944 06 11 Your All Time Hit Parade</h1>
+          <h1 class="episode__title">Your All Time Hit Parade</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Your All Time Hit Parade (June 11, 1944)</p>
-<p>Settle into your favorite chair and prepare yourself for an evening of pure Americana as Jack Benny invites the nation to celebrate the songs that have defined a generation. On this June evening in 1944, as American troops storm across Europe and the home front rallies behind them, Jack and his incomparable cast present "Your All Time Hit Parade"—a rollicking journey through the melodies that have soundtracked the nation's joys and sorrows. Expect the usual mayhem: Rochester's impeccable comic timing, Mary Livingstone's tart observations, Don Wilson's booming announcements punctuating the chaos, and of course, Jack's own violin playing—which, as always, threatens to derail the entire proceedings. Amid the musical performances and comedic sketches, there's an unmistakable warmth, a sense that these beloved songs connect everyone listening, from soldiers overseas to families gathered around the radio at home.</p>
+          <p>Settle into your favorite chair and prepare yourself for an evening of pure Americana as Jack Benny invites the nation to celebrate the songs that have defined a generation. On this June evening in 1944, as American troops storm across Europe and the home front rallies behind them, Jack and his incomparable cast present "Your All Time Hit Parade"—a rollicking journey through the melodies that have soundtracked the nation's joys and sorrows. Expect the usual mayhem: Rochester's impeccable comic timing, Mary Livingstone's tart observations, Don Wilson's booming announcements punctuating the chaos, and of course, Jack's own violin playing—which, as always, threatens to derail the entire proceedings. Amid the musical performances and comedic sketches, there's an unmistakable warmth, a sense that these beloved songs connect everyone listening, from soldiers overseas to families gathered around the radio at home.</p>
 <p>The Jack Benny Program stands as one of radio's supreme achievements, a masterclass in ensemble comedy that proved Americans craved intelligent humor as much as they craved melody. By 1944, Jack's show had become an institution, a weekly ritual for millions who trusted him to deliver both stellar entertainment and a refuge from wartime anxieties. This particular episode captures the program at its zenith, blending nostalgia with topical comedy in that distinctly wartime way, reminding listeners of shared cultural touchstones even as the world shifted beneath their feet.</p>
 <p>Don't miss this chance to experience radio comedy at its finest. Tune in to "Your All Time Hit Parade" and discover why Jack Benny's program remained America's favorite half-hour for over two decades.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

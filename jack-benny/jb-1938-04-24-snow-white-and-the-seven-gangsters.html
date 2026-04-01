@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1938 04 24 Snow White And The Seven Gangsters — The Jack Benny Program | Ghost of Radio</title>
+  <title>Snow White And The Seven Gangsters — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1938 04 24 Snow White And The Seven Gangsters — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1938 04 24 Snow White And The Seven Gangsters — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1938 04 24 Snow White And The Seven Gangsters — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1938</span>
           </div>
-          <h1 class="episode__title">Jb 1938 04 24 Snow White And The Seven Gangsters</h1>
+          <h1 class="episode__title">Snow White And The Seven Gangsters</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Snow White and the Seven Gangsters</p>
-<p>Step into the darkened studio of April 24th, 1938, where Jack Benny orchestrates one of radio's most audacious comedic mashups. In this side-splitting adventure, the fairy tale innocence of Snow White collides headlong with the brutal world of Depression-era gangsters, and the results are nothing short of hilarious chaos. Listeners will relish the perfectly timed exchanges between Benny's trademark stingy, befuddled persona and a supporting cast at the height of their improvisational prowess. Expect slapstick translated brilliantly into sound—gunshots, car chases, and slamming doors creating vivid mental pictures—all woven seamlessly around the fairy tale's familiar beats. The comedy mines the absurdity of transplanting Grimm's innocents into a world of molls, tommy guns, and wise guys, with Benny's deadpan reactions serving as the perfect anchor for the surrounding mayhem.</p>
+          <p>Step into the darkened studio of April 24th, 1938, where Jack Benny orchestrates one of radio's most audacious comedic mashups. In this side-splitting adventure, the fairy tale innocence of Snow White collides headlong with the brutal world of Depression-era gangsters, and the results are nothing short of hilarious chaos. Listeners will relish the perfectly timed exchanges between Benny's trademark stingy, befuddled persona and a supporting cast at the height of their improvisational prowess. Expect slapstick translated brilliantly into sound—gunshots, car chases, and slamming doors creating vivid mental pictures—all woven seamlessly around the fairy tale's familiar beats. The comedy mines the absurdity of transplanting Grimm's innocents into a world of molls, tommy guns, and wise guys, with Benny's deadpan reactions serving as the perfect anchor for the surrounding mayhem.</p>
 <p>By 1938, The Jack Benny Program had become America's most beloved comedy program, reaching millions of households each week. Benny's genius lay not in fast gags or slapstick but in character consistency and impeccable timing—qualities on full display here. This particular episode showcases the show's fearless willingness to parody popular culture, from Hollywood's beloved Disney films to the crime dramas saturating radio and cinema. The supporting cast, including the ever-present Mary Livingstone and the incomparable Rochester van Jones, demonstrate why this ensemble was unmatched in its ability to build comic momentum across twenty-eight minutes of live broadcast.</p>
 <p>Don your finest 1938 attire and settle in for an evening of pure radio magic. This episode captures the golden age of comedy at its absolute zenith—proof that the best humor transcends time itself. Tune in and discover why America couldn't wait each week to spend time with Jack Benny.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

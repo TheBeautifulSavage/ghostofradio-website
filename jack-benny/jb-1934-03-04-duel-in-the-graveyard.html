@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1934 03 04 Duel In The Graveyard — The Jack Benny Program | Ghost of Radio</title>
+  <title>Duel In The Graveyard — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1934 03 04 Duel In The Graveyard — The Jack Benny Program (NBC/CBS, 1934). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1934 03 04 Duel In The Graveyard — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1934 03 04 Duel In The Graveyard — The Jack Benny Program (NBC/CBS, 1934). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1934</span>
           </div>
-          <h1 class="episode__title">Jb 1934 03 04 Duel In The Graveyard</h1>
+          <h1 class="episode__title">Duel In The Graveyard</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Duel In The Graveyard</p>
-<p>Step into the fog-shrouded darkness of a moonlit cemetery as Jack Benny finds himself embroiled in a most unlikely confrontation on this March evening in 1934. What begins as an ordinary evening takes a sinister turn when Jack discovers he must face down a mysterious challenger in a duel among the tombstones. Will Jack's quick wit and nervous charm be enough to see him through this macabre encounter? With the steady support of his announcer and the melodramatic sound effects that bring every creaking gate and distant howl to life, listeners will find themselves on the edge of their seats as this carefully crafted comedy unfolds. The delicious tension between genuine peril and comedic absurdity is precisely what made Jack Benny a household name, and this episode showcases his talent for mining humor from the most improbable situations.</p>
+          <p>Step into the fog-shrouded darkness of a moonlit cemetery as Jack Benny finds himself embroiled in a most unlikely confrontation on this March evening in 1934. What begins as an ordinary evening takes a sinister turn when Jack discovers he must face down a mysterious challenger in a duel among the tombstones. Will Jack's quick wit and nervous charm be enough to see him through this macabre encounter? With the steady support of his announcer and the melodramatic sound effects that bring every creaking gate and distant howl to life, listeners will find themselves on the edge of their seats as this carefully crafted comedy unfolds. The delicious tension between genuine peril and comedic absurdity is precisely what made Jack Benny a household name, and this episode showcases his talent for mining humor from the most improbable situations.</p>
 <p>By 1934, The Jack Benny Program had already begun its ascent to becoming one of America's most beloved entertainment programs, a position it would maintain for over two decades. Jack's masterful timing and willingness to play the bumbling everyman rather than the suave leading man set him apart from his contemporaries. The program's format—a blend of comedy sketches, musical interludes, and guest performances—became the template for the variety show era. What distinguished Benny was his genius for self-deprecation and his ability to make audiences care about his fictional world and its colorful cast of characters.</p>
 <p>This particular episode exemplifies why radio audiences tuned in faithfully each week, eager to hear what ridiculous predicament Jack would find himself in next. Whether you're a devoted fan of classic radio or discovering Jack Benny for the first time, "Duel in the Graveyard" offers the perfect blend of entertainment, suspense, and laughter that defined an entire era of American broadcasting.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

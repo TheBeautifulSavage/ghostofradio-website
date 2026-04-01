@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1943 11 25 Soldiers In Greasepaint — The Jack Benny Program | Ghost of Radio</title>
+  <title>Soldiers In Greasepaint — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1943 11 25 Soldiers In Greasepaint — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1943 11 25 Soldiers In Greasepaint — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1943 11 25 Soldiers In Greasepaint — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Jbgs 1943 11 25 Soldiers In Greasepaint</h1>
+          <h1 class="episode__title">Soldiers In Greasepaint</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Soldiers in Greasepaint (November 25, 1943)</p>
-<p>Picture this: it's Thanksgiving week, 1943, and Jack Benny has opened his doors to a special visitor—a genuine Army entertainment troupe passing through Hollywood en route to the Pacific Theater. What unfolds is a delightful collision between Jack's carefully cultivated vanity and the rough-and-tumble camaraderie of servicemen who've seen the real world beyond the footlights. As the soldiers regale Jack with tales of their own makeshift performances in muddy camps and makeshift theaters, our perpetually pompous star finds himself both defending his artistic integrity and gradually won over by their infectious humor and unshakeable patriotism. Dennis Day's crooning takes an unexpected turn, Mary Livingstone delivers her trademark needling with extra edge, and Phil Harris brings warmth to what could have been a sentimental moment—all while the studio audience roars with laughter at Jack's transparent attempts to prove he's not entirely self-absorbed.</p>
+          <p>Picture this: it's Thanksgiving week, 1943, and Jack Benny has opened his doors to a special visitor—a genuine Army entertainment troupe passing through Hollywood en route to the Pacific Theater. What unfolds is a delightful collision between Jack's carefully cultivated vanity and the rough-and-tumble camaraderie of servicemen who've seen the real world beyond the footlights. As the soldiers regale Jack with tales of their own makeshift performances in muddy camps and makeshift theaters, our perpetually pompous star finds himself both defending his artistic integrity and gradually won over by their infectious humor and unshakeable patriotism. Dennis Day's crooning takes an unexpected turn, Mary Livingstone delivers her trademark needling with extra edge, and Phil Harris brings warmth to what could have been a sentimental moment—all while the studio audience roars with laughter at Jack's transparent attempts to prove he's not entirely self-absorbed.</p>
 <p>The Jack Benny Program had long been America's gold standard for radio comedy, but 1943 finds the show performing its most delicate balancing act: maintaining comedic excellence while the nation bleeds into global war. This episode captures that particular magic of wartime radio—the way entertainment became a lifeline, a connection between home and foxhole, between comedy and sacrifice. Benny's willingness to genuinely cede the spotlight to these real-life heroes speaks volumes about the era's values, even as his character resists every inch of the way.</p>
 <p>Tune in for a half-hour that reminds us why radio comedy still matters: it's where America laughed together, even when the world was burning. This is Jack Benny at his finest—selfish, brilliant, and somehow deeply human.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

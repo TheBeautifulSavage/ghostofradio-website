@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1947 01 05 Humphrey Bogart And Lauren Bacall — The Jack Benny Program | Ghost of Radio</title>
+  <title>Humphrey Bogart And Lauren Bacall — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1947 01 05 Humphrey Bogart And Lauren Bacall — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1947 01 05 Humphrey Bogart And Lauren Bacall — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1947 01 05 Humphrey Bogart And Lauren Bacall — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1947</span>
           </div>
-          <h1 class="episode__title">Jb 1947 01 05 Humphrey Bogart And Lauren Bacall</h1>
+          <h1 class="episode__title">Humphrey Bogart And Lauren Bacall</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - January 5, 1947</p>
-<p>Picture this: it's a crisp winter evening in 1947, and across America, families huddle around their radio sets as Jack Benny's familiar, slightly off-key violin strains crack through the speaker. But tonight is no ordinary broadcast. Hollywood's golden couple—the sultry Lauren Bacall and the hard-boiled Humphrey Bogart—have descended upon Jack's program, and the chemistry is immediate and electric. What unfolds is a masterclass in comedic timing, as Jack's trademark stinginess and self-deprecating humor collide hilariously with Bogart's deadpan wit and Bacall's razor-sharp charm. The interplay between these titans of entertainment crackles with spontaneity; you can almost hear the live studio audience gasping, laughing, and hanging on every word as the scripts blur into genuine, unpredictable conversation.</p>
+          <p>Picture this: it's a crisp winter evening in 1947, and across America, families huddle around their radio sets as Jack Benny's familiar, slightly off-key violin strains crack through the speaker. But tonight is no ordinary broadcast. Hollywood's golden couple—the sultry Lauren Bacall and the hard-boiled Humphrey Bogart—have descended upon Jack's program, and the chemistry is immediate and electric. What unfolds is a masterclass in comedic timing, as Jack's trademark stinginess and self-deprecating humor collide hilariously with Bogart's deadpan wit and Bacall's razor-sharp charm. The interplay between these titans of entertainment crackles with spontaneity; you can almost hear the live studio audience gasping, laughing, and hanging on every word as the scripts blur into genuine, unpredictable conversation.</p>
 <p>This episode captures The Jack Benny Program at its golden peak—a show that revolutionized radio comedy by building running gags across seasons and developing Jack's character as a vain, miserly, yet deeply lovable protagonist audiences felt they knew personally. In 1947, with the war behind America and prosperity beckoning, radio remained the dominant entertainment medium, and Benny's Sunday night broadcast was appointment listening for millions. Guest stars of Bogart and Bacall's magnitude didn't casually drop by studios; their appearance signals the show's cultural supremacy and Jack's unmatched ability to attract Hollywood royalty to his microphone.</p>
 <p>This is radio at its most enchanting—live, spontaneous, and utterly irreplaceable. Tune in and discover why Americans abandoned their evenings for Jack Benny, and why this particular night with two of cinema's greatest legends remains unforgettable even now.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

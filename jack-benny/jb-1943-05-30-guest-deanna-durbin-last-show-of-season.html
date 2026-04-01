@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1943 05 30 Guest Deanna Durbin Last Show Of Season — The Jack Benny Program | Ghost of Radio</title>
+  <title>Guest Deanna Durbin Last Show Of Season — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1943 05 30 Guest Deanna Durbin Last Show Of Season — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1943 05 30 Guest Deanna Durbin Last Show Of Season — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1943 05 30 Guest Deanna Durbin Last Show Of Season — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Jb 1943 05 30 Guest Deanna Durbin Last Show Of Season</h1>
+          <h1 class="episode__title">Guest Deanna Durbin Last Show Of Season</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program – May 30, 1943</p>
-<p>As spring surrenders to summer in 1943, Jack Benny takes the microphone one final time before the network's autumn return, and he's pulled out all the stops for the season finale. Joining him is the radiant Deanna Durbin, the golden-voiced soprano who has captivated audiences on screen and now graces the airwaves with her luminous presence. Expect the usual mayhem from Jack's motley crew—Don Wilson's booming announcer voice, Rochester's razor-sharp wit, and Phil Harris's musical swagger—all woven into sketches that mine comedy from Jack's miserliness, his jealousy of Fred Allen, and his perennial disasters as a violinist. But with Durbin's star power illuminating the proceedings, there's an electric anticipation in the studio; listeners can almost feel the warmth of applause and smell the studio lights as this beloved ensemble prepares to bid their audience farewell until autumn.</p>
+          <p>As spring surrenders to summer in 1943, Jack Benny takes the microphone one final time before the network's autumn return, and he's pulled out all the stops for the season finale. Joining him is the radiant Deanna Durbin, the golden-voiced soprano who has captivated audiences on screen and now graces the airwaves with her luminous presence. Expect the usual mayhem from Jack's motley crew—Don Wilson's booming announcer voice, Rochester's razor-sharp wit, and Phil Harris's musical swagger—all woven into sketches that mine comedy from Jack's miserliness, his jealousy of Fred Allen, and his perennial disasters as a violinist. But with Durbin's star power illuminating the proceedings, there's an electric anticipation in the studio; listeners can almost feel the warmth of applause and smell the studio lights as this beloved ensemble prepares to bid their audience farewell until autumn.</p>
 <p>The Jack Benny Program stands as one of radio's most enduring institutions, having launched from NBC in 1932 and establishing a comedy formula so perfect it would influence television for decades to come. By 1943, with America deep in World War II, Benny's gentle, character-driven humor offered a precious escape—a half-hour where the tensions of wartime could dissolve into laughter at a man too cheap to replace his violin's worn strings or ride the streetcar like a gentleman. The show's willingness to build entire episodes around character rather than gags set it apart from its competitors, and guest stars like Durbin represented Hollywood's effort to support radio's cultural importance during wartime.</p>
 <p>Don't miss this capstone to the season—a perfect snapshot of American comedy at its most civilized and clever, preserved in crystalline audio quality that transports you directly to a golden age of entertainment when a violin joke and a movie star's guest appearance could unite a nation in laughter.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

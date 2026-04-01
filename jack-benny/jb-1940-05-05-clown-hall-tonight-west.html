@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1940 05 05 Clown Hall Tonight (west) — The Jack Benny Program | Ghost of Radio</title>
+  <title>Clown Hall Tonight (west) — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1940 05 05 Clown Hall Tonight (west) — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1940 05 05 Clown Hall Tonight (west) — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1940 05 05 Clown Hall Tonight (west) — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1940</span>
           </div>
-          <h1 class="episode__title">Jb 1940 05 05 Clown Hall Tonight (west)</h1>
+          <h1 class="episode__title">Clown Hall Tonight (west)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Clown Hall Tonight"</p>
-<p>Step into the parlor on the evening of May 5th, 1940, when Jack Benny and his peculiar ensemble gather for an evening that promises equal parts sophistication and slapstick. The title itself bristles with intrigue—"Clown Hall Tonight"—suggesting that beneath the refined veneer of Jack's meticulously orchestrated comedy lies something delightfully chaotic. Expect the usual suspects: Mary Livingstone's razor-sharp repartee designed to puncture Jack's inflated ego, the melancholic strains of Don Wilson's bass profundo, and perhaps a visit from that penny-pinching skinflint's vault. The gentle mayhem unfolds against a backdrop of live studio laughter, that authentic roar of an audience caught between anticipation and hilarity, a sound that electrified American living rooms during radio's golden age.</p>
+          <p>Step into the parlor on the evening of May 5th, 1940, when Jack Benny and his peculiar ensemble gather for an evening that promises equal parts sophistication and slapstick. The title itself bristles with intrigue—"Clown Hall Tonight"—suggesting that beneath the refined veneer of Jack's meticulously orchestrated comedy lies something delightfully chaotic. Expect the usual suspects: Mary Livingstone's razor-sharp repartee designed to puncture Jack's inflated ego, the melancholic strains of Don Wilson's bass profundo, and perhaps a visit from that penny-pinching skinflint's vault. The gentle mayhem unfolds against a backdrop of live studio laughter, that authentic roar of an audience caught between anticipation and hilarity, a sound that electrified American living rooms during radio's golden age.</p>
 <p>By 1940, Jack Benny had already established himself as something of a revolutionary—a comedian who understood that the best humor emerges not from wild contortions but from character, timing, and the delicious space between words. His program represented the pinnacle of radio variety entertainment, blending comedy sketches, musical interludes, and running gags that kept listeners returning week after week. The cast operated with the precision of a Swiss watchmaker, each performer attuned to Jack's deadpan delivery and impeccable comic instincts. This particular broadcast captures the show at its zenith, before television would eventually claim the nation's attention.</p>
 <p>If you haven't yet experienced the masterful comedic timing that made Jack Benny an American institution, or if you're a devoted fan seeking to revisit a moment when radio comedy reigned supreme, tune in to "Clown Hall Tonight." This is entertainment as it was meant to be experienced—live, immediate, and endlessly amusing.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

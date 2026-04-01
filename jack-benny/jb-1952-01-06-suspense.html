@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1952 01 06 Suspense — The Jack Benny Program | Ghost of Radio</title>
+  <title>Suspense — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1952 01 06 Suspense — The Jack Benny Program (NBC/CBS, 1952). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1952 01 06 Suspense — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1952 01 06 Suspense — The Jack Benny Program (NBC/CBS, 1952). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1952</span>
           </div>
-          <h1 class="episode__title">Jb 1952 01 06 Suspense</h1>
+          <h1 class="episode__title">Suspense</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Jack Benny Program - January 6, 1952</p>
-<p>Picture yourself settling into your favorite chair on a crisp January evening, the warm glow of your radio set casting dancing shadows across the living room. As the opening notes of "Love in Bloom" fade and Jack's familiar voice greets you with his trademark greeting, you know you're in for an evening of delicious entertainment. In this particular broadcast, the program takes a thrilling turn into the realm of suspense and mystery—a delightful departure from the usual domestic hijinks that have made Jack a household name. Listeners will find themselves caught between genuine tension and uncontrollable laughter as Jack, Don Wilson, and the gang navigate a shadowy tale of intrigue and danger, their comedic timing turning potential melodrama into something altogether more clever and entertaining.</p>
+          <p>Picture yourself settling into your favorite chair on a crisp January evening, the warm glow of your radio set casting dancing shadows across the living room. As the opening notes of "Love in Bloom" fade and Jack's familiar voice greets you with his trademark greeting, you know you're in for an evening of delicious entertainment. In this particular broadcast, the program takes a thrilling turn into the realm of suspense and mystery—a delightful departure from the usual domestic hijinks that have made Jack a household name. Listeners will find themselves caught between genuine tension and uncontrollable laughter as Jack, Don Wilson, and the gang navigate a shadowy tale of intrigue and danger, their comedic timing turning potential melodrama into something altogether more clever and entertaining.</p>
 <p>By 1952, The Jack Benny Program had already established itself as one of broadcasting's most enduring institutions, a show that had successfully made the transition from radio's early days through two decades of American life. What made Jack's program truly special was its perfect alchemy of characters—the long-suffering Mary Livingstone, the perpetually jovial Don Wilson, the hilariously vain tenor Kenny Baker—all orbiting Jack's character like planets around the sun. The show's willingness to experiment with format, as evidenced by this venture into suspense, demonstrated that Benny understood his audience's sophistication and desire for variety within a familiar framework.</p>
 <p>Don't miss this fascinating glimpse into 1952's entertainment landscape, when a January evening meant tuning in for an hour of genuine surprises and laughter. Rediscover why Jack Benny remained America's favorite comedian for over two decades.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

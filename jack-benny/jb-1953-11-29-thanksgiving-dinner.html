@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1953 11 29 Thanksgiving Dinner — The Jack Benny Program | Ghost of Radio</title>
+  <title>Thanksgiving Dinner — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1953 11 29 Thanksgiving Dinner — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1953 11 29 Thanksgiving Dinner — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1953 11 29 Thanksgiving Dinner — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1953</span>
           </div>
-          <h1 class="episode__title">Jb 1953 11 29 Thanksgiving Dinner</h1>
+          <h1 class="episode__title">Thanksgiving Dinner</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Thanksgiving Dinner (November 29, 1953)</p>
-<p>Picture yourself gathered around the radio on a crisp November evening, the smell of turkey lingering in the air, when Jack Benny's familiar, exasperated voice crackles through the speaker. In this Thanksgiving episode, Jack attempts to host the perfect holiday dinner—a premise that guarantees chaos. What begins as innocent preparations quickly spirals into vintage Benny mayhem, as his long-suffering cast members descend upon his home with their usual comedic appetites. Don Wilson's booming announcer voice, Mary Livingstone's sharp-tongued wit, and the ever-reliable Phil Harris inject their particular brand of controlled pandemonium. You can almost hear the clinking of silverware and the rustle of the studio audience rising with laughter as Jack's meticulous plans unravel in real time, his vanity and stinginess colliding spectacularly with the season of generosity.</p>
+          <p>Picture yourself gathered around the radio on a crisp November evening, the smell of turkey lingering in the air, when Jack Benny's familiar, exasperated voice crackles through the speaker. In this Thanksgiving episode, Jack attempts to host the perfect holiday dinner—a premise that guarantees chaos. What begins as innocent preparations quickly spirals into vintage Benny mayhem, as his long-suffering cast members descend upon his home with their usual comedic appetites. Don Wilson's booming announcer voice, Mary Livingstone's sharp-tongued wit, and the ever-reliable Phil Harris inject their particular brand of controlled pandemonium. You can almost hear the clinking of silverware and the rustle of the studio audience rising with laughter as Jack's meticulous plans unravel in real time, his vanity and stinginess colliding spectacularly with the season of generosity.</p>
 <p>By 1953, The Jack Benny Program had become America's beloved institution, a weekly ritual that defined sophisticated comedy for millions of listeners. Jack had perfected the art of self-deprecation—his miserliness, his obsession with his violin playing, his perpetual thirty-nine years of age—all weaponized for laughs with surgical precision. Unlike the slapstick chaos of some competitors, Benny's humor was rooted in character and timing, a masterclass in comedic restraint that proved you didn't need shouting to command a room. Radio's golden age reached its zenith with Benny's ensemble, a tight-knit repertory company that understood the delicate dance of ensemble comedy.</p>
 <p>Tune in to hear Thanksgiving rendered utterly ridiculous by Jack Benny's perfectly timed takes and the warm camaraderie of a cast that had spent two decades perfecting their craft. It's holiday entertainment at its finest—a golden-age reminder of why families huddled around the radio every Sunday night.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

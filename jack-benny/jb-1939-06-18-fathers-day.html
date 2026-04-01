@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1939 06 18 Father's Day — The Jack Benny Program | Ghost of Radio</title>
+  <title>Father's Day — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1939 06 18 Father's Day — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1939 06 18 Father's Day — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1939 06 18 Father's Day — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jb 1939 06 18 Father's Day</h1>
+          <h1 class="episode__title">Father's Day</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Father's Day (June 18, 1939)</p>
-<p>Step into the living room with Jack Benny this Father's Day broadcast, where the smooth-voiced comedian and his motley crew of supporting players transform the holiday into comedic gold. As the opening theme swells and the studio audience settles into anticipation, you'll hear Jack navigate the minefield of gift-giving expectations, parental guilt, and his perpetual on-air feud with Fred Allen—all wrapped in the kind of warm, relatable humor that made Americans abandon their Sunday evenings for the radio. Mary Livingstone is there to keep Jack honest with her sharp wit, while the announcements and musical interludes provide that perfect blend of vaudeville charm and sophisticated comedy that defined the era. The tension between Jack's miserly nature and his desire to appear generous sets up the episode's central conflict, promising laughs as predicable as they are inevitable.</p>
+          <p>Step into the living room with Jack Benny this Father's Day broadcast, where the smooth-voiced comedian and his motley crew of supporting players transform the holiday into comedic gold. As the opening theme swells and the studio audience settles into anticipation, you'll hear Jack navigate the minefield of gift-giving expectations, parental guilt, and his perpetual on-air feud with Fred Allen—all wrapped in the kind of warm, relatable humor that made Americans abandon their Sunday evenings for the radio. Mary Livingstone is there to keep Jack honest with her sharp wit, while the announcements and musical interludes provide that perfect blend of vaudeville charm and sophisticated comedy that defined the era. The tension between Jack's miserly nature and his desire to appear generous sets up the episode's central conflict, promising laughs as predicable as they are inevitable.</p>
 <p>By 1939, The Jack Benny Program had already established itself as one of America's most beloved broadcasts, a show that demonstrated radio's unique power to create ongoing characters and running gags that listeners anticipated with genuine affection. Jack's success lay not in rapid-fire jokes, but in character-driven comedy—his perpetual age of thirty-nine, his violin playing, his relationship with Mary Livingstone, and his chemistry with the ensemble cast created a world listeners felt they belonged to. During the Great Depression and the gathering clouds of war, these weekly visits to Jack's world offered something invaluable: consistency, humor, and the comforting sound of familiar voices.</p>
 <p>Don't miss this charming slice of 1939 Americana—a reminder that the best comedy has always sprung from character and human truth. Tune in and discover why millions of Americans made this broadcast an unmissable ritual.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

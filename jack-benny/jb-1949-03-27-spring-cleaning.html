@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1949 03 27 Spring Cleaning — The Jack Benny Program | Ghost of Radio</title>
+  <title>Spring Cleaning — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1949 03 27 Spring Cleaning — The Jack Benny Program (NBC/CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1949 03 27 Spring Cleaning — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1949 03 27 Spring Cleaning — The Jack Benny Program (NBC/CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1949</span>
           </div>
-          <h1 class="episode__title">Jb 1949 03 27 Spring Cleaning</h1>
+          <h1 class="episode__title">Spring Cleaning</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,9 +71,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Spring Cleaning (March 27, 1949)</p>
-<p>As spring's first warm breeze drifts through Jack's Beverly Hills mansion, chaos erupts. It's spring cleaning time, and the mild-mannered comedic genius finds himself at war with feather dusters, mysterious storage closets, and his own monumental pack-rat tendencies. Don Wilson's booming announcer voice crashes into the proceedings with characteristic enthusiasm, while Mary Livingstone—Jack's real-life wife and the show's sharp-tongued foil—threatens to throw away decades of accumulated treasures. Phil Harris arrives with a scheme, Rochester offers dry wisdom from the sidelines, and before long, a simple Saturday morning errand has spiraled into something delightfully ridiculous. Listeners will delight in the show's trademark rapid-fire dialogue and the running gags that made this program an institution: Jack's vanity about his age, his stinginess (the famous vault makes an appearance), and the gentle ribbing that defined his particular genius for comedy.</p>
-<p>By 1949, *The Jack Benny Program* had already ruled American radio for seventeen years, having migrated from NBC to CBS, pioneering a style of situational comedy that would later dominate television. The show's success lay in its restraint—Jack's comedy came not from jokes but from character, from the carefully constructed personality of the perpetually thirty-nine-year-old man surrounded by memorable eccentrics. The ensemble cast had become as important as Jack himself, a formula that would influence everything from *I Love Lucy* to modern sitcoms.</p>
+          <p>As spring's first warm breeze drifts through Jack's Beverly Hills mansion, chaos erupts. It's spring cleaning time, and the mild-mannered comedic genius finds himself at war with feather dusters, mysterious storage closets, and his own monumental pack-rat tendencies. Don Wilson's booming announcer voice crashes into the proceedings with characteristic enthusiasm, while Mary Livingstone—Jack's real-life wife and the show's sharp-tongued foil—threatens to throw away decades of accumulated treasures. Phil Harris arrives with a scheme, Rochester offers dry wisdom from the sidelines, and before long, a simple Saturday morning errand has spiraled into something delightfully ridiculous. Listeners will delight in the show's trademark rapid-fire dialogue and the running gags that made this program an institution: Jack's vanity about his age, his stinginess (the famous vault makes an appearance), and the gentle ribbing that defined his particular genius for comedy.</p>
+<p>By 1949, The Jack Benny Program had already ruled American radio for seventeen years, having migrated from NBC to CBS, pioneering a style of situational comedy that would later dominate television. The show's success lay in its restraint—Jack's comedy came not from jokes but from character, from the carefully constructed personality of the perpetually thirty-nine-year-old man surrounded by memorable eccentrics. The ensemble cast had become as important as Jack himself, a formula that would influence everything from I Love Lucy to modern sitcoms.</p>
 <p>If you've never experienced the genius of Jack Benny at his peak, this spring cleaning debacle offers the perfect entry point. Tune in and discover why millions huddled around their radios every Sunday night to spend an evening with the stingy, vain, but utterly lovable Jack Benny.</p>
         </div>
 
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

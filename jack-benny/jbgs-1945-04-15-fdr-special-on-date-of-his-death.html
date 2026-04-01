@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1945 04 15 Fdr Special On Date Of His Death — The Jack Benny Program | Ghost of Radio</title>
+  <title>Fdr Special On Date Of His Death — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1945 04 15 Fdr Special On Date Of His Death — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1945 04 15 Fdr Special On Date Of His Death — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1945 04 15 Fdr Special On Date Of His Death — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1945</span>
           </div>
-          <h1 class="episode__title">Jbgs 1945 04 15 Fdr Special On Date Of His Death</h1>
+          <h1 class="episode__title">Fdr Special On Date Of His Death</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - April 15, 1945</p>
-<p>On this extraordinary broadcast, recorded mere hours after President Franklin D. Roosevelt's death, Jack Benny sets aside his trademark stinginess and comic timing to deliver something America had never quite heard from him before: profound sincerity. The usual parade of gags and musical numbers gives way to a special tribute that captures the nation in shock and mourning. Listeners will encounter a rare moment of vulnerability from radio's most polished entertainer—a man who built his reputation on never breaking character—as he addresses the passing of the leader who had guided America through depression and global war. The episode pulses with the raw emotion of a country still reeling from the news, transforming a comedy broadcast into an inadvertent historical document of collective grief.</p>
+          <p>On this extraordinary broadcast, recorded mere hours after President Franklin D. Roosevelt's death, Jack Benny sets aside his trademark stinginess and comic timing to deliver something America had never quite heard from him before: profound sincerity. The usual parade of gags and musical numbers gives way to a special tribute that captures the nation in shock and mourning. Listeners will encounter a rare moment of vulnerability from radio's most polished entertainer—a man who built his reputation on never breaking character—as he addresses the passing of the leader who had guided America through depression and global war. The episode pulses with the raw emotion of a country still reeling from the news, transforming a comedy broadcast into an inadvertent historical document of collective grief.</p>
 <p>The Jack Benny Program had become America's Sunday night institution by 1945, with millions tuning in despite—or perhaps because of—Jack's relentless cheapskate persona and his ability to reduce his entire supporting cast (the long-suffering Rochester, the vain Fred Allen, the perpetually exasperated Mary Livingstone) to helpless laughter. But Roosevelt's death on April 12th created a crisis of conscience for American entertainment. Networks grappled with how to proceed during a period of national mourning. Benny's decision to honor the moment while still maintaining the integrity of his broadcast demonstrates the delicate balance between duty and art that defined the Golden Age of Radio. This episode stands as testimony to how deeply woven entertainment was into the fabric of American life—and how seriously radio personalities took their responsibility to their listeners during moments of national significance.</p>
 <p>Tune in to witness a pivotal moment when one of radio's greatest comedians temporarily set down his violin and his jokes to speak directly to America's heart.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

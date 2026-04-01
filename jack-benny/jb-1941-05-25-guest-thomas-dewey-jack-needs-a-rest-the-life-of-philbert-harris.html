@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 05 25 Guest Thomas Dewey Jack Needs A Rest The Life Of Philbert Harris — The Jack Benny Program | Ghost of Radio</title>
+  <title>Guest Thomas Dewey Jack Needs A Rest The Life Of Philbert Harris — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 05 25 Guest Thomas Dewey Jack Needs A Rest The Life Of Philbert Harris — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 05 25 Guest Thomas Dewey Jack Needs A Rest The Life Of Philbert Harris — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 05 25 Guest Thomas Dewey Jack Needs A Rest The Life Of Philbert Harris — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 05 25 Guest Thomas Dewey Jack Needs A Rest The Life Of Philbert Harris</h1>
+          <h1 class="episode__title">Guest Thomas Dewey Jack Needs A Rest The Life Of Philbert Harris</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - May 25, 1941</p>
-<p>Picture yourself settling into your favorite chair on a Sunday evening in May, the warm glow of your radio set casting gentle shadows across the room as Jack Benny's familiar theme music swells through the speakers. Tonight's program crackles with particular energy—Jack is absolutely exhausted and desperately needs a rest, but his plans for a peaceful vacation become hopelessly entangled with the arrival of special guest Thomas Dewey, the ambitious New York District Attorney whose political star is rising fast. As the evening unfolds, listeners are treated to Jack's masterful comic timing as he fumbles through increasingly absurd situations, all while a mysterious narrative about the curious life of one Philbert Harris weaves through the proceedings. The chemistry between Benny's deadpan persona and his supporting cast—including Mary Livingstone, Phil Harris, and Don Wilson—creates that perfect blend of scripted comedy and seemingly spontaneous hilarity that made this program an American institution.</p>
+          <p>Picture yourself settling into your favorite chair on a Sunday evening in May, the warm glow of your radio set casting gentle shadows across the room as Jack Benny's familiar theme music swells through the speakers. Tonight's program crackles with particular energy—Jack is absolutely exhausted and desperately needs a rest, but his plans for a peaceful vacation become hopelessly entangled with the arrival of special guest Thomas Dewey, the ambitious New York District Attorney whose political star is rising fast. As the evening unfolds, listeners are treated to Jack's masterful comic timing as he fumbles through increasingly absurd situations, all while a mysterious narrative about the curious life of one Philbert Harris weaves through the proceedings. The chemistry between Benny's deadpan persona and his supporting cast—including Mary Livingstone, Phil Harris, and Don Wilson—creates that perfect blend of scripted comedy and seemingly spontaneous hilarity that made this program an American institution.</p>
 <p>What makes this episode particularly fascinating is its snapshot of 1941 America: entertainment and politics colliding on the airwaves, with Dewey's appearance lending a topical gravitas that grounds the comedy in real-world context. The Jack Benny Program was radio's gold standard, the show that perfected the weekly variety format and proved that comedy could be both intelligent and accessible to millions. Benny's willingness to mock himself, to play the cheapskate and the vain performer, created a beloved character that audiences tuned in for religiously.</p>
 <p>Don't miss this sparkling example of radio's golden age at its finest. Settle in, adjust your dial, and experience why families across America made this their unmissable Sunday night appointment—where sophistication meets slapstick, and laughter was the greatest luxury of all.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

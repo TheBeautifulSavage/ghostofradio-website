@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 01 11 From March Air Field (inc) — The Jack Benny Program | Ghost of Radio</title>
+  <title>From March Air Field (inc) — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 01 11 From March Air Field (inc) — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 01 11 From March Air Field (inc) — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 01 11 From March Air Field (inc) — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 01 11 From March Air Field (inc)</h1>
+          <h1 class="episode__title">From March Air Field (inc)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "From March Air Field" (January 11, 1942)</p>
-<p>Picture this: it's a cold January evening in 1942, just weeks after Pearl Harbor shattered American complacency. Jack Benny and his entire troupe—announcer Don Wilson, violin virtuoso Professor LeBlanc, and the incomparable Rochester—have traveled to March Air Field near Riverside, California to broadcast directly from a U.S. Army Air Forces base. The energy crackles with patriotic purpose and something else entirely: the frantic, hilarious desperation of Jack trying to navigate military protocol while maintaining his carefully cultivated cheapskate persona. Soldiers fill the auditorium, hungry for laughter and a taste of home. Will Jack's legendary stinginess survive a confrontation with drill sergeants? Can his orchestra stay in tune amid the chaos of wartime production? The answer, as always, lies in the magic of live comedy—unpredictable, intimate, and thoroughly alive.</p>
+          <p>Picture this: it's a cold January evening in 1942, just weeks after Pearl Harbor shattered American complacency. Jack Benny and his entire troupe—announcer Don Wilson, violin virtuoso Professor LeBlanc, and the incomparable Rochester—have traveled to March Air Field near Riverside, California to broadcast directly from a U.S. Army Air Forces base. The energy crackles with patriotic purpose and something else entirely: the frantic, hilarious desperation of Jack trying to navigate military protocol while maintaining his carefully cultivated cheapskate persona. Soldiers fill the auditorium, hungry for laughter and a taste of home. Will Jack's legendary stinginess survive a confrontation with drill sergeants? Can his orchestra stay in tune amid the chaos of wartime production? The answer, as always, lies in the magic of live comedy—unpredictable, intimate, and thoroughly alive.</p>
 <p>This broadcast captures a pivotal moment for American radio. The Jack Benny Program had already become a national institution by 1942, defining the very art of comedic timing and character-driven humor for millions of listeners. But this particular episode represents something more: radio's essential wartime function as a morale machine, bringing entertainment to troops while reminding civilians that American humor and spirit remained unbroken. Jack's vaudeville-honed timing and his repertory company's chemistry had no equal, making him broadcasting's most valuable asset during the nation's darkest hours.</p>
 <p>For those seeking authentic glimpses of how Americans laughed during wartime, or simply wanting to experience Jack Benny at his peak, this incomplete recording remains a treasure. Despite the technical limitations and missing segments, you'll discover why the man himself insisted that timing was everything—and why his comic instincts could turn a simple trip to an Army base into national radio gold.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1938 02 17 Maxwell House Good News Of 1938 — The Jack Benny Program | Ghost of Radio</title>
+  <title>Maxwell House Good News Of 1938 — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1938 02 17 Maxwell House Good News Of 1938 — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1938 02 17 Maxwell House Good News Of 1938 — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1938 02 17 Maxwell House Good News Of 1938 — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1938</span>
           </div>
-          <h1 class="episode__title">Jbgs 1938 02 17 Maxwell House Good News Of 1938</h1>
+          <h1 class="episode__title">Maxwell House Good News Of 1938</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - February 17, 1938</p>
-<p>Step into the velvet-voiced world of Jack Benny as he welcomes you to another evening of sophisticated comedy and musical elegance on this February night in 1938. Sponsored by Maxwell House Coffee, this week's broadcast promises the perfect blend of sharp wit and smooth entertainment that has made Jack's program the most anticipated half-hour on American radio. You'll hear the familiar strains of the Jack Benny theme as the orchestra swells, followed by Jack's trademark deadpan delivery—that peculiar genius of his to say nothing at all and somehow make it hilarious. Expect the usual delightful interruptions from his regular cast: Rochester's knowing asides, Mary Livingstone's gentle ribbing, and Don Wilson's booming announcer presence. The comedy unfolds with the casualness of a conversation among friends gathered in your living room, yet each moment is carefully crafted for maximum laughter.</p>
+          <p>Step into the velvet-voiced world of Jack Benny as he welcomes you to another evening of sophisticated comedy and musical elegance on this February night in 1938. Sponsored by Maxwell House Coffee, this week's broadcast promises the perfect blend of sharp wit and smooth entertainment that has made Jack's program the most anticipated half-hour on American radio. You'll hear the familiar strains of the Jack Benny theme as the orchestra swells, followed by Jack's trademark deadpan delivery—that peculiar genius of his to say nothing at all and somehow make it hilarious. Expect the usual delightful interruptions from his regular cast: Rochester's knowing asides, Mary Livingstone's gentle ribbing, and Don Wilson's booming announcer presence. The comedy unfolds with the casualness of a conversation among friends gathered in your living room, yet each moment is carefully crafted for maximum laughter.</p>
 <p>By 1938, Jack Benny had already revolutionized radio comedy, transforming it from vaudeville recitation into something more intimate and character-driven. His willingness to mock his own stinginess, his devotion to his creaky violin, and his comic timing—built on strategic pauses rather than frantic punchlines—set him apart from competitors. This particular broadcast captures the show during its golden age, when radio was the dominant medium of American entertainment and Jack Benny was its undisputed king, commanding audiences of millions every week.</p>
 <p>Settle in with a cup of Maxwell House as Jack and his ensemble transport you to a time when American humor was clever without being cruel, and entertainment meant genuine artistry. This is radio at its finest.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

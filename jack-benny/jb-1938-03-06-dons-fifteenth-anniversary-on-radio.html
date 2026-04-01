@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1938 03 06 Don's Fifteenth Anniversary On Radio — The Jack Benny Program | Ghost of Radio</title>
+  <title>Don's Fifteenth Anniversary On Radio — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1938 03 06 Don's Fifteenth Anniversary On Radio — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1938 03 06 Don's Fifteenth Anniversary On Radio — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1938 03 06 Don's Fifteenth Anniversary On Radio — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1938</span>
           </div>
-          <h1 class="episode__title">Jb 1938 03 06 Don's Fifteenth Anniversary On Radio</h1>
+          <h1 class="episode__title">Don's Fifteenth Anniversary On Radio</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Don's Fifteenth Anniversary</p>
-<p>Picture yourself huddled around your radio set on the evening of March 6th, 1938, as Jack Benny and his celebrated ensemble gather to celebrate a remarkable milestone—Don Wilson's fifteen years in broadcasting. The genial announcer and sidekick extraordinaire has become as much a fixture of American entertainment as Jack himself, and tonight's program crackles with genuine warmth and affection. You'll hear the unmistakable blend of scripted comedy and spontaneous merriment that has made this show a Sunday night institution, with Jack's trademark timing, Rochester's sharp-tongued asides, and the incomparable chemistry between cast members who have practically grown up together in the medium. The orchestra swells, jokes land with precision, and there's a palpable sense that you're witnessing a family moment—albeit one that millions of Americans get to share.</p>
+          <p>Picture yourself huddled around your radio set on the evening of March 6th, 1938, as Jack Benny and his celebrated ensemble gather to celebrate a remarkable milestone—Don Wilson's fifteen years in broadcasting. The genial announcer and sidekick extraordinaire has become as much a fixture of American entertainment as Jack himself, and tonight's program crackles with genuine warmth and affection. You'll hear the unmistakable blend of scripted comedy and spontaneous merriment that has made this show a Sunday night institution, with Jack's trademark timing, Rochester's sharp-tongued asides, and the incomparable chemistry between cast members who have practically grown up together in the medium. The orchestra swells, jokes land with precision, and there's a palpable sense that you're witnessing a family moment—albeit one that millions of Americans get to share.</p>
 <p>The late 1930s represent radio's golden age, and The Jack Benny Program stands as its crowning achievement. What sets this particular broadcast apart is its intimate celebration of broadcasting history itself; in honoring Wilson's tenure, the show acknowledges how radio has woven itself into the nation's fabric during a period of economic hardship and social uncertainty. These half-hour episodes became more than entertainment—they were a lifeline, a weekly promise of laughter and belonging. Jack Benny's sophisticated humor and impeccable comic instincts revolutionized the medium, moving beyond vaudeville schtick toward a more naturalistic, character-driven comedy that would influence radio comedy forever.</p>
 <p>Don't miss this charming slice of broadcasting history that reminds us why people once gathered expectantly each week, why these voices became as familiar as family members. Tune in to experience why Jack Benny's program remained America's favorite for nearly a quarter-century.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

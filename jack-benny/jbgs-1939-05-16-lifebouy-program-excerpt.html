@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1939 05 16 Lifebouy Program (excerpt) — The Jack Benny Program | Ghost of Radio</title>
+  <title>Lifebouy Program (excerpt) — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1939 05 16 Lifebouy Program (excerpt) — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1939 05 16 Lifebouy Program (excerpt) — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1939 05 16 Lifebouy Program (excerpt) — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jbgs 1939 05 16 Lifebouy Program (excerpt)</h1>
+          <h1 class="episode__title">Lifebouy Program (excerpt)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - May 16, 1939</p>
-<p>Step into the elegant living room of America's most beloved miser on this spring evening in 1939, where Jack Benny's razor-sharp wit cuts through the comfort of your own home. In this Lifebuoy Program excerpt, listeners will find themselves caught between Jack's trademark stinginess and the peculiar situations that inevitably unfold around his chaotic household. The chemistry between Benny and his supporting cast crackles with spontaneity—Mary Livingstone delivers her perfectly timed barbs, while the ensemble cast weaves together moments of absurdist humor that feel both polished and refreshingly unpredictable. You can almost hear the studio audience's delighted laughter echoing through the airwaves as Jack navigates another impossible scenario, his deadpan delivery making even the most ridiculous predicaments feel utterly believable.</p>
+          <p>Step into the elegant living room of America's most beloved miser on this spring evening in 1939, where Jack Benny's razor-sharp wit cuts through the comfort of your own home. In this Lifebuoy Program excerpt, listeners will find themselves caught between Jack's trademark stinginess and the peculiar situations that inevitably unfold around his chaotic household. The chemistry between Benny and his supporting cast crackles with spontaneity—Mary Livingstone delivers her perfectly timed barbs, while the ensemble cast weaves together moments of absurdist humor that feel both polished and refreshingly unpredictable. You can almost hear the studio audience's delighted laughter echoing through the airwaves as Jack navigates another impossible scenario, his deadpan delivery making even the most ridiculous predicaments feel utterly believable.</p>
 <p>By 1939, Jack Benny had already established himself as radio's preeminent comedian, having pioneered a revolutionary approach to variety programming that blended scripted comedy, musical interludes, and spontaneous-feeling interaction. The Lifebuoy broadcasts represented radio's golden age at its commercial height—quality entertainment underwritten by trusted sponsors, reaching millions of Americans hungry for laughter during uncertain times. Benny's genius lay in his ability to make listeners feel like they were eavesdropping on genuine moments of chaos, a quality that distinguished his program from more stiffly performed variety shows of the era.</p>
 <p>This excerpt captures the magic that made The Jack Benny Program an institution. Whether you're a devoted fan or discovering Jack's particular brand of comedy for the first time, this 1939 episode offers a perfect glimpse into why America tuned in faithfully every week to experience his irreverent humor and masterful timing.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1943 02 21 The Quiz Kids — The Jack Benny Program | Ghost of Radio</title>
+  <title>The Quiz Kids — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1943 02 21 The Quiz Kids — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1943 02 21 The Quiz Kids — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1943 02 21 The Quiz Kids — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Jbgs 1943 02 21 The Quiz Kids</h1>
+          <h1 class="episode__title">The Quiz Kids</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "The Quiz Kids" (February 21, 1943)</p>
-<p>Step into the spotlight on this winter evening in 1943 as Jack Benny welcomes America's most brilliant young minds to his stage—the famous Quiz Kids, those remarkable children whose encyclopedic knowledge had captivated the nation on their own wildly popular program. What unfolds is a battle of wits tinged with Jack's signature brand of self-deprecating humor, as the comedian finds himself thoroughly outmatched by elementary school prodigies who can rattle off answers about history, science, and literature with effortless charm. The studio audience roars with laughter as Jack's vanity takes a beating, his carefully constructed persona of the world's greatest entertainer crumbling before children who seem to know everything except how to let their host maintain his dignity. Don Wilson's rich announcer voice booms approval, and you can almost hear the studio band's perfectly timed musical stings punctuating each comedic moment.</p>
+          <p>Step into the spotlight on this winter evening in 1943 as Jack Benny welcomes America's most brilliant young minds to his stage—the famous Quiz Kids, those remarkable children whose encyclopedic knowledge had captivated the nation on their own wildly popular program. What unfolds is a battle of wits tinged with Jack's signature brand of self-deprecating humor, as the comedian finds himself thoroughly outmatched by elementary school prodigies who can rattle off answers about history, science, and literature with effortless charm. The studio audience roars with laughter as Jack's vanity takes a beating, his carefully constructed persona of the world's greatest entertainer crumbling before children who seem to know everything except how to let their host maintain his dignity. Don Wilson's rich announcer voice booms approval, and you can almost hear the studio band's perfectly timed musical stings punctuating each comedic moment.</p>
 <p>This episode captures a golden moment in American broadcasting, when radio brought together the nation's brightest talent and sharpest minds in real-time performance. The Quiz Kids themselves had become cultural phenomena—these prodigies represented American optimism during wartime, proof that brilliance and ambition thrived even as the country fought abroad. Jack Benny, already a master of timing and character after a decade on radio, had perfected the art of surrounding himself with worthy foils, and these gifted children proved to be perfect antagonists for his perpetually ego-wounded persona.</p>
 <p>This is radio at its finest: intelligent entertainment that respected its audience's appetite for both comedy and genuine amazement. Tune in to hear Jack Benny meet his match, and discover why millions tuned in each week to witness comedic perfection.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

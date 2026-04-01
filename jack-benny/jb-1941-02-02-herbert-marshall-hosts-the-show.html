@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 02 02 Herbert Marshall Hosts The Show — The Jack Benny Program | Ghost of Radio</title>
+  <title>Herbert Marshall Hosts The Show — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 02 02 Herbert Marshall Hosts The Show — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 02 02 Herbert Marshall Hosts The Show — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 02 02 Herbert Marshall Hosts The Show — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 02 02 Herbert Marshall Hosts The Show</h1>
+          <h1 class="episode__title">Herbert Marshall Hosts The Show</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: February 2, 1941</p>
-<p>Picture yourself huddled around the radio on a cold winter's evening in 1941, when an unexpected turn of events sends the studio audience—and listeners across America—into fits of laughter. Jack Benny, that perpetually frugal, vain master of comedic timing, finds himself in the most delightful predicament: British star Herbert Marshall has actually *hosted* the show instead. What could possibly go wrong when one of Hollywood's most sophisticated leading men takes the reins of America's most beloved comedy program? The chemistry between Marshall's refined charm and Jack's desperate attempts to reclaim control of his own broadcast creates a tension that only Jack Benny could transform into pure comic gold. Don't miss the musical interludes, the trademark stuttering asides to the audience, and the razor-sharp banter that made this program legendary.</p>
+          <p>Picture yourself huddled around the radio on a cold winter's evening in 1941, when an unexpected turn of events sends the studio audience—and listeners across America—into fits of laughter. Jack Benny, that perpetually frugal, vain master of comedic timing, finds himself in the most delightful predicament: British star Herbert Marshall has actually hosted the show instead. What could possibly go wrong when one of Hollywood's most sophisticated leading men takes the reins of America's most beloved comedy program? The chemistry between Marshall's refined charm and Jack's desperate attempts to reclaim control of his own broadcast creates a tension that only Jack Benny could transform into pure comic gold. Don't miss the musical interludes, the trademark stuttering asides to the audience, and the razor-sharp banter that made this program legendary.</p>
 <p>The Jack Benny Program arrived during an era when radio was the supreme entertainment medium, and February 1941 found the nation captivated by weekly visits with Jack, his announcer Don Wilson, and the regular cast. This episode showcases the show's brilliance: its sophisticated humor that appealed equally to intellectuals and factory workers, its willingness to parody itself mercilessly, and its ability to transform a simple premise—a celebrity guest host—into an evening of broadcast brilliance. At a time when Americans desperately needed laughter during uncertain times, Jack Benny and his ensemble delivered it with impeccable timing and genuine warmth.</p>
 <p>Tune in now to experience one of radio's golden age's most treasured moments—when a program that defined American comedy welcomed an elegant interloper and, inevitably, descended into beautiful chaos.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

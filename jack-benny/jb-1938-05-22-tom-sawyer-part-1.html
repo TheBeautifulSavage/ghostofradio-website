@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1938 05 22 Tom Sawyer Part 1 — The Jack Benny Program | Ghost of Radio</title>
+  <title>Tom Sawyer Part 1 — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1938 05 22 Tom Sawyer Part 1 — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1938 05 22 Tom Sawyer Part 1 — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1938 05 22 Tom Sawyer Part 1 — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1938</span>
           </div>
-          <h1 class="episode__title">Jb 1938 05 22 Tom Sawyer Part 1</h1>
+          <h1 class="episode__title">Tom Sawyer Part 1</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Tom Sawyer, Part 1 (May 22, 1938)</p>
-<p>Picture yourself in a living room bathed in the soft amber glow of an evening radio, May 22, 1938. Jack Benny and his stellar ensemble are about to whisk you away to the banks of the Mississippi River for an audacious adaptation of Mark Twain's beloved classic. What unfolds is neither a straightforward dramatization nor a sketch—it's pure Benny: a comedy-variety extravaganza where Tom Sawyer's whitewashing fence becomes a vehicle for hilarious misadventures, and Rochester's deadpan wisdom clashes beautifully with Jack's hapless scheming. Expect Phil Harris's dulcet crooning, Don Wilson's booming announcements, and the orchestra swelling at precisely the moment when Jack's carefully laid plans unravel with orchestrated perfection.</p>
+          <p>Picture yourself in a living room bathed in the soft amber glow of an evening radio, May 22, 1938. Jack Benny and his stellar ensemble are about to whisk you away to the banks of the Mississippi River for an audacious adaptation of Mark Twain's beloved classic. What unfolds is neither a straightforward dramatization nor a sketch—it's pure Benny: a comedy-variety extravaganza where Tom Sawyer's whitewashing fence becomes a vehicle for hilarious misadventures, and Rochester's deadpan wisdom clashes beautifully with Jack's hapless scheming. Expect Phil Harris's dulcet crooning, Don Wilson's booming announcements, and the orchestra swelling at precisely the moment when Jack's carefully laid plans unravel with orchestrated perfection.</p>
 <p>This episode captures the golden age of radio variety at its zenith, when the medium could seamlessly blend scripted comedy, live music, and dramatic storytelling in ways television would struggle to replicate. The Jack Benny Program had become America's most beloved weekly ritual by 1938, and Benny's genius lay in his impeccable timing and willingness to let the silence breathe—a revolutionary approach that influenced generations of comedians. By tackling a quintessentially American story like Tom Sawyer, Benny tapped into nostalgia while proving that radio comedy could tackle ambitious material without sacrificing the intimacy that made listeners feel like they were eavesdropping on friends.</p>
 <p>Tune in to experience radio comedy when it mattered most, when millions of Americans paused their evening routines to hear what Jack Benny would do next. This is entertainment history in real time.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

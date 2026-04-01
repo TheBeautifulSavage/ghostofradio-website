@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1953 09 20 Return To Paradise — The Jack Benny Program | Ghost of Radio</title>
+  <title>Return To Paradise — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1953 09 20 Return To Paradise — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1953 09 20 Return To Paradise — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1953 09 20 Return To Paradise — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1953</span>
           </div>
-          <h1 class="episode__title">Jb 1953 09 20 Return To Paradise</h1>
+          <h1 class="episode__title">Return To Paradise</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Return to Paradise (September 20, 1953)</p>
-<p>Picture yourself settling into your favorite chair on a Sunday evening in 1953, the living room bathed in the warm glow of your radio dial as Jack Benny's unmistakable theme melody fills the air. Tonight's episode, "Return to Paradise," whisks you away from the pressures of the atomic age to an exotic, sun-drenched island getaway—though knowing Jack, the journey promises more chaos than tranquility. As Jack and his ensemble cast embark on this tropical adventure, you'll encounter the familiar parade of misadventures: Don Wilson's booming interruptions, the melodramatic pratfalls of Rochester, and Mary Livingstone's sharp-witted barbs that keep her husband perpetually off-balance. The writing crackles with that golden-age comedy timing that made millions tune in weekly, as Jack's penny-pinching nature collides hilariously with island life.</p>
+          <p>Picture yourself settling into your favorite chair on a Sunday evening in 1953, the living room bathed in the warm glow of your radio dial as Jack Benny's unmistakable theme melody fills the air. Tonight's episode, "Return to Paradise," whisks you away from the pressures of the atomic age to an exotic, sun-drenched island getaway—though knowing Jack, the journey promises more chaos than tranquility. As Jack and his ensemble cast embark on this tropical adventure, you'll encounter the familiar parade of misadventures: Don Wilson's booming interruptions, the melodramatic pratfalls of Rochester, and Mary Livingstone's sharp-witted barbs that keep her husband perpetually off-balance. The writing crackles with that golden-age comedy timing that made millions tune in weekly, as Jack's penny-pinching nature collides hilariously with island life.</p>
 <p>By 1953, The Jack Benny Program had already established itself as one of America's most beloved institutions, a show that had successfully transitioned from radio's earliest days through two decades of cultural upheaval. Jack's genius lay in playing himself—vain, miserly, but fundamentally endearing—creating a character listeners felt they truly knew. The September 1953 season found the show at the height of its creative powers, still commanding massive audiences even as television loomed on the horizon, threatening radio's dominance. This was radio comedy at its most refined, where timing, vocal inflection, and the collective imaginations of millions of listeners created comedy that television would struggle to replicate.</p>
 <p>Tune in now and discover why Jack Benny remained radio's reigning monarch through radio's golden age. In "Return to Paradise," you'll experience the spontaneous joy and sophisticated humor that made Sunday evenings an American tradition.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

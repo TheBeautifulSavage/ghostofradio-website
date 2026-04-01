@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1944 02 26 Blue Ribbon Town — The Jack Benny Program | Ghost of Radio</title>
+  <title>Blue Ribbon Town — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1944 02 26 Blue Ribbon Town — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1944 02 26 Blue Ribbon Town — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1944 02 26 Blue Ribbon Town — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jbgs 1944 02 26 Blue Ribbon Town</h1>
+          <h1 class="episode__title">Blue Ribbon Town</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Blue Ribbon Town (February 26, 1944)</p>
-<p>Step into a small-town drugstore on this winter evening in 1944, where Jack Benny finds himself the unwitting judge of a local contest—and where his legendary stinginess collides spectacularly with Midwestern hospitality. What begins as an innocent promotional appearance quickly spirals into comedic chaos as Jack attempts to navigate the competing interests of the town's most prominent citizens, all vying for his favor and a prestigious award. Don (Wilson) and Rochester (Eddie Anderson) provide their familiar dose of comic relief and gentle ribbing, while the supporting cast of "Blue Ribbon Town" residents create an authentically bumbling small-town atmosphere that crackles with period warmth. Listeners will hear the unmistakable sound of a live studio audience, their laughter woven into every uncomfortable pause and perfectly timed punchline—a reminder that comedy on radio was truly a shared, communal experience.</p>
+          <p>Step into a small-town drugstore on this winter evening in 1944, where Jack Benny finds himself the unwitting judge of a local contest—and where his legendary stinginess collides spectacularly with Midwestern hospitality. What begins as an innocent promotional appearance quickly spirals into comedic chaos as Jack attempts to navigate the competing interests of the town's most prominent citizens, all vying for his favor and a prestigious award. Don (Wilson) and Rochester (Eddie Anderson) provide their familiar dose of comic relief and gentle ribbing, while the supporting cast of "Blue Ribbon Town" residents create an authentically bumbling small-town atmosphere that crackles with period warmth. Listeners will hear the unmistakable sound of a live studio audience, their laughter woven into every uncomfortable pause and perfectly timed punchline—a reminder that comedy on radio was truly a shared, communal experience.</p>
 <p>By February 1944, The Jack Benny Program had become an American institution, consistently delivering sophisticated humor wrapped in the persona of a vain, penny-pinching entertainer that audiences adored. This episode exemplifies the show's genius for balancing family-friendly material with sharp comedic writing, all delivered with impeccable timing. The variety format allowed Benny and his ensemble cast to shift seamlessly between sketches, music, and comedy, creating an entertainment package that kept millions of Americans company through the uncertainty of wartime evenings.</p>
 <p>Tune in to experience radio comedy at its finest—a masterclass in ensemble timing, character work, and the particular magic that only radio could conjure. This is the sound of an era when families gathered around wooden cabinets to escape, laugh, and feel connected to something larger than themselves.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

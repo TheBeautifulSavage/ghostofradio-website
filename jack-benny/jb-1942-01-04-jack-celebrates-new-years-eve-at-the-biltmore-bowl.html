@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 01 04 Jack Celebrates New Year's Eve At The Biltmore Bowl — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Celebrates New Year's Eve At The Biltmore Bowl — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 01 04 Jack Celebrates New Year's Eve At The Biltmore Bowl — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 01 04 Jack Celebrates New Year's Eve At The Biltmore Bowl — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 01 04 Jack Celebrates New Year's Eve At The Biltmore Bowl — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 01 04 Jack Celebrates New Year's Eve At The Biltmore Bowl</h1>
+          <h1 class="episode__title">Jack Celebrates New Year's Eve At The Biltmore Bowl</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Jack Celebrates New Year's Eve At The Biltmore Bowl</p>
-<p>Picture this: it's New Year's Eve, 1942, and Jack Benny has somehow secured the grandest ballroom in Los Angeles—the legendary Biltmore Bowl—for an evening of pure comedic chaos. As the clock ticks toward midnight, listeners are transported into an atmosphere thick with orchestral swells, the clinking of champagne glasses, and the promise of Jack's masterfully timed humiliation. What could possibly go wrong when Jack attempts to ring in the New Year with style? Everything, naturally. Expect Don Wilson's booming announcer voice introducing an avalanche of celebrity guests, Mary Livingstone's razor-sharp wit cutting through Jack's pretensions, and Rochester's deadpan asides that undermine every grandiose plan. This is vintage Benny—the kind of episode where the real comedy emerges not from punchlines, but from Jack's desperate, fumbling attempts to maintain his dignity while the world crumbles around him.</p>
+          <p>Picture this: it's New Year's Eve, 1942, and Jack Benny has somehow secured the grandest ballroom in Los Angeles—the legendary Biltmore Bowl—for an evening of pure comedic chaos. As the clock ticks toward midnight, listeners are transported into an atmosphere thick with orchestral swells, the clinking of champagne glasses, and the promise of Jack's masterfully timed humiliation. What could possibly go wrong when Jack attempts to ring in the New Year with style? Everything, naturally. Expect Don Wilson's booming announcer voice introducing an avalanche of celebrity guests, Mary Livingstone's razor-sharp wit cutting through Jack's pretensions, and Rochester's deadpan asides that undermine every grandiose plan. This is vintage Benny—the kind of episode where the real comedy emerges not from punchlines, but from Jack's desperate, fumbling attempts to maintain his dignity while the world crumbles around him.</p>
 <p>Recorded during America's second year at war, this 1942 broadcast captures radio at its zenith: a medium that could transport millions of Americans into an exclusive New Year's celebration at the height of the Great Depression's aftermath. The Jack Benny Program was already a national institution by this time, having pioneered the sitcom format on radio with its recurring characters, running gags, and Jack's brilliantly stingy persona that anchored every absurdity. The show's influence on American comedy cannot be overstated—it proved that radio could sustain character-driven humor week after week, laying the groundwork for everything that followed.</p>
 <p>Don't miss this glittering slice of wartime Americana. Tune in to experience the magic of live radio comedy at its finest, when a broadcast could unite a nation in laughter during its darkest hours.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

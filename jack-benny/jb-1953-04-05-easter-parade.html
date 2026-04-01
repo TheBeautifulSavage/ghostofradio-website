@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1953 04 05 Easter Parade — The Jack Benny Program | Ghost of Radio</title>
+  <title>Easter Parade — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1953 04 05 Easter Parade — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1953 04 05 Easter Parade — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1953 04 05 Easter Parade — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1953</span>
           </div>
-          <h1 class="episode__title">Jb 1953 04 05 Easter Parade</h1>
+          <h1 class="episode__title">Easter Parade</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Easter Parade (April 5, 1953)</p>
-<p>Step into the Benny household on this festive spring evening as Jack and his merry ensemble prepare for the season's most glamorous celebration. When a simple Easter outing spirals into comedic chaos—complete with wardrobe disasters, Rochester's deadpan wisdom, and Don Wilson's booming interruptions—listeners will discover why millions tuned in weekly to witness organized mayhem at its finest. Expect the impeccable timing that made Benny a legend: those pregnant pauses that stretch a punchline into pure gold, the interplay between Jack's fastidious vanity and his cast's relentless needling, and the kind of wholesome family humor that filled living rooms with genuine laughter during an era when radio remained America's heartbeat.</p>
+          <p>Step into the Benny household on this festive spring evening as Jack and his merry ensemble prepare for the season's most glamorous celebration. When a simple Easter outing spirals into comedic chaos—complete with wardrobe disasters, Rochester's deadpan wisdom, and Don Wilson's booming interruptions—listeners will discover why millions tuned in weekly to witness organized mayhem at its finest. Expect the impeccable timing that made Benny a legend: those pregnant pauses that stretch a punchline into pure gold, the interplay between Jack's fastidious vanity and his cast's relentless needling, and the kind of wholesome family humor that filled living rooms with genuine laughter during an era when radio remained America's heartbeat.</p>
 <p>By 1953, The Jack Benny Program had already dominated entertainment for two decades, a masterclass in comedic construction that would influence television comedy for generations to come. This was radio's golden age in its twilight—even as television emerged as a threat, Benny's show remained essential listening, proving that superior writing and impeccable ensemble chemistry transcended medium. The program's format of sketches, celebrity guests, and running gags created a universe listeners genuinely cared about, where characters like the long-suffering Rochester, the eager Mary Livingstone, and the perpetually feuding Benny and Phil Harris felt like family members visiting weekly.</p>
 <p>For anyone seeking authentic mid-century entertainment, this Easter episode captures the magic that made radio irreplaceable: craftsmanship, charm, and the kind of comedy that rewards close listening. Dial in and discover why Jack Benny's name remains synonymous with comedic perfection.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1943 01 10 The Sixty Four Dollar Question — The Jack Benny Program | Ghost of Radio</title>
+  <title>The Sixty Four Dollar Question — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1943 01 10 The Sixty Four Dollar Question — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1943 01 10 The Sixty Four Dollar Question — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1943 01 10 The Sixty Four Dollar Question — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Jb 1943 01 10 The Sixty Four Dollar Question</h1>
+          <h1 class="episode__title">The Sixty Four Dollar Question</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "The Sixty Four Dollar Question"</p>
-<p>Step into the parlor of America's most beloved miser on this crisp January evening in 1943, where Jack Benny finds himself embroiled in a hilarious quiz show extravaganza. Picture the studio audience settled into their seats, anticipating the familiar opening notes and Jack's signature violin performance—though likely to be interrupted by his cast of comedic foils. Tonight's premise centers on a lucrative quiz competition, and the tension builds as Jack pursues a prize with the kind of desperate enthusiasm only money can inspire. Listen for the expert timing of Rochester's dry commentary, Mary Livingstone's pointed jabs at her "husband's" cheapness, and the musical interludes that punctuate this golden age of broadcasting. The chemistry between cast members crackles with spontaneity, even as the show maintains its carefully orchestrated script—the hallmark of radio comedy at its finest.</p>
+          <p>Step into the parlor of America's most beloved miser on this crisp January evening in 1943, where Jack Benny finds himself embroiled in a hilarious quiz show extravaganza. Picture the studio audience settled into their seats, anticipating the familiar opening notes and Jack's signature violin performance—though likely to be interrupted by his cast of comedic foils. Tonight's premise centers on a lucrative quiz competition, and the tension builds as Jack pursues a prize with the kind of desperate enthusiasm only money can inspire. Listen for the expert timing of Rochester's dry commentary, Mary Livingstone's pointed jabs at her "husband's" cheapness, and the musical interludes that punctuate this golden age of broadcasting. The chemistry between cast members crackles with spontaneity, even as the show maintains its carefully orchestrated script—the hallmark of radio comedy at its finest.</p>
 <p>By 1943, The Jack Benny Program had become the nation's favorite escape during wartime, a weekly appointment that promised forty-five minutes of respite from global uncertainty. Jack's character—a thirty-nine-year-old cheapskate perpetually at odds with his ensemble—had evolved into American mythology. The show's genius lay in its ability to blend vaudeville traditions with the intimacy of radio; listeners felt they were eavesdropping on the private lives of friends. This particular episode exemplifies radio's golden age, when live performance, sharp writing, and impeccable comic timing created magic that required nothing but imagination from the audience.</p>
 <p>Tune in to experience why Jack Benny dominated the ratings for over two decades, and discover how a simple quiz show premise becomes a masterclass in comedic construction. This is radio entertainment as it was meant to be heard—performed live, delivered with genuine laughter, and reaching directly into American homes through the crackle of the airwaves.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

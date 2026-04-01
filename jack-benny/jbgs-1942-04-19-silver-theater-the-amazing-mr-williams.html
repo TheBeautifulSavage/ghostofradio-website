@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1942 04 19 Silver Theater The Amazing Mr Williams — The Jack Benny Program | Ghost of Radio</title>
+  <title>Silver Theater The Amazing Mr Williams — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1942 04 19 Silver Theater The Amazing Mr Williams — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1942 04 19 Silver Theater The Amazing Mr Williams — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1942 04 19 Silver Theater The Amazing Mr Williams — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jbgs 1942 04 19 Silver Theater The Amazing Mr Williams</h1>
+          <h1 class="episode__title">Silver Theater The Amazing Mr Williams</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program – April 19, 1942</p>
-<p>Step into the wood-paneled halls of the Silver Theater this Sunday evening, where Jack Benny and his incomparable ensemble prepare to unravel the mystery of "The Amazing Mr. Williams." As our befuddled but endearing protagonist stumbles into yet another predicament, listeners will relish the perfectly timed pauses, the exasperated exchanges with Mary Livingstone, and the irreverent comic timing that made Benny a household name. What begins as an innocent evening at the theater transforms into a delightful romp through mistaken identities and slapstick confusion, all delivered through the intimate immediacy of the radio microphone. Don Fletcher, Phil Harris, and the rest of Benny's supporting cast deliver their lines with the precision of a Swiss watch, each interruption and aside landing exactly where it should—moments before the studio audience erupts in knowing laughter.</p>
+          <p>Step into the wood-paneled halls of the Silver Theater this Sunday evening, where Jack Benny and his incomparable ensemble prepare to unravel the mystery of "The Amazing Mr. Williams." As our befuddled but endearing protagonist stumbles into yet another predicament, listeners will relish the perfectly timed pauses, the exasperated exchanges with Mary Livingstone, and the irreverent comic timing that made Benny a household name. What begins as an innocent evening at the theater transforms into a delightful romp through mistaken identities and slapstick confusion, all delivered through the intimate immediacy of the radio microphone. Don Fletcher, Phil Harris, and the rest of Benny's supporting cast deliver their lines with the precision of a Swiss watch, each interruption and aside landing exactly where it should—moments before the studio audience erupts in knowing laughter.</p>
 <p>This 1942 broadcast arrives at a pivotal moment both for the program and the nation. With America fully immersed in World War II, the American people turned to their radios more than ever, seeking respite from wartime anxieties and rationing struggles. The Jack Benny Program had already redefined radio comedy, elevating it from vaudeville sketches to sophisticated ensemble work, where silence itself became a comedic tool and character became paramount. Unlike the broad slapstick of earlier programs, Benny's show relied on understanding, warmth, and the chemistry between its principals—a formula that would influence entertainment for generations to come.</p>
 <p>For anyone seeking an escape into radio's golden age, this episode represents everything that made Sunday nights sacred in American homes. Whether you're a longtime devotee of Jack's penny-pinching ways and expertly raised eyebrow or a newcomer ready to discover why millions tuned in faithfully each week, "The Amazing Mr. Williams" promises the wit, warmth, and world-class entertainment that defined a medium and a generation.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

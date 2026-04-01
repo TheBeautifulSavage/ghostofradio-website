@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1939 01 08 Gulf Screen Guild Show — The Jack Benny Program | Ghost of Radio</title>
+  <title>Gulf Screen Guild Show — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1939 01 08 Gulf Screen Guild Show — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1939 01 08 Gulf Screen Guild Show — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1939 01 08 Gulf Screen Guild Show — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jbgs 1939 01 08 Gulf Screen Guild Show</h1>
+          <h1 class="episode__title">Gulf Screen Guild Show</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: January 8, 1939</p>
-<p>Settle in beside your radio as Jack Benny invites you to the glamorous world of Hollywood on this January evening in 1939. Picture the elegant Gulf Screen Guild Theater, where Jack's trademark stinginess collides hilariously with the glittering aspirations of tinseltown. In this special broadcast, you'll find Jack caught between his natural miserliness and the social pressures of hobnobbing with film stars—a comedic tension that made Benny the master of his craft. Mary Livingstone delivers her razor-sharp barbs with impeccable timing, Don Wilson's booming announcer voice anchors the proceedings, and Rochester's dry wisecracks cut straight to the heart of every absurd situation. Expect the unexpected: a sketch so brilliantly constructed you won't see the punchline coming, musical interludes featuring genuine Hollywood talent, and comedy that relies on character and timing rather than mere jokes.</p>
+          <p>Settle in beside your radio as Jack Benny invites you to the glamorous world of Hollywood on this January evening in 1939. Picture the elegant Gulf Screen Guild Theater, where Jack's trademark stinginess collides hilariously with the glittering aspirations of tinseltown. In this special broadcast, you'll find Jack caught between his natural miserliness and the social pressures of hobnobbing with film stars—a comedic tension that made Benny the master of his craft. Mary Livingstone delivers her razor-sharp barbs with impeccable timing, Don Wilson's booming announcer voice anchors the proceedings, and Rochester's dry wisecracks cut straight to the heart of every absurd situation. Expect the unexpected: a sketch so brilliantly constructed you won't see the punchline coming, musical interludes featuring genuine Hollywood talent, and comedy that relies on character and timing rather than mere jokes.</p>
 <p>This episode represents The Jack Benny Program at the height of its creative powers, when radio comedy had evolved into a sophisticated art form. By 1939, Benny had perfected his radio persona—the vain, parsimonious, seemingly talentless virtuoso surrounded by a perfectly calibrated supporting cast. The Gulf Screen Guild Theater series brought together the worlds of Hollywood and radio, a convergence that fascinated Depression-era America. These broadcasts showcased why Benny was rapidly becoming America's favorite entertainer, a position he'd maintain for nearly two decades.</p>
 <p>For listeners seeking the golden age of American comedy, this program is essential listening—a time capsule of an era when radio commanded the nation's imagination and Jack Benny ruled the airwaves with impeccable comic timing and warmth.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

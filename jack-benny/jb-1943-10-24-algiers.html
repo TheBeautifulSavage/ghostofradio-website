@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1943 10 24 Algiers — The Jack Benny Program | Ghost of Radio</title>
+  <title>Algiers — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1943 10 24 Algiers — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1943 10 24 Algiers — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1943 10 24 Algiers — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Jb 1943 10 24 Algiers</h1>
+          <h1 class="episode__title">Algiers</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: October 24, 1943</p>
-<p>Picture yourself huddled around the radio on a crisp autumn evening in 1943, the war news weighing heavy on American minds. Tonight, Jack Benny transports you to the exotic streets of Algiers, where intrigue and comedy collide in ways only the Master of Mirth could orchestrate. The sound effects crackle to life—foreign voices, bustling marketplaces, and the unmistakable tension of a caper unfolding in wartime North Africa. You never quite know if Jack will solve the mystery before his own bumbling logic undermines everything, or whether sidekick Rochester will steal the scene with a perfectly timed aside. What begins as a seemingly straightforward adventure spirals into the gloriously absurd, as Jack's legendary stinginess and vanity become the very engine of comic chaos.</p>
+          <p>Picture yourself huddled around the radio on a crisp autumn evening in 1943, the war news weighing heavy on American minds. Tonight, Jack Benny transports you to the exotic streets of Algiers, where intrigue and comedy collide in ways only the Master of Mirth could orchestrate. The sound effects crackle to life—foreign voices, bustling marketplaces, and the unmistakable tension of a caper unfolding in wartime North Africa. You never quite know if Jack will solve the mystery before his own bumbling logic undermines everything, or whether sidekick Rochester will steal the scene with a perfectly timed aside. What begins as a seemingly straightforward adventure spirals into the gloriously absurd, as Jack's legendary stinginess and vanity become the very engine of comic chaos.</p>
 <p>By 1943, The Jack Benny Program had already achieved something remarkable: it was the most popular radio show in America, a distinction it would hold for years. In an era when families gathered around the console radio as their primary entertainment, Jack Benny was more than a star—he was a trusted friend visiting your living room each Sunday night. His genius lay not in forced gags, but in character work; listeners knew Jack's miserliness, his jealousy of Fred Allen, his peculiar violin-playing delusions as intimately as they knew their own relatives. This particular episode, set in the glamorous and mysterious Algiers of wartime imagination, showcases Benny at his creative peak, offering escapism without abandoning the razor-sharp timing that made his program legendary.</p>
 <p>Don your headphones and step into a world where laughter was rationed far less strictly than sugar. This is radio comedy at its finest—intelligent, warmly human, and utterly timeless. Tune in for an evening of genuine entertainment from broadcasting's golden age.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

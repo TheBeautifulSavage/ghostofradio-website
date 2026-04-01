@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1944 01 23 From Camp Muroc Alexis Smith — The Jack Benny Program | Ghost of Radio</title>
+  <title>From Camp Muroc Alexis Smith — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1944 01 23 From Camp Muroc Alexis Smith — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1944 01 23 From Camp Muroc Alexis Smith — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1944 01 23 From Camp Muroc Alexis Smith — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jb 1944 01 23 From Camp Muroc Alexis Smith</h1>
+          <h1 class="episode__title">From Camp Muroc Alexis Smith</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: From Camp Muroc with Alexis Smith</p>
-<p>Picture yourself gathered around the radio on this crisp January evening in 1944, the golden glow of the dial your window to the world. Tonight, Jack Benny broadcasts live from Camp Muroc in the California desert, where American servicemen are stationed amid the roar of experimental aircraft. The audience—soldiers home on leave, officers, and local townspeople—fills the hangar with infectious energy, their laughter punctuated by the unmistakable warmth of Jack's signature timing and self-deprecating humor. Adding to the evening's allure is the glamorous presence of Hollywood starlet Alexis Smith, who joins Jack for a series of comedic sketches and musical interludes, her charm and quick wit matching his own. You'll hear Don Wilson's booming announcements, Phil Harris's smooth crooning, and the familiar musical cues that have become as American as apple pie—all filtered through the unique acoustics of a military facility, creating an intimate yet grand atmosphere that captures the spirit of wartime entertainment.</p>
+          <p>Picture yourself gathered around the radio on this crisp January evening in 1944, the golden glow of the dial your window to the world. Tonight, Jack Benny broadcasts live from Camp Muroc in the California desert, where American servicemen are stationed amid the roar of experimental aircraft. The audience—soldiers home on leave, officers, and local townspeople—fills the hangar with infectious energy, their laughter punctuated by the unmistakable warmth of Jack's signature timing and self-deprecating humor. Adding to the evening's allure is the glamorous presence of Hollywood starlet Alexis Smith, who joins Jack for a series of comedic sketches and musical interludes, her charm and quick wit matching his own. You'll hear Don Wilson's booming announcements, Phil Harris's smooth crooning, and the familiar musical cues that have become as American as apple pie—all filtered through the unique acoustics of a military facility, creating an intimate yet grand atmosphere that captures the spirit of wartime entertainment.</p>
 <p>This program exemplifies the Jack Benny Show's golden age, when radio comedy had reached its artistic peak. Broadcasting from military camps became Jack's patriotic calling in 1944, bringing laughter and a taste of home to men preparing for or returning from combat. Jack's genius lay in his masterful comic construction—the pauses, the violin playing, the interplay with his talented cast—all refined through years of vaudeville and radio performance. These wartime broadcasts hold special historical significance, documenting not just entertainment, but a nation's determination to maintain morale and humanity during its darkest hours.</p>
 <p>This episode represents a unique moment in American broadcasting history. Tune in and experience the magic of live radio comedy as it was meant to be heard: intimate, immediate, and infused with the genuine gratitude of soldiers hearing laughter echo through the desert night.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

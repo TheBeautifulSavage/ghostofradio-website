@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1954 11 07 Jack Sees A Doctor — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Sees A Doctor — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1954 11 07 Jack Sees A Doctor — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1954 11 07 Jack Sees A Doctor — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1954 11 07 Jack Sees A Doctor — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1954</span>
           </div>
-          <h1 class="episode__title">Jb 1954 11 07 Jack Sees A Doctor</h1>
+          <h1 class="episode__title">Jack Sees A Doctor</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Jack Benny Sees A Doctor</p>
-<p>Picture this: it's November 7th, 1954, and Jack Benny shuffles into a medical office with his characteristic whine, convinced that every minor ache is a symptom of imminent doom. What follows is a masterclass in comedic timing as Jack interrogates his bewildered physician, Don Wilson delivers hilariously inappropriate commentary, and Rochester's dry wisdom cuts through the hypochondriacal hysteria. The tension mounts beautifully—is Jack truly ill, or is he simply performing his greatest role yet? By the time the doctor's actual diagnosis arrives, listeners are left gasping between fits of laughter, uncertain whether to worry for Jack or simply surrender to the delicious absurdity of it all.</p>
+          <p>Picture this: it's November 7th, 1954, and Jack Benny shuffles into a medical office with his characteristic whine, convinced that every minor ache is a symptom of imminent doom. What follows is a masterclass in comedic timing as Jack interrogates his bewildered physician, Don Wilson delivers hilariously inappropriate commentary, and Rochester's dry wisdom cuts through the hypochondriacal hysteria. The tension mounts beautifully—is Jack truly ill, or is he simply performing his greatest role yet? By the time the doctor's actual diagnosis arrives, listeners are left gasping between fits of laughter, uncertain whether to worry for Jack or simply surrender to the delicious absurdity of it all.</p>
 <p>By 1954, The Jack Benny Program had already achieved a status rarely matched in broadcasting history. For over two decades, Benny had cultivated a universe of running gags and beloved characters—the eternally youthful Jack, the long-suffering Rochester, the melodramatic violin solos—that made his show appointment listening for millions of Americans. Radio was beginning its decline as television rose, yet Benny's ensemble remained unmatched in their ability to paint vivid scenes with nothing but voices, sound effects, and impeccable comedic instinct. This episode exemplifies why: pure storytelling genius wrapped in the warmth of familiar voices and predictable yet endlessly entertaining character dynamics.</p>
 <p>This is radio comedy at its finest—the kind of entertainment that defined an era and proved that laughter needs no picture, only imagination. Tune in and discover why Jack Benny's neurotic charm captivated a nation, and why Rochester's knowing chuckle remains one of broadcasting's most perfect sounds.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

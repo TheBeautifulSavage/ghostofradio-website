@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1943 12 19 Jack & Phil Play A Trick On Don Wilson — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack & Phil Play A Trick On Don Wilson — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1943 12 19 Jack & Phil Play A Trick On Don Wilson — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1943 12 19 Jack & Phil Play A Trick On Don Wilson — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1943 12 19 Jack & Phil Play A Trick On Don Wilson — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Jb 1943 12 19 Jack & Phil Play A Trick On Don Wilson</h1>
+          <h1 class="episode__title">Jack & Phil Play A Trick On Don Wilson</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: December 19, 1943</p>
-<p>Picture this: it's a crisp December evening in 1943, and Jack Benny is in rare form—scheming. With his trusty violinist Phil Harris at his side, Jack has cooked up an elaborate ruse to pull the wool over the eyes of his beloved announcer Don Wilson, that rotund voice of good cheer who's been the program's genial narrator since day one. What unfolds is a masterclass in comedic timing and misdirection, as Jack and Phil weave an increasingly elaborate web of deceptions, each lie building upon the last with the precision of a Swiss watch. Don, ever the straight man, walks directly into their trap with his characteristic good-natured innocence. The audience roars with laughter as the scheme spirals toward its inevitable and hilarious conclusion, proving once again that Jack's greatest gift isn't his violin playing—it's his ability to manufacture comedy from the simplest situations with his friends.</p>
+          <p>Picture this: it's a crisp December evening in 1943, and Jack Benny is in rare form—scheming. With his trusty violinist Phil Harris at his side, Jack has cooked up an elaborate ruse to pull the wool over the eyes of his beloved announcer Don Wilson, that rotund voice of good cheer who's been the program's genial narrator since day one. What unfolds is a masterclass in comedic timing and misdirection, as Jack and Phil weave an increasingly elaborate web of deceptions, each lie building upon the last with the precision of a Swiss watch. Don, ever the straight man, walks directly into their trap with his characteristic good-natured innocence. The audience roars with laughter as the scheme spirals toward its inevitable and hilarious conclusion, proving once again that Jack's greatest gift isn't his violin playing—it's his ability to manufacture comedy from the simplest situations with his friends.</p>
 <p>This episode epitomizes everything that made The Jack Benny Program a national institution during the Golden Age of Radio. For over two decades, Jack's half-hour of carefully crafted comedic chaos captivated millions of listeners, from farmhouses to urban apartments. His supporting cast—including Don Wilson, Phil Harris, and the rest of his "gang"—became as familiar to America as family members. Unlike slapstick or shouted humor, Jack's comedy relied on pause, on inflection, on the listener's imagination filling in the gaps. During wartime 1943, when Americans needed escape and laughter more than ever, Jack Benny delivered exactly that.</p>
 <p>Step back into December 1943 and experience radio's golden moment. Tune in to hear three comedy legends at the top of their game, trading barbs and outwitting each other with the ease of old friends who've perfected their craft.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

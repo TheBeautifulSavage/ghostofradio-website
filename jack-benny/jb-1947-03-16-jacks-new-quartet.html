@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1947 03 16 Jack's New Quartet — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack's New Quartet — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1947 03 16 Jack's New Quartet — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1947 03 16 Jack's New Quartet — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1947 03 16 Jack's New Quartet — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1947</span>
           </div>
-          <h1 class="episode__title">Jb 1947 03 16 Jack's New Quartet</h1>
+          <h1 class="episode__title">Jack's New Quartet</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Jack Benny Program: Jack's New Quartet (March 16, 1947)</p>
-<p>Gather 'round your radio set as Jack Benny attempts to assemble a string quartet, promising his audience an evening of refined musical culture—though anyone familiar with Jack's legendary cheapness and comedic timing knows disaster lurks behind every grand ambition. When his regular musicians prove unavailable, Jack's scrambling recruitment efforts spiral into delightful chaos. Will he convince his reluctant cast to pick up instruments? Can Don Wilson's rich baritone survive being paired with violin strings? And what happens when a man who plays the violin as badly as Jack does attempts to lead an ensemble? The answer involves all the verbal sparring, slapstick misdirection, and perfectly timed one-liners that made this program appointment listening for millions of Americans.</p>
+          <p>Gather 'round your radio set as Jack Benny attempts to assemble a string quartet, promising his audience an evening of refined musical culture—though anyone familiar with Jack's legendary cheapness and comedic timing knows disaster lurks behind every grand ambition. When his regular musicians prove unavailable, Jack's scrambling recruitment efforts spiral into delightful chaos. Will he convince his reluctant cast to pick up instruments? Can Don Wilson's rich baritone survive being paired with violin strings? And what happens when a man who plays the violin as badly as Jack does attempts to lead an ensemble? The answer involves all the verbal sparring, slapstick misdirection, and perfectly timed one-liners that made this program appointment listening for millions of Americans.</p>
 <p>By 1947, The Jack Benny Program had become a cornerstone of American entertainment, having survived the transition from radio's early experimental days into its golden age of sophisticated comedy. Jack's formula—mixing vaudeville timing with domestic humor, celebrity guest appearances, and his recurring cast of characters like the perpetually broke violin virtuoso and his put-upon announcements—created a template that influenced comedians for generations. The show's willingness to poke fun at Jack's own vanity and miserliness struck a chord with Depression and post-war listeners seeking humor that didn't require suspension of disbelief.</p>
 <p>This particular episode perfectly captures what made Jack Benny essential listening during radio's twilight years, combining musical interludes with genuine comedic craftsmanship. Whether you're a devoted fan revisiting a favorite or discovering Jack for the first time, "Jack's New Quartet" promises the impeccable timing and clever writing that established Benny as comedy's supreme master. Tune in and discover why millions tuned in every single week.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

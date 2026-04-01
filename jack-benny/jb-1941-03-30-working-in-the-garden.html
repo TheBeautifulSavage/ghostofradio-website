@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 03 30 Working In The Garden — The Jack Benny Program | Ghost of Radio</title>
+  <title>Working In The Garden — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 03 30 Working In The Garden — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 03 30 Working In The Garden — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 03 30 Working In The Garden — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 03 30 Working In The Garden</h1>
+          <h1 class="episode__title">Working In The Garden</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: March 30, 1941 — "Working In The Garden"</p>
-<p>Spring has sprung in Jack Benny's world, and the results are predictably disastrous. Our perpetually vain maestro has decided to tackle the noble art of gardening, a decision that promises nothing but comedic catastrophe. As Jack surveys his plot of earth with characteristic pomposity, listeners will hear the familiar shuffle of his supporting cast—the deadpan wisdom of Rochester, the caustic remarks of Mary Livingstone, and the perfectly timed interruptions that have made Tuesday nights appointment radio listening. What could possibly go wrong when Jack Benny decides to grow his own vegetables? Everything, naturally. Expect the rapid-fire banter, the sound effects of shovels and soil, and the audience laughter that erupts at precisely the moments when Jack's dignity crumbles like week-old bread.</p>
+          <p>Spring has sprung in Jack Benny's world, and the results are predictably disastrous. Our perpetually vain maestro has decided to tackle the noble art of gardening, a decision that promises nothing but comedic catastrophe. As Jack surveys his plot of earth with characteristic pomposity, listeners will hear the familiar shuffle of his supporting cast—the deadpan wisdom of Rochester, the caustic remarks of Mary Livingstone, and the perfectly timed interruptions that have made Tuesday nights appointment radio listening. What could possibly go wrong when Jack Benny decides to grow his own vegetables? Everything, naturally. Expect the rapid-fire banter, the sound effects of shovels and soil, and the audience laughter that erupts at precisely the moments when Jack's dignity crumbles like week-old bread.</p>
 <p>By 1941, The Jack Benny Program had become the gold standard of American comedy broadcasting. Since debuting in 1932, Benny's deceptively simple formula—a vain, stingy violinist perpetually tormented by his wisecracking staff and his own ineptitude—had captivated millions of Americans seeking escape and laughter during economic uncertainty. The show's brilliance lay not in elaborate plots but in character, timing, and the chemistry between regulars who had become as familiar to listeners as family members. Whether he was battling his ancient Maxwell automobile, his temperamental vault, or his own vanity, Jack Benny transformed mundane situations into genuine art.</p>
 <p>To experience why this program dominated radio schedules for over two decades, tune in to this March episode and discover why Jack Benny was called the master of the medium. His impeccable timing, the ensemble's perfection, and the warmth beneath every barb make this episode a perfect introduction to radio comedy at its finest.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

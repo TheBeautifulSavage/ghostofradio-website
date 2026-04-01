@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1950 03 13 Red Cross Special — The Jack Benny Program | Ghost of Radio</title>
+  <title>Red Cross Special — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1950 03 13 Red Cross Special — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1950 03 13 Red Cross Special — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1950 03 13 Red Cross Special — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1950</span>
           </div>
-          <h1 class="episode__title">Jbgs 1950 03 13 Red Cross Special</h1>
+          <h1 class="episode__title">Red Cross Special</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Red Cross Special (March 13, 1950)</p>
-<p>On this March evening in 1950, Jack Benny opens his program with an unmistakable urgency—the familiar theme fades not into his usual quips about his violin playing, but into something more solemn, more meaningful. This special Red Cross broadcast transforms the comedic sanctuary of the Jack Benny Program into a patriotic plea, as Jack and his entire ensemble—from the perpetually exasperated Rochester to Mary Livingstone's quick-witted banter—set aside their regular shenanigans to rally American listeners for the humanitarian cause. The comedy doesn't disappear; rather, it becomes a vehicle for purpose, threading humor through genuine appeals for blood donations and support. Listeners expecting their weekly dose of gags about Jack's cheapness and his violin aspirations will find them, but woven into a greater tapestry of civic responsibility that defined the era.</p>
+          <p>On this March evening in 1950, Jack Benny opens his program with an unmistakable urgency—the familiar theme fades not into his usual quips about his violin playing, but into something more solemn, more meaningful. This special Red Cross broadcast transforms the comedic sanctuary of the Jack Benny Program into a patriotic plea, as Jack and his entire ensemble—from the perpetually exasperated Rochester to Mary Livingstone's quick-witted banter—set aside their regular shenanigans to rally American listeners for the humanitarian cause. The comedy doesn't disappear; rather, it becomes a vehicle for purpose, threading humor through genuine appeals for blood donations and support. Listeners expecting their weekly dose of gags about Jack's cheapness and his violin aspirations will find them, but woven into a greater tapestry of civic responsibility that defined the era.</p>
 <p>The early 1950s found American radio at a crossroads—television was emerging as a threat, yet programs like Jack Benny's remained cultural institutions precisely because of moments like these, where entertainment and community service merged seamlessly. Jack Benny's willingness to lend his massive audience to the Red Cross exemplified the golden age radio tradition of using entertainment's reach for social good. His show had already survived nearly two decades by 1950, a testament to his timing, his chemistry with his supporting cast, and his ability to evolve while maintaining the magic that made millions tune in each week.</p>
 <p>This is radio at its finest: compelling, purposeful, and utterly entertaining. Hear how Jack Benny navigates the delicate balance between laughter and earnestness, how Rochester steals scenes even in service of a noble cause, and why America's favorite miser could open hearts—and wallets—for those in need. Tune in and discover why the Red Cross special remains one of the most memorable broadcasts in the program's legendary run.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

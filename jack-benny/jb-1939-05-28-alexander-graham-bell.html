@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1939 05 28 Alexander Graham Bell — The Jack Benny Program | Ghost of Radio</title>
+  <title>Alexander Graham Bell — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1939 05 28 Alexander Graham Bell — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1939 05 28 Alexander Graham Bell — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1939 05 28 Alexander Graham Bell — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jb 1939 05 28 Alexander Graham Bell</h1>
+          <h1 class="episode__title">Alexander Graham Bell</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Alexander Graham Bell (May 28, 1939)</p>
-<p>Step into the parlor of Jack Benny's modest home on a warm spring evening as the orchestra swells and the audience's laughter crackles through the airwaves. Tonight, Jack finds himself tangled in one of his most ambitious schemes yet—a comedic fantasy that blurs the line between invention and imagination. When the ghost of Alexander Graham Bell materializes to discuss his greatest creation with Jack's maid Rochester and the perpetually befuddled Professor LeBlanc, chaos erupts. What follows is a cascade of sight gags translated into radio gold: misunderstandings about what the telephone actually is, Jack's desperate attempts to impress the inventor with his own "improvements," and of course, the inevitable interruption by his long-suffering wife Mary as she discovers Jack's latest ridiculous predicament. The energy crackles with the precision timing that made Benny a master of the medium, each pause perfectly calibrated for maximum comedic effect.</p>
+          <p>Step into the parlor of Jack Benny's modest home on a warm spring evening as the orchestra swells and the audience's laughter crackles through the airwaves. Tonight, Jack finds himself tangled in one of his most ambitious schemes yet—a comedic fantasy that blurs the line between invention and imagination. When the ghost of Alexander Graham Bell materializes to discuss his greatest creation with Jack's maid Rochester and the perpetually befuddled Professor LeBlanc, chaos erupts. What follows is a cascade of sight gags translated into radio gold: misunderstandings about what the telephone actually is, Jack's desperate attempts to impress the inventor with his own "improvements," and of course, the inevitable interruption by his long-suffering wife Mary as she discovers Jack's latest ridiculous predicament. The energy crackles with the precision timing that made Benny a master of the medium, each pause perfectly calibrated for maximum comedic effect.</p>
 <p>By 1939, Jack Benny had already perfected the art of the radio comedy program, transforming what could have been simple vaudeville into something genuinely innovative. Unlike variety shows that merely strung together musical numbers and sketches, Benny wove a coherent narrative around a recurring cast of characters—each with their own running gags and personality quirks. This episode exemplifies why The Jack Benny Program dominated American radio for over two decades, combining highbrow historical figures like Bell with the lowbrow humor of a man obsessed with his own cheapness and vanity.</p>
 <p>Don your headphones and surrender to an evening of pure entertainment. This is radio comedy at its finest—where the imagination transforms invisible performers into vivid characters, and a single well-timed "now cut that out!" can bring an entire studio audience to tears of laughter. Tune in and discover why millions of Americans made this appointment with Jack Benny an unmissable ritual.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

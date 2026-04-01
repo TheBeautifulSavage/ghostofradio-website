@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1946 01 10 Here's To Vets From 46 01 10 — The Jack Benny Program | Ghost of Radio</title>
+  <title>Here's To Vets From 46 01 10 — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1946 01 10 Here's To Vets From 46 01 10 — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1946 01 10 Here's To Vets From 46 01 10 — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1946 01 10 Here's To Vets From 46 01 10 — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1946</span>
           </div>
-          <h1 class="episode__title">Jbgs 1946 01 10 Here's To Vets From 46 01 10</h1>
+          <h1 class="episode__title">Here's To Vets From 46 01 10</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Here's to Vets</p>
-<p>Picture this: it's January 10th, 1946, and America's favorite miser is back on the air with a special salute to the men and women returning from the greatest war in human history. Jack Benny, that paragon of comedic penny-pinching, sets aside his violin and his vanity for an evening dedicated to honoring our veterans. Expect the usual sterling ensemble—Mary Livingstone's razor-sharp wit, Don Wilson's mellifluous announcements, Rochester's knowing asides—but infused with genuine warmth and patriotic spirit. The band swings, the gags land with machine-gun precision, and somewhere beneath the laughter runs a current of authentic gratitude for those who've paid the price for freedom. This isn't mere sentimentality; it's the real American voice of 1946, a nation catching its breath and trying to welcome its heroes home.</p>
+          <p>Picture this: it's January 10th, 1946, and America's favorite miser is back on the air with a special salute to the men and women returning from the greatest war in human history. Jack Benny, that paragon of comedic penny-pinching, sets aside his violin and his vanity for an evening dedicated to honoring our veterans. Expect the usual sterling ensemble—Mary Livingstone's razor-sharp wit, Don Wilson's mellifluous announcements, Rochester's knowing asides—but infused with genuine warmth and patriotic spirit. The band swings, the gags land with machine-gun precision, and somewhere beneath the laughter runs a current of authentic gratitude for those who've paid the price for freedom. This isn't mere sentimentality; it's the real American voice of 1946, a nation catching its breath and trying to welcome its heroes home.</p>
 <p>The Jack Benny Program had already become an institution by this postwar broadcast, having dominated comedy radio since 1932. But 1946 was different—the nation was transformed, and so was Jack's audience. Veterans filled the theaters, the comedy clubs, and sat in living rooms across America, and Benny understood implicitly what his listeners needed: not saccharine speeches, but the healing balm of genuine, intelligent laughter. His willingness to pivot his entire episode toward this celebration demonstrates the cultural responsibility these radio personalities felt. Entertainment wasn't mere escapism; it was national salve.</p>
 <p>Few recordings capture the spirit of postwar America as authentically as this broadcast. Whether you're a devotee of vintage radio comedy or a student of American culture, this episode offers a fascinating window into how popular entertainers of the era balanced entertainment with meaning. Tune in and hear Jack Benny at his finest—charitable without becoming maudlin, funny without losing heart.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

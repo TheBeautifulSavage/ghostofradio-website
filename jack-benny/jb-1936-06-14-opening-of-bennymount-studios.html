@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1936 06 14 Opening Of Bennymount Studios — The Jack Benny Program | Ghost of Radio</title>
+  <title>Opening Of Bennymount Studios — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1936 06 14 Opening Of Bennymount Studios — The Jack Benny Program (NBC/CBS, 1936). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1936 06 14 Opening Of Bennymount Studios — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1936 06 14 Opening Of Bennymount Studios — The Jack Benny Program (NBC/CBS, 1936). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1936</span>
           </div>
-          <h1 class="episode__title">Jb 1936 06 14 Opening Of Bennymount Studios</h1>
+          <h1 class="episode__title">Opening Of Bennymount Studios</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Opening of Bennymount Studios</p>
-<p>Picture yourself settling into your favorite chair on this June evening in 1936, tuning your radio dial to catch Jack Benny at his most ambitious. Tonight, the maestro and his supporting cast are unveiling nothing less than the grand opening of Bennymount Studios, Jack's newly constructed entertainment palace. Expect the usual collision of high-minded pretension and comedic catastrophe that defines Benny's genius—his grandiose vision for the facilities will surely crumble under the weight of backstage chaos. Will Fred Allen make a surprise appearance to needle his arch-rival? Can Don Wilson's mellifluous announcing voice maintain its dignity amid the bedlam? The tension between Benny's carefully constructed persona of refinement and the comedy troupe's determination to demolish it creates an electric anticipation that crackles through the airwaves.</p>
+          <p>Picture yourself settling into your favorite chair on this June evening in 1936, tuning your radio dial to catch Jack Benny at his most ambitious. Tonight, the maestro and his supporting cast are unveiling nothing less than the grand opening of Bennymount Studios, Jack's newly constructed entertainment palace. Expect the usual collision of high-minded pretension and comedic catastrophe that defines Benny's genius—his grandiose vision for the facilities will surely crumble under the weight of backstage chaos. Will Fred Allen make a surprise appearance to needle his arch-rival? Can Don Wilson's mellifluous announcing voice maintain its dignity amid the bedlam? The tension between Benny's carefully constructed persona of refinement and the comedy troupe's determination to demolish it creates an electric anticipation that crackles through the airwaves.</p>
 <p>The Jack Benny Program had already become America's favorite half-hour by 1936, but this episode marks a turning point in radio comedy itself. Benny pioneered a revolutionary approach to the medium—breaking the fourth wall, allowing awkward silences to land harder than any punchline, and building humor around the contradictions of his own on-air character. While variety shows and comedy programs had dominated radio's early years, Benny understood that listeners didn't just want jokes; they wanted to feel like they were eavesdropping on a real world, complete with recurring characters, running gags, and the kind of spontaneous chaos that made you feel part of an intimate community gathering around the speaker.</p>
 <p>This episode encapsulates that magic perfectly—the ambition, the humor, the sense of live theater conducted through invisible airwaves. Don't miss this glimpse into golden-age radio at its most confident and creative. Tune in now and discover why millions of Americans made this appointment with Jack Benny an unmissable ritual.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

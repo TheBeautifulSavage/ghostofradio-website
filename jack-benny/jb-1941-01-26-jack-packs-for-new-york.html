@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 01 26 Jack Packs For New York — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Packs For New York — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 01 26 Jack Packs For New York — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 01 26 Jack Packs For New York — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 01 26 Jack Packs For New York — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 01 26 Jack Packs For New York</h1>
+          <h1 class="episode__title">Jack Packs For New York</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Jack Packs for New York</p>
-<p>As Jack prepares for a trip to Manhattan, mayhem erupts in his Beverly Hills home. This January 1941 broadcast captures the comedian at his finest, orchestrating comedic chaos from the simple premise of packing a suitcase. Listeners will delight as Rochester, his long-suffering valet, repeatedly thwarts Jack's attempts at organization while the program's supporting cast materializes with absurd timing and impossible demands. The tension builds between Jack's fastidious nature and his world's complete indifference to his schedule, creating that signature blend of understated panic and deadpan delivery that made America tune in every Sunday night.</p>
+          <p>As Jack prepares for a trip to Manhattan, mayhem erupts in his Beverly Hills home. This January 1941 broadcast captures the comedian at his finest, orchestrating comedic chaos from the simple premise of packing a suitcase. Listeners will delight as Rochester, his long-suffering valet, repeatedly thwarts Jack's attempts at organization while the program's supporting cast materializes with absurd timing and impossible demands. The tension builds between Jack's fastidious nature and his world's complete indifference to his schedule, creating that signature blend of understated panic and deadpan delivery that made America tune in every Sunday night.</p>
 <p>By 1941, The Jack Benny Program had become a cultural institution, a weekly appointment that transcended mere entertainment. Jack's meticulous comedic timing—perfected through decades of vaudeville—translated flawlessly to radio, where his masterful use of silence and strategic pauses became legendary. This episode exemplifies why the show survived network changes and competing programs: Benny understood that radio comedy thrived on character, not spectacle. Rochester, played by Eddie Anderson, had become an integral part of that chemistry, their perfectly calibrated rapport offering audiences something increasingly rare—genuine affection beneath the barbs. The supporting cast, including announcer Don Wilson and bandleader Phil Harris, formed an ensemble as tight as any Broadway production.</p>
 <p>This 1941 broadcast also captures pre-war America at a particular moment, when a fictional journey to New York still promised glamour and escape rather than anxiety. Jack's neurotic anticipation feels like a time capsule, preserving not just a comedy routine but an entire world of expectations and humor now three generations distant. Tune in and discover why this program remained on the air for over two decades, and why critics still cite it as radio's greatest comedy.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

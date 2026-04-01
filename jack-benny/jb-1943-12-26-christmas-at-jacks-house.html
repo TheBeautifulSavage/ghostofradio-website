@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1943 12 26 Christmas At Jack's House — The Jack Benny Program | Ghost of Radio</title>
+  <title>Christmas At Jack's House — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1943 12 26 Christmas At Jack's House — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1943 12 26 Christmas At Jack's House — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1943 12 26 Christmas At Jack's House — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Jb 1943 12 26 Christmas At Jack's House</h1>
+          <h1 class="episode__title">Christmas At Jack's House</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Christmas at Jack's House (December 26, 1943)</p>
-<p>Gather 'round the radio this holiday season as Jack Benny opens the doors of his home for an intimate Christmas celebration that captured the heart of a nation at war. On this December evening in 1943, listeners are invited into a world of yuletide chaos where Jack's notoriously stingy nature clashes hilariously with the season of giving. Expect the usual suspects—Mary Livingstone's sharp-tongued remarks, Rochester's sardonic observations, and Don Wilson's booming announcer charm—all woven together with the genuine warmth and sentiment that made Benny's program uniquely American. The episode bristles with that distinctive 1940s magic: the crackle of the live audience, the perfectly timed orchestra swells, and comedic sketches that manage to be both laugh-out-loud funny and surprisingly touching. With America's boys overseas, this broadcast offered something precious to families huddled around their sets: laughter, familiarity, and the reassurance that life's simple pleasures—community, humor, and togetherness—endured.</p>
+          <p>Gather 'round the radio this holiday season as Jack Benny opens the doors of his home for an intimate Christmas celebration that captured the heart of a nation at war. On this December evening in 1943, listeners are invited into a world of yuletide chaos where Jack's notoriously stingy nature clashes hilariously with the season of giving. Expect the usual suspects—Mary Livingstone's sharp-tongued remarks, Rochester's sardonic observations, and Don Wilson's booming announcer charm—all woven together with the genuine warmth and sentiment that made Benny's program uniquely American. The episode bristles with that distinctive 1940s magic: the crackle of the live audience, the perfectly timed orchestra swells, and comedic sketches that manage to be both laugh-out-loud funny and surprisingly touching. With America's boys overseas, this broadcast offered something precious to families huddled around their sets: laughter, familiarity, and the reassurance that life's simple pleasures—community, humor, and togetherness—endured.</p>
 <p>The Jack Benny Program stood as a cultural institution during the golden age of radio, proving that comedy needn't shout to be heard. Benny's mastery of timing and character created a world so vividly realized that millions felt they truly knew him and his cast. This particular episode, recorded during the height of World War II, reflects the sophisticated, character-driven humor that distinguished Benny's show from slapstick competitors. His ability to build comedy through restraint and personality rather than gags remains a masterclass in entertainment.</p>
 <p>Don't miss this snapshot of December 1943—a reminder of radio's power to unite, comfort, and entertain. Tune in and experience why Jack Benny became an immortal figure in American entertainment.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

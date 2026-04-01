@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1953 04 12 Missing Heir — The Jack Benny Program | Ghost of Radio</title>
+  <title>Missing Heir — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1953 04 12 Missing Heir — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1953 04 12 Missing Heir — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1953 04 12 Missing Heir — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1953</span>
           </div>
-          <h1 class="episode__title">Jb 1953 04 12 Missing Heir</h1>
+          <h1 class="episode__title">Missing Heir</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Missing Heir (April 12, 1953)</p>
-<p>Picture yourself huddled around the radio on a Sunday evening in 1953, the amber glow of the dial your only light, when Jack Benny's smooth voice cuts through the static with an announcement that will send your imagination racing. Tonight's episode, "Missing Heir," plunges our perpetually broke protagonist into a tangled mystery of inheritance, mistaken identity, and the kind of comic chaos that only Jack could navigate. Is someone trying to claim his non-existent fortune? Will Rochester unravel the truth with his characteristic deadpan wisdom? As the orchestra swells and the sound effects crackle with authentic intrigue, you'll find yourself genuinely unsure whether this missing heir is real or simply the latest scheme designed to separate Jack from his wallet—a wallet that listeners knew was always as empty as his boasts about his violin playing.</p>
+          <p>Picture yourself huddled around the radio on a Sunday evening in 1953, the amber glow of the dial your only light, when Jack Benny's smooth voice cuts through the static with an announcement that will send your imagination racing. Tonight's episode, "Missing Heir," plunges our perpetually broke protagonist into a tangled mystery of inheritance, mistaken identity, and the kind of comic chaos that only Jack could navigate. Is someone trying to claim his non-existent fortune? Will Rochester unravel the truth with his characteristic deadpan wisdom? As the orchestra swells and the sound effects crackle with authentic intrigue, you'll find yourself genuinely unsure whether this missing heir is real or simply the latest scheme designed to separate Jack from his wallet—a wallet that listeners knew was always as empty as his boasts about his violin playing.</p>
 <p>By 1953, The Jack Benny Program had become an American institution, a weekly ritual that transcended mere entertainment to become a shared cultural experience. What made Jack's comedy revolutionary was his understanding of silence, timing, and character—he could get a laugh simply by pausing before delivering a line, or by allowing his cast of beloved recurring characters to steal scenes. This episode represents the show at its peak, when Jack's chemistry with Dennis Day, Phil Harris, Mary Livingstone, and especially Rochester was finely tuned through two decades of broadcasts. The writing had become almost Shakespearean in its precision, every joke earned through character consistency rather than easy punchlines.</p>
 <p>Don't miss this gem from radio's golden age. Press play and let Jack Benny transport you back to an era when families gathered to hear America's most beloved skinflint navigate another impossibly comedic situation. Missing Heir awaits—and it's absolutely free.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

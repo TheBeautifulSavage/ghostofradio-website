@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1940 11 21 Maxwell House Coffee Time Baby Snooks — The Jack Benny Program | Ghost of Radio</title>
+  <title>Maxwell House Coffee Time Baby Snooks — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1940 11 21 Maxwell House Coffee Time Baby Snooks — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1940 11 21 Maxwell House Coffee Time Baby Snooks — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1940 11 21 Maxwell House Coffee Time Baby Snooks — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1940</span>
           </div>
-          <h1 class="episode__title">Jbgs 1940 11 21 Maxwell House Coffee Time Baby Snooks</h1>
+          <h1 class="episode__title">Maxwell House Coffee Time Baby Snooks</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: November 21, 1940</p>
-<p>Step into the warm glow of a Wednesday evening in 1940 and join Jack Benny as he welcomes America into his world of comic misadventure. This Maxwell House Coffee Time broadcast crackles with the particular magic of the show's golden era—Jack's trademark deadpan delivery plays beautifully against the brilliant comedic timing of Baby Snooks, that incorrigible imp of mischief whose simpering voice and wicked logic could unravel even the most composed straight man. As the orchestra swells beneath Don Wilson's smooth announcer patter, listeners can anticipate the elegant chaos that unfolds when these two comedic sensibilities collide, complete with Jack's hapless band members caught in the crossfire and Rochester, his ever-patient valet, ready with a cutting remark.</p>
+          <p>Step into the warm glow of a Wednesday evening in 1940 and join Jack Benny as he welcomes America into his world of comic misadventure. This Maxwell House Coffee Time broadcast crackles with the particular magic of the show's golden era—Jack's trademark deadpan delivery plays beautifully against the brilliant comedic timing of Baby Snooks, that incorrigible imp of mischief whose simpering voice and wicked logic could unravel even the most composed straight man. As the orchestra swells beneath Don Wilson's smooth announcer patter, listeners can anticipate the elegant chaos that unfolds when these two comedic sensibilities collide, complete with Jack's hapless band members caught in the crossfire and Rochester, his ever-patient valet, ready with a cutting remark.</p>
 <p>By 1940, The Jack Benny Program had already cemented itself as the gold standard of American radio comedy—a show that understood the art of the perfectly timed pause, the value of running gags, and the chemistry that sparks between skilled performers. What set Benny apart was his willingness to be the butt of jokes, to play the straight man to his own vanity, creating a sanctuary for intelligent humor amid a crowded dial. The Maxwell House sponsorship represents radio's heyday, when major corporations underwrite entertainment and live performance remained America's primary window to the world beyond their parlor walls.</p>
 <p>These are the broadcasts that shaped American comedy for generations, the gold standard from which all subsequent radio and television humor would draw. Settle in with a cup of Maxwell House, adjust your dial to that familiar frequency, and experience why, in 1940, millions of Americans wouldn't dream of missing Jack Benny on a Wednesday night.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

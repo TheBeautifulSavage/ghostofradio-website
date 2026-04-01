@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1944 02 27 From The Hollywood Canteen — The Jack Benny Program | Ghost of Radio</title>
+  <title>From The Hollywood Canteen — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1944 02 27 From The Hollywood Canteen — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1944 02 27 From The Hollywood Canteen — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1944 02 27 From The Hollywood Canteen — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jb 1944 02 27 From The Hollywood Canteen</h1>
+          <h1 class="episode__title">From The Hollywood Canteen</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: From the Hollywood Canteen (February 27, 1944)</p>
-<p>Step into the bustling corridors of the Hollywood Canteen this February evening, where Jack Benny brings his entire program to entertain the servicemen and women who have gathered to forget, for just a few hours, the weight of a world at war. With the orchestra swinging behind him and an audience of soldiers, sailors, and Marines filling every available seat, Jack finds himself in his element—surrounded by genuine laughter and the unmistakable energy of young men and women far from home. You'll hear the distinctive interplay between Jack's taut comic timing and his supporting cast as they navigate skits designed to lift spirits and celebrate the bravery of those in uniform. Don't miss the moment when Jack's famous stinginess collides with the patriotic spirit of the evening, or when Mary Livingstone's sharp wit cuts through his pretensions with surgical precision.</p>
+          <p>Step into the bustling corridors of the Hollywood Canteen this February evening, where Jack Benny brings his entire program to entertain the servicemen and women who have gathered to forget, for just a few hours, the weight of a world at war. With the orchestra swinging behind him and an audience of soldiers, sailors, and Marines filling every available seat, Jack finds himself in his element—surrounded by genuine laughter and the unmistakable energy of young men and women far from home. You'll hear the distinctive interplay between Jack's taut comic timing and his supporting cast as they navigate skits designed to lift spirits and celebrate the bravery of those in uniform. Don't miss the moment when Jack's famous stinginess collides with the patriotic spirit of the evening, or when Mary Livingstone's sharp wit cuts through his pretensions with surgical precision.</p>
 <p>This episode represents a crucial chapter in American broadcasting history, captured at a moment when radio was truly the nation's heartbeat. The Jack Benny Program had already revolutionized comedy by building laughs around character rather than punchlines, and by 1944, the show had become an institution—a weekly escape for Americans enduring rationing, anxiety, and separation. The Hollywood Canteen itself was a real establishment, founded in 1942 by stars like Bette Davis and John Garfield to provide free entertainment to servicemembers. That Jack brought his entire program there demonstrates the profound sense of duty entertainer and audience alike felt toward the war effort.</p>
 <p>This is radio at its most meaningful—comedy serving not merely as distraction, but as connection. Tune in and experience the authentic warmth of a nation united in both entertainment and purpose.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

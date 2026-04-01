@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1940 11 17 Jack Waits To See The Head Of Paramount — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Waits To See The Head Of Paramount — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1940 11 17 Jack Waits To See The Head Of Paramount — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1940 11 17 Jack Waits To See The Head Of Paramount — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1940 11 17 Jack Waits To See The Head Of Paramount — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1940</span>
           </div>
-          <h1 class="episode__title">Jb 1940 11 17 Jack Waits To See The Head Of Paramount</h1>
+          <h1 class="episode__title">Jack Waits To See The Head Of Paramount</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Jack Waits to See the Head of Paramount</p>
-<p>Picture yourself in that golden age of American entertainment—November 17th, 1940—when millions gathered around their radios for Jack Benny's weekly miracle of comedy. In this delightfully farcical episode, our hapless hero finds himself cooling his heels in the waiting room of Paramount Pictures' executive office, desperately hoping for an audience with the studio head. What unfolds is pure comedic gold: the mounting absurdity of Jack's predicament, his caustic asides about Hollywood's indifference to a mere entertainer, and Don Wilson's perfectly timed announcements that puncture every moment of Jack's wounded dignity. You'll hear Mary Livingstone's sardonic jabs, Rochester's dry observations, and the studio orchestra's impeccable timing—all conspiring to reduce our protagonist to comedic rubble, one withering remark at a time.</p>
+          <p>Picture yourself in that golden age of American entertainment—November 17th, 1940—when millions gathered around their radios for Jack Benny's weekly miracle of comedy. In this delightfully farcical episode, our hapless hero finds himself cooling his heels in the waiting room of Paramount Pictures' executive office, desperately hoping for an audience with the studio head. What unfolds is pure comedic gold: the mounting absurdity of Jack's predicament, his caustic asides about Hollywood's indifference to a mere entertainer, and Don Wilson's perfectly timed announcements that puncture every moment of Jack's wounded dignity. You'll hear Mary Livingstone's sardonic jabs, Rochester's dry observations, and the studio orchestra's impeccable timing—all conspiring to reduce our protagonist to comedic rubble, one withering remark at a time.</p>
 <p>By 1940, The Jack Benny Program had become America's most beloved radio show, a weekly appointment that transcended mere entertainment to become a national ritual. Jack's genius lay in his willingness to be the butt of every joke—his stinginess, his vanity, his inflated sense of self-worth all fair game for relentless ribbing. The show's format of loosely connected sketches and musical interludes, punctuated by Jack's agonized reactions, proved endlessly adaptable to Hollywood satire. This particular episode exemplifies why critics and audiences alike considered Benny the master of timing and understatement, a virtuoso who could wring profound laughter from the smallest pause or the subtlest facial expression—even when that expression was purely imaginary, conjured only in listeners' minds.</p>
 <p>Step back into 1940 and experience why Jack Benny dominated American radio. These are the moments that defined the golden age of broadcasting—when wit was sharp, timing was everything, and the simple sound of a man's exasperated sigh could bring an entire nation to laughter.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

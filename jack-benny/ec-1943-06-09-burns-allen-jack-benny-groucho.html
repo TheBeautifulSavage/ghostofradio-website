@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ec 1943 06 09 Burns & Allen, Jack Benny, Groucho — The Jack Benny Program | Ghost of Radio</title>
+  <title>Burns & Allen, Jack Benny, Groucho — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Ec 1943 06 09 Burns & Allen, Jack Benny, Groucho — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ec 1943 06 09 Burns & Allen, Jack Benny, Groucho — The Jack Benny Program">
   <meta property="og:description" content="Listen to Ec 1943 06 09 Burns & Allen, Jack Benny, Groucho — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Ec 1943 06 09 Burns & Allen, Jack Benny, Groucho</h1>
+          <h1 class="episode__title">Burns & Allen, Jack Benny, Groucho</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - June 9, 1943</p>
-<p>Picture yourself huddled around the radio on a warm June evening in 1943, the war news heavy on everyone's mind, when suddenly Jack Benny's familiar voice cuts through with that unmistakable blend of self-deprecating charm and impeccable timing. This spectacular broadcast brings together a constellation of comedy's brightest stars: George Burns and Gracie Allen, whose rapid-fire banter and Gracie's gloriously illogical non sequiturs never fail to land, and the irreverent Groucho Marx, prepared to ad-lib his way through scenes with his trademark cigar and eyebrow-raising innuendo. The chemistry between these comedians crackles with barely contained pandemonium—you can practically hear the studio audience holding its breath in anticipation of who will top whose joke. With Jack's carefully rehearsed "spontaneity" as the anchor, this episode promises the perfect escape: laughter that feels both sophisticated and utterly ridiculous.</p>
+          <p>Picture yourself huddled around the radio on a warm June evening in 1943, the war news heavy on everyone's mind, when suddenly Jack Benny's familiar voice cuts through with that unmistakable blend of self-deprecating charm and impeccable timing. This spectacular broadcast brings together a constellation of comedy's brightest stars: George Burns and Gracie Allen, whose rapid-fire banter and Gracie's gloriously illogical non sequiturs never fail to land, and the irreverent Groucho Marx, prepared to ad-lib his way through scenes with his trademark cigar and eyebrow-raising innuendo. The chemistry between these comedians crackles with barely contained pandemonium—you can practically hear the studio audience holding its breath in anticipation of who will top whose joke. With Jack's carefully rehearsed "spontaneity" as the anchor, this episode promises the perfect escape: laughter that feels both sophisticated and utterly ridiculous.</p>
 <p>In 1943, as American families grappled with rationing and anxiety over distant battlefields, The Jack Benny Program offered something precious—a weekly reminder that humor, wit, and human connection endured. By this point in its remarkable run, the show had become appointment listening across the nation, its ensemble cast and rotating guest stars setting the gold standard for radio comedy. Jack's genius lay not in being the funniest person in the room, but in being the perfect straight man, the perpetually vain but somehow lovable vessel through which comedy flowed.</p>
 <p>If you've never experienced the magic of these comedy legends in their prime—trading quips in real-time, playing off live studio laughter—this is the episode to start with. Even seven decades later, the timing remains impeccable, the humor timeless, and the warmth utterly genuine. Tune in and discover why America couldn't wait for Wednesday nights.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

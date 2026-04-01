@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1938 01 23 Scoop Benny Ace Reporter — The Jack Benny Program | Ghost of Radio</title>
+  <title>Scoop Benny Ace Reporter — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1938 01 23 Scoop Benny Ace Reporter — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1938 01 23 Scoop Benny Ace Reporter — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1938 01 23 Scoop Benny Ace Reporter — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1938</span>
           </div>
-          <h1 class="episode__title">Jb 1938 01 23 Scoop Benny Ace Reporter</h1>
+          <h1 class="episode__title">Scoop Benny Ace Reporter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Scoop Benny, Ace Reporter"</p>
-<p>Picture yourself huddled around the radio on a cold January evening in 1938, the amber glow of the dial casting shadows across the parlor. Jack Benny himself is about to transform before your ears—no longer the mild-mannered violinist and master of comedic timing you know, but "Scoop" Benny, a hard-boiled newspaper reporter on the trail of the story of a lifetime. This week's mayhem unfolds with Don Wilson's booming announcer's voice setting the scene, Mary Livingstone's cutting remarks piercing through Jack's schemes, and the supporting cast tumbling headlong into one absurd situation after another. As Jack fumbles through his investigation, bungling clues and misunderstanding basic journalistic ethics, you'll find yourself laughing out loud—the kind of genuine, unguarded laughter that only radio comedy could evoke. The pacing is relentless, the wordplay razor-sharp, and the sound effects (that trusty typewriter clacking away!) bring the newsroom to vivid life in your imagination.</p>
+          <p>Picture yourself huddled around the radio on a cold January evening in 1938, the amber glow of the dial casting shadows across the parlor. Jack Benny himself is about to transform before your ears—no longer the mild-mannered violinist and master of comedic timing you know, but "Scoop" Benny, a hard-boiled newspaper reporter on the trail of the story of a lifetime. This week's mayhem unfolds with Don Wilson's booming announcer's voice setting the scene, Mary Livingstone's cutting remarks piercing through Jack's schemes, and the supporting cast tumbling headlong into one absurd situation after another. As Jack fumbles through his investigation, bungling clues and misunderstanding basic journalistic ethics, you'll find yourself laughing out loud—the kind of genuine, unguarded laughter that only radio comedy could evoke. The pacing is relentless, the wordplay razor-sharp, and the sound effects (that trusty typewriter clacking away!) bring the newsroom to vivid life in your imagination.</p>
 <p>By 1938, The Jack Benny Program had already become America's favorite comedy, a weekly institution that kept millions entertained through Depression and gathering storm clouds. What made Jack's show unique was its willingness to let the humor breathe—long pauses where silence itself became the punchline, and a cast so perfectly attuned to one another that their timing felt almost telepathic. These episodes showcase the golden age of radio at its very peak, when the medium's writers and performers understood that listeners' imaginations were their greatest special effect.</p>
 <p>Don't miss this chance to step into 1938 and experience why Jack Benny became a legend. Press play and let the magic of classic radio remind you why families once gathered around that glowing dial, night after night, waiting to hear what Jack would get himself into next.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

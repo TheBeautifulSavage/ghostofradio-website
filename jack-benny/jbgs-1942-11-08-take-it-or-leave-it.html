@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1942 11 08 Take It Or Leave It — The Jack Benny Program | Ghost of Radio</title>
+  <title>Take It Or Leave It — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1942 11 08 Take It Or Leave It — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1942 11 08 Take It Or Leave It — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1942 11 08 Take It Or Leave It — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jbgs 1942 11 08 Take It Or Leave It</h1>
+          <h1 class="episode__title">Take It Or Leave It</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: November 8, 1942</p>
-<p>Step into a wartime living room on this crisp November evening in 1942, where America gathers around their radios for respite from an anxious world. Jack Benny and his impeccable supporting cast—the melancholic Eddie "Rochester" Anderson, the perpetually exasperated Mary Livingstone, and the melodramatic Frank Nelson—deliver their trademark comedy with the precision of a Swiss watch. In "Take It or Leave It," the gang finds themselves entangled in the bewildering logic of a prize game, where Jack's legendary stinginess collides spectacularly with opportunity. Don Wilson's stentorian announcements punctuate the mayhem while the orchestra swells at just the right moments, creating that distinctive blend of comic timing and musical flourish that made Benny radio's supreme craftsman. The witty banter crackles with an ease that only comes from years of rehearsal and genuine affection among cast members.</p>
+          <p>Step into a wartime living room on this crisp November evening in 1942, where America gathers around their radios for respite from an anxious world. Jack Benny and his impeccable supporting cast—the melancholic Eddie "Rochester" Anderson, the perpetually exasperated Mary Livingstone, and the melodramatic Frank Nelson—deliver their trademark comedy with the precision of a Swiss watch. In "Take It or Leave It," the gang finds themselves entangled in the bewildering logic of a prize game, where Jack's legendary stinginess collides spectacularly with opportunity. Don Wilson's stentorian announcements punctuate the mayhem while the orchestra swells at just the right moments, creating that distinctive blend of comic timing and musical flourish that made Benny radio's supreme craftsman. The witty banter crackles with an ease that only comes from years of rehearsal and genuine affection among cast members.</p>
 <p>This particular broadcast arrives during a pivotal moment for American entertainment. In the fall of 1942, the war in both Europe and the Pacific dominated national consciousness, yet radio provided essential emotional sustenance—a weekly reminder that laughter and normalcy could coexist with uncertainty. The Jack Benny Program, already a decade into its legendary run, had become as much a national institution as breakfast itself. Benny's meticulous approach to comedy—where the laugh never came easy, but when it did, it felt earned—set the standard for an entire medium. His supporting cast, particularly the brilliant Rochester, navigated complex social dynamics with remarkable sophistication for the era.</p>
 <p>Dial in now and experience why millions of Americans made this weekly appointment sacred. These thirty minutes represent comedy at its most refined, performed by masters at the absolute height of their powers. Turn that dial, settle back, and let Jack Benny remind you why radio's golden age was truly golden.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phaf 1947 03 09 Guest Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Guest Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Phaf 1947 03 09 Guest Jack Benny — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Phaf 1947 03 09 Guest Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Phaf 1947 03 09 Guest Jack Benny — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1947</span>
           </div>
-          <h1 class="episode__title">Phaf 1947 03 09 Guest Jack Benny</h1>
+          <h1 class="episode__title">Guest Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program – March 9, 1947</p>
-<p>Picture yourself settling into your favorite chair on this Sunday evening in 1947, the warm glow of your radio cabinet illuminating the darkened living room as Jack Benny's theme music swells through the speakers. Tonight's episode promises the kind of sophisticated comic timing that has made Jack a household name, with guest appearances and sketches that will have the whole family laughing. There's an electricity in the air—you can sense it in Don Wilson's booming introduction, in the perfectly timed pauses that only Jack can deliver, in that distinctive nervous chuckle that signals he's about to launch into another absurd predicament. Whether he's tangling with his perpetually aggravated sidekick Rochester, enduring Mary Livingstone's sharp wit, or facing down one of Phil Harris's outrageous schemes, tonight's broadcast promises the masterful blend of comedy, music, and character-driven humor that has captivated America for fifteen years running.</p>
+          <p>Picture yourself settling into your favorite chair on this Sunday evening in 1947, the warm glow of your radio cabinet illuminating the darkened living room as Jack Benny's theme music swells through the speakers. Tonight's episode promises the kind of sophisticated comic timing that has made Jack a household name, with guest appearances and sketches that will have the whole family laughing. There's an electricity in the air—you can sense it in Don Wilson's booming introduction, in the perfectly timed pauses that only Jack can deliver, in that distinctive nervous chuckle that signals he's about to launch into another absurd predicament. Whether he's tangling with his perpetually aggravated sidekick Rochester, enduring Mary Livingstone's sharp wit, or facing down one of Phil Harris's outrageous schemes, tonight's broadcast promises the masterful blend of comedy, music, and character-driven humor that has captivated America for fifteen years running.</p>
 <p>By 1947, The Jack Benny Program had transcended mere entertainment to become a cultural institution. Jack's genius lay not in punchlines but in character and timing—his ability to milk a pause for comedic gold, his willingness to be the butt of his own jokes, his creation of unforgettable radio personas. This period represents the golden age of radio comedy, when millions of Americans gathered around their sets for live broadcasts that shaped the very language of American humor. Jack Benny's influence would later pioneer television comedy, but in 1947, radio was still king, and Jack wore the crown.</p>
 <p>Don't miss this glimpse into a vanished world of live entertainment, where comedy was built on character, timing, and the art of the unspoken pause. Tune in to The Jack Benny Program for March 9, 1947—a perfect snapshot of radio's greatest era.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fa 1946 05 26 King For A Day With Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>King For A Day With Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Fa 1946 05 26 King For A Day With Jack Benny — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Fa 1946 05 26 King For A Day With Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Fa 1946 05 26 King For A Day With Jack Benny — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1946</span>
           </div>
-          <h1 class="episode__title">Fa 1946 05 26 King For A Day With Jack Benny</h1>
+          <h1 class="episode__title">King For A Day With Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "King For A Day"</p>
-<p>On this spring evening in May 1946, Jack Benny welcomes listeners back into his world of exquisite comic timing and manufactured crises. In "King For A Day," our perpetually 39-year-old protagonist finds himself thrust into an improbable situation where he becomes royalty—or at least believes he should be treated as such. Expect the usual cavalcade of interruptions from his long-suffering cast: Rochester's deadpan wisdom cutting through Jack's pretensions, Mary Livingstone's sparkling asides, and Don Wilson's mellifluous announcements punctuating the mayhem. The orchestra swells, the audience roars with recognition, and somewhere in the script lies the perfect setup for Jack's trademark pause—that pregnant silence where the real joke lives, not in the punchline but in what's left unsaid.</p>
+          <p>On this spring evening in May 1946, Jack Benny welcomes listeners back into his world of exquisite comic timing and manufactured crises. In "King For A Day," our perpetually 39-year-old protagonist finds himself thrust into an improbable situation where he becomes royalty—or at least believes he should be treated as such. Expect the usual cavalcade of interruptions from his long-suffering cast: Rochester's deadpan wisdom cutting through Jack's pretensions, Mary Livingstone's sparkling asides, and Don Wilson's mellifluous announcements punctuating the mayhem. The orchestra swells, the audience roars with recognition, and somewhere in the script lies the perfect setup for Jack's trademark pause—that pregnant silence where the real joke lives, not in the punchline but in what's left unsaid.</p>
 <p>This episode arrives at a peculiar moment in American broadcasting. The war has just ended, and radio remains the supreme entertainment medium, drawing millions into living rooms each week. The Jack Benny Program had already become an institution, having leaped from NBC to CBS just two years prior, bringing its entire audience with it in a seismic shift. By 1946, Jack's formula of controlled chaos and self-deprecating humor had proven virtually timeless—he wasn't the fastest wit or the loudest comedian, but his ability to build a narrative over twenty-two minutes, complete with character development and genuine affection for his ensemble cast, set him apart as radio's preeminent comic mind.</p>
 <p>To experience "King For A Day" is to witness comedy at its most sophisticated—subtle, character-driven, and deceptively crafted. This is radio comedy that rewards patient listeners, where the laughs accumulate like interest rather than explode like fireworks. Join Jack and his company for an evening of pure theatrical magic.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1938 10 23 Algiers — The Jack Benny Program | Ghost of Radio</title>
+  <title>Algiers — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1938 10 23 Algiers — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1938 10 23 Algiers — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1938 10 23 Algiers — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1938</span>
           </div>
-          <h1 class="episode__title">Jb 1938 10 23 Algiers</h1>
+          <h1 class="episode__title">Algiers</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Algiers (October 23, 1938)</p>
-<p>Picture yourself settling into the evening of October 23rd, 1938—a time when radio was the heartbeat of American entertainment and Jack Benny's distinctive violin screech promised an hour of sophisticated comedy. Tonight's broadcast, "Algiers," transports listeners to the exotic streets of North Africa, where Jack finds himself embroiled in a plot befitting the silver screen dramas that captivated moviegoers. Expect the familiar interplay between Jack's dignified pretensions and the cutting remarks of his announcer Don Wilson, the gravelly wisdom of Rochester Anderson, and the breathless comedic timing that made Benny the undisputed king of radio comedy. The show crackles with that golden-age energy—orchestral flourishes by Artie Alyn's band punctuate the action, sound effects of bustling souks and scheming foreigners paint vivid pictures in listeners' minds, and Jack's magnificently timed pauses signal punchlines about to land with surgical precision.</p>
+          <p>Picture yourself settling into the evening of October 23rd, 1938—a time when radio was the heartbeat of American entertainment and Jack Benny's distinctive violin screech promised an hour of sophisticated comedy. Tonight's broadcast, "Algiers," transports listeners to the exotic streets of North Africa, where Jack finds himself embroiled in a plot befitting the silver screen dramas that captivated moviegoers. Expect the familiar interplay between Jack's dignified pretensions and the cutting remarks of his announcer Don Wilson, the gravelly wisdom of Rochester Anderson, and the breathless comedic timing that made Benny the undisputed king of radio comedy. The show crackles with that golden-age energy—orchestral flourishes by Artie Alyn's band punctuate the action, sound effects of bustling souks and scheming foreigners paint vivid pictures in listeners' minds, and Jack's magnificently timed pauses signal punchlines about to land with surgical precision.</p>
 <p>By 1938, The Jack Benny Program had already established itself as appointment listening, a show that demonstrated radio's infinite creative possibilities. Unlike variety shows that merely strung together musical numbers and gags, Benny's program wove genuine narrative arcs with comedy, creating miniature theatrical productions. The supporting cast—particularly the irreplaceable Rochester—had become as beloved as Jack himself, their chemistry honed by hundreds of broadcasts into something approaching art. This episode exemplifies the show's genius for blending escapism with contemporary humor, offering Depression-era audiences a brief vacation to glamorous destinations.</p>
 <p>Tune in now to experience the golden age of radio comedy at its finest. "Algiers" reminds us why Jack Benny commanded a devoted audience of millions and why these broadcasts remain endlessly rewarding—full of warmth, wit, and the genuine affection between a master comedian and his audience.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

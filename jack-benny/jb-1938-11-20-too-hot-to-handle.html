@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1938 11 20 Too Hot To Handle — The Jack Benny Program | Ghost of Radio</title>
+  <title>Too Hot To Handle — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1938 11 20 Too Hot To Handle — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1938 11 20 Too Hot To Handle — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1938 11 20 Too Hot To Handle — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1938</span>
           </div>
-          <h1 class="episode__title">Jb 1938 11 20 Too Hot To Handle</h1>
+          <h1 class="episode__title">Too Hot To Handle</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Too Hot to Handle" (November 20, 1938)</p>
-<p>Settle into your parlor chair as Jack Benny faces his greatest predicament yet—a sweltering November evening where the heat becomes as much a character as Jack himself. In this delightful episode, the perpetually frugal star and his capable cast navigate a comedy of discomfort that somehow spirals into increasingly absurd situations. Don Don Wilson, Rochester, and Mary Livingstone weave through Jack's schemes with impeccable timing, building the kind of layered humor that made listeners across America abandon their evening plans to tune in. What begins as a simple story about unbearable temperatures transforms into something far more chaotic, proving once again why Benny's gift lay not just in his razor-sharp delivery, but in his ability to construct comedic architecture that collapses just perfectly at every turn.</p>
+          <p>Settle into your parlor chair as Jack Benny faces his greatest predicament yet—a sweltering November evening where the heat becomes as much a character as Jack himself. In this delightful episode, the perpetually frugal star and his capable cast navigate a comedy of discomfort that somehow spirals into increasingly absurd situations. Don Don Wilson, Rochester, and Mary Livingstone weave through Jack's schemes with impeccable timing, building the kind of layered humor that made listeners across America abandon their evening plans to tune in. What begins as a simple story about unbearable temperatures transforms into something far more chaotic, proving once again why Benny's gift lay not just in his razor-sharp delivery, but in his ability to construct comedic architecture that collapses just perfectly at every turn.</p>
 <p>By 1938, The Jack Benny Program had already established itself as the gold standard of American radio comedy. Benny's genius was deceptive—his trademark violin playing (famously terrible), his running feud with Fred Allen, his miserly character that made even Depression-era audiences laugh at their own hardships. The show's brilliance lay in its ensemble cast and their genuine chemistry, crafted through nearly a decade of weekly broadcasts. Unlike slapstick or broad vaudeville humor, Benny's comedy was conversational, intimate, almost conspiratorial—as if he were letting America in on a private joke. His timing was surgical, his pauses pregnant with possibility, and episodes like this one showcased the intricate dance between scripted comedy and the performers' ability to breathe life into every line.</p>
 <p>Don't miss this window into radio's golden age. Experience the wit, the warmth, and the wonderful artistry of Jack Benny and company as they prove that sometimes the best comedy comes from the simplest situations—and the sharpest minds.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

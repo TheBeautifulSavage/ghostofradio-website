@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1938 05 01 Building Jack's Beverly Hills Home — The Jack Benny Program | Ghost of Radio</title>
+  <title>Building Jack's Beverly Hills Home — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1938 05 01 Building Jack's Beverly Hills Home — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1938 05 01 Building Jack's Beverly Hills Home — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1938 05 01 Building Jack's Beverly Hills Home — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1938</span>
           </div>
-          <h1 class="episode__title">Jb 1938 05 01 Building Jack's Beverly Hills Home</h1>
+          <h1 class="episode__title">Building Jack's Beverly Hills Home</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Building Jack's Beverly Hills Home (May 1, 1938)</p>
-<p>Picture yourself huddled around the radio on this spring evening as Jack Benny announces his latest misadventure—the construction of his dream home in Beverly Hills. As the orchestra strikes up the familiar theme, you're transported to a chaotic building site where Jack's legendary cheapness collides head-on with the realities of Hollywood real estate. Will his contractor, played by a masterfully exasperated supporting actor, manage to keep the project on track? What schemes will Jack concoct to save a few dollars, and how will his wife Mary and the gang react to his cost-cutting measures? The comedy unfolds with surgical precision: every pause is calculated, every aside delivered with impeccable timing, as the studio audience roars with recognition of Jack's familiar predicament—wanting the finest things in life while desperately clinging to every penny.</p>
+          <p>Picture yourself huddled around the radio on this spring evening as Jack Benny announces his latest misadventure—the construction of his dream home in Beverly Hills. As the orchestra strikes up the familiar theme, you're transported to a chaotic building site where Jack's legendary cheapness collides head-on with the realities of Hollywood real estate. Will his contractor, played by a masterfully exasperated supporting actor, manage to keep the project on track? What schemes will Jack concoct to save a few dollars, and how will his wife Mary and the gang react to his cost-cutting measures? The comedy unfolds with surgical precision: every pause is calculated, every aside delivered with impeccable timing, as the studio audience roars with recognition of Jack's familiar predicament—wanting the finest things in life while desperately clinging to every penny.</p>
 <p>By 1938, The Jack Benny Program had established itself as the gold standard of American comedy radio, a show where the humor arose organately from character and situation rather than slapstick or forced gags. Jack's construction debacle represents the show's genius: taking the mundane reality of millions of listeners' lives—building, improving, affording—and elevating it to comic art. This episode captures radio comedy at its peak, when Jack's ability to mine comedy from his own manufactured persona (the vain, cheap, yet oddly sympathetic protagonist) was making him one of America's most beloved entertainers.</p>
 <p>Tune in and discover why Jack Benny's program became the template for all comedy radio that followed. Hear the masterful interplay between Jack and his supporting cast, the expert timing that made pauses as funny as punchlines, and the distinctly American humor that defined an era.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

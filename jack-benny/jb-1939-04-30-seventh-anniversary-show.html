@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1939 04 30 Seventh Anniversary Show — The Jack Benny Program | Ghost of Radio</title>
+  <title>Seventh Anniversary Show — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1939 04 30 Seventh Anniversary Show — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1939 04 30 Seventh Anniversary Show — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1939 04 30 Seventh Anniversary Show — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jb 1939 04 30 Seventh Anniversary Show</h1>
+          <h1 class="episode__title">Seventh Anniversary Show</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Seventh Anniversary Show</p>
-<p>On this momentous April evening in 1939, America's favorite miser prepares to celebrate seven glorious years on the air with a spectacular anniversary broadcast that promises to be equal parts hilarity and heartfelt tribute. Listeners can expect Jack's trademark comic timing in full force as he navigates an evening of surprise guests, musical interludes, and elaborate comedic sketches that showcase why this program has become appointment listening for millions. The ever-present tension between Jack's vanity about his supposed youth and the mounting evidence of his actual age provides comedy gold, while Don Wilson's smooth announcer's voice and the reliable presence of Phil Harris, Rochester, and the rest of the supporting cast create a warm, familiar embrace that feels like gathering with old friends. There's a palpable electricity in the studio audience—the sense that they're witnessing something historically significant, a celebration of a show that has fundamentally changed American entertainment.</p>
+          <p>On this momentous April evening in 1939, America's favorite miser prepares to celebrate seven glorious years on the air with a spectacular anniversary broadcast that promises to be equal parts hilarity and heartfelt tribute. Listeners can expect Jack's trademark comic timing in full force as he navigates an evening of surprise guests, musical interludes, and elaborate comedic sketches that showcase why this program has become appointment listening for millions. The ever-present tension between Jack's vanity about his supposed youth and the mounting evidence of his actual age provides comedy gold, while Don Wilson's smooth announcer's voice and the reliable presence of Phil Harris, Rochester, and the rest of the supporting cast create a warm, familiar embrace that feels like gathering with old friends. There's a palpable electricity in the studio audience—the sense that they're witnessing something historically significant, a celebration of a show that has fundamentally changed American entertainment.</p>
 <p>The Jack Benny Program revolutionized radio comedy by proving that character-driven humor and ensemble casts could hold audiences for a full hour. Unlike the sketch-heavy variety shows that preceded it, Benny's program built its comedy around the personality conflicts and running gags that made listeners feel invested in an ongoing narrative. By 1939, Jack Benny had become more than an entertainer—he was a cultural institution, a weekly ritual that defined the Sunday evening experience for American families. This anniversary show stands as a testament to that achievement, a moment when the industry paused to celebrate the transformative power of sustained, intelligent comedy.</p>
 <p>Tune in to witness radio at its golden pinnacle, when a humble violin player from Waukegan, Illinois, became the architect of modern broadcast comedy and proved that sometimes the biggest laughs come from a man obsessed with being thirty-nine years old.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

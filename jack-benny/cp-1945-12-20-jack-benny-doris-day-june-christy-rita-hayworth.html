@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cp 1945 12 20 Jack Benny, Doris Day, June Christy, Rita Hayworth — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny, Doris Day, June Christy, Rita Hayworth — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Cp 1945 12 20 Jack Benny, Doris Day, June Christy, Rita Hayworth — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Cp 1945 12 20 Jack Benny, Doris Day, June Christy, Rita Hayworth — The Jack Benny Program">
   <meta property="og:description" content="Listen to Cp 1945 12 20 Jack Benny, Doris Day, June Christy, Rita Hayworth — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1945</span>
           </div>
-          <h1 class="episode__title">Cp 1945 12 20 Jack Benny, Doris Day, June Christy, Rita Hayworth</h1>
+          <h1 class="episode__title">Jack Benny, Doris Day, June Christy, Rita Hayworth</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - December 20, 1945</p>
-<p>Picture yourself huddled around the radio on a crisp December evening, the glow of the dial illuminating eager faces as Jack Benny's unmistakable voice cuts through the static with his trademark "Well!" It's December 20th, 1945, and tonight's program promises an embarrassment of riches: not one but three of Hollywood's most luminous talents grace the NBC microphone alongside Benny's perfect comedic timing. Doris Day brings her crystalline voice and girl-next-door charm, June Christy contributes cool jazz sophistication, and the legendary Rita Hayworth herself appears—a genuine movie star sitting mere feet from the microphone in Studio 8-G at Radio City. Expect the usual Benny formula: absurdist sketches, musical interludes, and that delicious tension between Jack's comedic deflation and his guests' elegant sophistication. The comedy cuts deeper than it might appear; Benny's perpetual cheapness and vain obsession with his violin playing collide hilariously with the glamour of his surroundings.</p>
+          <p>Picture yourself huddled around the radio on a crisp December evening, the glow of the dial illuminating eager faces as Jack Benny's unmistakable voice cuts through the static with his trademark "Well!" It's December 20th, 1945, and tonight's program promises an embarrassment of riches: not one but three of Hollywood's most luminous talents grace the NBC microphone alongside Benny's perfect comedic timing. Doris Day brings her crystalline voice and girl-next-door charm, June Christy contributes cool jazz sophistication, and the legendary Rita Hayworth herself appears—a genuine movie star sitting mere feet from the microphone in Studio 8-G at Radio City. Expect the usual Benny formula: absurdist sketches, musical interludes, and that delicious tension between Jack's comedic deflation and his guests' elegant sophistication. The comedy cuts deeper than it might appear; Benny's perpetual cheapness and vain obsession with his violin playing collide hilariously with the glamour of his surroundings.</p>
 <p>This episode arrives at a pivotal cultural moment—just days after V-J Day ceremonies have concluded and a nation, still catching its breath from war's end, turns to radio for comfort and distraction. The Jack Benny Program stands as American broadcasting's finest achievement, a weekly showcase where entertainment transcends mere amusement to become a unifying national ritual. Benny's mastery of comic timing, honed through vaudeville and perfected on air, influenced generations of comedians to come.</p>
 <p>Tonight, December 20th, 1945, represents classic radio at its zenith: live talent, spontaneous wit, and the electric presence of genuine stars performing for millions unseen. Don't miss this glimpse into radio's golden age—tune in and experience the magic that made Tuesday nights unmissable across America.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

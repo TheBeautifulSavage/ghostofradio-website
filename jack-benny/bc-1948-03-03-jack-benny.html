@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bc 1948 03 03 Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Bc 1948 03 03 Jack Benny — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Bc 1948 03 03 Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Bc 1948 03 03 Jack Benny — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1948</span>
           </div>
-          <h1 class="episode__title">Bc 1948 03 03 Jack Benny</h1>
+          <h1 class="episode__title">Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,10 +71,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - March 3, 1948</p>
-<p>Step into the living room on a Wednesday evening in 1948, where Jack Benny's distinctive violin screech cuts through the static—that beloved, intentionally terrible squeak that became his trademark as surely as his timed pauses and deadpan delivery. In this week's broadcast, Benny finds himself entangled in yet another predicament that plays to his genius for comic timing: his stingy nature, romantic mishaps, and ongoing feud with Fred Allen collide in a way that had millions of Americans gathering around their radios with anticipation. Dennis Day's crooning voice, Mary Livingstone's sharp wit, and the reliable comic chaos of Rochester's commentary create a rich tapestry of humor that transcends mere jokes—it's an orchestra of personalities, each instrument knowing exactly when to come in.</p>
+          <p>Step into the living room on a Wednesday evening in 1948, where Jack Benny's distinctive violin screech cuts through the static—that beloved, intentionally terrible squeak that became his trademark as surely as his timed pauses and deadpan delivery. In this week's broadcast, Benny finds himself entangled in yet another predicament that plays to his genius for comic timing: his stingy nature, romantic mishaps, and ongoing feud with Fred Allen collide in a way that had millions of Americans gathering around their radios with anticipation. Dennis Day's crooning voice, Mary Livingstone's sharp wit, and the reliable comic chaos of Rochester's commentary create a rich tapestry of humor that transcends mere jokes—it's an orchestra of personalities, each instrument knowing exactly when to come in.</p>
 <p>What makes The Jack Benny Program endure as a cornerstone of radio comedy is precisely this alchemy of talent and timing. By 1948, Benny had spent sixteen years perfecting the art of the weekly broadcast, building a universe as detailed and recognizable to listeners as their own neighborhoods. Unlike sketch shows that relied on rapid-fire gags, Benny's program developed running characters and recurring situations that deepened with familiarity. The show proved that radio comedy could be sophisticated, character-driven, and brilliantly constructed—a masterclass in how silence, timing, and audience anticipation could generate more laughter than any punchline alone.</p>
-<p>Don't miss this snapshot of radio's golden age, when Jack Benny was at the height of his powers and American families tuned in as one. Press play and discover why a show built on a comedian's obsession with his own cheapness, a mediocre violin player, and the spaces *between* the jokes remains endlessly charming nearly three-quarters of a century later.</p>
+<p>Don't miss this snapshot of radio's golden age, when Jack Benny was at the height of his powers and American families tuned in as one. Press play and discover why a show built on a comedian's obsession with his own cheapness, a mediocre violin player, and the spaces between the jokes remains endlessly charming nearly three-quarters of a century later.</p>
         </div>
 
         <footer class="episode__footer">
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

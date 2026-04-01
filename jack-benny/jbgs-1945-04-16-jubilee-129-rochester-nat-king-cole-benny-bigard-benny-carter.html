@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1945 04 16 Jubilee #129 Rochester, Nat King Cole, Benny Bigard, Benny Carter — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jubilee #129 Rochester, Nat King Cole, Benny Bigard, Benny Carter — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1945 04 16 Jubilee #129 Rochester, Nat King Cole, Benny Bigard, Benny Carter — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1945 04 16 Jubilee #129 Rochester, Nat King Cole, Benny Bigard, Benny Carter — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1945 04 16 Jubilee #129 Rochester, Nat King Cole, Benny Bigard, Benny Carter — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1945</span>
           </div>
-          <h1 class="episode__title">Jbgs 1945 04 16 Jubilee #129 Rochester, Nat King Cole, Benny Bigard, Benny Carter</h1>
+          <h1 class="episode__title">Jubilee #129 Rochester, Nat King Cole, Benny Bigard, Benny Carter</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - April 16, 1945</p>
-<p>Step into the Jubilee celebration as Jack Benny opens his doors to an extraordinary gathering of the finest talent in American entertainment. Picture the studio audience settled into their seats on this spring evening, eager to witness a rare convergence of comedy and jazz brilliance. Jack's iconic stinginess is on full display as he grudgingly welcomes his longtime valet Rochester van Jones into the spotlight, while the legendary Nat King Cole and clarinetist Sidney Bichet bring their smooth, sophisticated artistry to the stage. But the real treasure lies in the presence of Benny Carter and Benny Bigard—two towering figures of the jazz world whose instrumental mastery will set the evening ablaze. Between musical numbers, Jack's impeccable timing and quick wit keep the audience in stitches, playing perfectly against Rochester's sharp comebacks and the musicians' understated charm. You can almost hear the rustle of programs and smell the cigarette smoke as the band swings into gear.</p>
+          <p>Step into the Jubilee celebration as Jack Benny opens his doors to an extraordinary gathering of the finest talent in American entertainment. Picture the studio audience settled into their seats on this spring evening, eager to witness a rare convergence of comedy and jazz brilliance. Jack's iconic stinginess is on full display as he grudgingly welcomes his longtime valet Rochester van Jones into the spotlight, while the legendary Nat King Cole and clarinetist Sidney Bichet bring their smooth, sophisticated artistry to the stage. But the real treasure lies in the presence of Benny Carter and Benny Bigard—two towering figures of the jazz world whose instrumental mastery will set the evening ablaze. Between musical numbers, Jack's impeccable timing and quick wit keep the audience in stitches, playing perfectly against Rochester's sharp comebacks and the musicians' understated charm. You can almost hear the rustle of programs and smell the cigarette smoke as the band swings into gear.</p>
 <p>In 1945, with the war winding toward victory, America was hungry for entertainment that brought people together across the color line—and this Jubilee broadcast represented something quietly revolutionary. The Jack Benny Program had always been ahead of its time in its treatment of Rochester as a fully realized character rather than a mere stereotype, and appearances by Black musicians and performers on Jack's show signaled a subtle but meaningful shift in the entertainment landscape. This episode captures a pivotal moment when radio could still surprise and elevate its audience.</p>
 <p>Don't miss this remarkable slice of golden-age radio history—where comedy meets artistry and the magic of live performance crackles through the airwaves. Tune in and discover why listeners made The Jack Benny Program an American institution.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1939 11 05 The Women — The Jack Benny Program | Ghost of Radio</title>
+  <title>The Women — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1939 11 05 The Women — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1939 11 05 The Women — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1939 11 05 The Women — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jb 1939 11 05 The Women</h1>
+          <h1 class="episode__title">The Women</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "The Women" (November 5, 1939)</p>
-<p>Picture yourself settling into an overstuffed armchair on a crisp November evening, the dial glowing warmly on your radio set as Jack Benny's unmistakable voice crackles through the speaker. Tonight's episode plunges listeners into delightful domestic chaos as Jack's carefully constructed world collides headlong with the arrival of the ladies—his wife Mary, his secretary, and an assortment of female guests determined to turn his orderly life upside down. What unfolds is a masterclass in comedic timing and social satire, as Jack's trademark stinginess, vanity, and befuddlement reach comic heights when confronted by the unreasonable demands of the women in his life. The supporting cast—including the ever-sardonic Don Wilson and the resourceful Rochester—provide brilliant counterpoint to Jack's exasperated protests and elaborate schemes to escape feminine oversight.</p>
+          <p>Picture yourself settling into an overstuffed armchair on a crisp November evening, the dial glowing warmly on your radio set as Jack Benny's unmistakable voice crackles through the speaker. Tonight's episode plunges listeners into delightful domestic chaos as Jack's carefully constructed world collides headlong with the arrival of the ladies—his wife Mary, his secretary, and an assortment of female guests determined to turn his orderly life upside down. What unfolds is a masterclass in comedic timing and social satire, as Jack's trademark stinginess, vanity, and befuddlement reach comic heights when confronted by the unreasonable demands of the women in his life. The supporting cast—including the ever-sardonic Don Wilson and the resourceful Rochester—provide brilliant counterpoint to Jack's exasperated protests and elaborate schemes to escape feminine oversight.</p>
 <p>By 1939, The Jack Benny Program had become a cultural institution, the gold standard of American comedy radio that set the template for sophisticated humor that would define the medium for two decades. Jack's genius lay in his willingness to play the fool, to be the butt of the joke while orchestrating every perfectly timed pause and reaction. Unlike cruder comedy of the era, Benny's humor was built on character and situation rather than slapstick or ethnic stereotypes. This November broadcast arrives at a pivotal moment in radio history, when the medium had fully matured into an art form, and Jack Benny stood at its apex.</p>
 <p>Don't miss this sparkling reminder of radio's golden age—tune in and discover why millions of Americans made this half-hour appointment essential entertainment, where laughter came not from a laugh track but from the brilliant interplay of voices and the limitless canvas of the imagination.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

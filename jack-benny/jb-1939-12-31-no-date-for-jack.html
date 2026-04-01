@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1939 12 31 No Date For Jack — The Jack Benny Program | Ghost of Radio</title>
+  <title>No Date For Jack — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1939 12 31 No Date For Jack — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1939 12 31 No Date For Jack — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1939 12 31 No Date For Jack — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jb 1939 12 31 No Date For Jack</h1>
+          <h1 class="episode__title">No Date For Jack</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "No Date For Jack" (December 31, 1939)</p>
-<p>As the final hours of the 1930s tick away, Jack Benny faces his most humiliating predicament yet—New Year's Eve without a date. In this uproarious holiday special, listeners will discover what happens when Hollywood's most vain thirty-nine-year-old (or so he claims) must confront his romantic failures on the eve of a new decade. With Mary Livingstone's razor-sharp jabs, Don Wilson's knowing chuckles, and Rochester's sardonic wisdom providing the perfect counterpoint to Jack's mounting desperation, the comedy builds to an unforgettable crescendo. As party horns blast in the background and the clock approaches midnight, Jack schemes, stammers, and stumbles through increasingly absurd attempts to secure companionship, each failure more hilarious than the last.</p>
+          <p>As the final hours of the 1930s tick away, Jack Benny faces his most humiliating predicament yet—New Year's Eve without a date. In this uproarious holiday special, listeners will discover what happens when Hollywood's most vain thirty-nine-year-old (or so he claims) must confront his romantic failures on the eve of a new decade. With Mary Livingstone's razor-sharp jabs, Don Wilson's knowing chuckles, and Rochester's sardonic wisdom providing the perfect counterpoint to Jack's mounting desperation, the comedy builds to an unforgettable crescendo. As party horns blast in the background and the clock approaches midnight, Jack schemes, stammers, and stumbles through increasingly absurd attempts to secure companionship, each failure more hilarious than the last.</p>
 <p>The Jack Benny Program stands as one of radio's most influential comedies, and this December 31st broadcast exemplifies why audiences kept their dials tuned faithfully throughout the 1930s and beyond. Benny's revolutionary approach to comedy—built on impeccable timing, character consistency, and willingness to be the butt of the joke—revolutionized the medium. Rather than relying on rapid-fire gags, Jack crafted elaborate comic scenarios where his own pomposity and vanity became the central joke, supported by a perfectly calibrated ensemble. Broadcasting live from the coast, this New Year's Eve episode captures the show at its zenith, perfectly balancing broad physical comedy with the intimate charm of a performance delivered directly into America's living rooms.</p>
 <p>Don't let this classic slip away into the archives. Tune in and experience how Depression-era Americans rang in a new decade with laughter, sophistication, and the timeless comedy of a man learning that his greatest asset—his impeccable comic timing—cannot charm his way out of every situation. Jack Benny and his company are waiting.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

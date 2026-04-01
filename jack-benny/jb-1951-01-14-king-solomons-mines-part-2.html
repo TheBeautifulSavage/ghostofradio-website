@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1951 01 14 King Solomon's Mines Part 2 — The Jack Benny Program | Ghost of Radio</title>
+  <title>King Solomon's Mines Part 2 — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1951 01 14 King Solomon's Mines Part 2 — The Jack Benny Program (NBC/CBS, 1951). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1951 01 14 King Solomon's Mines Part 2 — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1951 01 14 King Solomon's Mines Part 2 — The Jack Benny Program (NBC/CBS, 1951). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1951</span>
           </div>
-          <h1 class="episode__title">Jb 1951 01 14 King Solomon's Mines Part 2</h1>
+          <h1 class="episode__title">King Solomon's Mines Part 2</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: King Solomon's Mines (Part 2)</p>
-<p>Step into the mahogany-paneled living room of Jack Benny's mind as he continues his perilous journey through darkest Africa in search of legendary riches. Part two of this thrilling serial adventure finds our penny-pinching maestro deeper in the jungle than ever before, pursued by fortune hunters, native warriors, and—of course—his own hapless incompetence. Will Rochester's dry wisdom and Phil Harris's boozy charm provide any real assistance, or will Mary Livingstone's exasperated patience finally snap? The sound effects team brings the African savanna to vivid life: the crack of rifle fire, the distant roar of lions, the thick humidity practically seeping through your radio speaker. In true Jack Benny fashion, even mortal danger becomes a vehicle for comedy gold, as our hero's vanity and miserliness create situations more dangerous than any wild animal.</p>
+          <p>Step into the mahogany-paneled living room of Jack Benny's mind as he continues his perilous journey through darkest Africa in search of legendary riches. Part two of this thrilling serial adventure finds our penny-pinching maestro deeper in the jungle than ever before, pursued by fortune hunters, native warriors, and—of course—his own hapless incompetence. Will Rochester's dry wisdom and Phil Harris's boozy charm provide any real assistance, or will Mary Livingstone's exasperated patience finally snap? The sound effects team brings the African savanna to vivid life: the crack of rifle fire, the distant roar of lions, the thick humidity practically seeping through your radio speaker. In true Jack Benny fashion, even mortal danger becomes a vehicle for comedy gold, as our hero's vanity and miserliness create situations more dangerous than any wild animal.</p>
 <p>This January 1951 broadcast exemplifies why The Jack Benny Program remained America's most beloved comedy for over two decades. Benny's genius lay in blending the comedy serial format with genuine suspense—listeners genuinely cared whether Jack would survive his latest predicament, even as they howled at his carefully timed pauses and the supporting cast's perfectly calibrated reactions. The show's ability to shift seamlessly between sketch comedy, variety entertainment, and serialized storytelling made each broadcast appointment radio must-listen. With writers drawing inspiration from Hollywood's adventure films, these multi-part episodes became events unto themselves.</p>
 <p>Don't miss the dramatic conclusion of Jack's expedition! Tune in as our hero navigates impossible odds, impossible comedy, and the impossible dream of wealth without having to actually spend money. The microphone awaits.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

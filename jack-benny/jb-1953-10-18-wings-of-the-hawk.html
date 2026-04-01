@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1953 10 18 Wings Of The Hawk — The Jack Benny Program | Ghost of Radio</title>
+  <title>Wings Of The Hawk — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1953 10 18 Wings Of The Hawk — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1953 10 18 Wings Of The Hawk — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1953 10 18 Wings Of The Hawk — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1953</span>
           </div>
-          <h1 class="episode__title">Jb 1953 10 18 Wings Of The Hawk</h1>
+          <h1 class="episode__title">Wings Of The Hawk</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Wings of the Hawk" (October 18, 1953)</p>
-<p>Step into the spotlight as Jack Benny brings you an evening of sophisticated hilarity with this week's foray into high adventure. When a swashbuckling film premiere becomes the unwitting stage for Jack's legendary misadventures, the result is comedic gold. Expect Rochester's deadpan observations, Mary Livingstone's perfectly timed skepticism, and Don Wilson's sonorous announcements to weave through a plot so delightfully absurd that you'll find yourself chuckling well after the final curtain. The interplay between these comedic titans crackles with the spontaneity of live performance, capturing the energy of an audience hanging on Jack's every stammering word and pratfall. There's mystery, intrigue, and enough running gags to keep even devoted listeners on their toes—all delivered with the polish and precision that made this program an American institution.</p>
+          <p>Step into the spotlight as Jack Benny brings you an evening of sophisticated hilarity with this week's foray into high adventure. When a swashbuckling film premiere becomes the unwitting stage for Jack's legendary misadventures, the result is comedic gold. Expect Rochester's deadpan observations, Mary Livingstone's perfectly timed skepticism, and Don Wilson's sonorous announcements to weave through a plot so delightfully absurd that you'll find yourself chuckling well after the final curtain. The interplay between these comedic titans crackles with the spontaneity of live performance, capturing the energy of an audience hanging on Jack's every stammering word and pratfall. There's mystery, intrigue, and enough running gags to keep even devoted listeners on their toes—all delivered with the polish and precision that made this program an American institution.</p>
 <p>By 1953, The Jack Benny Program had already spent two decades perfecting the art of radio comedy. What made Jack's approach revolutionary was his willingness to make himself the butt of the joke—his stinginess, his vanity, his obsessive violin playing—all became rich material for writers who understood that true humor comes from character and timing, not mere punchlines. The supporting cast had gelled into an ensemble of unparalleled chemistry, each performer knowing exactly when to land their moment. CBS, which had claimed the show from NBC in 1948, understood they had lightning in a bottle and protected this program fiercely, giving Jack the creative freedom that kept audiences returning week after week.</p>
 <p>Turn your dial and lose yourself in an era when comedy meant sophisticated wit, impeccable timing, and the warmth of familiar voices gathered in your living room. "Wings of the Hawk" awaits—bring your sense of humor and prepare to be thoroughly entertained.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

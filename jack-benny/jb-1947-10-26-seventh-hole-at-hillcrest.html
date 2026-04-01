@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1947 10 26 Seventh Hole At Hillcrest — The Jack Benny Program | Ghost of Radio</title>
+  <title>Seventh Hole At Hillcrest — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1947 10 26 Seventh Hole At Hillcrest — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1947 10 26 Seventh Hole At Hillcrest — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1947 10 26 Seventh Hole At Hillcrest — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1947</span>
           </div>
-          <h1 class="episode__title">Jb 1947 10 26 Seventh Hole At Hillcrest</h1>
+          <h1 class="episode__title">Seventh Hole At Hillcrest</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - October 26, 1947</p>
-<p>Picture yourself settling into your favorite chair on a Sunday evening in late October, the autumn chill creeping through the windows as you tune your radio dial to catch Jack Benny at his finest. On this particular broadcast, Jack finds himself at the Hillcrest Country Club golf course, where the promise of conquering the notoriously difficult seventh hole sets the stage for delightful chaos. With his perpetually anxious cadence, Mary Livingstone's sharp wit, Phil Harris's charming swagger, and Dennis Day's innocent charm all assembled, you know the proceedings will veer wildly from sporting ambition into absurdist comedy. Whether Jack's legendary stinginess becomes a plot point, or his overconfidence in his golf abilities leads to humiliation, listeners can expect the perfect blend of verbal sparring, carefully timed pauses, and that signature Benny delivery that made Sunday nights appointment listening for millions of Americans.</p>
+          <p>Picture yourself settling into your favorite chair on a Sunday evening in late October, the autumn chill creeping through the windows as you tune your radio dial to catch Jack Benny at his finest. On this particular broadcast, Jack finds himself at the Hillcrest Country Club golf course, where the promise of conquering the notoriously difficult seventh hole sets the stage for delightful chaos. With his perpetually anxious cadence, Mary Livingstone's sharp wit, Phil Harris's charming swagger, and Dennis Day's innocent charm all assembled, you know the proceedings will veer wildly from sporting ambition into absurdist comedy. Whether Jack's legendary stinginess becomes a plot point, or his overconfidence in his golf abilities leads to humiliation, listeners can expect the perfect blend of verbal sparring, carefully timed pauses, and that signature Benny delivery that made Sunday nights appointment listening for millions of Americans.</p>
 <p>The Jack Benny Program had by 1947 perfected what made American radio comedy essential entertainment—a tight ensemble cast working from sharp scripts, live before a studio audience whose laughter became part of the show's fabric. Jack's ability to mine comedy from his own fictional character flaws—his miserliness, his vanity, his questionable talents—struck a chord with Depression and post-war audiences seeking gentle, intelligent humor. The show's flexibility allowed writers to drop characters into any scenario, from tuxedoed concerts to country clubs to his humble home, and the comedy would follow naturally from character interaction rather than forced gags.</p>
 <p>This October evening at Hillcrest represents the program at its peak, when Jack's radio empire was at full strength and the format had been honed through fifteen years of weekly broadcasts. Don't miss the chance to experience why America couldn't wait for Sunday nights—tune in and discover what made The Jack Benny Program an immortal classic of the golden age.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

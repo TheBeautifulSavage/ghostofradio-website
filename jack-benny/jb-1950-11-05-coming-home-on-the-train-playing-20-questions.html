@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1950 11 05 Coming Home On The Train Playing 20 Questions — The Jack Benny Program | Ghost of Radio</title>
+  <title>Coming Home On The Train Playing 20 Questions — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1950 11 05 Coming Home On The Train Playing 20 Questions — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1950 11 05 Coming Home On The Train Playing 20 Questions — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1950 11 05 Coming Home On The Train Playing 20 Questions — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1950</span>
           </div>
-          <h1 class="episode__title">Jb 1950 11 05 Coming Home On The Train Playing 20 Questions</h1>
+          <h1 class="episode__title">Coming Home On The Train Playing 20 Questions</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Coming Home On The Train Playing 20 Questions</p>
-<p>Step aboard the observation car as Jack Benny and his traveling party settle in for an evening of comedy that unfolds like a perfectly timed vaudeville routine conducted at full throttle through the American countryside. Picture the gentle rattle of wheels on steel rails, the warm glow of car lamps, and Jack's unmistakable voice cutting through the ambient sound design—"Well, hello there, folks!"—as his companions aboard this fictional locomotive become unwitting participants in a high-stakes game of Twenty Questions. What begins as innocent parlor game entertainment quickly devolves into the sort of comedic chaos that made Benny a household name: Don Wilson's booming interjections, the ever-present tension of Jack's penny-pinching nature colliding with someone's request for a porter tip, and Rochester's dry observations delivered with impeccable timing. The confined setting of the train car amplifies the intimate yet theatrical nature of the performance, making listeners feel as though they're squeezed into that same smoky compartment, privy to every double-take and aside.</p>
+          <p>Step aboard the observation car as Jack Benny and his traveling party settle in for an evening of comedy that unfolds like a perfectly timed vaudeville routine conducted at full throttle through the American countryside. Picture the gentle rattle of wheels on steel rails, the warm glow of car lamps, and Jack's unmistakable voice cutting through the ambient sound design—"Well, hello there, folks!"—as his companions aboard this fictional locomotive become unwitting participants in a high-stakes game of Twenty Questions. What begins as innocent parlor game entertainment quickly devolves into the sort of comedic chaos that made Benny a household name: Don Wilson's booming interjections, the ever-present tension of Jack's penny-pinching nature colliding with someone's request for a porter tip, and Rochester's dry observations delivered with impeccable timing. The confined setting of the train car amplifies the intimate yet theatrical nature of the performance, making listeners feel as though they're squeezed into that same smoky compartment, privy to every double-take and aside.</p>
 <p>By 1950, The Jack Benny Program had already become an American institution, having ruled radio comedy for nearly two decades. Benny's genius lay in his ability to construct entire episodes around a single scenario—in this case, a train journey—and milk it for every possible comedic variation. Unlike sketch-heavy variety shows of the era, Benny crafted narratives with genuine character dynamics and running gags that rewarded loyal listeners. His cast had become as familiar as family members, and the interplay between Jack's perpetual underdog charm, Don's bloviating confidence, and Rochester's knowing wisdom created a perfect comedic triangle.</p>
 <p>Don't miss this gem from radio's golden age—it's a masterclass in comic timing delivered at sixty miles per hour.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

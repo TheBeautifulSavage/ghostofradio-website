@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1944 11 26 Thanksgiving At Mary's House — The Jack Benny Program | Ghost of Radio</title>
+  <title>Thanksgiving At Mary's House — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1944 11 26 Thanksgiving At Mary's House — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1944 11 26 Thanksgiving At Mary's House — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1944 11 26 Thanksgiving At Mary's House — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jb 1944 11 26 Thanksgiving At Mary's House</h1>
+          <h1 class="episode__title">Thanksgiving At Mary's House</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Thanksgiving at Mary's House</p>
-<p>Gather 'round the radio this Thanksgiving as Jack invites himself—naturally—to Mary Livingstone's holiday dinner, and chaos erupts in the warmest, most hilarious way imaginable. It's November 26th, 1944, and the entire cast tumbles into Mary's kitchen with their appetites, their egos, and their impeccable comedic timing. Listen as Don Wilson's booming announcer voice mingles with the sizzle of the turkey, Rochester's dry asides puncture Jack's pompous schemes, and Mary delivers cutting remarks that remind Jack exactly why he keeps coming back. This episode captures the heart of what made *The Jack Benny Program* essential listening: not just the gags and musical interludes, but the gentle mockery of a man desperately trying to impress the woman who sees right through him, all set against the backdrop of a nation finding reasons to celebrate during wartime.</p>
+          <p>Gather 'round the radio this Thanksgiving as Jack invites himself—naturally—to Mary Livingstone's holiday dinner, and chaos erupts in the warmest, most hilarious way imaginable. It's November 26th, 1944, and the entire cast tumbles into Mary's kitchen with their appetites, their egos, and their impeccable comedic timing. Listen as Don Wilson's booming announcer voice mingles with the sizzle of the turkey, Rochester's dry asides puncture Jack's pompous schemes, and Mary delivers cutting remarks that remind Jack exactly why he keeps coming back. This episode captures the heart of what made The Jack Benny Program essential listening: not just the gags and musical interludes, but the gentle mockery of a man desperately trying to impress the woman who sees right through him, all set against the backdrop of a nation finding reasons to celebrate during wartime.</p>
 <p>In 1944, as American soldiers fought overseas, this program offered something precious—the sound of family, friendship, and laughter that felt achingly real despite its scripted perfection. Jack Benny's genius lay in his impeccable timing and his willingness to be the butt of the joke, a revolutionary approach that spawned countless imitators. With Mary's caustic wit, Rochester's unflappable wisdom, and a supporting cast hitting every note perfectly, this holiday episode represents the show at its zenith.</p>
 <p>Tune in for a half-hour of genuine warmth wrapped in comedy gold, a reminder of why millions of Americans tuned in religiously every week. It's Thanksgiving 1944, and the Benny household has never sounded better.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

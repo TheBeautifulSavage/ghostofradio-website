@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1944 03 12 From Livermore, Ca Jack In The Navy — The Jack Benny Program | Ghost of Radio</title>
+  <title>From Livermore, Ca Jack In The Navy — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1944 03 12 From Livermore, Ca Jack In The Navy — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1944 03 12 From Livermore, Ca Jack In The Navy — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1944 03 12 From Livermore, Ca Jack In The Navy — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jb 1944 03 12 From Livermore, Ca Jack In The Navy</h1>
+          <h1 class="episode__title">From Livermore, Ca Jack In The Navy</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: From Livermore, CA</p>
-<p>Picture yourself tuning your radio dial on March 12th, 1944, as Jack Benny himself broadcasts live from the Naval Air Station in Livermore, California—a rare and precious transmission from the heart of wartime America. This special remote broadcast captures Jack in his element, performing for servicemen and women who desperately need a few hours of laughter during one of history's darkest moments. Expect the familiar comedy you crave: Jack's exaggerated vanity, the rapid-fire banter with his cast, and perhaps a sketch where he finds himself comically ill-suited for military life despite his best efforts to serve. The roar of the live audience—many in uniform—crackles through the speakers with an infectious energy born from genuine gratitude for entertainment that offers temporary escape from the weight of global war.</p>
+          <p>Picture yourself tuning your radio dial on March 12th, 1944, as Jack Benny himself broadcasts live from the Naval Air Station in Livermore, California—a rare and precious transmission from the heart of wartime America. This special remote broadcast captures Jack in his element, performing for servicemen and women who desperately need a few hours of laughter during one of history's darkest moments. Expect the familiar comedy you crave: Jack's exaggerated vanity, the rapid-fire banter with his cast, and perhaps a sketch where he finds himself comically ill-suited for military life despite his best efforts to serve. The roar of the live audience—many in uniform—crackles through the speakers with an infectious energy born from genuine gratitude for entertainment that offers temporary escape from the weight of global war.</p>
 <p>The Jack Benny Program had become America's most beloved comedy show by 1944, and episodes like this one reveal why. Rather than merely broadcasting from a studio, Jack and his ensemble cast—including the ever-sardonic Rochester, the announcer Don Wilson, and violinist Phil Harris—ventured directly to military installations to perform for those in the fight. This was no small feat during wartime; such broadcasts required special authorization and careful coordination. The episode stands as both pure entertainment and a touching historical document—proof that even amid catastrophe, Americans maintained their sense of humor and their commitment to lifting spirits on the home front and abroad.</p>
 <p>Join Jack and the gang as they remind us why radio comedy became the heartbeat of a nation at war. This genuine piece of 1944 Americana showcases comedy's essential role in American culture, captured perfectly in the moment it mattered most. Tune in and hear history come alive through laughter.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

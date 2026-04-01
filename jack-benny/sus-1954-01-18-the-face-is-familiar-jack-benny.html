@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sus 1954 01 18 The Face Is Familiar Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>The Face Is Familiar Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Sus 1954 01 18 The Face Is Familiar Jack Benny — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Sus 1954 01 18 The Face Is Familiar Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Sus 1954 01 18 The Face Is Familiar Jack Benny — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1954</span>
           </div>
-          <h1 class="episode__title">Sus 1954 01 18 The Face Is Familiar Jack Benny</h1>
+          <h1 class="episode__title">The Face Is Familiar Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "The Face Is Familiar" (January 18, 1954)</p>
-<p>Picture yourself settling into your favorite chair on a winter's evening in 1954, the amber glow of your radio dial warming the room as Jack Benny's unmistakable voice greets you with his trademark timing and self-deprecating charm. In "The Face Is Familiar," Jack finds himself in a delightfully absurd predicament that will have the studio audience—and you—in stitches. As the episode unfolds, our perpetually thirty-nine-year-old protagonist navigates a case of mistaken identity with the kind of comedic precision that made Benny a household name. With Don Wilson's booming announcer voice, Mary Livingstone's sharp wit, and the supporting cast's impeccable ensemble work, this episode captures everything that made radio comedy an art form during its golden age.</p>
+          <p>Picture yourself settling into your favorite chair on a winter's evening in 1954, the amber glow of your radio dial warming the room as Jack Benny's unmistakable voice greets you with his trademark timing and self-deprecating charm. In "The Face Is Familiar," Jack finds himself in a delightfully absurd predicament that will have the studio audience—and you—in stitches. As the episode unfolds, our perpetually thirty-nine-year-old protagonist navigates a case of mistaken identity with the kind of comedic precision that made Benny a household name. With Don Wilson's booming announcer voice, Mary Livingstone's sharp wit, and the supporting cast's impeccable ensemble work, this episode captures everything that made radio comedy an art form during its golden age.</p>
 <p>By 1954, The Jack Benny Program had already established itself as a towering achievement in American entertainment, having migrated from NBC to CBS in 1948 while maintaining its iron grip on the nation's ears. What set Benny apart from his contemporaries was his almost Chekhovian mastery of pauses and his willingness to let comedy breathe—a revolutionary approach in an era when many comedians relied on rapid-fire gags. His writers understood that the best humor emerged from character and situation rather than punchline-per-minute velocity. By this midpoint in the show's legendary run, Benny's cast had achieved a chemistry that felt almost orchestral, with every performer knowing precisely when to step forward and when to provide the perfect silent reaction.</p>
 <p>This is radio comedy at its finest—intelligent, warmly human, and utterly timeless. Tune in and rediscover why millions of Americans made this appointment with Jack Benny an essential part of their week.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

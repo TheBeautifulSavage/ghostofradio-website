@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1947 01 12 Guests George Burns And Gracie Allen — The Jack Benny Program | Ghost of Radio</title>
+  <title>Guests George Burns And Gracie Allen — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1947 01 12 Guests George Burns And Gracie Allen — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1947 01 12 Guests George Burns And Gracie Allen — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1947 01 12 Guests George Burns And Gracie Allen — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1947</span>
           </div>
-          <h1 class="episode__title">Jb 1947 01 12 Guests George Burns And Gracie Allen</h1>
+          <h1 class="episode__title">Guests George Burns And Gracie Allen</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program – January 12, 1947</p>
-<p>Picture yourself settling into your favorite chair on a Sunday evening, the warm glow of your radio dial beckoning you into a world of sophisticated comedy and impeccable timing. On this winter night in 1947, Jack Benny has assembled a dream collision of comedic talent: the legendary husband-and-wife team George Burns and Gracie Allen are stopping by for what promises to be an evening of crossed wires, rapid-fire quips, and the kind of spontaneous magic that only live radio can deliver. You can almost hear the studio audience's anticipation crackling through the airwaves as Benny's trademark deadpan delivery sets up the scenario. With Burns's sharp observations, Gracie's delightfully illogical non-sequiturs, and Benny's impeccable comic timing constantly vying for dominance, this episode crackles with the electricity of genuine comedic genius meeting its match.</p>
+          <p>Picture yourself settling into your favorite chair on a Sunday evening, the warm glow of your radio dial beckoning you into a world of sophisticated comedy and impeccable timing. On this winter night in 1947, Jack Benny has assembled a dream collision of comedic talent: the legendary husband-and-wife team George Burns and Gracie Allen are stopping by for what promises to be an evening of crossed wires, rapid-fire quips, and the kind of spontaneous magic that only live radio can deliver. You can almost hear the studio audience's anticipation crackling through the airwaves as Benny's trademark deadpan delivery sets up the scenario. With Burns's sharp observations, Gracie's delightfully illogical non-sequiturs, and Benny's impeccable comic timing constantly vying for dominance, this episode crackles with the electricity of genuine comedic genius meeting its match.</p>
 <p>By 1947, The Jack Benny Program had already revolutionized broadcast comedy, transforming radio from mere entertainment into an art form. Benny's genius lay in his willingness to make himself the butt of the joke—his legendary stinginess, his vanity about his age, his hopeless violin playing—all became running gags that endeared him to millions of listeners. The show's format of loosely structured sketches and guest appearances influenced everything that followed, from I Love Lucy to television's comedy landscape. Having Burns and Allen as guests was no small matter; they were peers at the absolute pinnacle of their powers, each capable of stealing scenes with an eyebrow or a perfectly timed pause.</p>
 <p>Tune in now and experience a moment when American comedy was truly alive, when timing was everything, and when three masters of the craft could turn an ordinary January evening into something unforgettable. This is radio at its finest.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

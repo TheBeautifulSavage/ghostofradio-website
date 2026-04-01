@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1940 03 31 Pinocchio — The Jack Benny Program | Ghost of Radio</title>
+  <title>Pinocchio — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1940 03 31 Pinocchio — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1940 03 31 Pinocchio — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1940 03 31 Pinocchio — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1940</span>
           </div>
-          <h1 class="episode__title">Jb 1940 03 31 Pinocchio</h1>
+          <h1 class="episode__title">Pinocchio</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Pinocchio (March 31, 1940)</p>
-<p>Picture yourself settling into your favorite armchair on a Sunday evening in early spring, the warm glow of your radio set beckoning you into the familiar world of Jack Benny's comedy empire. On this particular broadcast, the maestro and his regular cast—the ever-suffering announcer Don Wilson, the melodious singer Dennis Day, and the velvet-voiced bandleader Phil Harris—embark on an uproarious adaptation of Carlo Collodi's beloved Pinocchio. What could be more perfectly suited to Benny's deadpan delivery and impeccable comic timing than a tale of a wooden boy learning the consequences of dishonesty? Expect all manner of musical interludes, romantic misunderstandings, and the kind of witty banter that made Sunday nights an unmissable appointment for twenty-three million American households. Benny's gift was transforming literary classics into vehicles for his particular brand of sophisticated slapstick, and this episode showcases exactly why radio audiences simply could not get enough.</p>
+          <p>Picture yourself settling into your favorite armchair on a Sunday evening in early spring, the warm glow of your radio set beckoning you into the familiar world of Jack Benny's comedy empire. On this particular broadcast, the maestro and his regular cast—the ever-suffering announcer Don Wilson, the melodious singer Dennis Day, and the velvet-voiced bandleader Phil Harris—embark on an uproarious adaptation of Carlo Collodi's beloved Pinocchio. What could be more perfectly suited to Benny's deadpan delivery and impeccable comic timing than a tale of a wooden boy learning the consequences of dishonesty? Expect all manner of musical interludes, romantic misunderstandings, and the kind of witty banter that made Sunday nights an unmissable appointment for twenty-three million American households. Benny's gift was transforming literary classics into vehicles for his particular brand of sophisticated slapstick, and this episode showcases exactly why radio audiences simply could not get enough.</p>
 <p>By 1940, The Jack Benny Program had already become an institution of American entertainment, a show that proved comedy and variety could thrive on the airwaves without relying on canned laughter or obvious gags. Benny's real genius lay in ensemble work and character—his famous cheapness, his exaggerated indignation, his perfectly-timed pauses—all delivered with an actor's craft that transcended the medium. This episode arrives at a moment when radio was still radio's golden age, when families gathered around the set as though attending a live theatrical performance in their own homes.</p>
 <p>Tune in to experience a slice of Depression-era entertainment at its finest, when imagination and wit were the only special effects needed.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

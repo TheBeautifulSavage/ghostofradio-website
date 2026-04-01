@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1949 09 25 Falling Star — The Jack Benny Program | Ghost of Radio</title>
+  <title>Falling Star — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1949 09 25 Falling Star — The Jack Benny Program (NBC/CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1949 09 25 Falling Star — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1949 09 25 Falling Star — The Jack Benny Program (NBC/CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1949</span>
           </div>
-          <h1 class="episode__title">Jb 1949 09 25 Falling Star</h1>
+          <h1 class="episode__title">Falling Star</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Falling Star" (September 25, 1949)</p>
-<p>Picture this: it's a Sunday evening in 1949, and across America, families gather around their wooden radio consoles as the unmistakable strains of the "Love in Bloom" theme fill living rooms from coast to coast. Jack Benny himself is in trouble—a Hollywood starlet's career is on the skids, and through a series of deliciously tangled circumstances, Jack finds himself responsible for her comeback. What unfolds is pure Benny: a masterclass in timing and self-deprecation as our perpetually vain, perpetually broke protagonist schemes his way through a crisis with all the competence of a man who thinks he's a musical virtuoso but can't play the violin. Mary Livingstone, Don Wilson, and the incomparable Rochester deliver the perfect counterpoint to Jack's exasperation, their voices painting vivid scenes of Hollywood desperation and small-time redemption.</p>
+          <p>Picture this: it's a Sunday evening in 1949, and across America, families gather around their wooden radio consoles as the unmistakable strains of the "Love in Bloom" theme fill living rooms from coast to coast. Jack Benny himself is in trouble—a Hollywood starlet's career is on the skids, and through a series of deliciously tangled circumstances, Jack finds himself responsible for her comeback. What unfolds is pure Benny: a masterclass in timing and self-deprecation as our perpetually vain, perpetually broke protagonist schemes his way through a crisis with all the competence of a man who thinks he's a musical virtuoso but can't play the violin. Mary Livingstone, Don Wilson, and the incomparable Rochester deliver the perfect counterpoint to Jack's exasperation, their voices painting vivid scenes of Hollywood desperation and small-time redemption.</p>
 <p>This episode arrives at a pivotal moment in American entertainment. Radio was still king—the Golden Age hadn't yet surrendered to television—and Jack Benny's program had become an institution, a weekly appointment that millions wouldn't dream of missing. Unlike the slapstick of vaudeville or the theatrical grandeur of early radio melodrama, Benny's genius lay in the art of restraint, of making audiences laugh through vocal nuance and perfectly calibrated pauses. His show proved that comedy could be sophisticated, that character could emerge through voice alone, and that the audience's imagination was the most powerful special effect ever created.</p>
 <p>These are the moments that defined radio's golden era—intimate, clever, and utterly ephemeral, existing only in the moment of broadcast. Now you have the chance to recapture that magic. Tune in and discover why millions tuned in faithfully, week after week, to hear Jack Benny prove that sometimes the greatest entertainment needs no picture, only a voice and a story.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

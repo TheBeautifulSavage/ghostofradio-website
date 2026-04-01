@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 04 12 'try And Get It' Quiz Show — The Jack Benny Program | Ghost of Radio</title>
+  <title>'try And Get It' Quiz Show — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 04 12 'try And Get It' Quiz Show — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 04 12 'try And Get It' Quiz Show — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 04 12 'try And Get It' Quiz Show — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 04 12 'try And Get It' Quiz Show</h1>
+          <h1 class="episode__title">'try And Get It' Quiz Show</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,10 +71,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Try and Get It" (April 12, 1942)</p>
-<p>Join Jack in the studio as he tangles with a devious quiz show scheme in this delightfully absurd episode of America's favorite comedy program. When Jack discovers an opportunity to win big money by answering a few simple questions, his legendary cheapness collides head-on with his equally legendary incompetence—and Mary Livingstone, Don Wilson, and the entire cast are there to witness the glorious chaos. What begins as Jack's confident swagger swiftly dissolves into sputtering protests and elaborate excuses as the quiz master circles ever closer to extracting real cash from his wallet. You'll hear the audience roar with recognition at Jack's predicament, that perfectly timed pause before a punchline, and the warm, knowing laughter of a nation tuned in to their radios on a Sunday evening.</p>
-<p>By April 1942, *The Jack Benny Program* had become the undisputed king of American radio comedy, a position it would hold throughout the decade and beyond. Benny's genius lay not in rapid-fire jokes but in character work and timing—he created a vivid world populated by recurring characters like the deadpan Rochester and the bumbling bandleader Phil Harris, all orbiting Jack's central conceit: an eternally 39-year-old miser whose greatest riches were his relationships with his audience. During wartime, when Americans gathered around their radios for escape and comfort, Jack provided both—his self-deprecating humor and impeccable comic timing offered a reassuring normalcy even as the world convulsed around them.</p>
-<p>This snapshot of Jack at his peak is comedy craftsmanship at its finest. Whether you're discovering Jack Benny for the first time or revisiting an old friend, "Try and Get It" showcases why millions made *The Jack Benny Program* an unmissable appointment with their radios every week.</p>
+          <p>Join Jack in the studio as he tangles with a devious quiz show scheme in this delightfully absurd episode of America's favorite comedy program. When Jack discovers an opportunity to win big money by answering a few simple questions, his legendary cheapness collides head-on with his equally legendary incompetence—and Mary Livingstone, Don Wilson, and the entire cast are there to witness the glorious chaos. What begins as Jack's confident swagger swiftly dissolves into sputtering protests and elaborate excuses as the quiz master circles ever closer to extracting real cash from his wallet. You'll hear the audience roar with recognition at Jack's predicament, that perfectly timed pause before a punchline, and the warm, knowing laughter of a nation tuned in to their radios on a Sunday evening.</p>
+<p>By April 1942, The Jack Benny Program had become the undisputed king of American radio comedy, a position it would hold throughout the decade and beyond. Benny's genius lay not in rapid-fire jokes but in character work and timing—he created a vivid world populated by recurring characters like the deadpan Rochester and the bumbling bandleader Phil Harris, all orbiting Jack's central conceit: an eternally 39-year-old miser whose greatest riches were his relationships with his audience. During wartime, when Americans gathered around their radios for escape and comfort, Jack provided both—his self-deprecating humor and impeccable comic timing offered a reassuring normalcy even as the world convulsed around them.</p>
+<p>This snapshot of Jack at his peak is comedy craftsmanship at its finest. Whether you're discovering Jack Benny for the first time or revisiting an old friend, "Try and Get It" showcases why millions made The Jack Benny Program an unmissable appointment with their radios every week.</p>
         </div>
 
         <footer class="episode__footer">
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

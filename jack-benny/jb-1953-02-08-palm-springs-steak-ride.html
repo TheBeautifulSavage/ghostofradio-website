@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1953 02 08 Palm Springs Steak Ride — The Jack Benny Program | Ghost of Radio</title>
+  <title>Palm Springs Steak Ride — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1953 02 08 Palm Springs Steak Ride — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1953 02 08 Palm Springs Steak Ride — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1953 02 08 Palm Springs Steak Ride — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1953</span>
           </div>
-          <h1 class="episode__title">Jb 1953 02 08 Palm Springs Steak Ride</h1>
+          <h1 class="episode__title">Palm Springs Steak Ride</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Palm Springs Steak Ride (February 8, 1953)</p>
-<p>Picture this: it's a crisp Southern California evening in 1953, and Jack Benny finds himself—quite against his will—on a cattle drive toward Palm Springs. What begins as a simple romantic getaway becomes a comedy of errors when Jack's valet Rochester, his perpetually annoyed wife Mary, and the entire supporting cast find themselves saddled (quite literally) with ornery steeds and rustically inclined adventures. The studio audience roars as Jack's vanity meets the dusty reality of ranch life, his manicured sensibilities clashing delightfully with barking dogs, stubborn horses, and Dennis Day's inexplicable cowboy singing. By the time they reach their destination, chaos has reached a fever pitch—and somehow, Jack remains convinced the whole debacle was everyone else's fault.</p>
+          <p>Picture this: it's a crisp Southern California evening in 1953, and Jack Benny finds himself—quite against his will—on a cattle drive toward Palm Springs. What begins as a simple romantic getaway becomes a comedy of errors when Jack's valet Rochester, his perpetually annoyed wife Mary, and the entire supporting cast find themselves saddled (quite literally) with ornery steeds and rustically inclined adventures. The studio audience roars as Jack's vanity meets the dusty reality of ranch life, his manicured sensibilities clashing delightfully with barking dogs, stubborn horses, and Dennis Day's inexplicable cowboy singing. By the time they reach their destination, chaos has reached a fever pitch—and somehow, Jack remains convinced the whole debacle was everyone else's fault.</p>
 <p>By 1953, The Jack Benny Program had perfected the art of radio comedy after two decades on the air. Jack's deadpan delivery and impeccable timing had become legendary, his ability to wring laughter from the simplest situations—often at his own expense—unmatched in broadcasting. This era represented the golden age of the show's CBS years, when Jack's supporting cast of Mary Livingstone, Rochester, Don Wilson, and the orchestra had achieved an almost telepathic rapport with their star. The writing was sharp, the ensemble work flawless, and the show's gentle, sophisticated humor appealed equally to children and their parents.</p>
 <p>Step into Studio 5 in Hollywood and experience why millions of Americans tuned in weekly to follow Jack Benny's misadventures. Whether you're a devoted fan or discovering this timeless comedy for the first time, "Palm Springs Steak Ride" exemplifies everything that made radio's greatest entertainer a permanent fixture in American popular culture.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1950 11 12 Guest Richard Widmark A Cup Of Coffee, A Sandwich, And Murder — The Jack Benny Program | Ghost of Radio</title>
+  <title>Guest Richard Widmark A Cup Of Coffee, A Sandwich, And Murder — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1950 11 12 Guest Richard Widmark A Cup Of Coffee, A Sandwich, And Murder — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1950 11 12 Guest Richard Widmark A Cup Of Coffee, A Sandwich, And Murder — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1950 11 12 Guest Richard Widmark A Cup Of Coffee, A Sandwich, And Murder — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1950</span>
           </div>
-          <h1 class="episode__title">Jb 1950 11 12 Guest Richard Widmark A Cup Of Coffee, A Sandwich, And Murder</h1>
+          <h1 class="episode__title">Guest Richard Widmark A Cup Of Coffee, A Sandwich, And Murder</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: November 12, 1950</p>
-<p>Picture yourself settled into your favorite chair on this November evening in 1950, tuning dial to catch Jack Benny and his repertory company in full comedic flight. This week, the program takes an intriguing turn as acclaimed film noir star Richard Widmark steps before the microphone, trading his silver-screen menace for the quirky warmth of Jack's world. The title itself—"A Cup of Coffee, A Sandwich, and Murder"—promises the delicious blend of everyday domesticity and dramatic intrigue that made this program essential listening. Listeners can expect Jack's trademark deadpan timing, Mary Livingstone's razor-sharp witticisms, and Don Wilson's booming announcements to collide with Widmark's charismatic presence in a sketch that blends mystery with the show's signature comedic mayhem. The chemistry between radio's most beloved miser and Hollywood's latest dramatic sensation makes for irresistible entertainment.</p>
+          <p>Picture yourself settled into your favorite chair on this November evening in 1950, tuning dial to catch Jack Benny and his repertory company in full comedic flight. This week, the program takes an intriguing turn as acclaimed film noir star Richard Widmark steps before the microphone, trading his silver-screen menace for the quirky warmth of Jack's world. The title itself—"A Cup of Coffee, A Sandwich, and Murder"—promises the delicious blend of everyday domesticity and dramatic intrigue that made this program essential listening. Listeners can expect Jack's trademark deadpan timing, Mary Livingstone's razor-sharp witticisms, and Don Wilson's booming announcements to collide with Widmark's charismatic presence in a sketch that blends mystery with the show's signature comedic mayhem. The chemistry between radio's most beloved miser and Hollywood's latest dramatic sensation makes for irresistible entertainment.</p>
 <p>By 1950, The Jack Benny Program had already dominated American radio for nearly two decades, establishing itself as the gold standard of comedy broadcasting. The show's genius lay in its combination of tight scripting, ensemble brilliance, and Benny's unparalleled ability to build a laugh through silence and understatement. Guest stars like Widmark represented radio's unique cultural moment—when Hollywood's biggest names still recognized the medium's power to reach millions of American families simultaneously. These crossover episodes demonstrated radio's vitality even as television loomed on the horizon.</p>
 <p>Don't miss this masterclass in comedy performance, where two entertainment icons meet on radio's shrinking but still-golden stage. Tune in and discover why audiences made The Jack Benny Program an institution of American humor.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

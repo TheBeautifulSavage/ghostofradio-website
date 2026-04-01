@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1941 07 30 Millions For Defense — The Jack Benny Program | Ghost of Radio</title>
+  <title>Millions For Defense — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1941 07 30 Millions For Defense — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1941 07 30 Millions For Defense — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1941 07 30 Millions For Defense — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jbgs 1941 07 30 Millions For Defense</h1>
+          <h1 class="episode__title">Millions For Defense</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Millions For Defense</p>
-<p>Picture this: it's a sweltering July evening in 1941, and across America, millions of listeners are settling in to their radios for an escape from the gathering storm clouds of a world at war. Jack Benny, that parsimonious maestro of comedy, has promised his studio audience—and you—something special tonight. The title alone, "Millions For Defense," suggests that even Jack's legendary stinginess might meet its match when the fate of the nation hangs in the balance. Will his famous vault be breached? Can the man who famously chose death over paying a nickel find it in his heart to contribute to America's defense preparedness? Alongside his trusted ensemble—the ever-patient Mary Livingstone, the melancholic announcer Don Wilson, and the rest of the gang—Jack navigates the comedy minefield of patriotic duty with his impeccable timing and wry sensibility, mining laughs from the very real anxieties of a nation teetering on the brink.</p>
+          <p>Picture this: it's a sweltering July evening in 1941, and across America, millions of listeners are settling in to their radios for an escape from the gathering storm clouds of a world at war. Jack Benny, that parsimonious maestro of comedy, has promised his studio audience—and you—something special tonight. The title alone, "Millions For Defense," suggests that even Jack's legendary stinginess might meet its match when the fate of the nation hangs in the balance. Will his famous vault be breached? Can the man who famously chose death over paying a nickel find it in his heart to contribute to America's defense preparedness? Alongside his trusted ensemble—the ever-patient Mary Livingstone, the melancholic announcer Don Wilson, and the rest of the gang—Jack navigates the comedy minefield of patriotic duty with his impeccable timing and wry sensibility, mining laughs from the very real anxieties of a nation teetering on the brink.</p>
 <p>This episode captures a pivotal moment in American broadcasting history. By July 1941, the United States was still officially neutral, yet the Selective Service was in full swing and defense spending dominated the national conversation. Radio comedy shows like Benny's were expected to walk a careful line—entertaining audiences while subtly reinforcing civic values. The Jack Benny Program had already established itself as the gold standard of radio comedy since 1932, and Benny's genius lay in his ability to find humor in any situation without sacrificing his character's essential miserliness or the show's satirical edge.</p>
 <p>This program represents radio at its finest: smart, topical, and wonderfully entertaining. Whether Benny's famous cheapness wins out over patriotism, or whether defense truly trumps his devotion to his vault, you're in for an evening of sophisticated comedy that reminds us why millions tuned in, night after night, to spend time with Jack Benny. Don't miss it.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

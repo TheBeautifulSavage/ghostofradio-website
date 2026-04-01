@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 05 17 Jack Imitates Fred Allen Broadcast From The Santa Ana Air Base, California — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Imitates Fred Allen Broadcast From The Santa Ana Air Base, California — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 05 17 Jack Imitates Fred Allen Broadcast From The Santa Ana Air Base, California — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 05 17 Jack Imitates Fred Allen Broadcast From The Santa Ana Air Base, California — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 05 17 Jack Imitates Fred Allen Broadcast From The Santa Ana Air Base, California — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 05 17 Jack Imitates Fred Allen Broadcast From The Santa Ana Air Base, California</h1>
+          <h1 class="episode__title">Jack Imitates Fred Allen Broadcast From The Santa Ana Air Base, California</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: May 17, 1942</p>
-<p>Picture this: a warm Southern California evening at the Santa Ana Army Air Base, where servicemen far from home crowd into a makeshift theater, their uniforms still crisp from the day's drills. The audience crackles with anticipation as Jack Benny takes the stage, and what unfolds is a masterclass in comedic timing and mimicry. Tonight, Jack has a special target for his razor-sharp impressions—his arch-rival and real-life friend Fred Allen—and the results are absolutely hilarious. You'll hear Jack's distinctive, almost childlike voice transform into Fred's nasal, rapid-fire delivery, capturing every mannerism and comedic flourish that made Allen a radio legend. The servicemen roar with laughter, grateful for an escape from their wartime duties, while back home, millions of listeners tune in for their weekly appointment with Jack's gentle, vaudeville-influenced humor.</p>
+          <p>Picture this: a warm Southern California evening at the Santa Ana Army Air Base, where servicemen far from home crowd into a makeshift theater, their uniforms still crisp from the day's drills. The audience crackles with anticipation as Jack Benny takes the stage, and what unfolds is a masterclass in comedic timing and mimicry. Tonight, Jack has a special target for his razor-sharp impressions—his arch-rival and real-life friend Fred Allen—and the results are absolutely hilarious. You'll hear Jack's distinctive, almost childlike voice transform into Fred's nasal, rapid-fire delivery, capturing every mannerism and comedic flourish that made Allen a radio legend. The servicemen roar with laughter, grateful for an escape from their wartime duties, while back home, millions of listeners tune in for their weekly appointment with Jack's gentle, vaudeville-influenced humor.</p>
 <p>This broadcast captures something essential about radio's golden age: its power to unite the nation during dark times. In May 1942, America was barely five months into World War II, with uncertainty and sacrifice weighing heavily on every household. Yet here was Jack Benny, a perfectionist comedian who'd spent a decade building one of radio's most beloved programs, bringing joy and normalcy to soldiers preparing for combat. The Jack Benny Program was appointment radio at its finest—featuring not just comedy but also the CBS house orchestra, occasional musical guests, and the running gags that made listeners anticipate each week's episode.</p>
 <p>This particular broadcast offers a window into wartime America and the magic of classic radio comedy. Whether you're a longtime devotee of the medium or discovering Jack Benny for the first time, this episode showcases why he remained broadcasting's supreme entertainer for over two decades. Tune in and let the laughter of those Santa Ana servicemen remind you why radio was once America's greatest entertainment medium.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

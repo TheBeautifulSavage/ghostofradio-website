@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 05 18 Charley's Aunt — The Jack Benny Program | Ghost of Radio</title>
+  <title>Charley's Aunt — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 05 18 Charley's Aunt — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 05 18 Charley's Aunt — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 05 18 Charley's Aunt — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 05 18 Charley's Aunt</h1>
+          <h1 class="episode__title">Charley's Aunt</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Charley's Aunt" (May 18, 1941)</p>
-<p>Step into the parlor on this spring evening in 1941 as Jack Benny finds himself in the most delightfully absurd predicament: he must impersonate a wealthy Brazilian aunt to help his hapless friend Charley escape a romantic entanglement. What follows is a masterclass in verbal comedy and impeccable timing, with Jack's deadpan delivery creating increasingly hilarious complications as the masquerade spirals beyond anyone's control. Listen as Mary Livingstone, Don Wilson, and Phil Harris weave in and out of the chaos, their chemistry with Jack absolutely electric. The band punctuates every comedic beat with perfectly placed musical cues, while the live studio audience roars with laughter—their genuine reactions capturing the infectious joy that made radio comedy an art form. You'll find yourself transported to a world where a simple lie becomes an elaborate tapestry of confusion, and Jack's trademark stinginess and vanity become the perfect fuel for mayhem.</p>
+          <p>Step into the parlor on this spring evening in 1941 as Jack Benny finds himself in the most delightfully absurd predicament: he must impersonate a wealthy Brazilian aunt to help his hapless friend Charley escape a romantic entanglement. What follows is a masterclass in verbal comedy and impeccable timing, with Jack's deadpan delivery creating increasingly hilarious complications as the masquerade spirals beyond anyone's control. Listen as Mary Livingstone, Don Wilson, and Phil Harris weave in and out of the chaos, their chemistry with Jack absolutely electric. The band punctuates every comedic beat with perfectly placed musical cues, while the live studio audience roars with laughter—their genuine reactions capturing the infectious joy that made radio comedy an art form. You'll find yourself transported to a world where a simple lie becomes an elaborate tapestry of confusion, and Jack's trademark stinginess and vanity become the perfect fuel for mayhem.</p>
 <p>By 1941, The Jack Benny Program had already become America's favorite appointment with laughter, having evolved from a simple musical variety show in 1932 into a tightly crafted comedy powerhouse. This episode exemplifies why Jack's influence would reshape entertainment for generations: the humor emerges organically from character and situation rather than relying on gags alone. Jack's willingness to play the fool, to be the butt of jokes, was revolutionary for a star of his magnitude.</p>
 <p>For lovers of classic radio and those curious about the golden age of American comedy, this episode is essential listening. The wit is sharp, the performances are luminous, and the reminder of why families gathered around their receivers every Sunday evening comes through crystal clear. Tune in and discover why they called it the golden age.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

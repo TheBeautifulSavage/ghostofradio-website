@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1951 09 23 Captain Horatio Hornblower — The Jack Benny Program | Ghost of Radio</title>
+  <title>Captain Horatio Hornblower — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1951 09 23 Captain Horatio Hornblower — The Jack Benny Program (NBC/CBS, 1951). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1951 09 23 Captain Horatio Hornblower — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1951 09 23 Captain Horatio Hornblower — The Jack Benny Program (NBC/CBS, 1951). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1951</span>
           </div>
-          <h1 class="episode__title">Jb 1951 09 23 Captain Horatio Hornblower</h1>
+          <h1 class="episode__title">Captain Horatio Hornblower</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Captain Horatio Hornblower"</p>
-<p>Picture yourself settling into your favorite chair on a crisp September evening in 1951, the warm glow of your radio set casting shadows across the room. As the familiar strains of the Jack Benny theme fade in, you're transported to the high seas with Captain Horatio Hornblower—or rather, Jack's bumbling, comedic interpretation of C.S. Forester's famous literary hero. What unfolds is a masterclass in comic timing, as Benny's trademark stingy, deadpan delivery clashes hilariously with swashbuckling adventure. Expect witty banter with his long-suffering sidekick Rochester, clever sight gags translated into pure vocal performance, and those pregnant pauses that made Jack Benny legendary. The studio audience roars with laughter as the impeccable Jack attempts to navigate naval command, romantic entanglements, and his own vanity, all while maintaining the dignified veneer of a literary hero.</p>
+          <p>Picture yourself settling into your favorite chair on a crisp September evening in 1951, the warm glow of your radio set casting shadows across the room. As the familiar strains of the Jack Benny theme fade in, you're transported to the high seas with Captain Horatio Hornblower—or rather, Jack's bumbling, comedic interpretation of C.S. Forester's famous literary hero. What unfolds is a masterclass in comic timing, as Benny's trademark stingy, deadpan delivery clashes hilariously with swashbuckling adventure. Expect witty banter with his long-suffering sidekick Rochester, clever sight gags translated into pure vocal performance, and those pregnant pauses that made Jack Benny legendary. The studio audience roars with laughter as the impeccable Jack attempts to navigate naval command, romantic entanglements, and his own vanity, all while maintaining the dignified veneer of a literary hero.</p>
 <p>By 1951, The Jack Benny Program had already spent nearly two decades perfecting the art of radio comedy. What set Benny apart was his revolutionary understanding that silence and restraint could be funnier than frantic punchlines—a radical notion that influenced generations of comedians to come. His show seamlessly blended parody, character work, and sophisticated humor that appealed equally to children and their parents. This particular episode exemplifies why Benny's ensemble cast, including Eddie Anderson's brilliant Rochester and Don Wilson's charming announcer, created radio's most quotable moments.</p>
 <p>If you've never experienced the incomparable Jack Benny at the height of his powers, or if you're a devoted fan rediscovering vintage broadcasts, this September 1951 adventure offers the perfect introduction. Tune in and discover why Jack Benny's name remains synonymous with radio comedy's golden age.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

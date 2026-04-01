@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cp 1944 12 25 Christmas Special Bob Hope, Jack Benny, Fred Allen — The Jack Benny Program | Ghost of Radio</title>
+  <title>Christmas Special Bob Hope, Jack Benny, Fred Allen — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Cp 1944 12 25 Christmas Special Bob Hope, Jack Benny, Fred Allen — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Cp 1944 12 25 Christmas Special Bob Hope, Jack Benny, Fred Allen — The Jack Benny Program">
   <meta property="og:description" content="Listen to Cp 1944 12 25 Christmas Special Bob Hope, Jack Benny, Fred Allen — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Cp 1944 12 25 Christmas Special Bob Hope, Jack Benny, Fred Allen</h1>
+          <h1 class="episode__title">Christmas Special Bob Hope, Jack Benny, Fred Allen</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,9 +71,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Christmas Special (December 25, 1944)</p>
-<p>Picture yourself huddled around the radio on Christmas Day, 1944—the war still raging overseas, rationing at home, but for thirty minutes, America's living rooms fill with the warmth of laughter. Jack Benny welcomes a constellation of comedy's brightest stars: the rapid-fire wit of Bob Hope fresh from entertaining troops, the acid-tongued brilliance of Fred Allen, and Jack's own impeccable timing and self-deprecating charm. This Christmas broadcast crackles with the special electricity of live performance—the rustling scripts, the audience's genuine delight—as these comedy titans trade barbs, perform comic sketches, and deliver seasonal cheer without a shred of sentimentality. What unfolds is a masterclass in ensemble comedy, where the greatest funny men of the era prove why radio was America's theater, bringing joy to a nation far from home and hearth.</p>
-<p>By 1944, *The Jack Benny Program* had become the gold standard of radio entertainment, a weekly appointment that millions would not miss. Jack's genius lay not in slapstick but in character—his famous stinginess, his vanity about his age, his interplay with regulars like announcer Don Wilson and violin-playing sidekick Phil Harris created a fictional world as real as reality to listeners. This particular broadcast captures radio comedy at its zenith: no laugh tracks, no canned applause, just the naked brilliance of writers and performers creating humor in real time. The presence of Hope and Allen elevates this episode into the realm of special event, a gathering of the Mount Rushmore of comedy.</p>
+          <p>Picture yourself huddled around the radio on Christmas Day, 1944—the war still raging overseas, rationing at home, but for thirty minutes, America's living rooms fill with the warmth of laughter. Jack Benny welcomes a constellation of comedy's brightest stars: the rapid-fire wit of Bob Hope fresh from entertaining troops, the acid-tongued brilliance of Fred Allen, and Jack's own impeccable timing and self-deprecating charm. This Christmas broadcast crackles with the special electricity of live performance—the rustling scripts, the audience's genuine delight—as these comedy titans trade barbs, perform comic sketches, and deliver seasonal cheer without a shred of sentimentality. What unfolds is a masterclass in ensemble comedy, where the greatest funny men of the era prove why radio was America's theater, bringing joy to a nation far from home and hearth.</p>
+<p>By 1944, The Jack Benny Program had become the gold standard of radio entertainment, a weekly appointment that millions would not miss. Jack's genius lay not in slapstick but in character—his famous stinginess, his vanity about his age, his interplay with regulars like announcer Don Wilson and violin-playing sidekick Phil Harris created a fictional world as real as reality to listeners. This particular broadcast captures radio comedy at its zenith: no laugh tracks, no canned applause, just the naked brilliance of writers and performers creating humor in real time. The presence of Hope and Allen elevates this episode into the realm of special event, a gathering of the Mount Rushmore of comedy.</p>
 <p>Tune in now and experience Christmas 1944 as American families knew it—live, spontaneous, and radiating the indomitable spirit that defined the era. These performances remain timeless treasures of the golden age.</p>
         </div>
 
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

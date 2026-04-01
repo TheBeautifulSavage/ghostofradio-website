@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1948 11 07 Jack Hears Echo — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Hears Echo — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1948 11 07 Jack Hears Echo — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1948 11 07 Jack Hears Echo — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1948 11 07 Jack Hears Echo — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1948</span>
           </div>
-          <h1 class="episode__title">Jb 1948 11 07 Jack Hears Echo</h1>
+          <h1 class="episode__title">Jack Hears Echo</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Jack Hears Echo"</p>
-<p>Picture this: it's a crisp November evening in 1948, and across America, families are settling in around their radio sets as the familiar strains of "Love in Bloom" crackle through the airwaves. Tonight, Jack Benny discovers something peculiar—an echo that seems to follow his every word, repeating his wisecracks before he can even finish them. What begins as a minor annoyance quickly spirals into comedy gold as Jack, never one to let a situation go unexploited, attempts to outwit this mysterious phantom voice. Will Don Wilson's booming announcer's voice help solve the mystery? Can Rochester's practical wisdom cut through the confusion? The answer lies somewhere in the razor-sharp timing and perfectly orchestrated chaos that only Benny and his gifted ensemble could deliver—creating one of those moments when a simple premise becomes something truly unforgettable.</p>
+          <p>Picture this: it's a crisp November evening in 1948, and across America, families are settling in around their radio sets as the familiar strains of "Love in Bloom" crackle through the airwaves. Tonight, Jack Benny discovers something peculiar—an echo that seems to follow his every word, repeating his wisecracks before he can even finish them. What begins as a minor annoyance quickly spirals into comedy gold as Jack, never one to let a situation go unexploited, attempts to outwit this mysterious phantom voice. Will Don Wilson's booming announcer's voice help solve the mystery? Can Rochester's practical wisdom cut through the confusion? The answer lies somewhere in the razor-sharp timing and perfectly orchestrated chaos that only Benny and his gifted ensemble could deliver—creating one of those moments when a simple premise becomes something truly unforgettable.</p>
 <p>By 1948, The Jack Benny Program had become the gold standard of American radio comedy, a masterclass in character development and ensemble performance that would influence television comedy for generations to come. Benny's stingy, vain, perpetually 39-year-old character had captivated millions since 1932, while his supporting cast—the endlessly patient Rochester, the smooth-talking Phil Harris, the eternally suffering Dennis Day—had become as beloved as Jack himself. What set Benny apart was his profound understanding that the best comedy emerged from character and relationship, not just gags. His ability to build a bit slowly, letting audiences anticipate the punchline and then subverting those expectations, made every episode essential listening.</p>
 <p>Tune in now to experience why Jack Benny commanded audiences night after night, and discover how a simple echo becomes the perfect vehicle for one of radio's greatest comedians to demonstrate his unparalleled genius.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

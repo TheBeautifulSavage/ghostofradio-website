@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1941 04 16 The Quiz Kids — The Jack Benny Program | Ghost of Radio</title>
+  <title>The Quiz Kids — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1941 04 16 The Quiz Kids — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1941 04 16 The Quiz Kids — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1941 04 16 The Quiz Kids — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jbgs 1941 04 16 The Quiz Kids</h1>
+          <h1 class="episode__title">The Quiz Kids</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "The Quiz Kids" (April 16, 1941)</p>
-<p>Picture it: a Wednesday evening in April, 1941, and Jack Benny strides onto the stage with his characteristic violin in hand, ready to face off against America's brightest young minds. This week's episode pits Jack against the legendary Quiz Kids—those prodigious children who had captivated the nation with their encyclopedic knowledge on their own wildly popular radio program. What could go wrong when a vain comedian meets a panel of geniuses half his age? Everything and nothing at once. The result is comedic gold: Jack's barely concealed panic as these pint-sized intellectuals demolish him in competition, his desperate quips about his age and irrelevance, and the orchestra's perfectly timed musical stabs that punctuate each humiliating defeat. The studio audience roars with laughter, sensing that we're witnessing something special—that rare collision between show business ego and genuine intellectual prowess.</p>
+          <p>Picture it: a Wednesday evening in April, 1941, and Jack Benny strides onto the stage with his characteristic violin in hand, ready to face off against America's brightest young minds. This week's episode pits Jack against the legendary Quiz Kids—those prodigious children who had captivated the nation with their encyclopedic knowledge on their own wildly popular radio program. What could go wrong when a vain comedian meets a panel of geniuses half his age? Everything and nothing at once. The result is comedic gold: Jack's barely concealed panic as these pint-sized intellectuals demolish him in competition, his desperate quips about his age and irrelevance, and the orchestra's perfectly timed musical stabs that punctuate each humiliating defeat. The studio audience roars with laughter, sensing that we're witnessing something special—that rare collision between show business ego and genuine intellectual prowess.</p>
 <p>By 1941, The Jack Benny Program had already established itself as America's favorite comedy, a show where timing and character mattered more than slapstick. Jack's supporting cast—including the immortal Rochester van Jones and the perpetually feuding Fred Allen appearing via telephone—had become as beloved as Jack himself. This particular episode captures the show at its zenith, when radio comedy meant something, when a thirty-minute broadcast could make the entire nation laugh in unison. The Quiz Kids phenomenon itself was the sensation of the era, proving that Americans were hungry for intellectual entertainment even as war clouds gathered overseas.</p>
 <p>This is essential listening for anyone who wants to understand what made American radio comedy legendary. Hear Jack Benny do what he did better than anyone: turn his own inadequacies into pure entertainment gold. Tune in and discover why millions of listeners made this their unmissable Wednesday night tradition.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

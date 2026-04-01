@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1937 10 10 Starring Jack What's His Name — The Jack Benny Program | Ghost of Radio</title>
+  <title>Starring Jack What's His Name — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1937 10 10 Starring Jack What's His Name — The Jack Benny Program (NBC/CBS, 1937). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1937 10 10 Starring Jack What's His Name — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1937 10 10 Starring Jack What's His Name — The Jack Benny Program (NBC/CBS, 1937). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1937</span>
           </div>
-          <h1 class="episode__title">Jb 1937 10 10 Starring Jack What's His Name</h1>
+          <h1 class="episode__title">Starring Jack What's His Name</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Jack, What's His Name?" (October 10, 1937)</p>
-<p>Picture this: It's a Sunday evening in October, the autumn chill settling over America, and millions of families gather around their radio sets as the familiar NBC broadcast signal crackles to life. Tonight, Jack Benny faces his most absurd predicament yet—he's somehow forgotten his own name. What begins as a simple comedy premise spirals into comedic chaos as Jack stumbles through an entire program unable to remember who he is, while his straight-man announcer Don Wilson and the perpetually exasperated Mary Livingstone struggle to keep the show on the rails. The supporting cast—from Phil Harris's irreverent asides to Dennis Day's innocent interjections—pile on the confusion with perfect timing, building the kind of mounting hysteria that only live comedy can achieve. You can practically hear the audience's laughter echoing through the studio, genuine and infectious.</p>
+          <p>Picture this: It's a Sunday evening in October, the autumn chill settling over America, and millions of families gather around their radio sets as the familiar NBC broadcast signal crackles to life. Tonight, Jack Benny faces his most absurd predicament yet—he's somehow forgotten his own name. What begins as a simple comedy premise spirals into comedic chaos as Jack stumbles through an entire program unable to remember who he is, while his straight-man announcer Don Wilson and the perpetually exasperated Mary Livingstone struggle to keep the show on the rails. The supporting cast—from Phil Harris's irreverent asides to Dennis Day's innocent interjections—pile on the confusion with perfect timing, building the kind of mounting hysteria that only live comedy can achieve. You can practically hear the audience's laughter echoing through the studio, genuine and infectious.</p>
 <p>By 1937, The Jack Benny Program had already established itself as radio's most sophisticated comedy, a show that proved audiences craved wit and timing over crude slapstick. Benny's genius lay in his pauses, his ability to milk a moment of silence for maximum effect—a skill that translated perfectly to the intimate medium of radio. This particular episode exemplifies why the show would endure for nearly two decades, evolving from variety show into something closer to a sitcom, where characters and relationships mattered as much as individual gags.</p>
 <p>This is essential listening for anyone curious about the golden age of radio comedy—a moment when entertainment meant gathering together, when a man forgetting his own name could somehow feel like the most hilarious crisis imaginable. Tune in and discover why millions tuned in faithfully every week.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

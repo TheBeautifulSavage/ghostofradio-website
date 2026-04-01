@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 04 19 Don Writes A Jell O Play — The Jack Benny Program | Ghost of Radio</title>
+  <title>Don Writes A Jell O Play — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 04 19 Don Writes A Jell O Play — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 04 19 Don Writes A Jell O Play — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 04 19 Don Writes A Jell O Play — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 04 19 Don Writes A Jell O Play</h1>
+          <h1 class="episode__title">Don Writes A Jell O Play</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - April 19, 1942</p>
-<p>Picture this: It's a Sunday evening in wartime America, and Jack Benny's drawing room is in complete pandemonium. Don Wilson, the program's perpetually earnest announcer, has decided he's a playwright—and he's written a one-act comedy sponsored by Jell-O, naturally. What follows is a delightful descent into theatrical chaos as Jack attempts to navigate Don's artistic ambitions while the rest of the cast—including the wisecracking Mary Livingstone and the ever-scheming Rochester—scramble to save the show from disaster. The script fizzes with rapid-fire gags, double takes you can practically hear through your radio speaker, and that particular brand of humorous tension that made Benny's program legendary. By the time the Jell-O commercial rolls around, you'll have witnessed the kind of sophisticated comedy that had millions of listeners tuning in religiously every week.</p>
+          <p>Picture this: It's a Sunday evening in wartime America, and Jack Benny's drawing room is in complete pandemonium. Don Wilson, the program's perpetually earnest announcer, has decided he's a playwright—and he's written a one-act comedy sponsored by Jell-O, naturally. What follows is a delightful descent into theatrical chaos as Jack attempts to navigate Don's artistic ambitions while the rest of the cast—including the wisecracking Mary Livingstone and the ever-scheming Rochester—scramble to save the show from disaster. The script fizzes with rapid-fire gags, double takes you can practically hear through your radio speaker, and that particular brand of humorous tension that made Benny's program legendary. By the time the Jell-O commercial rolls around, you'll have witnessed the kind of sophisticated comedy that had millions of listeners tuning in religiously every week.</p>
 <p>This episode captures The Jack Benny Program at its wartime peak, a time when radio comedy provided essential escapism for anxious Americans while the world burned. Though Benny's material remained largely apolitical, his genius for character-driven humor and impeccable timing offered respite from the day's grim headlines. The show's supporting cast—each with their own comedic specialty—had become as beloved as Jack himself, making every episode feel like visiting old friends. Don Wilson's casting as a would-be playwright is particularly inspired, playing against his typical role as the suave announcer.</p>
 <p>If you've ever wondered why people speak reverently of radio's golden age, this episode is an excellent place to start. It's pure theatrical magic captured in sound: smart writing, generous hearts, and comedians at the absolute top of their game. Tune in and discover why Jack Benny's laughter could unite a nation.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

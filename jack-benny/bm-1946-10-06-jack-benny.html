@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bm 1946 10 06 Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Bm 1946 10 06 Jack Benny — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Bm 1946 10 06 Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Bm 1946 10 06 Jack Benny — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1946</span>
           </div>
-          <h1 class="episode__title">Bm 1946 10 06 Jack Benny</h1>
+          <h1 class="episode__title">Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program — October 6, 1946</p>
-<p>Picture yourself huddled around the radio on a crisp autumn evening, the warm glow of the vacuum tubes casting a gentle amber haze across the living room. As the announcer's voice crackles through the speaker and the familiar musical strains of "Love in Bloom" fill your home, you know you're in for an evening of sophisticated comedy. In this October 1946 broadcast, Jack Benny delivers his trademark blend of verbal sparring and impeccable comedic timing, trading barbs with Don Wilson, his rotund announcer, while Rochester—Jack's long-suffering valet—prepares for yet another chaotic evening at the Benny household. Whether Jack is nursing his obsession with his ancient Maxwell automobile or plotting one of his elaborate schemes, listeners are promised the kind of witty repartee and perfectly timed pauses that made The Jack Benny Program appointment radio for millions of Americans.</p>
+          <p>Picture yourself huddled around the radio on a crisp autumn evening, the warm glow of the vacuum tubes casting a gentle amber haze across the living room. As the announcer's voice crackles through the speaker and the familiar musical strains of "Love in Bloom" fill your home, you know you're in for an evening of sophisticated comedy. In this October 1946 broadcast, Jack Benny delivers his trademark blend of verbal sparring and impeccable comedic timing, trading barbs with Don Wilson, his rotund announcer, while Rochester—Jack's long-suffering valet—prepares for yet another chaotic evening at the Benny household. Whether Jack is nursing his obsession with his ancient Maxwell automobile or plotting one of his elaborate schemes, listeners are promised the kind of witty repartee and perfectly timed pauses that made The Jack Benny Program appointment radio for millions of Americans.</p>
 <p>By 1946, Jack Benny had already spent fourteen years perfecting the art of radio comedy, having pioneered the situation comedy format that would later define television. Unlike the slapstick humor of other variety shows, Benny's program relied on character development and ongoing storylines—Rochester's loyalty, Mary Livingstone's sharp tongue, and Jack's own endearing vanity became as familiar to listeners as their own family members. This October episode arrived during radio's golden age, when the medium was still America's primary source of entertainment and a genuine cultural phenomenon.</p>
 <p>Tune in to experience why Jack Benny was called the master of the comedic pause, and discover why millions of listeners made this show an essential part of their weekly routine. The Maxwell awaits.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

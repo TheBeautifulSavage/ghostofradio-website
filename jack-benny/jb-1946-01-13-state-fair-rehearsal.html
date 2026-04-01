@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1946 01 13 State Fair Rehearsal — The Jack Benny Program | Ghost of Radio</title>
+  <title>State Fair Rehearsal — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1946 01 13 State Fair Rehearsal — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1946 01 13 State Fair Rehearsal — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1946 01 13 State Fair Rehearsal — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1946</span>
           </div>
-          <h1 class="episode__title">Jb 1946 01 13 State Fair Rehearsal</h1>
+          <h1 class="episode__title">State Fair Rehearsal</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "State Fair Rehearsal"</p>
-<p>Picture this: January 13th, 1946, and Jack Benny's carefully constructed world of comic misery is about to collide spectacularly with the rural chaos of a state fair. As the program opens with that familiar, warm orchestral fanfare, listeners are drawn into Jack's latest predicament—he's somehow convinced himself that he can mount a theatrical production at the fairgrounds, a notion that sends his hapless entourage into delightful pandemonium. Don Wilson's booming announcer voice introduces the evening with characteristic bombast, while the studio audience crackles with anticipation. What unfolds is a masterclass in comedic timing and ensemble work: Rochester's bone-dry asides, Mary Livingstone's razor-sharp quips, and Benny's own exquisite timing as he navigates between supreme confidence and abject humiliation. The fair setting promises physical comedy gold—the sounds of carnival attractions, livestock, and slapstick confusion swirl around Jack's increasingly desperate attempts to maintain dignity and control.</p>
+          <p>Picture this: January 13th, 1946, and Jack Benny's carefully constructed world of comic misery is about to collide spectacularly with the rural chaos of a state fair. As the program opens with that familiar, warm orchestral fanfare, listeners are drawn into Jack's latest predicament—he's somehow convinced himself that he can mount a theatrical production at the fairgrounds, a notion that sends his hapless entourage into delightful pandemonium. Don Wilson's booming announcer voice introduces the evening with characteristic bombast, while the studio audience crackles with anticipation. What unfolds is a masterclass in comedic timing and ensemble work: Rochester's bone-dry asides, Mary Livingstone's razor-sharp quips, and Benny's own exquisite timing as he navigates between supreme confidence and abject humiliation. The fair setting promises physical comedy gold—the sounds of carnival attractions, livestock, and slapstick confusion swirl around Jack's increasingly desperate attempts to maintain dignity and control.</p>
 <p>Coming in the first full year after World War II's end, this episode captures radio in its golden moment, when millions of Americans gathered around their sets for an evening of sophisticated, intelligent laughter. The Jack Benny Program had perfected the formula that made radio comedy legendary: a tight ensemble, sharp writers, and a star willing to make himself the perpetual butt of the joke. Benny's willingness to be portrayed as vain, stingy, and hapless—even as his real-life reputation stood at the opposite extreme—created an irresistible dynamic that television would later attempt to replicate.</p>
 <p>This is radio at its best: no laugh track, no canned applause, just the genuine roar of a live audience and the genius of timing preserved in acetate. Tune in to witness why America couldn't wait for Thursday nights.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

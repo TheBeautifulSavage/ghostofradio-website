@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1946 01 06 Rose Bowl Game — The Jack Benny Program | Ghost of Radio</title>
+  <title>Rose Bowl Game — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1946 01 06 Rose Bowl Game — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1946 01 06 Rose Bowl Game — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1946 01 06 Rose Bowl Game — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1946</span>
           </div>
-          <h1 class="episode__title">Jb 1946 01 06 Rose Bowl Game</h1>
+          <h1 class="episode__title">Rose Bowl Game</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - Rose Bowl Game (January 6, 1946)</p>
-<p>Picture this: it's New Year's Day, 1946, and Jack Benny's program takes you straight to the Rose Bowl in Pasadena, where the Alabama Crimson Tide faces the USC Trojans in what promises to be an unforgettable match. But this isn't just any sports broadcast—it's filtered through Jack's incomparable comic sensibility, complete with his trademark fumbling attempts at play-by-play commentary, Phil Harris's irreverent wisecracks from the sidelines, and Rochester's deadpan observations that somehow manage to steal every scene. Expect the usual chaos: Don Wilson's booming announcements drowning out crucial moments, Mary Livingstone's cutting remarks about Jack's vanity, and the perpetual tension between Jack's desperate desire to appear knowledgeable and his absolute cluelessness about football. The energy crackles with post-war optimism and unscripted hilarity as America's favorite miser navigates the grandeur of Pasadena's most glamorous sporting event.</p>
+          <p>Picture this: it's New Year's Day, 1946, and Jack Benny's program takes you straight to the Rose Bowl in Pasadena, where the Alabama Crimson Tide faces the USC Trojans in what promises to be an unforgettable match. But this isn't just any sports broadcast—it's filtered through Jack's incomparable comic sensibility, complete with his trademark fumbling attempts at play-by-play commentary, Phil Harris's irreverent wisecracks from the sidelines, and Rochester's deadpan observations that somehow manage to steal every scene. Expect the usual chaos: Don Wilson's booming announcements drowning out crucial moments, Mary Livingstone's cutting remarks about Jack's vanity, and the perpetual tension between Jack's desperate desire to appear knowledgeable and his absolute cluelessness about football. The energy crackles with post-war optimism and unscripted hilarity as America's favorite miser navigates the grandeur of Pasadena's most glamorous sporting event.</p>
 <p>This episode captures The Jack Benny Program at a pivotal moment—1946 marked America's triumphant return to normalcy after five years of wartime austerity, and radio remained the nation's heartbeat for entertainment and connection. Jack's genius lay in transforming any scenario, from Rose Bowls to grocery shopping, into vehicles for character-driven comedy that made listeners feel like they were eavesdropping on conversations among friends. His ensemble cast—Rochester, Mary, Phil, and the others—had developed such perfect chemistry that their interactions felt spontaneous and infinitely rewatchable, even across the airwaves.</p>
 <p>This is must-listen radio from comedy's golden age, when a simple premise and talented performers could captivate millions. Tune in and discover why Jack Benny's programs remain enduring classics, proof that great comedy never ages.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

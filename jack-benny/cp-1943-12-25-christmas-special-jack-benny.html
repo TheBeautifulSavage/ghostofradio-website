@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cp 1943 12 25 Christmas Special Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Christmas Special Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Cp 1943 12 25 Christmas Special Jack Benny — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Cp 1943 12 25 Christmas Special Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Cp 1943 12 25 Christmas Special Jack Benny — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Cp 1943 12 25 Christmas Special Jack Benny</h1>
+          <h1 class="episode__title">Christmas Special Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Christmas Special (December 25, 1943)</p>
-<p>Picture this: it's Christmas Day, 1943, and across America families huddle around their radios for comfort and laughter during wartime. Jack Benny returns with his beloved cast for a holiday special that promises the perfect blend of warmth and comedic mischief. Expect the usual delightful chaos—Mary Livingstone's sharp wit cutting through Jack's vanity, Don Wilson's booming announcer voice, and Rochester van Jones delivering deadpan wisdom that steals every scene. There's talk of an elaborate gift-giving scheme, musical interludes from the orchestra, and the kind of miserly schemes that have made Jack's character legendary. On this Christmas broadcast, listeners will find themselves transported from their living rooms to Jack's world, where the holidays mean not sentimentality, but rather the perfect opportunity for comedic gold. The show captures something essential: entertainment that lifts spirits without demanding much, just the sound of trusted friends gathered together.</p>
+          <p>Picture this: it's Christmas Day, 1943, and across America families huddle around their radios for comfort and laughter during wartime. Jack Benny returns with his beloved cast for a holiday special that promises the perfect blend of warmth and comedic mischief. Expect the usual delightful chaos—Mary Livingstone's sharp wit cutting through Jack's vanity, Don Wilson's booming announcer voice, and Rochester van Jones delivering deadpan wisdom that steals every scene. There's talk of an elaborate gift-giving scheme, musical interludes from the orchestra, and the kind of miserly schemes that have made Jack's character legendary. On this Christmas broadcast, listeners will find themselves transported from their living rooms to Jack's world, where the holidays mean not sentimentality, but rather the perfect opportunity for comedic gold. The show captures something essential: entertainment that lifts spirits without demanding much, just the sound of trusted friends gathered together.</p>
 <p>By 1943, The Jack Benny Program had already become an American institution, having launched a decade earlier with a revolutionary format that blended character comedy with variety entertainment. What set Jack apart from other comedians was his impeccable timing and his willingness to play the fool—his miserliness, his vanity, his terrible violin playing—all became running gags that listeners anticipated with genuine affection. This Christmas special, broadcast during the shadow of World War II, carries particular poignancy; radio had become America's primary source of morale and connection, and Jack Benny understood that responsibility. His December 25th broadcast would have meant something profound to soldiers overseas and families separated by wartime circumstances.</p>
 <p>Don't miss this glimpse into an era when radio comedy was an art form, when a master like Jack Benny could make millions laugh simultaneously. Tune in and experience the magic that made Tuesday nights must-listen radio across the nation.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1940 05 12 Returning From New York By Plane — The Jack Benny Program | Ghost of Radio</title>
+  <title>Returning From New York By Plane — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1940 05 12 Returning From New York By Plane — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1940 05 12 Returning From New York By Plane — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1940 05 12 Returning From New York By Plane — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1940</span>
           </div>
-          <h1 class="episode__title">Jb 1940 05 12 Returning From New York By Plane</h1>
+          <h1 class="episode__title">Returning From New York By Plane</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Returning From New York By Plane (May 12, 1940)</p>
-<p>Picture yourself settling into your favorite chair on a Sunday evening, the warm glow of the radio dial calling you to another evening of sophisticated comedy with America's most beloved miser. In this delightful May 1940 broadcast, Jack Benny finds himself airborne, returning from New York with his faithful valet Rochester, and the cramped quarters of a commercial airliner prove to be the perfect incubator for comedic chaos. As the plane climbs through the clouds, Jack's legendary penny-pinching instincts collide spectacularly with the unexpected situations only air travel can conjure—expect the sharp-edged banter that made Benny a household name, punctuated by the impeccable timing that would influence comedians for generations to come. The airplane setting itself becomes a character, cramped, unfamiliar, and ripe with possibilities for Jack to navigate with his characteristic blend of vanity and self-deprecation.</p>
+          <p>Picture yourself settling into your favorite chair on a Sunday evening, the warm glow of the radio dial calling you to another evening of sophisticated comedy with America's most beloved miser. In this delightful May 1940 broadcast, Jack Benny finds himself airborne, returning from New York with his faithful valet Rochester, and the cramped quarters of a commercial airliner prove to be the perfect incubator for comedic chaos. As the plane climbs through the clouds, Jack's legendary penny-pinching instincts collide spectacularly with the unexpected situations only air travel can conjure—expect the sharp-edged banter that made Benny a household name, punctuated by the impeccable timing that would influence comedians for generations to come. The airplane setting itself becomes a character, cramped, unfamiliar, and ripe with possibilities for Jack to navigate with his characteristic blend of vanity and self-deprecation.</p>
 <p>By 1940, The Jack Benny Program had already established itself as radio's reigning comedy variety show, a program that proved audiences craved intelligent humor over slapstick. What made Benny's program revolutionary was its character-driven comedy—Jack himself was the butt of most jokes, a vain, miserly violinist whose fictional universe included a supporting cast of memorable personalities who existed nowhere else on radio. The show's emphasis on situation comedy over isolated gags set the template for comedy programs to follow. Each episode was a carefully constructed playlet where plot mattered, where character consistency created running gags across seasons, and where the scripts reflected Benny's own creative input.</p>
 <p>Tune in to experience why Jack Benny remained radio's supreme comedian throughout the golden age, where a simple airplane journey becomes an unforgettable journey through wit, charm, and perfectly timed comedy. This is entertainment as it was meant to be heard.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

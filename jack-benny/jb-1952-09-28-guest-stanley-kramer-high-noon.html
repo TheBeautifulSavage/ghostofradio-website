@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1952 09 28 Guest Stanley Kramer High Noon — The Jack Benny Program | Ghost of Radio</title>
+  <title>Guest Stanley Kramer High Noon — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1952 09 28 Guest Stanley Kramer High Noon — The Jack Benny Program (NBC/CBS, 1952). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1952 09 28 Guest Stanley Kramer High Noon — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1952 09 28 Guest Stanley Kramer High Noon — The Jack Benny Program (NBC/CBS, 1952). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1952</span>
           </div>
-          <h1 class="episode__title">Jb 1952 09 28 Guest Stanley Kramer High Noon</h1>
+          <h1 class="episode__title">Guest Stanley Kramer High Noon</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,9 +71,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - September 28, 1952</p>
-<p>Step into the living room with Jack Benny on this crisp autumn evening as the maestro welcomes Hollywood's visionary producer Stanley Kramer to discuss his gripping new western, *High Noon*. Expect the usual comic mayhem—Jack's stammering protests, Mary Livingstone's razor-sharp quips, Don Wilson's booming announcements, and Rochester's perfectly timed asides—all swirling around genuine conversation about Kramer's bold gamble on a Gary Cooper picture that defies the typical gunslinger formula. The banter crackles with that peculiar alchemy only Benny could conjure, where genuine admiration for a fellow entertainer mingles with relentless ribbing about Kramer's artistic pretensions and Hollywood ego.</p>
-<p>By 1952, *The Jack Benny Program* had become America's most trusted weekly visit—a 20-minute refuge of consistent hilarity in an uncertain era just emerging from the Korean War. Jack's radio kingdom had weathered economic depression and global conflict by remaining defiantly focused on character and timing rather than topical jokes. When he pivoted from NBC to CBS in 1948, listeners followed by the millions, their bond unshakeable. That loyalty wasn't mere nostalgia; it reflected a deep gratitude for Benny's willingness to keep the show flexible enough to celebrate Hollywood's newest achievements while maintaining the sacred rituals—Jack's violin lessons, his comic feuds, his enduring marriage to Mary—that made home feel a little warmer.</p>
+          <p>Step into the living room with Jack Benny on this crisp autumn evening as the maestro welcomes Hollywood's visionary producer Stanley Kramer to discuss his gripping new western, High Noon. Expect the usual comic mayhem—Jack's stammering protests, Mary Livingstone's razor-sharp quips, Don Wilson's booming announcements, and Rochester's perfectly timed asides—all swirling around genuine conversation about Kramer's bold gamble on a Gary Cooper picture that defies the typical gunslinger formula. The banter crackles with that peculiar alchemy only Benny could conjure, where genuine admiration for a fellow entertainer mingles with relentless ribbing about Kramer's artistic pretensions and Hollywood ego.</p>
+<p>By 1952, The Jack Benny Program had become America's most trusted weekly visit—a 20-minute refuge of consistent hilarity in an uncertain era just emerging from the Korean War. Jack's radio kingdom had weathered economic depression and global conflict by remaining defiantly focused on character and timing rather than topical jokes. When he pivoted from NBC to CBS in 1948, listeners followed by the millions, their bond unshakeable. That loyalty wasn't mere nostalgia; it reflected a deep gratitude for Benny's willingness to keep the show flexible enough to celebrate Hollywood's newest achievements while maintaining the sacred rituals—Jack's violin lessons, his comic feuds, his enduring marriage to Mary—that made home feel a little warmer.</p>
 <p>This episode captures radio comedy at its zenith: a moment when mass entertainment retained genuine wit, when a guest appearance meant genuine conversation peppered with mischief, and when Jack Benny's name on the dial promised nothing less than excellence. Tune in and discover why millions considered this their appointment with America's finest comedian.</p>
         </div>
 
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

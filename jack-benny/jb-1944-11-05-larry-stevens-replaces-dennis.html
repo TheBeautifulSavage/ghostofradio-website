@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1944 11 05 Larry Stevens Replaces Dennis — The Jack Benny Program | Ghost of Radio</title>
+  <title>Larry Stevens Replaces Dennis — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1944 11 05 Larry Stevens Replaces Dennis — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1944 11 05 Larry Stevens Replaces Dennis — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1944 11 05 Larry Stevens Replaces Dennis — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jb 1944 11 05 Larry Stevens Replaces Dennis</h1>
+          <h1 class="episode__title">Larry Stevens Replaces Dennis</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: November 5, 1944</p>
-<p>Picture this: it's Sunday evening, the war is raging overseas, and Americans are tuning in their radios for an escape into the world of radio's most beloved miser. On this particular November night in 1944, listeners will encounter something unexpected—a behind-the-scenes crisis that becomes part of the show itself. Larry Stevens steps into the role of Jack's hapless announcer, replacing the regular Dennis Day, and the resulting scramble provides comedy gold as the ensemble cast improvises around the shuffle. The audience at NBC's studio can feel the electricity of live broadcast unpredictability; will this substitute performer keep up with Jack's perfectly timed insults and the razor-sharp banter that's become the show's hallmark? The tension is real, the laughter is genuine, and every listener in America becomes a part of this spontaneous theatrical moment.</p>
+          <p>Picture this: it's Sunday evening, the war is raging overseas, and Americans are tuning in their radios for an escape into the world of radio's most beloved miser. On this particular November night in 1944, listeners will encounter something unexpected—a behind-the-scenes crisis that becomes part of the show itself. Larry Stevens steps into the role of Jack's hapless announcer, replacing the regular Dennis Day, and the resulting scramble provides comedy gold as the ensemble cast improvises around the shuffle. The audience at NBC's studio can feel the electricity of live broadcast unpredictability; will this substitute performer keep up with Jack's perfectly timed insults and the razor-sharp banter that's become the show's hallmark? The tension is real, the laughter is genuine, and every listener in America becomes a part of this spontaneous theatrical moment.</p>
 <p>The Jack Benny Program had become an institution by 1944, the gold standard of radio comedy that set the template for everything that followed. Benny's genius lay not just in his timing or his trademark violin (which he famously played badly), but in his willingness to let the audience feel they were in on a secret—that radio could be a living, breathing thing where chaos could erupt and become entertainment. This episode exemplifies that magic: the show was more than scripted jokes; it was a live performance where anything could happen, and the audience trusted Jack and his cast to turn mishap into mirthful entertainment.</p>
 <p>Don't miss this fascinating window into radio's golden age, where the unexpected becomes unforgettable. Tune in and experience how Jack Benny and company transformed a last-minute casting change into comedy that crackles with authentic spontaneity—something television's perfect takes could never quite capture.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

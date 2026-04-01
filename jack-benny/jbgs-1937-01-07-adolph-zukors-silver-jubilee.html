@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1937 01 07 Adolph Zukor's Silver Jubilee — The Jack Benny Program | Ghost of Radio</title>
+  <title>Adolph Zukor's Silver Jubilee — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1937 01 07 Adolph Zukor's Silver Jubilee — The Jack Benny Program (NBC/CBS, 1937). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1937 01 07 Adolph Zukor's Silver Jubilee — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1937 01 07 Adolph Zukor's Silver Jubilee — The Jack Benny Program (NBC/CBS, 1937). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1937</span>
           </div>
-          <h1 class="episode__title">Jbgs 1937 01 07 Adolph Zukor's Silver Jubilee</h1>
+          <h1 class="episode__title">Adolph Zukor's Silver Jubilee</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Jack Benny's Silver Screen Spectacular</p>
-<p>Picture this: it's January 7th, 1937, and Jack Benny has commandeered the NBC airwaves to celebrate Hollywood royalty. Adolph Zukor, the legendary founder of Paramount Pictures, is turning twenty-five years into an institution, and Jack—ever the comic provocateur—has assembled his regular cast to roast, praise, and hilariously undermine the mogul in equal measure. You'll hear Don Wilson's booming announcer's voice introducing the evening's festivities, Mary Livingstone's sharp wit cutting through Jack's carefully constructed pretense of reverence, and Rochester's deadpan asides from the wings. The studio audience is practically vibrating with anticipation. What does one give the man who built an empire? Jack's answer: comedy, music, and the kind of affectionate ribbing only Hollywood insiders could pull off.</p>
+          <p>Picture this: it's January 7th, 1937, and Jack Benny has commandeered the NBC airwaves to celebrate Hollywood royalty. Adolph Zukor, the legendary founder of Paramount Pictures, is turning twenty-five years into an institution, and Jack—ever the comic provocateur—has assembled his regular cast to roast, praise, and hilariously undermine the mogul in equal measure. You'll hear Don Wilson's booming announcer's voice introducing the evening's festivities, Mary Livingstone's sharp wit cutting through Jack's carefully constructed pretense of reverence, and Rochester's deadpan asides from the wings. The studio audience is practically vibrating with anticipation. What does one give the man who built an empire? Jack's answer: comedy, music, and the kind of affectionate ribbing only Hollywood insiders could pull off.</p>
 <p>By 1937, The Jack Benny Program had already secured its place as America's premier comedy vehicle, a masterclass in ensemble timing and character work that would influence radio and later television for decades to come. Zukor himself was a titan—a silent film pioneer who'd shaped the very medium that made stars of people like Benny. This episode captures something essential about the era: the collision between old Hollywood and the new comedic sensibility that radio was fostering, the genuine respect beneath the jokes, and Jack's particular genius for balancing deference with irreverence. It's a time capsule of 1930s showbusiness mythology.</p>
 <p>Tune in to experience an evening when the biggest names in entertainment gathered to celebrate one of their own. You'll hear why audiences made this program appointment radio, week after week. This is Jack Benny at his finest—quick-witted, impeccably timed, and utterly charming.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

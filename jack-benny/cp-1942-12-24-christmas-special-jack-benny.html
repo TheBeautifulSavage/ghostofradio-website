@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cp 1942 12 24 Christmas Special Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Christmas Special Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Cp 1942 12 24 Christmas Special Jack Benny — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Cp 1942 12 24 Christmas Special Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Cp 1942 12 24 Christmas Special Jack Benny — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Cp 1942 12 24 Christmas Special Jack Benny</h1>
+          <h1 class="episode__title">Christmas Special Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Christmas Special (December 24, 1942)</p>
-<p>Picture this: it's Christmas Eve, 1942, and across America, families huddled around their radio sets are about to spend an evening with Jack Benny—a man perpetually broke despite his success, vain beyond measure, and whose 39-year-old vanity was already legendary. This special broadcast crackles with holiday warmth and the signature comedic timing that made Benny radio's reigning monarch. Expect musical interludes from the NBC orchestra, witty banter with Mary Livingstone and Rochester, and the kind of satirical humor that somehow manages to be both sophisticated and deeply human. The episode captures that rare magic of wartime radio—entertainment as an escape, yes, but also as a unifying national ritual during America's darkest hours.</p>
+          <p>Picture this: it's Christmas Eve, 1942, and across America, families huddled around their radio sets are about to spend an evening with Jack Benny—a man perpetually broke despite his success, vain beyond measure, and whose 39-year-old vanity was already legendary. This special broadcast crackles with holiday warmth and the signature comedic timing that made Benny radio's reigning monarch. Expect musical interludes from the NBC orchestra, witty banter with Mary Livingstone and Rochester, and the kind of satirical humor that somehow manages to be both sophisticated and deeply human. The episode captures that rare magic of wartime radio—entertainment as an escape, yes, but also as a unifying national ritual during America's darkest hours.</p>
 <p>What makes this Christmas broadcast particularly resonant is its timing. In December 1942, American soldiers were fighting across two continents, and families listened to radio with an intensity born of anxiety and longing. Benny's show had become essential to American morale precisely because it offered something real: genuine laughter from genuine people. Unlike the glossy entertainment of later decades, this was live performance—spontaneous, occasionally flubbed, and all the more charming for it. Benny's character remained consistent across his legendary career: the miserly straight man who served as the perfect foil for his ensemble's comedic genius. This Christmas special represents Benny at his commercial and creative peak, when his fifteen-minute weekly broadcasts could captivate forty million listeners.</p>
 <p>Tune in this Christmas Eve and experience radio's golden age exactly as it was meant to be heard—live, immediate, and wrapped in the warmth of a comedy that still resonates across the decades.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

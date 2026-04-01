@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phaf 1947 12 21 Guest Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Guest Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Phaf 1947 12 21 Guest Jack Benny — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Phaf 1947 12 21 Guest Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Phaf 1947 12 21 Guest Jack Benny — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1947</span>
           </div>
-          <h1 class="episode__title">Phaf 1947 12 21 Guest Jack Benny</h1>
+          <h1 class="episode__title">Guest Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - December 21, 1947</p>
-<p>Settle into your favorite chair and adjust that radio dial for an evening of impeccable comedic timing and vaudeville charm as Jack Benny welcomes the holiday season with characteristic wit and warmth. This December broadcast captures the show at its golden apex—Benny's unmistakable pause hangs in the air like fresh snowfall, his fiddle gags land with surgical precision, and the familiar cast of characters (that sputtering Maxwell automobile, the perpetually exasperated Mary Livingstone, and Rochester's razor-sharp rejoinders) deliver the kind of ensemble comedy that had American families gathered around their sets night after night. With Christmas just around the corner, expect seasonal material woven seamlessly between musical numbers and the kind of sophisticated humor that appealed equally to children and their grandparents—no broad slapstick here, just the polished craft of radio's supreme comedian at work.</p>
+          <p>Settle into your favorite chair and adjust that radio dial for an evening of impeccable comedic timing and vaudeville charm as Jack Benny welcomes the holiday season with characteristic wit and warmth. This December broadcast captures the show at its golden apex—Benny's unmistakable pause hangs in the air like fresh snowfall, his fiddle gags land with surgical precision, and the familiar cast of characters (that sputtering Maxwell automobile, the perpetually exasperated Mary Livingstone, and Rochester's razor-sharp rejoinders) deliver the kind of ensemble comedy that had American families gathered around their sets night after night. With Christmas just around the corner, expect seasonal material woven seamlessly between musical numbers and the kind of sophisticated humor that appealed equally to children and their grandparents—no broad slapstick here, just the polished craft of radio's supreme comedian at work.</p>
 <p>By 1947, The Jack Benny Program had evolved into an American institution spanning fifteen years and multiple networks. Jack's understated delivery and willingness to mock his own vanity revolutionized comedy timing on the airwaves, influencing generations of performers yet to come. The show's format—blending comedy sketches, musical performances, and running gags that rewarded loyal listeners—became the template for countless programs. What made Benny extraordinary was his ability to find humor in the mundane and his generous treatment of his supporting cast, who often received the biggest laughs. This episode survives from an era when radio was America's primary entertainment, when Sunday nights meant tuning in to witness something genuinely special.</p>
 <p>Don't miss this perfectly preserved snapshot of American entertainment at its height. Hear the live studio audience respond in real time, feel the electricity of performers working without a net, and experience why Jack Benny remained radio's undisputed master for two decades. This is comedy as it was meant to be heard.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

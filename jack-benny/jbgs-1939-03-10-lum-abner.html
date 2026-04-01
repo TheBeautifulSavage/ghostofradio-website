@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1939 03 10 Lum & Abner — The Jack Benny Program | Ghost of Radio</title>
+  <title>Lum & Abner — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1939 03 10 Lum & Abner — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1939 03 10 Lum & Abner — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1939 03 10 Lum & Abner — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jbgs 1939 03 10 Lum & Abner</h1>
+          <h1 class="episode__title">Lum & Abner</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: March 10, 1939</p>
-<p>Picture this: it's a Friday night in March, and America is gathered around their radios as Jack Benny takes the stage with a devilish grin. Tonight, he's welcoming the beloved duo of Lum and Abner—the crackerjack country philosophers from Pine Ridge, Arkansas—and you can practically hear the collision of Jack's urbane, rapid-fire wit meeting the folksy drawl and homespun logic of Chester Lauck and Norris Gail. What follows is a glorious half-hour of comedic chaos: Jack's perpetual stinginess clashing with Lum's schemes, Mary Livingstone's sharp one-liners cutting through the mayhem, and Rochester's droll observations providing the perfect counterpoint. The guest stars trade barbs with Jack's carefully constructed persona of vain mediocrity, and there's an electricity in the studio that crackles through your speaker—the spontaneous brilliance of live radio comedy at its absolute peak.</p>
+          <p>Picture this: it's a Friday night in March, and America is gathered around their radios as Jack Benny takes the stage with a devilish grin. Tonight, he's welcoming the beloved duo of Lum and Abner—the crackerjack country philosophers from Pine Ridge, Arkansas—and you can practically hear the collision of Jack's urbane, rapid-fire wit meeting the folksy drawl and homespun logic of Chester Lauck and Norris Gail. What follows is a glorious half-hour of comedic chaos: Jack's perpetual stinginess clashing with Lum's schemes, Mary Livingstone's sharp one-liners cutting through the mayhem, and Rochester's droll observations providing the perfect counterpoint. The guest stars trade barbs with Jack's carefully constructed persona of vain mediocrity, and there's an electricity in the studio that crackles through your speaker—the spontaneous brilliance of live radio comedy at its absolute peak.</p>
 <p>This 1939 broadcast captures The Jack Benny Program at a golden moment, when radio comedy had evolved into an art form that blended scripted sophistication with the unpredictability of live performance. Jack's show had become America's most beloved program, a weekly ritual that transcended mere entertainment—it was appointment listening. The appearance of Lum and Abner, themselves radio legends with their own devoted following, represented a rare meeting of comedy titans, each bringing their distinct regional flavor to Jack's meticulously crafted world.</p>
 <p>Tune in to this classic encounter and experience why millions of Americans abandoned their evening plans to hear what Jack Benny would do next. This is radio comedy when it mattered most, when a single broadcast could define a nation's sense of humor.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

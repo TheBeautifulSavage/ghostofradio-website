@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 11 23 Thanksgiving Day Dinner — The Jack Benny Program | Ghost of Radio</title>
+  <title>Thanksgiving Day Dinner — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 11 23 Thanksgiving Day Dinner — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 11 23 Thanksgiving Day Dinner — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 11 23 Thanksgiving Day Dinner — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 11 23 Thanksgiving Day Dinner</h1>
+          <h1 class="episode__title">Thanksgiving Day Dinner</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Thanksgiving Day Dinner (November 23, 1941)</p>
-<p>Step into Jack's home on this crisp November evening as the cast gathers to prepare what promises to be the most chaotic Thanksgiving dinner in radio history. With Mary Livingstone fretting over the turkey, Rochester scheming in the kitchen, Phil Harris and Don Wilson offering dubious culinary advice, and the inevitable disaster lurking around every corner, listeners will find themselves caught between Jack's penny-pinching attempts to economize on the feast and the mounting catastrophes that threaten to ruin the holiday. What emerges is a masterclass in comedic timing and ensemble acting—the kind of warm, domestic chaos that made America tune in week after week, hungry for both laughs and the comforting reminder of family traditions during increasingly uncertain times.</p>
+          <p>Step into Jack's home on this crisp November evening as the cast gathers to prepare what promises to be the most chaotic Thanksgiving dinner in radio history. With Mary Livingstone fretting over the turkey, Rochester scheming in the kitchen, Phil Harris and Don Wilson offering dubious culinary advice, and the inevitable disaster lurking around every corner, listeners will find themselves caught between Jack's penny-pinching attempts to economize on the feast and the mounting catastrophes that threaten to ruin the holiday. What emerges is a masterclass in comedic timing and ensemble acting—the kind of warm, domestic chaos that made America tune in week after week, hungry for both laughs and the comforting reminder of family traditions during increasingly uncertain times.</p>
 <p>This broadcast comes just two weeks before Pearl Harbor would transform the nation, making this episode a rare snapshot of American life in those final innocent days of 1941. The Jack Benny Program had already become the gold standard of radio comedy, a show that proved sophisticated humor could reach millions without descending into slapstick or crude gags. Benny's creation of a consistent fictional universe—complete with recurring characters, running gags about his legendary stinginess, and the perpetual romantic tension with his wife Mary—set the template for situation comedy that would later dominate television. The writing was sharp, the ensemble cast had achieved perfect chemistry, and Jack's impeccable sense of comic timing made even the simplest joke land with precision.</p>
 <p>Don't miss this opportunity to spend Thanksgiving with Jack Benny and company as they did it best—live, spontaneous, and absolutely hilarious. Settle in with the warmth of a classic broadcast and discover why millions of Americans made this their most cherished radio appointment.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

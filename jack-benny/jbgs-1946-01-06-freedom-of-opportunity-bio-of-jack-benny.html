@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1946 01 06 Freedom Of Opportunity Bio Of Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Freedom Of Opportunity Bio Of Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1946 01 06 Freedom Of Opportunity Bio Of Jack Benny — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1946 01 06 Freedom Of Opportunity Bio Of Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1946 01 06 Freedom Of Opportunity Bio Of Jack Benny — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1946</span>
           </div>
-          <h1 class="episode__title">Jbgs 1946 01 06 Freedom Of Opportunity Bio Of Jack Benny</h1>
+          <h1 class="episode__title">Freedom Of Opportunity Bio Of Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Freedom of Opportunity</p>
-<p>Step into the CBS studios on January 6th, 1946, where Jack Benny sits down for an intimate conversation that peels back the curtain on his own American success story. In "Freedom of Opportunity: A Biography of Jack Benny," the nation's favorite miser trades his trademark stinginess for genuine reflection, guiding listeners through the humble beginnings that shaped radio's most beloved entertainer. With the warm, reassuring tone that made him a household name, Benny reveals how a young vaudeville performer named Benjamin Kubelsky clawed his way from obscurity to become the undisputed king of comedy broadcasting. The episode crackles with the electricity of authentic storytelling—no sketch comedy, no Rochester's witty asides—just Benny's voice, honest and gracious, sharing the pivotal moments that defined a life in entertainment during radio's golden age.</p>
+          <p>Step into the CBS studios on January 6th, 1946, where Jack Benny sits down for an intimate conversation that peels back the curtain on his own American success story. In "Freedom of Opportunity: A Biography of Jack Benny," the nation's favorite miser trades his trademark stinginess for genuine reflection, guiding listeners through the humble beginnings that shaped radio's most beloved entertainer. With the warm, reassuring tone that made him a household name, Benny reveals how a young vaudeville performer named Benjamin Kubelsky clawed his way from obscurity to become the undisputed king of comedy broadcasting. The episode crackles with the electricity of authentic storytelling—no sketch comedy, no Rochester's witty asides—just Benny's voice, honest and gracious, sharing the pivotal moments that defined a life in entertainment during radio's golden age.</p>
 <p>This broadcast comes at a pivotal moment in American history, as the nation emerged victorious from World War II and looked toward an optimistic future. The Jack Benny Program itself had become a Thursday night institution, beloved by millions who tuned in faithfully to hear the interplay between Benny and his ensemble cast—the perpetually exasperated Don Wilson, the loyal Rochester, and the orchestra under Phil Harris's baton. By 1946, Benny had already spent fourteen years defining what radio comedy could be: sophisticated yet accessible, character-driven yet spontaneous. This biographical episode represents the show at the height of its powers, celebrating the very American dream of reinvention and ambition that had captivated Depression-era audiences and kept them laughing through wartime uncertainty.</p>
 <p>Don't miss this rare opportunity to hear Jack Benny in his own words, reflecting on stardom with the same impeccable timing and warmth that made him radio's greatest entertainer. It's a conversation you won't want to miss.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

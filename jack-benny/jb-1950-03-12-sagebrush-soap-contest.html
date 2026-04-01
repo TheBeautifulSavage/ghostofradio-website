@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1950 03 12 Sagebrush Soap Contest — The Jack Benny Program | Ghost of Radio</title>
+  <title>Sagebrush Soap Contest — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1950 03 12 Sagebrush Soap Contest — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1950 03 12 Sagebrush Soap Contest — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1950 03 12 Sagebrush Soap Contest — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1950</span>
           </div>
-          <h1 class="episode__title">Jb 1950 03 12 Sagebrush Soap Contest</h1>
+          <h1 class="episode__title">Sagebrush Soap Contest</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Sagebrush Soap Contest (March 12, 1950)</p>
-<p>Picture yourself huddled around the radio on a Saturday evening as Jack Benny's familiar theme swells through your living room—and this week, the maestro has stumbled into absolute chaos. A promotional contest for Sagebrush Soap has gone spectacularly awry, and Jack finds himself caught between his own comedic schemes, his exasperated announcer Don Wilson's attempts to salvage the sponsor's dignity, and the relentless comedic timing of his supporting cast. What begins as a simple advertising tie-in spirals into the kind of beautifully constructed mayhem that made Benny a household name: misunderstandings pile upon misunderstandings, his stingy character is tested by the prospect of prize money, and Mary Livingstone delivers withering one-liners that cut right through Jack's pretensions. The chemistry between cast members crackles with the ease of seasoned performers who've refined their craft through hundreds of broadcasts.</p>
+          <p>Picture yourself huddled around the radio on a Saturday evening as Jack Benny's familiar theme swells through your living room—and this week, the maestro has stumbled into absolute chaos. A promotional contest for Sagebrush Soap has gone spectacularly awry, and Jack finds himself caught between his own comedic schemes, his exasperated announcer Don Wilson's attempts to salvage the sponsor's dignity, and the relentless comedic timing of his supporting cast. What begins as a simple advertising tie-in spirals into the kind of beautifully constructed mayhem that made Benny a household name: misunderstandings pile upon misunderstandings, his stingy character is tested by the prospect of prize money, and Mary Livingstone delivers withering one-liners that cut right through Jack's pretensions. The chemistry between cast members crackles with the ease of seasoned performers who've refined their craft through hundreds of broadcasts.</p>
 <p>By 1950, The Jack Benny Program had become the gold standard of American radio comedy—a show that influenced everyone from Bob Hope to the writers who would later shape television's greatest comedies. What set Benny apart was his willingness to make himself the butt of the joke, his impeccable timing inherited from vaudeville, and his ability to build comedy through character rather than just gags. His supporting cast, particularly Livingstone's caustic wit, elevated every script into something resembling scripted conversation rather than mere joke-telling.</p>
 <p>This episode exemplifies everything that made Benny's program essential listening for millions of Americans. Experience the warmth, the laughter, and the perfectly timed pauses that made radio's golden age truly golden. Tune in and discover why Jack Benny remained America's favorite miser for over two decades.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 02 16 Jack's Birthday — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack's Birthday — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 02 16 Jack's Birthday — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 02 16 Jack's Birthday — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 02 16 Jack's Birthday — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 02 16 Jack's Birthday</h1>
+          <h1 class="episode__title">Jack's Birthday</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Jack Benny Program: Jack's Birthday (February 16, 1941)</p>
-<p>Step into the world of Jack Benny's Beverly Hills home as the maestro celebrates another year—though, as any faithful listener knows, he'll never admit to aging beyond thirty-nine. This delightful episode finds the entire cast gathered for an unexpected birthday surprise, with Mary Livingstone, Don Wilson, Rochester, and Phil Harris all conspiring to embarrass their notoriously vain employer. What unfolds is a masterclass in comedic timing and character-driven humor: Jack's stammering protests, Rochester's deadpan asides about his boss's vanity, and the inevitable musical interludes that showcase the show's variety format. The tension builds beautifully between genuine affection for Jack and relentless ribbing about his age, creating those moments of warmth beneath the laughter that made the program beloved across America's living rooms.</p>
+          <p>Step into the world of Jack Benny's Beverly Hills home as the maestro celebrates another year—though, as any faithful listener knows, he'll never admit to aging beyond thirty-nine. This delightful episode finds the entire cast gathered for an unexpected birthday surprise, with Mary Livingstone, Don Wilson, Rochester, and Phil Harris all conspiring to embarrass their notoriously vain employer. What unfolds is a masterclass in comedic timing and character-driven humor: Jack's stammering protests, Rochester's deadpan asides about his boss's vanity, and the inevitable musical interludes that showcase the show's variety format. The tension builds beautifully between genuine affection for Jack and relentless ribbing about his age, creating those moments of warmth beneath the laughter that made the program beloved across America's living rooms.</p>
 <p>By 1941, The Jack Benny Program had become a national institution, the gold standard of radio comedy that influenced everything that followed. Jack's sophisticated, understated style—his famous pause, his ability to mine comedy from his own character flaws—represented a quantum leap beyond vaudeville slapstick. The show's intimate ensemble cast, particularly his real-life wife Mary Livingstone and the incomparable Rochester (Eddie Anderson), created a family dynamic that listeners felt they were genuinely part of. This episode exemplifies why the program dominated ratings and awards throughout the 1940s, proving that radio comedy could be intelligent, character-based, and humanly resonant.</p>
 <p>Don't miss this charming slice of Golden Age radio, where birthdays are celebrated with the kind of genuine camaraderie that made Jack Benny's world feel like home to millions. Tune in and rediscover why this program remained America's favorite for over two decades.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

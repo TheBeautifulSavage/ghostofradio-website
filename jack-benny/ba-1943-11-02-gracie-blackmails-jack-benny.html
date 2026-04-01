@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ba 1943 11 02 Gracie Blackmails Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Gracie Blackmails Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Ba 1943 11 02 Gracie Blackmails Jack Benny — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ba 1943 11 02 Gracie Blackmails Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Ba 1943 11 02 Gracie Blackmails Jack Benny — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Ba 1943 11 02 Gracie Blackmails Jack Benny</h1>
+          <h1 class="episode__title">Gracie Blackmails Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Gracie Blackmails Jack Benny"</p>
-<p>Picture this: it's November 2nd, 1943, and across America, families are gathering around their radios for an evening of laughter—but tonight, Jack Benny's world is in delicious chaos. The setup is irresistible: Gracie Allen, that lovably scattered woman with the illogical logic that somehow always wins the day, has stumbled upon a secret that could ruin Jack's carefully cultivated reputation. What follows is a masterclass in comedic timing and wordplay as Jack squirms, schemes, and surrenders to Gracie's relentless charm. The question isn't whether Jack will pay—it's how much his pride will cost him. Expect rapid-fire banter, slapstick sound effects that paint pictures in your mind, and the kind of chemistry between performers that made radio comedy an art form.</p>
+          <p>Picture this: it's November 2nd, 1943, and across America, families are gathering around their radios for an evening of laughter—but tonight, Jack Benny's world is in delicious chaos. The setup is irresistible: Gracie Allen, that lovably scattered woman with the illogical logic that somehow always wins the day, has stumbled upon a secret that could ruin Jack's carefully cultivated reputation. What follows is a masterclass in comedic timing and wordplay as Jack squirms, schemes, and surrenders to Gracie's relentless charm. The question isn't whether Jack will pay—it's how much his pride will cost him. Expect rapid-fire banter, slapstick sound effects that paint pictures in your mind, and the kind of chemistry between performers that made radio comedy an art form.</p>
 <p>This episode captures The Jack Benny Program at the height of its popularity, a show that dominated American entertainment throughout the 1930s and '40s. By 1943, Benny's ensemble—including Mary Livingstone, Phil Harris, and Dennis Day—had become as familiar to listeners as their own neighbors. Guest appearances like this one from Gracie Allen and her husband George Burns were radio events, creating that special electricity that happened when comedy's sharpest minds collided. The show's influence on American humor cannot be overstated; it pioneered the sitcom format and proved that radio could deliver sophisticated comedy alongside music and drama.</p>
 <p>Don't miss this chance to experience why millions tuned in faithfully every week. Press play and step back to November 1943, when Jack Benny's embarrassment was America's greatest treasure.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

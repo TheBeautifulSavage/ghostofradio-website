@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1954 12 19 Christmas In Palm Springs — The Jack Benny Program | Ghost of Radio</title>
+  <title>Christmas In Palm Springs — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1954 12 19 Christmas In Palm Springs — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1954 12 19 Christmas In Palm Springs — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1954 12 19 Christmas In Palm Springs — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1954</span>
           </div>
-          <h1 class="episode__title">Jb 1954 12 19 Christmas In Palm Springs</h1>
+          <h1 class="episode__title">Christmas In Palm Springs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Christmas in Palm Springs (December 19, 1954)</p>
-<p>Picture this: it's Christmas week, 1954, and America's most beloved miser has decided to spend the holidays in sunny Palm Springs rather than shivering through winter back east. But of course, nothing goes smoothly for Jack Benny. In this uproarious episode, Jack's carefully laid plans for a quiet, economical holiday—naturally, he's found a way to stay for free—collide spectacularly with the season's spirit of generosity. Expect Don Wilson's booming announcer voice to set the scene, Mary Livingstone's razor-sharp wit to keep Jack perpetually off-balance, and Rochester's deadpan asides to steal every scene. The show crackles with the kind of clever writing and impeccable timing that made The Jack Benny Program the gold standard of radio comedy, as Jack's penny-pinching schemes inevitably unravel in the warm desert sun.</p>
+          <p>Picture this: it's Christmas week, 1954, and America's most beloved miser has decided to spend the holidays in sunny Palm Springs rather than shivering through winter back east. But of course, nothing goes smoothly for Jack Benny. In this uproarious episode, Jack's carefully laid plans for a quiet, economical holiday—naturally, he's found a way to stay for free—collide spectacularly with the season's spirit of generosity. Expect Don Wilson's booming announcer voice to set the scene, Mary Livingstone's razor-sharp wit to keep Jack perpetually off-balance, and Rochester's deadpan asides to steal every scene. The show crackles with the kind of clever writing and impeccable timing that made The Jack Benny Program the gold standard of radio comedy, as Jack's penny-pinching schemes inevitably unravel in the warm desert sun.</p>
 <p>By 1954, The Jack Benny Program had already become an institution—a show so perfectly calibrated that it transcended the medium itself, proving that comedy didn't need visual gags or slapstick to become immortal. Jack's character was deceptively simple: a cheapskate constantly mortified by his own stinginess, yet somehow endearing in his vanity and cowardice. The supporting cast—Mary's caustic commentary, Rochester's loyal but sardonic butler, Don's stentorian authority—formed a perfectly balanced ensemble that worked together like jazz musicians in prime form. This December broadcast captures the show at its peak, when Jack's formula had become so refined that every pause, every awkward silence, every perfectly timed interruption felt inevitable yet surprising.</p>
 <p>So tune in to this timeless Christmas episode and hear why millions of Americans wouldn't dare miss Jack Benny on the radio. It's comedy perfection wrapped up in tinsel and delivered with a wink and a groan.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

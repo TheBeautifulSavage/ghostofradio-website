@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1944 10 29 Allen's Alley — The Jack Benny Program | Ghost of Radio</title>
+  <title>Allen's Alley — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1944 10 29 Allen's Alley — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1944 10 29 Allen's Alley — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1944 10 29 Allen's Alley — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jb 1944 10 29 Allen's Alley</h1>
+          <h1 class="episode__title">Allen's Alley</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,9 +71,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Allen's Alley (October 29, 1944)</p>
-<p>Step into the wood-paneled living room at 230 North Canon Drive on this crisp autumn evening and prepare yourself for mayhem. Jack's promised to take a casual stroll down Allen's Alley—that charming Hollywood neighborhood frequented by a most peculiar cast of characters—but casual and Jack Benny have never occupied the same room. Expect the unexpected as he encounters his usual gallery of eccentrics: the man-eating Mrs. Nussbaum, the eternally broke Senor Wences with his ventriloquist dummy, and whatever other oddball fixtures inhabit this corner of his imagination. The comedy crackles with that distinctly 1940s brand of rapid-fire wit and perfectly timed pauses that only Benny could orchestrate, while the live studio audience roars with the infectious energy of wartime Americans hungry for laughter.</p>
-<p>This episode arrives at a remarkable moment in radio history—the height of the Golden Age when *The Jack Benny Program* reigned as one of America's most beloved entertainments. With the nation deep in World War II, families huddled around their sets seeking escape and comfort, and Benny's show delivered both in abundance. His genius lay not in slapstick or cheap laughs, but in character work and impeccable timing; watching him milk a moment of silence for comedy was like witnessing a master at work. By 1944, Benny had perfected his craft over more than a decade on air, surrounding himself with a repertory company of skilled comedians and voice actors who understood the subtleties of radio performance.</p>
+          <p>Step into the wood-paneled living room at 230 North Canon Drive on this crisp autumn evening and prepare yourself for mayhem. Jack's promised to take a casual stroll down Allen's Alley—that charming Hollywood neighborhood frequented by a most peculiar cast of characters—but casual and Jack Benny have never occupied the same room. Expect the unexpected as he encounters his usual gallery of eccentrics: the man-eating Mrs. Nussbaum, the eternally broke Senor Wences with his ventriloquist dummy, and whatever other oddball fixtures inhabit this corner of his imagination. The comedy crackles with that distinctly 1940s brand of rapid-fire wit and perfectly timed pauses that only Benny could orchestrate, while the live studio audience roars with the infectious energy of wartime Americans hungry for laughter.</p>
+<p>This episode arrives at a remarkable moment in radio history—the height of the Golden Age when The Jack Benny Program reigned as one of America's most beloved entertainments. With the nation deep in World War II, families huddled around their sets seeking escape and comfort, and Benny's show delivered both in abundance. His genius lay not in slapstick or cheap laughs, but in character work and impeccable timing; watching him milk a moment of silence for comedy was like witnessing a master at work. By 1944, Benny had perfected his craft over more than a decade on air, surrounding himself with a repertory company of skilled comedians and voice actors who understood the subtleties of radio performance.</p>
 <p>Tune in to experience why generations of listeners made this their appointment radio, and why critics still regard Jack Benny as perhaps the finest comedian radio ever produced. This particular October night captures the Program at its finest—relaxed, confident, and absolutely hilarious.</p>
         </div>
 
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

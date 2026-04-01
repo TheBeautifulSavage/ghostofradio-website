@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1939 10 08 Dennis Day's First Show (west) — The Jack Benny Program | Ghost of Radio</title>
+  <title>Dennis Day's First Show (west) — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1939 10 08 Dennis Day's First Show (west) — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1939 10 08 Dennis Day's First Show (west) — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1939 10 08 Dennis Day's First Show (west) — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jb 1939 10 08 Dennis Day's First Show (west)</h1>
+          <h1 class="episode__title">Dennis Day's First Show (west)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Dennis Day's First Show</p>
-<p>Tune in on this crisp autumn evening of October 8th, 1939, as Jack Benny's carefully orchestrated world of comic chaos welcomes a fresh voice to the ensemble. Dennis Day, the youthful Irish tenor with the impish charm and ready laugh, makes his debut on the program, and you can practically hear the electricity crackle through the airwaves as the established cast—Mary Livingstone's dry wit, Phil Harris's smooth-talking swagger, and Rochester's unflappable wisdom—react to their new colleague. What unfolds is a masterclass in ensemble comedy, as Benny orchestrates the perfect blend of musical numbers, running gags, and situational humor that have made Sunday nights must-listen radio. The tension between Jack's penny-pinching vanity and Dennis's youthful exuberance creates comedic gold, while the supporting players circle like seasoned professionals, each waiting for their moment to land the perfect joke.</p>
+          <p>Tune in on this crisp autumn evening of October 8th, 1939, as Jack Benny's carefully orchestrated world of comic chaos welcomes a fresh voice to the ensemble. Dennis Day, the youthful Irish tenor with the impish charm and ready laugh, makes his debut on the program, and you can practically hear the electricity crackle through the airwaves as the established cast—Mary Livingstone's dry wit, Phil Harris's smooth-talking swagger, and Rochester's unflappable wisdom—react to their new colleague. What unfolds is a masterclass in ensemble comedy, as Benny orchestrates the perfect blend of musical numbers, running gags, and situational humor that have made Sunday nights must-listen radio. The tension between Jack's penny-pinching vanity and Dennis's youthful exuberance creates comedic gold, while the supporting players circle like seasoned professionals, each waiting for their moment to land the perfect joke.</p>
 <p>By 1939, The Jack Benny Program had evolved into more than mere entertainment—it was America's weekly appointment with sophisticated, character-driven comedy. Benny's genius lay not in rapid-fire jokes but in the construction of a believable social world populated by unforgettable personalities. Dennis Day's arrival represents a pivotal moment in the show's evolution, introducing an innocence and musical talent that would become central to the program's identity throughout the 1940s. This was radio at its zenith: live performance, ensemble acting, and the kind of genuine spontaneity that keeps audiences on the edge of their seats, never knowing what might happen next.</p>
 <p>Don't miss this historic moment when a legend was born. Settle into your favorite chair, adjust the dial, and experience the broadcast that launched Dennis Day's legendary radio career while showcasing why Jack Benny's program remained America's favorite Sunday night escape.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

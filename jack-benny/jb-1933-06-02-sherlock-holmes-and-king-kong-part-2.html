@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1933 06 02 Sherlock Holmes And King Kong Part 2 — The Jack Benny Program | Ghost of Radio</title>
+  <title>Sherlock Holmes And King Kong Part 2 — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1933 06 02 Sherlock Holmes And King Kong Part 2 — The Jack Benny Program (NBC/CBS, 1933). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1933 06 02 Sherlock Holmes And King Kong Part 2 — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1933 06 02 Sherlock Holmes And King Kong Part 2 — The Jack Benny Program (NBC/CBS, 1933). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1933</span>
           </div>
-          <h1 class="episode__title">Jb 1933 06 02 Sherlock Holmes And King Kong Part 2</h1>
+          <h1 class="episode__title">Sherlock Holmes And King Kong Part 2</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program — June 2, 1933: "Sherlock Holmes and King Kong, Part 2"</p>
-<p>As the NBC orchestra swells with dramatic minor chords, listeners tuning in this Friday evening are thrust directly into the climactic conclusion of an audacious two-part mystery. Jack Benny, ever the suave yet bumbling detective, must unravel the tangled threads connecting the world's greatest consulting detective with the terror currently ravaging New York City. Will Sherlock Holmes's deductive brilliance prevail against a creature of such unfathomable power? The script crackles with wit and absurdist humor—Jack's trademark deadpan delivery cutting through moments of genuine suspense, while the sound effects department conjures roars, crashes, and the unmistakable thunder of a giant ape's rampage through Manhattan's streets. Don Wilson's warm announcer's voice and the orchestra's virtuosic playing elevate what might have been mere parody into something genuinely thrilling.</p>
+          <p>As the NBC orchestra swells with dramatic minor chords, listeners tuning in this Friday evening are thrust directly into the climactic conclusion of an audacious two-part mystery. Jack Benny, ever the suave yet bumbling detective, must unravel the tangled threads connecting the world's greatest consulting detective with the terror currently ravaging New York City. Will Sherlock Holmes's deductive brilliance prevail against a creature of such unfathomable power? The script crackles with wit and absurdist humor—Jack's trademark deadpan delivery cutting through moments of genuine suspense, while the sound effects department conjures roars, crashes, and the unmistakable thunder of a giant ape's rampage through Manhattan's streets. Don Wilson's warm announcer's voice and the orchestra's virtuosic playing elevate what might have been mere parody into something genuinely thrilling.</p>
 <p>This episode represents radio comedy at its most ambitious moment. In 1933, with King Kong having just premiered in theaters weeks earlier, The Jack Benny Program captures that unique magic of live radio—where topical humor met literary reference, where highbrow Conan Doyle could collide hilariously with lowbrow monster-movie spectacle. Benny's show had already become the gold standard of American comedy radio, proving that sophisticated humor and mass appeal weren't mutually exclusive. By daring to tackle contemporary cinema and canonical literature simultaneously, Benny demonstrated radio's unparalleled ability to synthesize the cultural moment in real time.</p>
 <p>Don't miss this virtuoso blend of comedy, mystery, and monster-movie mayhem. Tune in as Jack Benny goes head-to-head with the impossible, armed only with his wit, his impeccable timing, and his orchestra's uncanny ability to make the unbelievable feel absolutely real.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

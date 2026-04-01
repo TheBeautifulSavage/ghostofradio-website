@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sus 1953 02 02 Plan X Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Plan X Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Sus 1953 02 02 Plan X Jack Benny — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Sus 1953 02 02 Plan X Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Sus 1953 02 02 Plan X Jack Benny — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1953</span>
           </div>
-          <h1 class="episode__title">Sus 1953 02 02 Plan X Jack Benny</h1>
+          <h1 class="episode__title">Plan X Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Plan X" (February 2, 1953)</p>
-<p>Picture yourself settling into your favorite chair on a Sunday evening in 1953, the warm glow of your radio set casting shadows across the living room. As the opening strains of "Love in Bloom" fill the air, you know you're about to enter Jack Benny's world—a place where nothing is quite as it seems. In "Plan X," our maestro finds himself caught in one of those delightfully absurd predicaments that made millions tune in week after week. The episode crackles with the rapid-fire banter between Jack and his ensemble—the sharp-tongued Mary Livingstone, the ever-eager Eddie Anderson, and the irrepressible announcer Don Wilson—building to comedic moments that land with perfect timing through the airwaves. What begins as a simple situation spirals into increasingly hilarious complications, showcasing the genius of a radio comedy that relied entirely on voices, sound effects, and impeccable comedic pacing.</p>
+          <p>Picture yourself settling into your favorite chair on a Sunday evening in 1953, the warm glow of your radio set casting shadows across the living room. As the opening strains of "Love in Bloom" fill the air, you know you're about to enter Jack Benny's world—a place where nothing is quite as it seems. In "Plan X," our maestro finds himself caught in one of those delightfully absurd predicaments that made millions tune in week after week. The episode crackles with the rapid-fire banter between Jack and his ensemble—the sharp-tongued Mary Livingstone, the ever-eager Eddie Anderson, and the irrepressible announcer Don Wilson—building to comedic moments that land with perfect timing through the airwaves. What begins as a simple situation spirals into increasingly hilarious complications, showcasing the genius of a radio comedy that relied entirely on voices, sound effects, and impeccable comedic pacing.</p>
 <p>By 1953, The Jack Benny Program had become an American institution, having survived the transition from NBC to CBS and evolving seamlessly as radio itself matured. Benny's formula—mining comedy from his own miserliness, his vanity about his age, and his fumbling attempts at self-aggrandizement—struck a universal chord with audiences spanning the Depression through the postwar boom. This particular episode captures the show at its peak, when Benny's seasoned cast moved together like a perfectly rehearsed orchestra, each player knowing exactly when to strike their comedic note.</p>
 <p>Don't miss your chance to experience why Jack Benny commanded a loyal following of over 15 million listeners. Tune in and discover the wit and warmth that defined an era of entertainment.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

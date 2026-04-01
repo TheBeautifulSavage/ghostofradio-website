@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fa 1943 01 10 Jack Benny The Substitute Violinist — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny The Substitute Violinist — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Fa 1943 01 10 Jack Benny The Substitute Violinist — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Fa 1943 01 10 Jack Benny The Substitute Violinist — The Jack Benny Program">
   <meta property="og:description" content="Listen to Fa 1943 01 10 Jack Benny The Substitute Violinist — The Jack Benny Program (NBC/CBS, 1943). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1943</span>
           </div>
-          <h1 class="episode__title">Fa 1943 01 10 Jack Benny The Substitute Violinist</h1>
+          <h1 class="episode__title">Jack Benny The Substitute Violinist</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,9 +71,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "The Substitute Violinist"</p>
-<p>Picture this: January 1943, the heart of wartime America. Jack Benny arrives at the concert hall only to discover his beloved violin has gone missing—and with it, his dignity. What follows is a masterclass in comedic desperation as Jack scrambles to find a replacement violinist before the evening's performance, his trademark stingy nature clashing hilariously with the mounting crisis. Listen as the maestro's smooth-talking schemes unravel in real-time, as Mary Livingstone's knowing quips deflate his pretensions, and as the entire supporting cast—from Rochester's dry wisdom to the orchestra's exasperated patience—circles around Jack like comedic sharks. The tension builds with infectious energy; you can almost hear the audience leaning forward in their seats, wondering how Jack will possibly escape this self-inflicted catastrophe.</p>
-<p>By 1943, *The Jack Benny Program* had become America's favorite half-hour escape, a sanctuary of laughter in an anxious world. Jack's genius lay in his impeccable timing and willingness to be the butt of his own jokes—a revolutionary approach to comedy that made him beloved rather than threatening. His fictional penny-pinching, his vanity about his age (eternally 39), and his passionate-yet-terrible violin playing had become cultural touchstones. This episode perfectly encapsulates why audiences tuned in religiously every Sunday night: genuine warmth wrapped in brilliant comedy, featuring a cast that worked together like a Swiss watch.</p>
+          <p>Picture this: January 1943, the heart of wartime America. Jack Benny arrives at the concert hall only to discover his beloved violin has gone missing—and with it, his dignity. What follows is a masterclass in comedic desperation as Jack scrambles to find a replacement violinist before the evening's performance, his trademark stingy nature clashing hilariously with the mounting crisis. Listen as the maestro's smooth-talking schemes unravel in real-time, as Mary Livingstone's knowing quips deflate his pretensions, and as the entire supporting cast—from Rochester's dry wisdom to the orchestra's exasperated patience—circles around Jack like comedic sharks. The tension builds with infectious energy; you can almost hear the audience leaning forward in their seats, wondering how Jack will possibly escape this self-inflicted catastrophe.</p>
+<p>By 1943, The Jack Benny Program had become America's favorite half-hour escape, a sanctuary of laughter in an anxious world. Jack's genius lay in his impeccable timing and willingness to be the butt of his own jokes—a revolutionary approach to comedy that made him beloved rather than threatening. His fictional penny-pinching, his vanity about his age (eternally 39), and his passionate-yet-terrible violin playing had become cultural touchstones. This episode perfectly encapsulates why audiences tuned in religiously every Sunday night: genuine warmth wrapped in brilliant comedy, featuring a cast that worked together like a Swiss watch.</p>
 <p>Dust off your radio dial and step back into an era when comedy was live, intimate, and utterly unpredictable. "The Substitute Violinist" showcases Jack Benny at his finest—charming, desperate, and absolutely hilarious. This is radio entertainment at its golden best.</p>
         </div>
 
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

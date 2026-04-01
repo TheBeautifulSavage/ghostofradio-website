@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 02 23 Tee Pee Hotel In Palm Springs — The Jack Benny Program | Ghost of Radio</title>
+  <title>Tee Pee Hotel In Palm Springs — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 02 23 Tee Pee Hotel In Palm Springs — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 02 23 Tee Pee Hotel In Palm Springs — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 02 23 Tee Pee Hotel In Palm Springs — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 02 23 Tee Pee Hotel In Palm Springs</h1>
+          <h1 class="episode__title">Tee Pee Hotel In Palm Springs</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Tee Pee Hotel in Palm Springs (February 23, 1941)</p>
-<p>Picture yourself settling into your favorite armchair on a Sunday evening in 1941, radio dial tuned to NBC, as Jack Benny's familiar orchestra swells with that unmistakable theme. Tonight, Jack finds himself stranded at the notoriously shabby Tee Pee Hotel in Palm Springs—a premise ripe for the comic chaos that made Benny a household name. What unfolds is a masterclass in timing and ensemble comedy: Jack's mounting exasperation with every creaking floorboard and suspicious stain, his hapless attempts to maintain dignity in increasingly ludicrous circumstances, and the inevitable parade of colorful hotel employees and fellow guests who seem determined to make his stay as miserable as possible. The sharp-tongued observations, the running gags that build to absurd crescendos, and the chemistry between Benny and his rotating cast of comedic foils—including Rochester's sardonic commentary on Jack's mounting woes—create an evening of laughter that crackles with the energy of live performance.</p>
+          <p>Picture yourself settling into your favorite armchair on a Sunday evening in 1941, radio dial tuned to NBC, as Jack Benny's familiar orchestra swells with that unmistakable theme. Tonight, Jack finds himself stranded at the notoriously shabby Tee Pee Hotel in Palm Springs—a premise ripe for the comic chaos that made Benny a household name. What unfolds is a masterclass in timing and ensemble comedy: Jack's mounting exasperation with every creaking floorboard and suspicious stain, his hapless attempts to maintain dignity in increasingly ludicrous circumstances, and the inevitable parade of colorful hotel employees and fellow guests who seem determined to make his stay as miserable as possible. The sharp-tongued observations, the running gags that build to absurd crescendos, and the chemistry between Benny and his rotating cast of comedic foils—including Rochester's sardonic commentary on Jack's mounting woes—create an evening of laughter that crackles with the energy of live performance.</p>
 <p>By 1941, The Jack Benny Program had become an American institution, pioneering the comedy-variety format that would dominate radio for decades. Benny's genius lay not in punchlines alone, but in character work: his perpetual stinginess, his vanity about his age, his feigned violin mastery—these running threads gave listeners a familiar world to return to weekly. The show's influence cannot be overstated; it proved that radio comedy could be sophisticated, character-driven, and endlessly inventive. This particular episode captures the show at its golden peak, when Benny's formula was perfected and audiences hungered for his particular brand of humor.</p>
 <p>Don't miss this window into 1941's greatest entertainment. Tune in and discover why millions of Americans made The Jack Benny Program appointment radio, night after night.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

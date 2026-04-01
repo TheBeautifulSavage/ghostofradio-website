@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1941 11 15 Nbc 15th Anniversary — The Jack Benny Program | Ghost of Radio</title>
+  <title>Nbc 15th Anniversary — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1941 11 15 Nbc 15th Anniversary — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1941 11 15 Nbc 15th Anniversary — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1941 11 15 Nbc 15th Anniversary — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jbgs 1941 11 15 Nbc 15th Anniversary</h1>
+          <h1 class="episode__title">Nbc 15th Anniversary</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: 15th Anniversary Special (November 15, 1941)</p>
-<p>As America tunes in on this crisp November evening, Jack Benny welcomes listeners to NBC's celebration of fifteen glorious years of comedy and music. The anticipation crackles through the airwaves—tonight promises special guests, unexpected chaos, and the kind of sublime comic timing that has made Jack Benny a household name. Expect Rochester's perfectly timed deadpan replies, Mary Livingstone's sharp wit cutting through Jack's vanity, and Don Wilson's booming announcer voice punctuating the mayhem. The studio audience roars with every perfectly placed pause, every aside, every moment of Jack's exaggerated self-importance collapsing into farce. This isn't merely a radio program; it's a national institution celebrating itself, a testament to an art form that has become woven into the fabric of American life during both prosperous times and the shadow of global conflict.</p>
+          <p>As America tunes in on this crisp November evening, Jack Benny welcomes listeners to NBC's celebration of fifteen glorious years of comedy and music. The anticipation crackles through the airwaves—tonight promises special guests, unexpected chaos, and the kind of sublime comic timing that has made Jack Benny a household name. Expect Rochester's perfectly timed deadpan replies, Mary Livingstone's sharp wit cutting through Jack's vanity, and Don Wilson's booming announcer voice punctuating the mayhem. The studio audience roars with every perfectly placed pause, every aside, every moment of Jack's exaggerated self-importance collapsing into farce. This isn't merely a radio program; it's a national institution celebrating itself, a testament to an art form that has become woven into the fabric of American life during both prosperous times and the shadow of global conflict.</p>
 <p>The Jack Benny Program stands as one of broadcasting's most significant achievements, pioneering the situation comedy format that would define entertainment for decades. Benny's revolutionary approach—building comedy around character and relationships rather than mere jokes—elevated radio comedy from vaudeville remnants into something genuinely sophisticated. By 1941, with the nation's attention increasingly divided between economic recovery and overseas turmoil, Benny's gentle, intelligent humor offered a crucial anchor of normalcy and joy. That he and his cast have maintained such consistent quality across fifteen years speaks to their artistry and the unshakeable bond between performer and listener that only radio could forge.</p>
 <p>Don't miss this landmark broadcast, a rare window into entertainment history at the moment it's being made. Tune in and discover why America has kept Jack Benny company, week after week, through laughter and candlelight.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

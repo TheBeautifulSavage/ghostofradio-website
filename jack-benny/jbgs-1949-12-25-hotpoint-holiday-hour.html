@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1949 12 25 Hotpoint Holiday Hour — The Jack Benny Program | Ghost of Radio</title>
+  <title>Hotpoint Holiday Hour — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1949 12 25 Hotpoint Holiday Hour — The Jack Benny Program (NBC/CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1949 12 25 Hotpoint Holiday Hour — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1949 12 25 Hotpoint Holiday Hour — The Jack Benny Program (NBC/CBS, 1949). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1949</span>
           </div>
-          <h1 class="episode__title">Jbgs 1949 12 25 Hotpoint Holiday Hour</h1>
+          <h1 class="episode__title">Hotpoint Holiday Hour</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Hotpoint Holiday Hour (December 25, 1949)</p>
-<p>Picture yourself gathered around a wooden radio cabinet on Christmas morning, 1949, as Jack Benny's familiar, slightly nasal voice crackles through the speaker with holiday warmth. This special Hotpoint-sponsored episode promises all the comic chaos listeners have come to expect: Rochester's deadpan wisecracks about Jack's legendary stinginess, Mary Livingstone's pointed jabs at her husband's vanity, and Don Wilson's booming announcer platitudes interrupted by perfectly-timed gags. What unfolds is a masterclass in ensemble comedy, where the magic lies not in elaborate sketches but in the exquisite timing between characters, the pregnant pauses that make audiences roar, and the running jokes that have become as familiar to millions as their own family feuds. The holiday setting provides fertile ground for Jack's misadventures—expect tensions over gift-giving, complaints about the cold, and at least one extended bit about Jack's cheapness that somehow never gets old.</p>
+          <p>Picture yourself gathered around a wooden radio cabinet on Christmas morning, 1949, as Jack Benny's familiar, slightly nasal voice crackles through the speaker with holiday warmth. This special Hotpoint-sponsored episode promises all the comic chaos listeners have come to expect: Rochester's deadpan wisecracks about Jack's legendary stinginess, Mary Livingstone's pointed jabs at her husband's vanity, and Don Wilson's booming announcer platitudes interrupted by perfectly-timed gags. What unfolds is a masterclass in ensemble comedy, where the magic lies not in elaborate sketches but in the exquisite timing between characters, the pregnant pauses that make audiences roar, and the running jokes that have become as familiar to millions as their own family feuds. The holiday setting provides fertile ground for Jack's misadventures—expect tensions over gift-giving, complaints about the cold, and at least one extended bit about Jack's cheapness that somehow never gets old.</p>
 <p>By 1949, The Jack Benny Program had become an American institution, bridging the transition from radio's golden age even as television loomed on the horizon. Jack's formula—urbane humor laced with vulnerability, a talented ensemble cast with genuine chemistry, and sponsor integration that felt organic rather than intrusive—represented radio comedy at its finest. This particular broadcast captures the show at peak popularity, when Jack Benny's name was synonymous with sophisticated American humor.</p>
 <p>For anyone seeking to understand the DNA of modern comedy, this Christmas episode is essential listening. Experience why millions tuned in weekly, and discover how a program built on timing, character, and the artistry of the pause could captivate an entire nation.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

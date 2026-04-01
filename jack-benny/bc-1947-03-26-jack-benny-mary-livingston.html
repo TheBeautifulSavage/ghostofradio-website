@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bc 1947 03 26 Jack Benny, Mary Livingston — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny, Mary Livingston — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Bc 1947 03 26 Jack Benny, Mary Livingston — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Bc 1947 03 26 Jack Benny, Mary Livingston — The Jack Benny Program">
   <meta property="og:description" content="Listen to Bc 1947 03 26 Jack Benny, Mary Livingston — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1947</span>
           </div>
-          <h1 class="episode__title">Bc 1947 03 26 Jack Benny, Mary Livingston</h1>
+          <h1 class="episode__title">Jack Benny, Mary Livingston</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program – March 26, 1947</p>
-<p>Step into the familiar comfort of Jack's world on this spring evening in 1947, where the eternal tension between a man's vanity and his wife's wry observations plays out in perfect comedic timing. As Mary Livingston delivers her trademark barbs with surgical precision, you can almost hear Jack's exaggerated sigh of resignation—that peculiar squint of his face crumpling in mock despair. What starts as an innocent moment in the Benny household inevitably spirals into the delightful chaos his listeners had come to crave, with Rochester's dry interjections and the supporting cast's impeccable ensemble work creating layers of humor that reward careful listening. The band swells, the audience roars with recognition, and you're transported to a world where a man's cheapness is philosophy, where a violin is both a treasured dream and a running joke, and where marriage is a comedy written fresh each week.</p>
+          <p>Step into the familiar comfort of Jack's world on this spring evening in 1947, where the eternal tension between a man's vanity and his wife's wry observations plays out in perfect comedic timing. As Mary Livingston delivers her trademark barbs with surgical precision, you can almost hear Jack's exaggerated sigh of resignation—that peculiar squint of his face crumpling in mock despair. What starts as an innocent moment in the Benny household inevitably spirals into the delightful chaos his listeners had come to crave, with Rochester's dry interjections and the supporting cast's impeccable ensemble work creating layers of humor that reward careful listening. The band swells, the audience roars with recognition, and you're transported to a world where a man's cheapness is philosophy, where a violin is both a treasured dream and a running joke, and where marriage is a comedy written fresh each week.</p>
 <p>By 1947, The Jack Benny Program had already established itself as radio's most sophisticated comedy, a show that understood that the best humor emerges from character and relationship rather than mere gags. Benny had revolutionized the medium by playing a version of himself—vain, stingy, and endlessly vulnerable—surrounded by characters who knew him intimately enough to skewer his pretensions. Mary Livingston, his real-life wife performing as his radio spouse, brought an authenticity to their exchanges that was simply unmatched; their chemistry wasn't manufactured in a script room but lived and refined over fifteen years of partnership.</p>
 <p>This episode represents The Jack Benny Program at the height of its powers, a show that dominated NBC and CBS airwaves, spawned a legendary film career, and proved that radio comedy could be intelligent, character-driven, and timelessly entertaining. Tune in and discover why millions of Americans made this their appointment listening.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

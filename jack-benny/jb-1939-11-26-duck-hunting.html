@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1939 11 26 Duck Hunting — The Jack Benny Program | Ghost of Radio</title>
+  <title>Duck Hunting — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1939 11 26 Duck Hunting — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1939 11 26 Duck Hunting — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1939 11 26 Duck Hunting — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jb 1939 11 26 Duck Hunting</h1>
+          <h1 class="episode__title">Duck Hunting</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Jack Benny Program - November 26, 1939</p>
-<p>Picture yourself settling into the living room on a late autumn evening, the radio glowing warm amber in the darkened parlor, as Jack Benny prepares for a hunting expedition that promises nothing but comedic catastrophe. In this delightfully absurd episode, America's most famously stingy entertainer ventures into the wilderness with his trusty long-suffering sidekick Rochester, encountering all manner of misadventure in pursuit of a duck. What unfolds is pure vaudeville translated into invisible action—the crackle of gunfire, the plaintive quacking, the inevitable pratfalls—all rendered through Benny's impeccable comic timing and the brilliant sound effects that make listeners *see* the chaos unfolding before them. You can almost feel the November chill and hear the indignant protests of Rochester as Jack's plans unravel in typical fashion.</p>
+          <p>Picture yourself settling into the living room on a late autumn evening, the radio glowing warm amber in the darkened parlor, as Jack Benny prepares for a hunting expedition that promises nothing but comedic catastrophe. In this delightfully absurd episode, America's most famously stingy entertainer ventures into the wilderness with his trusty long-suffering sidekick Rochester, encountering all manner of misadventure in pursuit of a duck. What unfolds is pure vaudeville translated into invisible action—the crackle of gunfire, the plaintive quacking, the inevitable pratfalls—all rendered through Benny's impeccable comic timing and the brilliant sound effects that make listeners see the chaos unfolding before them. You can almost feel the November chill and hear the indignant protests of Rochester as Jack's plans unravel in typical fashion.</p>
 <p>By 1939, The Jack Benny Program had become the gold standard of American radio comedy, perfecting a formula that balanced slapstick absurdity with genuine character warmth. Benny's genius lay in his ability to make himself the butt of the joke—eternally vain, perpetually broke despite tremendous wealth, and hopelessly inept at everything he attempted. His supporting cast, including the irreplaceable Rochester van Jones, had become as beloved as Jack himself, their chemistry honed through years of live performance. This episode represents the show at its peak, when Benny's influence stretched across the entire landscape of American entertainment, influencing everyone from Bob Hope to the writers of future television comedy.</p>
 <p>Join Jack Benny and the gang for an evening of laughter that transcends nearly a century. This is radio comedy at its finest—intelligent, warmly human, and timelessly hilarious.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

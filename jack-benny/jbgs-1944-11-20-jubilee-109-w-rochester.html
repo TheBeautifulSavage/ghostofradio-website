@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1944 11 20 Jubilee #109 W Rochester — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jubilee #109 W Rochester — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1944 11 20 Jubilee #109 W Rochester — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1944 11 20 Jubilee #109 W Rochester — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1944 11 20 Jubilee #109 W Rochester — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jbgs 1944 11 20 Jubilee #109 W Rochester</h1>
+          <h1 class="episode__title">Jubilee #109 W Rochester</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Jubilee #109 (November 20, 1944)</p>
-<p>Step into a radio studio on a November evening in 1944, and you'll find Jack Benny in his element—surrounded by his trusted ensemble as they broadcast live to millions of Americans huddled around their sets. Tonight's Jubilee broadcast promises the signature chaos audiences have come to expect: Rochester's dry quips will needle Jack about his miserliness, Don Wilson's booming voice will punctuate comedic disasters, and Mary Livingstone will deliver perfectly timed zingers that leave Jack sputtering in mock indignation. With a war still raging overseas and the nation's morale hanging on moments of genuine laughter, this broadcast becomes something more than mere entertainment—it's a lifeline of joy delivered straight into American living rooms.</p>
+          <p>Step into a radio studio on a November evening in 1944, and you'll find Jack Benny in his element—surrounded by his trusted ensemble as they broadcast live to millions of Americans huddled around their sets. Tonight's Jubilee broadcast promises the signature chaos audiences have come to expect: Rochester's dry quips will needle Jack about his miserliness, Don Wilson's booming voice will punctuate comedic disasters, and Mary Livingstone will deliver perfectly timed zingers that leave Jack sputtering in mock indignation. With a war still raging overseas and the nation's morale hanging on moments of genuine laughter, this broadcast becomes something more than mere entertainment—it's a lifeline of joy delivered straight into American living rooms.</p>
 <p>By 1944, The Jack Benny Program had already become an institution, a weekly ritual that transcended its humble beginnings in 1932. What made Benny revolutionary was his willingness to puncture his own dignity. While other comedians relied on slapstick or cheap laughs, Benny built his empire on the premise that he was the butt of the joke—vain, cheap, and hopelessly earnest in his mediocrity. This particular episode, recorded during the height of World War II, captures the show at its creative peak, when the ensemble's timing had become almost telepathic and the writing sharp enough to cut through wartime anxiety.</p>
 <p>If you've never experienced the raw energy of live comedy radio at its finest, or if you're already devoted to Jack's particular brand of humor, this Jubilee broadcast is essential listening. Sit back, close your eyes, and let the golden age of radio transport you to a time when a man's vanity and a supporting cast's perfect comedic timing could unite an entire nation in genuine, unguarded laughter.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

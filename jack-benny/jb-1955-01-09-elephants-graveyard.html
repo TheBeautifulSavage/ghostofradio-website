@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1955 01 09 Elephants' Graveyard — The Jack Benny Program | Ghost of Radio</title>
+  <title>Elephants' Graveyard — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1955 01 09 Elephants' Graveyard — The Jack Benny Program (NBC/CBS, 1955). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1955 01 09 Elephants' Graveyard — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1955 01 09 Elephants' Graveyard — The Jack Benny Program (NBC/CBS, 1955). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1955</span>
           </div>
-          <h1 class="episode__title">Jb 1955 01 09 Elephants' Graveyard</h1>
+          <h1 class="episode__title">Elephants' Graveyard</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Elephants' Graveyard" (January 9, 1955)</p>
-<p>Picture yourself settling into your favorite chair on a crisp winter evening, tuning your radio dial to the familiar opening strains of "Love in Bloom." This week, Jack faces an predicament both hilarious and touching: a traveling circus has come to town, and a aging elephant—destined for the mysterious "graveyard" of circus legend—has escaped and taken refuge in Jack's backyard. What follows is a masterclass in radio comedy as Jack attempts to hide the enormous creature from both his ever-suspicious neighbor Fred Allen and the increasingly frantic circus owner. Don Bestor's orchestra swells as the tension mounts, punctuated by Mary Livingstone's exasperated asides and the perfectly-timed sound effects of an elephant's trumpet call echoing through Jack's meticulously managed home.</p>
+          <p>Picture yourself settling into your favorite chair on a crisp winter evening, tuning your radio dial to the familiar opening strains of "Love in Bloom." This week, Jack faces an predicament both hilarious and touching: a traveling circus has come to town, and a aging elephant—destined for the mysterious "graveyard" of circus legend—has escaped and taken refuge in Jack's backyard. What follows is a masterclass in radio comedy as Jack attempts to hide the enormous creature from both his ever-suspicious neighbor Fred Allen and the increasingly frantic circus owner. Don Bestor's orchestra swells as the tension mounts, punctuated by Mary Livingstone's exasperated asides and the perfectly-timed sound effects of an elephant's trumpet call echoing through Jack's meticulously managed home.</p>
 <p>By 1955, The Jack Benny Program had become an American institution, a show so beloved that its cast had successfully transitioned from radio's golden age into television while keeping millions devoted to the original broadcasts. This particular episode exemplifies why: beneath the slapstick humor lurks genuine pathos, a reflection of radio's unique ability to combine comedy with unexpected emotional depth. Jack's misguided mercy toward a forgotten animal reveals the character's hidden heart—something his perpetually vain on-air persona typically conceals from his audience.</p>
 <p>This is quintessential Jack Benny: witty, warmhearted, and utterly unpredictable. Whether you're a devoted fan who's followed Jack since the early '30s or a newcomer curious about what made radio comedy legendary, "Elephants' Graveyard" is a perfect example of why millions tuned in faithfully each week. Adjust your dial and prepare for an evening of laughter that still resonates across the decades.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

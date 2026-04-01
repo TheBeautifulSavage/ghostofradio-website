@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cp 1946 01 31 Chico Marx, Jack Benny, Lina Romay — The Jack Benny Program | Ghost of Radio</title>
+  <title>Chico Marx, Jack Benny, Lina Romay — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Cp 1946 01 31 Chico Marx, Jack Benny, Lina Romay — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Cp 1946 01 31 Chico Marx, Jack Benny, Lina Romay — The Jack Benny Program">
   <meta property="og:description" content="Listen to Cp 1946 01 31 Chico Marx, Jack Benny, Lina Romay — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1946</span>
           </div>
-          <h1 class="episode__title">Cp 1946 01 31 Chico Marx, Jack Benny, Lina Romay</h1>
+          <h1 class="episode__title">Chico Marx, Jack Benny, Lina Romay</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program - January 31, 1946</p>
-<p>Step into the living rooms of post-war America for an evening of unscripted hilarity as Jack Benny welcomes the incomparable Chico Marx to the stage. This is radio at its most unpredictable—the moment when Chico's mischievous piano playing and rapid-fire wordplay collide with Jack's meticulously timed deadpan delivery, creating comedic chaos that not even the script can contain. Add the sultry vocal talents of Lina Romay, and you've got the recipe for an evening that crackles with spontaneous energy. Listeners will find themselves caught between Chico's relentless scheming, Jack's exasperated protests, and the musical interludes that punctuate the mayhem. The band swells, the audience roars, and somewhere in the middle of it all, Jack's violin makes an inevitable and disastrous appearance.</p>
+          <p>Step into the living rooms of post-war America for an evening of unscripted hilarity as Jack Benny welcomes the incomparable Chico Marx to the stage. This is radio at its most unpredictable—the moment when Chico's mischievous piano playing and rapid-fire wordplay collide with Jack's meticulously timed deadpan delivery, creating comedic chaos that not even the script can contain. Add the sultry vocal talents of Lina Romay, and you've got the recipe for an evening that crackles with spontaneous energy. Listeners will find themselves caught between Chico's relentless scheming, Jack's exasperated protests, and the musical interludes that punctuate the mayhem. The band swells, the audience roars, and somewhere in the middle of it all, Jack's violin makes an inevitable and disastrous appearance.</p>
 <p>By 1946, The Jack Benny Program had become American radio's most beloved comedy variety show, a weekly ritual where millions gathered around their sets to escape the lingering shadows of wartime. Jack Benny's genius lay not in flashy gags but in character—his perpetual cheapness, his vanity about his age, his legendary stinginess with his cast—all delivered with surgical precision. Guest appearances like this one with Chico Marx represented the golden age of radio, when vaudeville's greatest talents brought their unpolished spontaneity directly into American homes, creating a shared national experience that television would later try to replicate but never quite capture.</p>
 <p>This is radio as it was meant to be heard: live, unpredictable, and absolutely essential. Tune in and discover why families crowded around their Philco sets every Sunday night, why Jack Benny became a household name, and why moments like these still resonate nearly eight decades later.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

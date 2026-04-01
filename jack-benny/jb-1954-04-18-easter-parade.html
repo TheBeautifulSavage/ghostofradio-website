@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1954 04 18 Easter Parade — The Jack Benny Program | Ghost of Radio</title>
+  <title>Easter Parade — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1954 04 18 Easter Parade — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1954 04 18 Easter Parade — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1954 04 18 Easter Parade — The Jack Benny Program (NBC/CBS, 1954). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1954</span>
           </div>
-          <h1 class="episode__title">Jb 1954 04 18 Easter Parade</h1>
+          <h1 class="episode__title">Easter Parade</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Easter Parade (April 18, 1954)</p>
-<p>Picture the living rooms of America on this crisp spring evening in 1954—the radio dial glowing warm amber as Jack Benny's unmistakable voice crackles through the speaker with characteristic self-deprecation and impeccable timing. Tonight's installment, "Easter Parade," promises the usual blend of musical interludes, comedic sketches, and the beloved ensemble cast that has made this program a Sunday night institution. Listen as Jack tangles with the ever-exasperated Rochester, endures the violin virtuosity of Professor LeBlanc, and finds himself inevitably outmaneuvered by the sharp wit of Mary Livingstone. The tension between Jack's vanity and his desperate budget—his famous stinginess perpetually at odds with his desire to cut a fashionable figure—sets the perfect stage for Easter season hijinks and romantic misadventures.</p>
+          <p>Picture the living rooms of America on this crisp spring evening in 1954—the radio dial glowing warm amber as Jack Benny's unmistakable voice crackles through the speaker with characteristic self-deprecation and impeccable timing. Tonight's installment, "Easter Parade," promises the usual blend of musical interludes, comedic sketches, and the beloved ensemble cast that has made this program a Sunday night institution. Listen as Jack tangles with the ever-exasperated Rochester, endures the violin virtuosity of Professor LeBlanc, and finds himself inevitably outmaneuvered by the sharp wit of Mary Livingstone. The tension between Jack's vanity and his desperate budget—his famous stinginess perpetually at odds with his desire to cut a fashionable figure—sets the perfect stage for Easter season hijinks and romantic misadventures.</p>
 <p>By 1954, The Jack Benny Program had already redefined American comedy, transplanting the sophisticated, character-driven humor of vaudeville and theater into the intimate medium of radio. What began as a simple variety show in 1932 had evolved into something far more subtle and clever than the slapstick and pie-throwing that dominated early radio comedy. Jack's genius lay not in shouting jokes but in the pregnant pause, the knowing inflection, the meticulously crafted foible of his perpetually thirty-nine-year-old persona. This episode arrives at the show's creative zenith, when every cast member—from Dennis Day's Irish tenor to Phil Harris's smooth charm—operated as a seamless comedic ensemble.</p>
 <p>Don your finest Easter bonnet and settle in for an evening of genuine wit and warmth. This is radio comedy at its finest: intelligent, heartfelt, and timelessly funny.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

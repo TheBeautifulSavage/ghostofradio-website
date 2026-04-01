@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ec 1947 01 30 Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Ec 1947 01 30 Jack Benny — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ec 1947 01 30 Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Ec 1947 01 30 Jack Benny — The Jack Benny Program (NBC/CBS, 1947). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1947</span>
           </div>
-          <h1 class="episode__title">Ec 1947 01 30 Jack Benny</h1>
+          <h1 class="episode__title">Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program – January 30, 1947</p>
-<p>Picture yourself huddled around a wooden radio cabinet on a cold winter evening in 1947, the warm glow of the dial illuminating your living room as Jack Benny's familiar voice crackles through the speaker with that unmistakable blend of self-deprecating charm and impeccable comic timing. In this episode, Jack finds himself entangled in yet another absurd predicament—perhaps a disagreement with his perpetually exasperated butler Rochester, or another scheme involving his miserly nature that unravels into hilarious chaos. The studio audience's laughter, recorded live before a packed house, roars with infectious delight as the cast—including the sultry Mary Livingstone, the bewildered Fred Allen, and the melancholic Mel Blanc—weave their magic through sketches and musical interludes. What begins as a simple premise inevitably spirals into comedic gold, with Jack's impeccable timing and his ability to mine humor from his own character flaws creating moments of pure radio brilliance.</p>
+          <p>Picture yourself huddled around a wooden radio cabinet on a cold winter evening in 1947, the warm glow of the dial illuminating your living room as Jack Benny's familiar voice crackles through the speaker with that unmistakable blend of self-deprecating charm and impeccable comic timing. In this episode, Jack finds himself entangled in yet another absurd predicament—perhaps a disagreement with his perpetually exasperated butler Rochester, or another scheme involving his miserly nature that unravels into hilarious chaos. The studio audience's laughter, recorded live before a packed house, roars with infectious delight as the cast—including the sultry Mary Livingstone, the bewildered Fred Allen, and the melancholic Mel Blanc—weave their magic through sketches and musical interludes. What begins as a simple premise inevitably spirals into comedic gold, with Jack's impeccable timing and his ability to mine humor from his own character flaws creating moments of pure radio brilliance.</p>
 <p>By 1947, The Jack Benny Program had already established itself as the gold standard of American comedy radio, a fifteen-year phenomenon that defined how humor could work in the medium. Jack's genius lay not in punchlines alone, but in character—his portrayal of a vain, stingy, yet somehow deeply likable version of himself became the template for modern sitcoms. This episode represents radio at its creative peak, when the medium could showcase talent with nothing but voices, timing, and the audiences' imagination.</p>
 <p>Tune in to experience why millions of Americans made this their weekly appointment with laughter, to hear the program that influenced everything from television comedy to modern stand-up. This is radio history at its most entertaining.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

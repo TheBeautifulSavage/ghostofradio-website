@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1938 03 27 Guests Fred Allen & Kate Smith (west) — The Jack Benny Program | Ghost of Radio</title>
+  <title>Guests Fred Allen & Kate Smith (west) — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1938 03 27 Guests Fred Allen & Kate Smith (west) — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1938 03 27 Guests Fred Allen & Kate Smith (west) — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1938 03 27 Guests Fred Allen & Kate Smith (west) — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1938</span>
           </div>
-          <h1 class="episode__title">Jb 1938 03 27 Guests Fred Allen & Kate Smith (west)</h1>
+          <h1 class="episode__title">Guests Fred Allen & Kate Smith (west)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: March 27, 1938</p>
-<p>Picture yourself in the spring of 1938, tuning your radio dial to catch the week's most anticipated comedy showdown. Tonight, Jack Benny's carefully cultivated world of comic mayhem collides with the razor-sharp wit of Fred Allen, radio's reigning king of insult comedy, while the golden voice of Kate Smith—America's beloved songbird—brings both glamour and genuine warmth to the proceedings. Expect the unexpected: Jack's trademark violin performance will surely draw Allen's merciless ridicule, Mary Livingstone's impeccable comic timing will shine in the domestic sketches, and the supporting cast will weave their familiar characters through scenarios that blur the line between scripted comedy and spontaneous brilliance. The electricity between these titans of live radio is palpable; listeners know they're witnessing something special when Allen steps into Benny's domain.</p>
+          <p>Picture yourself in the spring of 1938, tuning your radio dial to catch the week's most anticipated comedy showdown. Tonight, Jack Benny's carefully cultivated world of comic mayhem collides with the razor-sharp wit of Fred Allen, radio's reigning king of insult comedy, while the golden voice of Kate Smith—America's beloved songbird—brings both glamour and genuine warmth to the proceedings. Expect the unexpected: Jack's trademark violin performance will surely draw Allen's merciless ridicule, Mary Livingstone's impeccable comic timing will shine in the domestic sketches, and the supporting cast will weave their familiar characters through scenarios that blur the line between scripted comedy and spontaneous brilliance. The electricity between these titans of live radio is palpable; listeners know they're witnessing something special when Allen steps into Benny's domain.</p>
 <p>By 1938, The Jack Benny Program had already secured its place as America's most sophisticated comedy experience, a show that proved radio audiences hungered for intelligent humor alongside broad slapstick. Benny's genius lay in creating a parallel universe where his fictional persona—vain, cheap, and perpetually thirty-nine years old—became as real to listeners as their own neighbors. Fred Allen, broadcasting his own competing program on NBC, represented the golden age of radio rivalries that drove quality and innovation. These competitive appearances became legendary moments in broadcasting history, genuine meetings of comic minds that audiences craved like nothing else on the dial.</p>
 <p>Settle in and let the opening theme transport you to a simpler era when comedy meant wit, timing, and the human voice alone. This March evening captures radio at its finest—no laugh track, no safety net, just masters of their craft entertaining a nation hungry for laughter and excellence.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

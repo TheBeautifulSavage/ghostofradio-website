@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 04 27 Murder At The Movies — The Jack Benny Program | Ghost of Radio</title>
+  <title>Murder At The Movies — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 04 27 Murder At The Movies — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 04 27 Murder At The Movies — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 04 27 Murder At The Movies — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 04 27 Murder At The Movies</h1>
+          <h1 class="episode__title">Murder At The Movies</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Murder at the Movies</p>
-<p>Picture yourself gathered around the radio on a Sunday evening in April 1941, the glow of the dial illuminating expectant faces in living rooms across America. When Jack Benny's smooth voice crackles through the speaker, you know you're in for something special—but tonight promises particular thrills. A murder mystery unfolds within the plush confines of a Hollywood theater, and Jack finds himself drawn into the investigation with his usual blend of hapless charm and surprising cunning. His supporting cast—the ever-faithful Rochester, Mary Livingstone's wry wit, and the rest of the gang—spiral into the chaos, each bringing their own comic timing to what could be a genuinely tense whodunit. The orchestra punctuates each revelation with perfectly timed musical stings, building tension one moment and deflating it with a cymbal crash the next. You'll find yourself genuinely uncertain whether this mystery will be solved before the final commercial break, even as you laugh at Jack's protestations of innocence.</p>
+          <p>Picture yourself gathered around the radio on a Sunday evening in April 1941, the glow of the dial illuminating expectant faces in living rooms across America. When Jack Benny's smooth voice crackles through the speaker, you know you're in for something special—but tonight promises particular thrills. A murder mystery unfolds within the plush confines of a Hollywood theater, and Jack finds himself drawn into the investigation with his usual blend of hapless charm and surprising cunning. His supporting cast—the ever-faithful Rochester, Mary Livingstone's wry wit, and the rest of the gang—spiral into the chaos, each bringing their own comic timing to what could be a genuinely tense whodunit. The orchestra punctuates each revelation with perfectly timed musical stings, building tension one moment and deflating it with a cymbal crash the next. You'll find yourself genuinely uncertain whether this mystery will be solved before the final commercial break, even as you laugh at Jack's protestations of innocence.</p>
 <p>By 1941, The Jack Benny Program had already established itself as radio's most sophisticated comedy, a show that proved humor and intelligence weren't mutually exclusive. Jack's Jewish working-class background had translated into a uniquely American form of comedy, one that could skillfully weave together vaudeville traditions, contemporary Hollywood satire, and genuinely inventive writing. This episode represents the show at its peak, when the cast had become so perfectly attuned to one another that they could navigate between farce and genuine dramatic tension without missing a beat.</p>
 <p>Tune in now to experience the golden age of radio comedy at its finest—where murder, mayhem, and a comedic genius named Jack Benny collide in one unforgettable evening of entertainment. This is radio as it was meant to be heard.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

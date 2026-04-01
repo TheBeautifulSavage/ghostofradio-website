@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ec 1946 03 13 Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Ec 1946 03 13 Jack Benny — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Ec 1946 03 13 Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Ec 1946 03 13 Jack Benny — The Jack Benny Program (NBC/CBS, 1946). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1946</span>
           </div>
-          <h1 class="episode__title">Ec 1946 03 13 Jack Benny</h1>
+          <h1 class="episode__title">Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program – March 13, 1946</p>
-<p>Step into the living room with Jack Benny as America settles in for an evening of laughter just weeks after V-E Day approaches on the European horizon. This March broadcast crackles with the particular energy of a nation caught between wartime anxiety and cautious hope—and Jack, ever the master of comedic timing, knows exactly how to mine that tension for laughs. Expect the usual lovable disasters: perhaps a visit from the insufferable Professor LeBlanc, another round of Jack's famous stinginess, or a musical interlude from the impeccably talented Dennis Day. The real magic lies not in what happens, but in how Jack orchestrates the mayhem, his deadpan delivery and masterful pauses creating moments of comedy gold that transform a simple domestic scenario into an evening's worth of genuine, rib-tickling entertainment.</p>
+          <p>Step into the living room with Jack Benny as America settles in for an evening of laughter just weeks after V-E Day approaches on the European horizon. This March broadcast crackles with the particular energy of a nation caught between wartime anxiety and cautious hope—and Jack, ever the master of comedic timing, knows exactly how to mine that tension for laughs. Expect the usual lovable disasters: perhaps a visit from the insufferable Professor LeBlanc, another round of Jack's famous stinginess, or a musical interlude from the impeccably talented Dennis Day. The real magic lies not in what happens, but in how Jack orchestrates the mayhem, his deadpan delivery and masterful pauses creating moments of comedy gold that transform a simple domestic scenario into an evening's worth of genuine, rib-tickling entertainment.</p>
 <p>By 1946, The Jack Benny Program had become the gold standard of American radio comedy, a weekly institution heard in millions of homes across the nation. Jack's revolutionary approach to humor—built on character development, running gags, and the kind of sophisticated comedic timing that would influence decades of entertainment to come—had fundamentally changed what radio audiences expected from their entertainment. This wasn't slapstick or one-liners; it was the art of the pause, the power of what remained unspoken. During these postwar months, as families reunited and the nation began processing years of collective trauma, Jack offered something precious: the reassurance that normalcy, complete with all its comfortable absurdities, might actually return.</p>
 <p>This gem of mid-century American culture awaits your discovery. Dial in and experience why Jack Benny remained radio's reigning comic monarch—hear the audience's roaring approval, the orchestral swells, and the unmistakable voice of a true entertainer at the height of his powers.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

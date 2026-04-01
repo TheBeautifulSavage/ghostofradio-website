@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1953 12 06 Jack Talks About His Tv Show — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Talks About His Tv Show — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1953 12 06 Jack Talks About His Tv Show — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1953 12 06 Jack Talks About His Tv Show — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1953 12 06 Jack Talks About His Tv Show — The Jack Benny Program (NBC/CBS, 1953). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1953</span>
           </div>
-          <h1 class="episode__title">Jb 1953 12 06 Jack Talks About His Tv Show</h1>
+          <h1 class="episode__title">Jack Talks About His Tv Show</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Jack Talks About His TV Show" (December 6, 1953)</p>
-<p>As Jack Benny takes the microphone this December evening, there's an unmistakable electricity in the air—the kind that comes only when a legend grapples with his own uncertain future. For over two decades, Jack's voice has been the trusted companion in American living rooms, and tonight he confronts something that threatens to upend radio comedy itself: television. With his characteristic blend of self-deprecating humor and genuine befuddlement, Jack discusses his recent foray into the small screen, regaling listeners with tales of the peculiar demands of this strange new medium. Don Neilson and the rest of the cast weave in and out as Jack philosophizes about cameras, lighting, and the loss of that intimate connection he's always shared with radio audiences. It's comedy born from real anxiety—the anxiety of a man watching his world change, armed only with his impeccable timing and decades of hard-won skill.</p>
+          <p>As Jack Benny takes the microphone this December evening, there's an unmistakable electricity in the air—the kind that comes only when a legend grapples with his own uncertain future. For over two decades, Jack's voice has been the trusted companion in American living rooms, and tonight he confronts something that threatens to upend radio comedy itself: television. With his characteristic blend of self-deprecating humor and genuine befuddlement, Jack discusses his recent foray into the small screen, regaling listeners with tales of the peculiar demands of this strange new medium. Don Neilson and the rest of the cast weave in and out as Jack philosophizes about cameras, lighting, and the loss of that intimate connection he's always shared with radio audiences. It's comedy born from real anxiety—the anxiety of a man watching his world change, armed only with his impeccable timing and decades of hard-won skill.</p>
 <p>This episode captures a pivotal moment in American entertainment history. By 1953, television was no longer a novelty but an existential threat to radio, the very medium that had made Jack Benny a household name and comedic institution. Yet Benny, ever the professional showman, refused to abandon radio entirely; he would continue broadcasting until 1955, making this episode a poignant document of radio's twilight. Jack's willingness to openly discuss television on his own program—rather than pretend it didn't exist—demonstrates the sophistication of his comedy and his understanding that audiences respected honesty as much as laughs.</p>
 <p>For anyone seeking to understand how entertainment legends navigate change, or simply wanting to experience Jack Benny at his most reflective and human, this episode offers something rare: comedy that acknowledges its own mortality while celebrating the art form that created it. Tune in and hear one of radio's greatest voices contemplate his legacy.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

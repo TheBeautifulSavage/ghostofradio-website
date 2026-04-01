@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Svt 1948 12 09 Jack Benny & George Murphy — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny & George Murphy — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Svt 1948 12 09 Jack Benny & George Murphy — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Svt 1948 12 09 Jack Benny & George Murphy — The Jack Benny Program">
   <meta property="og:description" content="Listen to Svt 1948 12 09 Jack Benny & George Murphy — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1948</span>
           </div>
-          <h1 class="episode__title">Svt 1948 12 09 Jack Benny & George Murphy</h1>
+          <h1 class="episode__title">Jack Benny & George Murphy</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: December 9, 1948</p>
-<p>Step into the warm glow of a December evening in 1948, when America's favorite miser settles into his familiar role as the perpetually broke violin virtuoso who never plays a note. This week, Jack welcomes the charming Hollywood song-and-dance man George Murphy to his program, and you know trouble—the delightful kind—is brewing. Watch as Jack's vanity collides with George's charisma, as his writers spin gold from the timeless comedy of mistaken identity and wounded pride. The audience's laughter crackles through the airwaves like a crackling fireplace, punctuating every carefully timed pause and perfectly delivered insult. Between the sketches, you'll hear the lush orchestrations that made Sunday nights an escape into sophistication and merriment, a respite from postwar anxieties and the grind of everyday life.</p>
+          <p>Step into the warm glow of a December evening in 1948, when America's favorite miser settles into his familiar role as the perpetually broke violin virtuoso who never plays a note. This week, Jack welcomes the charming Hollywood song-and-dance man George Murphy to his program, and you know trouble—the delightful kind—is brewing. Watch as Jack's vanity collides with George's charisma, as his writers spin gold from the timeless comedy of mistaken identity and wounded pride. The audience's laughter crackles through the airwaves like a crackling fireplace, punctuating every carefully timed pause and perfectly delivered insult. Between the sketches, you'll hear the lush orchestrations that made Sunday nights an escape into sophistication and merriment, a respite from postwar anxieties and the grind of everyday life.</p>
 <p>By 1948, Jack Benny had already become an institution—a master of the radio medium who understood that comedy thrives in silence as much as in speech. His show was the gold standard of entertainment, a masterclass in ensemble performance where Don Wilson's booming announcements, Rochester's wry wisdom, and Mary Livingstone's expertly planted zingers created a world that listeners felt they knew intimately. This was radio at its peak, before television would steal away its crown, and these programs represent the final golden years of what many consider the greatest era of American entertainment. George Murphy, riding high on his own film success, brings a guest star's fresh energy to Jack's carefully calibrated comic universe.</p>
 <p>Tune in to hear what happens when two Hollywood personalities collide in the intimate arena of the radio studio. This is essential listening for anyone who remembers why radio was once America's heartbeat—or anyone curious about the wit and warmth that captivated millions.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

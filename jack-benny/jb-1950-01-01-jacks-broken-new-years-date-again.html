@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1950 01 01 Jack's Broken New Year's Date Again — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack's Broken New Year's Date Again — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1950 01 01 Jack's Broken New Year's Date Again — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1950 01 01 Jack's Broken New Year's Date Again — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1950 01 01 Jack's Broken New Year's Date Again — The Jack Benny Program (NBC/CBS, 1950). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1950</span>
           </div>
-          <h1 class="episode__title">Jb 1950 01 01 Jack's Broken New Year's Date Again</h1>
+          <h1 class="episode__title">Jack's Broken New Year's Date Again</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Jack's Broken New Year's Date Again (January 1, 1950)</p>
-<p>Ring in the New Year with Jack Benny—or rather, watch as his carefully laid plans spectacularly unravel in the opening broadcast of 1950! This New Year's Day episode finds our perpetually unlucky protagonist scrambling to make good on a romantic promise that's already crumbling faster than a champagne cork. As Jack desperately navigates his embarrassing predicament, Mary Livingstone delivers withering one-liners that pierce right through his stammering excuses, while Don Wilson's announcer charm and Rochester's dry asides provide the perfect counterpoint to the escalating comedic chaos. What begins as a simple matter of keeping one date somehow spirals into an elaborate web of scheming, mistiming, and Jack's trademark vanity meeting its inevitable comeuppance. The chemistry between these familiar voices feels as warm and lived-in as your neighbor's New Year's party—intimate, genuinely funny, and filled with the kind of sharp comedy that made millions of Americans tune in faithfully every Sunday night.</p>
+          <p>Ring in the New Year with Jack Benny—or rather, watch as his carefully laid plans spectacularly unravel in the opening broadcast of 1950! This New Year's Day episode finds our perpetually unlucky protagonist scrambling to make good on a romantic promise that's already crumbling faster than a champagne cork. As Jack desperately navigates his embarrassing predicament, Mary Livingstone delivers withering one-liners that pierce right through his stammering excuses, while Don Wilson's announcer charm and Rochester's dry asides provide the perfect counterpoint to the escalating comedic chaos. What begins as a simple matter of keeping one date somehow spirals into an elaborate web of scheming, mistiming, and Jack's trademark vanity meeting its inevitable comeuppance. The chemistry between these familiar voices feels as warm and lived-in as your neighbor's New Year's party—intimate, genuinely funny, and filled with the kind of sharp comedy that made millions of Americans tune in faithfully every Sunday night.</p>
 <p>By 1950, The Jack Benny Program had become an American institution, having successfully made the transition from radio's golden age into television while maintaining the superior wit and timing that built its reputation. Jack's character—the eternally thirty-nine-year-old miser with delusions of grandeur and romantic prowess—had become so perfectly defined that listeners knew exactly what to expect, yet the show's writers continually found fresh angles on his failures. These beloved supporting players had become like family to listeners who'd grown up with them through the Depression and war years.</p>
 <p>This New Year's broadcast represents Jack Benny at the height of his radio powers, before television would eventually claim his talents. Tune in and experience the comedy that defined an era—where the laughs came from character and timing rather than spectacle, and where a broken date could somehow become comedy gold.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

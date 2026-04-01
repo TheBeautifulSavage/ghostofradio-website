@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 01 18 Carol Lombard Dies All Music — The Jack Benny Program | Ghost of Radio</title>
+  <title>Carol Lombard Dies All Music — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 01 18 Carol Lombard Dies All Music — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 01 18 Carol Lombard Dies All Music — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 01 18 Carol Lombard Dies All Music — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 01 18 Carol Lombard Dies All Music</h1>
+          <h1 class="episode__title">Carol Lombard Dies All Music</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: January 18, 1942</p>
-<p>On this poignant Sunday evening, Jack Benny breaks from his usual comedy format to deliver a show unlike any his devoted listeners had experienced before. The regular sketches and musical numbers give way to an all-music program—a rare and somber occasion that transforms the familiar broadcast into a tribute. Hollywood had been shaken just days earlier by the tragic death of Carole Lombard, the brilliant comedic actress and wife of Clark Gable, who perished in a plane crash on January 16th. Benny, deeply affected by the loss of his friend and fellow entertainer, dedicates this entire program to her memory, filling the airtime with carefully selected music that captures both the elegance she embodied and the grief sweeping through the entertainment world. The program stands as a touching testament to how radio could pivot from frivolity to reverence in moments of national mourning.</p>
+          <p>On this poignant Sunday evening, Jack Benny breaks from his usual comedy format to deliver a show unlike any his devoted listeners had experienced before. The regular sketches and musical numbers give way to an all-music program—a rare and somber occasion that transforms the familiar broadcast into a tribute. Hollywood had been shaken just days earlier by the tragic death of Carole Lombard, the brilliant comedic actress and wife of Clark Gable, who perished in a plane crash on January 16th. Benny, deeply affected by the loss of his friend and fellow entertainer, dedicates this entire program to her memory, filling the airtime with carefully selected music that captures both the elegance she embodied and the grief sweeping through the entertainment world. The program stands as a touching testament to how radio could pivot from frivolity to reverence in moments of national mourning.</p>
 <p>This episode represents something remarkable about The Jack Benny Program's place in American culture during the 1940s. For over a decade, Benny had cultivated an intimate connection with millions of listeners, and when tragedy struck, his program became a communal space for processing collective loss. Rather than continuing with scripted comedy that would have felt hollow and inappropriate, Benny chose authenticity—a gesture that deepened listeners' trust in him as both entertainer and human being. The show's flexibility and Benny's genuine humanity elevated radio beyond mere escapism into something more meaningful.</p>
 <p>Tune in to experience this remarkable historical document—a moment when America's favorite comedian set aside his violin and jokes to honor a fallen star and share in the nation's grief.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 02 09 Back From Ny Herbert Marshall — The Jack Benny Program | Ghost of Radio</title>
+  <title>Back From Ny Herbert Marshall — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 02 09 Back From Ny Herbert Marshall — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 02 09 Back From Ny Herbert Marshall — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 02 09 Back From Ny Herbert Marshall — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 02 09 Back From Ny Herbert Marshall</h1>
+          <h1 class="episode__title">Back From Ny Herbert Marshall</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Back From New York</p>
-<p>Picture this: it's February 9th, 1941, and Jack Benny is bustling back into his Beverly Hills mansion after a whirlwind trip to Manhattan, his violin case in one hand and his characteristic bewilderment in the other. What chaos awaits? Has Rochester kept the household running, or has he been up to his usual mischief in Jack's absence? And who is this suave British guest—none other than the debonair Herbert Marshall—who's somehow found his way into Jack's orbit? Expect the witty banter that made America fall in love with this program: Jack's penny-pinching protests, his indignant asides to the audience, and that perfectly timed pause before the punchline lands. The interplay between Jack's everyman neuroses and Marshall's polished charm creates the kind of comedic friction that had listeners gathered around their sets, laughing so hard they could barely hear the next scene.</p>
+          <p>Picture this: it's February 9th, 1941, and Jack Benny is bustling back into his Beverly Hills mansion after a whirlwind trip to Manhattan, his violin case in one hand and his characteristic bewilderment in the other. What chaos awaits? Has Rochester kept the household running, or has he been up to his usual mischief in Jack's absence? And who is this suave British guest—none other than the debonair Herbert Marshall—who's somehow found his way into Jack's orbit? Expect the witty banter that made America fall in love with this program: Jack's penny-pinching protests, his indignant asides to the audience, and that perfectly timed pause before the punchline lands. The interplay between Jack's everyman neuroses and Marshall's polished charm creates the kind of comedic friction that had listeners gathered around their sets, laughing so hard they could barely hear the next scene.</p>
 <p>The Jack Benny Program had already become a national institution by 1941, commanding audiences of millions who tuned in religiously each week. What made Benny's show revolutionary was its narrative continuity and character development—this wasn't just vaudeville on the airwaves, but a full comic universe with recurring characters, running gags, and a protagonist listeners genuinely invested in. The supporting cast, featuring Rochester (Eddie Anderson), Mary Livingstone, Phil Harris, and Dennis Day, had become as beloved as Jack himself, and celebrity guests like Marshall added a glamorous unpredictability to each episode.</p>
 <p>This particular broadcast captures the show at its golden peak, when radio comedy was an art form demanding quick wit, impeccable timing, and genuine character work. Don't miss this delightful half-hour that reminds us why Jack Benny remains an immortal name in American entertainment. Tune in now and discover the magic that captivated a nation.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

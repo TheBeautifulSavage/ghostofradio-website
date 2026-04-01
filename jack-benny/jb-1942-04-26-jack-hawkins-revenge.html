@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 04 26 Jack Hawkins Revenge — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Hawkins Revenge — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 04 26 Jack Hawkins Revenge — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 04 26 Jack Hawkins Revenge — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 04 26 Jack Hawkins Revenge — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 04 26 Jack Hawkins Revenge</h1>
+          <h1 class="episode__title">Jack Hawkins Revenge</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Jack Hawkins' Revenge (April 26, 1942)</p>
-<p>Step into the warm glow of your radio set as Jack Benny opens the show with his signature violin strains, but tonight something deliciously sinister lurks in the wings. Guest star Jack Hawkins arrives with vengeance on his mind, promising to even the score with radio's most famous skinflint over some past slight. What unfolds is a masterclass in comedic tension as Benny's trademark stinginess and vanity collide with Hawkins' determined scheme. Don Don Wilson's booming announcements punctuate the chaos, while Rochester's world-weary asides provide perfect counterpoint to his boss's mounting desperation. Listeners will find themselves breathless with laughter as the plot twists through blackmail attempts, mistaken identities, and the kind of perfectly-timed musical interludes that kept America tuned to their sets through wartime worries.</p>
+          <p>Step into the warm glow of your radio set as Jack Benny opens the show with his signature violin strains, but tonight something deliciously sinister lurks in the wings. Guest star Jack Hawkins arrives with vengeance on his mind, promising to even the score with radio's most famous skinflint over some past slight. What unfolds is a masterclass in comedic tension as Benny's trademark stinginess and vanity collide with Hawkins' determined scheme. Don Don Wilson's booming announcements punctuate the chaos, while Rochester's world-weary asides provide perfect counterpoint to his boss's mounting desperation. Listeners will find themselves breathless with laughter as the plot twists through blackmail attempts, mistaken identities, and the kind of perfectly-timed musical interludes that kept America tuned to their sets through wartime worries.</p>
 <p>This episode captures The Jack Benny Program at its golden hour, broadcasting live to a nation hungry for escapism during the second year of American involvement in World War II. Benny's program had already become an institution—a half-hour sanctuary of laughter that united millions across time zones every Sunday night. His ensemble cast had gelled into perfection: Mary Livingstone's dry witticisms, Phil Harris's boozy charm, and the incomparable vocal talents of singers like Dennis Day created a world that felt as familiar as one's own living room. The show's sophisticated humor proved that radio comedy could be both intellectually clever and immediately accessible, influencing countless entertainers who would later dominate television.</p>
 <p>Don't miss this sparkling example of why The Jack Benny Program endured for over two decades and remains a treasured artifact of American entertainment. Tune in and discover the artistry behind radio's most beloved comedy program.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

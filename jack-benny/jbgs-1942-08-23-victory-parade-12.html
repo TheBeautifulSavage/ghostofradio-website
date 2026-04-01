@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1942 08 23 Victory Parade #12 — The Jack Benny Program | Ghost of Radio</title>
+  <title>Victory Parade #12 — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1942 08 23 Victory Parade #12 — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1942 08 23 Victory Parade #12 — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1942 08 23 Victory Parade #12 — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jbgs 1942 08 23 Victory Parade #12</h1>
+          <h1 class="episode__title">Victory Parade #12</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Victory Parade #12 (August 23, 1942)</p>
-<p>As America's factory whistles blew and servicemen marched through city streets in the summer of 1942, Jack Benny brought his radio audience a special treat: the twelfth installment of "Victory Parade," a patriotic variety extravaganza recorded live before an enthusiastic studio audience. In this episode, listeners can expect the familiar warmth of Jack's comedy—his trademark cheapness, his musical interludes, the verbal sparring with sidekick Rochester—all woven seamlessly with genuine patriotic fervor and celebrity guest performances. The laughter carries an unmistakable undertone of national purpose; every joke about rationing or war bonds feels like a small act of defiance against distant darkness. You'll hear the rustling of an engaged audience, the crackle of live broadcasting, and the particular magic that occurs when entertainment becomes a form of collective reassurance.</p>
+          <p>As America's factory whistles blew and servicemen marched through city streets in the summer of 1942, Jack Benny brought his radio audience a special treat: the twelfth installment of "Victory Parade," a patriotic variety extravaganza recorded live before an enthusiastic studio audience. In this episode, listeners can expect the familiar warmth of Jack's comedy—his trademark cheapness, his musical interludes, the verbal sparring with sidekick Rochester—all woven seamlessly with genuine patriotic fervor and celebrity guest performances. The laughter carries an unmistakable undertone of national purpose; every joke about rationing or war bonds feels like a small act of defiance against distant darkness. You'll hear the rustling of an engaged audience, the crackle of live broadcasting, and the particular magic that occurs when entertainment becomes a form of collective reassurance.</p>
 <p>By 1942, Jack Benny had already established himself as radio's most beloved comedian, and the "Victory Parade" series represented something remarkable: entertainment as a tool of morale and national unity. These programs raised funds for war relief while simultaneously reminding Americans of civilian life's simple pleasures—music, laughter, the company of friends. Benny's willingness to use his platform for the war effort, while maintaining the comedic excellence his audience cherished, made him emblematic of Hollywood's contribution to the home front. This wasn't ham-fisted propaganda; it was genuine entertainment with heart.</p>
 <p>Tune in now to experience a moment when radio was democracy's living room, where a nation could laugh together and believe in tomorrow. This is golden-age broadcasting at its finest—the sound of America during its most defining hour.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

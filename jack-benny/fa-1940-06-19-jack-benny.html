@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fa 1940 06 19 Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Fa 1940 06 19 Jack Benny — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Fa 1940 06 19 Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Fa 1940 06 19 Jack Benny — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1940</span>
           </div>
-          <h1 class="episode__title">Fa 1940 06 19 Jack Benny</h1>
+          <h1 class="episode__title">Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: June 19, 1940</p>
-<p>Picture yourself in the summer of 1940, tuning your radio dial to catch Jack Benny at his comedic finest. This particular broadcast crackles with the timeless chemistry that made America fall in love with radio's most notoriously stingy millionaire. As Jack navigates his weekly troubles—whether dodging his long-suffering announcer Don Wilson's thinly veiled insults, sparring with the ever-loyal Rochester, or suffering through another encounter with his temperamental violin—listeners are transported to a world where the simple act of laughter felt like genuine relief. The studio audience's roars of approval punctuate every perfectly timed pause and deadpan quip, their genuine delight infectious even through the airwaves. You can almost smell the studio lights and hear the orchestra warming up in the background, ready to underscore Jack's misadventures with the precision that defined the golden age of radio comedy.</p>
+          <p>Picture yourself in the summer of 1940, tuning your radio dial to catch Jack Benny at his comedic finest. This particular broadcast crackles with the timeless chemistry that made America fall in love with radio's most notoriously stingy millionaire. As Jack navigates his weekly troubles—whether dodging his long-suffering announcer Don Wilson's thinly veiled insults, sparring with the ever-loyal Rochester, or suffering through another encounter with his temperamental violin—listeners are transported to a world where the simple act of laughter felt like genuine relief. The studio audience's roars of approval punctuate every perfectly timed pause and deadpan quip, their genuine delight infectious even through the airwaves. You can almost smell the studio lights and hear the orchestra warming up in the background, ready to underscore Jack's misadventures with the precision that defined the golden age of radio comedy.</p>
 <p>By 1940, The Jack Benny Program had become the gold standard of American comedy, a weekly ritual for millions who trusted Jack's impeccable timing and his brilliantly constructed character—a parsimonious, vain, yet somehow endearing protagonist. What set Benny apart was his mastery of silence and restraint in an medium that thrived on verbal gymnastics. His supporting cast, particularly Eddie "Rochester" Anderson and the cantankerous Professor LeBlanc, created an ensemble chemistry that elevated every sketch beyond simple jokes into genuine theatrical moments. This was comedy architecture at its finest.</p>
 <p>Step back into June 1940 and experience radio as it was meant to be heard—live, immediate, and alive with the spontaneous energy of broadcast theater. This episode captures a show at its peak, when Jack Benny wasn't merely telling jokes but crafting a world listeners visited every week like old friends.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

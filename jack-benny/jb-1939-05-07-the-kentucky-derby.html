@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1939 05 07 The Kentucky Derby — The Jack Benny Program | Ghost of Radio</title>
+  <title>The Kentucky Derby — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1939 05 07 The Kentucky Derby — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1939 05 07 The Kentucky Derby — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1939 05 07 The Kentucky Derby — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jb 1939 05 07 The Kentucky Derby</h1>
+          <h1 class="episode__title">The Kentucky Derby</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: The Kentucky Derby</p>
-<p>Step into the parlor with America's favorite miser on this brilliant May evening in 1939 as Jack Benny and his familiar cast of characters become entangled in the glamorous chaos surrounding the Kentucky Derby. Picture the excitement crackling through the airwaves—Jack's trademark stingy negotiations clash hilariously with the high-stakes world of thoroughbred racing, while Mary Livingstone's quick wit cuts through his schemes, Don Wilson's booming announcer voice amplifies every absurd predicament, and Rochester's deadpan wisdom provides the perfect comic counterpoint. This episode captures the frantic energy of the pre-race festivities, complete with Jack's delusional certainty that he can pick a winner through sheer force of personality (and minimal financial investment). The humor emerges not from punchlines alone, but from the meticulous timing and character interplay that made Benny's program the gold standard of American radio comedy.</p>
+          <p>Step into the parlor with America's favorite miser on this brilliant May evening in 1939 as Jack Benny and his familiar cast of characters become entangled in the glamorous chaos surrounding the Kentucky Derby. Picture the excitement crackling through the airwaves—Jack's trademark stingy negotiations clash hilariously with the high-stakes world of thoroughbred racing, while Mary Livingstone's quick wit cuts through his schemes, Don Wilson's booming announcer voice amplifies every absurd predicament, and Rochester's deadpan wisdom provides the perfect comic counterpoint. This episode captures the frantic energy of the pre-race festivities, complete with Jack's delusional certainty that he can pick a winner through sheer force of personality (and minimal financial investment). The humor emerges not from punchlines alone, but from the meticulous timing and character interplay that made Benny's program the gold standard of American radio comedy.</p>
 <p>By 1939, The Jack Benny Program had become a national institution, a weekly appointment that unified millions of listeners across socioeconomic classes. During these uncertain Depression-to-wartime years, Jack's carefully constructed persona—the cheapskate with unexpected nobility, the amateur violinist with delusions of grandeur—offered accessible comedy rooted in recognizable human folly. The show's brilliance lay in its restraint; Benny understood that radio listeners possessed active imaginations, and his understated delivery and pregnant pauses often generated more laughter than broader performers' shouting ever could.</p>
 <p>This snapshot of 1939 radio entertainment offers listeners a glimpse into the golden age when families gathered around their sets for shared cultural moments. Tune in and discover why millions tuned in weekly, and why this program remains a masterclass in comedic construction and ensemble performance.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 11 09 Football Game — The Jack Benny Program | Ghost of Radio</title>
+  <title>Football Game — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 11 09 Football Game — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 11 09 Football Game — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 11 09 Football Game — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 11 09 Football Game</h1>
+          <h1 class="episode__title">Football Game</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Football Game (November 9, 1941)</p>
-<p>Picture yourself gathered around the radio on a crisp autumn evening, the dial tuned to NBC just as millions of Americans settle in for Jack Benny's latest comedic venture. In this uproarious installment, Jack and his troupe have decided to attend—or rather, become entangled in—a football game, and the results are predictably chaotic. Listen as Rochester's deadpan asides clash with Jack's fussy indignation, as Mary Livingstone's razor-sharp wit finds its mark, and as announcer Don Wilson's booming voice punctuates every mishap with bemused commentary. You'll hear orchestra leader Phil Harris weaving musical interludes between scenes of pure pandemonium, all building to the kind of ridiculous climax that made Jack Benny America's favorite miser and comic genius.</p>
+          <p>Picture yourself gathered around the radio on a crisp autumn evening, the dial tuned to NBC just as millions of Americans settle in for Jack Benny's latest comedic venture. In this uproarious installment, Jack and his troupe have decided to attend—or rather, become entangled in—a football game, and the results are predictably chaotic. Listen as Rochester's deadpan asides clash with Jack's fussy indignation, as Mary Livingstone's razor-sharp wit finds its mark, and as announcer Don Wilson's booming voice punctuates every mishap with bemused commentary. You'll hear orchestra leader Phil Harris weaving musical interludes between scenes of pure pandemonium, all building to the kind of ridiculous climax that made Jack Benny America's favorite miser and comic genius.</p>
 <p>By 1941, The Jack Benny Program had become the gold standard of radio comedy—a show where impeccable timing, a perfectly calibrated ensemble cast, and clever writing elevated simple scenarios into miniature theatrical productions. Jack's ability to mine comedy from his own cheapness, vanity, and elaborate self-deception proved endlessly fertile territory, while his supporting cast—especially the incomparable Eddie Anderson as Rochester—elevated every sketch with their chemistry and timing. This episode captures the show at its peak, just weeks before Pearl Harbor would transform the nation's airwaves and consciousness forever.</p>
 <p>Step back in time and experience why Americans couldn't wait for Sunday nights, why Jack Benny became a household name, and why this program remains the benchmark against which all radio comedy is measured. Press play and let the warmth and laughter of a golden age wash over you.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

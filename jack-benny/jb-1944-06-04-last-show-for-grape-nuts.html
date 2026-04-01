@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1944 06 04 Last Show For Grape Nuts — The Jack Benny Program | Ghost of Radio</title>
+  <title>Last Show For Grape Nuts — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1944 06 04 Last Show For Grape Nuts — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1944 06 04 Last Show For Grape Nuts — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1944 06 04 Last Show For Grape Nuts — The Jack Benny Program (NBC/CBS, 1944). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1944</span>
           </div>
-          <h1 class="episode__title">Jb 1944 06 04 Last Show For Grape Nuts</h1>
+          <h1 class="episode__title">Last Show For Grape Nuts</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: June 4, 1944</p>
-<p>Picture yourself settling into your favorite chair on this warm early summer evening, adjusting the dial of your console radio as Jack Benny's familiar theme music—that distinctive violin rendition of "Love in Bloom"—crackles through the speaker. But there's something bittersweet in the air tonight. This is Jack's final broadcast for Grape-Nuts cereal, the sponsor who has been his faithful partner since the very beginning, and the cast knows it. Expect the usual masterful comedy—Don Wilson's bombastic announcements, Mary Livingstone's perfectly-timed quips, Rochester's dry wisdom—but there's an undercurrent of genuine sentiment. Jack takes time to bid farewell to his sponsor with characteristic grace, mixing sentimentality with humor in ways only he could manage, while the studio audience senses they're witnessing the end of an era. The chemistry between regulars runs particularly warm tonight, as if everyone understands they're closing a chapter of broadcasting history.</p>
+          <p>Picture yourself settling into your favorite chair on this warm early summer evening, adjusting the dial of your console radio as Jack Benny's familiar theme music—that distinctive violin rendition of "Love in Bloom"—crackles through the speaker. But there's something bittersweet in the air tonight. This is Jack's final broadcast for Grape-Nuts cereal, the sponsor who has been his faithful partner since the very beginning, and the cast knows it. Expect the usual masterful comedy—Don Wilson's bombastic announcements, Mary Livingstone's perfectly-timed quips, Rochester's dry wisdom—but there's an undercurrent of genuine sentiment. Jack takes time to bid farewell to his sponsor with characteristic grace, mixing sentimentality with humor in ways only he could manage, while the studio audience senses they're witnessing the end of an era. The chemistry between regulars runs particularly warm tonight, as if everyone understands they're closing a chapter of broadcasting history.</p>
 <p>By 1944, The Jack Benny Program had already become an American institution. Since its debut in 1932, Jack's deadpan delivery and impeccable comic timing had revolutionized radio comedy, proving that sophisticated humor and character development could captivate millions. The show's format—part variety show, part situation comedy—became the template countless programs would follow. Grape-Nuts had been there from nearly the start, their sponsorship integral to Jack's rise to national prominence and wealth (which he constantly joked about). This episode represents not just a business change, but a milestone in broadcasting's golden age.</p>
 <p>Don't miss this remarkable broadcast. Whether you're a devoted Jack Benny enthusiast or new to the program's legendary humor, this episode offers a rare glimpse of genuine nostalgia mixed with comedic brilliance. Tune in and experience why Jack Benny remained America's favorite miser for over two decades.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

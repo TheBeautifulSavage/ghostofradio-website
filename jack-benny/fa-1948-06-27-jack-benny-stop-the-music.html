@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fa 1948 06 27 Jack Benny Stop The Music — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack Benny Stop The Music — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Fa 1948 06 27 Jack Benny Stop The Music — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Fa 1948 06 27 Jack Benny Stop The Music — The Jack Benny Program">
   <meta property="og:description" content="Listen to Fa 1948 06 27 Jack Benny Stop The Music — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1948</span>
           </div>
-          <h1 class="episode__title">Fa 1948 06 27 Jack Benny Stop The Music</h1>
+          <h1 class="episode__title">Jack Benny Stop The Music</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: "Stop The Music" (June 27, 1948)</p>
-<p>Settle into your favorite chair as Jack Benny faces his greatest rival yet—not Rochester's razor-sharp wit or Fred Allen's cutting remarks, but the very fabric of radio entertainment itself. When the wildly popular "Stop the Music" phenomenon sweeps the nation, Jack finds his carefully orchestrated program in jeopardy. Will his vanity survive the threat? Can his comedy timing compete with the allure of big prize money? This episode crackles with the anxiety of a master performer watching his domain shift beneath his feet, blending Jack's trademark self-deprecating humor with genuine tension about the future of his show. Expect musical interludes, rapid-fire gags, and the kind of sophisticated comedy that made Benny's program the gold standard of American radio.</p>
+          <p>Settle into your favorite chair as Jack Benny faces his greatest rival yet—not Rochester's razor-sharp wit or Fred Allen's cutting remarks, but the very fabric of radio entertainment itself. When the wildly popular "Stop the Music" phenomenon sweeps the nation, Jack finds his carefully orchestrated program in jeopardy. Will his vanity survive the threat? Can his comedy timing compete with the allure of big prize money? This episode crackles with the anxiety of a master performer watching his domain shift beneath his feet, blending Jack's trademark self-deprecating humor with genuine tension about the future of his show. Expect musical interludes, rapid-fire gags, and the kind of sophisticated comedy that made Benny's program the gold standard of American radio.</p>
 <p>By 1948, Jack Benny had reigned supreme for sixteen years, building a loyal audience through impeccable timing, an ensemble cast that felt like family, and the revolutionary concept that radio comedy could be smart and enduring. His program jumped networks and medium—from NBC to CBS, adapting to television's arrival—because Benny understood what audiences truly wanted: the illusion of spontaneity mixed with meticulous craft. "Stop the Music," the quiz show phenomenon that premiered in May 1948, represented genuine competition in a way even Fred Allen never quite had. This episode captures radio at a crossroads, where established talent confronted the disruptive power of simple, alluring formats built on the dream of instant wealth.</p>
 <p>Don't miss this fascinating window into how even the greatest entertainers had to adapt or fade away. Tune in and discover why Jack Benny's Program remains the blueprint for comedy broadcasting—hear a master at work as he navigates the very real threats to his empire with charm, humor, and the grace that defined an era.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

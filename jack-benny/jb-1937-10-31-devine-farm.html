@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1937 10 31 Devine Farm — The Jack Benny Program | Ghost of Radio</title>
+  <title>Devine Farm — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1937 10 31 Devine Farm — The Jack Benny Program (NBC/CBS, 1937). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1937 10 31 Devine Farm — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1937 10 31 Devine Farm — The Jack Benny Program (NBC/CBS, 1937). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1937</span>
           </div>
-          <h1 class="episode__title">Jb 1937 10 31 Devine Farm</h1>
+          <h1 class="episode__title">Devine Farm</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,9 +71,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: October 31, 1937 — "Devine Farm"</p>
-<p>Picture this: it's Halloween evening, 1937, and Jack Benny's orchestra strikes up an eerie overture as our famously stingy protagonist finds himself stranded on a mysterious farm run by the suspicious Devine family. What begins as a simple visit quickly spirals into a masterclass of comedic chaos—Mary Livingstone's sharp-tongued barbs cut deeper than any ghost could, while the supporting cast weaves a tale of rustic oddities and supernatural mishaps that perfectly captures the spirit of the season. Listeners huddled around their radio sets in living rooms across America were treated to Benny's impeccable timing as he navigates hayrides, strange noises in the darkness, and situations that would make even a miser like Jack loosen his famously tight purse strings. The chemistry between the cast crackles with an energy that only live radio could deliver—every pause, every carefully placed laugh line, every orchestral flourish perfectly timed for maximum effect.</p>
-<p>By 1937, *The Jack Benny Program* had already established itself as radio's gold standard, a weekly ritual that audiences couldn't afford to miss. Benny's gift lay not in slapstick alone but in character—his ability to play the vain, penny-pinching straight man to his ensemble's gleeful attacks created comedy that felt both timeless and intimately modern. During an era when radio commanded the nation's undivided attention, Halloween episodes were particularly prized events, offering sophisticated humor wrapped in seasonal atmosphere.</p>
+          <p>Picture this: it's Halloween evening, 1937, and Jack Benny's orchestra strikes up an eerie overture as our famously stingy protagonist finds himself stranded on a mysterious farm run by the suspicious Devine family. What begins as a simple visit quickly spirals into a masterclass of comedic chaos—Mary Livingstone's sharp-tongued barbs cut deeper than any ghost could, while the supporting cast weaves a tale of rustic oddities and supernatural mishaps that perfectly captures the spirit of the season. Listeners huddled around their radio sets in living rooms across America were treated to Benny's impeccable timing as he navigates hayrides, strange noises in the darkness, and situations that would make even a miser like Jack loosen his famously tight purse strings. The chemistry between the cast crackles with an energy that only live radio could deliver—every pause, every carefully placed laugh line, every orchestral flourish perfectly timed for maximum effect.</p>
+<p>By 1937, The Jack Benny Program had already established itself as radio's gold standard, a weekly ritual that audiences couldn't afford to miss. Benny's gift lay not in slapstick alone but in character—his ability to play the vain, penny-pinching straight man to his ensemble's gleeful attacks created comedy that felt both timeless and intimately modern. During an era when radio commanded the nation's undivided attention, Halloween episodes were particularly prized events, offering sophisticated humor wrapped in seasonal atmosphere.</p>
 <p>Tune in and discover why millions of Americans considered Jack Benny an essential companion in their homes. In the warm glow of vintage audio, you'll understand how a man, his violin, and a haunted farm could become appointment listening that defined a generation.</p>
         </div>
 
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

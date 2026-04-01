@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1942 12 06 Liberty Ship — The Jack Benny Program | Ghost of Radio</title>
+  <title>Liberty Ship — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1942 12 06 Liberty Ship — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1942 12 06 Liberty Ship — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1942 12 06 Liberty Ship — The Jack Benny Program (NBC/CBS, 1942). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1942</span>
           </div>
-          <h1 class="episode__title">Jb 1942 12 06 Liberty Ship</h1>
+          <h1 class="episode__title">Liberty Ship</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Liberty Ship</p>
-<p>Picture this: December 6th, 1942. Across America, families gather around their radios as Jack Benny takes the microphone with that signature pause—that pregnant silence that made millions laugh before he'd even spoken a word. Tonight's episode promises something more than the usual banter with Rochester, Don Wilson's booming announcements, and Phil Harris's musical interludes. A Liberty Ship takes center stage in this week's comedy sketch, and Jack's already scheming. Will he attempt to launch one? Accidentally become the captain? The studio audience roars with anticipation, sensing that Jack's trademark stinginess and impeccable comic timing will somehow collide hilariously with America's wartime shipbuilding effort. What unfolds is vintage Benny—absurd, clever, perfectly timed—a reminder that even in humanity's darkest hours, laughter remained essential.</p>
+          <p>Picture this: December 6th, 1942. Across America, families gather around their radios as Jack Benny takes the microphone with that signature pause—that pregnant silence that made millions laugh before he'd even spoken a word. Tonight's episode promises something more than the usual banter with Rochester, Don Wilson's booming announcements, and Phil Harris's musical interludes. A Liberty Ship takes center stage in this week's comedy sketch, and Jack's already scheming. Will he attempt to launch one? Accidentally become the captain? The studio audience roars with anticipation, sensing that Jack's trademark stinginess and impeccable comic timing will somehow collide hilariously with America's wartime shipbuilding effort. What unfolds is vintage Benny—absurd, clever, perfectly timed—a reminder that even in humanity's darkest hours, laughter remained essential.</p>
 <p>This episode arrives at a pivotal moment in American broadcasting and in the war itself. The Jack Benny Program had already become a cultural institution, a Sunday night ritual that connected the nation during depression and conflict. By 1942, the United States was in the throes of World War II, and radio served as both escape and patriotic touchstone. These episodes captured something profound: how comedy could acknowledge national sacrifice without sacrificing the irreverent humor that made life bearable. Benny's willingness to weave contemporary events—even the massive Liberty Ship construction program—into his comedy shows a program unafraid to reflect its moment while entertaining.</p>
 <p>Step back in time and experience the golden age of radio with one of its undisputed masters. Jack Benny's impeccable comic sensibility, his perfectly trained ensemble, and his ability to find humor in the everyday—and the extraordinary—await you. Tune in and discover why America couldn't wait for Sunday nights.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

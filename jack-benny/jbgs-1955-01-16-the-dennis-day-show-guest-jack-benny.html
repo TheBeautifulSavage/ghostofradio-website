@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jbgs 1955 01 16 The Dennis Day Show Guest Jack Benny — The Jack Benny Program | Ghost of Radio</title>
+  <title>The Dennis Day Show Guest Jack Benny — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jbgs 1955 01 16 The Dennis Day Show Guest Jack Benny — The Jack Benny Program (NBC/CBS, 1955). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jbgs 1955 01 16 The Dennis Day Show Guest Jack Benny — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jbgs 1955 01 16 The Dennis Day Show Guest Jack Benny — The Jack Benny Program (NBC/CBS, 1955). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1955</span>
           </div>
-          <h1 class="episode__title">Jbgs 1955 01 16 The Dennis Day Show Guest Jack Benny</h1>
+          <h1 class="episode__title">The Dennis Day Show Guest Jack Benny</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,9 +71,8 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program – January 16, 1955</p>
-<p>Settle into your favorite chair as America's most beloved miser makes a guest appearance on *The Dennis Day Show*, and you can practically hear the familiar violin screech that announces his arrival. It's a January evening in 1955, and listeners nationwide are in for a treat: Jack Benny's razor-sharp timing and masterful command of comedic silence will collide with Dennis Day's infectious charm and crooning voice. Expect the witty banter that made Benny a household name—the knowing pauses, the exasperated sighs, the perfectly placed one-liners that land like clockwork. Whether Benny is defending his notorious stinginess, playing his beloved violin (badly, of course), or engaging in the rapid-fire repartee that defined his era of radio comedy, this episode captures the golden age of entertainment when America gathered around the radio for an evening of laughter and music.</p>
-<p>By 1955, *The Jack Benny Program* had been delighting audiences for over two decades, having originated in 1932 and establishing itself as one of radio's finest comedy vehicles. Benny's genius lay in his understanding that restraint and timing could be more hilarious than shouting punchlines—a revolutionary approach that influenced generations of comedians to come. His supporting cast and guest appearances became the stuff of legend, and his willingness to appear on other programs demonstrated his secure place atop entertainment's hierarchy. This particular episode represents radio's twilight years; within months, television would begin drawing audiences away from the magical medium that had defined American entertainment.</p>
+          <p>Settle into your favorite chair as America's most beloved miser makes a guest appearance on The Dennis Day Show, and you can practically hear the familiar violin screech that announces his arrival. It's a January evening in 1955, and listeners nationwide are in for a treat: Jack Benny's razor-sharp timing and masterful command of comedic silence will collide with Dennis Day's infectious charm and crooning voice. Expect the witty banter that made Benny a household name—the knowing pauses, the exasperated sighs, the perfectly placed one-liners that land like clockwork. Whether Benny is defending his notorious stinginess, playing his beloved violin (badly, of course), or engaging in the rapid-fire repartee that defined his era of radio comedy, this episode captures the golden age of entertainment when America gathered around the radio for an evening of laughter and music.</p>
+<p>By 1955, The Jack Benny Program had been delighting audiences for over two decades, having originated in 1932 and establishing itself as one of radio's finest comedy vehicles. Benny's genius lay in his understanding that restraint and timing could be more hilarious than shouting punchlines—a revolutionary approach that influenced generations of comedians to come. His supporting cast and guest appearances became the stuff of legend, and his willingness to appear on other programs demonstrated his secure place atop entertainment's hierarchy. This particular episode represents radio's twilight years; within months, television would begin drawing audiences away from the magical medium that had defined American entertainment.</p>
 <p>Don't miss this remarkable snapshot of classic radio comedy, preserved now for nearly seven decades. Hear why Jack Benny remained a star from the Depression through the Eisenhower era—and experience the warmth, wit, and wonder that made millions tune in week after week.</p>
         </div>
 
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

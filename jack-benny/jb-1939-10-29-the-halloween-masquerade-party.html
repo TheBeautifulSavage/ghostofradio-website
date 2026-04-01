@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1939 10 29 The Halloween Masquerade Party — The Jack Benny Program | Ghost of Radio</title>
+  <title>The Halloween Masquerade Party — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1939 10 29 The Halloween Masquerade Party — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1939 10 29 The Halloween Masquerade Party — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1939 10 29 The Halloween Masquerade Party — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jb 1939 10 29 The Halloween Masquerade Party</h1>
+          <h1 class="episode__title">The Halloween Masquerade Party</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: The Halloween Masquerade Party (October 29, 1939)</p>
-<p>Picture this: it's late October, 1939, and Jack Benny has thrown open the doors of his mansion for the most elaborate Halloween masquerade party radio listeners could imagine. What begins as an elegant evening of mystery and merriment quickly spirals into delightful chaos as the program's beloved cast—including the ever-suffering Rochester, the perpetually broke Jack, and his famous Maxwell automobile—becomes entangled in a web of mistaken identities and comedic misunderstandings. The sounds of the orchestra swirl beneath rapid-fire dialogue and sight gags that defy the very limitations of the medium, somehow painting vivid pictures in the minds of millions huddled around their radio sets. Will Jack's stinginess prevent him from adequately hosting his guests? Can Rochester maintain order as the evening descends into pandemonium? The answers come wrapped in the witty banter and impeccable timing that made Benny a household name.</p>
+          <p>Picture this: it's late October, 1939, and Jack Benny has thrown open the doors of his mansion for the most elaborate Halloween masquerade party radio listeners could imagine. What begins as an elegant evening of mystery and merriment quickly spirals into delightful chaos as the program's beloved cast—including the ever-suffering Rochester, the perpetually broke Jack, and his famous Maxwell automobile—becomes entangled in a web of mistaken identities and comedic misunderstandings. The sounds of the orchestra swirl beneath rapid-fire dialogue and sight gags that defy the very limitations of the medium, somehow painting vivid pictures in the minds of millions huddled around their radio sets. Will Jack's stinginess prevent him from adequately hosting his guests? Can Rochester maintain order as the evening descends into pandemonium? The answers come wrapped in the witty banter and impeccable timing that made Benny a household name.</p>
 <p>By 1939, The Jack Benny Program had become America's favorite comedy broadcast, drawing over 30 million listeners each week. Benny's genius lay not in slapstick or crude jokes, but in character—the carefully constructed persona of a vain, miserly, yet ultimately endearing entertainer whose foibles became a mirror for American audiences navigating an uncertain world. As the decade turned darker with international tensions rising, radio comedy offered refuge, and Benny offered escape through timeless humor about vanity, friendship, and the absurdities of daily life.</p>
 <p>Join Jack and his ensemble for an evening of sophisticated radio comedy that transcends the centuries. Press play, dim your lights, and let your imagination conjure the glamour, confusion, and laughter of a Halloween masquerade that only Jack Benny could orchestrate.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

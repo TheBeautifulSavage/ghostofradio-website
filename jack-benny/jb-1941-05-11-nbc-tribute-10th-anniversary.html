@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1941 05 11 Nbc Tribute 10th Anniversary — The Jack Benny Program | Ghost of Radio</title>
+  <title>Nbc Tribute 10th Anniversary — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1941 05 11 Nbc Tribute 10th Anniversary — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1941 05 11 Nbc Tribute 10th Anniversary — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1941 05 11 Nbc Tribute 10th Anniversary — The Jack Benny Program (NBC/CBS, 1941). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1941</span>
           </div>
-          <h1 class="episode__title">Jb 1941 05 11 Nbc Tribute 10th Anniversary</h1>
+          <h1 class="episode__title">Nbc Tribute 10th Anniversary</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: 10th Anniversary Tribute (May 11, 1941)</p>
-<p>A decade of laughter crystallizes into one unforgettable evening as Jack Benny celebrates his tenth year on the air with an NBC broadcast that crackles with genuine emotion beneath the comedy's polished surface. Gather 'round your radio set for a special tribute unlike any other—one where Jack's well-worn violin, his comically ancient Maxwell automobile, and all the beloved characters who've become America's best friends converge for a night of nostalgia and celebration. Expect the usual comedic misadventures, but infused with a reflective warmth as Jack surveys the remarkable decade behind him, surrounded by the supporting cast that transformed a vaudeville performer into a household institution: Rochester with his deadpan commentary, Mary Livingstone with her quick wit, Phil Harris and the orchestra swinging into the evening's entertainment. Yet beneath the quips and orchestral flourishes lies something poignant—the recognition that these radio broadcasts have woven themselves into the very fabric of American life, becoming a Thursday night ritual in millions of homes across the nation.</p>
+          <p>A decade of laughter crystallizes into one unforgettable evening as Jack Benny celebrates his tenth year on the air with an NBC broadcast that crackles with genuine emotion beneath the comedy's polished surface. Gather 'round your radio set for a special tribute unlike any other—one where Jack's well-worn violin, his comically ancient Maxwell automobile, and all the beloved characters who've become America's best friends converge for a night of nostalgia and celebration. Expect the usual comedic misadventures, but infused with a reflective warmth as Jack surveys the remarkable decade behind him, surrounded by the supporting cast that transformed a vaudeville performer into a household institution: Rochester with his deadpan commentary, Mary Livingstone with her quick wit, Phil Harris and the orchestra swinging into the evening's entertainment. Yet beneath the quips and orchestral flourishes lies something poignant—the recognition that these radio broadcasts have woven themselves into the very fabric of American life, becoming a Thursday night ritual in millions of homes across the nation.</p>
 <p>By 1941, The Jack Benny Program had accomplished what few entertainers dared dream: it had redefined comedy for a new age and proven radio's power to create intimate connections across vast distances. Jack's genius lay not in slapstick or sentimental manipulation, but in a perfectly calibrated blend of scripted sophistication and seemingly spontaneous humor that made listeners feel like privileged insiders to an ongoing joke. This anniversary broadcast arrives at a poignant moment—America stands on the brink of global conflict, and Jack's show represents a cherished stability, a return to laughter in uncertain times.</p>
 <p>This is essential listening for anyone seeking to understand how radio comedy reached its artistic peak, and a testament to the timeless appeal of expertly crafted entertainment. Tune in and witness a master showman celebrate a decade of bringing joy into America's living rooms.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

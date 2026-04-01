@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1940 12 22 Christmas Shopping — The Jack Benny Program | Ghost of Radio</title>
+  <title>Christmas Shopping — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1940 12 22 Christmas Shopping — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1940 12 22 Christmas Shopping — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1940 12 22 Christmas Shopping — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1940</span>
           </div>
-          <h1 class="episode__title">Jb 1940 12 22 Christmas Shopping</h1>
+          <h1 class="episode__title">Christmas Shopping</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Christmas Shopping (December 22, 1940)</p>
-<p>Join Jack Benny as holiday chaos erupts in this uproarious Christmas shopping special! Picture the Beverly Hills department stores packed with harried last-minute shoppers, and there's Jack—armed with his characteristic stinginess and impeccable comic timing—determined to find the perfect gifts without spending a fortune. Watch as his meager budget collides spectacularly with seasonal cheer, while his long-suffering sidekick Rochester, ever the voice of reason, attempts to keep his penny-pinching boss from absolute disaster. With guest appearances from the show's beloved supporting cast, including the cantankerous Professor LeBlanc and Mary Livingstone, this episode crackles with the kind of rapid-fire banter and physical comedy that made The Jack Benny Program America's most beloved comedy show.</p>
+          <p>Join Jack Benny as holiday chaos erupts in this uproarious Christmas shopping special! Picture the Beverly Hills department stores packed with harried last-minute shoppers, and there's Jack—armed with his characteristic stinginess and impeccable comic timing—determined to find the perfect gifts without spending a fortune. Watch as his meager budget collides spectacularly with seasonal cheer, while his long-suffering sidekick Rochester, ever the voice of reason, attempts to keep his penny-pinching boss from absolute disaster. With guest appearances from the show's beloved supporting cast, including the cantankerous Professor LeBlanc and Mary Livingstone, this episode crackles with the kind of rapid-fire banter and physical comedy that made The Jack Benny Program America's most beloved comedy show.</p>
 <p>By 1940, Jack Benny had already perfected the art of radio comedy—a format that demanded impeccable timing, clever writing, and the ability to paint vivid scenes using only voices, sound effects, and orchestral cues. Unlike variety shows that leaned on novelty acts, Benny's program built comedy around character and situation, transforming the microphone into a window onto his fictional world. His famous stinginess became legendary, and audiences adored watching him squirm and scheme to avoid parting with even a dime. This Christmas shopping episode exemplifies why, during radio's golden age, millions of Americans tuned in faithfully each week.</p>
 <p>Whether you're a longtime devotee of classic radio or discovering Jack Benny for the first time, this December 1940 broadcast captures the magic of a master comedian at his peak. The warmth, wit, and wonderful absurdity await—so settle in, tune your dial, and let Jack remind you why radio's golden age truly was golden.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

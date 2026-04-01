@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1939 11 12 Jack's Toothache — The Jack Benny Program | Ghost of Radio</title>
+  <title>Jack's Toothache — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1939 11 12 Jack's Toothache — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1939 11 12 Jack's Toothache — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1939 11 12 Jack's Toothache — The Jack Benny Program (NBC/CBS, 1939). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1939</span>
           </div>
-          <h1 class="episode__title">Jb 1939 11 12 Jack's Toothache</h1>
+          <h1 class="episode__title">Jack's Toothache</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Jack Benny Program: Jack's Toothache (November 12, 1939)</p>
-<p>Picture yourself settling into an overstuffed armchair on a crisp November evening, the warm glow of your radio's dial illuminating the darkened room. As Jack Benny's measured, elegantly timed voice fills your home, you're immediately drawn into a comedy of escalating dental desperation. Jack is suffering from a toothache—but this is no ordinary ache. What unfolds is a masterclass in comedic patience as Jack delays, procrastinates, and schemes to avoid the dentist's chair, turning a simple ailment into a symphony of groans, stammers, and brilliantly placed silences. His supporting cast—Mary Livingstone, Don Wilson, and the incomparable Rochester—weave through scenes that range from the ridiculous to the absurd, each contributing perfectly timed interruptions and reactions that make the agony feel entirely real.</p>
+          <p>Picture yourself settling into an overstuffed armchair on a crisp November evening, the warm glow of your radio's dial illuminating the darkened room. As Jack Benny's measured, elegantly timed voice fills your home, you're immediately drawn into a comedy of escalating dental desperation. Jack is suffering from a toothache—but this is no ordinary ache. What unfolds is a masterclass in comedic patience as Jack delays, procrastinates, and schemes to avoid the dentist's chair, turning a simple ailment into a symphony of groans, stammers, and brilliantly placed silences. His supporting cast—Mary Livingstone, Don Wilson, and the incomparable Rochester—weave through scenes that range from the ridiculous to the absurd, each contributing perfectly timed interruptions and reactions that make the agony feel entirely real.</p>
 <p>By 1939, The Jack Benny Program had perfected an art form that would influence comedy for generations. Unlike the frantic pace of other variety shows, Benny understood that comedy lived in the pause, the expectation, and the human moment. His reliance on character development and running gags—Rochester's acid-tongued devotion, Mary's exasperated affection, the mysterious workings of Jack's vault—created a fictional universe that millions tuned into weekly. This episode exemplifies why Benny remained America's favorite entertainer throughout the Depression and into the war years: he transformed the mundane into the monumental through sheer force of timing and conviction.</p>
 <p>Tune in to experience why Jack Benny's program became the gold standard of radio comedy. Hear how one man's toothache becomes a thirty-minute journey through laughter, pathos, and the kinds of gentle humiliations that only Benny could make universally funny. Your evening awaits.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1938 03 27 Guests Fred Allen & Kate Smith (east) — The Jack Benny Program | Ghost of Radio</title>
+  <title>Guests Fred Allen & Kate Smith (east) — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1938 03 27 Guests Fred Allen & Kate Smith (east) — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1938 03 27 Guests Fred Allen & Kate Smith (east) — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1938 03 27 Guests Fred Allen & Kate Smith (east) — The Jack Benny Program (NBC/CBS, 1938). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1938</span>
           </div>
-          <h1 class="episode__title">Jb 1938 03 27 Guests Fred Allen & Kate Smith (east)</h1>
+          <h1 class="episode__title">Guests Fred Allen & Kate Smith (east)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program — March 27, 1938</p>
-<p>Picture yourself huddled around a wooden radio console on a Sunday evening in the spring of 1938, the warm glow of the dial illuminating eager faces in living rooms across America. Tonight, Jack Benny has orchestrated something truly special: a theatrical collision between two of radio's most formidable comedians. Fred Allen, that sharp-tongued raconteur from the rival CBS network, steps into Jack's NBC domain for a night of delicious verbal sparring, while the incomparable Kate Smith—America's Songbird—lends her golden voice to the proceedings. The tension crackles with genuine rivalry; the banter between Benny and Allen carries the weight of real competitive tension, each man determined to score the quickest laugh. You can almost hear the studio audience leaning forward in their seats, uncertain whether this is scripted brilliance or authentic conflict. Mary Livingstone provides her characteristic deadpan asides, Don Wilson booms his urbane announcements, and the orchestra swells with perfectly timed musical punctuation as the comedy builds toward moments of pure comedic genius.</p>
+          <p>Picture yourself huddled around a wooden radio console on a Sunday evening in the spring of 1938, the warm glow of the dial illuminating eager faces in living rooms across America. Tonight, Jack Benny has orchestrated something truly special: a theatrical collision between two of radio's most formidable comedians. Fred Allen, that sharp-tongued raconteur from the rival CBS network, steps into Jack's NBC domain for a night of delicious verbal sparring, while the incomparable Kate Smith—America's Songbird—lends her golden voice to the proceedings. The tension crackles with genuine rivalry; the banter between Benny and Allen carries the weight of real competitive tension, each man determined to score the quickest laugh. You can almost hear the studio audience leaning forward in their seats, uncertain whether this is scripted brilliance or authentic conflict. Mary Livingstone provides her characteristic deadpan asides, Don Wilson booms his urbane announcements, and the orchestra swells with perfectly timed musical punctuation as the comedy builds toward moments of pure comedic genius.</p>
 <p>This episode captures radio's Golden Age at its absolute peak—a moment when the medium commanded 90 million listeners nightly and Sunday evenings belonged to the families gathered before their sets. The Jack Benny Program had perfected the variety format, blending comedy sketches, musical numbers, and genuine celebrity interaction into appointments audiences simply could not miss. Benny's peculiar genius lay not in rapid-fire jokes but in meticulous character work: his penny-pinching ways, his vanity, his orchestra's barely concealed disdain. By 1938, he was already legendary, and Kate Smith's participation adds a touch of musical legitimacy to the evening's entertainment.</p>
 <p>Tune in and experience the moment when radio comedy was at its most sophisticated, when networks competed ferociously for America's attention, and when the magic of live broadcast meant anything could happen. This is radio as it was meant to be heard.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

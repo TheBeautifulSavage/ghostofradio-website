@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1945 03 25 Murder Mystery — The Jack Benny Program | Ghost of Radio</title>
+  <title>Murder Mystery — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1945 03 25 Murder Mystery — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1945 03 25 Murder Mystery — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1945 03 25 Murder Mystery — The Jack Benny Program (NBC/CBS, 1945). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1945</span>
           </div>
-          <h1 class="episode__title">Jb 1945 03 25 Murder Mystery</h1>
+          <h1 class="episode__title">Murder Mystery</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Murder Mystery (March 25, 1945)</p>
-<p>Step into the smoky shadows of Jack Benny's latest predicament as a baffling murder threatens to unravel the very fabric of his carefully constructed world. In this deliciously twisted episode, our perpetually broke violinist finds himself tangled in a whodunit that will keep you guessing until the final, inevitable punchline. With the crisp snap of radio drama colliding headlong into comedy, listeners are treated to a masterclass in suspense and misdirection—where every shadow could hide either genuine peril or Benny's own hapless bungling. Don Ameche, Mary Livingstone, Phil Harris, and the rest of the familiar cast turn this March evening into an evening of genuine intrigue, complete with the distinctive sound effects that make your imagination run wild with possibilities.</p>
+          <p>Step into the smoky shadows of Jack Benny's latest predicament as a baffling murder threatens to unravel the very fabric of his carefully constructed world. In this deliciously twisted episode, our perpetually broke violinist finds himself tangled in a whodunit that will keep you guessing until the final, inevitable punchline. With the crisp snap of radio drama colliding headlong into comedy, listeners are treated to a masterclass in suspense and misdirection—where every shadow could hide either genuine peril or Benny's own hapless bungling. Don Ameche, Mary Livingstone, Phil Harris, and the rest of the familiar cast turn this March evening into an evening of genuine intrigue, complete with the distinctive sound effects that make your imagination run wild with possibilities.</p>
 <p>By 1945, The Jack Benny Program had become an American institution, a weekly appointment that millions of listeners honored like clockwork. What set Benny apart from his contemporaries was his willingness to break comedic conventions—to let silence hang heavy with tension before delivering a perfectly-timed laugh. This episode arrives during the twilight of radio's golden age, when comedians understood that the invisible audience demanded more than mere jokes; they craved characters worth caring about, relationships worth investing in. Benny's mix of variety acts, musical interludes, and dramatic parodies created a unique alchemy that influenced generations of entertainers to come.</p>
 <p>Settle into your favorite chair, adjust the dial, and prepare for an evening when Jack Benny proves once again why he commanded Wednesday night airwaves across America. This is radio at its finest—mystery, laughter, and the warm, familiar voices of old friends gathered around the speaker.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

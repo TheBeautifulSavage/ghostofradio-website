@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1940 05 05 Clown Hall Tonight (east) — The Jack Benny Program | Ghost of Radio</title>
+  <title>Clown Hall Tonight (east) — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1940 05 05 Clown Hall Tonight (east) — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1940 05 05 Clown Hall Tonight (east) — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1940 05 05 Clown Hall Tonight (east) — The Jack Benny Program (NBC/CBS, 1940). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1940</span>
           </div>
-          <h1 class="episode__title">Jb 1940 05 05 Clown Hall Tonight (east)</h1>
+          <h1 class="episode__title">Clown Hall Tonight (east)</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Clown Hall Tonight</p>
-<p>Picture yourself settling into your favorite chair on this spring evening in 1940, tuning your radio dial to catch Jack Benny at his comedic best. Tonight's episode promises a delightful journey through "Clown Hall," where the line between refined sophistication and vaudeville zaniness blurs into pure comedic gold. Listeners will find themselves caught in Jack's familiar predicament—caught between his pretensions of being a serious musician and the theatrical chaos erupting around him. Don Rochester and the gang are waiting in the wings, ready to puncture Jack's ego with perfectly timed interruptions, and you can practically hear the studio audience leaning forward in anticipation. The tension between Jack's deadpan reactions and the surrounding mayhem is the show's secret formula, and on this particular May evening, that formula is firing on all cylinders.</p>
+          <p>Picture yourself settling into your favorite chair on this spring evening in 1940, tuning your radio dial to catch Jack Benny at his comedic best. Tonight's episode promises a delightful journey through "Clown Hall," where the line between refined sophistication and vaudeville zaniness blurs into pure comedic gold. Listeners will find themselves caught in Jack's familiar predicament—caught between his pretensions of being a serious musician and the theatrical chaos erupting around him. Don Rochester and the gang are waiting in the wings, ready to puncture Jack's ego with perfectly timed interruptions, and you can practically hear the studio audience leaning forward in anticipation. The tension between Jack's deadpan reactions and the surrounding mayhem is the show's secret formula, and on this particular May evening, that formula is firing on all cylinders.</p>
 <p>By 1940, The Jack Benny Program had already become America's favorite half-hour of laughter, a show that transcended mere comedy to become a cultural institution. Jack's genius lay not in the jokes themselves but in the pauses between them—those pregnant silences that somehow generated more laughter than punchlines. The program's format, mixing comedy sketches with musical interludes and guest appearances, had become the template for American radio entertainment. Unlike cruder comedians relying on slapstick or aggressive humor, Jack Benny built his empire on character, timing, and the enduring appeal of watching a vain, penny-pinching violinist repeatedly humiliated by his own entourage.</p>
 <p>So tune in and discover why millions of Americans made this appointment with Jack Benny an unmissable ritual. In an era of uncertainty, his gentle mockery and brilliant timing offered something increasingly precious—the gift of shared laughter.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

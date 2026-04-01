@@ -4,7 +4,7 @@
   <script>if(location.protocol!=="https:"&&location.hostname!=="localhost")location.replace("https://"+location.host+location.pathname+location.search);</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jb 1948 10 31 Trick Or Treating With The Beavers — The Jack Benny Program | Ghost of Radio</title>
+  <title>Trick Or Treating With The Beavers — The Jack Benny Program | Ghost of Radio</title>
   <meta name="description" content="Listen to Jb 1948 10 31 Trick Or Treating With The Beavers — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
   <meta property="og:title" content="Jb 1948 10 31 Trick Or Treating With The Beavers — The Jack Benny Program">
   <meta property="og:description" content="Listen to Jb 1948 10 31 Trick Or Treating With The Beavers — The Jack Benny Program (NBC/CBS, 1948). Classic old time radio streaming free on Ghost of Radio.">
@@ -42,7 +42,7 @@
             <span class="episode__show">The Jack Benny Program</span>
             <span class="episode__network">NBC/CBS · 1948</span>
           </div>
-          <h1 class="episode__title">Jb 1948 10 31 Trick Or Treating With The Beavers</h1>
+          <h1 class="episode__title">Trick Or Treating With The Beavers</h1>
         </header>
 
         <div class="radio-player-wrapper">
@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># The Jack Benny Program: Trick or Treating with the Beavers</p>
-<p>Picture the crackle of your radio on this All Hallows' Eve broadcast, as Jack Benny opens his home to an unexpected invasion of trick-or-treaters—and chaos ensues in the most delightfully comedic way. This October 31st episode captures Jack at his finest, playing the perpetually stingy, vain character audiences had grown to love, as he grapples with the prospect of distributing candy to costumed children while his household staff—including the ever-patient Rochester and the melodramatic tenor Dennis Day—scramble to manage the mayhem. The evening's events unfold with the kind of perfectly timed comedic precision that made The Jack Benny Program appointment radio, complete with sound effects that transform the humble front door into the gateway between Jack's orderly world and the mischievous chaos of Halloween night.</p>
+          <p>Picture the crackle of your radio on this All Hallows' Eve broadcast, as Jack Benny opens his home to an unexpected invasion of trick-or-treaters—and chaos ensues in the most delightfully comedic way. This October 31st episode captures Jack at his finest, playing the perpetually stingy, vain character audiences had grown to love, as he grapples with the prospect of distributing candy to costumed children while his household staff—including the ever-patient Rochester and the melodramatic tenor Dennis Day—scramble to manage the mayhem. The evening's events unfold with the kind of perfectly timed comedic precision that made The Jack Benny Program appointment radio, complete with sound effects that transform the humble front door into the gateway between Jack's orderly world and the mischievous chaos of Halloween night.</p>
 <p>By 1948, Jack Benny had become an American institution, his fifteen-minute program a stable fixture in radio's golden age since 1932. What set Benny apart from his competitors was his genius for self-deprecation and character consistency—listeners tuned in not for variety acts alone, but for Jack's running character sketch, where his stinginess and vanity were treated as enduring traits worthy of continuous comic exploration. His ensemble cast, particularly Rochester's sharp-witted rebuttals and Phil Harris's suave interruptions, created a serialized universe where listeners felt invested in these recurring relationships and situations. Holiday episodes like this one proved that Benny's formula could stretch beyond the studio, reflecting the everyday lives of his audience while maintaining the theatrical absurdity that made radio magic.</p>
 <p>Join Jack Benny and the gang as they navigate the frights and delights of Halloween night—you won't want to miss the trick-or-treating mayhem that unfolds when the neighborhood's children come calling on the home of radio's most miserly millionaire.</p>
         </div>
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
