@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Dangerous Assignment: Damascus</p>
-<p>Picture yourself in a smoke-filled living room on a June evening in 1953, the radio crackling to life with the unmistakable opening theme. "Dangerous Assignment" returns you once more to the shadowy world of international intrigue, this time whisking you away to the ancient streets of Damascus. Our intrepid operative finds himself entangled in a web of espionage that stretches across the volatile Middle East—where ancient trade routes become modern corridors of secrets, where trust is a luxury no one can afford, and where a single misstep could mean disappearance into the maze of the Old City. The hiss of steam, the murmur of Arabic in crowded souks, the tension of clandestine meetings in darkened bazaars—all rendered in vivid sound design that makes you feel the desert heat pressing through your radio speaker.</p>
+          <p>Picture yourself in a smoke-filled living room on a June evening in 1953, the radio crackling to life with the unmistakable opening theme. "Dangerous Assignment" returns you once more to the shadowy world of international intrigue, this time whisking you away to the ancient streets of Damascus. Our intrepid operative finds himself entangled in a web of espionage that stretches across the volatile Middle East—where ancient trade routes become modern corridors of secrets, where trust is a luxury no one can afford, and where a single misstep could mean disappearance into the maze of the Old City. The hiss of steam, the murmur of Arabic in crowded souks, the tension of clandestine meetings in darkened bazaars—all rendered in vivid sound design that makes you feel the desert heat pressing through your radio speaker.</p>
 <p>What made "Dangerous Assignment" such a beloved fixture in America's golden age of radio was its unflinching commitment to realism wrapped in high-stakes adventure. Brian Cameron, our globe-trotting protagonist played with cool conviction, represented the postwar American archetype: the resourceful operative navigating a newly multipolar world bristling with Cold War tensions and colonial upheaval. By 1953, when this Damascus episode aired, listeners were hungry for sophisticated storytelling that acknowledged the genuine dangers lurking in these far-flung locales—not the pulp fantasies of earlier eras, but grounded, intelligent narratives that reflected the genuine anxieties of their contemporary moment.</p>
-<p>Step back into 1953. Tune in. Feel the crackle of static give way to mystery, danger, and the unmistakable sound of adventure unfolding thousands of miles away, yet somehow intimate in your home. *Dangerous Assignment: Damascus* awaits.</p>
+<p>Step back into 1953. Tune in. Feel the crackle of static give way to mystery, danger, and the unmistakable sound of adventure unfolding thousands of miles away, yet somehow intimate in your home. Dangerous Assignment: Damascus awaits.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
