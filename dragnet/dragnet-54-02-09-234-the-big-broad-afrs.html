@@ -83,8 +83,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Dragnet: "The Big Broad"</p>
-<p>*Broadcast February 9, 1954*</p>
+          <p>Broadcast February 9, 1954</p>
 <p>The rain hammers against the pavement outside Los Angeles Police Headquarters as Sergeant Joe Friday methodically walks you through another night in the city's underbelly. A woman's missing—her name is Eleanor, and she's vanished without a trace into the neon-lit streets of downtown LA, leaving behind only questions and a trail of shattered lives. As Friday's gravelly voice cuts through the static, you'll follow him through dimly lit bars and cramped apartments, listening as he patiently interviews suspects with the precision of a man who knows that somewhere in the details—the contradictions, the nervous hesitations, the carefully chosen words—lies the truth. The tension builds not through music or manufactured suspense, but through the authentic bureaucratic rhythm of detective work: the filing of reports, the cross-checking of alibis, the grinding persistence of police procedure.</p>
 <p>Dragnet revolutionized radio drama by abandoning the sensational theatrics of its predecessors, instead presenting cases drawn from actual Los Angeles Police Department files with unflinching realism. Jack Webb's creation didn't rely on elaborate sound effects or melodramatic plotting; instead, it trusted listeners to find drama in authenticity. The show became a cultural phenomenon partly because it treated its audience like intelligent adults, presenting law enforcement not as a glamorous adventure but as meticulous, often unglamorous work. By the 1950s, Dragnet had become required listening for millions, influencing everything from police procedures themselves to the future of crime television.</p>
 <p>Step into the smoke-filled bullpen of the LAPD and experience the procedural drama that captivated a nation. This is police work as it really happens—patient, deliberate, and utterly compelling. Tune in and see if you can solve the case before Friday does.</p>
@@ -122,9 +121,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

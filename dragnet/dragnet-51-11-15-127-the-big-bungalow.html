@@ -83,10 +83,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Big Bungalow</p>
-<p>Picture the Los Angeles night: October 15th, 1951. The streets are slick with rain as Sergeant Joe Friday and Officer Ben Romero roll out on another case—this time, a burglary at a modest bungalow in the city's sprawling residential districts. What begins as a routine property crime unravels into something far more sinister. With nothing but procedure, persistence, and the cold facts of the evidence, our detectives must navigate a web of suspicious neighbors, questionable alibis, and the kind of petty crimes that fester in ordinary homes. You'll hear the distinctive scrape of a detective's notebook, the matter-of-fact questioning, the bureaucratic machinery of Los Angeles law enforcement grinding forward methodically toward the truth. This is Dragnet at its finest—no Hollywood heroics, just the real work of real cops.</p>
+          <p>Picture the Los Angeles night: October 15th, 1951. The streets are slick with rain as Sergeant Joe Friday and Officer Ben Romero roll out on another case—this time, a burglary at a modest bungalow in the city's sprawling residential districts. What begins as a routine property crime unravels into something far more sinister. With nothing but procedure, persistence, and the cold facts of the evidence, our detectives must navigate a web of suspicious neighbors, questionable alibis, and the kind of petty crimes that fester in ordinary homes. You'll hear the distinctive scrape of a detective's notebook, the matter-of-fact questioning, the bureaucratic machinery of Los Angeles law enforcement grinding forward methodically toward the truth. This is Dragnet at its finest—no Hollywood heroics, just the real work of real cops.</p>
 <p>Jack Webb's revolutionary approach to crime radio transformed the medium entirely. By casting himself as the unflinching Sergeant Friday and insisting on technical accuracy with the LAPD, Webb created something audiences had never heard before: authentic procedural drama stripped of melodrama and moral preaching. Unlike the sensational crime shows that dominated airwaves, Dragnet invited listeners into the unglamorous reality of detective work—the paperwork, the legwork, the endless interviews. NBC's commitment to the show during the late 1940s and early 1950s reflected a nation fascinated by law and order, and by the promise that American institutions could deliver justice through competence rather than luck.</p>
-<p>If you want to experience radio drama that shaped an entire genre—that would later influence television for decades to come—tune in to *The Big Bungalow*. Settle in, turn down the lights, and let the siren wail.</p>
+<p>If you want to experience radio drama that shaped an entire genre—that would later influence television for decades to come—tune in to The Big Bungalow. Settle in, turn down the lights, and let the siren wail.</p>
         </div>
 
         
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -83,11 +83,10 @@
         </div>
 
         <div class="episode__content">
-          <p># Dragnet: "Big Housemaid"</p>
-<p>*July 26, 1955*</p>
+          <p>July 26, 1955</p>
 <p>Picture this: a modest Los Angeles home, and a missing housekeeper who vanishes without a trace. As Sergeant Joe Friday's matter-of-fact voice cuts through the static, listeners are drawn into the methodical world of real police work—the unglamorous, painstaking investigation that separates fact from fiction. There's no melodrama here, only the facts: names, addresses, times, and the meticulous detective work that cracks the case. In "Big Housemaid," Friday and Officer Bill Gannon follow the evidence where it leads, interviewing witnesses with the same flat, professional tone they'd use at the precinct. The tension builds not through orchestral swells but through the careful accumulation of details, the growing sense that something dark has unfolded in plain sight. This is the Los Angeles Police Department as it actually was—methodical, thorough, and utterly compelling.</p>
-<p>*Dragnet* revolutionized radio crime drama by stripping away the sensationalism that audiences craved and replacing it with something far more powerful: authenticity. Created by and starring Jack Webb, the show was based on real LAPD cases, approved by the department, and built on consultation with actual detectives. By the mid-1950s, when this episode aired, *Dragnet* had become a cultural phenomenon—a show that made the mundane machinery of law enforcement fascinating to millions. Webb's laconic delivery and the show's documentary-style approach influenced everything that came after, from police procedurals on television to the very language we use when discussing detective work.</p>
-<p>Don't miss this classic example of old-time radio at its finest. Tune in to "Big Housemaid" and experience why *Dragnet* earned its reputation as one of broadcasting's most influential programs—where just the facts made for unforgettable listening.</p>
+<p>Dragnet revolutionized radio crime drama by stripping away the sensationalism that audiences craved and replacing it with something far more powerful: authenticity. Created by and starring Jack Webb, the show was based on real LAPD cases, approved by the department, and built on consultation with actual detectives. By the mid-1950s, when this episode aired, Dragnet had become a cultural phenomenon—a show that made the mundane machinery of law enforcement fascinating to millions. Webb's laconic delivery and the show's documentary-style approach influenced everything that came after, from police procedurals on television to the very language we use when discussing detective work.</p>
+<p>Don't miss this classic example of old-time radio at its finest. Tune in to "Big Housemaid" and experience why Dragnet earned its reputation as one of broadcasting's most influential programs—where just the facts made for unforgettable listening.</p>
         </div>
 
         
@@ -122,9 +121,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

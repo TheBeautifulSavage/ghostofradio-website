@@ -83,10 +83,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Big Sisters</p>
-<p>When Sergeant Joe Friday and Officer Ben Romero answer a call about a missing teenage girl in 1950s Los Angeles, they step into a world of desperation that hits closer to home than they expect. A young runaway named Betty vanishes from her modest home, leaving behind only worried parents and a trail that leads through the city's shadowy underbelly. As the detectives methodically interview witnesses and piece together the fragments of a girl's last known movements, the episode builds with that signature Dragnet precision—no Hollywood heroics, just the grinding, relentless work of police procedure. The clock ticks against them as every lead grows colder, and the listener is pulled deeper into the authentic rhythm of a real investigation unfolding minute by minute.</p>
+          <p>When Sergeant Joe Friday and Officer Ben Romero answer a call about a missing teenage girl in 1950s Los Angeles, they step into a world of desperation that hits closer to home than they expect. A young runaway named Betty vanishes from her modest home, leaving behind only worried parents and a trail that leads through the city's shadowy underbelly. As the detectives methodically interview witnesses and piece together the fragments of a girl's last known movements, the episode builds with that signature Dragnet precision—no Hollywood heroics, just the grinding, relentless work of police procedure. The clock ticks against them as every lead grows colder, and the listener is pulled deeper into the authentic rhythm of a real investigation unfolding minute by minute.</p>
 <p>Dragnet's 1949-1957 NBC run revolutionized radio crime drama by stripping away melodrama entirely, presenting instead the authentic voice of the LAPD itself. Creator and star Jack Webb worked directly with the Los Angeles Police Department, ensuring that every procedure, every protocol, and every turn of phrase reflected reality. This episode exemplifies that groundbreaking approach—no musical stings to manipulate emotion, no villains twirling mustaches, just the stark reality of missing persons investigations and the dedicated officers who work them. The show became a cultural phenomenon precisely because listeners recognized truth in every word, making each case feel like it could be happening on their own street.</p>
-<p>Tune in to *The Big Sisters* and experience the golden age of radio drama at its most compelling—where the real work of police detective work becomes the greatest thriller of all. No tricks, no illusions, just the facts as they unfold.</p>
+<p>Tune in to The Big Sisters and experience the golden age of radio drama at its most compelling—where the real work of police detective work becomes the greatest thriller of all. No tricks, no illusions, just the facts as they unfold.</p>
         </div>
 
         
@@ -121,9 +120,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
