@@ -71,10 +71,9 @@
         </div>
 
         <div class="episode__content">
-          <p># Nick Carter, Master Detective: Missing Harold Ascort</p>
-<p>As fog rolls thick through the gaslit streets of Manhattan, Nick Carter takes a case that will lead him into the shadowy underworld of high society and desperate secrets. When young Harold Ascort vanishes without a trace, leaving behind only a cryptic note and mounting questions, the Master Detective must navigate a labyrinth of lies, blackmail, and betrayal. With his trusty assistant Chick Williams by his side, Carter employs his legendary powers of deduction to uncover whether Ascort has met with foul play or engineered his own disappearance. The tension builds through every scene—from the Ascort mansion's dimly lit corridors to the smoky jazz joints where underworld figures trade whispered intelligence. Every clue matters, every suspect conceals something, and time is running out as dark forces converge on the truth.</p>
+          <p>As fog rolls thick through the gaslit streets of Manhattan, Nick Carter takes a case that will lead him into the shadowy underworld of high society and desperate secrets. When young Harold Ascort vanishes without a trace, leaving behind only a cryptic note and mounting questions, the Master Detective must navigate a labyrinth of lies, blackmail, and betrayal. With his trusty assistant Chick Williams by his side, Carter employs his legendary powers of deduction to uncover whether Ascort has met with foul play or engineered his own disappearance. The tension builds through every scene—from the Ascort mansion's dimly lit corridors to the smoky jazz joints where underworld figures trade whispered intelligence. Every clue matters, every suspect conceals something, and time is running out as dark forces converge on the truth.</p>
 <p>Nick Carter, Master Detective was a cornerstone of American radio from its inception, commanding millions of listeners across the Mutual network throughout the 1940s and into the 1950s. Originally a pulp magazine hero, Carter's transition to radio brought the character new life, anchored by superior writing and the resonant voice of Lon Clark. This particular episode exemplifies the show's golden age, when post-war America craved escapist mystery and the crisp, efficient storytelling that made radio drama an art form. The program's influence shaped an entire generation's appetite for detective fiction, bridging the gap between pulp adventure and sophisticated mystery.</p>
-<p>Tune in to *Nick Carter, Master Detective: Missing Harold Ascort*—a masterclass in suspense where every word crackles with danger and no one can be trusted. This is radio drama at its finest.</p>
+<p>Tune in to Nick Carter, Master Detective: Missing Harold Ascort—a masterclass in suspense where every word crackles with danger and no one can be trusted. This is radio drama at its finest.</p>
         </div>
 
         <footer class="episode__footer">
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

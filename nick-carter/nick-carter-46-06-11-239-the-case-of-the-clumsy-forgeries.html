@@ -71,10 +71,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Case of the Clumsy Forgeries</p>
-<p>Step into the shadowy offices of the Master Detective as forged documents threaten to topple a respected Manhattan banking empire. Nick Carter finds himself navigating a labyrinth of counterfeit signatures, falsified ledgers, and desperate men willing to commit murder to keep their scheme hidden. With his trusty sidekick Champ and the sharp-eyed Patsy, Nick must separate the genuine from the fraudulent—not just in paperwork, but in the motives of every suspect who crosses his path. The tension mounts as our hero races against time, knowing that one misstep could plunge an innocent man into prison while the real criminals vanish into the urban underworld. This case demands every ounce of Carter's legendary deductive prowess.</p>
+          <p>Step into the shadowy offices of the Master Detective as forged documents threaten to topple a respected Manhattan banking empire. Nick Carter finds himself navigating a labyrinth of counterfeit signatures, falsified ledgers, and desperate men willing to commit murder to keep their scheme hidden. With his trusty sidekick Champ and the sharp-eyed Patsy, Nick must separate the genuine from the fraudulent—not just in paperwork, but in the motives of every suspect who crosses his path. The tension mounts as our hero races against time, knowing that one misstep could plunge an innocent man into prison while the real criminals vanish into the urban underworld. This case demands every ounce of Carter's legendary deductive prowess.</p>
 <p>Nick Carter, Master Detective represented the golden age of radio mystery—when network programming could deliver sophisticated crime drama to millions of American households each week. Airing on the Mutual Broadcasting System throughout the 1940s and 1950s, the show built its reputation on intricate plots grounded in authentic detective work rather than fantastic gimmickry. The writers crafted scenarios that reflected real concerns of the era: white-collar crime, financial deception, and the vulnerability of institutions to corruption. For nearly a dozen years, listeners relied on Nick Carter to restore order and justice with intelligence and integrity, making him one of radio's most enduring and beloved detectives.</p>
-<p>If you're craving the cerebral pleasures of classic detective radio—the crackle of aged acetate, the disembodied voices that paint vivid scenes in your mind's eye, and a mystery that rewards careful listening—then tune in to *The Case of the Clumsy Forgeries*. Nick Carter awaits.</p>
+<p>If you're craving the cerebral pleasures of classic detective radio—the crackle of aged acetate, the disembodied voices that paint vivid scenes in your mind's eye, and a mystery that rewards careful listening—then tune in to The Case of the Clumsy Forgeries. Nick Carter awaits.</p>
         </div>
 
         <footer class="episode__footer">
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
