@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># My Bill – March 3, 1941</p>
-<p>Step into the soft glow of the Lux Radio Theatre on this March evening in 1941, where the intimate struggles of an ordinary woman's heart take center stage. *My Bill* brings listeners into the quiet desperation of a wife facing an impossible choice—a woman caught between duty and desire, between the man she married and the man she might have loved. As the orchestra swells and the actors settle into their roles, you'll find yourself transported into a modest American home where the real drama isn't found in grand gestures, but in whispered conversations and the weight of unspoken words. This is a story about sacrifice, about the roads not taken, and about the price of keeping a family together when your own heart is slowly breaking.</p>
+          <p>Step into the soft glow of the Lux Radio Theatre on this March evening in 1941, where the intimate struggles of an ordinary woman's heart take center stage. My Bill brings listeners into the quiet desperation of a wife facing an impossible choice—a woman caught between duty and desire, between the man she married and the man she might have loved. As the orchestra swells and the actors settle into their roles, you'll find yourself transported into a modest American home where the real drama isn't found in grand gestures, but in whispered conversations and the weight of unspoken words. This is a story about sacrifice, about the roads not taken, and about the price of keeping a family together when your own heart is slowly breaking.</p>
 <p>The Lux Radio Theatre had established itself as America's premier dramatic showcase by 1941, commanding audiences of millions who gathered around their radio sets each Monday night to experience Hollywood's finest actors in carefully adapted plays and stories. Sponsored by Lux soap, the program represented the golden age of radio drama—when a stellar cast, tight direction, and superb sound design could move an entire nation to tears in thirty minutes. This particular adaptation brought to life a deeply human story that resonated with ordinary Americans facing their own quiet heartbreaks during an era of increasing uncertainty.</p>
-<p>Whether you're a devoted fan of classic radio drama or discovering the magic of the Lux Theatre for the first time, this episode stands as a beautiful testament to the power of intimate storytelling. Tune in and experience *My Bill*—where vulnerability becomes universal, and one woman's private anguish becomes your own.</p>
+<p>Whether you're a devoted fan of classic radio drama or discovering the magic of the Lux Theatre for the first time, this episode stands as a beautiful testament to the power of intimate storytelling. Tune in and experience My Bill—where vulnerability becomes universal, and one woman's private anguish becomes your own.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

@@ -82,10 +82,9 @@
         </div>
 
         <div class="episode__content">
-          <p># I Wanted Wings</p>
-<p>Picture this: March 30th, 1942. A nation at war, families gathered around their radios in darkened living rooms, eager to escape into another world—if only for an evening. Tonight, the Lux Radio Theatre presents *I Wanted Wings*, a stirring adaptation that captures the fever and urgency of America's newest warriors: the men of the Army Air Forces. As the orchestra swells and the signature announcer's baritone introduces the drama, you'll experience the tension of military training, the impossible choices between duty and desire, and the romance that blooms in wartime's uncertain shadows. This is a story about young men transformed overnight into pilots, about sacrifice measured in more than just miles—it's personal, it's immediate, and it's happening to someone's son right now.</p>
+          <p>Picture this: March 30th, 1942. A nation at war, families gathered around their radios in darkened living rooms, eager to escape into another world—if only for an evening. Tonight, the Lux Radio Theatre presents I Wanted Wings, a stirring adaptation that captures the fever and urgency of America's newest warriors: the men of the Army Air Forces. As the orchestra swells and the signature announcer's baritone introduces the drama, you'll experience the tension of military training, the impossible choices between duty and desire, and the romance that blooms in wartime's uncertain shadows. This is a story about young men transformed overnight into pilots, about sacrifice measured in more than just miles—it's personal, it's immediate, and it's happening to someone's son right now.</p>
 <p>The Lux Radio Theatre stood at the pinnacle of dramatic broadcasting during an era when radio was America's most intimate companion. At its height, the show reached over 15 million listeners weekly, offering Broadway-caliber performances in your home, free of charge. Sponsored by Lux detergent (hence the theatrical introductions to "look sharp, feel sharp"), the program consistently attracted Hollywood's biggest stars, who accepted no payment for their performances—it was considered an honor. In 1942, as the war consumed the nation's consciousness, programming like this served a deeper purpose than mere entertainment; it was a mirror held up to American anxieties and aspirations, affirming the nobility of sacrifice.</p>
-<p>Don't miss this remarkable document of a pivotal moment in American history. *I Wanted Wings* offers not just superb drama, but a window into how wartime America understood itself. Tune in and hear radio's golden age in full glory.</p>
+<p>Don't miss this remarkable document of a pivotal moment in American history. I Wanted Wings offers not just superb drama, but a window into how wartime America understood itself. Tune in and hear radio's golden age in full glory.</p>
         </div>
 
         
@@ -120,9 +119,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
