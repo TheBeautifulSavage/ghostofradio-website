@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Boston Blackie: "Tom Walton Escapes"</p>
-<p>*Originally broadcast March 31, 1948*</p>
+          <p>Originally broadcast March 31, 1948</p>
 <p>---</p>
 <p>When the familiar strains of the "Minute Waltz" crackle through your speaker, you know you're about to step into Boston Blackie's shadowy world—a place where the line between criminal and detective blurs as dangerously as a Boston fog. In "Tom Walton Escapes," our reformed jewel thief finds himself pursuing a desperate fugitive through the city's darkest corners, racing against time and the Boston Police who remain convinced that Blackie is somehow complicit in the jailbreak. The tension mounts as Walton's escape throws the carefully balanced arrangement between Blackie and Inspector Farady into chaos. Is our hero protecting a friend? Chasing a dangerous criminal? Or playing a far more intricate game? The answer crackles with danger, deception, and that distinctive Boston Blackie wit that kept millions of listeners glued to their dials night after night.</p>
 <p>Boston Blackie dominated radio from the mid-1940s through 1950, during the golden age when detective serials ruled the airwaves. Chester Morris brought the character to vivid life with a voice both charming and dangerous, perfectly capturing the moral ambiguity that made Blackie so captivating to audiences. The show reflected post-war America's fascination with crime, redemption, and the rogues who occupied the space between law and lawlessness. Each episode offered not just mystery, but character—a man forever trying to prove he'd changed, forever suspected by those who knew his past.</p>
@@ -98,9 +97,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

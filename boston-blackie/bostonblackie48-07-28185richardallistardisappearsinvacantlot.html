@@ -71,8 +71,7 @@
         </div>
 
         <div class="episode__content">
-          <p># Boston Blackie: "Richard Allister Disappears in Vacant Lot"</p>
-<p>Broadcast: July 28, 1948</p>
+          <p>Broadcast: July 28, 1948</p>
 <p>When a prominent businessman vanishes without a trace in a seemingly empty Boston lot, Detective Boston Blackie finds himself entangled in a mystery that grows darker with each clue. Richard Allister, a man of means and influence, steps into that vacant lot on a sweltering summer evening and simply ceases to exist. With only whispered rumors and contradictory witness accounts to guide him, Blackie must navigate the shadowy underbelly of the city's elite—where respectability masks sinister secrets and the comfortable veneer of post-war success conceals corruption. This episode crackles with the tension of a man who walks the line between law and lawlessness, using cunning and street smarts where conventional police methods fail. As the investigation unfolds through Boston's narrow streets and back alleys, listeners will find themselves drawn deeper into a web of deception that challenges everything Blackie thought he knew about the case.</p>
 <p>What made Boston Blackie endure throughout the 1940s was its brilliant subversion of the detective formula—Blackie himself was a reformed jewel thief with connections to both sides of the law, giving the show an authenticity and moral complexity rare for its era. The series, starring Chester Morris in a role that defined his career, captured the gritty realism of urban America in the immediate postwar years, when returning servicemen and economic uncertainty created fertile ground for crime and mystery. Each episode exploited that tension perfectly, grounding fantastical plots in recognizable Boston neighborhoods and genuine human motives.</p>
 <p>Don't miss this masterfully crafted mystery where the boundary between guilty and innocent grows increasingly blurred. Tune in and discover why audiences tuned in religiously to follow Boston Blackie through the fog-shrouded streets of New England's most dangerous city.</p>
@@ -97,9 +96,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });

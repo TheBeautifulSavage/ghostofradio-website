@@ -71,10 +71,9 @@
         </div>
 
         <div class="episode__content">
-          <p># The Condon Ransom</p>
-<p>When a desperate call crackles through the night, Boston Blackie finds himself tangled in a web of extortion and fear that hits far too close to home. *The Condon Ransom* plunges listeners into a taut game of cat-and-mouse where the stakes are measured in blood money and shattered nerves. As Blackie races against the clock to outmaneuver a cunning criminal mastermind, the tension mounts with each passing moment—will he recover the ransom before tragedy strikes? The episode crackles with that signature blend of clever repartee and genuine danger that made the show an NBC/CBS fixture during the golden age of radio, delivering the kind of edge-of-your-seat drama that kept millions of Americans glued to their sets in the late 1940s.</p>
+          <p>When a desperate call crackles through the night, Boston Blackie finds himself tangled in a web of extortion and fear that hits far too close to home. The Condon Ransom plunges listeners into a taut game of cat-and-mouse where the stakes are measured in blood money and shattered nerves. As Blackie races against the clock to outmaneuver a cunning criminal mastermind, the tension mounts with each passing moment—will he recover the ransom before tragedy strikes? The episode crackles with that signature blend of clever repartee and genuine danger that made the show an NBC/CBS fixture during the golden age of radio, delivering the kind of edge-of-your-seat drama that kept millions of Americans glued to their sets in the late 1940s.</p>
 <p>Boston Blackie occupied a unique niche in radio's detective pantheon—not quite a hardboiled noir hero like Sam Spade, yet far grittier than the genteel armchair detectives who came before. Created by Jack Boyle's short stories and adapted brilliantly for radio, the show captured the postwar American appetite for mystery with a distinctly Boston flavor, all three-alarm urgency and street-smart wisdom. By 1947, when this episode aired, the show had already become a cultural phenomenon, spawning a film series and proving that audiences craved detectives who operated in moral gray areas—men who'd bent the law themselves but now stood as champions against those who'd broken it entirely.</p>
-<p>Tune in now to *The Condon Ransom* and experience why Boston Blackie commanded loyal audiences across three major networks over six thrilling years. This is radio mystery at its finest—fast-paced, ingeniously plotted, and delivered with the kind of conviction that made these broadcasts unforgettable.</p>
+<p>Tune in now to The Condon Ransom and experience why Boston Blackie commanded loyal audiences across three major networks over six thrilling years. This is radio mystery at its finest—fast-paced, ingeniously plotted, and delivered with the kind of conviction that made these broadcasts unforgettable.</p>
         </div>
 
         <footer class="episode__footer">
@@ -96,9 +95,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
