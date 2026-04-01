@@ -71,10 +71,9 @@
         </div>
 
         <div class="episode__content">
-          <p># This Is Your FBI - "The Confidence Game"</p>
-<p>**ABC Network | May 4, 1945 | Episode 005**</p>
+          <p>ABC Network | May 4, 1945 | Episode 005</p>
 <p>Picture this: a smoky telephone operator's switchboard, the crackle of a federal wiretap, and somewhere in the labyrinth of a sprawling American city, a con artist named William Roscoe weaves his web of deception. In "The Confidence Game," listeners are thrust into the meticulous world of FBI surveillance as Special Agent Norman Conquest and his team methodically piece together Roscoe's elaborate scheme—a scam preying on the vulnerable dreams of honest working people. The episode pulses with the authentic tension of real investigative work: the patient stakeouts, the coded telephone calls, the moment when suspicious details suddenly crystallize into damning evidence. You'll hear the precise diction of federal agents, the desperate pleas of swindled victims, and the inexorable closing of the noose around a criminal who thought himself too clever to be caught. This is crime drama stripped of Hollywood flourish, grounded in the procedural reality that made the FBI America's premier law enforcement agency.</p>
-<p>*This Is Your FBI* emerged during World War II as an unprecedented collaboration between ABC and the actual Federal Bureau of Investigation, giving the American public an intimate window into the Bureau's operations at the height of its mystique and power. Each episode was drawn from actual case files, lending an almost documentary authority to the drama. By 1945, when this episode aired, the show had become a cultural touchstone—proof that truth truly was stranger than fiction, and that the quiet competence of federal agents was more compelling than any fictional hero.</p>
+<p>This Is Your FBI emerged during World War II as an unprecedented collaboration between ABC and the actual Federal Bureau of Investigation, giving the American public an intimate window into the Bureau's operations at the height of its mystique and power. Each episode was drawn from actual case files, lending an almost documentary authority to the drama. By 1945, when this episode aired, the show had become a cultural touchstone—proof that truth truly was stranger than fiction, and that the quiet competence of federal agents was more compelling than any fictional hero.</p>
 <p>Don't miss your chance to experience the golden age of American crime drama at its most authentic. Tune in for "The Confidence Game" and discover how the FBI brought a master swindler to justice.</p>
         </div>
 
@@ -97,9 +96,9 @@
     const bars = document.querySelectorAll('.bar');
     let animFrame;
     function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
