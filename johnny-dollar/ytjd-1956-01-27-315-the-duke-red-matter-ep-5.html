@@ -56,16 +56,32 @@
           <h1 class="episode__title">The Duke Red Matter Ep 5</h1>
         </header>
 
-        <div class="radio-player-wrapper">
-          <div class="radio-player">
-            <div class="radio-player__header">
-              <span class="broadcast-label">· GHOST OF RADIO ·</span>
-            </div>
-            <div class="radio-player__waveform">
-              <div class="waveform-bars">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
-              </div>
-            </div>
+        <div class="radio-player" id="radioPlayer">
+<div class="radio-top"><div class="radio-grille"></div><div class="radio-info">
+<div class="radio-show-name">Yours Truly, Johnny Dollar</div>
+<div class="radio-episode-title">The Duke Red Matter Ep 5</div>
+<div class="radio-meta">January 27, 1956 &nbsp;·&nbsp; CBS</div>
+</div></div>
+<div class="radio-body">
+<div class="radio-waveform" id="waveform" aria-hidden="true"></div>
+<div class="radio-controls">
+<button class="radio-play-btn" id="playBtn" aria-label="Play episode">
+<svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+<svg class="pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+</button>
+<div class="radio-progress-wrap">
+<input type="range" class="radio-progress" id="progressBar" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+<div class="radio-time"><span id="currentTime">0:00</span><span id="duration">--:--</span></div>
+</div>
+<div class="radio-volume-wrap">
+<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+<input type="range" class="radio-volume" id="volumeBar" min="0" max="1" step="0.05" value="0.85" aria-label="Volume">
+</div></div></div>
+<div class="radio-footer">
+<span class="radio-broadcast" id="broadcastLabel">&middot; GHOST OF RADIO &middot;</span>
+</div>
+<audio id="episodeAudio" preload="none"><source src="https://archive.org/download/OTRR_YoursTrulyJohnnyDollar_Singles/YTJD%201956-01-27%20315%20The%20Duke%20Red%20Matter%20-%20Ep%205.mp3" type="audio/mpeg"></audio>
+</div>
             <div class="radio-player__controls">
               <button class="play-btn" aria-label="Play/Pause">▶</button>
               <div class="progress-container">
@@ -108,26 +124,21 @@
   </main>
 
   <script src="/js/main.js"></script>
-  <script>
-    const audio = document.getElementById('episodeAudio');
-    const playBtn = document.querySelector('.play-btn');
-    const progressBar = document.querySelector('.progress-bar');
-    const volumeBar = document.querySelector('.volume-bar');
-    const currentTimeEl = document.querySelector('.current-time');
-    const durationEl = document.querySelector('.duration');
-    const broadcastLabel = document.querySelector('.broadcast-label');
-    const bars = document.querySelectorAll('.bar');
-    let animFrame;
-    function formatTime(s) { const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
-    playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
-    audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
-    audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
-    progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
-    volumeBar.addEventListener('input',()=>{ audio.volume=volumeBar.value; });
-    audio.volume=0.85;
-  </script>
 <script src="/js/email-capture.js"></script>
+<script>
+const heights=[20, 14, 15, 4, 16, 28, 26, 19, 9, 16, 27, 25, 29, 20, 16, 12, 25, 22, 14, 17, 6, 29, 8, 7, 9, 20, 20, 20, 25, 9, 13, 29, 20, 27, 20, 17, 31, 21, 13, 25, 4, 26, 31, 16, 22, 8, 26, 27, 20, 8, 32, 17, 29, 21, 14, 27];
+const wf=document.getElementById('waveform');
+heights.forEach(h=>{const b=document.createElement('span');b.style.height=h+'px';wf.appendChild(b);});
+const audio=document.getElementById('episodeAudio'),playBtn=document.getElementById('playBtn'),pb=document.getElementById('progressBar'),vb=document.getElementById('volumeBar'),ct=document.getElementById('currentTime'),dur=document.getElementById('duration'),bl=document.getElementById('broadcastLabel'),bars=wf.querySelectorAll('span');
+function fmt(s){if(isNaN(s))return'--:--';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
+let af;function anim(){const p=audio.duration?audio.currentTime/audio.duration:0;const ac=Math.floor(bars.length*p);bars.forEach((b,i)=>b.classList.toggle('active',i<ac));af=requestAnimationFrame(anim);}
+playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.classList.add('playing');bl.classList.add('live');bl.textContent='● ON AIR — GHOST OF RADIO';anim();}else{audio.pause();playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);}});
+audio.addEventListener('timeupdate',()=>{if(audio.duration)pb.value=(audio.currentTime/audio.duration)*100;ct.textContent=fmt(audio.currentTime);});
+audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);});
+audio.addEventListener('ended',()=>{playBtn.classList.remove('playing');bl.classList.remove('live');bl.textContent='· GHOST OF RADIO ·';cancelAnimationFrame(af);pb.value=0;ct.textContent='0:00';});
+pb.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(pb.value/100)*audio.duration;});
+vb.addEventListener('input',()=>{audio.volume=vb.value;});
+audio.volume=0.85;
+</script>
 </body>
 </html>
