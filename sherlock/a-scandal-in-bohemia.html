@@ -125,7 +125,7 @@
         </div>
 
         <h2>The Episode</h2>
-        <p>On December 10, 1945, NBC and ABC aired "A Scandal in Bohemia," one of the most celebrated episodes of The New Adventures of Sherlock Holmes radio series. This installment, based on Sir Arthur Conan Doyle's original short story from *The Strand Magazine*, transports listeners to a fog-laden London where mystery and intrigue are as much a part of the cityscape as its cobblestone streets. In this episode, Prince von Bork of Bohemia arrives at 221B Baker Street seeking Sherlock Holmes' help in retrieving a compromising photograph that threatens his position on the throne. The enigmatic Irene Adler, who has stolen the portrait and cleverly evaded capture, adds a layer of complexity to the case. Her sharp intellect and unyielding spirit challenge Holmes as no other adversary has before. This episode is not just about solving a puzzle; it's a testament to the power of wits against social conventions, with Dr. Watson’s narration weaving in the emotional and moral stakes of the story.</p>
+        <p>On December 10, 1945, NBC and ABC aired "A Scandal in Bohemia," one of the most celebrated episodes of The New Adventures of Sherlock Holmes radio series. This installment, based on Sir Arthur Conan Doyle's original short story from The Strand Magazine, transports listeners to a fog-laden London where mystery and intrigue are as much a part of the cityscape as its cobblestone streets. In this episode, Prince von Bork of Bohemia arrives at 221B Baker Street seeking Sherlock Holmes' help in retrieving a compromising photograph that threatens his position on the throne. The enigmatic Irene Adler, who has stolen the portrait and cleverly evaded capture, adds a layer of complexity to the case. Her sharp intellect and unyielding spirit challenge Holmes as no other adversary has before. This episode is not just about solving a puzzle; it's a testament to the power of wits against social conventions, with Dr. Watson’s narration weaving in the emotional and moral stakes of the story.</p>
 
 
         <div class="era-box">
@@ -187,9 +187,9 @@
     const bars = waveform.querySelectorAll('span');
     function formatTime(s) { if(isNaN(s)) return '--:--'; const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
     let animFrame;
-    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(p*bars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
+    function animateWaveform() { const p=audio.duration?audio.currentTime/audio.duration:0; const ac=Math.floor(pbars.length); bars.forEach((b,i)=>b.classList.toggle('active',i<ac)); animFrame=requestAnimationFrame(animateWaveform); }
     playBtn.addEventListener('click',()=>{ if(audio.paused){ audio.play(); playBtn.classList.add('playing'); broadcastLabel.classList.add('live'); broadcastLabel.textContent='● ON AIR — GHOST OF RADIO'; animateWaveform(); } else { audio.pause(); playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); } });
-    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)*100; currentTimeEl.textContent=formatTime(audio.currentTime); });
+    audio.addEventListener('timeupdate',()=>{ if(audio.duration) progressBar.value=(audio.currentTime/audio.duration)100; currentTimeEl.textContent=formatTime(audio.currentTime); });
     audio.addEventListener('loadedmetadata',()=>{ durationEl.textContent=formatTime(audio.duration); });
     audio.addEventListener('ended',()=>{ playBtn.classList.remove('playing'); broadcastLabel.classList.remove('live'); broadcastLabel.textContent='· GHOST OF RADIO ·'; cancelAnimationFrame(animFrame); progressBar.value=0; currentTimeEl.textContent='0:00'; });
     progressBar.addEventListener('input',()=>{ if(audio.duration) audio.currentTime=(progressBar.value/100)*audio.duration; });
