@@ -375,7 +375,7 @@ def build_html(show_slug, episode_title, filename, audio_url, content, air_date=
         </div>
 
         <div class="episode__content">
-          {chr(10).join(f'<p>{re.sub(r"^#+\\s*", "", p.strip()).strip("*_")}</p>' for p in content.split(chr(10)) if p.strip() and not p.strip().startswith("#"))}
+          {chr(10).join("<p>" + re.sub(r"^#+\s*", "", p.strip()).strip("*_") + "</p>" for p in content.split(chr(10)) if p.strip() and not p.strip().startswith("#"))}
         </div>
 
         <footer class="episode__footer">
