@@ -402,16 +402,19 @@ def build_html(show_slug, episode_title, filename, audio_url, content, air_date=
 </html>'''
 
 def upload_to_r2(local_path, show_slug, filename):
-    """Upload MP3 to Cloudflare R2."""
+    """Upload MP3 to Cloudflare R2. Always remote, never archive.org."""
     key = f"{show_slug}/{filename}"
     try:
         result = subprocess.run([
             "wrangler", "r2", "object", "put", f"ghostofradio-audio/{key}",
             "--file", str(local_path), "--content-type", "audio/mpeg", "--remote"
-        ], capture_output=True, text=True, timeout=120,
-        env={**os.environ, "CLOUDFLARE_API_TOKEN": CF_TOKEN, "CLOUDFLARE_ACCOUNT_ID": CF_ACCOUNT})
+        ], capture_output=True, text=True, timeout=180,
+        env={**os.environ,
+             "CLOUDFLARE_API_TOKEN": CF_TOKEN,
+             "CLOUDFLARE_ACCOUNT_ID": CF_ACCOUNT})
         return result.returncode == 0
-    except Exception:
+    except Exception as e:
+        print(f"  R2 upload error: {e}")
         return False
 
 def process_episode(show_slug, archive_id, filename, archive_url):
@@ -424,7 +427,7 @@ def process_episode(show_slug, archive_id, filename, archive_url):
     if html_path.exists():
         return slug, "skip"
     
-    # Download MP3 and upload to R2; fallback to archive.org if upload fails
+    # Download MP3, upload to R2, delete local. Always R2 — never archive.org.
     local_mp3 = AUDIO_DIR / show_slug / f"{slug}.mp3"
     audio_url = f"{R2_BASE}/{show_slug}/{slug}.mp3"
 
@@ -435,15 +438,12 @@ def process_episode(show_slug, archive_id, filename, archive_url):
             with urllib.request.urlopen(req, timeout=120) as r:
                 local_mp3.write_bytes(r.read())
         except Exception as e:
-            # Can't download — use archive.org URL directly as fallback
-            audio_url = archive_url
+            return slug, f"download_fail: {e}"
 
-    if local_mp3.exists():
-        uploaded = upload_to_r2(local_mp3, show_slug, f"{slug}.mp3")
-        if uploaded:
-            local_mp3.unlink(missing_ok=True)  # delete local after successful upload
-        else:
-            audio_url = archive_url  # R2 upload failed, use archive.org
+    uploaded = upload_to_r2(local_mp3, show_slug, f"{slug}.mp3")
+    if not uploaded:
+        return slug, "r2_upload_fail"
+    local_mp3.unlink(missing_ok=True)
     
     # Generate content with Claude Haiku
     episode_title = clean_title(filename)
