@@ -92,6 +92,7 @@ SHOWS = {
     "johnny-dollar-obrien": ["OTRR_YoursTrulyJohnnyDollar_Singles_Edmond_OBrien"],
     "johnny-dollar-lund":  ["OTRR_YoursTrulyJohnnyDollar_Singles_John_Lund"],
     "johnny-dollar-readick": ["OTRR_YoursTrulyJohnnyDollar_Singles_Robert_Readick"],
+    "johnny-dollar-bailey": ["OTRR_YoursTrulyJohnnyDollar_Singles_Bob_Bailey"],
     # Wave 5 - New 50 expansion
     "boston-blackie":      ["OTRR_Boston_Blackie_Singles"],
     "casey-crime":         ["OTRR_Casey_Crime_Photographer_Singles"],
@@ -190,6 +191,7 @@ SHOW_INFO = {
     "johnny-dollar-obrien": {"name": "Yours Truly, Johnny Dollar (Edmond O'Brien)", "network": "CBS", "years": "1951-1952", "genre": "insurance investigator noir"},
     "johnny-dollar-lund":  {"name": "Yours Truly, Johnny Dollar (John Lund)", "network": "CBS", "years": "1952-1955", "genre": "insurance investigator noir"},
     "johnny-dollar-readick": {"name": "Yours Truly, Johnny Dollar (Robert Readick)", "network": "CBS", "years": "1960", "genre": "insurance investigator noir"},
+    "johnny-dollar-bailey": {"name": "Yours Truly, Johnny Dollar (Bob Bailey)", "network": "CBS", "years": "1955-1960", "genre": "insurance investigator noir"},
     # Wave 5 - New 50 expansion
     "boston-blackie":      {"name": "Boston Blackie", "network": "NBC/CBS/Mutual", "years": "1944-1950", "genre": "detective mystery"},
     "casey-crime":         {"name": "Casey, Crime Photographer", "network": "CBS", "years": "1943-1955", "genre": "newspaper reporter crime drama"},
