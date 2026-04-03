@@ -424,8 +424,26 @@ def process_episode(show_slug, archive_id, filename, archive_url):
     if html_path.exists():
         return slug, "skip"
     
-    # Use archive.org URL directly — no download, no R2 upload needed
-    audio_url = archive_url
+    # Download MP3 and upload to R2; fallback to archive.org if upload fails
+    local_mp3 = AUDIO_DIR / show_slug / f"{slug}.mp3"
+    audio_url = f"{R2_BASE}/{show_slug}/{slug}.mp3"
+
+    if not local_mp3.exists():
+        (AUDIO_DIR / show_slug).mkdir(parents=True, exist_ok=True)
+        try:
+            req = urllib.request.Request(archive_url, headers={"User-Agent": "GhostOfRadio/1.0"})
+            with urllib.request.urlopen(req, timeout=120) as r:
+                local_mp3.write_bytes(r.read())
+        except Exception as e:
+            # Can't download — use archive.org URL directly as fallback
+            audio_url = archive_url
+
+    if local_mp3.exists():
+        uploaded = upload_to_r2(local_mp3, show_slug, f"{slug}.mp3")
+        if uploaded:
+            local_mp3.unlink(missing_ok=True)  # delete local after successful upload
+        else:
+            audio_url = archive_url  # R2 upload failed, use archive.org
     
     # Generate content with Claude Haiku
     episode_title = clean_title(filename)
