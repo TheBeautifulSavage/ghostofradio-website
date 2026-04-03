@@ -242,14 +242,20 @@ def get_archive_files(identifier):
 def clean_title(filename):
     """Extract clean episode title from filename."""
     stem = Path(filename).stem
-    # Remove date prefixes like "491204_", "42-06-17", "440813"
-    stem = re.sub(r"^\d{6}[_\s-]*", "", stem)
-    stem = re.sub(r"^\d{2}-\d{2}-\d{2}[-_\s]*", "", stem)
-    stem = re.sub(r"^\d{4}-\d{2}-\d{2}[-_\s]*", "", stem)
-    # Remove episode numbers
-    stem = re.sub(r"^\d{3}[-_\s]*", "", stem)
-    # Clean up
-    stem = stem.replace("_", " ").replace("-", " ").strip()
+    # Normalize separators first (replace - and _ with space)
+    stem = stem.replace("_", " ").replace("-", " ")
+    # Remove leading show prefixes (YTJD, etc.)
+    stem = re.sub(r"(?i)^ytjd\s*", "", stem)
+    stem = re.sub(r"(?i)^(gunsmoke|suspense|whistler|dragnet|shadow|loneranger|lone ranger)\s*", "", stem)
+    # Remove date prefixes like "1961 04 09", "49 12 04", "42 06 17", "440813", "560101"
+    stem = re.sub(r"^\d{4}\s+\d{2}\s+\d{2}\s*", "", stem)  # yyyy mm dd
+    stem = re.sub(r"^\d{2}\s+\d{2}\s+\d{2}\s*", "", stem)  # yy mm dd
+    stem = re.sub(r"^\d{6}\s*", "", stem)                   # yymmdd or yyyymm
+    # Remove leading episode numbers like "733 " or "231 "
+    stem = re.sub(r"^\d{2,4}\s+", "", stem)
+    # Remove trailing episode markers like "Ep 1", "Ep1", "Part 1"
+    stem = re.sub(r"\s+(ep|episode|part)\s*\d+$", "", stem, flags=re.IGNORECASE)
+    stem = stem.strip()
     # Title case
     return " ".join(w.capitalize() for w in stem.split()) if stem else Path(filename).stem
 
@@ -369,7 +375,7 @@ def build_html(show_slug, episode_title, filename, audio_url, content, air_date=
         </div>
 
         <div class="episode__content">
-          {chr(10).join(f'<p>{p.strip()}</p>' for p in content.split(chr(10)) if p.strip())}
+          {chr(10).join(f'<p>{re.sub(r"^#+\\s*", "", p.strip()).strip("*_")}</p>' for p in content.split(chr(10)) if p.strip() and not p.strip().startswith("#"))}
         </div>
 
         <footer class="episode__footer">
