@@ -302,6 +302,13 @@ def build_html(show_slug, episode_title, filename, audio_url, content, air_date=
     
     meta_desc = f"Listen to {episode_title} — {info['name']} ({info['network']}, {year}). Classic old time radio streaming free on Ghost of Radio."
     
+    # Pre-compute content HTML outside f-string to avoid backslash-in-fstring issues
+    _heading_re = re.compile(r"^#+\s*")
+    content_html = "\n".join(
+        "<p>" + _heading_re.sub("", p.strip()).strip("*_") + "</p>"
+        for p in content.split("\n") if p.strip() and not p.strip().startswith("#")
+    )
+    
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -375,7 +382,7 @@ def build_html(show_slug, episode_title, filename, audio_url, content, air_date=
         </div>
 
         <div class="episode__content">
-          {chr(10).join("<p>" + re.sub(r"^#+\s*", "", p.strip()).strip("*_") + "</p>" for p in content.split(chr(10)) if p.strip() and not p.strip().startswith("#"))}
+          {content_html}
         </div>
 
         <footer class="episode__footer">
