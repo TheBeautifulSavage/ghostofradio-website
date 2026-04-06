@@ -310,5 +310,73 @@
     })();
   </script>
 <script>if('serviceWorker'in navigator)navigator.serviceWorker.register('/service-worker.js');</script>
+
+<!-- Email Capture Popup -->
+<div id="gor-popup-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.78);z-index:999998;align-items:center;justify-content:center;">
+  <div id="gor-popup" role="dialog" aria-modal="true" aria-label="Newsletter signup" style="background:#1a1a1a;border:1px solid #c9a84c;border-radius:10px;padding:38px 34px 30px;max-width:460px;width:92%;position:relative;box-shadow:0 20px 70px rgba(0,0,0,0.9),0 0 0 1px rgba(201,168,76,0.12);font-family:'Crimson Text','Georgia',serif;">
+
+    <!-- Close Button -->
+    <button id="gor-popup-close" aria-label="Close" style="position:absolute;top:12px;right:16px;background:none;border:none;color:#555;font-size:20px;cursor:pointer;line-height:1;padding:4px 8px;font-family:sans-serif;">&#x2715;</button>
+
+    <!-- Decorative top accent -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+      <div style="height:1px;flex:1;background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
+      <span style="color:#c9a84c;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:sans-serif;font-weight:700;white-space:nowrap;">&#x2605; Ghost of Radio &#x2605;</span>
+      <div style="height:1px;flex:1;background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
+    </div>
+
+    <h2 style="color:#f0dca0;font-size:27px;font-weight:700;margin:0 0 8px;line-height:1.2;font-family:'Special Elite','Courier New',monospace;">New Episodes. Old Magic.</h2>
+    <p style="color:#c9a84c;font-size:15px;font-style:italic;margin:0 0 14px;line-height:1.5;font-weight:400;">Get notified when we add new episodes from radio&#39;s golden age &mdash; mysteries, dramas, comedies from the 1930s&ndash;1960s.</p>
+    <p style="color:#888;font-size:13.5px;margin:0 0 24px;line-height:1.7;">Thousands of episodes. Zero ads. Just the pure, uninterrupted storytelling that defined an era.</p>
+
+    <form id="gor-popup-form" action="https://formsubmit.co/hulljessej@gmail.com" method="POST" style="display:flex;flex-direction:column;gap:10px;">
+      <input type="hidden" name="_subject" value="New Ghost of Radio Subscriber">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://ghostofradio.com/?subscribed=1">
+      <input type="email" name="email" placeholder="your@email.com" required
+        style="padding:13px 15px;border-radius:6px;border:1px solid #333;background:#111;color:#f0dca0;font-size:14px;outline:none;font-family:inherit;"
+        onfocus="this.style.borderColor='#c9a84c'" onblur="this.style.borderColor='#333'">
+      <button type="submit"
+        style="padding:13px 18px;background:#c9a84c;color:#111;border:none;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Special Elite','Courier New',monospace;letter-spacing:0.5px;">
+        Keep Me Posted &rarr;
+      </button>
+    </form>
+
+    <p style="color:#444;font-size:11px;margin:14px 0 0;text-align:center;line-height:1.5;font-family:sans-serif;">Weekly at most. Easy unsubscribe.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var K='gor_popup_v1';
+  if(sessionStorage.getItem(K))return;
+  var el=document.getElementById('gor-popup-overlay');
+  if(!el)return;
+  function show(){
+    if(sessionStorage.getItem(K))return;
+    sessionStorage.setItem(K,'1');
+    el.style.display='flex';
+    document.body.style.overflow='hidden';
+  }
+  function hide(){
+    el.style.display='none';
+    document.body.style.overflow='';
+  }
+  var closeBtn=document.getElementById('gor-popup-close');
+  if(closeBtn)closeBtn.addEventListener('click',hide);
+  el.addEventListener('click',function(e){if(e.target===el)hide();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')hide();});
+  setTimeout(show,8000);
+  var fired=false;
+  window.addEventListener('scroll',function(){
+    if(fired)return;
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    if(h>0&&(window.scrollY||document.documentElement.scrollTop)/h>=0.6){fired=true;show();}
+  },{passive:true});
+  var form=document.getElementById('gor-popup-form');
+  if(form)form.addEventListener('submit',function(){setTimeout(hide,800);});
+})();
+</script>
 </body>
 </html>
