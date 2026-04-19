@@ -11,6 +11,8 @@ SITE_ROOT = "/Users/mac1/Projects/ghostofradio"
 BASE_URL = "https://ghostofradio.com"
 RSS_DIR = os.path.join(SITE_ROOT, "rss")
 BUILD_DATE = "Thu, 02 Apr 2026 07:00:00 +0000"
+OWNER_EMAIL = "hulljessej@gmail.com"
+OWNER_NAME = "Ghost of Radio"
 
 SHOWS = [
     "shadow",
@@ -59,17 +61,150 @@ SHOW_NAMES = {
 }
 
 
-def parse_html(content):
+GARBAGE_PREFIXES = re.compile(
+    r'^(ytjd|theloneranger\w*|theshadow\w*)[\s\d]', re.IGNORECASE)
+
+SHOW_PREFIXES_STRIP = [
+    'Ytjd', 'TheLoneRanger', 'TheLoneRangers', 'Theloneranger',
+    'TheShadow', 'Theshadow',
+]
+
+# Try to split a lowercase slug using common English words
+# Handles: "thewaterfallgang" -> "The Waterfall Gang"
+# We use a simple greedy longest-match approach with a word list
+try:
+    with open('/usr/share/dict/words', 'r') as _wf:
+        _WORDS = set(w.strip().lower() for w in _wf if 2 <= len(w.strip()) <= 15)
+except Exception:
+    _WORDS = set()
+
+def split_slug(slug):
+    """Split a concatenated lowercase string into words using dictionary."""
+    if not _WORDS:
+        return slug.title()
+    slug = slug.lower()
+    n = len(slug)
+    # dp[i] = list of words forming slug[:i], or None if no solution
+    dp = [None] * (n + 1)
+    dp[0] = []
+    for i in range(1, n + 1):
+        for j in range(max(0, i - 15), i):
+            word = slug[j:i]
+            if dp[j] is not None and word in _WORDS:
+                dp[i] = dp[j] + [word]
+                break
+    if dp[n] is not None:
+        return ' '.join(w.title() for w in dp[n])
+    # Fallback: just title-case the slug
+    return slug.title()
+
+
+def clean_garbage_title(raw_title, show_name, filepath=None):
+    """
+    Turn a garbage filename-derived title into a clean SEO title.
+    Input examples:
+      "TheLoneRanger38 06 150840PovertyInThreeConers"  (from og:title - CamelCase)
+      "theloneranger56-03-202942thewaterfallgang"       (from filename - all lowercase)
+      "Ytjd 1949 02 18 001 The Parakoff Policy"         (from og:title - already has spaces)
+    Output examples:
+      "Poverty In Three Coners | The Lone Ranger (1938)"
+      "The Waterfall Gang | The Lone Ranger (1956)"
+      "The Parakoff Policy | Yours Truly, Johnny Dollar (1949)"
+    """
+    s = raw_title.strip()
+
+    # Always try filename-based extraction first when filepath is available
+    if filepath:
+        base = os.path.splitext(os.path.basename(filepath))[0]
+        # Lone Ranger compact: theloneranger56-03-202942thewaterfallgang
+        m = re.match(r'^theloneranger(\d{2})-(\d{2})-(\d{2})(\d+)([a-z].+)$', base)
+        if m:
+            yr2, mo, dy, ep, title_slug = m.groups()
+            year = int(yr2) + (1900 if int(yr2) > 25 else 2000)
+            ep_title = split_slug(title_slug)
+            year_str = f" ({year})"
+            return f"{ep_title} | {show_name}{year_str}", year
+        # Generic compact: showname + YY-MM-DD + EPNUM + titleslug
+        m = re.match(r'^[a-z]+(\d{2})-(\d{2})-(\d{2})(\d+)([a-z].+)$', base)
+        if m:
+            yr2, mo, dy, ep, title_slug = m.groups()
+            year = int(yr2) + (1900 if int(yr2) > 25 else 2000)
+            ep_title = split_slug(title_slug)
+            return f"{ep_title} | {show_name} ({year})", year
+
+    # Strip known show prefixes (case-insensitive)
+    for pfx in SHOW_PREFIXES_STRIP:
+        if s.lower().startswith(pfx.lower()):
+            s = s[len(pfx):].strip()
+            break
+
+    # Extract year from leading digits (e.g. "38 06 15..." or "1949 02 18...")
+    year = None
+    m = re.match(r'^(\d{4})\b', s)
+    if m:
+        year = int(m.group(1))
+        s = s[m.end():].strip()
+    else:
+        m = re.match(r'^(\d{2})\b', s)
+        if m:
+            y2 = int(m.group(1))
+            year = y2 + (1900 if y2 > 25 else 2000)
+            s = s[m.end():].strip()
+
+    # Strip remaining leading digit groups (month, day, episode number)
+    s = re.sub(r'^\d[\d\s]+', '', s).strip()
+
+    # CamelCase split (handles "PovertyInThreeConers" -> "Poverty In Three Coners")
+    s = re.sub(r'([a-z])([A-Z])', r'\1 \2', s)
+    s = re.sub(r'([A-Z]+)([A-Z][a-z])', r'\1 \2', s)
+    s = s.strip().title()
+
+    # If still looks like garbage (no spaces, too short), try split_slug
+    if ' ' not in s and len(s) > 8:
+        s = split_slug(s.lower())
+
+    if not s or len(s) < 2:
+        return None, year
+
+    year_str = f" ({year})" if year else ""
+    return f"{s} | {show_name}{year_str}", year
+
+
+def parse_html(content, filepath=None, show_name=None):
     """Extract episode data from HTML content."""
     data = {}
 
-    # Title
-    m = re.search(r'<title>(.*?)</title>', content, re.DOTALL)
-    if m:
-        title = m.group(1).strip()
-        # Strip "— Ghost of Radio" suffix
-        title = re.sub(r'\s*[—–-]+\s*Ghost of Radio\s*$', '', title).strip()
-        data['title'] = title
+    # Title — prefer og:title (has CamelCase for garbage files), fallback to <title>
+    og_m = re.search(r'<meta\s+property=["\']og:title["\']\s+content=["\'](.*?)["\']', content, re.DOTALL | re.IGNORECASE)
+    title_m = re.search(r'<title>(.*?)</title>', content, re.DOTALL)
+    raw_title = (og_m.group(1) if og_m else (title_m.group(1) if title_m else '')).strip()
+
+    def strip_gor_suffix(t):
+        t = re.sub(r'\s*\|\s*Ghost of Radio\s*$', '', t).strip()
+        t = re.sub(r'\s*[—–-]+\s*Ghost of Radio\s*$', '', t).strip()
+        return t
+
+    raw_title = strip_gor_suffix(raw_title)
+    # Extract the episode name part (before first | or —)
+    title_part = re.split(r'\s*[—–|]\s*', raw_title)[0].strip()
+    is_garbage = bool(GARBAGE_PREFIXES.match(title_part))
+
+    if is_garbage and show_name:
+        clean, yr = clean_garbage_title(title_part, show_name, filepath=filepath)
+        if clean:
+            data['title'] = clean
+            if yr:
+                data['year'] = yr
+        else:
+            # Last resort: use <title> tag stripped
+            fallback = strip_gor_suffix(title_m.group(1).strip() if title_m else raw_title)
+            data['title'] = fallback
+    else:
+        # Use og:title if available and cleaner, else <title>
+        if og_m:
+            data['title'] = raw_title
+        elif title_m:
+            data['title'] = strip_gor_suffix(title_m.group(1).strip())
 
     # Meta description
     m = re.search(r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']', content, re.DOTALL | re.IGNORECASE)
@@ -142,21 +277,27 @@ def get_episodes(slug):
     # Skip index.html
     html_files = [f for f in html_files if os.path.basename(f) != 'index.html']
 
+    show_name = SHOW_NAMES.get(slug, slug.replace('-', ' ').title())
     episodes = []
     for filepath in html_files:
         with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
             content = f.read()
 
-        data = parse_html(content)
+        data = parse_html(content, filepath=filepath, show_name=show_name)
 
         if not data.get('title') or not data.get('audio_url'):
             continue
 
-        # Get date - try filename first, then fall back to year
+        # Get date - try filename first, then fall back to parsed year/month/day, then year
         dt = parse_date_from_filename(filepath)
         if dt is None:
             year = data.get('year', 1940)
-            dt = datetime(year, 1, 1)
+            month = data.get('_month', 1)
+            day = data.get('_day', 1)
+            try:
+                dt = datetime(year, month, day)
+            except (ValueError, TypeError):
+                dt = datetime(year, 1, 1)
 
         data['dt'] = dt
         data['filepath'] = filepath
@@ -195,6 +336,10 @@ def generate_feed(slug, episodes):
         '  </itunes:category>',
         f'  <itunes:image href="{image_url}"/>',
         '  <itunes:explicit>false</itunes:explicit>',
+        '  <itunes:owner>',
+        f'    <itunes:name>{OWNER_NAME}</itunes:name>',
+        f'    <itunes:email>{OWNER_EMAIL}</itunes:email>',
+        '  </itunes:owner>',
         '  <image>',
         f'    <url>{image_url}</url>',
         f'    <title>{escape(feed_title)}</title>',
@@ -251,6 +396,10 @@ def generate_global_feed(all_episodes_by_show):
         '  </itunes:category>',
         '  <itunes:image href="https://ghostofradio.com/images/logo.png"/>',
         '  <itunes:explicit>false</itunes:explicit>',
+        '  <itunes:owner>',
+        f'    <itunes:name>{OWNER_NAME}</itunes:name>',
+        f'    <itunes:email>{OWNER_EMAIL}</itunes:email>',
+        '  </itunes:owner>',
         '  <image>',
         '    <url>https://ghostofradio.com/images/logo.png</url>',
         '    <title>Ghost of Radio</title>',
